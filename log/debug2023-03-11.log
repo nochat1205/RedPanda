@@ -1,0 +1,84 @@
+2023-03-11 21:22:57,203 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002441A095AC0>
+2023-03-11 21:23:56,573 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x0000019783CD2A30>
+2023-03-11 21:25:26,432 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001E336F257C0>
+2023-03-11 21:26:32,525 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001C11F6947F0>
+2023-03-11 21:27:53,626 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x0000017E479EEE20>
+2023-03-11 21:28:13,828 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002583B4F7AC0>
+2023-03-11 21:30:05,256 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002075EA7EE20>
+2023-03-11 21:32:45,649 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x0000025F1F8E6AF0>
+2023-03-11 21:33:18,343 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x00000226B59EDCA0>
+2023-03-11 21:34:48,669 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x00000236448C57C0>
+2023-03-11 21:36:03,327 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x00000145B76ACC40>
+2023-03-11 21:38:47,837 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001F6CC7757C0>
+2023-03-11 21:41:36,954 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x0000029FF620CC40>
+2023-03-11 21:42:53,268 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x0000019F102CBC70>
+2023-03-11 21:43:44,110 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001542B4CBC70>
+2023-03-11 21:45:18,404 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001C1E619DEB0>
+2023-03-11 21:45:55,962 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002E4D2B85AF0>
+2023-03-11 21:47:07,838 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002375D06BCD0>
+2023-03-11 21:47:52,641 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001EBBE65DEB0>
+2023-03-11 21:48:51,374 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002757BCC5AF0>
+2023-03-11 21:52:06,872 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002A228676D90>
+2023-03-11 21:52:42,711 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001BCF28ABC70>
+2023-03-11 21:54:58,607 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002D71A8BDE50>
+2023-03-11 21:58:59,055 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002B7592E6AF0>
+2023-03-11 21:59:48,867 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001E57766CCD0>
+2023-03-11 22:01:09,410 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001A36B12BCD0>
+2023-03-11 22:02:57,581 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x00000271ADD84820>
+2023-03-11 22:03:54,796 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 67
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002B4970ADE50>

@@ -26,7 +26,7 @@ from utils.Driver.Sym_Driver import (
     Sym_Driver,
     GetDriver,
     Argument,
-    Param
+    Param,
 )
 
 from utils.Driver.Sym_DataDriver import (
@@ -35,7 +35,7 @@ from utils.Driver.Sym_DataDriver import (
 from utils.Driver.Sym_GPDriver import (
     Sym_PntDriver,
 )
-
+from utils.decorator import classproperty
 class Sym_TransformDriver(Sym_Driver):
     def __init__(self) -> None:
         super().__init__()
@@ -51,7 +51,7 @@ class Sym_TransformDriver(Sym_Driver):
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
-            dict_param[name] = GetValuewith(argu.DriverID, theLabel)
+            dict_param[name] = GetDriver(argu.DriverID).GetValue(theLabel)
 
         pnt:gp_Pnt = dict_param['rotateAxis']
         coord = pnt.XYZ()
@@ -71,21 +71,21 @@ class Sym_TransformDriver(Sym_Driver):
         return 0
 
     def GetValue(self, theLabel:TDF_Label)->any:
-        atype = self.Attributes['value']['type']
+        atype = self.Attributes['value'].Type
         value = atype()
         if theLabel.FindAttribute(atype.GetID(), value):
             return value.Get()
 
         return value.Get()
 
-    @staticmethod
-    @property
-    def ID():
+
+    @classproperty
+    def ID(self):
         return  Sym_TransformDriver_GUID#
 
-    @staticmethod
-    @property
-    def Type():
+
+    @classproperty
+    def Type(self):
         return "Transform"
 
 class Sym_BoxDriver(Sym_Driver):
@@ -104,28 +104,29 @@ class Sym_BoxDriver(Sym_Driver):
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
-            dict_param[name] = GetValuewith(argu.DriverID, theLabel)
+            dict_param[name] = GetDriver(argu.DriverID).GetValue(theLabel)
 
-        loc:TopLoc_Location = dict_param['transfrom']
+        loc:TopLoc_Location = dict_param['transform']
         dx = dict_param['l']
         dy = dict_param['h']
         dz = dict_param['w']
 
         shape:TopoDS_Shape = BRepPrimAPI_MakeBox(dx, dy, dz).Shape()
 
-        shape.Located(loc)
+        # shape.Located(loc)
         
-        builder = TNaming_Builder(theLabel)
-        builder.Generated(shape)
+        # builder = TNaming_Builder(theLabel)
+        # builder.Generated(shape)
 
         return 0
 
-    @staticmethod
-    @property
-    def ID():
+
+
+    @classproperty
+    def ID(self):
         return  Sym_BoxDriver_GUID #
 
-    @staticmethod
-    @property
-    def Type():
+
+    @classproperty
+    def Type(self):
         return "Box"

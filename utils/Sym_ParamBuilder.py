@@ -51,7 +51,7 @@ class Sym_NewBuilder(object):
         dict_param = dict()
         dict_param["Name"] = Param(str, "debug")
         dict_param['Parent'] = Param(str, "main")
-        dict_param['children'] = GetParamWith(aDriver)
+        dict_param['Shape'] = GetParamWith(aDriver)
 
         return dict_param
 

@@ -19,7 +19,10 @@ import typing
 from utils.logger import Logger
 from utils.OCCUtils import *
 from utils.Sym_Application import Sym_Application
-from utils.Driver.Sym_Driver import Sym_driver
+from utils.Driver.Sym_Driver import (
+    Sym_Driver,
+    GetDriver
+)
 from utils.Sym_DocUpdateData import Sym_NewShapeData
 
 class Logic_Application(QObject):
@@ -63,33 +66,35 @@ class Logic_Application(QObject):
     def NewShape(self, data:Sym_NewShapeData):
         Logger().debug(data)
         theGuid = data.driverID
+        name = data.name
         theParam = data.dict_params
 
         self._main_doc.NewCommand()
         aLabel = TDF_TagSource.NewChild(self._main_doc.Main())
-        self._myFunction = TFunction_Function.Set(aLabel, theGuid)
-        aLogBook: TFunction_Logbook = TFunction_Logbook.Set(aLabel)
+        TDataStd_Name.Set(aLabel, FromText(TCollection_ExtendedString, name))
 
-        aDriver = Sym_driver()
-        if not TFunction_DriverTable.Get().FindDriver(theGuid, aDriver):
-            Logger().error("driver with "+theGuid.ToCString()+" no found")
-
-        TDataStd_Name.Set(aLabel, TCollection_ExtendedString(aDriver.type))
-        # set child
-        Dict_Param = aDriver.Dict_Param
-        for name, param in Dict_Param.items():
-            childTag = param['tag']
-            value = FromText(param["type"], theParam[name])
-            param["type"].Set(aLabel.FindChild(childTag), value)
-
+        aDriver = GetDriver(theGuid)
         aDriver.Init(aLabel)
-        if aDriver.Execute(aLogBook):
-            Logger().error("Create {} function execute failed\n".format(aDriver.type))
+        log = TFunction_Logbook()
+        def _initValue(aLabel:TDF_Label, aDriver, aParams):
+            aDriver:Sym_Driver
+            if len(aDriver.Arguments) == 0:
+                    aType = aDriver.Attributes['value'].Type
+                    aType.Set(aLabel, FromText(aType, aParams))
+            else:
+                for name, value in aParams.items():
+                    _initValue(aLabel.FindChild(aDriver.Arguments[name].Tag),
+                               GetDriver(aDriver.Arguments[name].DriverID), 
+                               value)
+            aDriver.Execute(aLabel, log)
+            return
 
+        _initValue(aLabel, aDriver, theParam['Shape'])
+        
         anAisPresentation = TPrsStd_AISPresentation.Set(aLabel, TNaming_NamedShape.GetID())
         anAisPresentation.Display(True)
         NS = TNaming_NamedShape()
-        shape = aDriver.Label().FindAttribute(TNaming_NamedShape.GetID(), NS)
+        shape = aLabel.FindAttribute(TNaming_NamedShape.GetID(), NS)
 
         self._myContext.Display (AIS_Shape(NS.Get()), False)
         self._myView.FitAll()

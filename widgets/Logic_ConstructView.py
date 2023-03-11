@@ -30,7 +30,7 @@ class Logic_ConstructView(QtWidgets.QWidget):
 
         self.guid = None
 
-        self.Constructer:Logic_Construct = self.ui.groupBox
+        self.Constructer:Logic_Construct = self.ui.widget
         # connect
         self.ui.pushButton_2.clicked.connect(self.commit)
 
@@ -40,5 +40,6 @@ class Logic_ConstructView(QtWidgets.QWidget):
 
     @pyqtSlot()
     def commit(self):
-        self.sig_NewShape.emit(Sym_NewShapeData(self.Constructer))
-        return
+        data = Sym_NewShapeData(self.Constructer)
+        self.sig_NewShape.emit(data)
+        # return data

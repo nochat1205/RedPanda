@@ -161,6 +161,8 @@ def FromText(theType:type, text:str):
         return float(text)
     elif theType == TDataStd_Integer:
         return int(text)
+    elif theType == TCollection_ExtendedString:
+        return TCollection_ExtendedString(text)
     else:
         return text
 

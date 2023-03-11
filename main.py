@@ -33,7 +33,7 @@ from widgets.Ui_Main import Ui_MainWindow
 from widgets.Logic_DocTree import ModelTree
 from widgets.Logic_Application import Logic_Application
 from utils.logger import Logger
-from utils.Driver.Sym_Driver import TOcafFunction_BoxDriver
+from utils.Driver.Sym_ShapeDriver import Sym_BoxDriver
 from utils.Sym_ParamBuilder import Sym_NewBuilder
 log = Logger('info')
 
@@ -83,7 +83,7 @@ class MainWindow(QMainWindow):
     @pyqtSlot()
     def ShapeConstruct(self, type:str):
         if type == "Box":
-            self.sig_Construct.emit(Sym_NewBuilder(TOcafFunction_BoxDriver()))
+            self.sig_Construct.emit(Sym_NewBuilder(Sym_BoxDriver()))
 
     @pyqtSlot()
     def openFileSTEP(self):
@@ -94,7 +94,6 @@ class MainWindow(QMainWindow):
         end_with = str(filepath).lower()
         if end_with.endswith(".step") or end_with.endswith("stp"):
             self.read_file(filepath)
-
 
     def read_file(self, file):
         doc = OpenFile(file)
@@ -163,7 +162,6 @@ if __name__ == "__main__":
     import logging 
     log = Logger()
     import time
-
 
 
     app = QApplication(sys.argv)

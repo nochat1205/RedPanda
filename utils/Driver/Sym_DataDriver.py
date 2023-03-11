@@ -15,6 +15,7 @@ from utils.Driver.Sym_Driver import (
     Param,
     Argument
 )
+from utils.decorator import classproperty
 
 def GetValueWith(id:Standard_GUID, theLabel:TDF_Label)->any:
     aDriver:Sym_Driver = GetDriver(id)
@@ -38,7 +39,7 @@ class Sym_RealDriver(Sym_Driver): # base
 
         attr = self.myAttr
         aType = attr.Type
-        aType.Set(L, FromText(aType, attr['default']) )
+        aType.Set(L, FromText(aType, attr.Default) )
         return False
 
     def Execute(self, theLabel:TDF_Label, log: TFunction_Logbook) -> int:
@@ -50,13 +51,14 @@ class Sym_RealDriver(Sym_Driver): # base
         if theLabel.FindAttribute(atype.GetID(), value):
             return value.Get()
 
-        return super().GetValue()
+        return super().GetValue(theLabel)
 
-    @staticmethod
-    def ID():
-        return "real" #
-
-    @staticmethod
-    def Type():
-        return Sym_RealDriver_GUID
+    
+    from utils.decorator import classproperty
+    @classproperty
+    def ID(self):
+        return Sym_RealDriver_GUID #
+    @classproperty
+    def Type(self):
+        return "real"
 

@@ -62,7 +62,7 @@ class Sym_Driver(object):
     def __init__(self) -> None:
         # 函数定义
         self.Results:dict[str, dict] = dict()   # 结果
-        self.Arguments:dict[str, dict] = dict() # 参数列表
+        self.Arguments:dict[str, Argument] = dict() # 参数列表
         self.Attributes:dict[str, dict] = dict()# 属性
         self.tagResource = TagResource()
         return
@@ -70,18 +70,19 @@ class Sym_Driver(object):
     def Init(self, L: TDF_Label) -> bool:
         """ 函数初始化
         """
-        def IsInit(self, theLabel:TDF_Label):
+        def IsInit(theLabel:TDF_Label):
             aFunc = TFunction_Function()
             return theLabel.FindAttribute(aFunc.GetID(), aFunc)
 
-        def _InitFunction(self, theLabel:TDF_Label):
+        def _InitFunction(theLabel:TDF_Label):
             aLogBook = TFunction_Logbook.Set(theLabel)
-            aFunction = TFunction_Function.Set(theLabel, self.GetID())
+            print(type(theLabel), type(self.ID))
+            aFunction = TFunction_Function.Set(theLabel, self.ID)
 
-        if self.IsInit(): 
+        if IsInit(L): 
             return True
 
-        self._InitFunction(self, L)
+        _InitFunction(L)
 
         for argu in self.Arguments.values():
             argu:Argument
@@ -105,6 +106,7 @@ class Sym_Driver(object):
         atype = self.Attributes['value'].Type
         value = atype()
         if theLabel.FindAttribute(atype.GetID(), value):
+            print("::", self.Type, value)
             return value.Get()
 
         return value.Get()
@@ -148,8 +150,8 @@ class Sym_Driver(object):
     def GetResults(self, aLabel:TDF_Label, args: TDF_LabelList) -> None:
         return None
 
-    @staticmethod
-    @property
+    from utils.decorator import classproperty
+    @classproperty
     def ID():
         """函数ID
 
@@ -158,8 +160,7 @@ class Sym_Driver(object):
         """
         raise Exception("Must have ID")
 
-    @staticmethod
-    @property
+    @classproperty
     def Type():
         """ 函数名
         """

@@ -6,6 +6,7 @@ from utils.OCCUtils import (
     TDF_LabelList,
     TDataXtd_Point,
     gp_Pnt,
+    TDataXtd_Geometry
 )
 
 from utils.GUID import *
@@ -26,7 +27,7 @@ class Sym_PntDriver(Sym_Driver):
     _guid = Sym_PntDriver_GUID
     def __init__(self) -> None:
         super().__init__()
-        self.myAttr = Param(TDataXtd_Point)
+        self.myAttr = Param(TDataXtd_Geometry)
         self.Attributes["value"] = self.myAttr
         self.Arguments = {
             'theXp': Argument(self.tagResource, Sym_RealDriver.ID), 
@@ -37,28 +38,27 @@ class Sym_PntDriver(Sym_Driver):
     def Execute(self, theLabel: TDF_Label, log: TFunction_Logbook) -> int:
         dict_param = dict()
         for name, argu in self.Arguments.items():
-            dict_param[name] = GetValuewith(argu.DriverID, theLabel)
+            dict_param[name] = GetDriver(argu.DriverID).GetValue(theLabel)
 
-        pnt = gp_Pnt(**dict_param)
-        AttrType = self.Attributes['value']['type']
+        pnt = gp_Pnt(dict_param["theXp"], dict_param["theYp"], dict_param["theZp"])
+        AttrType = self.Attributes['value'].Type
         AttrType.Set(theLabel, pnt)
         return 0
 
-    def GetValue(self, theLabel:TDF_Label)->any:
-        atype = self.Attributes['value'].Type
-        value = atype()
-        if theLabel.FindAttribute(atype.GetID(), value):
-            return value.Get()
+    # def GetValue(self, theLabel:TDF_Label)->any:
+    #     atype = self.Attributes['value'].Type
+    #     value = atype()
+    #     if theLabel.FindAttribute(atype.GetID(), value):
+    #         return value.Get()
 
-        return value.Get()
+    #     return value.Get()
 
-    @staticmethod
-    @property
-    def ID():
+    from utils.decorator import classproperty
+    @classproperty
+    def ID(self):
         return Sym_PntDriver._guid #
 
 
-    @staticmethod
-    @property
-    def Type():
+    @classproperty
+    def Type(self):
         return Sym_PntDriver._type

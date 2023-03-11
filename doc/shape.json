@@ -1,0 +1,24 @@
+{
+    'Shape': 
+    {
+        'transform': 
+        {
+            'angle': '0.0', 
+            'rotateAxis': 
+            {
+                'theXp': '0.0', 
+                'theYp': '0.0', 
+                'theZp': '0.0'
+            }, 
+            'position': 
+            {
+                'theXp': '0.0', 
+                'theYp': '0.0', 
+                'theZp': '0.0'
+            }
+        }, 
+        'l': '0.0', 
+        'h': '0.0', 
+        'w': '0.0'
+    }
+}
