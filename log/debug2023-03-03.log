@@ -1,0 +1,42 @@
+2023-03-03 01:17:16,156 - INFO: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:17:17,165 - INFO: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:17:18,169 - INFO: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:34:01,590 - DEBUG: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:34:02,601 - DEBUG: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:34:03,612 - DEBUG: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:36:53,636 - DEBUG: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:36:54,637 - DEBUG: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:36:55,651 - DEBUG: File "D:\2022-1\graduate_design\codes\qt_view\software_base\main.py", line 143
+2023-03-03 01:37:29,699 - DEBUG: File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py 
+  debug0
+2023-03-03 01:37:30,704 - DEBUG: File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py 
+  debug1
+2023-03-03 01:37:31,709 - DEBUG: File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py 
+  debug2
+2023-03-03 01:40:59,231 - DEBUG: File main.py
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py, line 148
+		debug0
+2023-03-03 01:41:00,235 - DEBUG: File main.py
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py, line 148
+		debug1
+2023-03-03 01:41:01,241 - DEBUG: File main.py
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py, line 148
+		debug2
+2023-03-03 01:44:08,850 - DEBUG:             File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 148
+debug0
+2023-03-03 01:44:09,857 - DEBUG:             File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 148
+debug1
+2023-03-03 01:44:10,862 - DEBUG:             File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 148
+debug2
+2023-03-03 01:45:35,354 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 148
+debug0
+2023-03-03 01:45:36,362 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 148
+debug1
+2023-03-03 01:45:37,370 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 148
+debug2

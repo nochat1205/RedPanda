@@ -1,0 +1,38 @@
+{
+    'Name': <class 'str'>, 
+    'Parent': <class 'str'>, 
+    'children': {
+        'value': <class 'OCC.Core.TNaming.TNaming_NamedShape'>, 
+        'children': {
+            'transform': {
+                'value': <classansform': {
+                    'value': <class 'OCC.Core.XCAFDoc.XCAFDoc_Location'>, 
+                    'children': {
+                        'angle': {
+                            'value': <class 'OCC.Core.TDataStd.TDataStd_Reue': <class 'OCC.Core.TDatal'>
+                    }, 
+                    'rotateAxis': {
+                        'value': <class 'OCC.Core.TDataXtd.TDataXtd_Point'>, 
+                        'children': {
+                            'theXp': {
+                                'value': <class 'OCC.Core.TDataStd.T.TDataStd.TDataStd_Real'>
+                            }
+                            'theYp': {'value': <class 'OCC.Core.TDataStd.TDataStd_Real'>
+                    }, 'theZp': {'value': <class 'OCC.Core.TDataStd.TDataStd_children': {'theXp': {'valReal'>
+                            }
+                        }
+                    }, 'position': {'value': <class 'OCC.Core.TDataXtd.TDataXtd_Point'>, 'children': {'theXp': {'value': <class 'OCC.Core.TDataStdass 'OCC.Core.TDataStd.TDa.TDataStd_Real'>
+                            }, 'theYp': {'value': <class 'OCC.Core.TDataStd.TDataStd_Real'>
+                            }, 'theZp': {'value': <class 'OCC.Core.TDataStd.TDataSt
+                            }, 'w': {'value': <class 'd_Real'>
+                            }
+                        }
+                    }
+                }
+            }, 'l': {'value': <class 'OCC.Core.TDataStd.TDataStd_Real'>
+            }, 'h': {'value': <class 'OCC.Core.TDataStd.TDataStd_Real'>
+            }, 'w': {'value': <class 'OCC.Core.TDataStd.TDataStd_Real'>
+            }
+        }
+    }
+}

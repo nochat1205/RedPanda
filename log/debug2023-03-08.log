@@ -1,0 +1,24 @@
+2023-03-08 19:25:23,988 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001C5C3ADC9A0>
+2023-03-08 19:27:18,455 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x0000023AB4B9BA00>
+2023-03-08 19:27:42,819 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001D10669BA00>
+2023-03-08 19:29:34,601 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000002457C3ACA00>
+2023-03-08 19:31:22,078 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001B5EB21CBB0>
+2023-03-08 19:31:22,196 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 102
+Created a Box with name: {'Name': 'debug', 'Parent': 'main', 'l': '2', 'h': '03', 'w': '04', 'x': '05', 'y': '06', 'z': '07'}
+2023-03-08 19:31:35,564 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+<utils.Sym_DocUpdateData.Sym_NewShapeData object at 0x000001B5F1642340>
+2023-03-08 19:31:35,574 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 102
+Created a Box with name: {'Name': 'debug', 'Parent': 'main', 'l': '2', 'h': '03', 'w': '04', 'x': '05', 'y': '06', 'z': '07'}

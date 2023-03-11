@@ -1,0 +1,90 @@
+2023-03-07 01:59:13,338 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 63
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 01:59:13,340 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+{'l': 2.0, 'h': 3.0, 'w': 45.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 01:59:13,395 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 98
+Created a Box with name: {'l': 2.0, 'h': 3.0, 'w': 45.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:02:09,895 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 63
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:02:09,897 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+{'l': 2.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:02:09,977 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 98
+Created a Box with name: {'l': 2.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:03:59,927 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 63
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:03:59,929 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+{'l': 12.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:03:59,938 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 98
+Created a Box with name: {'l': 12.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:05:11,024 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 63
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:05:11,025 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+{'l': 2.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:05:11,034 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 98
+Created a Box with name: {'l': 2.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:05:44,275 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 63
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:05:44,277 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+{'l': 21.0, 'h': 34.0, 'w': 5.0, 'x': 6.0, 'y': 7.0, 'z': 8.0}
+2023-03-07 02:05:44,285 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 98
+Created a Box with name: {'l': 21.0, 'h': 34.0, 'w': 5.0, 'x': 6.0, 'y': 7.0, 'z': 8.0}
+2023-03-07 02:10:52,549 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 65
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:10:52,550 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 66
+{'l': 3.0, 'h': 4.0, 'w': 5.0, 'x': 67.0, 'y': 8.0, 'z': 9.0}
+2023-03-07 02:10:52,559 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 100
+Created a Box with name: {'l': 3.0, 'h': 4.0, 'w': 5.0, 'x': 67.0, 'y': 8.0, 'z': 9.0}
+2023-03-07 02:16:30,359 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 65
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:16:30,360 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 66
+{'l': 3.0, 'h': 4.0, 'w': 5.0, 'x': 6.0, 'y': 7.0, 'z': 8.0}
+2023-03-07 02:16:30,369 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 100
+Created a Box with name: {'l': 3.0, 'h': 4.0, 'w': 5.0, 'x': 6.0, 'y': 7.0, 'z': 8.0}
+2023-03-07 02:17:04,493 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 65
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:17:04,494 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 66
+{'l': 21.0, 'h': 3.0, 'w': 45.0, 'x': 6.0, 'y': 8.0, 'z': 7.0}
+2023-03-07 02:17:04,503 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 100
+Created a Box with name: {'l': 21.0, 'h': 3.0, 'w': 45.0, 'x': 6.0, 'y': 8.0, 'z': 7.0}
+2023-03-07 02:19:44,242 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 63
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:19:44,243 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+{'l': 2.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:19:44,253 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 98
+Created a Box with name: {'l': 2.0, 'h': 3.0, 'w': 4.0, 'x': 5.0, 'y': 6.0, 'z': 7.0}
+2023-03-07 02:29:06,160 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 63
+22d22e51-d69a-11d4-8f1a-0060b0ee18e8
+2023-03-07 02:29:06,162 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 64
+{'l': 23.0, 'h': 5.0, 'w': 6.0, 'x': 7.0, 'y': 7.0, 'z': 8.0}
+2023-03-07 02:29:06,171 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 98
+Created a Box with name: {'l': 23.0, 'h': 5.0, 'w': 6.0, 'x': 7.0, 'y': 7.0, 'z': 8.0}
