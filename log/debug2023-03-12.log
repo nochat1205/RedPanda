@@ -1,0 +1,255 @@
+2023-03-12 23:22:05,800 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:22:24,332 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 74
+debug
+2023-03-12 23:22:24,353 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 102
+run
+2023-03-12 23:22:50,012 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 74
+box2
+2023-03-12 23:29:04,303 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:29:28,320 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+{'Shape': {'transform': {'angle': '20', 'rotateAxis': {'theXp': '1', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '2', 'theYp': '2', 'theZp': '2'}}, 'l': '3', 'h': '3', 'w': '3'}}
+2023-03-12 23:29:28,323 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 74
+box1
+2023-03-12 23:29:28,384 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 102
+run
+2023-03-12 23:30:51,388 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+{'Shape': {'transform': {'angle': '20', 'rotateAxis': {'theXp': '1', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '3', 'h': '3', 'w': '3'}}
+2023-03-12 23:30:51,391 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 74
+box12
+2023-03-12 23:33:09,389 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:33:24,039 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '2', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '4', 'w': '4'}}
+2023-03-12 23:33:24,047 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 74
+debug
+2023-03-12 23:33:24,068 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 99
+Construct:True
+2023-03-12 23:33:24,070 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 102
+run
+2023-03-12 23:33:39,359 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '2', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '4', 'h': '4', 'w': '4'}}
+2023-03-12 23:33:39,365 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 74
+debug
+2023-03-12 23:39:24,002 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 165
+Application Start
+2023-03-12 23:39:32,546 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:39:55,626 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+{'Shape': {'transform': {'angle': '34', 'rotateAxis': {'theXp': '1', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '3', 'theYp': '3', 'theZp': '3'}}, 'l': '5', 'h': '5', 'w': '5'}}
+2023-03-12 23:39:55,629 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 71
+NewShape:debug
+2023-03-12 23:39:55,630 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 77
+debug
+2023-03-12 23:39:55,641 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 102
+Construct:True
+2023-03-12 23:39:55,644 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 105
+run
+2023-03-12 23:40:03,415 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+{'Shape': {'transform': {'angle': '34', 'rotateAxis': {'theXp': '1', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '5', 'h': '5', 'w': '5'}}
+2023-03-12 23:40:03,416 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 71
+NewShape:debug
+2023-03-12 23:40:03,419 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 77
+debug
+2023-03-12 23:44:36,093 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 165
+Application Start
+2023-03-12 23:44:41,848 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:45:01,125 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+box1
+2023-03-12 23:45:01,128 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 13
+debug
+2023-03-12 23:45:01,129 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 14
+{'Shape': {'transform': {'angle': '2', 'rotateAxis': {'theXp': '3', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '3', 'theYp': '3', 'theZp': '3'}}, 'l': '7', 'h': '7', 'w': '7'}}
+2023-03-12 23:45:01,131 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 71
+NewShape:debug
+2023-03-12 23:45:01,132 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 77
+name
+2023-03-12 23:45:01,140 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 97
+Init
+2023-03-12 23:45:01,148 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 103
+Construct:True
+2023-03-12 23:45:01,151 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 106
+run
+2023-03-12 23:45:10,537 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+box2
+2023-03-12 23:45:10,539 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 13
+debug
+2023-03-12 23:45:10,541 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 14
+{'Shape': {'transform': {'angle': '2', 'rotateAxis': {'theXp': '3', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '7', 'h': '7', 'w': '7'}}
+2023-03-12 23:45:10,543 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 71
+NewShape:debug
+2023-03-12 23:45:10,545 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 77
+name
+2023-03-12 23:45:10,547 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 97
+Init
+2023-03-12 23:45:10,553 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 103
+Construct:True
+2023-03-12 23:45:10,556 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 106
+run
+2023-03-12 23:46:34,643 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 165
+Application Start
+2023-03-12 23:46:40,887 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:46:58,766 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+main
+2023-03-12 23:46:58,768 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 13
+box1
+2023-03-12 23:46:58,771 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 14
+{'Shape': {'transform': {'angle': '2', 'rotateAxis': {'theXp': '1', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '2', 'theYp': '2', 'theZp': '2'}}, 'l': '8', 'h': '8', 'w': '8'}}
+2023-03-12 23:46:58,773 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 71
+NewShape:box1
+2023-03-12 23:46:58,775 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 77
+name
+2023-03-12 23:47:47,898 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 165
+Application Start
+2023-03-12 23:47:58,748 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:48:24,238 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 165
+Application Start
+2023-03-12 23:48:30,143 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:48:49,628 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+main
+2023-03-12 23:48:49,629 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 13
+box1
+2023-03-12 23:48:49,631 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 14
+{'Shape': {'transform': {'angle': '2', 'rotateAxis': {'theXp': '0.2', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '3', 'theYp': '3', 'theZp': '3'}}, 'l': '4', 'h': '5', 'w': '5'}}
+2023-03-12 23:48:49,632 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 71
+NewShape:box1
+2023-03-12 23:48:49,634 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 77
+name
+2023-03-12 23:48:49,637 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 79
+Init1
+2023-03-12 23:48:49,641 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 83
+Init2
+2023-03-12 23:50:30,029 - DEBUG: File main.py, in main.<module>             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\main.py', line 165
+Application Start
+2023-03-12 23:50:37,116 - DEBUG: File Logic_Construct.py, in Logic_Construct._Clear             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Construct.py', line 77
+run
+2023-03-12 23:50:55,995 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 12
+main
+2023-03-12 23:50:55,997 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 13
+box1
+2023-03-12 23:50:55,998 - DEBUG: File Sym_DocUpdateData.py, in Sym_DocUpdateData.__init__             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_DocUpdateData.py', line 14
+{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '2', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '3', 'theYp': '4', 'theZp': '3'}}, 'l': '8', 'h': '9', 'w': '8'}}
+2023-03-12 23:50:56,000 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 71
+NewShape:box1
+2023-03-12 23:50:56,003 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 77
+name
+2023-03-12 23:50:56,004 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 79
+Init1
+2023-03-12 23:50:56,008 - DEBUG: File Logic_Application.py, in Logic_Application.NewShape             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 83
+Init2
+2023-03-12 23:50:56,011 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+transform
+2023-03-12 23:50:56,012 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+angle
+2023-03-12 23:50:56,014 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+rotateAxis
+2023-03-12 23:50:56,015 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+theXp
+2023-03-12 23:50:56,019 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+theYp
+2023-03-12 23:50:56,021 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+theZp
+2023-03-12 23:50:56,024 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+position
+2023-03-12 23:50:56,028 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+theXp
+2023-03-12 23:50:56,029 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+theYp
+2023-03-12 23:50:56,031 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+theZp
+2023-03-12 23:50:56,033 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+l
+2023-03-12 23:50:56,035 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+h
+2023-03-12 23:50:56,037 - DEBUG: File Logic_Application.py, in Logic_Application._initValue             
+	File 'D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py', line 92
+w

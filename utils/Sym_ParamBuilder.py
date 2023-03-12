@@ -23,7 +23,7 @@ class Sym_NewBuilder(object):
         self.type = aDriver.Type
         self.parent = parent
         self.TFunctionID = aDriver.ID
-        self.params = self.GetParamDefination(aDriver)
+        self.params:dict = self.GetParamDefination(aDriver)
 
     @staticmethod
     def GetParamDefination(aDriver:Sym_Driver):

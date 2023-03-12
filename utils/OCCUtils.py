@@ -1,3 +1,7 @@
+# logger 
+from utils.logger import Logger
+
+# standard
 from OCC.Core.Standard import *
 from OCC.Core.TCollection import TCollection_ExtendedString
 # geom struct
@@ -118,16 +122,18 @@ class myTFunction_DriverTable(Standard_Transient, Singleton):
         if self.HasDriver(guid):
             ShallowCopy(driver, self._myDrivers.get(guid))
             return True
-        print("not found, ", guid)
+        Logger().debug("not found, ", guid)
         return False
 
     def __str__(self):
+        str_data = str()
         for guid, driver in self._myDrivers.items():
-            print(guid.ShallowDumpToString(), end='\t')
+            str_data += guid.ShallowDumpToString() + '\t'
             es = TCollection_ExtendedString()
             if tdf_ProgIDFromGUID(guid, es):
-                print(es, end="")
-            print()
+                str_data += es
+            str_data += '\n'
+        return str_data
 
     def RemoveDriver(self, guid:Standard_GUID):
         self._myDrivers.pop(guid)

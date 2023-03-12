@@ -35,7 +35,6 @@ from widgets.Logic_Application import Logic_Application
 from utils.logger import Logger
 from utils.Driver.Sym_ShapeDriver import Sym_BoxDriver
 from utils.Sym_ParamBuilder import Sym_NewBuilder
-log = Logger('info')
 
 class MainWindow(QMainWindow):
     sig_Construct = pyqtSignal(Sym_NewBuilder)
@@ -160,10 +159,10 @@ class MainWindow(QMainWindow):
 if __name__ == "__main__":
     import sys
     import logging 
-    log = Logger()
     import time
 
-
+    log = Logger()
+    log.debug("Application Start")
     app = QApplication(sys.argv)
     myWin = MainWindow()
     myWin.show()

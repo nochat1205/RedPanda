@@ -76,7 +76,6 @@ class Sym_Driver(object):
 
         def _InitFunction(theLabel:TDF_Label):
             aLogBook = TFunction_Logbook.Set(theLabel)
-            print(type(theLabel), type(self.ID))
             aFunction = TFunction_Function.Set(theLabel, self.ID)
 
         if IsInit(L): 
@@ -106,7 +105,6 @@ class Sym_Driver(object):
         atype = self.Attributes['value'].Type
         value = atype()
         if theLabel.FindAttribute(atype.GetID(), value):
-            print("::", self.Type, value)
             return value.Get()
 
         return value.Get()
@@ -305,7 +303,6 @@ class TOcafFunction_CutDriver(TFunction_Driver):
         #  int a = Label().NbChildren();
         aEntry = TCollection_AsciiString()
         TDF_Tool_Entry(self.Label(), aEntry)
-        print("Entry: ", aEntry.ToCString())
         
         aLabel = self.Label()
         aLabel.FindChild(1).FindAttribute(TDF_Reference.GetID(), originalRef)

@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import QVBoxLayout
 
 from utils.Sym_ParamBuilder import Sym_NewBuilder
 from utils.Driver.Sym_Driver import Param
+from utils.logger import Logger
 
 class Logic_Construct(QtWidgets.QTreeWidget):
     def __init__(self, parent=None):
@@ -72,6 +73,7 @@ class Logic_Construct(QtWidgets.QTreeWidget):
 
     def _Clear(self):
         for root in self.treeRoots.values():
-            self.tree.removeChild(root)
+            self.tree.removeItemWidget(root)
+        Logger().debug("run")
         self.treeRoots.clear()
         self.treeItems.clear()

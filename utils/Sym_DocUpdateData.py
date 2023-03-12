@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QTreeWidgetItem
 
 from widgets.Logic_Construct import Logic_Construct
+from utils.logger import Logger
 
 class Sym_NewShapeData(object):
     def __init__(self, theInput:Logic_Construct):
@@ -8,7 +9,9 @@ class Sym_NewShapeData(object):
         self.dict_params:dict = self.GetParams(theInput.treeRoots["Shape"])
         self.ParentPath = theInput.treeRoots['Parent'].text(1)
         self.name = theInput.treeRoots["Name"].text(1)
-        print(self.dict_params)
+        Logger().debug(self.ParentPath)
+        Logger().debug(self.name)
+        Logger().debug(self.dict_params)
 
     @staticmethod
     def GetParams(item: QTreeWidgetItem):

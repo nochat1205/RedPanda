@@ -97,14 +97,12 @@ def read_step_file_with_names_colors(doc:TDocStd_Document):
     l_materials = XCAFDoc_DocumentTool_MaterialTool(doc.Main())
 
     DumpToString = shape_tool.DumpToString()
-    # print(DumpToString)
     # num = 0
 
     stack_location = []
 
     def _get_sub_list_shape(label):
         name = label.GetLabelName()
-        # print("read {}".format(name))
         shapeSequence = TDF_LabelSequence()
         componentSequence = TDF_LabelSequence()
 

@@ -1,7 +1,9 @@
-
 from utils.OCCUtils import (
     TDF_Data,
     TDF_Label,
+    gp_Trsf,
+    TopLoc_Location,
+    gp_Pnt
 )
 from OCC.Core.TDataStd import (
     TDataStd_Integer
@@ -13,8 +15,14 @@ from utils.Sym_ParamBuilder import (
     Sym_NewBuilder
 )
 from utils.Sym_Application import Sym_Application
+from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
 
-app = Sym_Application()
+def Trsf()->    TopLoc_Location:
+    tr = gp_Trsf()
+    tr.SetTranslation(gp_Pnt(1, 0, 0), gp_Pnt(0, 0, 1))
+    loc = TopLoc_Location(tr)
+    print(loc.DumpJsonToString())
+    return loc
 
-dict = Sym_NewBuilder(Sym_BoxDriver()).params
-print(dict)
+loc = Trsf()
+print(loc.DumpJsonToString())

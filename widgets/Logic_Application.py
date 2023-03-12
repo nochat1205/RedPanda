@@ -64,18 +64,24 @@ class Logic_Application(QObject):
 
     @pyqtSlot(Sym_NewShapeData)
     def NewShape(self, data:Sym_NewShapeData):
-        Logger().debug(data)
         theGuid = data.driverID
         name = data.name
         theParam = data.dict_params
+
+        Logger().debug('NewShape:'+name)
 
         self._main_doc.NewCommand()
         aLabel = TDF_TagSource.NewChild(self._main_doc.Main())
         TDataStd_Name.Set(aLabel, FromText(TCollection_ExtendedString, name))
 
+        Logger().debug("name")
         aDriver = GetDriver(theGuid)
-        aDriver.Init(aLabel)
+        Logger().debug("Init1")
         log = TFunction_Logbook()
+
+        aDriver.Init(aLabel)
+        Logger().debug("Init2")
+
         def _initValue(aLabel:TDF_Label, aDriver, aParams):
             aDriver:Sym_Driver
             if len(aDriver.Arguments) == 0:
@@ -86,25 +92,28 @@ class Logic_Application(QObject):
                     _initValue(aLabel.FindChild(aDriver.Arguments[name].Tag),
                                GetDriver(aDriver.Arguments[name].DriverID), 
                                value)
+
+            Logger().debug("1:"+aDriver.Type)
             aDriver.Execute(aLabel, log)
+            Logger().debug("2:"+aDriver.Type)
             return
 
         _initValue(aLabel, aDriver, theParam['Shape'])
-        
+        Logger().debug("Init3")
+
         anAisPresentation = TPrsStd_AISPresentation.Set(aLabel, TNaming_NamedShape.GetID())
         anAisPresentation.Display(True)
         NS = TNaming_NamedShape()
-        shape = aLabel.FindAttribute(TNaming_NamedShape.GetID(), NS)
+        flag = aLabel.FindAttribute(TNaming_NamedShape.GetID(), NS)
+        Logger().debug("Construct:"+ str(flag) )
 
         self._myContext.Display (AIS_Shape(NS.Get()), False)
-        self._myView.FitAll()
-        # self._myView.Redraw()
-
+        Logger().debug("run")
         # TODO:
         self._myContext.UpdateCurrentViewer()
 
         self._main_doc.CommitCommand()
-        Logger().debug("Created a {} with name: {}".format(aDriver.type, theParam))
+
         self.sig_DocUpdate.emit()
 
     @pyqtSlot(TDF_Label, dict)
