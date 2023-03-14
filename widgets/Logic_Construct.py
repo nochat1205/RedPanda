@@ -34,46 +34,59 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         self.driverId = data.TFunctionID
 
         self._Clear()
+        Logger().debug(str(data.params))
         self.SetTree(data.params)
+        Logger().debug("debug")
 
     def _setTreeItem(self, theName, theParams:dict, father=None, readOnly=False):
         item = QtWidgets.QTreeWidgetItem(father)
         item.setText(0, theName)
-
-        self.treeRoots[theName] = item
-
+        Logger().debug(theName)
         if "value" in theParams:
             item.setText(1, theParams["value"].Default)
             # item.setText(2, str(theParams['value'].Type))
 
         self.tree.openPersistentEditor(item, 1)
-        self.treeItems['name'] = item
-        father = item
+        self.treeItems[theName] = item
 
+        father = item
         if 'children' in theParams:
             for name, param in theParams["children"].items():
                 self._setTreeItem(name, param, father)
+        return father
+
+    def _setRootItem(self, name:str, param:Param, father):
+        Logger().debug("debug")
+        item = QtWidgets.QTreeWidgetItem(father)
+        Logger().debug("debug")
+        item.setText(0, name)
+        Logger().debug("debug")
+        item.setText(1, param.Default)
+        Logger().debug("debug")
+
+        self.tree.openPersistentEditor(item, 1)
+        Logger().debug("debug")
+        self.treeRoots[name] = item
+
 
     def SetTree(self, theParams:dict):
         father = self.tree
-        for name, param in theParams.items():
-            if isinstance(param, Param):
-                item = QtWidgets.QTreeWidgetItem(father)
-                item.setText(0, name)
-                item.setText(1, param.Default)
-    
-                self.tree.openPersistentEditor(item, 1)
-                self.treeRoots[name] = item
+        Logger().debug("debug")
+        self._setRootItem('Name', theParams['Name'], father)
+        Logger().debug("debug")
+        self._setRootItem('Parent', theParams['Parent'], father)
+        Logger().debug("debug")
+        if 'Shape' in theParams:
+            Logger().debug("run")
+            item = self._setTreeItem('Shape', theParams["Shape"], self.tree)
+            self.treeRoots['Shape'] = item
 
-                self.treeRoots['name'] = item
-            elif name == "Shape":
-                self._setTreeItem('Shape', theParams["Shape"], self.tree)
-    
         self.tree.expandAll()
 
     def _Clear(self):
-        for root in self.treeRoots.values():
-            self.tree.removeItemWidget(root)
-        Logger().debug("run")
+        root = self.tree.invisibleRootItem()
+        for item in self.treeRoots.values():
+            (item.parent() or root).removeChild(item)
+        Logger().debug("Len:"+str())
         self.treeRoots.clear()
         self.treeItems.clear()

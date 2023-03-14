@@ -1,0 +1,26 @@
+
+2023-03-15 00:00:46,093 - WARNING: Test
+
+2023-03-15 00:24:19,480 - WARNING: Test
+
+2023-03-15 00:24:19,765 - WARNING: Entry:0:1:1:1:2(<class 'OCC.Core.TNaming.TNaming_NamedShape'>) get value None
+
+2023-03-15 00:24:19,767 - WARNING: Entry:0:1:1:1:2(Point) get Value None
+
+2023-03-15 00:24:19,773 - WARNING: Entry:0:1:1:1:3(<class 'OCC.Core.TNaming.TNaming_NamedShape'>) get value None
+
+2023-03-15 00:24:19,776 - WARNING: Entry:0:1:1:1:3(Point) get Value None
+
+2023-03-15 01:07:56,166 - WARNING: Test
+
+2023-03-15 01:08:45,343 - WARNING: Test
+
+2023-03-15 01:08:53,342 - WARNING: Test
+
+2023-03-15 01:09:14,038 - WARNING: Test
+
+2023-03-15 01:10:19,791 - WARNING: Test
+
+2023-03-15 01:27:29,225 - WARNING: Test
+
+2023-03-15 01:27:35,646 - WARNING: Test

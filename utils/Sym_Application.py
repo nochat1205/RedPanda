@@ -4,6 +4,7 @@ from OCC.Core.TDocStd import TDocStd_Application
 from utils.OCCUtils import *
 from utils.Driver.Sym_Driver import (
     Sym_Driver,
+    Sym_ShapeRefDriver
 )
 from utils.Driver.Sym_DataDriver import (
     Sym_RealDriver
@@ -14,6 +15,9 @@ from utils.Driver.Sym_GPDriver import (
 from utils.Driver.Sym_ShapeDriver import (
     Sym_TransformDriver,
     Sym_BoxDriver
+)
+from utils.Driver.Sym_AlgoDriver import (
+    Sym_CutDriver
 )
 
 class Sym_Application(TDocStd_Application):
@@ -28,3 +32,10 @@ class Sym_Application(TDocStd_Application):
                                               Sym_TransformDriver())
         TFunction_DriverTable.Get().AddDriver(Sym_BoxDriver.ID,
                                               Sym_BoxDriver())
+    
+        TFunction_DriverTable.Get().AddDriver(Sym_ShapeRefDriver.ID,
+                                              Sym_ShapeRefDriver())
+        TFunction_DriverTable.Get().AddDriver(Sym_CutDriver.ID,
+                                              Sym_CutDriver())
+
+

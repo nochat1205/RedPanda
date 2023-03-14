@@ -1,0 +1,371 @@
+2023-03-14 21:36:12,221 - INFO: -- NewConmand --
+2023-03-14 21:36:12,223 - INFO: -- Add New Shape --
+2023-03-14 21:36:12,225 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 21:36:12,226 - INFO: Name:debug
+2023-03-14 21:36:12,228 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '5', 'h': '6', 'w': '0.8'}}
+2023-03-14 21:36:12,232 - INFO: Entry:0:1:1
+2023-03-14 21:36:12,298 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:12,301 - INFO: stored value is 0.0
+2023-03-14 21:36:12,307 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:12,309 - INFO: stored value is 0.0
+2023-03-14 21:36:12,314 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:12,316 - INFO: stored value is 0.0
+2023-03-14 21:36:12,320 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:12,322 - INFO: stored value is 0.0
+2023-03-14 21:36:12,324 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 21:36:56,451 - INFO: -- NewConmand --
+2023-03-14 21:36:56,453 - INFO: -- Add New Shape --
+2023-03-14 21:36:56,455 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 21:36:56,457 - INFO: Name:debug
+2023-03-14 21:36:56,459 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '7', 'h': '8', 'w': '6'}}
+2023-03-14 21:36:56,462 - INFO: Entry:0:1:1
+2023-03-14 21:36:56,529 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:56,532 - INFO: stored value is 0.0
+2023-03-14 21:36:56,538 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:56,540 - INFO: stored value is 0.0
+2023-03-14 21:36:56,545 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:56,547 - INFO: stored value is 0.0
+2023-03-14 21:36:56,551 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:36:56,553 - INFO: stored value is 0.0
+2023-03-14 21:36:56,555 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 21:45:39,506 - INFO: -- NewConmand --
+2023-03-14 21:45:39,525 - INFO: -- Add New Shape --
+2023-03-14 21:45:39,530 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 21:45:39,534 - INFO: Name:debug
+2023-03-14 21:45:39,538 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '5', 'h': '6', 'w': '8'}}
+2023-03-14 21:45:39,548 - INFO: Entry:0:1:1
+2023-03-14 21:47:50,129 - INFO: -- NewConmand --
+2023-03-14 21:47:50,146 - INFO: -- Add New Shape --
+2023-03-14 21:47:50,148 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 21:47:50,150 - INFO: Name:debug
+2023-03-14 21:47:50,153 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '5', 'w': '6'}}
+2023-03-14 21:47:50,162 - INFO: Entry:0:1:1
+2023-03-14 21:47:50,237 - INFO: Entry<class 'TCollection_AsciiString'> init transform
+2023-03-14 21:47:50,242 - INFO: Entry<class 'TCollection_AsciiString'> init angle
+2023-03-14 21:47:50,246 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:47:50,249 - INFO: stored value is 0.0
+2023-03-14 21:47:50,251 - INFO: Entry<class 'TCollection_AsciiString'> init rotateAxis
+2023-03-14 21:47:50,256 - INFO: Entry<class 'TCollection_AsciiString'> init theXp
+2023-03-14 21:47:50,261 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:47:50,263 - INFO: stored value is 0.0
+2023-03-14 21:47:50,265 - INFO: Entry<class 'TCollection_AsciiString'> init theYp
+2023-03-14 21:47:50,269 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:47:50,272 - INFO: stored value is 0.0
+2023-03-14 21:47:50,274 - INFO: Entry<class 'TCollection_AsciiString'> init theZp
+2023-03-14 21:47:50,278 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 21:47:50,281 - INFO: stored value is 0.0
+2023-03-14 21:47:50,283 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 22:40:40,733 - INFO: key: code 16777250 not mapped to any function
+2023-03-14 23:02:22,330 - INFO: -- NewConmand --
+2023-03-14 23:02:22,364 - INFO: -- Add New Shape --
+2023-03-14 23:02:22,368 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:02:22,371 - INFO: Name:debug
+2023-03-14 23:02:22,373 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '54', 'h': '45', 'w': '43'}}
+2023-03-14 23:02:22,381 - INFO: Entry:0:1:1
+2023-03-14 23:02:22,466 - INFO: Entry<class 'TCollection_AsciiString'> init transform
+2023-03-14 23:02:22,472 - INFO: Entry<class 'TCollection_AsciiString'> init angle
+2023-03-14 23:02:22,476 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:22,479 - INFO: stored value is 0.0
+2023-03-14 23:02:22,481 - INFO: Entry<class 'TCollection_AsciiString'> init rotateAxis
+2023-03-14 23:02:22,487 - INFO: Entry<class 'TCollection_AsciiString'> init theXp
+2023-03-14 23:02:22,493 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:22,495 - INFO: stored value is 0.0
+2023-03-14 23:02:22,498 - INFO: Entry<class 'TCollection_AsciiString'> init theYp
+2023-03-14 23:02:22,568 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:22,570 - INFO: stored value is 0.0
+2023-03-14 23:02:22,573 - INFO: Entry<class 'TCollection_AsciiString'> init theZp
+2023-03-14 23:02:22,579 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:22,581 - INFO: stored value is 0.0
+2023-03-14 23:02:22,584 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 23:02:22,593 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:22,601 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:22,610 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:22,626 - INFO: Entry<class 'TCollection_AsciiString'> init position
+2023-03-14 23:02:22,631 - INFO: Entry<class 'TCollection_AsciiString'> init theXp
+2023-03-14 23:02:22,635 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:22,638 - INFO: stored value is 0.0
+2023-03-14 23:02:22,642 - INFO: Entry<class 'TCollection_AsciiString'> init theYp
+2023-03-14 23:02:22,705 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:22,708 - INFO: stored value is 0.0
+2023-03-14 23:02:22,711 - INFO: Entry<class 'TCollection_AsciiString'> init theZp
+2023-03-14 23:02:22,717 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:22,721 - INFO: stored value is 0.0
+2023-03-14 23:02:22,725 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 23:02:22,737 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:22,746 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:22,772 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:57,684 - INFO: -- NewConmand --
+2023-03-14 23:02:57,702 - INFO: -- Add New Shape --
+2023-03-14 23:02:57,705 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:02:57,708 - INFO: Name:debug
+2023-03-14 23:02:57,710 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '5', 'w': '5'}}
+2023-03-14 23:02:57,715 - INFO: Entry:0:1:1
+2023-03-14 23:02:57,811 - INFO: Entry<class 'TCollection_AsciiString'> init transform
+2023-03-14 23:02:57,816 - INFO: Entry<class 'TCollection_AsciiString'> init angle
+2023-03-14 23:02:57,822 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:57,825 - INFO: stored value is 0.0
+2023-03-14 23:02:57,828 - INFO: Entry<class 'TCollection_AsciiString'> init rotateAxis
+2023-03-14 23:02:57,833 - INFO: Entry<class 'TCollection_AsciiString'> init theXp
+2023-03-14 23:02:57,839 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:57,842 - INFO: stored value is 0.0
+2023-03-14 23:02:57,844 - INFO: Entry<class 'TCollection_AsciiString'> init theYp
+2023-03-14 23:02:57,849 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:57,851 - INFO: stored value is 0.0
+2023-03-14 23:02:57,854 - INFO: Entry<class 'TCollection_AsciiString'> init theZp
+2023-03-14 23:02:57,860 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:57,862 - INFO: stored value is 0.0
+2023-03-14 23:02:57,864 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 23:02:57,872 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:57,880 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:57,888 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:57,894 - INFO: Entry<class 'TCollection_AsciiString'> init position
+2023-03-14 23:02:57,899 - INFO: Entry<class 'TCollection_AsciiString'> init theXp
+2023-03-14 23:02:57,903 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:57,907 - INFO: stored value is 0.0
+2023-03-14 23:02:57,909 - INFO: Entry<class 'TCollection_AsciiString'> init theYp
+2023-03-14 23:02:57,914 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:57,917 - INFO: stored value is 0.0
+2023-03-14 23:02:57,920 - INFO: Entry<class 'TCollection_AsciiString'> init theZp
+2023-03-14 23:02:57,925 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:02:57,927 - INFO: stored value is 0.0
+2023-03-14 23:02:57,930 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 23:02:57,937 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:57,945 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:57,953 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:02:57,959 - INFO: Entry:<class 'TCollection_AsciiString'> type:Transform Execute
+2023-03-14 23:02:57,967 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,514 - INFO: -- NewConmand --
+2023-03-14 23:15:36,548 - INFO: -- Add New Shape --
+2023-03-14 23:15:36,551 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:15:36,554 - INFO: Name:debug
+2023-03-14 23:15:36,558 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '6', 'h': '7', 'w': '6'}}
+2023-03-14 23:15:36,567 - INFO: Entry:0:1:1
+2023-03-14 23:15:36,656 - INFO: Entry<class 'TCollection_AsciiString'> init transform
+2023-03-14 23:15:36,661 - INFO: Entry<class 'TCollection_AsciiString'> init angle
+2023-03-14 23:15:36,666 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:15:36,670 - INFO: stored value is 0.0
+2023-03-14 23:15:36,673 - INFO: Entry<class 'TCollection_AsciiString'> init rotateAxis
+2023-03-14 23:15:36,678 - INFO: Entry<class 'TCollection_AsciiString'> init theXp
+2023-03-14 23:15:36,684 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:15:36,687 - INFO: stored value is 0.0
+2023-03-14 23:15:36,690 - INFO: Entry<class 'TCollection_AsciiString'> init theYp
+2023-03-14 23:15:36,695 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:15:36,697 - INFO: stored value is 0.0
+2023-03-14 23:15:36,700 - INFO: Entry<class 'TCollection_AsciiString'> init theZp
+2023-03-14 23:15:36,705 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:15:36,708 - INFO: stored value is 0.0
+2023-03-14 23:15:36,710 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 23:15:36,718 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,725 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,732 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,753 - INFO: Entry<class 'TCollection_AsciiString'> init position
+2023-03-14 23:15:36,759 - INFO: Entry<class 'TCollection_AsciiString'> init theXp
+2023-03-14 23:15:36,764 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:15:36,766 - INFO: stored value is 0.0
+2023-03-14 23:15:36,769 - INFO: Entry<class 'TCollection_AsciiString'> init theYp
+2023-03-14 23:15:36,775 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:15:36,778 - INFO: stored value is 0.0
+2023-03-14 23:15:36,780 - INFO: Entry<class 'TCollection_AsciiString'> init theZp
+2023-03-14 23:15:36,784 - INFO: Label:<class 'TCollection_AsciiString'>(real) set value = 0.0
+2023-03-14 23:15:36,787 - INFO: stored value is 0.0
+2023-03-14 23:15:36,791 - INFO: Entry:<class 'TCollection_AsciiString'> type:Point Execute
+2023-03-14 23:15:36,798 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,808 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,816 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,823 - INFO: Entry:<class 'TCollection_AsciiString'> type:Transform Execute
+2023-03-14 23:15:36,832 - INFO: Entry:<class 'TCollection_AsciiString'> get 0.0
+2023-03-14 23:15:36,842 - INFO: Entry:<class 'TCollection_AsciiString'> get None
+2023-03-14 23:15:36,849 - INFO: Entry:<class 'TCollection_AsciiString'> get None
+2023-03-14 23:40:45,497 - INFO: -- NewConmand --
+2023-03-14 23:40:45,499 - INFO: -- Add New Shape --
+2023-03-14 23:40:45,501 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:40:45,504 - INFO: Name:debug
+2023-03-14 23:40:45,506 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '7', 'h': '0.6', 'w': '6'}}
+2023-03-14 23:40:45,515 - INFO: Entry:0:1:1
+2023-03-14 23:40:45,587 - INFO: Entry0:1:1 init transform
+2023-03-14 23:40:45,591 - INFO: Entry0:1:1 init angle
+2023-03-14 23:40:45,595 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-14 23:40:45,597 - INFO: stored value is 0.0
+2023-03-14 23:40:45,599 - INFO: Entry0:1:1 init rotateAxis
+2023-03-14 23:40:45,603 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:40:45,608 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-14 23:40:45,610 - INFO: stored value is 0.0
+2023-03-14 23:40:45,612 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:40:45,616 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-14 23:40:45,619 - INFO: stored value is 0.0
+2023-03-14 23:40:45,621 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:40:45,626 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-14 23:40:45,628 - INFO: stored value is 0.0
+2023-03-14 23:40:45,631 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-14 23:40:45,638 - INFO: Entry:0:1:1:1:2:1 get 0.0
+2023-03-14 23:40:45,645 - INFO: Entry:0:1:1:1:2:2 get 0.0
+2023-03-14 23:40:45,653 - INFO: Entry:0:1:1:1:2:3 get 0.0
+2023-03-14 23:40:45,672 - INFO: Entry0:1:1 init position
+2023-03-14 23:40:45,676 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:40:45,680 - INFO: Label:0:1:1:1:3:1(real) set value = 0.0
+2023-03-14 23:40:45,682 - INFO: stored value is 0.0
+2023-03-14 23:40:45,684 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:40:45,688 - INFO: Label:0:1:1:1:3:2(real) set value = 0.0
+2023-03-14 23:40:45,690 - INFO: stored value is 0.0
+2023-03-14 23:40:45,692 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:40:45,698 - INFO: Label:0:1:1:1:3:3(real) set value = 0.0
+2023-03-14 23:40:45,700 - INFO: stored value is 0.0
+2023-03-14 23:40:45,702 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-14 23:40:45,708 - INFO: Entry:0:1:1:1:3:1 get 0.0
+2023-03-14 23:40:45,716 - INFO: Entry:0:1:1:1:3:2 get 0.0
+2023-03-14 23:40:45,722 - INFO: Entry:0:1:1:1:3:3 get 0.0
+2023-03-14 23:40:45,726 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-14 23:40:45,733 - INFO: Entry:0:1:1:1:1 get 0.0
+2023-03-14 23:40:45,739 - INFO: Entry:0:1:1:1:2 get None
+2023-03-14 23:40:45,745 - INFO: Entry:0:1:1:1:3 get None
+2023-03-14 23:41:51,513 - INFO: -- NewConmand --
+2023-03-14 23:41:51,515 - INFO: -- Add New Shape --
+2023-03-14 23:41:51,516 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:41:51,518 - INFO: Name:debug
+2023-03-14 23:41:51,520 - INFO: Param:{'Shape': {'transform': {'angle': '4', 'rotateAxis': {'theXp': '6', 'theYp': '7', 'theZp': '0.6'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '2', 'h': '3', 'w': '2'}}
+2023-03-14 23:41:51,524 - INFO: Entry:0:1:1
+2023-03-14 23:41:51,581 - INFO: Entry0:1:1 init transform
+2023-03-14 23:41:51,585 - INFO: Entry0:1:1 init angle
+2023-03-14 23:41:51,588 - INFO: Label:0:1:1:1:1(real) set value = 4
+2023-03-14 23:41:51,590 - INFO: stored value is 4.0
+2023-03-14 23:41:51,592 - INFO: Entry0:1:1 init rotateAxis
+2023-03-14 23:41:51,597 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:41:51,601 - INFO: Label:0:1:1:1:2:1(real) set value = 6
+2023-03-14 23:41:51,602 - INFO: stored value is 6.0
+2023-03-14 23:41:51,604 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:41:51,608 - INFO: Label:0:1:1:1:2:2(real) set value = 7
+2023-03-14 23:41:51,610 - INFO: stored value is 7.0
+2023-03-14 23:41:51,612 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:41:51,615 - INFO: Label:0:1:1:1:2:3(real) set value = 0.6
+2023-03-14 23:41:51,617 - INFO: stored value is 0.6
+2023-03-14 23:41:51,619 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-14 23:41:51,626 - INFO: Entry:0:1:1:1:2:1 get 6.0
+2023-03-14 23:41:51,631 - INFO: Entry:0:1:1:1:2:2 get 7.0
+2023-03-14 23:41:51,637 - INFO: Entry:0:1:1:1:2:3 get 0.6
+2023-03-14 23:41:51,641 - INFO: Entry0:1:1 init position
+2023-03-14 23:41:51,644 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:41:51,648 - INFO: Label:0:1:1:1:3:1(real) set value = 1
+2023-03-14 23:41:51,650 - INFO: stored value is 1.0
+2023-03-14 23:41:51,652 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:41:51,655 - INFO: Label:0:1:1:1:3:2(real) set value = 1
+2023-03-14 23:41:51,657 - INFO: stored value is 1.0
+2023-03-14 23:41:51,659 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:41:51,663 - INFO: Label:0:1:1:1:3:3(real) set value = 1
+2023-03-14 23:41:51,664 - INFO: stored value is 1.0
+2023-03-14 23:41:51,666 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-14 23:41:51,672 - INFO: Entry:0:1:1:1:3:1 get 1.0
+2023-03-14 23:41:51,678 - INFO: Entry:0:1:1:1:3:2 get 1.0
+2023-03-14 23:41:51,683 - INFO: Entry:0:1:1:1:3:3 get 1.0
+2023-03-14 23:41:51,687 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-14 23:41:51,692 - INFO: Entry:0:1:1:1:1 get 4.0
+2023-03-14 23:41:51,698 - INFO: Entry:0:1:1:1:2 get None
+2023-03-14 23:41:51,703 - INFO: Entry:0:1:1:1:3 get None
+2023-03-14 23:48:29,680 - INFO: -- NewConmand --
+2023-03-14 23:48:29,682 - INFO: -- Add New Shape --
+2023-03-14 23:48:29,684 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:48:29,685 - INFO: Name:debug
+2023-03-14 23:48:29,687 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '5', 'w': '6'}}
+2023-03-14 23:48:29,691 - INFO: Entry:0:1:1
+2023-03-14 23:48:29,746 - INFO: Entry0:1:1 init transform
+2023-03-14 23:48:29,749 - INFO: Entry0:1:1 init angle
+2023-03-14 23:48:29,753 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-14 23:48:29,755 - INFO: stored value is 0.0
+2023-03-14 23:48:29,757 - INFO: Entry0:1:1 init rotateAxis
+2023-03-14 23:48:29,760 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:48:29,765 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-14 23:48:29,768 - INFO: stored value is 0.0
+2023-03-14 23:48:29,771 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:48:29,777 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-14 23:48:29,779 - INFO: stored value is 0.0
+2023-03-14 23:48:29,781 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:48:29,785 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-14 23:48:29,786 - INFO: stored value is 0.0
+2023-03-14 23:48:29,788 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-14 23:48:29,794 - INFO: Entry:0:1:1:1:2:1 get 0.0
+2023-03-14 23:48:29,799 - INFO: Entry:0:1:1:1:2:2 get 0.0
+2023-03-14 23:48:29,805 - INFO: Entry:0:1:1:1:2:3 get 0.0
+2023-03-14 23:48:29,809 - INFO: Point Make Success
+2023-03-14 23:48:29,811 - INFO: Entry0:1:1 init position
+2023-03-14 23:48:29,815 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:48:29,818 - INFO: Label:0:1:1:1:3:1(real) set value = 0.0
+2023-03-14 23:48:29,820 - INFO: stored value is 0.0
+2023-03-14 23:48:29,822 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:48:29,825 - INFO: Label:0:1:1:1:3:2(real) set value = 0.0
+2023-03-14 23:48:29,827 - INFO: stored value is 0.0
+2023-03-14 23:48:29,829 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:48:29,833 - INFO: Label:0:1:1:1:3:3(real) set value = 0.0
+2023-03-14 23:48:29,835 - INFO: stored value is 0.0
+2023-03-14 23:48:29,836 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-14 23:48:29,842 - INFO: Entry:0:1:1:1:3:1 get 0.0
+2023-03-14 23:48:29,847 - INFO: Entry:0:1:1:1:3:2 get 0.0
+2023-03-14 23:48:29,853 - INFO: Entry:0:1:1:1:3:3 get 0.0
+2023-03-14 23:48:29,857 - INFO: Point Make Success
+2023-03-14 23:48:29,859 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-14 23:48:29,865 - INFO: Entry:0:1:1:1:1 get 0.0
+2023-03-14 23:48:29,870 - INFO: Entry:0:1:1:1:2 get None
+2023-03-14 23:48:29,876 - INFO: Entry:0:1:1:1:3 get None
+2023-03-14 23:50:17,983 - INFO: -- NewConmand --
+2023-03-14 23:50:17,985 - INFO: -- Add New Shape --
+2023-03-14 23:50:17,987 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:50:17,989 - INFO: Name:debug
+2023-03-14 23:50:17,991 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '6', 'h': '5', 'w': '6'}}
+2023-03-14 23:50:17,996 - INFO: Entry:0:1:1
+2023-03-14 23:50:18,069 - INFO: Entry0:1:1 init transform
+2023-03-14 23:50:18,074 - INFO: Entry0:1:1 init angle
+2023-03-14 23:50:18,077 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-14 23:50:18,079 - INFO: stored value is 0.0
+2023-03-14 23:50:18,081 - INFO: Entry0:1:1 init rotateAxis
+2023-03-14 23:50:18,085 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:50:18,089 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-14 23:50:18,091 - INFO: stored value is 0.0
+2023-03-14 23:50:18,092 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:50:18,096 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-14 23:50:18,098 - INFO: stored value is 0.0
+2023-03-14 23:50:18,101 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:50:18,104 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-14 23:50:18,106 - INFO: stored value is 0.0
+2023-03-14 23:50:18,108 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-14 23:50:18,114 - INFO: Entry:0:1:1:1:2:1 get 0.0
+2023-03-14 23:50:18,120 - INFO: Entry:0:1:1:1:2:2 get 0.0
+2023-03-14 23:50:18,125 - INFO: Entry:0:1:1:1:2:3 get 0.0
+2023-03-14 23:50:18,129 - INFO: Entry:0:1:1:1:2 Make Point Success
+2023-03-14 23:50:18,131 - INFO: Entry0:1:1 init position
+2023-03-14 23:50:18,135 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:50:18,139 - INFO: Label:0:1:1:1:3:1(real) set value = 0.0
+2023-03-14 23:50:18,141 - INFO: stored value is 0.0
+2023-03-14 23:50:18,143 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:50:18,147 - INFO: Label:0:1:1:1:3:2(real) set value = 0.0
+2023-03-14 23:50:18,149 - INFO: stored value is 0.0
+2023-03-14 23:50:18,151 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:50:18,155 - INFO: Label:0:1:1:1:3:3(real) set value = 0.0
+2023-03-14 23:50:18,156 - INFO: stored value is 0.0
+2023-03-14 23:50:18,158 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-14 23:50:18,164 - INFO: Entry:0:1:1:1:3:1 get 0.0
+2023-03-14 23:50:18,170 - INFO: Entry:0:1:1:1:3:2 get 0.0
+2023-03-14 23:50:18,176 - INFO: Entry:0:1:1:1:3:3 get 0.0
+2023-03-14 23:50:18,180 - INFO: Entry:0:1:1:1:3 Make Point Success
+2023-03-14 23:50:18,182 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-14 23:50:18,187 - INFO: Entry:0:1:1:1:1 get 0.0
+2023-03-14 23:50:18,193 - INFO: Entry:0:1:1:1:2 get None
+2023-03-14 23:50:18,200 - INFO: Entry:0:1:1:1:3 get None
+2023-03-14 23:54:33,104 - INFO: -- NewConmand --
+2023-03-14 23:54:33,106 - INFO: -- Add New Shape --
+2023-03-14 23:54:33,108 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-14 23:54:33,110 - INFO: Name:debug
+2023-03-14 23:54:33,112 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '3', 'w': '2'}}
+2023-03-14 23:54:33,122 - INFO: Entry:0:1:1
+2023-03-14 23:54:33,180 - INFO: Entry0:1:1 init transform
+2023-03-14 23:54:33,185 - INFO: Entry0:1:1 init angle
+2023-03-14 23:54:33,190 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-14 23:54:33,193 - INFO: stored value is 0.0
+2023-03-14 23:54:33,195 - INFO: Entry0:1:1 init rotateAxis
+2023-03-14 23:54:33,199 - INFO: Entry0:1:1 init theXp
+2023-03-14 23:54:33,206 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-14 23:54:33,208 - INFO: stored value is 0.0
+2023-03-14 23:54:33,210 - INFO: Entry0:1:1 init theYp
+2023-03-14 23:54:33,214 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-14 23:54:33,216 - INFO: stored value is 0.0
+2023-03-14 23:54:33,217 - INFO: Entry0:1:1 init theZp
+2023-03-14 23:54:33,222 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-14 23:54:33,225 - INFO: stored value is 0.0
+2023-03-14 23:54:33,229 - INFO: Entry:0:1:1:1:2 type:Point Execute

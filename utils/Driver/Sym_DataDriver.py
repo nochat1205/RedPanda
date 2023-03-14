@@ -24,9 +24,7 @@ def GetValueWith(id:Standard_GUID, theLabel:TDF_Label)->any:
 class Sym_RealDriver(Sym_Driver): # base
     """
     func说明: 不会被继承(增加新属性), 可以使用self
-
     """
-
 
     def __init__(self) -> None:
         super().__init__()
@@ -45,15 +43,14 @@ class Sym_RealDriver(Sym_Driver): # base
     def Execute(self, theLabel:TDF_Label, log: TFunction_Logbook) -> int:
         return 0
 
-    def GetValue(self, theLabel:TDF_Label)->any:
-        atype = self.Attributes['value'].Type
-        value = atype()
-        if theLabel.FindAttribute(atype.GetID(), value):
-            return value.Get()
+    # def GetValue(self, theLabel:TDF_Label)->any:
+    #     atype = self.Attributes['value'].Type
+    #     value = atype()
+    #     if theLabel.FindAttribute(atype.GetID(), value):
+    #         return value.Get()
 
-        return super().GetValue(theLabel)
+    #     return super().GetValue(theLabel)
 
-    
     from utils.decorator import classproperty
     @classproperty
     def ID(self):

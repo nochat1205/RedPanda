@@ -3,8 +3,16 @@ from utils.OCCUtils import (
     TDF_Label,
     gp_Trsf,
     TopLoc_Location,
-    gp_Pnt
+    gp_Pnt,
+    TDataStd_Name,
+    TCollection_ExtendedString,
+    TDataStd_TreeNode,
+    TDF_Reference,
+    Sym_ShapeRef,
+    TDF_Tool,
+    TCollection_AsciiString
 )
+
 from OCC.Core.TDataStd import (
     TDataStd_Integer
 )
@@ -16,6 +24,7 @@ from utils.Sym_ParamBuilder import (
 )
 from utils.Sym_Application import Sym_Application
 from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
+from OCC.Extend.ShapeFactory import make_vertex
 
 def Trsf()->    TopLoc_Location:
     tr = gp_Trsf()
@@ -24,5 +33,71 @@ def Trsf()->    TopLoc_Location:
     print(loc.DumpJsonToString())
     return loc
 
-loc = Trsf()
-print(loc.DumpJsonToString())
+app = Sym_Application()
+
+df = TDF_Data()
+root = df.Root()
+TDataStd_Name.Set(root, TCollection_ExtendedString("Root"))
+node1 = root.FindChild(1)
+TDataStd_Name.Set(node1, TCollection_ExtendedString("Node1"))
+node2 = root.FindChild(2)
+TDataStd_Name.Set(node2, TCollection_ExtendedString("Node2"))
+Sym_ShapeRef.Set(node1, node2)
+
+node3 = root.FindChild(3)
+TDataStd_Name.Set(node3, TCollection_ExtendedString("Node3"))
+Sym_ShapeRef.Set(node2, node1)
+Sym_ShapeRef.Set(node3, node1)
+
+def GetChilde():
+    value = Sym_ShapeRef()
+    if node2.FindAttribute(Sym_ShapeRef.GetID(), value):
+        label = value.Get()
+        print("get", label.GetLabelName())
+
+    a = Sym_ShapeRef.Set(node1)
+    for i in a:
+        print("Get@:", i.GetLabelName())
+
+
+def Entry():
+    str = TCollection_AsciiString()
+    TDF_Tool.Entry(node2, str)
+
+    print(str.PrintToString())
+    label = TDF_Label()
+    TDF_Tool.Label(node2.Data(), str, label, False)
+    print(label.GetLabelName())
+
+def GetPoint():
+    from OCC.Core.TNaming import (
+        TNaming_Builder,
+        TNaming_NamedShape
+    )
+    pnt = gp_Pnt(0, 0, 1)
+    shape = make_vertex(pnt)
+    
+    builder = TNaming_Builder(root.FindChild(1))
+    builder.Generated(shape)
+
+def GetShape():
+    from utils.OCCUtils import TNaming_NamedShape
+    a = TNaming_NamedShape
+    NS = a()
+    if not root.FindChild(1).FindAttribute(NS.GetID(), NS):
+        print("not found")
+        return 1
+
+    value = NS.Get()
+    if value is None:
+        print("NS is NOne")
+        return 1
+    print(type(value))
+    return value
+
+if __name__ == "__main__":
+    GetPoint()
+    print("run")
+    value1 = GetShape()
+    value2 = GetShape()
+    assert value1.IsEqual(value2)

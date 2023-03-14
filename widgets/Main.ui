@@ -39,7 +39,7 @@
      <x>0</x>
      <y>0</y>
      <width>839</width>
-     <height>23</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="start">
@@ -71,7 +71,14 @@
      </property>
      <addaction name="actionBox"/>
     </widget>
+    <widget class="QMenu" name="menuAlgoAPI">
+     <property name="title">
+      <string>AlgoAPI</string>
+     </property>
+     <addaction name="actionCut"/>
+    </widget>
     <addaction name="menuPrimAPI"/>
+    <addaction name="menuAlgoAPI"/>
    </widget>
    <addaction name="start"/>
    <addaction name="menu"/>
@@ -146,6 +153,11 @@
   <action name="actionBox">
    <property name="text">
     <string>Box</string>
+   </property>
+  </action>
+  <action name="actionCut">
+   <property name="text">
+    <string>Cut</string>
    </property>
   </action>
  </widget>

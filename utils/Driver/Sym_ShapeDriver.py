@@ -18,7 +18,9 @@ from utils.OCCUtils import (
     BRepBuilderAPI_Transform,
     TopoDS_Shape,
     TNaming_Builder,
-    XCAFDoc_Location
+    XCAFDoc_Location,
+    TCollection_AsciiString,
+    TDF_Tool,
 
 )
 from OCC.Core.Message import Message_ProgressRange
@@ -41,10 +43,11 @@ from utils.Driver.Sym_GPDriver import (
 from utils.logger import Logger
 
 from utils.decorator import classproperty
+
 class Sym_TransformDriver(Sym_Driver):
     def __init__(self) -> None:
         super().__init__()
-        self.myAttr = Param(XCAFDoc_Location)
+        self.myAttr = Param(XCAFDoc_Location) # 存储形式
         self.Attributes['value'] = self.myAttr
         self.Arguments = {
             'angle': Argument(self.tagResource, Sym_RealDriver.ID), 
@@ -53,13 +56,12 @@ class Sym_TransformDriver(Sym_Driver):
         }
 
     def Execute(self, theLabel:TDF_Label, log:TFunction_Logbook)->int:
+        super().Execute(theLabel, log)
+
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
-            aDriver = GetDriver(argu.DriverID)
-            aLabel = theLabel.FindChild(argu.Tag)
-
-            dict_param[name] = aDriver.GetValue(aLabel)
+            dict_param[name] = argu.Value(theLabel)
 
         pnt:gp_Pnt = dict_param['rotateAxis']
         if pnt.IsEqual(gp_Pnt(), 0.0001):
@@ -80,27 +82,18 @@ class Sym_TransformDriver(Sym_Driver):
 
 
         loc = TopLoc_Location(TRSF)
-        
-        Logger().debug("Start:"+coord.DumpJsonToString())
-        Logger().debug(position.DumpJsonToString())
-        Logger().debug(dir.DumpJsonToString())
-        Logger().debug("loc:"+loc.ShallowDumpToString())
         XCAFDoc_Location.Set(theLabel, loc)
 
         return 0
 
-    def GetValue(self, theLabel:TDF_Label)->TopLoc_Location:
-        atype = self.Attributes['value'].Type
-        value = atype()
-        if theLabel.FindAttribute(atype.GetID(), value):
-            Logger().debug("XCAFL:"+value.DumpJsonToString())
-            loc:TopLoc_Location = value.Get()
-            Logger().debug("ValueLoc2:"+loc.DumpJsonToString())
-            print(id(loc), id(value.Get()))        
-            return value.Get()
-
-        Logger().debug("Return None")
-        return TopLoc_Location()
+    def GetValue(self, theLabel:TDF_Label)->gp_Trsf: # TODO: 用location 存在问题, 无法正确传出???
+        """ 从存储形式中获取实际数据
+            ref self.myAttr
+        """
+        storedValue = self.GetStoredValue(theLabel)
+        if storedValue:
+            return storedValue.Transformation()
+        return None
 
 
     @classproperty
@@ -125,47 +118,36 @@ class Sym_BoxDriver(Sym_Driver):
         }
 
     def Execute(self, theLabel:TDF_Label, log:TFunction_Logbook)->int:
+        
         dict_param = dict()
-        Logger().debug("Run")
         for name, argu in self.Arguments.items():
             argu:Argument
             aLabel = theLabel.FindChild(argu.Tag)
             aDriver:Sym_Driver = GetDriver(argu.DriverID)
-            # Logger().debug()
-            if name == 'transform':
-                Logger().debug("LocLoc3:"+aDriver.GetValue(aLabel).DumpJsonToString())
             dict_param[name] = aDriver.GetValue(aLabel)
-            Logger().debug("name:"+name+',tag:'+str(argu.Tag)+',type:'+str(type(dict_param[name]))
-                           +',ID:'+str(argu.DriverID))
 
-        loc:TopLoc_Location = dict_param['transform']
-        Logger().debug("LocLoc0:"+dict_param['transform'].DumpJsonToString())
-        Logger().debug("LocLoc:"+loc.DumpJsonToString())
-        Logger().debug(loc.Transformation().DumpJsonToString())
+        Logger().info(f"Driver:{self.Type} Execute {dict_param}")
+
+        trsf:gp_Trsf = dict_param['transform']
         dx = dict_param['l']
         dy = dict_param['h']
         dz = dict_param['w']
 
         api = BRepPrimAPI_MakeBox(dx, dy, dz)
-        Logger().debug("run")
         api.Build()
-        Logger().debug("run")
         if not api.IsDone():
-            Logger().debug("MakeBox Failed.")
-            Logger().debug(dict_param.__str__())
-            Logger().debug(str(dx)+":"+str(dy)+":"+str(dz))
+            Logger().warn("MakeBox Failed.")
+            Logger().warn(dict_param.__str__())
+            Logger().warn(str(dx)+":"+str(dy)+":"+str(dz))
             return 1
 
-        Logger().debug("run")
         shape = api.Shape()
-        Logger().debug("run")
-        trsf = loc.Transformation()
-        Logger().debug("run")
+        # trsf = loc.Transformation()
 
         api = BRepBuilderAPI_Transform(shape, trsf)
         api.Build()
         if not api.IsDone():
-            Logger().debug("Transform Failed")
+            Logger().warn("Transform Failed")
             return 1
 
         shape = api.Shape()
@@ -173,14 +155,23 @@ class Sym_BoxDriver(Sym_Driver):
         builder = TNaming_Builder(theLabel)
         builder.Generated(shape)
 
+
+        entry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, entry)
+
+        NS = TNaming_NamedShape()
+        if not theLabel.FindAttribute(NS.GetID(), NS):
+            Logger().warn(f"Entry:{entry} execute error")
+            return 1
+        if NS.Get() is None:
+            Logger().warn(f"Entry:{entry} execute error")
+            return 1
+
         return 0
-
-
 
     @classproperty
     def ID(self):
         return  Sym_BoxDriver_GUID #
-
 
     @classproperty
     def Type(self):

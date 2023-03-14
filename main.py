@@ -34,6 +34,7 @@ from widgets.Logic_DocTree import ModelTree
 from widgets.Logic_Application import Logic_Application
 from utils.logger import Logger
 from utils.Driver.Sym_ShapeDriver import Sym_BoxDriver
+from utils.Driver.Sym_AlgoDriver import Sym_CutDriver
 from utils.Sym_ParamBuilder import Sym_NewBuilder
 
 class MainWindow(QMainWindow):
@@ -68,7 +69,7 @@ class MainWindow(QMainWindow):
         self.ui.actionxml.triggered.connect(lambda:self.logic_app.NewDocument("XmlOcaf"))
         # construct menu
         self.ui.actionBox.triggered.connect(lambda:self.ShapeConstruct("Box"))
-
+        self.ui.actionCut.triggered.connect(lambda:self.ShapeConstruct("Cut"))
         # self sig
         self.sig_Construct.connect(self.logic_ConstructView.NewConstruct)
         # construct sig
@@ -83,6 +84,8 @@ class MainWindow(QMainWindow):
     def ShapeConstruct(self, type:str):
         if type == "Box":
             self.sig_Construct.emit(Sym_NewBuilder(Sym_BoxDriver()))
+        elif type == 'Cut':
+            self.sig_Construct.emit(Sym_NewBuilder(Sym_CutDriver() ) )
 
     @pyqtSlot()
     def openFileSTEP(self):

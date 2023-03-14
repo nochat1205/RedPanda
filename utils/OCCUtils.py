@@ -3,7 +3,7 @@ from utils.logger import Logger
 
 # standard
 from OCC.Core.Standard import *
-from OCC.Core.TCollection import TCollection_ExtendedString
+from OCC.Core.TCollection import *
 # geom struct
 from OCC.Core.gp import *
 from OCC.Core.Geom import *
@@ -15,8 +15,8 @@ from OCC.Core.TopoDS import *
 from OCC.Core.TopLoc import *
 
 # AIS
-from OCC.Core.AIS import AIS_InteractiveContext
-
+from OCC.Core.AIS import *
+from OCC.Core.V3d import V3d_Viewer
 # topods build
 from OCC.Core.BRepBuilderAPI import *
 from OCC.Core.BRepPrimAPI import *
@@ -60,13 +60,48 @@ from OCC.Core.TObj import *
 # my
 from utils.Sym_Singleton import Singleton
 from utils.Sym_Attribute import (
-    FindAttribute,
     Assembly,
-    ShapeRef,
+    Sym_ShapeRef,
     IDcolCurv,
     IDcolSurf,
-    IDcol
+    IDcol,
 )
+def ShallowCopy(dest, src):
+    dest.__class__ = src.__class__ # 
+    dest.__dict__ = src.__dict__
+
+    # __annotations__
+    # __doc__
+    # __module__
+
+def DictCopy(dest, src):
+    dest.__dict__ = src.__dict__ 
+
+# TNaming_NamedShape.Fun_Temp = TNaming_NamedShape.Restore
+# def Restore(shape_dst:TNaming_NamedShape, shape_src:TNaming_NamedShape):
+#     # TODO: 无奈之举
+#     shape_src = TNaming_NamedShape.DownCast(shape_src)
+#     shape = shape_src.Get()
+#     shape_dst.Fun_Temp(shape_src)
+#     TB = TNaming_Builder(shape_src.Label())
+#     TB.Generated(shape)
+
+# TNaming_NamedShape.Restore = Restore
+
+def FindAttribute(label:TDF_Label, GUID:Standard_GUID, attribute: TDF_Attribute):
+    it_attr = TDF_AttributeIterator(label)
+    Logger().debug('IDDL:'+str(GUID)+str(type(attribute)))
+    while it_attr.More():
+        if it_attr.Value().ID() == GUID:
+            if GUID == TNaming_NamedShape.GetID():
+                ShallowCopy(attribute, TNaming_NamedShape.DownCast(it_attr.Value() ) )
+            else:
+                attribute.Restore(it_attr.Value())
+            return True 
+        it_attr.Next()
+
+    attribute = None
+    return False
 
 # fix
 TDF_Label.FindAttribute = FindAttribute
@@ -74,6 +109,9 @@ TDF_Label.FindAttribute = FindAttribute
 GUIDHashUpper = 19260817
 Standard_GUID.__hash__ = lambda x: Standard_GUID.Hash(x, GUIDHashUpper)
 Standard_GUID.__str__ = Standard_GUID.ShallowDumpToString
+
+TCollection_AsciiString.__str__ = TCollection_AsciiString.PrintToString
+TCollection_AsciiString.__repr__ = TCollection_AsciiString.PrintToString
 
 LabelHashUpper = 19260817        
 TDF_Label.__hash__ = lambda self: TDF_LabelMapHasher.HashCode(self, LabelHashUpper)
@@ -83,13 +121,6 @@ def TDocStd_Application_AddDocument(self:TDocStd_Application, doc):
     super(TDocStd_Application, self).Open(doc)
 TDocStd_Application.AddDocument = TDocStd_Application_AddDocument
 
-
-def ShallowCopy(dest, src):
-    dest.__class__ = src.__class__ # 
-    dest.__dict__ = src.__dict__ 
-    # __annotations__
-    # __doc__
-    # __module__
 
 
 # Driver Table
@@ -122,7 +153,6 @@ class myTFunction_DriverTable(Standard_Transient, Singleton):
         if self.HasDriver(guid):
             ShallowCopy(driver, self._myDrivers.get(guid))
             return True
-        Logger().debug("not found, ", guid)
         return False
 
     def __str__(self):
@@ -169,6 +199,8 @@ def FromText(theType:type, text:str):
         return int(text)
     elif theType == TCollection_ExtendedString:
         return TCollection_ExtendedString(text)
+    elif theType == TCollection_AsciiString:
+        return TCollection_AsciiString(text)
     else:
         return text
 

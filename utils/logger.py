@@ -44,7 +44,7 @@ class Logger(logging.Logger):
         formatter = logging.Formatter("%(asctime)s - %(levelname)s: %(message)s")
         _formatter = logging.Formatter("\n%(asctime)s - %(levelname)s: %(message)s")
         debug_formatter = logging.Formatter("%(asctime)s - %(levelname)s: File %(filename)s, in %(module)s.%(funcName)s \
-            \n\tFile '%(pathname)s', line %(lineno)d\n%(message)s")
+            \n\tFile %(pathname)s line %(lineno)d\n%(message)s")
 
         bug_filter = logging.Filter()
         bug_filter.filter = lambda record: record.levelno == logging.ERROR  # 设置过滤等级

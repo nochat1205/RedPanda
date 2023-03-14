@@ -23,7 +23,9 @@ class Sym_NewBuilder(object):
         self.type = aDriver.Type
         self.parent = parent
         self.TFunctionID = aDriver.ID
+        Logger().debug("ID:"+str(self.TFunctionID))
         self.params:dict = self.GetParamDefination(aDriver)
+        Logger().debug("ID:"+str(self.TFunctionID))
 
     @staticmethod
     def GetParamDefination(aDriver:Sym_Driver):
@@ -35,6 +37,8 @@ class Sym_NewBuilder(object):
             dict_param = {}
             # load attri
             Attri = aDriver.Attributes
+            Logger().debug("TypeF:"+str(type(aDriver))+":"+aDriver.Type)
+            Logger().debug('Type:'+aDriver.Type+":"+str("value" in Attri))
             if "value" in Attri:
                 dict_param["value"] = Attri["value"]
 
@@ -42,6 +46,7 @@ class Sym_NewBuilder(object):
             dict_child = dict()
             for name, param in aDriver.Arguments.items():
                 param:Argument
+                Logger().debug("nameA:"+name)
                 children = GetParamWith(GetDriver(param.DriverID))
                 dict_child[name] = children
             if len(dict_child) > 0:

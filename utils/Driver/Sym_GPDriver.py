@@ -7,7 +7,9 @@ from utils.OCCUtils import (
     TDataXtd_Point,
     gp_Pnt,
     TNaming_NamedShape,
-    TNaming_Builder
+    TNaming_Builder,
+    TCollection_AsciiString,
+    TDF_Tool
 )
 
 from utils.GUID import *
@@ -22,6 +24,7 @@ from utils.Driver.Sym_Driver import (
 from utils.Driver.Sym_DataDriver import (
     Sym_RealDriver,
 )
+from utils.logger import Logger
 
 from OCC.Core.BRepTopAdaptor import BRepTopAdaptor_HVertex
 from OCC.Core.BRep import BRep_Tool
@@ -41,10 +44,12 @@ class Sym_PntDriver(Sym_Driver):
         }
 
     def Execute(self, theLabel: TDF_Label, log: TFunction_Logbook) -> int:
+        super().Execute(theLabel, log)
+
         dict_param = dict()
         for name, argu in self.Arguments.items():
-            aLabel = theLabel.FindChild(argu.Tag)
-            dict_param[name] = GetDriver(argu.DriverID).GetValue(aLabel)
+            argu:Argument
+            dict_param[name] = argu.Value(theLabel)
 
         pnt = gp_Pnt(dict_param["theXp"], dict_param["theYp"], dict_param["theZp"])
         pnt = make_vertex(pnt)
@@ -53,14 +58,29 @@ class Sym_PntDriver(Sym_Driver):
         builder = TNaming_Builder(theLabel)
         builder.Generated(pnt)
 
+        entry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, entry)
+
+        NS = TNaming_NamedShape()
+        if not theLabel.FindAttribute(NS.GetID(), NS):
+            Logger().warn(f"Entry:{entry} execute error")
+            return 1
+        if NS.Get() is None:
+            Logger().warn(f"Entry:{entry} execute error")
+            return 1
+
+        Logger().info(f"Entry:{entry} Make Point Success")
         return 0
 
     def GetValue(self, theLabel:TDF_Label)->any:
-        atype = self.Attributes['value'].Type
-        value = atype()
-        if theLabel.FindAttribute(atype.GetID(), value):
-            pnt = BRep_Tool.Pnt(value.Get() )
+        storedValue = self.GetStoredValue(theLabel)
+        if storedValue:
+            pnt = BRep_Tool.Pnt(storedValue )
             return pnt
+
+        entry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, entry)
+        Logger().warn(f"Entry:{entry}({self.Type}) get Value None")
 
         return None
 

@@ -1,0 +1,441 @@
+2023-03-15 00:00:46,081 - INFO: -- NewConmand --
+2023-03-15 00:00:46,083 - INFO: -- Add New Shape --
+2023-03-15 00:00:46,086 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 00:00:46,088 - INFO: Name:debug
+2023-03-15 00:00:46,090 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '5', 'w': '4'}}
+2023-03-15 00:00:46,095 - INFO: Entry:0:1:1
+2023-03-15 00:00:46,168 - INFO: Entry0:1:1 init transform
+2023-03-15 00:00:46,172 - INFO: Entry0:1:1 init angle
+2023-03-15 00:00:46,177 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-15 00:00:46,179 - INFO: stored value is 0.0
+2023-03-15 00:00:46,181 - INFO: Entry0:1:1 init rotateAxis
+2023-03-15 00:00:46,186 - INFO: Entry0:1:1 init theXp
+2023-03-15 00:00:46,192 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-15 00:00:46,194 - INFO: stored value is 0.0
+2023-03-15 00:00:46,196 - INFO: Entry0:1:1 init theYp
+2023-03-15 00:00:46,201 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-15 00:00:46,204 - INFO: stored value is 0.0
+2023-03-15 00:00:46,207 - INFO: Entry0:1:1 init theZp
+2023-03-15 00:00:46,211 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-15 00:00:46,214 - INFO: stored value is 0.0
+2023-03-15 00:00:46,216 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-15 00:24:19,470 - INFO: -- NewConmand --
+2023-03-15 00:24:19,472 - INFO: -- Add New Shape --
+2023-03-15 00:24:19,475 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 00:24:19,477 - INFO: Name:debug
+2023-03-15 00:24:19,479 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '8', 'h': '6', 'w': '7'}}
+2023-03-15 00:24:19,482 - INFO: Entry:0:1:1
+2023-03-15 00:24:19,629 - INFO: Entry0:1:1 init transform
+2023-03-15 00:24:19,633 - INFO: Entry0:1:1 init angle
+2023-03-15 00:24:19,637 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-15 00:24:19,639 - INFO: stored value is 0.0
+2023-03-15 00:24:19,641 - INFO: Entry0:1:1 init rotateAxis
+2023-03-15 00:24:19,644 - INFO: Entry0:1:1 init theXp
+2023-03-15 00:24:19,648 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-15 00:24:19,650 - INFO: stored value is 0.0
+2023-03-15 00:24:19,652 - INFO: Entry0:1:1 init theYp
+2023-03-15 00:24:19,655 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-15 00:24:19,657 - INFO: stored value is 0.0
+2023-03-15 00:24:19,659 - INFO: Entry0:1:1 init theZp
+2023-03-15 00:24:19,663 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-15 00:24:19,665 - INFO: stored value is 0.0
+2023-03-15 00:24:19,667 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-15 00:24:19,673 - INFO: Entry:0:1:1:1:2:1 find 
+2023-03-15 00:24:19,674 - INFO: Entry:0:1:1:1:2:1 get value 0.0 
+2023-03-15 00:24:19,680 - INFO: Entry:0:1:1:1:2:2 find 
+2023-03-15 00:24:19,682 - INFO: Entry:0:1:1:1:2:2 get value 0.0 
+2023-03-15 00:24:19,687 - INFO: Entry:0:1:1:1:2:3 find 
+2023-03-15 00:24:19,689 - INFO: Entry:0:1:1:1:2:3 get value 0.0 
+2023-03-15 00:24:19,693 - INFO: Entry:0:1:1:1:2 Make Point Success
+2023-03-15 00:24:19,695 - INFO: Entry0:1:1 init position
+2023-03-15 00:24:19,699 - INFO: Entry0:1:1 init theXp
+2023-03-15 00:24:19,703 - INFO: Label:0:1:1:1:3:1(real) set value = 0.0
+2023-03-15 00:24:19,705 - INFO: stored value is 0.0
+2023-03-15 00:24:19,706 - INFO: Entry0:1:1 init theYp
+2023-03-15 00:24:19,710 - INFO: Label:0:1:1:1:3:2(real) set value = 0.0
+2023-03-15 00:24:19,712 - INFO: stored value is 0.0
+2023-03-15 00:24:19,714 - INFO: Entry0:1:1 init theZp
+2023-03-15 00:24:19,717 - INFO: Label:0:1:1:1:3:3(real) set value = 0.0
+2023-03-15 00:24:19,719 - INFO: stored value is 0.0
+2023-03-15 00:24:19,721 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-15 00:24:19,727 - INFO: Entry:0:1:1:1:3:1 find 
+2023-03-15 00:24:19,729 - INFO: Entry:0:1:1:1:3:1 get value 0.0 
+2023-03-15 00:24:19,735 - INFO: Entry:0:1:1:1:3:2 find 
+2023-03-15 00:24:19,736 - INFO: Entry:0:1:1:1:3:2 get value 0.0 
+2023-03-15 00:24:19,742 - INFO: Entry:0:1:1:1:3:3 find 
+2023-03-15 00:24:19,744 - INFO: Entry:0:1:1:1:3:3 get value 0.0 
+2023-03-15 00:24:19,748 - INFO: Entry:0:1:1:1:3 Make Point Success
+2023-03-15 00:24:19,750 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-15 00:24:19,755 - INFO: Entry:0:1:1:1:1 find 
+2023-03-15 00:24:19,757 - INFO: Entry:0:1:1:1:1 get value 0.0 
+2023-03-15 00:24:19,763 - INFO: Entry:0:1:1:1:2 find 
+2023-03-15 00:24:19,772 - INFO: Entry:0:1:1:1:3 find 
+2023-03-15 01:07:56,156 - INFO: -- NewConmand --
+2023-03-15 01:07:56,158 - INFO: -- Add New Shape --
+2023-03-15 01:07:56,160 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 01:07:56,162 - INFO: Name:debug
+2023-03-15 01:07:56,164 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '3', 'w': '2'}}
+2023-03-15 01:07:56,168 - INFO: Entry:0:1:1
+2023-03-15 01:07:56,223 - INFO: Entry0:1:1 init transform
+2023-03-15 01:07:56,227 - INFO: Entry0:1:1 init angle
+2023-03-15 01:07:56,232 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-15 01:07:56,234 - INFO: stored value is 0.0
+2023-03-15 01:07:56,235 - INFO: Entry0:1:1 init rotateAxis
+2023-03-15 01:07:56,239 - INFO: Entry0:1:1 init theXp
+2023-03-15 01:07:56,242 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-15 01:07:56,245 - INFO: stored value is 0.0
+2023-03-15 01:07:56,247 - INFO: Entry0:1:1 init theYp
+2023-03-15 01:07:56,250 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-15 01:07:56,252 - INFO: stored value is 0.0
+2023-03-15 01:07:56,253 - INFO: Entry0:1:1 init theZp
+2023-03-15 01:07:56,257 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-15 01:07:56,259 - INFO: stored value is 0.0
+2023-03-15 01:07:56,261 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-15 01:07:56,267 - INFO: Entry:0:1:1:1:2:1 find 
+2023-03-15 01:07:56,269 - INFO: Entry:0:1:1:1:2:1 get value 0.0 
+2023-03-15 01:07:56,274 - INFO: Entry:0:1:1:1:2:2 find 
+2023-03-15 01:07:56,276 - INFO: Entry:0:1:1:1:2:2 get value 0.0 
+2023-03-15 01:07:56,281 - INFO: Entry:0:1:1:1:2:3 find 
+2023-03-15 01:07:56,283 - INFO: Entry:0:1:1:1:2:3 get value 0.0 
+2023-03-15 01:07:56,287 - INFO: Entry:0:1:1:1:2 Make Point Success
+2023-03-15 01:07:56,289 - INFO: Entry0:1:1 init position
+2023-03-15 01:07:56,293 - INFO: Entry0:1:1 init theXp
+2023-03-15 01:07:56,296 - INFO: Label:0:1:1:1:3:1(real) set value = 0.0
+2023-03-15 01:07:56,298 - INFO: stored value is 0.0
+2023-03-15 01:07:56,300 - INFO: Entry0:1:1 init theYp
+2023-03-15 01:07:56,304 - INFO: Label:0:1:1:1:3:2(real) set value = 0.0
+2023-03-15 01:07:56,305 - INFO: stored value is 0.0
+2023-03-15 01:07:56,307 - INFO: Entry0:1:1 init theZp
+2023-03-15 01:07:56,311 - INFO: Label:0:1:1:1:3:3(real) set value = 0.0
+2023-03-15 01:07:56,313 - INFO: stored value is 0.0
+2023-03-15 01:07:56,315 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-15 01:07:56,320 - INFO: Entry:0:1:1:1:3:1 find 
+2023-03-15 01:07:56,322 - INFO: Entry:0:1:1:1:3:1 get value 0.0 
+2023-03-15 01:07:56,328 - INFO: Entry:0:1:1:1:3:2 find 
+2023-03-15 01:07:56,330 - INFO: Entry:0:1:1:1:3:2 get value 0.0 
+2023-03-15 01:07:56,335 - INFO: Entry:0:1:1:1:3:3 find 
+2023-03-15 01:07:56,337 - INFO: Entry:0:1:1:1:3:3 get value 0.0 
+2023-03-15 01:07:56,341 - INFO: Entry:0:1:1:1:3 Make Point Success
+2023-03-15 01:07:56,342 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-15 01:07:56,348 - INFO: Entry:0:1:1:1:1 find 
+2023-03-15 01:07:56,350 - INFO: Entry:0:1:1:1:1 get value 0.0 
+2023-03-15 01:07:56,356 - INFO: Entry:0:1:1:1:2 find 
+2023-03-15 01:07:56,358 - INFO: Entry:0:1:1:1:2 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:07:56,365 - INFO: Entry:0:1:1:1:3 find 
+2023-03-15 01:07:56,367 - INFO: Entry:0:1:1:1:3 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:07:56,376 - INFO: Entry0:1:1 init l
+2023-03-15 01:07:56,380 - INFO: Label:0:1:1:2(real) set value = 4
+2023-03-15 01:07:56,382 - INFO: stored value is 4.0
+2023-03-15 01:07:56,384 - INFO: Entry0:1:1 init h
+2023-03-15 01:07:56,388 - INFO: Label:0:1:1:3(real) set value = 3
+2023-03-15 01:07:56,390 - INFO: stored value is 3.0
+2023-03-15 01:07:56,392 - INFO: Entry0:1:1 init w
+2023-03-15 01:07:56,396 - INFO: Label:0:1:1:4(real) set value = 2
+2023-03-15 01:07:56,397 - INFO: stored value is 2.0
+2023-03-15 01:08:45,333 - INFO: -- NewConmand --
+2023-03-15 01:08:45,335 - INFO: -- Add New Shape --
+2023-03-15 01:08:45,337 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 01:08:45,339 - INFO: Name:debug
+2023-03-15 01:08:45,341 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '4', 'h': '5', 'w': '4'}}
+2023-03-15 01:08:45,345 - INFO: Entry:0:1:1
+2023-03-15 01:08:45,410 - INFO: Entry0:1:1 init transform
+2023-03-15 01:08:45,414 - INFO: Entry0:1:1 init angle
+2023-03-15 01:08:45,419 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-15 01:08:45,421 - INFO: stored value is 0.0
+2023-03-15 01:08:45,423 - INFO: Entry0:1:1 init rotateAxis
+2023-03-15 01:08:45,427 - INFO: Entry0:1:1 init theXp
+2023-03-15 01:08:45,432 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-15 01:08:45,435 - INFO: stored value is 0.0
+2023-03-15 01:08:45,437 - INFO: Entry0:1:1 init theYp
+2023-03-15 01:08:45,441 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-15 01:08:45,443 - INFO: stored value is 0.0
+2023-03-15 01:08:45,445 - INFO: Entry0:1:1 init theZp
+2023-03-15 01:08:45,449 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-15 01:08:45,451 - INFO: stored value is 0.0
+2023-03-15 01:08:45,452 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-15 01:08:45,458 - INFO: Entry:0:1:1:1:2:1 get value 0.0 
+2023-03-15 01:08:45,464 - INFO: Entry:0:1:1:1:2:2 get value 0.0 
+2023-03-15 01:08:45,469 - INFO: Entry:0:1:1:1:2:3 get value 0.0 
+2023-03-15 01:08:45,473 - INFO: Entry:0:1:1:1:2 Make Point Success
+2023-03-15 01:08:45,475 - INFO: Entry0:1:1 init position
+2023-03-15 01:08:45,479 - INFO: Entry0:1:1 init theXp
+2023-03-15 01:08:45,483 - INFO: Label:0:1:1:1:3:1(real) set value = 0.0
+2023-03-15 01:08:45,484 - INFO: stored value is 0.0
+2023-03-15 01:08:45,486 - INFO: Entry0:1:1 init theYp
+2023-03-15 01:08:45,490 - INFO: Label:0:1:1:1:3:2(real) set value = 0.0
+2023-03-15 01:08:45,492 - INFO: stored value is 0.0
+2023-03-15 01:08:45,493 - INFO: Entry0:1:1 init theZp
+2023-03-15 01:08:45,497 - INFO: Label:0:1:1:1:3:3(real) set value = 0.0
+2023-03-15 01:08:45,499 - INFO: stored value is 0.0
+2023-03-15 01:08:45,501 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-15 01:08:45,506 - INFO: Entry:0:1:1:1:3:1 get value 0.0 
+2023-03-15 01:08:45,512 - INFO: Entry:0:1:1:1:3:2 get value 0.0 
+2023-03-15 01:08:45,517 - INFO: Entry:0:1:1:1:3:3 get value 0.0 
+2023-03-15 01:08:45,521 - INFO: Entry:0:1:1:1:3 Make Point Success
+2023-03-15 01:08:45,523 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-15 01:08:45,528 - INFO: Entry:0:1:1:1:1 get value 0.0 
+2023-03-15 01:08:45,534 - INFO: Entry:0:1:1:1:2 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:08:45,539 - INFO: Entry:0:1:1:1:3 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:08:45,541 - INFO: Entry0:1:1 init l
+2023-03-15 01:08:45,546 - INFO: Label:0:1:1:2(real) set value = 4
+2023-03-15 01:08:45,548 - INFO: stored value is 4.0
+2023-03-15 01:08:45,549 - INFO: Entry0:1:1 init h
+2023-03-15 01:08:45,553 - INFO: Label:0:1:1:3(real) set value = 5
+2023-03-15 01:08:45,555 - INFO: stored value is 5.0
+2023-03-15 01:08:45,557 - INFO: Entry0:1:1 init w
+2023-03-15 01:08:45,561 - INFO: Label:0:1:1:4(real) set value = 4
+2023-03-15 01:08:45,563 - INFO: stored value is 4.0
+2023-03-15 01:08:45,572 - INFO: Entry:0:1:1:1 get value <class 'TopLoc_Location'> 
+2023-03-15 01:08:45,579 - INFO: Entry:0:1:1:2 get value 4.0 
+2023-03-15 01:08:45,585 - INFO: Entry:0:1:1:3 get value 5.0 
+2023-03-15 01:08:45,590 - INFO: Entry:0:1:1:4 get value 4.0 
+2023-03-15 01:08:45,592 - INFO: Driver:Box Execute {'transform': <class 'gp_Trsf'>, 'l': 4.0, 'h': 5.0, 'w': 4.0}
+2023-03-15 01:08:53,332 - INFO: -- NewConmand --
+2023-03-15 01:08:53,334 - INFO: -- Add New Shape --
+2023-03-15 01:08:53,336 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 01:08:53,339 - INFO: Name:debug
+2023-03-15 01:08:53,340 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '4', 'h': '5', 'w': '4'}}
+2023-03-15 01:08:53,344 - INFO: Entry:0:1:2
+2023-03-15 01:08:53,402 - INFO: Entry0:1:2 init transform
+2023-03-15 01:08:53,405 - INFO: Entry0:1:2 init angle
+2023-03-15 01:08:53,410 - INFO: Label:0:1:2:1:1(real) set value = 0.0
+2023-03-15 01:08:53,412 - INFO: stored value is 0.0
+2023-03-15 01:08:53,414 - INFO: Entry0:1:2 init rotateAxis
+2023-03-15 01:08:53,418 - INFO: Entry0:1:2 init theXp
+2023-03-15 01:08:53,422 - INFO: Label:0:1:2:1:2:1(real) set value = 0.0
+2023-03-15 01:08:53,423 - INFO: stored value is 0.0
+2023-03-15 01:08:53,426 - INFO: Entry0:1:2 init theYp
+2023-03-15 01:08:53,429 - INFO: Label:0:1:2:1:2:2(real) set value = 0.0
+2023-03-15 01:08:53,431 - INFO: stored value is 0.0
+2023-03-15 01:08:53,433 - INFO: Entry0:1:2 init theZp
+2023-03-15 01:08:53,437 - INFO: Label:0:1:2:1:2:3(real) set value = 0.0
+2023-03-15 01:08:53,438 - INFO: stored value is 0.0
+2023-03-15 01:08:53,440 - INFO: Entry:0:1:2:1:2 type:Point Execute
+2023-03-15 01:08:53,446 - INFO: Entry:0:1:2:1:2:1 get value 0.0 
+2023-03-15 01:08:53,452 - INFO: Entry:0:1:2:1:2:2 get value 0.0 
+2023-03-15 01:08:53,459 - INFO: Entry:0:1:2:1:2:3 get value 0.0 
+2023-03-15 01:08:53,463 - INFO: Entry:0:1:2:1:2 Make Point Success
+2023-03-15 01:08:53,464 - INFO: Entry0:1:2 init position
+2023-03-15 01:08:53,468 - INFO: Entry0:1:2 init theXp
+2023-03-15 01:08:53,472 - INFO: Label:0:1:2:1:3:1(real) set value = 1
+2023-03-15 01:08:53,474 - INFO: stored value is 1.0
+2023-03-15 01:08:53,476 - INFO: Entry0:1:2 init theYp
+2023-03-15 01:08:53,479 - INFO: Label:0:1:2:1:3:2(real) set value = 1
+2023-03-15 01:08:53,481 - INFO: stored value is 1.0
+2023-03-15 01:08:53,483 - INFO: Entry0:1:2 init theZp
+2023-03-15 01:08:53,487 - INFO: Label:0:1:2:1:3:3(real) set value = 1
+2023-03-15 01:08:53,489 - INFO: stored value is 1.0
+2023-03-15 01:08:53,491 - INFO: Entry:0:1:2:1:3 type:Point Execute
+2023-03-15 01:08:53,497 - INFO: Entry:0:1:2:1:3:1 get value 1.0 
+2023-03-15 01:08:53,502 - INFO: Entry:0:1:2:1:3:2 get value 1.0 
+2023-03-15 01:08:53,508 - INFO: Entry:0:1:2:1:3:3 get value 1.0 
+2023-03-15 01:08:53,512 - INFO: Entry:0:1:2:1:3 Make Point Success
+2023-03-15 01:08:53,514 - INFO: Entry:0:1:2:1 type:Transform Execute
+2023-03-15 01:08:53,519 - INFO: Entry:0:1:2:1:1 get value 0.0 
+2023-03-15 01:08:53,526 - INFO: Entry:0:1:2:1:2 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:08:53,532 - INFO: Entry:0:1:2:1:3 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:08:53,533 - INFO: Entry0:1:2 init l
+2023-03-15 01:08:53,537 - INFO: Label:0:1:2:2(real) set value = 4
+2023-03-15 01:08:53,540 - INFO: stored value is 4.0
+2023-03-15 01:08:53,542 - INFO: Entry0:1:2 init h
+2023-03-15 01:08:53,545 - INFO: Label:0:1:2:3(real) set value = 5
+2023-03-15 01:08:53,547 - INFO: stored value is 5.0
+2023-03-15 01:08:53,549 - INFO: Entry0:1:2 init w
+2023-03-15 01:08:53,553 - INFO: Label:0:1:2:4(real) set value = 4
+2023-03-15 01:08:53,555 - INFO: stored value is 4.0
+2023-03-15 01:08:53,561 - INFO: Entry:0:1:2:1 get value <class 'TopLoc_Location'> 
+2023-03-15 01:08:53,566 - INFO: Entry:0:1:2:2 get value 4.0 
+2023-03-15 01:08:53,572 - INFO: Entry:0:1:2:3 get value 5.0 
+2023-03-15 01:08:53,578 - INFO: Entry:0:1:2:4 get value 4.0 
+2023-03-15 01:08:53,580 - INFO: Driver:Box Execute {'transform': <class 'gp_Trsf'>, 'l': 4.0, 'h': 5.0, 'w': 4.0}
+2023-03-15 01:09:14,028 - INFO: -- NewConmand --
+2023-03-15 01:09:14,030 - INFO: -- Add New Shape --
+2023-03-15 01:09:14,032 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 01:09:14,034 - INFO: Name:2
+2023-03-15 01:09:14,036 - INFO: Param:{'Shape': {'transform': {'angle': '53', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '4', 'h': '5', 'w': '4'}}
+2023-03-15 01:09:14,040 - INFO: Entry:0:1:3
+2023-03-15 01:09:14,098 - INFO: Entry0:1:3 init transform
+2023-03-15 01:09:14,102 - INFO: Entry0:1:3 init angle
+2023-03-15 01:09:14,106 - INFO: Label:0:1:3:1:1(real) set value = 53
+2023-03-15 01:09:14,108 - INFO: stored value is 53.0
+2023-03-15 01:09:14,110 - INFO: Entry0:1:3 init rotateAxis
+2023-03-15 01:09:14,114 - INFO: Entry0:1:3 init theXp
+2023-03-15 01:09:14,117 - INFO: Label:0:1:3:1:2:1(real) set value = 0.0
+2023-03-15 01:09:14,119 - INFO: stored value is 0.0
+2023-03-15 01:09:14,122 - INFO: Entry0:1:3 init theYp
+2023-03-15 01:09:14,125 - INFO: Label:0:1:3:1:2:2(real) set value = 0.0
+2023-03-15 01:09:14,127 - INFO: stored value is 0.0
+2023-03-15 01:09:14,129 - INFO: Entry0:1:3 init theZp
+2023-03-15 01:09:14,133 - INFO: Label:0:1:3:1:2:3(real) set value = 0.0
+2023-03-15 01:09:14,134 - INFO: stored value is 0.0
+2023-03-15 01:09:14,136 - INFO: Entry:0:1:3:1:2 type:Point Execute
+2023-03-15 01:09:14,142 - INFO: Entry:0:1:3:1:2:1 get value 0.0 
+2023-03-15 01:09:14,147 - INFO: Entry:0:1:3:1:2:2 get value 0.0 
+2023-03-15 01:09:14,153 - INFO: Entry:0:1:3:1:2:3 get value 0.0 
+2023-03-15 01:09:14,157 - INFO: Entry:0:1:3:1:2 Make Point Success
+2023-03-15 01:09:14,159 - INFO: Entry0:1:3 init position
+2023-03-15 01:09:14,162 - INFO: Entry0:1:3 init theXp
+2023-03-15 01:09:14,166 - INFO: Label:0:1:3:1:3:1(real) set value = 1
+2023-03-15 01:09:14,168 - INFO: stored value is 1.0
+2023-03-15 01:09:14,169 - INFO: Entry0:1:3 init theYp
+2023-03-15 01:09:14,173 - INFO: Label:0:1:3:1:3:2(real) set value = 1
+2023-03-15 01:09:14,175 - INFO: stored value is 1.0
+2023-03-15 01:09:14,177 - INFO: Entry0:1:3 init theZp
+2023-03-15 01:09:14,180 - INFO: Label:0:1:3:1:3:3(real) set value = 1
+2023-03-15 01:09:14,182 - INFO: stored value is 1.0
+2023-03-15 01:09:14,184 - INFO: Entry:0:1:3:1:3 type:Point Execute
+2023-03-15 01:09:14,190 - INFO: Entry:0:1:3:1:3:1 get value 1.0 
+2023-03-15 01:09:14,196 - INFO: Entry:0:1:3:1:3:2 get value 1.0 
+2023-03-15 01:09:14,202 - INFO: Entry:0:1:3:1:3:3 get value 1.0 
+2023-03-15 01:09:14,205 - INFO: Entry:0:1:3:1:3 Make Point Success
+2023-03-15 01:09:14,207 - INFO: Entry:0:1:3:1 type:Transform Execute
+2023-03-15 01:09:14,213 - INFO: Entry:0:1:3:1:1 get value 53.0 
+2023-03-15 01:09:14,218 - INFO: Entry:0:1:3:1:2 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:09:14,224 - INFO: Entry:0:1:3:1:3 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:09:14,226 - INFO: Entry0:1:3 init l
+2023-03-15 01:09:14,230 - INFO: Label:0:1:3:2(real) set value = 4
+2023-03-15 01:09:14,231 - INFO: stored value is 4.0
+2023-03-15 01:09:14,234 - INFO: Entry0:1:3 init h
+2023-03-15 01:09:14,237 - INFO: Label:0:1:3:3(real) set value = 5
+2023-03-15 01:09:14,239 - INFO: stored value is 5.0
+2023-03-15 01:09:14,241 - INFO: Entry0:1:3 init w
+2023-03-15 01:09:14,245 - INFO: Label:0:1:3:4(real) set value = 4
+2023-03-15 01:09:14,247 - INFO: stored value is 4.0
+2023-03-15 01:09:14,253 - INFO: Entry:0:1:3:1 get value <class 'TopLoc_Location'> 
+2023-03-15 01:09:14,259 - INFO: Entry:0:1:3:2 get value 4.0 
+2023-03-15 01:09:14,265 - INFO: Entry:0:1:3:3 get value 5.0 
+2023-03-15 01:09:14,271 - INFO: Entry:0:1:3:4 get value 4.0 
+2023-03-15 01:09:14,272 - INFO: Driver:Box Execute {'transform': <class 'gp_Trsf'>, 'l': 4.0, 'h': 5.0, 'w': 4.0}
+2023-03-15 01:10:19,781 - INFO: -- NewConmand --
+2023-03-15 01:10:19,782 - INFO: -- Add New Shape --
+2023-03-15 01:10:19,784 - INFO: Type:22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 01:10:19,786 - INFO: Name:debug
+2023-03-15 01:10:19,789 - INFO: Param:{'Shape': {'beCutShape': '0:1:1', 'cutShape': '0:1:2'}}
+2023-03-15 01:10:19,793 - INFO: Entry:0:1:4
+2023-03-15 01:10:19,807 - INFO: Entry0:1:4 init beCutShape
+2023-03-15 01:10:19,811 - INFO: Label:0:1:4:1(ShapeRef) set value = 0:1:1
+2023-03-15 01:10:19,816 - INFO: Entry:0:1:4:1 type:ShapeRef Execute
+2023-03-15 01:10:19,818 - INFO: Entry0:1:4 init cutShape
+2023-03-15 01:10:19,823 - INFO: Label:0:1:4:2(ShapeRef) set value = 0:1:2
+2023-03-15 01:10:19,825 - INFO: Entry:0:1:4:2 type:ShapeRef Execute
+2023-03-15 01:10:19,827 - INFO: Entry:0:1:4 type:Cut Execute
+2023-03-15 01:10:19,833 - INFO: Entry:0:1:4:1 get value <class 'TDF_Label'> 
+2023-03-15 01:10:19,837 - INFO: Entry:0:1:1 get value <class 'TopoDS_Solid'> 
+2023-03-15 01:10:19,843 - INFO: Entry:0:1:4:2 get value <class 'TDF_Label'> 
+2023-03-15 01:10:19,847 - INFO: Entry:0:1:2 get value <class 'TopoDS_Solid'> 
+2023-03-15 01:27:29,214 - INFO: -- NewConmand --
+2023-03-15 01:27:29,216 - INFO: -- Add New Shape --
+2023-03-15 01:27:29,218 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 01:27:29,221 - INFO: Name:debug
+2023-03-15 01:27:29,223 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '5', 'h': '4', 'w': '3'}}
+2023-03-15 01:27:29,228 - INFO: Entry:0:1:1
+2023-03-15 01:27:29,301 - INFO: Entry0:1:1 init transform
+2023-03-15 01:27:29,306 - INFO: Entry0:1:1 init angle
+2023-03-15 01:27:29,310 - INFO: Label:0:1:1:1:1(real) set value = 0.0
+2023-03-15 01:27:29,311 - INFO: stored value is 0.0
+2023-03-15 01:27:29,314 - INFO: Entry0:1:1 init rotateAxis
+2023-03-15 01:27:29,318 - INFO: Entry0:1:1 init theXp
+2023-03-15 01:27:29,323 - INFO: Label:0:1:1:1:2:1(real) set value = 0.0
+2023-03-15 01:27:29,325 - INFO: stored value is 0.0
+2023-03-15 01:27:29,328 - INFO: Entry0:1:1 init theYp
+2023-03-15 01:27:29,333 - INFO: Label:0:1:1:1:2:2(real) set value = 0.0
+2023-03-15 01:27:29,335 - INFO: stored value is 0.0
+2023-03-15 01:27:29,337 - INFO: Entry0:1:1 init theZp
+2023-03-15 01:27:29,341 - INFO: Label:0:1:1:1:2:3(real) set value = 0.0
+2023-03-15 01:27:29,343 - INFO: stored value is 0.0
+2023-03-15 01:27:29,345 - INFO: Entry:0:1:1:1:2 type:Point Execute
+2023-03-15 01:27:29,353 - INFO: Entry:0:1:1:1:2:1 get value 0.0 
+2023-03-15 01:27:29,361 - INFO: Entry:0:1:1:1:2:2 get value 0.0 
+2023-03-15 01:27:29,367 - INFO: Entry:0:1:1:1:2:3 get value 0.0 
+2023-03-15 01:27:29,370 - INFO: Entry:0:1:1:1:2 Make Point Success
+2023-03-15 01:27:29,373 - INFO: Entry0:1:1 init position
+2023-03-15 01:27:29,377 - INFO: Entry0:1:1 init theXp
+2023-03-15 01:27:29,381 - INFO: Label:0:1:1:1:3:1(real) set value = 0.0
+2023-03-15 01:27:29,382 - INFO: stored value is 0.0
+2023-03-15 01:27:29,384 - INFO: Entry0:1:1 init theYp
+2023-03-15 01:27:29,388 - INFO: Label:0:1:1:1:3:2(real) set value = 0.0
+2023-03-15 01:27:29,390 - INFO: stored value is 0.0
+2023-03-15 01:27:29,392 - INFO: Entry0:1:1 init theZp
+2023-03-15 01:27:29,395 - INFO: Label:0:1:1:1:3:3(real) set value = 0.0
+2023-03-15 01:27:29,397 - INFO: stored value is 0.0
+2023-03-15 01:27:29,399 - INFO: Entry:0:1:1:1:3 type:Point Execute
+2023-03-15 01:27:29,405 - INFO: Entry:0:1:1:1:3:1 get value 0.0 
+2023-03-15 01:27:29,411 - INFO: Entry:0:1:1:1:3:2 get value 0.0 
+2023-03-15 01:27:29,417 - INFO: Entry:0:1:1:1:3:3 get value 0.0 
+2023-03-15 01:27:29,421 - INFO: Entry:0:1:1:1:3 Make Point Success
+2023-03-15 01:27:29,423 - INFO: Entry:0:1:1:1 type:Transform Execute
+2023-03-15 01:27:29,431 - INFO: Entry:0:1:1:1:1 get value 0.0 
+2023-03-15 01:27:29,437 - INFO: Entry:0:1:1:1:2 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:27:29,443 - INFO: Entry:0:1:1:1:3 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:27:29,445 - INFO: Entry0:1:1 init l
+2023-03-15 01:27:29,449 - INFO: Label:0:1:1:2(real) set value = 5
+2023-03-15 01:27:29,450 - INFO: stored value is 5.0
+2023-03-15 01:27:29,452 - INFO: Entry0:1:1 init h
+2023-03-15 01:27:29,456 - INFO: Label:0:1:1:3(real) set value = 4
+2023-03-15 01:27:29,458 - INFO: stored value is 4.0
+2023-03-15 01:27:29,460 - INFO: Entry0:1:1 init w
+2023-03-15 01:27:29,464 - INFO: Label:0:1:1:4(real) set value = 3
+2023-03-15 01:27:29,466 - INFO: stored value is 3.0
+2023-03-15 01:27:29,472 - INFO: Entry:0:1:1:1 get value <class 'TopLoc_Location'> 
+2023-03-15 01:27:29,478 - INFO: Entry:0:1:1:2 get value 5.0 
+2023-03-15 01:27:29,483 - INFO: Entry:0:1:1:3 get value 4.0 
+2023-03-15 01:27:29,489 - INFO: Entry:0:1:1:4 get value 3.0 
+2023-03-15 01:27:29,491 - INFO: Driver:Box Execute {'transform': <class 'gp_Trsf'>, 'l': 5.0, 'h': 4.0, 'w': 3.0}
+2023-03-15 01:27:35,635 - INFO: -- NewConmand --
+2023-03-15 01:27:35,638 - INFO: -- Add New Shape --
+2023-03-15 01:27:35,640 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-15 01:27:35,642 - INFO: Name:debug
+2023-03-15 01:27:35,644 - INFO: Param:{'Shape': {'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '1', 'theYp': '1', 'theZp': '1'}}, 'l': '5', 'h': '4', 'w': '3'}}
+2023-03-15 01:27:35,648 - INFO: Entry:0:1:2
+2023-03-15 01:27:35,789 - INFO: Entry0:1:2 init transform
+2023-03-15 01:27:35,793 - INFO: Entry0:1:2 init angle
+2023-03-15 01:27:35,797 - INFO: Label:0:1:2:1:1(real) set value = 0.0
+2023-03-15 01:27:35,799 - INFO: stored value is 0.0
+2023-03-15 01:27:35,801 - INFO: Entry0:1:2 init rotateAxis
+2023-03-15 01:27:35,804 - INFO: Entry0:1:2 init theXp
+2023-03-15 01:27:35,808 - INFO: Label:0:1:2:1:2:1(real) set value = 0.0
+2023-03-15 01:27:35,810 - INFO: stored value is 0.0
+2023-03-15 01:27:35,812 - INFO: Entry0:1:2 init theYp
+2023-03-15 01:27:35,818 - INFO: Label:0:1:2:1:2:2(real) set value = 0.0
+2023-03-15 01:27:35,821 - INFO: stored value is 0.0
+2023-03-15 01:27:35,825 - INFO: Entry0:1:2 init theZp
+2023-03-15 01:27:35,830 - INFO: Label:0:1:2:1:2:3(real) set value = 0.0
+2023-03-15 01:27:35,832 - INFO: stored value is 0.0
+2023-03-15 01:27:35,836 - INFO: Entry:0:1:2:1:2 type:Point Execute
+2023-03-15 01:27:35,842 - INFO: Entry:0:1:2:1:2:1 get value 0.0 
+2023-03-15 01:27:35,850 - INFO: Entry:0:1:2:1:2:2 get value 0.0 
+2023-03-15 01:27:35,859 - INFO: Entry:0:1:2:1:2:3 get value 0.0 
+2023-03-15 01:27:35,865 - INFO: Entry:0:1:2:1:2 Make Point Success
+2023-03-15 01:27:35,867 - INFO: Entry0:1:2 init position
+2023-03-15 01:27:35,872 - INFO: Entry0:1:2 init theXp
+2023-03-15 01:27:35,877 - INFO: Label:0:1:2:1:3:1(real) set value = 1
+2023-03-15 01:27:35,882 - INFO: stored value is 1.0
+2023-03-15 01:27:35,884 - INFO: Entry0:1:2 init theYp
+2023-03-15 01:27:35,891 - INFO: Label:0:1:2:1:3:2(real) set value = 1
+2023-03-15 01:27:35,894 - INFO: stored value is 1.0
+2023-03-15 01:27:35,896 - INFO: Entry0:1:2 init theZp
+2023-03-15 01:27:35,901 - INFO: Label:0:1:2:1:3:3(real) set value = 1
+2023-03-15 01:27:35,903 - INFO: stored value is 1.0
+2023-03-15 01:27:35,905 - INFO: Entry:0:1:2:1:3 type:Point Execute
+2023-03-15 01:27:35,914 - INFO: Entry:0:1:2:1:3:1 get value 1.0 
+2023-03-15 01:27:35,921 - INFO: Entry:0:1:2:1:3:2 get value 1.0 
+2023-03-15 01:27:35,932 - INFO: Entry:0:1:2:1:3:3 get value 1.0 
+2023-03-15 01:27:35,936 - INFO: Entry:0:1:2:1:3 Make Point Success
+2023-03-15 01:27:35,938 - INFO: Entry:0:1:2:1 type:Transform Execute
+2023-03-15 01:27:35,946 - INFO: Entry:0:1:2:1:1 get value 0.0 
+2023-03-15 01:27:35,951 - INFO: Entry:0:1:2:1:2 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:27:35,960 - INFO: Entry:0:1:2:1:3 get value <class 'TopoDS_Vertex'> 
+2023-03-15 01:27:35,962 - INFO: Entry0:1:2 init l
+2023-03-15 01:27:35,966 - INFO: Label:0:1:2:2(real) set value = 5
+2023-03-15 01:27:35,968 - INFO: stored value is 5.0
+2023-03-15 01:27:35,971 - INFO: Entry0:1:2 init h
+2023-03-15 01:27:35,975 - INFO: Label:0:1:2:3(real) set value = 4
+2023-03-15 01:27:35,977 - INFO: stored value is 4.0
+2023-03-15 01:27:35,979 - INFO: Entry0:1:2 init w
+2023-03-15 01:27:35,983 - INFO: Label:0:1:2:4(real) set value = 3
+2023-03-15 01:27:35,985 - INFO: stored value is 3.0
+2023-03-15 01:27:35,998 - INFO: Entry:0:1:2:1 get value <class 'TopLoc_Location'> 
+2023-03-15 01:27:36,005 - INFO: Entry:0:1:2:2 get value 5.0 
+2023-03-15 01:27:36,012 - INFO: Entry:0:1:2:3 get value 4.0 
+2023-03-15 01:27:36,018 - INFO: Entry:0:1:2:4 get value 3.0 
+2023-03-15 01:27:36,021 - INFO: Driver:Box Execute {'transform': <class 'gp_Trsf'>, 'l': 5.0, 'h': 4.0, 'w': 3.0}
