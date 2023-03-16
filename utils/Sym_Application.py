@@ -1,7 +1,10 @@
 from OCC.Core.TDocStd import TDocStd_Application
 
 # sym
-from utils.OCCUtils import *
+from utils.OCCUtils import (
+    TFunction_DriverTable
+)
+
 from utils.Driver.Sym_Driver import (
     Sym_Driver,
     Sym_ShapeRefDriver

@@ -34,14 +34,11 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         self.driverId = data.TFunctionID
 
         self._Clear()
-        Logger().debug(str(data.params))
         self.SetTree(data.params)
-        Logger().debug("debug")
 
     def _setTreeItem(self, theName, theParams:dict, father=None, readOnly=False):
         item = QtWidgets.QTreeWidgetItem(father)
         item.setText(0, theName)
-        Logger().debug(theName)
         if "value" in theParams:
             item.setText(1, theParams["value"].Default)
             # item.setText(2, str(theParams['value'].Type))
@@ -56,26 +53,18 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         return father
 
     def _setRootItem(self, name:str, param:Param, father):
-        Logger().debug("debug")
         item = QtWidgets.QTreeWidgetItem(father)
-        Logger().debug("debug")
         item.setText(0, name)
-        Logger().debug("debug")
         item.setText(1, param.Default)
-        Logger().debug("debug")
 
         self.tree.openPersistentEditor(item, 1)
-        Logger().debug("debug")
         self.treeRoots[name] = item
 
 
     def SetTree(self, theParams:dict):
         father = self.tree
-        Logger().debug("debug")
         self._setRootItem('Name', theParams['Name'], father)
-        Logger().debug("debug")
         self._setRootItem('Parent', theParams['Parent'], father)
-        Logger().debug("debug")
         if 'Shape' in theParams:
             Logger().debug("run")
             item = self._setTreeItem('Shape', theParams["Shape"], self.tree)

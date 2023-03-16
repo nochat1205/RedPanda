@@ -1,0 +1,1015 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document format="XmlOcaf" xmlns="http://www.opencascade.org/OCAF/XML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opencascade.org/OCAF/XML">
+ <info date="2023-03-15" schemav="0" DocVersion="12" objnb="70">
+  <iitem>Copyright: Open Cascade, 2001-2002</iitem>
+  <iitem>REFERENCE_COUNTER: 0</iitem>
+  <iitem>MODIFICATION_COUNTER: 1</iitem>
+ </info>
+ <comments/>
+ <label tag="0">
+  <label tag="1">
+   <TDataStd_Name id="1" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">Debug</TDataStd_Name>
+   <TDF_TagSource id="2">3</TDF_TagSource>
+   <label tag="1">
+    <TDataStd_Name id="3" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">debug</TDataStd_Name>
+    <TFunction_Function id="4" guid="22d22e50-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+    <TNaming_NamedShape id="5" evolution="primitive">
+     <olds/>
+     <news>
+      <shape tshape="+34" location="1" index="1"/>
+     </news>
+    </TNaming_NamedShape>
+    <TDataXtd_Presentation id="6" guid="c4ef4200-568f-11d1-8940-080009dc3333" isdisplayed="true" mode="0"/>
+    <TDataStd_TreeNode id="7" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b" children="8 "/>
+    <label tag="1">
+     <TFunction_Function id="9" guid="22d22e53-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <label tag="1">
+      <TFunction_Function id="10" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Real id="11">0</TDataStd_Real>
+     </label>
+     <label tag="2">
+      <TFunction_Function id="12" guid="22d22e52-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TNaming_NamedShape id="13" evolution="primitive">
+       <olds/>
+       <news>
+        <shape tshape="+35" x="0" y="0" z="0" index="1"/>
+       </news>
+      </TNaming_NamedShape>
+      <label tag="1">
+       <TFunction_Function id="14" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="15">0</TDataStd_Real>
+      </label>
+      <label tag="2">
+       <TFunction_Function id="16" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="17">0</TDataStd_Real>
+      </label>
+      <label tag="3">
+       <TFunction_Function id="18" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="19">0</TDataStd_Real>
+      </label>
+     </label>
+     <label tag="3">
+      <TFunction_Function id="20" guid="22d22e52-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TNaming_NamedShape id="21" evolution="primitive">
+       <olds/>
+       <news>
+        <shape tshape="+36" x="0" y="0" z="0" index="1"/>
+       </news>
+      </TNaming_NamedShape>
+      <label tag="1">
+       <TFunction_Function id="22" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="23">0</TDataStd_Real>
+      </label>
+      <label tag="2">
+       <TFunction_Function id="24" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="25">0</TDataStd_Real>
+      </label>
+      <label tag="3">
+       <TFunction_Function id="26" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="27">0</TDataStd_Real>
+      </label>
+     </label>
+    </label>
+    <label tag="2">
+     <TFunction_Function id="28" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Real id="29">4</TDataStd_Real>
+    </label>
+    <label tag="3">
+     <TFunction_Function id="30" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Real id="31">5</TDataStd_Real>
+    </label>
+    <label tag="4">
+     <TFunction_Function id="32" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Real id="33">4</TDataStd_Real>
+    </label>
+   </label>
+   <label tag="2">
+    <TDataStd_Name id="34" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">debug</TDataStd_Name>
+    <TFunction_Function id="35" guid="22d22e50-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+    <TNaming_NamedShape id="36" evolution="primitive">
+     <olds/>
+     <news>
+      <shape tshape="+70" location="2" index="1"/>
+     </news>
+    </TNaming_NamedShape>
+    <TDataXtd_Presentation id="37" guid="c4ef4200-568f-11d1-8940-080009dc3333" isdisplayed="true" mode="0"/>
+    <TDataStd_TreeNode id="38" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b" children="39 "/>
+    <label tag="1">
+     <TFunction_Function id="40" guid="22d22e53-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <label tag="1">
+      <TFunction_Function id="41" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Real id="42">0</TDataStd_Real>
+     </label>
+     <label tag="2">
+      <TFunction_Function id="43" guid="22d22e52-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TNaming_NamedShape id="44" evolution="primitive">
+       <olds/>
+       <news>
+        <shape tshape="+71" x="0" y="0" z="0" index="1"/>
+       </news>
+      </TNaming_NamedShape>
+      <label tag="1">
+       <TFunction_Function id="45" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="46">0</TDataStd_Real>
+      </label>
+      <label tag="2">
+       <TFunction_Function id="47" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="48">0</TDataStd_Real>
+      </label>
+      <label tag="3">
+       <TFunction_Function id="49" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="50">0</TDataStd_Real>
+      </label>
+     </label>
+     <label tag="3">
+      <TFunction_Function id="51" guid="22d22e52-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TNaming_NamedShape id="52" evolution="primitive">
+       <olds/>
+       <news>
+        <shape tshape="+72" x="1" y="1" z="1" index="1"/>
+       </news>
+      </TNaming_NamedShape>
+      <label tag="1">
+       <TFunction_Function id="53" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="54">1</TDataStd_Real>
+      </label>
+      <label tag="2">
+       <TFunction_Function id="55" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="56">1</TDataStd_Real>
+      </label>
+      <label tag="3">
+       <TFunction_Function id="57" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+       <TDataStd_Real id="58">1</TDataStd_Real>
+      </label>
+     </label>
+    </label>
+    <label tag="2">
+     <TFunction_Function id="59" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Real id="60">4</TDataStd_Real>
+    </label>
+    <label tag="3">
+     <TFunction_Function id="61" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Real id="62">5</TDataStd_Real>
+    </label>
+    <label tag="4">
+     <TFunction_Function id="63" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Real id="64">4</TDataStd_Real>
+    </label>
+   </label>
+   <label tag="3">
+    <TDataStd_Name id="65" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">debug</TDataStd_Name>
+    <TFunction_Function id="66" guid="22d22e55-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+    <TNaming_NamedShape id="67" evolution="generated">
+     <olds>
+      <shape tshape="+34" location="1" index="1"/>
+     </olds>
+     <news>
+      <shape tshape="+105" index="1"/>
+     </news>
+    </TNaming_NamedShape>
+    <TDataXtd_Presentation id="68" guid="c4ef4200-568f-11d1-8940-080009dc3333" isdisplayed="true" mode="1"/>
+    <label tag="1">
+     <TFunction_Function id="69" guid="22d22e54-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_TreeNode id="8" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b"/>
+    </label>
+    <label tag="2">
+     <TFunction_Function id="70" guid="22d22e54-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_TreeNode id="39" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b"/>
+    </label>
+   </label>
+  </label>
+ </label>
+ <shapes>
+CASCADE Topology V3, (c) Open Cascade
+Locations 4
+1
+              1               0               0               0 
+              0               1               0               0 
+              0               0               1               0 
+1
+              1               0               0               1 
+              0               1               0               1 
+              0               0               1               1 
+2  1 -1 0
+2  2 -1 0
+Curve2ds 60
+1 0 0 1 0 
+1 0 0 1 0 
+1 4 0 0 -1 
+1 0 0 0 1 
+1 0 -5 1 0 
+1 0 0 1 0 
+1 0 0 0 -1 
+1 0 0 0 1 
+1 0 0 1 0 
+1 0 4 1 0 
+1 4 0 0 -1 
+1 4 0 0 1 
+1 0 -5 1 0 
+1 0 4 1 0 
+1 0 0 0 -1 
+1 4 0 0 1 
+1 0 0 0 1 
+1 0 0 1 0 
+1 4 0 0 1 
+1 0 0 1 0 
+1 0 0 0 1 
+1 0 5 1 0 
+1 4 0 0 1 
+1 0 5 1 0 
+1 0 0 1 0 
+1 0 0 1 0 
+1 4 0 0 -1 
+1 0 0 0 1 
+1 0 -5 1 0 
+1 0 0 1 0 
+1 0 0 0 -1 
+1 0 0 0 1 
+1 0 0 1 0 
+1 0 4 1 0 
+1 4 0 0 -1 
+1 4 0 0 1 
+1 0 -5 1 0 
+1 0 4 1 0 
+1 0 0 0 -1 
+1 4 0 0 1 
+1 0 0 0 1 
+1 0 0 1 0 
+1 4 0 0 1 
+1 0 0 1 0 
+1 0 0 0 1 
+1 0 5 1 0 
+1 4 0 0 1 
+1 0 5 1 0 
+8 0.5 4.5
+1 1 0.5 0 1 
+8 0.5 4.5
+1 3 0.5 0 -1 
+8 -3.5 -0.5
+1 0.5 1 -1 0 
+8 -3.5 -0.5
+1 3 -0.5 0 -1 
+8 0.5 3.5
+1 1 0.5 0 1 
+8 0.5 3.5
+1 -0.5 4 1 0 
+8 -3.5 -0.5
+1 0.5 1 -1 0 
+8 -3.5 -0.5
+1 -0.5 -4 -1 0 
+8 0.5 3.5
+1 0.5 -1 1 0 
+8 0.5 3.5
+1 -0.5 3 1 0 
+8 -4.5 -0.5
+1 1 -0.5 0 1 
+8 -4.5 -0.5
+1 3 -0.5 0 -1 
+Curves 30
+1 0 0 0 0 0 1 
+1 0 0 4 -0 1 0 
+1 0 5 0 0 0 1 
+1 0 0 0 -0 1 0 
+1 4 0 0 0 0 1 
+1 4 0 4 -0 1 0 
+1 4 5 0 0 0 1 
+1 4 0 0 -0 1 0 
+1 0 0 0 1 0 -0 
+1 0 0 4 1 0 -0 
+1 0 5 0 1 0 -0 
+1 0 5 4 1 0 -0 
+1 0 0 0 0 0 1 
+1 0 0 4 -0 1 0 
+1 0 5 0 0 0 1 
+1 0 0 0 -0 1 0 
+1 4 0 0 0 0 1 
+1 4 0 4 -0 1 0 
+1 4 5 0 0 0 1 
+1 4 0 0 -0 1 0 
+1 0 0 0 1 0 -0 
+1 0 0 4 1 0 -0 
+1 0 5 0 1 0 -0 
+1 0 5 4 1 0 -0 
+1 1 0.5 4 0 1 0 
+1 0.5 1 4 -1 0 0 
+1 0.5 5 1 1 0 0 
+1 1 5 0.5 0 0 -1 
+1 4 1 0.5 0 0 1 
+1 4 0.5 1 0 -1 0 
+Polygon3D 0
+PolygonOnTriangulations 0
+Surfaces 12
+1 0 0 0 1 0 -0 0 0 1 0 -1 0 
+1 0 0 0 -0 1 0 0 0 1 1 0 -0 
+1 0 0 4 0 0 1 1 0 -0 -0 1 0 
+1 0 5 0 -0 1 0 0 0 1 1 0 -0 
+1 0 0 0 0 0 1 1 0 -0 -0 1 0 
+1 4 0 0 1 0 -0 0 0 1 0 -1 0 
+1 0 0 0 1 0 -0 0 0 1 0 -1 0 
+1 0 0 0 -0 1 0 0 0 1 1 0 -0 
+1 0 0 4 0 0 1 1 0 -0 -0 1 0 
+1 0 5 0 -0 1 0 0 0 1 1 0 -0 
+1 0 0 0 0 0 1 1 0 -0 -0 1 0 
+1 4 0 0 1 0 -0 0 0 1 0 -1 0 
+Triangulations 0
+
+TShapes 105
+Ve
+1e-07
+0 0 4
+0 0
+
+0101101
+*
+Ve
+1e-07
+0 0 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  1 0 0 4
+2  1 1 0 0 4
+2  2 2 0 0 4
+0
+
+0101000
+-105 0 +104 0 *
+Ve
+1e-07
+0 5 4
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  2 0 0 5
+2  3 1 0 0 5
+2  4 3 0 0 5
+0
+
+0101000
+-102 0 +105 0 *
+Ve
+1e-07
+0 5 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  3 0 0 4
+2  5 1 0 0 4
+2  6 4 0 0 4
+0
+
+0101000
+-102 0 +100 0 *
+Ed
+ 1e-07 1 1 0
+1  4 0 0 5
+2  7 1 0 0 5
+2  8 5 0 0 5
+0
+
+0101000
+-100 0 +104 0 *
+Wi
+
+0101100
+-103 0 -101 0 +99 0 +98 0 *
+Fa
+0  1e-07 1 0
+
+0111000
++97 0 *
+Ve
+1e-07
+4 0 4
+0 0
+
+0101101
+*
+Ve
+1e-07
+4 0 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  5 0 0 4
+2  9 6 0 0 4
+2  10 2 0 0 4
+0
+
+0101000
+-95 0 +94 0 *
+Ve
+1e-07
+4 5 4
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  6 0 0 5
+2  11 6 0 0 5
+2  12 3 0 0 5
+0
+
+0101000
+-92 0 +95 0 *
+Ve
+1e-07
+4 5 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  7 0 0 4
+2  13 6 0 0 4
+2  14 4 0 0 4
+0
+
+0101000
+-92 0 +90 0 *
+Ed
+ 1e-07 1 1 0
+1  8 0 0 5
+2  15 6 0 0 5
+2  16 5 0 0 5
+0
+
+0101000
+-90 0 +94 0 *
+Wi
+
+0101100
+-93 0 -91 0 +89 0 +88 0 *
+Fa
+0  1e-07 6 0
+
+0101000
++87 0 *
+Ed
+ 1e-07 1 1 0
+1  9 0 0 4
+2  17 2 0 0 4
+2  18 5 0 0 4
+0
+
+0101000
+-94 0 +104 0 *
+Ed
+ 1e-07 1 1 0
+1  10 0 0 4
+2  19 2 0 0 4
+2  20 3 0 0 4
+0
+
+0101000
+-95 0 +105 0 *
+Wi
+
+0101100
+-85 0 -93 0 +84 0 +103 0 *
+Fa
+0  1e-07 2 0
+
+0111000
++83 0 *
+Ed
+ 1e-07 1 1 0
+1  11 0 0 4
+2  21 4 0 0 4
+2  22 5 0 0 4
+0
+
+0101000
+-90 0 +100 0 *
+Ed
+ 1e-07 1 1 0
+1  12 0 0 4
+2  23 4 0 0 4
+2  24 3 0 0 4
+0
+
+0101000
+-92 0 +102 0 *
+Wi
+
+0101100
+-81 0 -89 0 +80 0 +99 0 *
+Fa
+0  1e-07 4 0
+
+0101000
++79 0 *
+Wi
+
+0101100
+-98 0 -81 0 +88 0 +85 0 *
+Fa
+0  1e-07 5 0
+
+0111000
++77 0 *
+Wi
+
+0101100
+-101 0 -80 0 +91 0 +84 0 *
+Fa
+0  1e-07 3 0
+
+0101000
++75 0 *
+Sh
+
+0101100
+-96 0 +86 0 -82 0 +78 0 -76 0 +74 0 *
+So
+
+1100000
++73 0 *
+Ve
+1e-07
+0 0 0
+0 0
+
+1101101
+*
+Ve
+1e-07
+0 0 0
+0 0
+
+1101101
+*
+Ve
+1e-07
+0 0 4
+0 0
+
+0101101
+*
+Ve
+1e-07
+0 0 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  13 0 0 4
+2  25 7 0 0 4
+2  26 8 0 0 4
+0
+
+0101000
+-69 0 +68 0 *
+Ve
+1e-07
+0 5 4
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  14 0 0 5
+2  27 7 0 0 5
+2  28 9 0 0 5
+0
+
+0101000
+-66 0 +69 0 *
+Ve
+1e-07
+0 5 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  15 0 0 4
+2  29 7 0 0 4
+2  30 10 0 0 4
+0
+
+0101000
+-66 0 +64 0 *
+Ed
+ 1e-07 1 1 0
+1  16 0 0 5
+2  31 7 0 0 5
+2  32 11 0 0 5
+0
+
+0101000
+-64 0 +68 0 *
+Wi
+
+0101100
+-67 0 -65 0 +63 0 +62 0 *
+Fa
+0  1e-07 7 0
+
+0101000
++61 0 *
+Ve
+1e-07
+4 0 4
+0 0
+
+0101101
+*
+Ve
+1e-07
+4 0 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  17 0 0 4
+2  33 12 0 0 4
+2  34 8 0 0 4
+0
+
+0101000
+-59 0 +58 0 *
+Ve
+1e-07
+4 5 4
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  18 0 0 5
+2  35 12 0 0 5
+2  36 9 0 0 5
+0
+
+0101000
+-56 0 +59 0 *
+Ve
+1e-07
+4 5 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  19 0 0 4
+2  37 12 0 0 4
+2  38 10 0 0 4
+0
+
+0101000
+-56 0 +54 0 *
+Ed
+ 1e-07 1 1 0
+1  20 0 0 5
+2  39 12 0 0 5
+2  40 11 0 0 5
+0
+
+0101000
+-54 0 +58 0 *
+Wi
+
+0101100
+-57 0 -55 0 +53 0 +52 0 *
+Fa
+0  1e-07 12 0
+
+0101000
++51 0 *
+Ed
+ 1e-07 1 1 0
+1  21 0 0 4
+2  41 8 0 0 4
+2  42 11 0 0 4
+0
+
+0101000
+-58 0 +68 0 *
+Ed
+ 1e-07 1 1 0
+1  22 0 0 4
+2  43 8 0 0 4
+2  44 9 0 0 4
+0
+
+0101000
+-59 0 +69 0 *
+Wi
+
+0101100
+-49 0 -57 0 +48 0 +67 0 *
+Fa
+0  1e-07 8 0
+
+0101000
++47 0 *
+Ed
+ 1e-07 1 1 0
+1  23 0 0 4
+2  45 10 0 0 4
+2  46 11 0 0 4
+0
+
+0101000
+-54 0 +64 0 *
+Ed
+ 1e-07 1 1 0
+1  24 0 0 4
+2  47 10 0 0 4
+2  48 9 0 0 4
+0
+
+0101000
+-56 0 +66 0 *
+Wi
+
+0101100
+-45 0 -53 0 +44 0 +63 0 *
+Fa
+0  1e-07 10 0
+
+0101000
++43 0 *
+Wi
+
+0101100
+-62 0 -45 0 +52 0 +49 0 *
+Fa
+0  1e-07 11 0
+
+0101000
++41 0 *
+Wi
+
+0101100
+-65 0 -44 0 +55 0 +48 0 *
+Fa
+0  1e-07 9 0
+
+0101000
++39 0 *
+Sh
+
+0101100
+-60 0 +50 0 -46 0 +42 0 -40 0 +38 0 *
+So
+
+1100000
++37 0 *
+Ve
+1e-07
+0 0 0
+0 0
+
+1101101
+*
+Ve
+1e-07
+1 1 1
+0 0
+
+1101101
+*
+Ve
+1.5e-07
+1 5 4
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  12 0 0 1
+2  23 4 0 0 1
+2  24 3 0 0 1
+0
+
+0101000
++102 0 -33 3 *
+Ve
+1.5e-07
+1 1 4
+0 0
+
+0101101
+*
+Ed
+ 1.5e-07 1 1 0
+1  25 0 0.5 4.5
+2  49 3 1 0.5 4.5
+2  50 7 2 0.5 4.5
+0
+
+0101000
++31 0 -33 0 *
+Ve
+1.5e-07
+4 1 4
+0 0
+
+0101101
+*
+Ed
+ 1.5e-07 1 1 0
+1  26 0 -3.5 -0.5
+2  51 3 1 -3.5 -0.5
+2  52 8 2 -3.5 -0.5
+0
+
+0101000
++29 0 -31 0 *
+Ed
+ 1e-07 1 1 0
+1  6 0 0 1
+2  11 6 0 0 1
+2  12 3 0 0 1
+0
+
+0101000
++95 0 -29 3 *
+Wi
+
+0101100
+-32 1 +30 0 +28 0 +27 1 +84 1 -101 1 *
+Fa
+0  1e-07 3 1
+
+0101000
++26 0 *
+Ve
+1.5e-07
+4 5 1
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+1  7 0 0 1
+2  13 6 0 0 1
+2  14 4 0 0 1
+0
+
+0101000
++90 0 -24 3 *
+Ve
+1.5e-07
+1 5 1
+0 0
+
+0101101
+*
+Ed
+ 1.5e-07 1 1 0
+1  27 0 0.5 3.5
+2  53 4 1 0.5 3.5
+2  54 11 2 0.5 3.5
+0
+
+0101000
++22 0 -24 0 *
+Ed
+ 1.5e-07 1 1 0
+1  28 0 -3.5 -0.5
+2  55 4 1 -3.5 -0.5
+2  56 7 2 -3.5 -0.5
+0
+
+0101000
++33 0 -22 0 *
+Wi
+
+0101100
+-23 1 +21 0 +20 0 +32 1 +99 1 -81 1 *
+Fa
+0  1e-07 4 1
+
+0101000
++19 0 *
+Ve
+1.5e-07
+4 1 1
+0 0
+
+0101101
+*
+Ed
+ 1.5e-07 1 1 0
+1  29 0 0.5 3.5
+2  57 6 1 0.5 3.5
+2  58 8 2 0.5 3.5
+0
+
+0101000
++17 0 -29 0 *
+Ed
+ 1.5e-07 1 1 0
+1  30 0 -4.5 -0.5
+2  59 6 1 -4.5 -0.5
+2  60 11 2 -4.5 -0.5
+0
+
+0101000
++24 0 -17 0 *
+Wi
+
+0101100
+-27 1 +16 0 +15 0 +23 1 +88 1 -93 1 *
+Fa
+0  1e-07 6 1
+
+0101000
++14 0 *
+Ed
+ 1e-07 1 1 0
+1  13 0 0 3
+2  25 7 0 0 3
+2  26 8 0 0 3
+0
+
+0101000
++68 0 -31 4 *
+Ed
+ 1e-07 1 1 0
+1  16 0 0 4
+2  31 7 0 0 4
+2  32 11 0 0 4
+0
+
+0101000
++68 0 -22 4 *
+Wi
+
+0101100
+-12 2 -30 0 -20 0 +11 2 *
+Fa
+0  1e-07 7 2
+
+0101000
++10 0 *
+Ed
+ 1e-07 1 1 0
+1  21 0 0 3
+2  41 8 0 0 3
+2  42 11 0 0 3
+0
+
+0101000
++68 0 -17 4 *
+Wi
+
+0101100
+-8 2 -16 0 -28 0 +12 2 *
+Fa
+0  1e-07 8 2
+
+0101000
++7 0 *
+Wi
+
+0101100
+-11 2 -21 0 -15 0 +8 2 *
+Fa
+0  1e-07 11 2
+
+0101000
++5 0 *
+Sh
+
+0101100
+-96 1 -82 1 +25 0 +18 0 -76 1 +13 0 +9 0 +6 0 +4 0 *
+So
+
+0100000
++3 0 *
+Co
+
+1100000
++2 0 *
+
+</shapes>
+</document>

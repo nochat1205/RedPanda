@@ -10,7 +10,7 @@ from utils.OCCUtils import (
     TDF_Reference,
     Sym_ShapeRef,
     TDF_Tool,
-    TCollection_AsciiString
+    TCollection_AsciiString,
 )
 
 from OCC.Core.TDataStd import (
@@ -25,7 +25,12 @@ from utils.Sym_ParamBuilder import (
 from utils.Sym_Application import Sym_Application
 from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
 from OCC.Extend.ShapeFactory import make_vertex
-
+from utils.OCCUtils import (
+    Sym_ListOfPoint,
+    TDocStd_Document,
+    TColgp_Array1OfPnt
+)
+from OCC.Core.XmlDrivers import xmldrivers_DefineFormat
 def Trsf()->    TopLoc_Location:
     tr = gp_Trsf()
     tr.SetTranslation(gp_Pnt(1, 0, 0), gp_Pnt(0, 0, 1))
@@ -34,8 +39,11 @@ def Trsf()->    TopLoc_Location:
     return loc
 
 app = Sym_Application()
+xmldrivers_DefineFormat(app)
+doc = TDocStd_Document(TCollection_ExtendedString('XmlOcaf'))
+app.AddDocument(doc)
+df = doc.Main()
 
-df = TDF_Data()
 root = df.Root()
 TDataStd_Name.Set(root, TCollection_ExtendedString("Root"))
 node1 = root.FindChild(1)
@@ -80,6 +88,18 @@ def GetPoint():
     builder = TNaming_Builder(root.FindChild(1))
     builder.Generated(shape)
 
+
+def GetPoint2():
+    from OCC.Core.TNaming import (
+        TNaming_Builder,
+        TNaming_NamedShape
+    )
+    pnt = gp_Pnt(0, 0, 2)
+    shape = make_vertex(pnt)
+    
+    builder = TNaming_Builder(root.FindChild(1))
+    builder.Generated(shape)
+
 def GetShape():
     from utils.OCCUtils import TNaming_NamedShape
     a = TNaming_NamedShape
@@ -95,9 +115,12 @@ def GetShape():
     print(type(value))
     return value
 
+def SaveDoc():
+    pnt = gp_Pnt(1, 1, 1)
+    array = TColgp_Array1OfPnt(1, 10)
+    array.SetValue(1, pnt)
+    Sym_ListOfPoint.Set(root, array)
+    app.SaveAs(doc, 'ArrayTest.xml')
+
 if __name__ == "__main__":
-    GetPoint()
-    print("run")
-    value1 = GetShape()
-    value2 = GetShape()
-    assert value1.IsEqual(value2)
+    SaveDoc()

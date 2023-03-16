@@ -4,7 +4,6 @@ from utils.OCCUtils import (
     TDataStd_Real,
     TDF_Label,
     TDF_LabelList,
-    TDataXtd_Point,
     gp_Pnt,
     gp_Trsf,
     gp_Vec,
@@ -84,17 +83,28 @@ class Sym_TransformDriver(Sym_Driver):
         loc = TopLoc_Location(TRSF)
         XCAFDoc_Location.Set(theLabel, loc)
 
+        entry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, entry)
+
+        Logger().info(f"Entry:{entry} Make {self.Type} Success")
+
         return 0
 
     def GetValue(self, theLabel:TDF_Label)->gp_Trsf: # TODO: 用location 存在问题, 无法正确传出???
         """ 从存储形式中获取实际数据
             ref self.myAttr
         """
-        storedValue = self.GetStoredValue(theLabel)
-        if storedValue:
-            return storedValue.Transformation()
-        return None
+        aEntry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, aEntry)
+        storedValue:TopLoc_Location = self.GetStoredValue(theLabel)
+        if storedValue:            
+            Logger().debug(f"Entry:{aEntry} get Trsf:{storedValue.DumpJsonToString()}")
 
+            return storedValue.Transformation()
+
+        Logger().warn(f"Entry:{aEntry} not found transfrom")
+
+        return None
 
     @classproperty
     def ID(self):
@@ -118,7 +128,6 @@ class Sym_BoxDriver(Sym_Driver):
         }
 
     def Execute(self, theLabel:TDF_Label, log:TFunction_Logbook)->int:
-        
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -142,7 +151,6 @@ class Sym_BoxDriver(Sym_Driver):
             return 1
 
         shape = api.Shape()
-        # trsf = loc.Transformation()
 
         api = BRepBuilderAPI_Transform(shape, trsf)
         api.Build()
@@ -159,10 +167,12 @@ class Sym_BoxDriver(Sym_Driver):
         entry = TCollection_AsciiString()
         TDF_Tool.Entry(theLabel, entry)
 
+
         NS = TNaming_NamedShape()
         if not theLabel.FindAttribute(NS.GetID(), NS):
             Logger().warn(f"Entry:{entry} execute error")
             return 1
+
         if NS.Get() is None:
             Logger().warn(f"Entry:{entry} execute error")
             return 1

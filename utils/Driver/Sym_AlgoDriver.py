@@ -1,4 +1,3 @@
-
 from utils.OCCUtils import (
     TDF_Label,
     TNaming_NamedShape,
@@ -22,6 +21,7 @@ from utils.logger import (
     Logger
 )
 from utils.GUID import Sym_CutDriver_GUID
+
 class Sym_CutDriver(Sym_Driver):
     def __init__(self) -> None:
         

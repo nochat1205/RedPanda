@@ -15,8 +15,11 @@ from utils.GUID import (
     IDcolGUID,
     IDcolSurfGUID,
     AssemblyGUID,
-    ShapeRefGUID
+    ShapeRefGUID,
+    Sym_ArrayPntGUID,
+    Sym_IdAttr_GUID
 )
+from OCC.Core.TFunction import TFunction_Function
 from utils.logger import Logger
 
 
@@ -30,7 +33,6 @@ class Sym_ShapeRef(TDataStd_TreeNode):
     label0 ref Label1.Shape
     => label0 is Label1.Shape
     """
-
 
     def SetReference(self, theLabel):
         father = Sym_ShapeRef.Set(theLabel)
@@ -67,6 +69,12 @@ class Sym_ShapeRef(TDataStd_TreeNode):
         self.it = node.Next()
         return node.Label()
 
+class Sym_GuidAttr(TFunction_Function):
+    @staticmethod
+    def GetID():
+        return Sym_IdAttr_GUID
+
+
 class IDcol(TDataStd_TreeNode):
     def GetID():
         return IDcolGUID
@@ -78,63 +86,4 @@ class IDcolSurf(TDataStd_TreeNode):
 class IDcolCurv(TDataStd_TreeNode):
     def GetID():
         return IDcolCurvGUID
-
-
-
-# from types import ModuleType
-# from typing import NoReturn
-# from utils import Singleton
-
-# class DictAttributeType(Singleton):
-#     dict_attributeType = None
-#     def __init__(self):
-#         super(DictAttributeType, self).__init__()
-#         if self.dict_attributeType is None:
-#             self.dict_attributeType = dict()
-
-#             # lcaf
-#             import OCC.Core.TDF as TDF
-#             import OCC.Core.TDocStd as TDocStd
-#             import OCC.Core.TFunction as TFunction
-#             import OCC.Core.TPrsStd as TPrsStd
-#             import OCC.Core.TDataStd as TDataStd
-#             # caf
-#             import OCC.Core.TDataXtd as TDataXtd
-#             import OCC.Core.TNaming as TNaming
-#             # xcaf
-#             import OCC.Core.XCAFDoc as XCAFDoc
-#             # Tobj
-#             import OCC.Core.TObj as TObj
-#             # my
-#             import MyAttribute as MyAttribute
-#             list_AttributeModule = [
-#                 TDF, TDocStd, TFunction, TPrsStd, TDataStd,
-#                 TDataXtd, TNaming, XCAFDoc, TObj,
-#                 MyAttribute
-#             ]
-#             for module in list_AttributeModule:
-#                 self._addClassFromModule(module)
-
-#     def _IsAtributeClass(object:type)->bool:
-#         return  (hasattr(object, "ID") 
-#               or hasattr(object, "GetID"))
-        
-#     def Add(self, objet: type)->bool:
-#         if DictAttributeType._IsAtributeClass(object):
-#             if hasattr(object, "GetID"):
-#                 self.dict_attributeType[object.GetID()] = object
-#             elif object == TDataStd_TreeNode:
-#                 self.dict_attributeType[object.GetDefaultTreeID()] = object
-#             else:
-#                 return False
-#         return False
-
-#     def _addClassFromModule(self, module: ModuleType)-> NoReturn:
-#         dict_name_type = inspect.getmembers(module, 
-#             lambda x: inspect.isclass(x) and DictAttributeType._IsAtributeClass(x))
-#         for name, value in dict_name_type:
-#             self.Add(value)
-
-#     def GetType(self, guid:Standard_GUID)->type:
-#         return self.dict_attributeType.get(guid, TDF_Attribute)
 

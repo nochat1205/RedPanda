@@ -74,6 +74,7 @@ class Sym_PntDriver(Sym_Driver):
 
     def GetValue(self, theLabel:TDF_Label)->any:
         storedValue = self.GetStoredValue(theLabel)
+
         if storedValue:
             pnt = BRep_Tool.Pnt(storedValue )
             return pnt

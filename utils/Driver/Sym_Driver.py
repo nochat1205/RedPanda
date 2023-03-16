@@ -8,7 +8,8 @@ from utils.OCCUtils import (
     TDataStd_TreeNode,
     TCollection_AsciiString,
     TDF_Attribute,
-    FromText
+    FromText,
+    TDataStd_Integer,
     
 )
 from typing import Union
@@ -24,7 +25,6 @@ to have only one instance of a driver for the whole session.
 def GetDriver(obj:Union[Standard_GUID, TDF_Label]):
     aDriver = Sym_Driver()
     if isinstance(obj, Standard_GUID):
-        Logger().debug("IDA:"+str(obj))
         id = obj
         TFunction_DriverTable.Get().FindDriver(id, aDriver)
     elif isinstance(obj, TDF_Label):
@@ -33,7 +33,6 @@ def GetDriver(obj:Union[Standard_GUID, TDF_Label]):
         TFunction_DriverTable.Get().FindDriver(id, aDriver)        
 
     return aDriver
-
 
 class TagResource(object):
     def __init__(self) -> None:
@@ -63,9 +62,11 @@ class Param(object):
         return self.__str__()
 
 class Argument(object):
-    def __init__(self, tag:TagResource, id:Standard_GUID) -> None:
+    def __init__(self, tag:TagResource, id:Standard_GUID, 
+                 editFlag:bool=True) -> None:
         self._tag = tag.GetNewTag()
         self._driverID = id
+        self._editFlag = editFlag
 
     @property
     def Tag(self):
@@ -74,6 +75,9 @@ class Argument(object):
     @property
     def DriverID(self):
         return self._driverID
+
+    def IsEdit(self):
+        return self._editFlag
 
     def Value(self, fatheLabel:TDF_Label)->any:
         aDriver = GetDriver(self.DriverID)
@@ -93,7 +97,7 @@ class Sym_Driver(object):
         self.tagResource = TagResource()
         return
 
-    def Init(self, L: TDF_Label) -> bool:
+    def _base_init(self, L: TDF_Label)->bool:
         """ 函数初始化
         """
         def IsInit(theLabel:TDF_Label):
@@ -108,6 +112,11 @@ class Sym_Driver(object):
             return True
 
         _InitFunction(L)
+        return False
+
+    def Init(self, L: TDF_Label) -> bool:
+        if self._base_init(L):
+            return True
 
         for argu in self.Arguments.values():
             argu:Argument
@@ -241,9 +250,7 @@ class Sym_ShapeRefDriver(Sym_Driver):
         if super().Init(L):
             return True
 
-        attr = self.myAttr
-        aType = attr.Type
-        aType.Set(L)
+        Sym_ShapeRef.Set(L)
         return False
 
     def ChangeValue(self, theLabel:TDF_Label, text:str):
@@ -263,11 +270,11 @@ class Sym_ShapeRefDriver(Sym_Driver):
             value = aDriver.GetValue(storedValue)
 
             return value
-        else:
-            aEntry = TCollection_AsciiString()
-            TDF_Tool.Entry(theLabel, aEntry)
-            Logger().warn(f"Entry:{aEntry} not found reference")
-            return None
+
+        aEntry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, aEntry)
+        Logger().warn(f"Entry:{aEntry} not found reference")
+        return None
 
     def Execute(self, theLabel: TDF_Label, log: TFunction_Logbook) -> int:
         return super().Execute(theLabel, log)
@@ -279,175 +286,3 @@ class Sym_ShapeRefDriver(Sym_Driver):
     @classproperty
     def ID(self):
         return Sym_ShapeRefDriver_GUID
-
-# class TOcafFunction_CutDriver(TFunction_Driver):
-#     """_summary_
-#     This driver class provide services around function execution. 
-#     One instance of this class is built for the whole session. 
-#     The driver is bound to the DriverGUID in the DriverTable class. 
-#     It allows you to create classes which inherit from this abstract class. 
-#     These subclasses identify the various algorithms which can be applied to the data 
-#     contained in the attributes of sub-labels of a model. 
-#     A single instance of this class and each of its subclasses is built for the whole session.
-
-#     """
-#     def __init__(self) -> None:
-#         pass
-    
-#     def GetID():
-#         return Standard_GUID("22D22E52-D69A-11d4-8F1A-0060B0EE18E8")
-
-#     """验证对象标签、其参数和结果。"""
-#     def Validate(self, log: TFunction_Logbook) -> None:
-#         log.SetValid(self.Label(), True)
-
-#         # !我们调用此方法来检查对象是否已被修改为要调用。
-#         # !如果修改了对象标签或参数，我们必须重新计算对象 - 调用方法 Execute（）。
-
-#     def MustExecute(self, log: TFunction_Logbook) -> bool:
-#         if log.IsModified(self.Label()):
-#             return True
-#         """
-#         # Cut (in our simple case) has two arguments: The original shape, and the tool shape.
-#         # They are on the child labels of the cut's label:
-#         # So, OriginalNShape  - is attached to the first  child label
-#         #     ToolNShape - is attached to the second child label,
-#         #     .
-#         # Let's check them:
-#         """
-#         originalRef = TDF_Reference()
-#         # TDF_Label aLabel = Label().FindChild(1);
-#         #  BOOL f = Label().IsNull();
-#         #  int a = Label().NbChildren();
-#         aEntry = TCollection_AsciiString()
-#         TDF_Tool_Entry(self.Label(), aEntry)
-        
-#         aLabel = self.Label()
-#         aLabel.FindChild(1).FindAttribute(TDF_Reference.GetID(), originalRef)
-#         if log.IsModified(originalRef.Get()):
-#             return True
-    
-#         ToolRef = TDF_Reference()
-#         aLabel.FindChild(2).FindAttribute(TDF_Reference.GetID(), ToolRef)
-#         if log.IsModified(ToolRef.Get()):
-#             return True
-
-#         return False
-
-#     def Execute(self, log: TFunction_Logbook) -> int:
-#         # Let's get the arguments (OriginalNShape, ToolNShape of the object):
-
-#         # First, we have to retrieve the TDF_Reference attributes to obtain
-#         # the root labels of the OriginalNShape and the ToolNShape:
-#         OriginalRef = TDF_Reference()
-#         ToolRef = TDF_Reference()
-
-#         aLabel = self.Label()
-#         if not aLabel.FindAttribute(TDF_Reference.GetID(), OriginalRef):
-#             return 1
-#         OriginalLab = OriginalRef.Get()
-
-#         if not aLabel.FindChild(2).FindAttribute(TDF_Reference.GetID(), ToolRef):
-#             return 1
-#         ToolLab = ToolRef.Get()
-
-
-#         # Get the TNaming_NamedShape attributes of these labels
-#         OriginaNShape = TNaming_NamedShape()
-#         ToolNShape = TNaming_NamedShape()
-#         if not OriginalLab.FindAttribute(TNaming_NamedShape.GetID(), OriginaNShape):
-#             raise Standard_Failure("TOcaf_Commands::CutObjects")
-
-#         if not ToolNShape.FindAttribute(TNaming_NamedShape.GetID(), ToolNShape):
-#             raise Standard_Failure("TOcaf_Commands::CutObjects")
-
-#         # Now, let's get the TopoDS_Shape of these TNaming_NamedShape:
-#         OriginalShape = OriginaNShape.Get()
-#         ToolShape = OriginaNShape.Get()
-    
-#         # STEP 2:
-#         # Let's call for algorithm computing a cut operation:
-#         mkCut = BRepAlgoAPI_Cut(OriginalShape, ToolShape);
-#         # Let's check if the Cut has been successful:
-#         if not mkCut.IsDone():
-#             # QMessageBox.critical(qApp.activeWindow())
-#             # QObject.tr("Cut Function Driver")
-#             # QObject.tr("Cut not done")
-#             return 2
-
-#         ResultShape = mkCut.Shape()
-
-#         # Build a TNaming_NamedShape using built cut
-#         B = TNaming_Builder(self.Label())
-#         B.Modify(OriginalShape, ResultShape)
-#         # That's all:
-#         # If there are no any mistakes we return 0:
-#         return 0
-
-# class TOcafFunction_CylDriver(TFunction_Driver):
-#     def __init__(self) -> None:
-#         return 
-
-#     def GetID():
-#         return Standard_GUID("22D22E53-D69A-11d4-8F1A-0060B0EE18E8")
-
-#     def Validate(self, log: TFunction_Logbook) -> None:
-#         log.SetValid(self.Label(), True)
-
-#     def MustExecute(self, log: TFunction_Logbook) -> bool:
-#         # If the object's label is modified:
-#         if log.IsModified(self.Label()):
-#             return True
-
-#         # Cylinder (in our simple case) has 5 arguments:
-#         # Let's check them:
-#         aLabel:TDF_Label = self.Laebl()
-#         if log.IsModified(aLabel.FindChild(1)):
-#             return True # radius
-
-#         if log.IsModified(aLabel.FindChild(2)):
-#             return True # height
-
-#         if log.IsModified(aLabel.FindChild(3)):
-#             return True # x
-
-#         if log.IsModified(aLabel.FindChild(4)):
-#             return True # y
-
-#         if log.IsModified(aLabel.FindChild(5)):
-#             return True # z
-
-
-#         return False
-
-
-#     def Execute(self, log: TFunction_Logbook) -> int:
-#         TSR = TDataStd_Real()
-#         x, y, z, r, h = Standard_Real(), Standard_Real(), Standard_Real()\
-#             ,Standard_Real(), Standard_Real()
-#         aLabel:TDF_Label = self.Label()
-
-#         if not aLabel.FindChild(1).FindAttribute(TDataStd_Real.GetID(), TSR):
-#             return 1
-#         r = TSR.Get()
-
-#         if not aLabel.FindChild(2).FindAttribute(TDataStd_Real.GetID(), TSR):
-#             return 1
-#         h = TSR.Get()
-        
-#         if not aLabel.FindChild(3).FindAttribute(TDataStd_Real.GetID(), TSR):
-#             return 1
-#         x = TSR.Get()
-
-#         if not aLabel.FindChild(4).FindAttribute(TDataStd_Real.GetID(), TSR):
-#             return 1
-#         y = TSR.Get()
-
-#         if not aLabel.FindChild(5).FindAttribute(TDataStd_Real.GetID(), TSR):
-#             return 1
-#         z = TSR.Get()
-
-#         mkCyl = BRepPrimAPI_MakeCylinder(gp_Pnt(x, y, z), gp_Dir(0, 0, 1), r, h)
-#         ResultShape = mkCyl.Shape()
-#         return 0
-

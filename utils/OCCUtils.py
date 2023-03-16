@@ -4,6 +4,7 @@ from utils.logger import Logger
 # standard
 from OCC.Core.Standard import *
 from OCC.Core.TCollection import *
+from OCC.Core.TColgp import *
 # geom struct
 from OCC.Core.gp import *
 from OCC.Core.Geom import *
@@ -65,6 +66,15 @@ from utils.Sym_Attribute import (
     IDcolCurv,
     IDcolSurf,
     IDcol,
+    Sym_ListOfPoint
+)
+
+def DictCopy(dest, src):
+    dest.__dict__ = src.__dict__ 
+
+set_TopAttr = (
+    TNaming_NamedShape.GetID(),
+    XCAFDoc_Location.GetID()
 )
 def ShallowCopy(dest, src):
     dest.__class__ = src.__class__ # 
@@ -74,27 +84,15 @@ def ShallowCopy(dest, src):
     # __doc__
     # __module__
 
-def DictCopy(dest, src):
-    dest.__dict__ = src.__dict__ 
-
-# TNaming_NamedShape.Fun_Temp = TNaming_NamedShape.Restore
-# def Restore(shape_dst:TNaming_NamedShape, shape_src:TNaming_NamedShape):
-#     # TODO: 无奈之举
-#     shape_src = TNaming_NamedShape.DownCast(shape_src)
-#     shape = shape_src.Get()
-#     shape_dst.Fun_Temp(shape_src)
-#     TB = TNaming_Builder(shape_src.Label())
-#     TB.Generated(shape)
-
-# TNaming_NamedShape.Restore = Restore
-
 def FindAttribute(label:TDF_Label, GUID:Standard_GUID, attribute: TDF_Attribute):
     it_attr = TDF_AttributeIterator(label)
-    Logger().debug('IDDL:'+str(GUID)+str(type(attribute)))
     while it_attr.More():
+        # TODO: may be all object associated TopoDS should use ShallowCopy 
         if it_attr.Value().ID() == GUID:
             if GUID == TNaming_NamedShape.GetID():
                 ShallowCopy(attribute, TNaming_NamedShape.DownCast(it_attr.Value() ) )
+            elif GUID == XCAFDoc_Location.GetID():
+                ShallowCopy(attribute, XCAFDoc_Location.DownCast(it_attr.Value() ) )
             else:
                 attribute.Restore(it_attr.Value())
             return True 
@@ -203,4 +201,3 @@ def FromText(theType:type, text:str):
         return TCollection_AsciiString(text)
     else:
         return text
-
