@@ -54,8 +54,8 @@ class Sym_TransformDriver(Sym_Driver):
             'position': Argument(self.tagResource, Sym_PntDriver.ID),
         }
 
-    def Execute(self, theLabel:TDF_Label, log:TFunction_Logbook)->int:
-        super().Execute(theLabel, log)
+    def Execute(self, theLabel:TDF_Label)->int:
+        super().Execute(theLabel)
 
         dict_param = dict()
         for name, argu in self.Arguments.items():
@@ -110,7 +110,6 @@ class Sym_TransformDriver(Sym_Driver):
     def ID(self):
         return  Sym_TransformDriver_GUID#
 
-
     @classproperty
     def Type(self):
         return "Transform"
@@ -127,7 +126,7 @@ class Sym_BoxDriver(Sym_Driver):
             'w': Argument(self.tagResource, Sym_RealDriver.ID),
         }
 
-    def Execute(self, theLabel:TDF_Label, log:TFunction_Logbook)->int:
+    def Execute(self, theLabel:TDF_Label)->int:
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument

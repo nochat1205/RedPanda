@@ -30,6 +30,8 @@ from OCC.Core.BRepTopAdaptor import BRepTopAdaptor_HVertex
 from OCC.Core.BRep import BRep_Tool
 from OCC.Extend.ShapeFactory import make_vertex
 
+from utils.decorator import classproperty
+
 class Sym_PntDriver(Sym_Driver):
     _type = 'Point'
     _guid = Sym_PntDriver_GUID
@@ -43,8 +45,8 @@ class Sym_PntDriver(Sym_Driver):
             'theZp': Argument(self.tagResource, Sym_RealDriver.ID),
         }
 
-    def Execute(self, theLabel: TDF_Label, log: TFunction_Logbook) -> int:
-        super().Execute(theLabel, log)
+    def Execute(self, theLabel: TDF_Label) -> int:
+        super().Execute(theLabel)
 
         dict_param = dict()
         for name, argu in self.Arguments.items():
@@ -85,7 +87,6 @@ class Sym_PntDriver(Sym_Driver):
 
         return None
 
-    from utils.decorator import classproperty
     @classproperty
     def ID(self):
         return Sym_PntDriver._guid #

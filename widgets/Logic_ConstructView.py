@@ -42,4 +42,3 @@ class Logic_ConstructView(QtWidgets.QWidget):
     def commit(self):
         data = Sym_NewShapeData(self.Constructer)
         self.sig_NewShape.emit(data)
-        # return data

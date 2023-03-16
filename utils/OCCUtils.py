@@ -66,7 +66,6 @@ from utils.Sym_Attribute import (
     IDcolCurv,
     IDcolSurf,
     IDcol,
-    Sym_ListOfPoint
 )
 
 def DictCopy(dest, src):

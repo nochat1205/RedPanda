@@ -10,7 +10,9 @@ from utils.Driver.Sym_Driver import (
     Sym_ShapeRefDriver
 )
 from utils.Driver.Sym_DataDriver import (
-    Sym_RealDriver
+    Sym_RealDriver,
+    Sym_IntDriver,
+    Sym_ArrayDriver
 )
 from utils.Driver.Sym_GPDriver import (
     Sym_PntDriver
@@ -20,7 +22,11 @@ from utils.Driver.Sym_ShapeDriver import (
     Sym_BoxDriver
 )
 from utils.Driver.Sym_AlgoDriver import (
-    Sym_CutDriver
+    Sym_CutDriver,
+    
+)
+from utils.Driver.Sym_GeomDriver import (
+    Sym_BezierDriver,
 )
 
 class Sym_Application(TDocStd_Application):
@@ -41,4 +47,8 @@ class Sym_Application(TDocStd_Application):
         TFunction_DriverTable.Get().AddDriver(Sym_CutDriver.ID,
                                               Sym_CutDriver())
 
+        TFunction_DriverTable.Get().AddDriver(Sym_ArrayDriver.ID,
+                                              Sym_ArrayDriver())
+        TFunction_DriverTable.Get().AddDriver(Sym_BezierDriver.ID,
+                                              Sym_BezierDriver())
 

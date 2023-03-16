@@ -5,24 +5,25 @@ from utils.logger import Logger
 
 class Sym_NewShapeData(object):
     def __init__(self, theInput:Logic_Construct):
-        self.driverID = theInput.driverId
-        self.dict_params:dict = self.GetParams(theInput.treeRoots["Shape"])
+        Logger().info('Start Collect New Shape data')
+        self.driverID = theInput.driverId        
         self.ParentPath = theInput.treeRoots['Parent'].text(1)
         self.name = theInput.treeRoots["Name"].text(1)
+        self.value_dict:dict = self.GetParams(theInput.treeRoots["Shape"])
+        Logger().info(f"ParentPath:{self.ParentPath}")
+        Logger().info(f"name:{self.name}")
+        Logger().info(f"value:{self.value_dict}")
+        Logger().info('end Collect New Shape data')
 
     @staticmethod
     def GetParams(item: QTreeWidgetItem):
-
         def loadTreeItem(item: QTreeWidgetItem):
-            data = {}
             if item.childCount() == 0:
-                data[item.text(0)] = item.text(1)
+                return item.text(1)
             else:
-                child_dict = dict()
+                child_dict = {}
                 for ind in range(item.childCount()):
                     child_item = item.child(ind)
-                    child_dict.update(loadTreeItem(child_item))
-                data[item.text(0)] = child_dict
-            return data
-
+                    child_dict[child_item.text(0)] = loadTreeItem(child_item)
+                return child_dict
         return loadTreeItem(item)

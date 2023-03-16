@@ -35,8 +35,8 @@ class Sym_CutDriver(Sym_Driver):
             'cutShape': Argument(self.tagResource, Sym_ShapeRefDriver.ID)
         }
 
-    def Execute(self, theLabel: TDF_Label, log: TFunction_Logbook) -> int:
-        super().Execute(theLabel, log)
+    def Execute(self, theLabel: TDF_Label) -> int:
+        super().Execute(theLabel)
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument

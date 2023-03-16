@@ -32,4 +32,5 @@ class Ui_DocView(object):
         _translate = QtCore.QCoreApplication.translate
         DocView.setWindowTitle(_translate("DocView", "Form"))
         self.lineEdit.setPlaceholderText(_translate("DocView", "Search"))
+
 from widgets.Logic_DocTree import ModelTree

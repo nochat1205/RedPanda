@@ -43,7 +43,7 @@ class TagResource(object):
         return self.tag
 
 class Param(object):
-    def __init__(self, theType:type, default:str="") -> None:
+    def __init__(self, theType:type, default:str="", editAble=True) -> None:
         self.type = theType
         self.default = default
 
@@ -55,8 +55,11 @@ class Param(object):
     def Default(self):
         return self.default
 
+    def SetValue(self, theLabel:TDF_Label, text:str):
+        self.Type.Set(theLabel, FromText(self.Type, text))
+
     def __str__(self) -> str:
-        return "{}".format(self.type)
+        return f"{self.type}"
 
     def __repr__(self) -> str:
         return self.__str__()
@@ -78,6 +81,7 @@ class Argument(object):
 
     def IsEdit(self):
         return self._editFlag
+
 
     def Value(self, fatheLabel:TDF_Label)->any:
         aDriver = GetDriver(self.DriverID)
@@ -114,17 +118,47 @@ class Sym_Driver(object):
         _InitFunction(L)
         return False
 
-    def Init(self, L: TDF_Label) -> bool:
+    def InitValue(self, theLabel, theData:str):
+        attr = self.Attributes['value']
+        attr.SetValue(theLabel, theData)
+
+    def Init(self, L: TDF_Label, theData:Union[dict,str]) -> bool:
         if self._base_init(L):
             return True
 
-        for argu in self.Arguments.values():
-            argu:Argument
-            aLabel = L.FindChild(argu.Tag)
-            aDriver:Sym_Driver = GetDriver(argu.DriverID)
-            aDriver.Init(aLabel)
+        if isinstance(theData, dict): # dict 向下传播
+            Logger().info(f'{self.Type} init sub')
+            for name, argu in self.Arguments.items():
+                argu:Argument
+                aLabel = L.FindChild(argu.Tag)
+                aDriver:Sym_Driver = GetDriver(argu.DriverID)
+                if not aDriver.Init(aLabel, theData[name]):
+                    return False
+        else:
+            Logger().info(f'{self.Type} init self')
+            self.InitValue(L, theData)
 
-        return False
+        aEntry = TCollection_AsciiString()
+        TDF_Tool.Entry(L, aEntry)
+        Logger().info('Entry:{aEntry} init sub success')
+        if self.Execute(L) != 0:
+            return False
+        return True
+
+    def Execute(self, theLabel:TDF_Label) -> int:
+        """ 执行函数, 根据参数.
+
+        Args:
+            theLabel (TDF_Label): _description_
+            log (TFunction_Logbook): _description_
+
+        Returns:
+            bool: _description_
+        """
+        aEntry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, aEntry)
+        Logger().info(f'Entry:{aEntry} type:{self.Type} Execute')
+        return 0
 
     def MustExecute(self, theLabel:TDF_Label, log: TFunction_Logbook) -> bool:
         """
@@ -148,7 +182,7 @@ class Sym_Driver(object):
 
         value = container.Get()
         if value is None:
-            Logger().warn(f'Entry:{aEntry}({atype}) get value None')            
+            Logger().warn(f'Entry:{aEntry}({atype}) get value None')
             return None
  
         Logger().info(f'Entry:{aEntry} get value {str(value)} ')
@@ -162,13 +196,13 @@ class Sym_Driver(object):
         TDF_Tool.Entry(theLabel, aEntry)
         Logger().info(f"Label:{aEntry}({self.Type}) set value = {text}")
 
-    def ChangeValue(self, theLabel:TDF_Label, text):
-        self._Log_ChangeValue(theLabel, text)
-        aType = self.Attributes['value'].Type
-        value = aType.Set(theLabel, FromText(aType, text))
-        Logger().info(f"stored value is {value.Get()}")
+    # def ChangeValue(self, theLabel:TDF_Label, text):
+    #     self._Log_ChangeValue(theLabel, text)
+    #     aType = self.Attributes['value'].Type
+    #     value = aType.Set(theLabel, FromText(aType, text))
+    #     Logger().info(f"stored value is {value.Get()}")
 
-        return 
+    #     return
 
     def Validate(self, log: TFunction_Logbook) -> None:
         """ 验证对象标签、其参数和结果。"""
@@ -176,7 +210,7 @@ class Sym_Driver(object):
 
     def Update(self, theLabel:TDF_Label, log: TFunction_Logbook) -> bool:
         if self.MustExecute(theLabel, log):
-            self.Execute(theLabel, log)
+            self.Execute(theLabel)
             self.BroadcastImpacted(theLabel, log)
             return True
 
@@ -203,21 +237,6 @@ class Sym_Driver(object):
 
                 TDF_Tool.Entry(node, aEntry)
                 Logger().info(f'Entry:{aEntry} be impacted')
-
-    def Execute(self, theLabel:TDF_Label, log: TFunction_Logbook) -> int:
-        """ 执行函数, 根据参数.
-
-        Args:
-            theLabel (TDF_Label): _description_
-            log (TFunction_Logbook): _description_
-
-        Returns:
-            bool: _description_
-        """
-        aEntry = TCollection_AsciiString()
-        TDF_Tool.Entry(theLabel, aEntry)
-        Logger().info(f'Entry:{aEntry} type:{self.Type} Execute')
-        return 0
 
     def GetArguments(self, aLabel:TDF_Label, args: TDF_LabelList) -> None:
         return None
@@ -246,15 +265,7 @@ class Sym_ShapeRefDriver(Sym_Driver):
         self.myAttr = Param(Sym_ShapeRef)
         self.Attributes['value'] = self.myAttr
 
-    def Init(self, L: TDF_Label) -> bool:
-        if super().Init(L):
-            return True
-
-        Sym_ShapeRef.Set(L)
-        return False
-
-    def ChangeValue(self, theLabel:TDF_Label, text:str):
-        self._Log_ChangeValue(theLabel, text)
+    def InitValue(self, theLabel:TDF_Label, text:str):
         anEntry = TCollection_AsciiString(text)
         refedLabel = TDF_Label()
         TDF_Tool.Label(theLabel.Data(), anEntry, refedLabel)
@@ -263,7 +274,6 @@ class Sym_ShapeRefDriver(Sym_Driver):
         return True
 
     def GetValue(self, theLabel: TDF_Label) -> any:
-
         storedValue:TDF_Label = self.GetStoredValue(theLabel)
         if storedValue:
             aDriver = GetDriver(storedValue)
@@ -275,9 +285,6 @@ class Sym_ShapeRefDriver(Sym_Driver):
         TDF_Tool.Entry(theLabel, aEntry)
         Logger().warn(f"Entry:{aEntry} not found reference")
         return None
-
-    def Execute(self, theLabel: TDF_Label, log: TFunction_Logbook) -> int:
-        return super().Execute(theLabel, log)
 
     @classproperty
     def Type(self):

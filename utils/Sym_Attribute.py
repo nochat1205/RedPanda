@@ -16,7 +16,6 @@ from utils.GUID import (
     IDcolSurfGUID,
     AssemblyGUID,
     ShapeRefGUID,
-    Sym_ArrayPntGUID,
     Sym_IdAttr_GUID
 )
 from OCC.Core.TFunction import TFunction_Function

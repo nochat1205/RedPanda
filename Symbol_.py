@@ -26,7 +26,6 @@ from utils.Sym_Application import Sym_Application
 from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
 from OCC.Extend.ShapeFactory import make_vertex
 from utils.OCCUtils import (
-    Sym_ListOfPoint,
     TDocStd_Document,
     TColgp_Array1OfPnt
 )
@@ -115,12 +114,10 @@ def GetShape():
     print(type(value))
     return value
 
-def SaveDoc():
-    pnt = gp_Pnt(1, 1, 1)
-    array = TColgp_Array1OfPnt(1, 10)
-    array.SetValue(1, pnt)
-    Sym_ListOfPoint.Set(root, array)
-    app.SaveAs(doc, 'ArrayTest.xml')
+def Param():
+    from utils.Driver.Sym_DataDriver import Sym_ArrayDriver
+    # param = Sym_NewBuilder(Sym_BoxDriver())
+    param = Sym_NewBuilder(Sym_ArrayDriver())
 
 if __name__ == "__main__":
-    SaveDoc()
+    Param()

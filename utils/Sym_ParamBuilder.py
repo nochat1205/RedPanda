@@ -11,7 +11,21 @@ from utils.Driver.Sym_Driver import (
     GetDriver,
     Param
 )
+from utils.GUID import *
+
 from utils.logger import Logger
+
+
+class ArrayParam():
+    def __init__(self, subParam:dict, theSize:int=0) -> None:
+        self._subParam = subParam
+        self._size = theSize
+
+    def __str__(self) -> str:
+        return f'Array sz:{self._size} subParam: {self._subParam}'
+
+    def __repr__(self) -> str:
+        return self.__str__()
 
 class Sym_NewBuilder(object):
     """_summary_
@@ -20,39 +34,56 @@ class Sym_NewBuilder(object):
         param (dict): {"type":, "default":value}
     """
     def __init__(self, aDriver:Sym_Driver, parent=None) -> None:
+        Logger().info('Start init NewParamBuilder ')
+        Logger().info(f"Type:{aDriver.Type} Driver:{aDriver.ID}")
+
         self.type = aDriver.Type
-        self.parent = parent
         self.TFunctionID = aDriver.ID
-        self.params:dict = self.GetParamDefination(aDriver)
+        self.name_param = Param(str, "shape")
+        self.parent_param = Param(str, "0:1")
+
+        self.shape_param:dict = self.GetDefination(aDriver)
+        Logger().info(f'name:{self.name_param}')
+        Logger().info(f'parent:{self.parent_param}')
+        Logger().info(f'shape:{self.shape_param}')
+        Logger().info('End init NewParamBuilder ')
 
     @staticmethod
-    def GetParamDefination(aDriver:Sym_Driver):
-        def GetParamWith(aDriver: Sym_Driver):
-            dict_param = {}
-            # load attri
-            Attri = aDriver.Attributes
-            if "value" in Attri:
-                dict_param["value"] = Attri["value"]
+    def GetParamWith(aDriver: Sym_Driver):
+        def GetParamDefault(aDriver:Sym_Driver):
+            if len(aDriver.Arguments) > 0: # read children
+                child_ParamDict = {}
+                for name, param in aDriver.Arguments.items():
+                    param:Argument
+                    child_param = Sym_NewBuilder.GetParamWith(
+                            GetDriver(param.DriverID)
+                        )
+                    child_ParamDict[name] = child_param
+                return child_ParamDict
+            else: # read leave value
+                Attri = aDriver.Attributes['value']
+                return Attri
 
-            # load children
-            dict_child = dict()
-            for name, param in aDriver.Arguments.items():
-                param:Argument
-                children = GetParamWith(GetDriver(param.DriverID))
-                dict_child[name] = children
-            if len(dict_child) > 0:
-                dict_param["children"] = dict_child
-            return dict_param
+        def GetArrayParam(aDriver:Sym_Driver):
+            subDriver = GetDriver(aDriver._SubTypeId)
+            return ArrayParam(GetParamDefault(subDriver))
 
-        dict_param = dict()
-        dict_param["Name"] = Param(str, "debug")
-        dict_param['Parent'] = Param(str, "main")
-        dict_param['Shape'] = GetParamWith(aDriver)
+        param = None
+        if aDriver.ID == Sym_ArrayDriver_GUID:
+            param = GetArrayParam(aDriver)
+        else:
+            param = GetParamDefault(aDriver)
+        return param
 
-        return dict_param
+    @staticmethod
+    def GetDefination(aDriver:Sym_Driver):
+        return Sym_NewBuilder.GetParamWith(aDriver)
 
 class Sym_ChangeBuilder(object):
     def __init__(self, aLabel: TDF_Label):
+        Logger().info('Start init ChangeParamBuilder ')
+        Logger().info(f"Type:{aDriver.Type} Driver:{aDriver.ID}")
+
         self.name = self.GetName(aLabel)
         self.fullPath = self.GetFullPath(aLabel) 
         self.TFunctionID = self.GetDriverID()

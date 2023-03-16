@@ -1,0 +1,778 @@
+2023-03-17 02:29:18,435 - INFO: Start init NewParamBuilder 
+2023-03-17 02:29:18,437 - INFO: Type:bezier Driver:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:29:18,439 - INFO: name:<class 'str'>
+2023-03-17 02:29:18,442 - INFO: parent:<class 'str'>
+2023-03-17 02:29:18,444 - INFO: shape:{'pnts': Array sz:0 subParam: {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}
+2023-03-17 02:29:18,446 - INFO: End init NewParamBuilder 
+2023-03-17 02:29:18,449 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:29:18,456 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:29:18,459 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:29:18,461 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x0000028EB28F0DC0>
+2023-03-17 02:29:23,580 - INFO: change item:pnts, col:1 to text:4
+2023-03-17 02:29:23,582 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:29:23,584 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:29:23,586 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:29:23,588 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:29:23,590 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:29:23,592 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:29:23,594 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:29:23,596 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:29:23,598 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:29:23,601 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:29:23,602 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:29:23,604 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:29:27,110 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:29:28,899 - INFO: change item:theYp, col:1 to text:2
+2023-03-17 02:29:30,547 - INFO: change item:theZp, col:1 to text:3
+2023-03-17 02:29:32,611 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:29:34,224 - INFO: change item:theYp, col:1 to text:3
+2023-03-17 02:29:35,715 - INFO: change item:theZp, col:1 to text:4
+2023-03-17 02:29:38,820 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:29:42,558 - INFO: change item:theYp, col:1 to text:5
+2023-03-17 02:29:44,121 - INFO: change item:theZp, col:1 to text:5
+2023-03-17 02:29:46,968 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:29:48,408 - INFO: change item:theYp, col:1 to text:6
+2023-03-17 02:29:50,273 - INFO: change item:theZp, col:1 to text:6
+2023-03-17 02:29:51,107 - INFO: Start Collect New Shape data
+2023-03-17 02:29:51,109 - INFO: ParentPath:0:1
+2023-03-17 02:29:51,111 - INFO: name:shape
+2023-03-17 02:29:51,113 - INFO: value:{'pnts': {'0': {'theXp': '1', 'theYp': '2', 'theZp': '3'}, '1': {'theXp': '1', 'theYp': '3', 'theZp': '4'}, '2': {'theXp': '1', 'theYp': '5', 'theZp': '5'}, '3': {'theXp': '1', 'theYp': '6', 'theZp': '6'}}}
+2023-03-17 02:29:51,115 - INFO: end Collect New Shape data
+2023-03-17 02:29:51,117 - INFO: -- NewConmand --
+2023-03-17 02:29:51,119 - INFO: -- Add New Shape --
+2023-03-17 02:29:51,121 - INFO: Type:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:29:51,124 - INFO: Name:shape
+2023-03-17 02:29:51,125 - INFO: Param:{'pnts': {'0': {'theXp': '1', 'theYp': '2', 'theZp': '3'}, '1': {'theXp': '1', 'theYp': '3', 'theZp': '4'}, '2': {'theXp': '1', 'theYp': '5', 'theZp': '5'}, '3': {'theXp': '1', 'theYp': '6', 'theZp': '6'}}}
+2023-03-17 02:29:51,130 - INFO: Entry:0:1:1
+2023-03-17 02:29:51,133 - INFO: Array size:4 data:{'0': {'theXp': '1', 'theYp': '2', 'theZp': '3'}, '1': {'theXp': '1', 'theYp': '3', 'theZp': '4'}, '2': {'theXp': '1', 'theYp': '5', 'theZp': '5'}, '3': {'theXp': '1', 'theYp': '6', 'theZp': '6'}}
+2023-03-17 02:29:51,135 - INFO: Entry:0:1:1:1:125:1 type:real Execute
+2023-03-17 02:29:51,138 - INFO: Entry:0:1:1:1:125:2 type:real Execute
+2023-03-17 02:29:51,140 - INFO: Entry:0:1:1:1:125:3 type:real Execute
+2023-03-17 02:29:51,142 - INFO: Entry:0:1:1:1:125 type:Point Execute
+2023-03-17 02:29:51,145 - INFO: Entry:0:1:1:1:125:1 get value 1.0 
+2023-03-17 02:29:51,146 - INFO: Entry:0:1:1:1:125:2 get value 2.0 
+2023-03-17 02:29:51,148 - INFO: Entry:0:1:1:1:125:3 get value 3.0 
+2023-03-17 02:29:51,150 - INFO: Entry:0:1:1:1:125 Make Point Success
+2023-03-17 02:29:51,152 - INFO: Entry:0:1:1:1:126:1 type:real Execute
+2023-03-17 02:29:51,155 - INFO: Entry:0:1:1:1:126:2 type:real Execute
+2023-03-17 02:29:51,157 - INFO: Entry:0:1:1:1:126:3 type:real Execute
+2023-03-17 02:29:51,158 - INFO: Entry:0:1:1:1:126 type:Point Execute
+2023-03-17 02:29:51,161 - INFO: Entry:0:1:1:1:126:1 get value 1.0 
+2023-03-17 02:29:51,163 - INFO: Entry:0:1:1:1:126:2 get value 3.0 
+2023-03-17 02:29:51,167 - INFO: Entry:0:1:1:1:126:3 get value 4.0 
+2023-03-17 02:29:51,170 - INFO: Entry:0:1:1:1:126 Make Point Success
+2023-03-17 02:29:51,172 - INFO: Entry:0:1:1:1:127:1 type:real Execute
+2023-03-17 02:29:51,174 - INFO: Entry:0:1:1:1:127:2 type:real Execute
+2023-03-17 02:29:51,176 - INFO: Entry:0:1:1:1:127:3 type:real Execute
+2023-03-17 02:29:51,178 - INFO: Entry:0:1:1:1:127 type:Point Execute
+2023-03-17 02:29:51,180 - INFO: Entry:0:1:1:1:127:1 get value 1.0 
+2023-03-17 02:29:51,182 - INFO: Entry:0:1:1:1:127:2 get value 5.0 
+2023-03-17 02:29:51,185 - INFO: Entry:0:1:1:1:127:3 get value 5.0 
+2023-03-17 02:29:51,189 - INFO: Entry:0:1:1:1:127 Make Point Success
+2023-03-17 02:29:51,192 - INFO: Entry:0:1:1:1:128:1 type:real Execute
+2023-03-17 02:29:51,194 - INFO: Entry:0:1:1:1:128:2 type:real Execute
+2023-03-17 02:29:51,199 - INFO: Entry:0:1:1:1:128:3 type:real Execute
+2023-03-17 02:29:51,202 - INFO: Entry:0:1:1:1:128 type:Point Execute
+2023-03-17 02:29:51,204 - INFO: Entry:0:1:1:1:128:1 get value 1.0 
+2023-03-17 02:29:51,206 - INFO: Entry:0:1:1:1:128:2 get value 6.0 
+2023-03-17 02:29:51,208 - INFO: Entry:0:1:1:1:128:3 get value 6.0 
+2023-03-17 02:29:51,209 - INFO: Entry:0:1:1:1:128 Make Point Success
+2023-03-17 02:29:51,211 - INFO: Label:shape update presentation
+2023-03-17 02:29:51,216 - INFO: -- commit command --
+2023-03-17 02:30:11,278 - INFO: Start init NewParamBuilder 
+2023-03-17 02:30:11,281 - INFO: Type:Box Driver:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:30:11,283 - INFO: name:<class 'str'>
+2023-03-17 02:30:11,285 - INFO: parent:<class 'str'>
+2023-03-17 02:30:11,287 - INFO: shape:{'transform': {'angle': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'rotateAxis': {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}, 'position': {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}, 'l': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'h': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'w': <class 'OCC.Core.TDataStd.TDataStd_Real'>}
+2023-03-17 02:30:11,289 - INFO: End init NewParamBuilder 
+2023-03-17 02:30:11,291 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:30:11,296 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:30:11,299 - INFO: change item:angle, col:1 to text:0.0
+2023-03-17 02:30:11,302 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:30:11,304 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:30:11,307 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:30:11,309 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:30:11,311 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:30:11,312 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:30:11,314 - INFO: change item:l, col:1 to text:0.0
+2023-03-17 02:30:11,316 - INFO: change item:h, col:1 to text:0.0
+2023-03-17 02:30:11,318 - INFO: change item:w, col:1 to text:0.0
+2023-03-17 02:30:11,323 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x0000028EB28F0DC0>
+2023-03-17 02:30:14,448 - INFO: change item:l, col:1 to text:5
+2023-03-17 02:30:15,795 - INFO: change item:h, col:1 to text:6
+2023-03-17 02:30:17,708 - INFO: change item:w, col:1 to text:6
+2023-03-17 02:30:18,436 - INFO: Start Collect New Shape data
+2023-03-17 02:30:18,438 - INFO: ParentPath:0:1
+2023-03-17 02:30:18,440 - INFO: name:shape
+2023-03-17 02:30:18,441 - INFO: value:{'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '5', 'h': '6', 'w': '6'}
+2023-03-17 02:30:18,443 - INFO: end Collect New Shape data
+2023-03-17 02:30:18,445 - INFO: -- NewConmand --
+2023-03-17 02:30:18,448 - INFO: -- Add New Shape --
+2023-03-17 02:30:18,452 - INFO: Type:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:30:18,455 - INFO: Name:shape
+2023-03-17 02:30:18,457 - INFO: Param:{'transform': {'angle': '0.0', 'rotateAxis': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}, 'position': {'theXp': '0.0', 'theYp': '0.0', 'theZp': '0.0'}}, 'l': '5', 'h': '6', 'w': '6'}
+2023-03-17 02:30:18,460 - INFO: Entry:0:1:2
+2023-03-17 02:30:18,463 - INFO: Entry:0:1:2:1:1 type:real Execute
+2023-03-17 02:30:18,466 - INFO: Entry:0:1:2:1:2:1 type:real Execute
+2023-03-17 02:30:18,468 - INFO: Entry:0:1:2:1:2:2 type:real Execute
+2023-03-17 02:30:18,470 - INFO: Entry:0:1:2:1:2:3 type:real Execute
+2023-03-17 02:30:18,471 - INFO: Entry:0:1:2:1:2 type:Point Execute
+2023-03-17 02:30:18,473 - INFO: Entry:0:1:2:1:2:1 get value 0.0 
+2023-03-17 02:30:18,475 - INFO: Entry:0:1:2:1:2:2 get value 0.0 
+2023-03-17 02:30:18,477 - INFO: Entry:0:1:2:1:2:3 get value 0.0 
+2023-03-17 02:30:18,479 - INFO: Entry:0:1:2:1:2 Make Point Success
+2023-03-17 02:30:18,482 - INFO: Entry:0:1:2:1:3:1 type:real Execute
+2023-03-17 02:30:18,486 - INFO: Entry:0:1:2:1:3:2 type:real Execute
+2023-03-17 02:30:18,488 - INFO: Entry:0:1:2:1:3:3 type:real Execute
+2023-03-17 02:30:18,490 - INFO: Entry:0:1:2:1:3 type:Point Execute
+2023-03-17 02:30:18,492 - INFO: Entry:0:1:2:1:3:1 get value 0.0 
+2023-03-17 02:30:18,494 - INFO: Entry:0:1:2:1:3:2 get value 0.0 
+2023-03-17 02:30:18,496 - INFO: Entry:0:1:2:1:3:3 get value 0.0 
+2023-03-17 02:30:18,499 - INFO: Entry:0:1:2:1:3 Make Point Success
+2023-03-17 02:30:18,501 - INFO: Entry:0:1:2:1 type:Transform Execute
+2023-03-17 02:30:18,503 - INFO: Entry:0:1:2:1:1 get value 0.0 
+2023-03-17 02:30:18,507 - INFO: Entry:0:1:2:1:2 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:30:18,509 - INFO: Entry:0:1:2:1:3 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:30:18,521 - INFO: Entry:0:1:2:1 Make Transform Success
+2023-03-17 02:30:18,524 - INFO: Entry:0:1:2:2 type:real Execute
+2023-03-17 02:30:18,526 - INFO: Entry:0:1:2:3 type:real Execute
+2023-03-17 02:30:18,530 - INFO: Entry:0:1:2:4 type:real Execute
+2023-03-17 02:30:18,537 - INFO: Entry:0:1:2:1 get value <class 'TopLoc_Location'> 
+2023-03-17 02:30:18,545 - INFO: Entry:0:1:2:2 get value 5.0 
+2023-03-17 02:30:18,546 - INFO: Entry:0:1:2:3 get value 6.0 
+2023-03-17 02:30:18,548 - INFO: Entry:0:1:2:4 get value 6.0 
+2023-03-17 02:30:18,550 - INFO: Driver:Box Execute {'transform': <class 'gp_Trsf'>, 'l': 5.0, 'h': 6.0, 'w': 6.0}
+2023-03-17 02:30:18,613 - INFO: Label:shape update presentation
+2023-03-17 02:30:18,622 - INFO: -- commit command --
+2023-03-17 02:48:22,489 - INFO: Start init NewParamBuilder 
+2023-03-17 02:48:22,491 - INFO: Type:bezier Driver:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:48:22,493 - INFO: name:<class 'str'>
+2023-03-17 02:48:22,496 - INFO: parent:<class 'str'>
+2023-03-17 02:48:22,498 - INFO: shape:{'pnts': Array sz:0 subParam: {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}
+2023-03-17 02:48:22,500 - INFO: End init NewParamBuilder 
+2023-03-17 02:48:22,503 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:48:22,509 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:48:22,512 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:48:22,515 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x000001FA745F0C10>
+2023-03-17 02:48:25,125 - INFO: change item:pnts, col:1 to text:3
+2023-03-17 02:48:25,127 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:48:25,130 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:48:25,132 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:48:25,134 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:48:25,136 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:48:25,138 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:48:25,140 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:48:25,142 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:48:25,144 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:48:29,086 - INFO: change item:theXp, col:1 to text:2
+2023-03-17 02:48:30,324 - INFO: change item:theYp, col:1 to text:3
+2023-03-17 02:48:31,718 - INFO: change item:theZp, col:1 to text:1
+2023-03-17 02:48:33,335 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:48:35,811 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:48:37,086 - INFO: change item:theYp, col:1 to text:2
+2023-03-17 02:48:39,687 - INFO: change item:theZp, col:1 to text:3
+2023-03-17 02:48:42,279 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:48:43,621 - INFO: change item:theYp, col:1 to text:4
+2023-03-17 02:48:45,094 - INFO: change item:theZp, col:1 to text:3
+2023-03-17 02:48:45,838 - INFO: Start Collect New Shape data
+2023-03-17 02:48:45,841 - INFO: ParentPath:0:1
+2023-03-17 02:48:45,843 - INFO: name:shape
+2023-03-17 02:48:45,845 - INFO: value:{'pnts': {'0': {'theXp': '1', 'theYp': '3', 'theZp': '1'}, '1': {'theXp': '1', 'theYp': '2', 'theZp': '3'}, '2': {'theXp': '1', 'theYp': '4', 'theZp': '3'}}}
+2023-03-17 02:48:45,847 - INFO: end Collect New Shape data
+2023-03-17 02:48:45,849 - INFO: -- NewConmand --
+2023-03-17 02:48:45,851 - INFO: -- Add New Shape --
+2023-03-17 02:48:45,854 - INFO: Type:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:48:45,856 - INFO: Name:shape
+2023-03-17 02:48:45,858 - INFO: Param:{'pnts': {'0': {'theXp': '1', 'theYp': '3', 'theZp': '1'}, '1': {'theXp': '1', 'theYp': '2', 'theZp': '3'}, '2': {'theXp': '1', 'theYp': '4', 'theZp': '3'}}}
+2023-03-17 02:48:45,862 - INFO: Entry:0:1:1
+2023-03-17 02:48:45,866 - INFO: bezier init sub
+2023-03-17 02:48:45,869 - INFO: Array size:3 data:{'0': {'theXp': '1', 'theYp': '3', 'theZp': '1'}, '1': {'theXp': '1', 'theYp': '2', 'theZp': '3'}, '2': {'theXp': '1', 'theYp': '4', 'theZp': '3'}}
+2023-03-17 02:48:45,872 - INFO: Point init sub
+2023-03-17 02:48:45,874 - INFO: real init self
+2023-03-17 02:48:45,875 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,877 - INFO: Entry:0:1:1:1:125:1 type:real Execute
+2023-03-17 02:48:45,880 - INFO: real init self
+2023-03-17 02:48:45,882 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,885 - INFO: Entry:0:1:1:1:125:2 type:real Execute
+2023-03-17 02:48:45,887 - INFO: real init self
+2023-03-17 02:48:45,889 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,890 - INFO: Entry:0:1:1:1:125:3 type:real Execute
+2023-03-17 02:48:45,892 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,894 - INFO: Entry:0:1:1:1:125 type:Point Execute
+2023-03-17 02:48:45,897 - INFO: Entry:0:1:1:1:125:1 get value 1.0 
+2023-03-17 02:48:45,901 - INFO: Entry:0:1:1:1:125:2 get value 3.0 
+2023-03-17 02:48:45,903 - INFO: Entry:0:1:1:1:125:3 get value 1.0 
+2023-03-17 02:48:45,905 - INFO: Entry:0:1:1:1:125 Make Point Success
+2023-03-17 02:48:45,907 - INFO: Point init sub
+2023-03-17 02:48:45,909 - INFO: real init self
+2023-03-17 02:48:45,911 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,913 - INFO: Entry:0:1:1:1:126:1 type:real Execute
+2023-03-17 02:48:45,916 - INFO: real init self
+2023-03-17 02:48:45,918 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,920 - INFO: Entry:0:1:1:1:126:2 type:real Execute
+2023-03-17 02:48:45,922 - INFO: real init self
+2023-03-17 02:48:45,924 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,926 - INFO: Entry:0:1:1:1:126:3 type:real Execute
+2023-03-17 02:48:45,927 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,931 - INFO: Entry:0:1:1:1:126 type:Point Execute
+2023-03-17 02:48:45,936 - INFO: Entry:0:1:1:1:126:1 get value 1.0 
+2023-03-17 02:48:45,939 - INFO: Entry:0:1:1:1:126:2 get value 2.0 
+2023-03-17 02:48:45,942 - INFO: Entry:0:1:1:1:126:3 get value 3.0 
+2023-03-17 02:48:45,945 - INFO: Entry:0:1:1:1:126 Make Point Success
+2023-03-17 02:48:45,947 - INFO: Point init sub
+2023-03-17 02:48:45,949 - INFO: real init self
+2023-03-17 02:48:45,951 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,955 - INFO: Entry:0:1:1:1:127:1 type:real Execute
+2023-03-17 02:48:45,962 - INFO: real init self
+2023-03-17 02:48:45,965 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,967 - INFO: Entry:0:1:1:1:127:2 type:real Execute
+2023-03-17 02:48:45,969 - INFO: real init self
+2023-03-17 02:48:45,970 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,972 - INFO: Entry:0:1:1:1:127:3 type:real Execute
+2023-03-17 02:48:45,974 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:48:45,976 - INFO: Entry:0:1:1:1:127 type:Point Execute
+2023-03-17 02:48:45,980 - INFO: Entry:0:1:1:1:127:1 get value 1.0 
+2023-03-17 02:48:45,983 - INFO: Entry:0:1:1:1:127:2 get value 4.0 
+2023-03-17 02:48:45,989 - INFO: Entry:0:1:1:1:127:3 get value 3.0 
+2023-03-17 02:48:45,992 - INFO: Entry:0:1:1:1:127 Make Point Success
+2023-03-17 02:48:45,994 - INFO: Array Init success.
+2023-03-17 02:48:45,998 - INFO: Label:shape update presentation
+2023-03-17 02:48:46,003 - INFO: -- commit command --
+2023-03-17 02:51:30,120 - INFO: Start init NewParamBuilder 
+2023-03-17 02:51:30,122 - INFO: Type:bezier Driver:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:51:30,124 - INFO: name:<class 'str'>
+2023-03-17 02:51:30,126 - INFO: parent:<class 'str'>
+2023-03-17 02:51:30,129 - INFO: shape:{'pnts': Array sz:0 subParam: {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}
+2023-03-17 02:51:30,131 - INFO: End init NewParamBuilder 
+2023-03-17 02:51:30,134 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:51:30,140 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:51:30,143 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:51:30,147 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x00000229A2800D30>
+2023-03-17 02:51:32,259 - INFO: change item:pnts, col:1 to text:40
+2023-03-17 02:51:32,262 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,264 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,266 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,268 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,270 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,272 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,275 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,276 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,279 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,282 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,283 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,285 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,288 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,289 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,291 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,294 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,296 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,298 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,301 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,303 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,305 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,307 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,309 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,311 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,315 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,317 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,319 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,321 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,323 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,325 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,327 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,330 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,332 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,334 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,336 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,338 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,340 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,342 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,343 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,347 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,350 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,352 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,356 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,358 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,361 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,364 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,366 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,367 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,370 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,372 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,374 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,377 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,381 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,383 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,387 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,389 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,391 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,395 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,399 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,402 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,405 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,407 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,410 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,417 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,419 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,421 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,423 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,426 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,429 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,435 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,438 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,441 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,446 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,448 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,450 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,452 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,454 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,456 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,459 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,461 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,464 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,469 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,471 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,473 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,478 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,480 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,482 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,484 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,486 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,489 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,491 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,493 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,496 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,503 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,507 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,511 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,516 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,519 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,521 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,524 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,526 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,528 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,530 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,532 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,534 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,538 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,540 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,543 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,548 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,551 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,554 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,558 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,559 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,561 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,564 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,566 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,569 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:32,571 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:51:32,573 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:51:32,575 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:51:36,477 - INFO: change item:pnts, col:1 to text:4
+2023-03-17 02:51:56,387 - INFO: change item:pnts, col:1 to text:3
+2023-03-17 02:52:01,940 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:52:10,419 - INFO: Start init NewParamBuilder 
+2023-03-17 02:52:10,421 - INFO: Type:bezier Driver:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:52:10,423 - INFO: name:<class 'str'>
+2023-03-17 02:52:10,424 - INFO: parent:<class 'str'>
+2023-03-17 02:52:10,426 - INFO: shape:{'pnts': Array sz:0 subParam: {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}
+2023-03-17 02:52:10,429 - INFO: End init NewParamBuilder 
+2023-03-17 02:52:10,436 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:52:10,441 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:52:10,445 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:52:10,447 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x00000229A2800D30>
+2023-03-17 02:52:13,198 - INFO: change item:pnts, col:1 to text:4
+2023-03-17 02:52:13,200 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:52:13,202 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:52:13,204 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:52:13,206 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:52:13,208 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:52:13,210 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:52:13,212 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:52:13,214 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:52:13,216 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:52:13,219 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:52:13,220 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:52:13,222 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:52:16,283 - INFO: change item:theYp, col:1 to text:1
+2023-03-17 02:52:17,640 - INFO: change item:theXp, col:1 to text:2
+2023-03-17 02:52:19,664 - INFO: change item:theZp, col:1 to text:3
+2023-03-17 02:52:23,815 - INFO: change item:theXp, col:1 to text:2
+2023-03-17 02:52:26,264 - INFO: change item:theYp, col:1 to text:2
+2023-03-17 02:52:27,910 - INFO: change item:theZp, col:1 to text:3
+2023-03-17 02:52:32,379 - INFO: change item:theXp, col:1 to text:2
+2023-03-17 02:52:34,492 - INFO: change item:theYp, col:1 to text:3
+2023-03-17 02:52:36,139 - INFO: change item:theZp, col:1 to text:4
+2023-03-17 02:52:39,436 - INFO: change item:theXp, col:1 to text:2
+2023-03-17 02:52:41,026 - INFO: change item:theYp, col:1 to text:5
+2023-03-17 02:52:42,895 - INFO: change item:theZp, col:1 to text:5
+2023-03-17 02:52:43,637 - INFO: Start Collect New Shape data
+2023-03-17 02:52:43,639 - INFO: ParentPath:0:1
+2023-03-17 02:52:43,642 - INFO: name:shape
+2023-03-17 02:52:43,643 - INFO: value:{'pnts': {'0': {'theXp': '2', 'theYp': '1', 'theZp': '3'}, '1': {'theXp': '2', 'theYp': '2', 'theZp': '3'}, '2': {'theXp': '2', 'theYp': '3', 'theZp': '4'}, '3': {'theXp': '2', 'theYp': '5', 'theZp': '5'}}}
+2023-03-17 02:52:43,646 - INFO: end Collect New Shape data
+2023-03-17 02:52:43,648 - INFO: -- NewConmand --
+2023-03-17 02:52:43,649 - INFO: -- Add New Shape --
+2023-03-17 02:52:43,651 - INFO: Type:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:52:43,653 - INFO: Name:shape
+2023-03-17 02:52:43,655 - INFO: Param:{'pnts': {'0': {'theXp': '2', 'theYp': '1', 'theZp': '3'}, '1': {'theXp': '2', 'theYp': '2', 'theZp': '3'}, '2': {'theXp': '2', 'theYp': '3', 'theZp': '4'}, '3': {'theXp': '2', 'theYp': '5', 'theZp': '5'}}}
+2023-03-17 02:52:43,660 - INFO: Entry:0:1:1
+2023-03-17 02:52:43,663 - INFO: bezier init sub
+2023-03-17 02:52:43,666 - INFO: Array size:4 data:{'0': {'theXp': '2', 'theYp': '1', 'theZp': '3'}, '1': {'theXp': '2', 'theYp': '2', 'theZp': '3'}, '2': {'theXp': '2', 'theYp': '3', 'theZp': '4'}, '3': {'theXp': '2', 'theYp': '5', 'theZp': '5'}}
+2023-03-17 02:52:43,669 - INFO: Point init sub
+2023-03-17 02:52:43,670 - INFO: real init self
+2023-03-17 02:52:43,672 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,674 - INFO: Entry:0:1:1:1:125:1 type:real Execute
+2023-03-17 02:52:43,676 - INFO: real init self
+2023-03-17 02:52:43,678 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,680 - INFO: Entry:0:1:1:1:125:2 type:real Execute
+2023-03-17 02:52:43,682 - INFO: real init self
+2023-03-17 02:52:43,683 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,685 - INFO: Entry:0:1:1:1:125:3 type:real Execute
+2023-03-17 02:52:43,687 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,690 - INFO: Entry:0:1:1:1:125 type:Point Execute
+2023-03-17 02:52:43,692 - INFO: Entry:0:1:1:1:125:1 get value 2.0 
+2023-03-17 02:52:43,694 - INFO: Entry:0:1:1:1:125:2 get value 1.0 
+2023-03-17 02:52:43,697 - INFO: Entry:0:1:1:1:125:3 get value 3.0 
+2023-03-17 02:52:43,701 - INFO: Entry:0:1:1:1:125 Make Point Success
+2023-03-17 02:52:43,703 - INFO: Point init sub
+2023-03-17 02:52:43,705 - INFO: real init self
+2023-03-17 02:52:43,707 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,709 - INFO: Entry:0:1:1:1:126:1 type:real Execute
+2023-03-17 02:52:43,710 - INFO: real init self
+2023-03-17 02:52:43,712 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,714 - INFO: Entry:0:1:1:1:126:2 type:real Execute
+2023-03-17 02:52:43,716 - INFO: real init self
+2023-03-17 02:52:43,718 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,722 - INFO: Entry:0:1:1:1:126:3 type:real Execute
+2023-03-17 02:52:43,725 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,727 - INFO: Entry:0:1:1:1:126 type:Point Execute
+2023-03-17 02:52:43,734 - INFO: Entry:0:1:1:1:126:1 get value 2.0 
+2023-03-17 02:52:43,739 - INFO: Entry:0:1:1:1:126:2 get value 2.0 
+2023-03-17 02:52:43,742 - INFO: Entry:0:1:1:1:126:3 get value 3.0 
+2023-03-17 02:52:43,745 - INFO: Entry:0:1:1:1:126 Make Point Success
+2023-03-17 02:52:43,769 - INFO: Point init sub
+2023-03-17 02:52:43,772 - INFO: real init self
+2023-03-17 02:52:43,775 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,779 - INFO: Entry:0:1:1:1:127:1 type:real Execute
+2023-03-17 02:52:43,785 - INFO: real init self
+2023-03-17 02:52:43,790 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,795 - INFO: Entry:0:1:1:1:127:2 type:real Execute
+2023-03-17 02:52:43,799 - INFO: real init self
+2023-03-17 02:52:43,802 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,806 - INFO: Entry:0:1:1:1:127:3 type:real Execute
+2023-03-17 02:52:43,808 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,812 - INFO: Entry:0:1:1:1:127 type:Point Execute
+2023-03-17 02:52:43,815 - INFO: Entry:0:1:1:1:127:1 get value 2.0 
+2023-03-17 02:52:43,820 - INFO: Entry:0:1:1:1:127:2 get value 3.0 
+2023-03-17 02:52:43,822 - INFO: Entry:0:1:1:1:127:3 get value 4.0 
+2023-03-17 02:52:43,825 - INFO: Entry:0:1:1:1:127 Make Point Success
+2023-03-17 02:52:43,829 - INFO: Point init sub
+2023-03-17 02:52:43,834 - INFO: real init self
+2023-03-17 02:52:43,837 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,839 - INFO: Entry:0:1:1:1:128:1 type:real Execute
+2023-03-17 02:52:43,841 - INFO: real init self
+2023-03-17 02:52:43,843 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,845 - INFO: Entry:0:1:1:1:128:2 type:real Execute
+2023-03-17 02:52:43,847 - INFO: real init self
+2023-03-17 02:52:43,850 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,853 - INFO: Entry:0:1:1:1:128:3 type:real Execute
+2023-03-17 02:52:43,855 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,857 - INFO: Entry:0:1:1:1:128 type:Point Execute
+2023-03-17 02:52:43,859 - INFO: Entry:0:1:1:1:128:1 get value 2.0 
+2023-03-17 02:52:43,862 - INFO: Entry:0:1:1:1:128:2 get value 5.0 
+2023-03-17 02:52:43,866 - INFO: Entry:0:1:1:1:128:3 get value 5.0 
+2023-03-17 02:52:43,869 - INFO: Entry:0:1:1:1:128 Make Point Success
+2023-03-17 02:52:43,871 - INFO: Array Init success.
+2023-03-17 02:52:43,873 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:52:43,875 - INFO: Entry:0:1:1 type:bezier Execute
+2023-03-17 02:52:43,883 - INFO: Entry:0:1:1:1:125 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:52:43,885 - INFO: Entry:0:1:1:1:126 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:52:43,887 - INFO: Entry:0:1:1:1:127 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:52:43,889 - INFO: Entry:0:1:1:1:128 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:53:10,017 - INFO: Start init NewParamBuilder 
+2023-03-17 02:53:10,019 - INFO: Type:bezier Driver:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:53:10,021 - INFO: name:<class 'str'>
+2023-03-17 02:53:10,023 - INFO: parent:<class 'str'>
+2023-03-17 02:53:10,025 - INFO: shape:{'pnts': Array sz:0 subParam: {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}
+2023-03-17 02:53:10,027 - INFO: End init NewParamBuilder 
+2023-03-17 02:53:10,030 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:53:10,036 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:53:10,039 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:53:10,042 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x000002222831ED30>
+2023-03-17 02:53:13,146 - INFO: change item:pnts, col:1 to text:4
+2023-03-17 02:53:13,149 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:13,151 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:13,153 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:13,155 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:13,157 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:13,159 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:13,162 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:13,164 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:13,166 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:13,168 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:13,170 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:13,172 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:18,360 - INFO: change item:pnts, col:1 to text:3
+2023-03-17 02:53:21,137 - INFO: change item:pnts, col:1 to text:7
+2023-03-17 02:53:21,139 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:21,141 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:21,143 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:21,146 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:21,148 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:21,150 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:21,152 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:21,154 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:21,157 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:21,159 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:21,162 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:21,164 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:24,995 - INFO: change item:pnts, col:1 to text:4
+2023-03-17 02:53:40,295 - INFO: change item:pnts, col:1 to text:3
+2023-03-17 02:53:46,691 - INFO: Start init NewParamBuilder 
+2023-03-17 02:53:46,693 - INFO: Type:bezier Driver:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:53:46,696 - INFO: name:<class 'str'>
+2023-03-17 02:53:46,698 - INFO: parent:<class 'str'>
+2023-03-17 02:53:46,701 - INFO: shape:{'pnts': Array sz:0 subParam: {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}
+2023-03-17 02:53:46,703 - INFO: End init NewParamBuilder 
+2023-03-17 02:53:46,705 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:53:46,709 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:53:46,712 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:53:46,715 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x000002222831ED30>
+2023-03-17 02:53:49,972 - INFO: change item:pnts, col:1 to text:4
+2023-03-17 02:53:49,974 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:49,976 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:49,978 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:49,980 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:49,982 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:49,984 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:49,986 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:49,988 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:49,990 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:49,992 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:53:49,994 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:53:49,996 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:53:52,602 - INFO: change item:theXp, col:1 to text:3
+2023-03-17 02:53:53,989 - INFO: change item:theYp, col:1 to text:5
+2023-03-17 02:53:56,784 - INFO: change item:theZp, col:1 to text:4
+2023-03-17 02:53:58,335 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:53:59,635 - INFO: change item:theYp, col:1 to text:2
+2023-03-17 02:54:02,143 - INFO: change item:theZp, col:1 to text:1
+2023-03-17 02:54:04,892 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:54:08,096 - INFO: change item:theYp, col:1 to text:2
+2023-03-17 02:54:09,600 - INFO: change item:theZp, col:1 to text:2
+2023-03-17 02:54:12,911 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:54:15,307 - INFO: change item:theYp, col:1 to text:3
+2023-03-17 02:54:17,322 - INFO: change item:theZp, col:1 to text:3
+2023-03-17 02:54:20,079 - INFO: change item:theXp, col:1 to text:1
+2023-03-17 02:54:21,559 - INFO: change item:theYp, col:1 to text:4
+2023-03-17 02:54:23,831 - INFO: change item:theZp, col:1 to text:4
+2023-03-17 02:54:24,957 - INFO: Start Collect New Shape data
+2023-03-17 02:54:24,959 - INFO: ParentPath:0:1
+2023-03-17 02:54:24,962 - INFO: name:shape
+2023-03-17 02:54:24,964 - INFO: value:{'pnts': {'0': {'theXp': '1', 'theYp': '2', 'theZp': '1'}, '1': {'theXp': '1', 'theYp': '2', 'theZp': '2'}, '2': {'theXp': '1', 'theYp': '3', 'theZp': '3'}, '3': {'theXp': '1', 'theYp': '4', 'theZp': '4'}}}
+2023-03-17 02:54:24,968 - INFO: end Collect New Shape data
+2023-03-17 02:54:24,971 - INFO: -- NewConmand --
+2023-03-17 02:54:24,973 - INFO: -- Add New Shape --
+2023-03-17 02:54:24,975 - INFO: Type:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:54:24,977 - INFO: Name:shape
+2023-03-17 02:54:24,980 - INFO: Param:{'pnts': {'0': {'theXp': '1', 'theYp': '2', 'theZp': '1'}, '1': {'theXp': '1', 'theYp': '2', 'theZp': '2'}, '2': {'theXp': '1', 'theYp': '3', 'theZp': '3'}, '3': {'theXp': '1', 'theYp': '4', 'theZp': '4'}}}
+2023-03-17 02:54:24,986 - INFO: Entry:0:1:1
+2023-03-17 02:54:24,988 - INFO: bezier init sub
+2023-03-17 02:54:24,990 - INFO: Array size:4 data:{'0': {'theXp': '1', 'theYp': '2', 'theZp': '1'}, '1': {'theXp': '1', 'theYp': '2', 'theZp': '2'}, '2': {'theXp': '1', 'theYp': '3', 'theZp': '3'}, '3': {'theXp': '1', 'theYp': '4', 'theZp': '4'}}
+2023-03-17 02:54:24,992 - INFO: Point init sub
+2023-03-17 02:54:24,994 - INFO: real init self
+2023-03-17 02:54:24,996 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:24,999 - INFO: Entry:0:1:1:1:125:1 type:real Execute
+2023-03-17 02:54:25,001 - INFO: real init self
+2023-03-17 02:54:25,002 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,004 - INFO: Entry:0:1:1:1:125:2 type:real Execute
+2023-03-17 02:54:25,006 - INFO: real init self
+2023-03-17 02:54:25,008 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,010 - INFO: Entry:0:1:1:1:125:3 type:real Execute
+2023-03-17 02:54:25,013 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,017 - INFO: Entry:0:1:1:1:125 type:Point Execute
+2023-03-17 02:54:25,019 - INFO: Entry:0:1:1:1:125:1 get value 1.0 
+2023-03-17 02:54:25,021 - INFO: Entry:0:1:1:1:125:2 get value 2.0 
+2023-03-17 02:54:25,024 - INFO: Entry:0:1:1:1:125:3 get value 1.0 
+2023-03-17 02:54:25,026 - INFO: Entry:0:1:1:1:125 Make Point Success
+2023-03-17 02:54:25,028 - INFO: Point init sub
+2023-03-17 02:54:25,030 - INFO: real init self
+2023-03-17 02:54:25,032 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,034 - INFO: Entry:0:1:1:1:126:1 type:real Execute
+2023-03-17 02:54:25,036 - INFO: real init self
+2023-03-17 02:54:25,038 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,040 - INFO: Entry:0:1:1:1:126:2 type:real Execute
+2023-03-17 02:54:25,042 - INFO: real init self
+2023-03-17 02:54:25,044 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,050 - INFO: Entry:0:1:1:1:126:3 type:real Execute
+2023-03-17 02:54:25,054 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,056 - INFO: Entry:0:1:1:1:126 type:Point Execute
+2023-03-17 02:54:25,059 - INFO: Entry:0:1:1:1:126:1 get value 1.0 
+2023-03-17 02:54:25,061 - INFO: Entry:0:1:1:1:126:2 get value 2.0 
+2023-03-17 02:54:25,063 - INFO: Entry:0:1:1:1:126:3 get value 2.0 
+2023-03-17 02:54:25,065 - INFO: Entry:0:1:1:1:126 Make Point Success
+2023-03-17 02:54:25,068 - INFO: Point init sub
+2023-03-17 02:54:25,072 - INFO: real init self
+2023-03-17 02:54:25,076 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,078 - INFO: Entry:0:1:1:1:127:1 type:real Execute
+2023-03-17 02:54:25,081 - INFO: real init self
+2023-03-17 02:54:25,084 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,086 - INFO: Entry:0:1:1:1:127:2 type:real Execute
+2023-03-17 02:54:25,088 - INFO: real init self
+2023-03-17 02:54:25,090 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,092 - INFO: Entry:0:1:1:1:127:3 type:real Execute
+2023-03-17 02:54:25,096 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,099 - INFO: Entry:0:1:1:1:127 type:Point Execute
+2023-03-17 02:54:25,101 - INFO: Entry:0:1:1:1:127:1 get value 1.0 
+2023-03-17 02:54:25,102 - INFO: Entry:0:1:1:1:127:2 get value 3.0 
+2023-03-17 02:54:25,104 - INFO: Entry:0:1:1:1:127:3 get value 3.0 
+2023-03-17 02:54:25,106 - INFO: Entry:0:1:1:1:127 Make Point Success
+2023-03-17 02:54:25,109 - INFO: Point init sub
+2023-03-17 02:54:25,111 - INFO: real init self
+2023-03-17 02:54:25,114 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,117 - INFO: Entry:0:1:1:1:128:1 type:real Execute
+2023-03-17 02:54:25,119 - INFO: real init self
+2023-03-17 02:54:25,121 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,123 - INFO: Entry:0:1:1:1:128:2 type:real Execute
+2023-03-17 02:54:25,126 - INFO: real init self
+2023-03-17 02:54:25,129 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,132 - INFO: Entry:0:1:1:1:128:3 type:real Execute
+2023-03-17 02:54:25,135 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,137 - INFO: Entry:0:1:1:1:128 type:Point Execute
+2023-03-17 02:54:25,139 - INFO: Entry:0:1:1:1:128:1 get value 1.0 
+2023-03-17 02:54:25,141 - INFO: Entry:0:1:1:1:128:2 get value 4.0 
+2023-03-17 02:54:25,143 - INFO: Entry:0:1:1:1:128:3 get value 4.0 
+2023-03-17 02:54:25,145 - INFO: Entry:0:1:1:1:128 Make Point Success
+2023-03-17 02:54:25,147 - INFO: Array Init success.
+2023-03-17 02:54:25,149 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:54:25,151 - INFO: Entry:0:1:1 type:bezier Execute
+2023-03-17 02:54:25,156 - INFO: Entry:0:1:1:1:125 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:54:25,158 - INFO: Entry:0:1:1:1:126 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:54:25,160 - INFO: Entry:0:1:1:1:127 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:54:25,165 - INFO: Entry:0:1:1:1:128 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:54:25,174 - INFO: Entry:0:1:1 Make bezier Success
+2023-03-17 02:54:25,179 - INFO: -- commit command --
+2023-03-17 02:54:43,290 - INFO: Start init NewParamBuilder 
+2023-03-17 02:54:43,293 - INFO: Type:bezier Driver:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:54:43,297 - INFO: name:<class 'str'>
+2023-03-17 02:54:43,299 - INFO: parent:<class 'str'>
+2023-03-17 02:54:43,301 - INFO: shape:{'pnts': Array sz:0 subParam: {'theXp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theYp': <class 'OCC.Core.TDataStd.TDataStd_Real'>, 'theZp': <class 'OCC.Core.TDataStd.TDataStd_Real'>}}
+2023-03-17 02:54:43,303 - INFO: End init NewParamBuilder 
+2023-03-17 02:54:43,305 - INFO: change item:Parent, col:1 to text:0:1
+2023-03-17 02:54:43,311 - INFO: change item:Name, col:1 to text:shape
+2023-03-17 02:54:43,315 - INFO: change item:pnts, col:1 to text:0
+2023-03-17 02:54:43,317 - INFO: ParamTree:<widgets.Logic_Construct.Logic_Construct object at 0x0000019E19070DC0>
+2023-03-17 02:54:49,304 - INFO: change item:pnts, col:1 to text:4
+2023-03-17 02:54:49,306 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:54:49,308 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:54:49,310 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:54:49,313 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:54:49,314 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:54:49,316 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:54:49,319 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:54:49,321 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:54:49,323 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:54:49,326 - INFO: change item:theXp, col:1 to text:0.0
+2023-03-17 02:54:49,328 - INFO: change item:theYp, col:1 to text:0.0
+2023-03-17 02:54:49,330 - INFO: change item:theZp, col:1 to text:0.0
+2023-03-17 02:54:53,355 - INFO: change item:theYp, col:1 to text:1
+2023-03-17 02:54:55,144 - INFO: change item:theXp, col:1 to text:2
+2023-03-17 02:54:56,624 - INFO: change item:theZp, col:1 to text:3
+2023-03-17 02:54:59,819 - INFO: change item:theXp, col:1 to text:4
+2023-03-17 02:55:01,645 - INFO: change item:theYp, col:1 to text:5
+2023-03-17 02:55:03,731 - INFO: change item:theZp, col:1 to text:4
+2023-03-17 02:55:08,995 - INFO: change item:theXp, col:1 to text:6
+2023-03-17 02:55:10,925 - INFO: change item:theYp, col:1 to text:5
+2023-03-17 02:55:13,146 - INFO: change item:theZp, col:1 to text:6
+2023-03-17 02:55:16,070 - INFO: change item:theXp, col:1 to text:7
+2023-03-17 02:55:17,424 - INFO: change item:theYp, col:1 to text:7
+2023-03-17 02:55:18,949 - INFO: change item:theZp, col:1 to text:7
+2023-03-17 02:55:19,860 - INFO: Start Collect New Shape data
+2023-03-17 02:55:19,864 - INFO: ParentPath:0:1
+2023-03-17 02:55:19,867 - INFO: name:shape
+2023-03-17 02:55:19,869 - INFO: value:{'pnts': {'0': {'theXp': '2', 'theYp': '1', 'theZp': '3'}, '1': {'theXp': '4', 'theYp': '5', 'theZp': '4'}, '2': {'theXp': '6', 'theYp': '5', 'theZp': '6'}, '3': {'theXp': '7', 'theYp': '7', 'theZp': '7'}}}
+2023-03-17 02:55:19,872 - INFO: end Collect New Shape data
+2023-03-17 02:55:19,874 - INFO: -- NewConmand --
+2023-03-17 02:55:19,876 - INFO: -- Add New Shape --
+2023-03-17 02:55:19,878 - INFO: Type:22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-03-17 02:55:19,880 - INFO: Name:shape
+2023-03-17 02:55:19,882 - INFO: Param:{'pnts': {'0': {'theXp': '2', 'theYp': '1', 'theZp': '3'}, '1': {'theXp': '4', 'theYp': '5', 'theZp': '4'}, '2': {'theXp': '6', 'theYp': '5', 'theZp': '6'}, '3': {'theXp': '7', 'theYp': '7', 'theZp': '7'}}}
+2023-03-17 02:55:19,885 - INFO: Entry:0:1:1
+2023-03-17 02:55:19,888 - INFO: bezier init sub
+2023-03-17 02:55:19,890 - INFO: Array size:4 data:{'0': {'theXp': '2', 'theYp': '1', 'theZp': '3'}, '1': {'theXp': '4', 'theYp': '5', 'theZp': '4'}, '2': {'theXp': '6', 'theYp': '5', 'theZp': '6'}, '3': {'theXp': '7', 'theYp': '7', 'theZp': '7'}}
+2023-03-17 02:55:19,892 - INFO: Point init sub
+2023-03-17 02:55:19,894 - INFO: real init self
+2023-03-17 02:55:19,897 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,900 - INFO: Entry:0:1:1:1:125:1 type:real Execute
+2023-03-17 02:55:19,902 - INFO: real init self
+2023-03-17 02:55:19,905 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,907 - INFO: Entry:0:1:1:1:125:2 type:real Execute
+2023-03-17 02:55:19,909 - INFO: real init self
+2023-03-17 02:55:19,911 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,913 - INFO: Entry:0:1:1:1:125:3 type:real Execute
+2023-03-17 02:55:19,915 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,916 - INFO: Entry:0:1:1:1:125 type:Point Execute
+2023-03-17 02:55:19,918 - INFO: Entry:0:1:1:1:125:1 get value 2.0 
+2023-03-17 02:55:19,921 - INFO: Entry:0:1:1:1:125:2 get value 1.0 
+2023-03-17 02:55:19,923 - INFO: Entry:0:1:1:1:125:3 get value 3.0 
+2023-03-17 02:55:19,926 - INFO: Entry:0:1:1:1:125 Make Point Success
+2023-03-17 02:55:19,928 - INFO: Point init sub
+2023-03-17 02:55:19,931 - INFO: real init self
+2023-03-17 02:55:19,934 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,936 - INFO: Entry:0:1:1:1:126:1 type:real Execute
+2023-03-17 02:55:19,938 - INFO: real init self
+2023-03-17 02:55:19,940 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,942 - INFO: Entry:0:1:1:1:126:2 type:real Execute
+2023-03-17 02:55:19,944 - INFO: real init self
+2023-03-17 02:55:19,946 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,948 - INFO: Entry:0:1:1:1:126:3 type:real Execute
+2023-03-17 02:55:19,950 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,953 - INFO: Entry:0:1:1:1:126 type:Point Execute
+2023-03-17 02:55:19,956 - INFO: Entry:0:1:1:1:126:1 get value 4.0 
+2023-03-17 02:55:19,959 - INFO: Entry:0:1:1:1:126:2 get value 5.0 
+2023-03-17 02:55:19,962 - INFO: Entry:0:1:1:1:126:3 get value 4.0 
+2023-03-17 02:55:19,966 - INFO: Entry:0:1:1:1:126 Make Point Success
+2023-03-17 02:55:19,970 - INFO: Point init sub
+2023-03-17 02:55:19,972 - INFO: real init self
+2023-03-17 02:55:19,974 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,975 - INFO: Entry:0:1:1:1:127:1 type:real Execute
+2023-03-17 02:55:19,977 - INFO: real init self
+2023-03-17 02:55:19,979 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,981 - INFO: Entry:0:1:1:1:127:2 type:real Execute
+2023-03-17 02:55:19,983 - INFO: real init self
+2023-03-17 02:55:19,985 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,988 - INFO: Entry:0:1:1:1:127:3 type:real Execute
+2023-03-17 02:55:19,990 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:19,992 - INFO: Entry:0:1:1:1:127 type:Point Execute
+2023-03-17 02:55:19,998 - INFO: Entry:0:1:1:1:127:1 get value 6.0 
+2023-03-17 02:55:20,000 - INFO: Entry:0:1:1:1:127:2 get value 5.0 
+2023-03-17 02:55:20,003 - INFO: Entry:0:1:1:1:127:3 get value 6.0 
+2023-03-17 02:55:20,004 - INFO: Entry:0:1:1:1:127 Make Point Success
+2023-03-17 02:55:20,006 - INFO: Point init sub
+2023-03-17 02:55:20,008 - INFO: real init self
+2023-03-17 02:55:20,010 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:20,012 - INFO: Entry:0:1:1:1:128:1 type:real Execute
+2023-03-17 02:55:20,017 - INFO: real init self
+2023-03-17 02:55:20,020 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:20,024 - INFO: Entry:0:1:1:1:128:2 type:real Execute
+2023-03-17 02:55:20,026 - INFO: real init self
+2023-03-17 02:55:20,028 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:20,031 - INFO: Entry:0:1:1:1:128:3 type:real Execute
+2023-03-17 02:55:20,034 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:20,037 - INFO: Entry:0:1:1:1:128 type:Point Execute
+2023-03-17 02:55:20,039 - INFO: Entry:0:1:1:1:128:1 get value 7.0 
+2023-03-17 02:55:20,041 - INFO: Entry:0:1:1:1:128:2 get value 7.0 
+2023-03-17 02:55:20,043 - INFO: Entry:0:1:1:1:128:3 get value 7.0 
+2023-03-17 02:55:20,045 - INFO: Entry:0:1:1:1:128 Make Point Success
+2023-03-17 02:55:20,047 - INFO: Array Init success.
+2023-03-17 02:55:20,049 - INFO: Entry:{aEntry} init sub success
+2023-03-17 02:55:20,051 - INFO: Entry:0:1:1 type:bezier Execute
+2023-03-17 02:55:20,058 - INFO: Entry:0:1:1:1:125 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:55:20,060 - INFO: Entry:0:1:1:1:126 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:55:20,062 - INFO: Entry:0:1:1:1:127 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:55:20,067 - INFO: Entry:0:1:1:1:128 get value <class 'TopoDS_Vertex'> 
+2023-03-17 02:55:20,076 - INFO: Entry:0:1:1 Make bezier Success
+2023-03-17 02:55:20,082 - INFO: Label:shape update presentation
+2023-03-17 02:55:20,088 - INFO: -- commit command --

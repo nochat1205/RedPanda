@@ -83,31 +83,32 @@ class Logic_Application(QObject):
         self._main_doc = doc
         self.sig_DocChanged.emit(self._main_doc)
     
-    @staticmethod
-    def _initValue(aLabel:TDF_Label, aDriver:Sym_Driver, aParams):
-        aDriver:Sym_Driver
+    # @staticmethod
+    # def _initValue(aLabel:TDF_Label, aDriver:Sym_Driver, aParams):
+    #     aDriver:Sym_Driver
 
-        aEntry = TCollection_AsciiString()
-        TDF_Tool.Entry(aLabel, aEntry)
-        if len(aDriver.Arguments) == 0: # don't have chidren
-            aDriver.ChangeValue(aLabel, aParams)
-        else:
-            for name, value in aParams.items():
-                Logger().info(f"Entry{aEntry} init {name}")
-                Logic_Application._initValue(aLabel.FindChild(aDriver.Arguments[name].Tag),
-                            GetDriver(aDriver.Arguments[name].DriverID), 
-                            value)
+    #     aEntry = TCollection_AsciiString()
+    #     TDF_Tool.Entry(aLabel, aEntry)
+    #     if len(aDriver.Arguments) == 0: # don't have chidren
+    #         aDriver.ChangeValue(aLabel, aParams)
+    #     else:
+    #         for name, value in aParams.items():
+    #             Logger().info(f"Entry{aEntry} init {name}")
+    #             Logic_Application._initValue(aLabel.FindChild(aDriver.Arguments[name].Tag),
+    #                         GetDriver(aDriver.Arguments[name].DriverID), 
+    #                         value)
 
-        log = TFunction_Logbook()
-        if aDriver.Execute(aLabel, log) != 0:
-            Logger().warn(f"NewShape Execute Entry:{aEntry} error")
-        return
+    #     log = TFunction_Logbook()
+    #     if aDriver.Execute(aLabel, log) != 0:
+    #         Logger().warn(f"NewShape Execute Entry:{aEntry} error")
+    #     return
 
     @pyqtSlot(Sym_NewShapeData)
     def NewShape(self, data:Sym_NewShapeData):
+        aParentPath = data.ParentPath
         theGuid = data.driverID
         name = data.name
-        theParam = data.dict_params
+        theParam = data.value_dict
 
         self._main_doc.NewCommand()
         Logger().info("-- NewConmand --")        
@@ -126,8 +127,8 @@ class Logic_Application(QObject):
 
         # init the label with driver and set value
         aDriver = GetDriver(theGuid)
-        aDriver.Init(mainLabel)
-        Logic_Application._initValue(mainLabel, aDriver, theParam['Shape'])
+        aDriver.Init(mainLabel, theParam)
+        # Logic_Application._initValue(mainLabel, aDriver, theParam['Shape'])
 
         # Presetaion
         Logic_Application.Presentation(mainLabel)

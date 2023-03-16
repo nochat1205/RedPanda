@@ -1,12 +1,12 @@
+
+from typing import Callable
+
 from PyQt5 import QtWidgets
 from PyQt5.QtWidgets import (
     QMainWindow, QApplication, QProgressBar
 )
 from PyQt5.QtCore import pyqtSlot
 
-from OCC.Display.backend import load_backend
-load_backend("qt-pyqt5")
-from OCC.Display.qtDisplay import qtViewer3d
 
 
 from utils.ModelFileRead import read_step_file_with_names_colors, OpenFile
@@ -46,6 +46,9 @@ class MainWindow(QMainWindow):
         self.ui.retranslateUi(self)
         self.connnectAction()
 
+        self._modelMenu_dict = dict()
+        self._MakeShapeMenu_def()
+
     def setupUi(self):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -54,6 +57,7 @@ class MainWindow(QMainWindow):
         self.logic_Viewer = self.ui.logic_View
         self.logic_Viewer.InitDriver()
         self.logic_app = Logic_Application(self.logic_Viewer._display)
+        self._model_menu = self.ui.menu
 
         self.logic_ViewData = self.ui.logic_ViewData
         self.logic_ConstructView = self.ui.logic_Construct
@@ -67,11 +71,10 @@ class MainWindow(QMainWindow):
         # start menu
         self.ui.actionstep.triggered.connect(self.openFileSTEP)
         self.ui.actionxml.triggered.connect(lambda:self.logic_app.NewDocument("XmlOcaf"))
-        # construct menu
-        self.ui.actionBox.triggered.connect(lambda:self.ShapeConstruct("Box"))
-        self.ui.actionCut.triggered.connect(lambda:self.ShapeConstruct("Cut"))
+
         # self sig
         self.sig_Construct.connect(self.logic_ConstructView.NewConstruct)
+
         # construct sig
         self.logic_ConstructView.sig_NewShape.connect(self.logic_app.NewShape)
 
@@ -79,13 +82,47 @@ class MainWindow(QMainWindow):
         self.logic_app.sig_DocChanged.connect(self.logic_DocTree.Show)
         self.logic_app.sig_DocUpdate.connect(self.logic_DocTree.Update)
 
+    def _MakeShapeMenu_def(self):
+        self.add_menu('PrimAPI')
+        self.add_menu('AlgoAPI')
+        self.add_menu('GeomAPI')
+
+        self.add_function_to_menu('PrimAPI', 'Box', lambda:self.ShapeConstruct("Box"))
+        self.add_function_to_menu('AlgoAPI', 'Cut', lambda:self.ShapeConstruct("Cut"))
+        self.add_function_to_menu('GeomAPI', 'bezier', lambda:self.ShapeConstruct("bezier"))
+
+    def add_menu(self, menu_name: str) -> None:
+        _menu = self._model_menu.addMenu("&" + menu_name)
+        self._modelMenu_dict[menu_name] = _menu
+
+    def add_function_to_menu(self, menu_name: str, action_name:str, _callable: Callable) -> None:
+        try:
+            _action = QtWidgets.QAction(
+                action_name, self
+            )
+            # if not, the "exit" action is now shown...
+            _action.setMenuRole(QtWidgets.QAction.NoRole)
+            _action.triggered.connect(_callable)
+
+            self._modelMenu_dict[menu_name].addAction(_action)
+        except KeyError:
+            raise ValueError("the menu item %s does not exist" % menu_name)
 
     @pyqtSlot()
     def ShapeConstruct(self, type:str):
+        from utils.Driver.Sym_DataDriver import Sym_ArrayDriver
+        from utils.Driver.Sym_GeomDriver import Sym_BezierDriver
         if type == "Box":
-            self.sig_Construct.emit(Sym_NewBuilder(Sym_BoxDriver()))
+            param = Sym_NewBuilder(Sym_BoxDriver())
         elif type == 'Cut':
-            self.sig_Construct.emit(Sym_NewBuilder(Sym_CutDriver() ) )
+            param = Sym_NewBuilder(Sym_CutDriver())
+        elif type == 'Array':
+            param = Sym_NewBuilder(Sym_ArrayDriver())
+        elif type == 'bezier':
+            param = Sym_NewBuilder(Sym_BezierDriver())
+        else:
+            Logger().info(f'ShapeCnstruct unknow type:{type}')
+        self.sig_Construct.emit(param)
 
     @pyqtSlot()
     def openFileSTEP(self):
@@ -161,7 +198,7 @@ class MainWindow(QMainWindow):
 
 if __name__ == "__main__":
     import sys
-    import logging 
+    import logging
     import time
 
     log = Logger()
