@@ -64,7 +64,7 @@ class MainWindow(QMainWindow):
         self.logic_DocData = self.ui.logic_DocData
 
         self.logic_DocTree = self.logic_DocData.ui.treeWidget
-    
+
         return 
 
     def connnectAction(self):
@@ -77,10 +77,12 @@ class MainWindow(QMainWindow):
 
         # construct sig
         self.logic_ConstructView.sig_NewShape.connect(self.logic_app.NewShape)
-
+        self.logic_ConstructView.sig_ChangeShape.connect(self.logic_app.ChangeDoc)
 
         self.logic_app.sig_DocChanged.connect(self.logic_DocTree.Show)
         self.logic_app.sig_DocUpdate.connect(self.logic_DocTree.Update)
+        self.logic_DocTree.sig_select.connect(self.logic_ConstructView.ShowShape) 
+
 
     def _MakeShapeMenu_def(self):
         self.add_menu('PrimAPI')

@@ -43,7 +43,10 @@ from utils.Driver.Sym_Driver import (
 from OCC.Core.XmlDrivers import (
     xmldrivers_DefineFormat
 )
-from utils.Sym_DocUpdateData import Sym_NewShapeData
+from utils.Sym_DocUpdateData import (
+    Sym_NewShapeData,
+    Sym_ChangeData
+)
 from utils.logger import Logger
 
 class Logic_Application(QObject):
@@ -82,26 +85,6 @@ class Logic_Application(QObject):
 
         self._main_doc = doc
         self.sig_DocChanged.emit(self._main_doc)
-    
-    # @staticmethod
-    # def _initValue(aLabel:TDF_Label, aDriver:Sym_Driver, aParams):
-    #     aDriver:Sym_Driver
-
-    #     aEntry = TCollection_AsciiString()
-    #     TDF_Tool.Entry(aLabel, aEntry)
-    #     if len(aDriver.Arguments) == 0: # don't have chidren
-    #         aDriver.ChangeValue(aLabel, aParams)
-    #     else:
-    #         for name, value in aParams.items():
-    #             Logger().info(f"Entry{aEntry} init {name}")
-    #             Logic_Application._initValue(aLabel.FindChild(aDriver.Arguments[name].Tag),
-    #                         GetDriver(aDriver.Arguments[name].DriverID), 
-    #                         value)
-
-    #     log = TFunction_Logbook()
-    #     if aDriver.Execute(aLabel, log) != 0:
-    #         Logger().warn(f"NewShape Execute Entry:{aEntry} error")
-    #     return
 
     @pyqtSlot(Sym_NewShapeData)
     def NewShape(self, data:Sym_NewShapeData):
@@ -132,13 +115,56 @@ class Logic_Application(QObject):
 
         # Presetaion
         Logic_Application.Presentation(mainLabel)
+        self.UpdateCurrentViewer()
 
         self._main_doc.CommitCommand()
-        self.UpdateCurrentViewer()
 
         Logger().info("-- commit command --")
         self.sig_DocUpdate.emit()
         self._DocApp.SaveAs(self._main_doc, TCollection_ExtendedString("./resource/a.xml"))
+
+    @pyqtSlot(Sym_ChangeData)
+    def ChangeDoc(self, data:Sym_ChangeData):
+        aParentPath = data.ParentPath
+        aLabel = TDF_Label()
+        name = data.name
+        theParam = data.value_dict
+        Logger().debug('run')
+
+        label_set = set()
+        TDF_Tool.Label(self._main_doc.GetData(), aParentPath, aLabel)
+        aDriver = GetDriver(aLabel)
+
+        Logger().info("-- NewConmand --")        
+        Logger().info("-- Change Shape --")
+        Logger().info(f"Id:{aDriver.ID}")
+        Logger().info(f"Name:{name}")
+        Logger().info(f"Param:{theParam}")
+
+        self._main_doc.NewCommand()
+        aDriver.Change(aLabel, theParam)
+        self.UpdatePresent(aLabel)
+
+        label_set = Sym_Driver.BroadcastImpacted(aLabel)
+
+        while len(label_set) > 0:
+            aLabel = label_set.pop()
+            aDriver = GetDriver(aLabel)
+            if aDriver:    
+                aDriver.Execute(aLabel)
+                self.UpdatePresent(aLabel)
+
+                label_set |= Sym_Driver.BroadcastImpacted(aLabel)
+
+        self.UpdateCurrentViewer()
+        self._main_doc.CommitCommand()
+        Logger().info("-- commit command --")
+
+    @staticmethod
+    def UpdatePresent(theLabel:TDF_Label):
+        anAisPresentation = TPrsStd_AISPresentation.Set(theLabel, TNaming_NamedShape.GetID())
+        anAisPresentation.Update()
+
 
     @staticmethod
     def Presentation(theLabel:TDF_Label):
@@ -166,7 +192,6 @@ class Logic_Application(QObject):
             anAisPresentation = TPrsStd_AISPresentation.Set(it.Value(), TNaming_NamedShape.GetID())
             aLabel:TDF_Label = anAisPresentation.Label()
             ref = Sym_ShapeRef()
-            Logger().debug(f"Run:{aLabel.GetLabelName()}")
             if aLabel.FindAttribute(Sym_ShapeRef.GetID(), ref):
                 if ref.NbChildren() > 0:
                     anAisPresentation.SetMode(AIS_WireFrame)

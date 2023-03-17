@@ -37,9 +37,11 @@ class Sym_RealDriver(Sym_Driver): # base
         self.myAttr = Param(TDataStd_Real, "0.0")
         self.Attributes["value"] = self.myAttr
 
+
     @classproperty
     def ID(self):
         return Sym_RealDriver_GUID #
+
     @classproperty
     def Type(self):
         return "real"
@@ -63,7 +65,6 @@ class Sym_IntDriver(Sym_Driver):
         return "Int"
 
 class Sym_IdDriver(Sym_Driver):
-
     def __init__(self) -> None:
         super().__init__()
         self.myAttr = Param(Sym_GuidAttr, "0")
@@ -86,19 +87,42 @@ class Sym_ArrayDriver(Sym_Driver):
         self._ArrayFirstTag = 125
         self._SubTypeId = Sym_PntDriver_GUID
 
+    @property
+    def StartIndex(self):
+        return self._ArrayFirstTag
+
+    def GetSize(self, theLabel:TDF_Label):
+        aInt = TDataStd_Integer()
+        if theLabel.FindAttribute(TDataStd_Integer.GetID(), aInt):
+            value = aInt.Get()
+            Logger().debug(value)
+            return value
+        return 0
+
     def Init(self, theLabel:TDF_Label, theData: dict)->bool:
         if super()._base_init(theLabel):
             return True
 
         Logger().info(f'Array size:{len(theData)} data:{theData}')
         TDataStd_Integer.Set(theLabel, len(theData))
+        Logger().debug(f"size:{self.GetSize(theLabel)}")
         aDriver = GetDriver(self._SubTypeId)
-        for name, pnt in theData.items():
-            tag = int(name)+self._ArrayFirstTag
+        for ind, pnt in enumerate(theData.values()):
+            tag = ind+self._ArrayFirstTag
             aLabel = theLabel.FindChild(tag)
             aDriver.Init(aLabel, pnt)
 
         Logger().info('Array Init success.')
+        return True
+
+    def Change(self, theLabel:TDF_Label, theData:dict)->bool:
+        aDriver = GetDriver(self._SubTypeId)
+        for ind, pnt in theData.items():
+            tag = int(ind)+self.StartIndex
+            aLabel = theLabel.FindChild(tag, False)
+            aDriver.Change(aLabel, pnt)
+
+        Logger().info('Array Change success.')
         return True
 
     def GetValue(self, theLabel: TDF_Label):
@@ -124,4 +148,3 @@ class Sym_ArrayDriver(Sym_Driver):
     @classproperty
     def Type(self):
         return "array"
-

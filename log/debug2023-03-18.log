@@ -1,0 +1,312 @@
+2023-03-18 00:01:21,623 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 206
+Application Start
+2023-03-18 00:01:22,489 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 00:01:22,491 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 00:01:46,497 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.Init             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 108
+size:0
+2023-03-18 00:01:46,632 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 49
+Entry:0:1:1 Excute bezier
+2023-03-18 00:01:46,642 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 131
+Return array<OCC.Core.TColgp.TColgp_Array1OfPnt; proxy of <Swig Object of type 'TColgp_Array1OfPnt *' at 0x000002CAD224D7E0> >
+2023-03-18 00:01:46,646 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 58
+Entry:0:1:1 Excute bezier
+2023-03-18 00:01:46,649 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 61
+Entry:0:1:1 Excute bezier
+2023-03-18 00:01:46,659 - DEBUG: File Logic_Application.py, in Logic_Application.UpdateCurrentViewer             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 169
+Run:shape
+2023-03-18 00:01:48,118 - DEBUG: File Sym_ParamBuilder.py, in Sym_ParamBuilder.GetArrayData             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_ParamBuilder.py line 148
+GetArrayData size:0
+2023-03-18 00:05:05,312 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 206
+Application Start
+2023-03-18 00:05:06,155 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 00:05:06,157 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 00:05:37,006 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.GetSize             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 98
+3
+2023-03-18 00:05:37,006 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.Init             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 108
+size:3
+2023-03-18 00:05:37,140 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 49
+Entry:0:1:1 Excute bezier
+2023-03-18 00:05:37,148 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 131
+Return array<OCC.Core.TColgp.TColgp_Array1OfPnt; proxy of <Swig Object of type 'TColgp_Array1OfPnt *' at 0x0000020C972ADFC0> >
+2023-03-18 00:05:37,150 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 58
+Entry:0:1:1 Excute bezier
+2023-03-18 00:05:37,153 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 61
+Entry:0:1:1 Excute bezier
+2023-03-18 00:05:40,124 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.GetSize             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 98
+3
+2023-03-18 00:05:40,126 - DEBUG: File Sym_ParamBuilder.py, in Sym_ParamBuilder.GetArrayData             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Sym_ParamBuilder.py line 148
+GetArrayData size:3
+2023-03-18 01:16:28,474 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:16:30,655 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:16:30,662 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:16:47,145 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:16:50,782 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:20:21,097 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:20:22,102 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:20:22,107 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:20:34,155 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:20:45,281 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:21:12,821 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:21:13,853 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:21:13,855 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:21:24,938 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:21:30,259 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:21:52,257 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:23:37,204 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:23:38,264 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:23:38,268 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:23:55,003 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:24:06,628 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 0.85322, 0.521551, 0, -0.521551, 0.85322], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:24:22,901 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:26:53,124 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:26:54,070 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:26:54,072 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:27:12,255 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:27:23,007 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [1, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:27:36,328 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:29:11,955 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:29:12,951 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:29:12,954 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:29:24,247 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:29:34,592 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [1, 2, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:29:48,319 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:29:48,394 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [1, 3, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:31:03,542 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:31:04,503 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:31:04,506 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:31:14,665 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:31:26,484 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:31:26,535 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 0.834223, -0.551427, 0, 0.551427, 0.834223], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:32:10,183 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:32:19,489 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:32:19,491 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:34:00,487 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:34:01,492 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:34:01,496 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:34:20,018 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:34:33,273 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 0.154251, 0.988032, 0, -0.988032, 0.154251], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:34:38,714 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:34:38,717 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:35:11,480 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:35:11,521 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, -0.839072, 0.544021, 0, -0.544021, -0.839072], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:35:43,947 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:35:43,987 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 0.408082, -0.912945, 0, 0.912945, 0.408082], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:42:10,691 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\main.py line 207
+Application Start
+2023-03-18 01:42:11,636 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:42:11,639 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:42:22,984 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:1:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:42:36,026 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [1, 1, 1], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:42:52,325 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:42:52,369 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [1, 1, 1], "Matrix": [1, 0, 0, 0, 0.540302, -0.841471, 0, 0.841471, 0.540302], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:43:02,064 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:43:02,067 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:43:34,987 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:43:35,035 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [1, 1, 1], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:43:35,059 - DEBUG: File Sym_Driver.py, in Sym_Driver.BroadcastImpacted             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_Driver.py line 273
+Find chidren.
+2023-03-18 01:43:35,073 - DEBUG: File Sym_Driver.py, in Sym_Driver.BroadcastImpacted             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_Driver.py line 273
+Find chidren.
+2023-03-18 01:44:55,212 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:4:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [0, 0, 0], "Matrix": [1, 0, 0, 0, 1, 0, 0, 0, 1], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:45:04,348 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 28
+before init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:45:04,350 - DEBUG: File Sym_AlgoDriver.py, in Sym_AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_AlgoDriver.py line 30
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-18 01:45:47,583 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Logic_Application.py line 132
+run
+2023-03-18 01:45:47,624 - DEBUG: File Sym_ShapeDriver.py, in Sym_ShapeDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_ShapeDriver.py line 101
+Entry:0:1:2:1 get Trsf:"className": "TopLoc_Location", "Transformation": {"Location": [1, 1, 1], "Matrix": [1, 0, 0, 0, 0.540302, -0.841471, 0, 0.841471, 0.540302], "shape": 7, "scale": 1}, "IsIdentity": 0
+2023-03-18 01:45:47,645 - DEBUG: File Sym_Driver.py, in Sym_Driver.BroadcastImpacted             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_Driver.py line 273
+Find chidren.
+2023-03-18 01:45:47,656 - DEBUG: File Sym_Driver.py, in Sym_Driver.BroadcastImpacted             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_Driver.py line 273
+Find chidren.
+2023-03-18 01:45:47,719 - DEBUG: File Sym_Driver.py, in Sym_Driver.BroadcastImpacted             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_Driver.py line 273
+Find chidren.
+2023-03-18 01:45:47,742 - DEBUG: File Sym_Driver.py, in Sym_Driver.BroadcastImpacted             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_Driver.py line 273
+Find chidren.
+2023-03-18 01:46:45,320 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.GetSize             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 98
+5
+2023-03-18 01:46:45,320 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.Init             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 108
+size:5
+2023-03-18 01:46:45,627 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 49
+Entry:0:1:6 Excute bezier
+2023-03-18 01:46:45,643 - DEBUG: File Sym_DataDriver.py, in Sym_DataDriver.GetValue             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_DataDriver.py line 141
+Return array<OCC.Core.TColgp.TColgp_Array1OfPnt; proxy of <Swig Object of type 'TColgp_Array1OfPnt *' at 0x0000018F910591E0> >
+2023-03-18 01:46:45,647 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 58
+Entry:0:1:6 Excute bezier
+2023-03-18 01:46:45,653 - DEBUG: File Sym_GeomDriver.py, in Sym_GeomDriver.Execute             
+	File D:\2022-1\graduate_design\codes\qt_view\software_base\utils\Driver\Sym_GeomDriver.py line 61
+Entry:0:1:6 Excute bezier

@@ -3,18 +3,22 @@ from OCC.Core.TDF import TDF_Label
 from utils.OCCUtils import (
     TFunction_Function, 
     TFunction_DriverTable,
-    Standard_GUID
+    Standard_GUID,
+    TCollection_AsciiString,
+    TDF_Tool
 )
 from utils.Driver.Sym_Driver import (
     Sym_Driver,
     Argument,
     GetDriver,
-    Param
+    GetEntry,
+    GetFunctionID,
+    Param,
+    GetFunctionID
 )
 from utils.GUID import *
 
 from utils.logger import Logger
-
 
 class ArrayParam():
     def __init__(self, subParam:dict, theSize:int=0) -> None:
@@ -80,44 +84,33 @@ class Sym_NewBuilder(object):
         return Sym_NewBuilder.GetParamWith(aDriver)
 
 class Sym_ChangeBuilder(object):
-    def __init__(self, aLabel: TDF_Label):
+    def __init__(self, theLabel: TDF_Label):
         Logger().info('Start init ChangeParamBuilder ')
-        Logger().info(f"Type:{aDriver.Type} Driver:{aDriver.ID}")
 
-        self.name = self.GetName(aLabel)
-        self.fullPath = self.GetFullPath(aLabel) 
-        self.TFunctionID = self.GetDriverID()
+        self.TFunctionID = Sym_ChangeBuilder.GetDriverID(theLabel)
+        aDriver = GetDriver(self.TFunctionID)
 
-        aDriver:Sym_Driver = self.GetDriver(self.TFunctionID)
-        self.type = aDriver.type
-        aDriver.Init(aLabel)
-        self.params = aDriver.GetArgumentValue()
+        self.type = aDriver.Type
+        self.name_param = Param(str, self.GetName(theLabel))
+        self.parent_param = Param(str, self.GetEntry(theLabel), editAble=False)
+
+        self.shape_param = self.GetObjectData(theLabel)
+        Logger().info(f'Entry:{GetEntry(theLabel)} name:{self.name_param.Default} type:{self.type}')
+        Logger().info(f'params:{self.shape_param}')
+        Logger().info('End init ChangeParamBuilder ')
         return 
 
     @staticmethod
-    def GetFullPath(theLabel:TDF_Label):
-        stk_label = list()
-        aLabel = theLabel
-        stk_label.append(stk_label)
-        fullPath = ""
-        while not aLabel.IsRoot():
-            aLabel = aLabel.Father()
-            stk_label.append(aLabel)
-
-        rootLabel = stk_label.pop()
-        fullPath += rootLabel.GetLabelName()
-        while len(stk_label) != 0:
-            aLabel = stk_label.pop()
-            fullPath += ":" + aLabel.GetLabelName()
-        return fullPath
+    def GetEntry(theLabel:TDF_Label):
+        return GetEntry(theLabel)
 
     @staticmethod
     def GetDriverID(theLabel:TDF_Label):
-        aFunction:TFunction_Function = TFunction_Function()
-        if not theLabel.FindAttribute(TFunction_Function.GetID(), aFunction):
-            Logger().info("Object cannot be modified.")
-            return
-        return aFunction.GetDriverGUID()
+        return GetFunctionID(theLabel)
+
+    @staticmethod
+    def GetDriver(theLabel:TDF_Label):
+        return GetDriver(theLabel)
 
     @staticmethod
     def GetName(theLabel: object):
@@ -129,11 +122,44 @@ class Sym_ChangeBuilder(object):
         return name
 
     @staticmethod
-    def GetDriver(guid):
-        aDriver = Sym_Driver()
-        TFunction_DriverTable.Get().FindDriver(guid, aDriver)
-        return aDriver
+    def GetParamWith(theLabel: TDF_Label):
+        # Logger().debug(f)
+        def GetSubObjectData(theLabel: TDF_Label):
+            aDriver = GetDriver(theLabel)
+            if len(aDriver.Arguments) > 0: # read children
+                child_ParamDict = {}
+                for name, argu in aDriver.Arguments.items():
+                    argu:Argument
+                    child_param = Sym_ChangeBuilder.GetParamWith(
+                            theLabel.FindChild(argu.Tag, False)
+                    )
+                    child_ParamDict[name] = child_param
+                return child_ParamDict
+            else: # read leave value
+                Attri:Param = aDriver.Attributes['value']
+
+                return Param(Attri.Type, aDriver.GetValueToText(theLabel))
+
+        def GetArrayData(theLabel:TDF_Label):
+            child_dict = {}
+            aDriver:Sym_ArrayDriver_GUID = GetDriver(theLabel)
+            start = aDriver.StartIndex
+            size = aDriver.GetSize(theLabel)
+            Logger().debug(f'GetArrayData size:{size}')
+            for i in range(size):
+                aLabel = theLabel.FindChild(i+start, False)
+                child_dict[str(i)] = GetSubObjectData(aLabel)
+            return child_dict
+
+        aDriver = Sym_ChangeBuilder.GetDriver(theLabel)
+        Logger().info(f"Entry:{GetEntry(theLabel)} id:{aDriver.ID} Get Param")
+        if aDriver.ID == Sym_ArrayDriver_GUID:
+            data = GetArrayData(theLabel)
+        else:
+            data = GetSubObjectData(theLabel)
+        return data
 
     @staticmethod
-    def GetParamValue(theDriver:Sym_Driver, ):
-        dict_param = dict()
+    def GetObjectData(theLabel:TDF_Label):
+        return Sym_ChangeBuilder.GetParamWith(theLabel)
+

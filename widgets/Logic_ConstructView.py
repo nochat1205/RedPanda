@@ -13,14 +13,15 @@ from utils.Sym_ParamBuilder import (
     Sym_NewBuilder,
     Sym_ChangeBuilder,
 )
-
-
-
-from utils.Sym_DocUpdateData import Sym_NewShapeData
+from utils.Sym_DocUpdateData import (
+    Sym_NewShapeData,
+    Sym_ChangeData
+)
 from widgets.Logic_Construct import Logic_Construct
 
 class Logic_ConstructView(QtWidgets.QWidget):
     sig_NewShape = pyqtSignal(Sym_NewShapeData)
+    sig_ChangeShape = pyqtSignal(Sym_ChangeData)
 
     def __init__(self, parent=None):
         super(Logic_ConstructView, self).__init__(parent)
@@ -29,16 +30,30 @@ class Logic_ConstructView(QtWidgets.QWidget):
         self.ui.retranslateUi(self)
 
         self.guid = None
-
+        self.IsNew = False
         self.Constructer:Logic_Construct = self.ui.widget
         # connect
         self.ui.pushButton_2.clicked.connect(self.commit)
+        self.ui.pushButton.clicked.connect(self.Change)
 
     @pyqtSlot(Sym_NewBuilder)
-    def NewConstruct(self, Data:Sym_NewBuilder):
-        self.Constructer.BuildView(Data)
+    def NewConstruct(self, data:Sym_NewBuilder):
+        self.IsNew = True
+        self.Constructer.BuildView(data)
 
     @pyqtSlot()
     def commit(self):
-        data = Sym_NewShapeData(self.Constructer)
-        self.sig_NewShape.emit(data)
+        if self.IsNew:
+            data = Sym_NewShapeData(self.Constructer)
+            self.sig_NewShape.emit(data)
+
+    @pyqtSlot(Sym_ChangeBuilder)
+    def ShowShape(self, data:Sym_ChangeBuilder):
+        self.IsNew = False
+        self.Constructer.BuildView(data)
+
+    @pyqtSlot()
+    def Change(self):
+        if not self.IsNew:
+            data = Sym_ChangeData(self.Constructer)
+            self.sig_ChangeShape.emit(data)

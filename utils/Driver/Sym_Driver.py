@@ -27,12 +27,25 @@ def GetDriver(obj:Union[Standard_GUID, TDF_Label]):
     if isinstance(obj, Standard_GUID):
         id = obj
         TFunction_DriverTable.Get().FindDriver(id, aDriver)
+        return aDriver
     elif isinstance(obj, TDF_Label):
         aLabel = obj
-        id = TFunction_Function.Set(aLabel).GetDriverGUID()
-        TFunction_DriverTable.Get().FindDriver(id, aDriver)        
+        id = GetFunctionID(obj)
+        if id:
+            return GetDriver(id)
+    return None
 
-    return aDriver
+def GetEntry(theLabel:TDF_Label):
+    anEntry = TCollection_AsciiString()
+    TDF_Tool.Entry(theLabel, anEntry)
+    
+    return anEntry
+
+def GetFunctionID(theLabel:TDF_Label):
+    function = TFunction_Function()
+    if theLabel.FindAttribute(TFunction_Function.GetID(), function):
+        return function.GetDriverGUID()
+    return None
 
 class TagResource(object):
     def __init__(self) -> None:
@@ -43,9 +56,12 @@ class TagResource(object):
         return self.tag
 
 class Param(object):
-    def __init__(self, theType:type, default:str="", editAble=True) -> None:
+    def __init__(self, theType:type, value:str="", editAble=True) -> None:
         self.type = theType
-        self.default = default
+        if isinstance(value, str):
+            self.default = value
+        else:
+            self.default = str(value)
 
     @property
     def Type(self):
@@ -111,6 +127,8 @@ class Sym_Driver(object):
         def _InitFunction(theLabel:TDF_Label):
             aLogBook = TFunction_Logbook.Set(theLabel)
             aFunction = TFunction_Function.Set(theLabel, self.ID)
+            anEntry = GetEntry(theLabel)
+            Logger().info(f'Entry:{anEntry} init with driver:{self.ID}')
 
         if IsInit(L): 
             return True
@@ -189,63 +207,85 @@ class Sym_Driver(object):
         return value
 
     def GetValue(self, theLabel:TDF_Label):
-        return self.GetStoredValue(theLabel)
+        storedvalue = self.GetStoredValue(theLabel)
+        return storedvalue
+
+    def GetValueToText(self, theLabel:TDF_Label):
+        return str(self.GetValue(theLabel))
 
     def _Log_ChangeValue(self, theLabel:TDF_Label, text):
         aEntry = TCollection_AsciiString()
         TDF_Tool.Entry(theLabel, aEntry)
         Logger().info(f"Label:{aEntry}({self.Type}) set value = {text}")
 
-    # def ChangeValue(self, theLabel:TDF_Label, text):
-    #     self._Log_ChangeValue(theLabel, text)
-    #     aType = self.Attributes['value'].Type
-    #     value = aType.Set(theLabel, FromText(aType, text))
-    #     Logger().info(f"stored value is {value.Get()}")
+    def ChangeValue(self, theLabel:TDF_Label, theData:str):
+        self._Log_ChangeValue(theLabel, theData)
+        attr = self.Attributes['value']
+        attr.SetValue(theLabel, theData)
 
-    #     return
+    def Change(self, theLabel:TDF_Label, theData:Union[dict, str]):
+        if isinstance(theData, dict): # dict 向下传播
+            for name, subData in theData.items():
+                argu:Argument = self.Arguments[name]
+                aLabel = theLabel.FindChild(argu.Tag)
+                aDriver:Sym_Driver = GetDriver(argu.DriverID)
+                if not aDriver.Change(aLabel, subData):
+                    return False
+        else:
+            Logger().info(f'{self.Type} change self')
+            self.ChangeValue(theLabel, theData)
+
+        aEntry = TCollection_AsciiString()
+        TDF_Tool.Entry(theLabel, aEntry)
+        Logger().info('Entry:{aEntry} Change sub success')
+        if self.Execute(theLabel) != 0:
+            return False
+        return True
 
     def Validate(self, log: TFunction_Logbook) -> None:
         """ 验证对象标签、其参数和结果。"""
         log.SetValid(self.Label(), False)
 
-    def Update(self, theLabel:TDF_Label, log: TFunction_Logbook) -> bool:
-        if self.MustExecute(theLabel, log):
-            self.Execute(theLabel)
-            self.BroadcastImpacted(theLabel, log)
-            return True
+    # def Update(self, theLabel:TDF_Label, log:TFunction_Logbook) -> bool:
+    #     if self.MustExecute(theLabel, log):
+    #         self.Execute(theLabel)
+    #         self.BroadcastImpacted(theLabel, log)
+    #         return True
 
-        return False
+    #     return False
 
-    def BroadcastImpacted(self, theLabel: TDF_Label, log: TFunction_Logbook):
-        log.setUnTouched(theLabel)
-        log.setUnImpacted(theLabel)
+    @staticmethod
+    def BroadcastImpacted(theLabel:TDF_Label):
+        label_set:set[TDF_Label] = set()
         aEntry = TCollection_AsciiString()
 
         TDF_Tool.Entry(theLabel, aEntry)
         Logger().info(f'Entry:{aEntry} broadcast updated')
-        father = theLabel.Father()
-        log.SetTouched(father)
 
-        TDF_Tool.Entry(father, aEntry)
-        Logger().info(f'Entry:{aEntry} be impacted')
-
+        if not theLabel.IsRoot():
+            father = theLabel.Father()
+            TDF_Tool.Entry(father, aEntry)
+            Logger().info(f'Entry:{aEntry} be impacted')
+            label_set.add(father)
 
         TN = Sym_ShapeRef()
-        if theLabel.FindAttribute(Sym_ShapeRef.GetID, TN):
+        if theLabel.FindAttribute(Sym_ShapeRef.GetID(), TN):
+            Logger().debug('Find chidren.')
             for node in TN:
-                log.SetTouched(TN)
-
                 TDF_Tool.Entry(node, aEntry)
                 Logger().info(f'Entry:{aEntry} be impacted')
+                label_set.add(node)
 
-    def GetArguments(self, aLabel:TDF_Label, args: TDF_LabelList) -> None:
+        return label_set
+
+    def GetArguments(self, aLabel:TDF_Label, args:TDF_LabelList) -> None:
         return None
 
-    def GetResults(self, aLabel:TDF_Label, args: TDF_LabelList) -> None:
+    def GetResults(self, aLabel:TDF_Label, args:TDF_LabelList) -> None:
         return None
 
     @classproperty
-    def ID():
+    def ID(self):
         """函数ID
 
         Raises:
@@ -254,7 +294,7 @@ class Sym_Driver(object):
         raise Exception("Must have ID")
 
     @classproperty
-    def Type():
+    def Type(self):
         """ 函数名
         """
         raise Exception("Must have Name")
@@ -270,6 +310,13 @@ class Sym_ShapeRefDriver(Sym_Driver):
         refedLabel = TDF_Label()
         TDF_Tool.Label(theLabel.Data(), anEntry, refedLabel)
         Sym_ShapeRef.Set(theLabel, refedLabel)
+
+        # TN = Sym_ShapeRef()
+        # if refedLabel.FindAttribute(Sym_ShapeRef.GetID(), TN):
+        #     for node in TN:
+        #         TDF_Tool.Entry(node, anEntry)
+        #         Logger().info(f'Entry:{anEntry} be connect')
+
 
         return True
 
