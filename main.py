@@ -9,7 +9,7 @@ from PyQt5.QtCore import pyqtSlot
 
 
 
-from utils.ModelFileRead import read_step_file_with_names_colors, OpenFile
+from RedPanda.ModelFileRead import read_step_file_with_names_colors, OpenFile
 
 
 from OCC.Core.TColStd import (
@@ -32,10 +32,10 @@ from PyQt5.QtCore import pyqtSlot, pyqtSignal
 from widgets.Ui_Main import Ui_MainWindow
 from widgets.Logic_DocTree import ModelTree
 from widgets.Logic_Application import Logic_Application
-from utils.logger import Logger
-from utils.Driver.Sym_ShapeDriver import Sym_BoxDriver
-from utils.Driver.Sym_AlgoDriver import Sym_CutDriver
-from utils.Sym_ParamBuilder import Sym_NewBuilder
+from RedPanda.logger import Logger
+from RedPanda.Driver.Sym_ShapeDriver import Sym_BoxDriver
+from RedPanda.Driver.Sym_AlgoDriver import Sym_CutDriver
+from RedPanda.Sym_ParamBuilder import Sym_NewBuilder
 
 class MainWindow(QMainWindow):
     sig_Construct = pyqtSignal(Sym_NewBuilder)
@@ -112,8 +112,8 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def ShapeConstruct(self, type:str):
-        from utils.Driver.Sym_DataDriver import Sym_ArrayDriver
-        from utils.Driver.Sym_GeomDriver import Sym_BezierDriver
+        from RedPanda.Driver.Sym_DataDriver import Sym_ArrayDriver
+        from RedPanda.Driver.Sym_GeomDriver import Sym_BezierDriver
         if type == "Box":
             param = Sym_NewBuilder(Sym_BoxDriver())
         elif type == 'Cut':

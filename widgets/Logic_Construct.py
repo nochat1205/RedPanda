@@ -4,12 +4,12 @@ from PyQt5.QtWidgets import (
     QAbstractItemView,
     QTreeWidgetItem
 )
-from utils.Sym_ParamBuilder import (
+from RedPanda.Sym_ParamBuilder import (
     Sym_NewBuilder,
     ArrayParam
 )
-from utils.Driver.Sym_Driver import Param
-from utils.logger import Logger
+from RedPanda.Driver.Sym_Driver import Param
+from RedPanda.logger import Logger
 
 
 

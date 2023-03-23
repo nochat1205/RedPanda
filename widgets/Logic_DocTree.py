@@ -9,7 +9,7 @@ from PyQt5.QtWidgets import (
     QAbstractItemView,
     
 )
-from utils.OCCUtils import (
+from RedPanda.OCCUtils import (
     TDF_Label,
     TDF_Tool,
     TCollection_AsciiString,
@@ -17,15 +17,15 @@ from utils.OCCUtils import (
     TDF_ChildIterator,
 )
 
-from utils.Driver.Sym_Driver import (
+from RedPanda.Driver.Sym_Driver import (
     GetDriver,
     GetEntry,
     GetFunctionID
 )
-from utils.Sym_ParamBuilder import (
+from RedPanda.Sym_ParamBuilder import (
     Sym_ChangeBuilder
 )
-from utils.logger import Logger
+from RedPanda.logger import Logger
 
 class ModelTree(QtWidgets.QTreeWidget):
     sig_select = pyqtSignal(Sym_ChangeBuilder)

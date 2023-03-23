@@ -32,7 +32,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets, QtOpenGL
 from OCC.Core.AIS import AIS_InteractiveContext
 
 
-from utils.logger import Logger
+from RedPanda.logger import Logger
 from widgets.Ui_Viewer import Viewer3d
 
 class qtBaseViewer(QtWidgets.QWidget):

@@ -10,7 +10,7 @@ import typing
 
 
 
-from utils.OCCUtils import (
+from RedPanda.OCCUtils import (
     AIS_InteractiveContext, 
     AIS_Shape,
     AIS_Shaded, 
@@ -35,19 +35,19 @@ from utils.OCCUtils import (
     TDF_ChildIterator,
     
 )
-from utils.Sym_Application import Sym_Application
-from utils.Driver.Sym_Driver import (
+from RedPanda.Sym_Application import Sym_Application
+from RedPanda.Driver.Sym_Driver import (
     Sym_Driver,
     GetDriver
 )
 from OCC.Core.XmlDrivers import (
     xmldrivers_DefineFormat
 )
-from utils.Sym_DocUpdateData import (
+from RedPanda.Sym_DocUpdateData import (
     Sym_NewShapeData,
     Sym_ChangeData
 )
-from utils.logger import Logger
+from RedPanda.logger import Logger
 
 class Logic_Application(QObject):
     sig_DocChanged = pyqtSignal(TDocStd_Document)
@@ -185,7 +185,7 @@ class Logic_Application(QObject):
             AIS_InteractiveObject,
             AIS_ListIteratorOfListOfInteractive
         )
-        from utils.Sym_Attribute import Sym_ShapeRef
+        from RedPanda.Sym_Attribute import Sym_ShapeRef
 
         it = TDF_ChildIterator(self._main_doc.Main())
         while it.More():

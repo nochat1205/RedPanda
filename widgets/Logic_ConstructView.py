@@ -9,11 +9,11 @@ from PyQt5 import QtWidgets, QtCore
 from OCC.Core.TFunction import TFunction_Driver
 from OCC.Core.Standard import Standard_GUID
 
-from utils.Sym_ParamBuilder import (
+from RedPanda.Sym_ParamBuilder import (
     Sym_NewBuilder,
     Sym_ChangeBuilder,
 )
-from utils.Sym_DocUpdateData import (
+from RedPanda.Sym_DocUpdateData import (
     Sym_NewShapeData,
     Sym_ChangeData
 )
