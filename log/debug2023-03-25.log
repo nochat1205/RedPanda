@@ -1,0 +1,360 @@
+2023-03-25 00:00:10,284 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:03:03,068 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:03:31,035 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:04:08,235 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:04:25,404 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:04:26,891 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:04:47,348 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:04:49,037 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:05:02,789 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:05:03,929 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:05:19,530 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:05:20,833 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:05:52,807 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:05:53,959 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:06:12,803 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:06:15,087 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:07:11,572 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:07:13,680 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:08:07,019 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:08:08,329 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:10:10,301 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:10:11,730 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:11:11,206 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:11:12,544 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:11:52,444 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:11:54,133 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:14:37,422 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:14:38,680 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:16:55,155 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:16:57,205 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:17:54,186 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:17:55,799 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:19:36,906 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:19:37,748 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:20:16,906 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:20:17,978 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:20:31,579 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:127
+<class 'NoneType'>
+2023-03-25 00:29:47,941 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:29:49,005 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:30:00,265 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:30:00,408 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:30:46,316 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:30:47,224 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:31:01,364 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:31:01,367 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:31:57,841 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:31:58,925 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:32:09,029 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:32:09,031 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:32:32,240 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:32:33,246 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:32:44,103 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:32:44,106 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:33:03,771 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:33:04,833 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:33:13,919 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:33:13,922 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:33:45,031 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:33:46,063 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:33:55,787 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:33:55,791 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:34:57,800 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:34:58,826 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:35:09,067 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:35:09,070 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:50:12,949 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:50:14,166 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:50:26,909 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:50:26,912 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:50:52,645 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:50:53,643 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:51:04,386 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:51:04,392 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:52:52,019 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:52:52,991 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:55:17,984 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:55:19,201 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 00:55:31,595 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:55:31,598 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 00:55:49,418 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 00:59:18,444 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 00:59:19,361 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 01:00:26,099 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:00:26,101 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:00:35,301 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:00:51,093 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:00:51,096 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:01:05,778 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:01:14,818 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:01:15,726 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:01:43,740 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:01:44,698 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:01:57,474 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:06:15,908 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:206
+Application Start
+2023-03-25 01:06:16,978 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 01:06:32,731 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:06:32,734 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:06:45,680 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:07:44,138 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:07:45,707 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:10:22,981 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:207
+Application Start
+2023-03-25 01:10:23,926 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 01:10:35,145 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:10:35,148 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:10:48,250 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:11:06,083 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:16:26,669 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:207
+Application Start
+2023-03-25 01:16:27,713 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 01:16:36,725 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:16:36,729 - DEBUG: File PrimDriver.py, in PrimDriver.Execute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:126
+<class 'float'>
+2023-03-25 01:16:42,998 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:16:43,023 - DEBUG: File BaseDriver.py, in BaseDriver.myChange             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\BaseDriver.py:285
+Entry:0:1:1:2 err
+2023-03-25 01:23:07,981 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:207
+Application Start
+2023-03-25 01:23:08,944 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 01:23:28,786 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:23:46,049 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:125
+run
+2023-03-25 01:41:48,401 - DEBUG: File main.py, in main.<module>             
+	File D:\2022-1\graduate_design\RedPanda\main.py:208
+Application Start
+2023-03-25 01:41:50,027 - DEBUG: File AlgoDriver.py, in AlgoDriver.__init__             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\AlgoDriver.py:33
+end init 22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-03-25 01:42:19,056 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:126
+run
+2023-03-25 01:42:28,258 - DEBUG: File Logic_Application.py, in Logic_Application.ChangeDoc             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Logic_Application.py:126
+run

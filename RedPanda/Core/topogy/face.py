@@ -32,7 +32,7 @@ from OCC.Core.Adaptor3d import Adaptor3d_IsoCurve
 from OCC.Core.gp import gp_Pnt2d
 
 from .base import BaseObject
-from .edge import Edge
+from .edge import EdgeAnalyst
 from .Construct import TOLERANCE, to_adaptor_3d
 from .Topology import Topo, WireExplorer
 from ..Euclid import RP_Dir
@@ -357,7 +357,7 @@ class FaceAnalyst(TopoDS_Face, BaseObject):
         return iso
 
     def edges(self):
-        return [Edge(i) for i in WireExplorer(next(self.topo.wires())).ordered_edges()]
+        return [EdgeAnalyst(i) for i in WireExplorer(next(self.topo.wires())).ordered_edges()]
 
     def __repr__(self):
         return self.name

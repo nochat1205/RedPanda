@@ -6,8 +6,8 @@ from PyQt5.QtWidgets import (
     QMainWindow, QApplication, QProgressBar
 )
 from PyQt5.QtCore import pyqtSlot
-
-
+from PyQt5.QtWidgets import QFileDialog
+from PyQt5.QtCore import pyqtSlot, pyqtSignal
 
 from RedPanda.ModelFileRead import read_step_file_with_names_colors, OpenFile
 
@@ -23,18 +23,14 @@ from OCC.Core.TDF import (
     TDF_Label,
     TDF_Attribute
 )
-from OCC.Core.TDocStd import TDocStd_Document
-
-from PyQt5.QtWidgets import QFileDialog
-from PyQt5.QtCore import pyqtSlot, pyqtSignal
+from RedPanda.RPAF.Document import Document
 
 
-from widgets.Ui_Main import Ui_MainWindow
-from widgets.Logic_DocTree import ModelTree
-from widgets.Logic_Application import Logic_Application
+
+from RedPanda.widgets.Ui_Main import Ui_MainWindow
+from RedPanda.widgets.Logic_DocTree import ModelTree
+from RedPanda.widgets.Logic_Application import Logic_Application
 from RedPanda.logger import Logger
-from RedPanda.Driver.Sym_ShapeDriver import Sym_BoxDriver
-from RedPanda.Driver.Sym_AlgoDriver import Sym_CutDriver
 from RedPanda.Sym_ParamBuilder import Sym_NewBuilder
 
 class MainWindow(QMainWindow):
@@ -80,6 +76,8 @@ class MainWindow(QMainWindow):
         self.logic_ConstructView.sig_ChangeShape.connect(self.logic_app.ChangeDoc)
 
         self.logic_app.sig_DocChanged.connect(self.logic_DocTree.Show)
+        self.logic_app.sig_DocChanged.connect(self.logic_Viewer.Repaint)
+
         self.logic_app.sig_DocUpdate.connect(self.logic_DocTree.Update)
         self.logic_DocTree.sig_select.connect(self.logic_ConstructView.ShowShape) 
 
@@ -112,16 +110,20 @@ class MainWindow(QMainWindow):
 
     @pyqtSlot()
     def ShapeConstruct(self, type:str):
-        from RedPanda.Driver.Sym_DataDriver import Sym_ArrayDriver
-        from RedPanda.Driver.Sym_GeomDriver import Sym_BezierDriver
+        from RedPanda.RPAF.DataDriver import PntArrayDriver
+        from RedPanda.RPAF.DataDriver import BezierDriver
+        from RedPanda.RPAF.DataDriver import BoxDriver
+        from RedPanda.RPAF.DataDriver import CutDriver
+
         if type == "Box":
-            param = Sym_NewBuilder(Sym_BoxDriver())
+            
+            param = Sym_NewBuilder(BoxDriver())
         elif type == 'Cut':
-            param = Sym_NewBuilder(Sym_CutDriver())
+            param = Sym_NewBuilder(CutDriver())
         elif type == 'Array':
-            param = Sym_NewBuilder(Sym_ArrayDriver())
+            param = Sym_NewBuilder(PntArrayDriver())
         elif type == 'bezier':
-            param = Sym_NewBuilder(Sym_BezierDriver())
+            param = Sym_NewBuilder(BezierDriver())
         else:
             Logger().info(f'ShapeCnstruct unknow type:{type}')
         self.sig_Construct.emit(param)
@@ -163,7 +165,7 @@ class MainWindow(QMainWindow):
         print("count: {}".format(count))
         self.treeView.Create_ModelTree(doc)
 
-    def read_doc(self, doc:TDocStd_Document):
+    def read_doc(self, doc:Document):
         # read doc
         rootLabel = doc.Main()
         level = 0

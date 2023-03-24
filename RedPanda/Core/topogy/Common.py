@@ -18,11 +18,11 @@
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>.
 
 __all__ = [ 'assert_isdone', # assert brep api is done
-            'roundlist' # 四舍五入
+            'roundlist', # 四舍五入
             
             # CONSTANTS
             'get_boundingbox',
-            'smooth_pnts' # smooth the data
+            'smooth_pnts', # smooth the data
             # Data type utilities
             'color',
             'point_list_to_TColgp_Array1OfPnt',
@@ -36,24 +36,24 @@ __all__ = [ 'assert_isdone', # assert brep api is done
             'midpoint',
             'center_boundingbox',
             'point_in_boundingbox',
-            'point_in_solid'
+            'point_in_solid',
             'intersection_from_three_planes',
             'intersect_shape_by_line',
-            'normal_vector_from_plane'
+            'normal_vector_from_plane',
             # 'fix'
             'fix_tolerance',
             'fix_continuity',
-            'resample_curve_with_uniform_deflection' # fits a bspline through the samples on `curve`
+            'resample_curve_with_uniform_deflection', # fits a bspline through the samples on `curve`
             # global properties
             
             # distance
             'minimum_distance',
             'vertex2pnt',
             'adapt_edge_to_curve',
-            'adapt_edge_to_hcurve'
+            'adapt_edge_to_hcurve',
             'to_adaptor_3d',
             'project_point_on_curve',
-            'project_point_on_plane'
+            'project_point_on_plane',
             'wire_to_curve',
             'adapt_edge_to_curve',
             'adapt_edge_to_hcurve'

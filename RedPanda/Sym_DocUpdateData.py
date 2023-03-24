@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QTreeWidgetItem
 
-from widgets.Logic_Construct import Logic_Construct
+from RedPanda.logger import Logger
+from RedPanda.widgets.Logic_Construct import Logic_Construct
 from RedPanda.logger import Logger
 
 class Sym_NewShapeData(object):

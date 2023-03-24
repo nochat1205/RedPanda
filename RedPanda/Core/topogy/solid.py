@@ -20,7 +20,7 @@ from OCC.Core.TopoDS import TopoDS_Solid
 
 from .Topology import Topo
 from .base import GlobalProperties, BaseObject
-from .shell import Shell
+from .shell import ShellAnalyst
 
 
 class SolidAnalyst(TopoDS_Solid, BaseObject):
@@ -42,4 +42,4 @@ class SolidAnalyst(TopoDS_Solid, BaseObject):
         self.GlobalProperties = GlobalProperties(self)
 
     def shells(self):
-        return (Shell(sh) for sh in Topo(self))
+        return (ShellAnalyst(sh) for sh in Topo(self))

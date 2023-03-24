@@ -1,17 +1,39 @@
-from OCC.Core.TDF import TDF_Label
-
-from RedPanda.OCCUtils import (
-    TFunction_Function, 
-    TFunction_DriverTable,
-    Standard_GUID,
-    TCollection_AsciiString,
-    TDF_Tool
-)
-from RedPanda.RDAF.GUID import *
-
 from RedPanda.logger import Logger
+from RedPanda.RPAF.GUID import *
+from RedPanda.RPAF.RD_Label import  Label
+from RedPanda.RPAF.DataDriver import (
+    BaseDriver,
+    Argument
+)
+from  RedPanda.RPAF.DriverTable import DataDriverTable
 
-class ArrayParam():
+def _GetDriver(id):
+    aDriver = DataDriverTable.Get().GetDriver(id)
+    return aDriver
+
+class NodeParam(object):
+    """参数对象
+    Args:
+        object (_type_): _description_
+    """
+    def __init__(self, value:str="", editAble=True) -> None:
+        self.edit = editAble
+        if isinstance(value, str):
+            self.value = value
+        else:
+            self.value = str(value)
+
+    @property
+    def Type(self):
+        return self.type
+
+    def __str__(self) -> str:
+        return f"{self.value}"
+
+    def __repr__(self) -> str:
+        return self.__str__()
+
+class ArrayParam(object):
     def __init__(self, subParam:dict, theSize:int=0) -> None:
         self._subParam = subParam
         self._size = theSize
@@ -22,6 +44,7 @@ class ArrayParam():
     def __repr__(self) -> str:
         return self.__str__()
 
+
 class Sym_NewBuilder(object):
     """_summary_
 
@@ -29,14 +52,14 @@ class Sym_NewBuilder(object):
         param (dict): {"type":, "default":value}
     """
     
-    def __init__(self, aDriver:Sym_Driver, parent=None) -> None:
+    def __init__(self, aDriver:BaseDriver, parent=None) -> None:
         Logger().info('Start init NewParamBuilder ')
         Logger().info(f"Type:{aDriver.Type} Driver:{aDriver.ID}")
 
         self.type = aDriver.Type
         self.TFunctionID = aDriver.ID
-        self.name_param = Param(str, "shape")
-        self.parent_param = Param(str, "0:1")
+        self.name_param = NodeParam("shape")
+        self.parent_param = NodeParam("0:1")
 
         self.shape_param:dict = self.GetDefination(aDriver)
         Logger().info(f'name:{self.name_param}')
@@ -45,23 +68,23 @@ class Sym_NewBuilder(object):
         Logger().info('End init NewParamBuilder ')
 
     @staticmethod
-    def GetParamWith(aDriver: Sym_Driver):
-        def GetParamDefault(aDriver:Sym_Driver):
+    def GetParamWith(aDriver: BaseDriver):
+        def GetParamDefault(aDriver:BaseDriver):
             if len(aDriver.Arguments) > 0: # read children
                 child_ParamDict = {}
                 for name, param in aDriver.Arguments.items():
                     param:Argument
                     child_param = Sym_NewBuilder.GetParamWith(
-                            GetDriver(param.DriverID)
+                            _GetDriver(param.DriverID)
                         )
                     child_ParamDict[name] = child_param
                 return child_ParamDict
             else: # read leave value
-                Attri = aDriver.Attributes['value']
+                Attri = NodeParam(aDriver.Attributes['value'].value)
                 return Attri
 
-        def GetArrayParam(aDriver:Sym_Driver):
-            subDriver = GetDriver(aDriver._SubTypeId)
+        def GetArrayParam(aDriver:BaseDriver):
+            subDriver = _GetDriver(aDriver._SubTypeId)
             return ArrayParam(GetParamDefault(subDriver))
 
         param = None
@@ -72,52 +95,30 @@ class Sym_NewBuilder(object):
         return param
 
     @staticmethod
-    def GetDefination(aDriver:Sym_Driver):
+    def GetDefination(aDriver:BaseDriver):
         return Sym_NewBuilder.GetParamWith(aDriver)
 
 class Sym_ChangeBuilder(object):
-    def __init__(self, theLabel: TDF_Label):
+    def __init__(self, theLabel: Label):
         Logger().info('Start init ChangeParamBuilder ')
 
-        self.TFunctionID = Sym_ChangeBuilder.GetDriverID(theLabel)
-        aDriver = GetDriver(self.TFunctionID)
-
+        aDriver = theLabel.GetDriver()
+        self.TFunctionID = theLabel.GetFunctionID()
         self.type = aDriver.Type
-        self.name_param = Param(str, self.GetName(theLabel))
-        self.parent_param = Param(str, self.GetEntry(theLabel), editAble=False)
+        self.name_param = NodeParam(theLabel.GetLabelName())
+        self.parent_param = NodeParam(theLabel.GetEntry(), editAble=False)
 
         self.shape_param = self.GetObjectData(theLabel)
-        Logger().info(f'Entry:{GetEntry(theLabel)} name:{self.name_param.Default} type:{self.type}')
         Logger().info(f'params:{self.shape_param}')
         Logger().info('End init ChangeParamBuilder ')
         return 
 
-    @staticmethod
-    def GetEntry(theLabel:TDF_Label):
-        return GetEntry(theLabel)
 
     @staticmethod
-    def GetDriverID(theLabel:TDF_Label):
-        return GetFunctionID(theLabel)
-
-    @staticmethod
-    def GetDriver(theLabel:TDF_Label):
-        return GetDriver(theLabel)
-
-    @staticmethod
-    def GetName(theLabel: object):
-        name = theLabel.GetLabelName()
-        if len(name) <= 0:
-            Logger().info("not a named object.")
-            raise Exception("not a named object.")
-
-        return name
-
-    @staticmethod
-    def GetParamWith(theLabel: TDF_Label):
+    def GetParamWith(theLabel: Label):
         # Logger().debug(f)
-        def GetSubObjectData(theLabel: TDF_Label):
-            aDriver = GetDriver(theLabel)
+        def GetSubObjectData(theLabel: Label):
+            aDriver = theLabel.GetDriver()
             if len(aDriver.Arguments) > 0: # read children
                 child_ParamDict = {}
                 for name, argu in aDriver.Arguments.items():
@@ -128,13 +129,11 @@ class Sym_ChangeBuilder(object):
                     child_ParamDict[name] = child_param
                 return child_ParamDict
             else: # read leave value
-                Attri:Param = aDriver.Attributes['value']
+                return NodeParam(aDriver.GetValueToText(theLabel))
 
-                return Param(Attri.Type, aDriver.GetValueToText(theLabel))
-
-        def GetArrayData(theLabel:TDF_Label):
+        def GetArrayData(theLabel:Label):
             child_dict = {}
-            aDriver:Sym_ArrayDriver_GUID = GetDriver(theLabel)
+            aDriver = theLabel.GetDriver()
             start = aDriver.StartIndex
             size = aDriver.GetSize(theLabel)
             Logger().debug(f'GetArrayData size:{size}')
@@ -143,8 +142,8 @@ class Sym_ChangeBuilder(object):
                 child_dict[str(i)] = GetSubObjectData(aLabel)
             return child_dict
 
-        aDriver = Sym_ChangeBuilder.GetDriver(theLabel)
-        Logger().info(f"Entry:{GetEntry(theLabel)} id:{aDriver.ID} Get Param")
+        aDriver = theLabel.GetDriver()
+        Logger().info(f"Entry:{theLabel.GetEntry()} id:{aDriver.ID} Get Param")
         if aDriver.ID == Sym_ArrayDriver_GUID:
             data = GetArrayData(theLabel)
         else:
@@ -152,6 +151,6 @@ class Sym_ChangeBuilder(object):
         return data
 
     @staticmethod
-    def GetObjectData(theLabel:TDF_Label):
+    def GetObjectData(theLabel:Label):
         return Sym_ChangeBuilder.GetParamWith(theLabel)
 

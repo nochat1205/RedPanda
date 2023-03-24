@@ -160,7 +160,7 @@ gp_Pnt.__mul__ = gp_pnt_mul
 gp_Pnt.__div__ = gp_pnt_div
 
 RP_Pnt = gp_Pnt
-RP_Vec = gp_Pnt
+RP_Vec = gp_Vec
 RP_Dir = gp_Dir
 RP_Ax1 = gp_Ax1
 RP_Trsf = gp_Trsf
