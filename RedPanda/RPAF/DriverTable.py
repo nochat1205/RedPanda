@@ -1,9 +1,9 @@
-
+__all__ = ['DataDriverTable', 'TPrsStd_DriverTable']
 from OCC.Core.TDF import (
     tdf_ProgIDFromGUID,
-    TDF_LabelMap
 )
 from OCC.Core.TFunction import TFunction_Logbook
+from OCC.Core.TPrsStd import TPrsStd_DriverTable
 
 from RedPanda.Core.data import (
     RP_GUID,
@@ -13,8 +13,10 @@ from RedPanda.Core.data import (
 from RedPanda.logger import Logger
 from RedPanda.RD_Singleton import Singleton
 
+
 from .DataDriver.BaseDriver import DataDriver
 from .RD_Label import Label
+from .GUID import RP_GUID
 
 def _ShallowCopy(dest, src):
     dest.__class__ = src.__class__ # 
@@ -73,4 +75,23 @@ class DataDriverTable(RP_Transient, Singleton):
 
     def Clear(self):
         self._myDrivers.clear()
+
+
+
+# TPrsDriver Table
+def AddDriver(self, guid: RP_GUID, driver):
+    self.dict[guid] = driver
+
+def FindDriver(self, guid, theDriver):
+    aDriver = self.dict.get(guid)
+    print("Find")
+    if aDriver:
+        _ShallowCopy(theDriver, aDriver)
+        return True
+    return False
+
+# TPrsStd_DriverTable.dict = dict()
+# TPrsStd_DriverTable.AddDriver = AddDriver
+# TPrsStd_DriverTable.FindDriver = FindDriver
+
 

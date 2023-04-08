@@ -57,7 +57,7 @@ class ShapeToTopology(object):
         if isinstance(shape, TopoDS_Shape):
             return self.topoTypes[shape.ShapeType()](shape)
         else:
-            raise AttributeError("shape has not method `ShapeType`")
+            raise AttributeError("unknow `ShapeType`")
 
     def __getitem__(self, item):
         return self(item)

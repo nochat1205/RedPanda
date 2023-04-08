@@ -2,13 +2,30 @@ from PyQt5 import QtWidgets, QtCore
 from PyQt5.QtWidgets import (
     QVBoxLayout,
     QAbstractItemView,
-    QTreeWidgetItem
+    QTreeWidgetItem,
+    QSizePolicy
 )
 from RedPanda.Sym_ParamBuilder import (
     ArrayParam
 )
 from RedPanda.logger import Logger
 from RedPanda.Sym_ParamBuilder import NodeParam
+
+class ArrayTree(QtWidgets.QTreeWidgetItem):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def Load(self, data:ArrayParam):
+        arrayParam: ArrayParam = data
+        self.setText(1, str(arrayParam._size))
+        self.setFlags(self.flags() | QtCore.Qt.ItemIsEditable)
+
+        self._IsArray:bool = True
+        self._typename = 'Pnt'
+        self.sub_param = ArrayParam
+
+    def IsArray(self):
+        return self._IsArray
 
 
 class Logic_Construct(QtWidgets.QTreeWidget):
@@ -29,6 +46,11 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         self.tree.setEditTriggers(QAbstractItemView.NoEditTriggers)
         self.tree.itemDoubleClicked.connect(self.onClickItem)
         self.tree.itemChanged.connect(self.onArrayItemChange)
+
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding,
+                                   QSizePolicy.Expanding)
+        self.setSizePolicy(sizePolicy)
+
  
     def _setPolicy(self):
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)

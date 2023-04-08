@@ -32,7 +32,7 @@ from OCC.Core.AIS import (
     AIS_WireFrame,
     AIS_Shape_SelectionMode,
 )
-from OCC.Core.gp import gp_Dir, gp_Pnt, gp_Pnt2d, gp_Vec
+from OCC.Core.gp import gp_Dir, gp_Pnt, gp_Pnt2d, gp_Vec, gp_Ax2
 from OCC.Core.BRepBuilderAPI import (
     BRepBuilderAPI_MakeVertex,
     BRepBuilderAPI_MakeEdge,
@@ -90,6 +90,10 @@ from OCC.Core.Graphic3d import (
     Graphic3d_NameOfMaterial,
 )
 from OCC.Core.Aspect import Aspect_TOTP_RIGHT_LOWER, Aspect_FM_STRETCH, Aspect_FM_NONE
+from OCC.Core.AIS import AIS_InteractiveContext
+from OCC.Core.V3d import V3d_Viewer, V3d_View
+from OCC.Core.Graphic3d import Graphic3d_Camera
+
 
 # Shaders and Units definition must be found by occ
 # the fastest way to get done is to set the CASROOT env variable
@@ -158,9 +162,9 @@ class Viewer3d(Display3d):
         self._inited = False
         self._local_context_opened = False
 
-        self.Context = self.GetContext()
-        self.Viewer = self.GetViewer()
-        self.View = self.GetView()
+        self.Context:AIS_InteractiveContext = self.GetContext()
+        self.Viewer:V3d_Viewer = self.GetViewer()
+        self.View:V3d_View = self.GetView()
 
         self.default_drawer = None
         self._struc_mgr = None
@@ -228,18 +232,21 @@ class Viewer3d(Display3d):
             self.Viewer.SetLightOn()
 
         self.camera = self.View.Camera()
+
         self.default_drawer = self.Context.DefaultDrawer()
 
-        # draw black contour edges, like other famous CAD packages
+        # draw black contour edges, like other famous CAD packages 边缘线
         if draw_face_boundaries:
             self.default_drawer.SetFaceBoundaryDraw(True)
 
+        # 设置最大弦偏差
         # turn up tessellation defaults, which are too conversative...
         chord_dev = self.default_drawer.MaximalChordialDeviation() / 10.0
         self.default_drawer.SetMaximalChordialDeviation(chord_dev)
 
         if phong_shading:
             # gouraud shading by default, prefer phong instead
+            # 默认情况下使用Gouraud阴影，而不是首选Phong。
             self.View.SetShadingModel(Graphic3d_TOSM_FRAGMENT)
 
         # necessary for text rendering

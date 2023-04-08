@@ -2,25 +2,20 @@ from OCC.Core.TFunction import TFunction_Logbook
 from OCC.Core.TDF import (
     TDF_LabelMap,
     TDF_Label,
-    TDF_Attribute
+    TDF_Attribute,
+
 )
-from .GUID import (
-    IDcolCurvGUID,
-    IDcolGUID,
-    IDcolSurfGUID,
-    AssemblyGUID,
-    ShapeRefGUID,
-    Sym_IdAttr_GUID
-)
+from .GUID import *
 from OCC.Core.TDataStd import (
     TDataStd_Name,
     TDataStd_Real,
     TDataStd_Integer,
     TDataStd_TreeNode,
+    TDataStd_GenericExtString
 )
 from OCC.Core.TNaming import (
     TNaming_NamedShape,
-    TNaming_Builder
+    TNaming_Builder,
 )
 from OCC.Core.TPrsStd import (
     TPrsStd_AISPresentation,
@@ -29,13 +24,18 @@ from OCC.Core.TPrsStd import (
 from OCC.Core.TFunction import (
     TFunction_Function,
 )
-from OCC.Core.XCAFDoc import XCAFDoc_Location
-
+from OCC.Core.XCAFDoc import (
+    XCAFDoc_Location,
+)
 from .GUID import GuidLookup
 
 class Attr_Assembly(TDataStd_TreeNode):
     def GetID():
         return AssemblyGUID
+
+class Attr_Entry(TDataStd_GenericExtString):
+    def GetID():
+        return Attr_Entry_GUID
 
 class Attr_ShapeRef(TDataStd_TreeNode):
     """
@@ -97,7 +97,6 @@ class Attr_IDcolCurv(TDataStd_TreeNode):
         return IDcolCurvGUID
 
 
-
 class DFAttr_LogBook(TFunction_Logbook):
     def __init__(self) -> None:
         super().__init__()
@@ -137,6 +136,8 @@ attr_li = [
 ]
 
 Lookup_Attr = GuidLookup(map(lambda x:x.GetID(), attr_li), attr_li)
+
+
 
 
 # data translate

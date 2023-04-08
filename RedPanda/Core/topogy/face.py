@@ -127,7 +127,6 @@ class DiffGeomSurface(object):
             _crv_max = 0.0
         return abs((_crv_min + _crv_max) / 2.0)
 
-
 class FaceAnalyst(TopoDS_Face, BaseObject):
     """high level surface API
     object is a Face if part of a Solid

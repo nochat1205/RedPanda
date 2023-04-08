@@ -25,6 +25,7 @@ from .BaseDriver import (
     VarDriver,
     Param,
     Argument,
+    DataEnum,
     ArrayDriver
 )
 
@@ -74,4 +75,3 @@ class IdDriver(VarDriver):
     @classproperty
     def Type(self):
         return "GUID"
-

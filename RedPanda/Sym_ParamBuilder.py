@@ -2,7 +2,7 @@ from RedPanda.logger import Logger
 from RedPanda.RPAF.GUID import *
 from RedPanda.RPAF.RD_Label import  Label
 from RedPanda.RPAF.DataDriver import (
-    BaseDriver,
+    DataDriver,
     Argument
 )
 from  RedPanda.RPAF.DriverTable import DataDriverTable
@@ -52,7 +52,7 @@ class Sym_NewBuilder(object):
         param (dict): {"type":, "default":value}
     """
     
-    def __init__(self, aDriver:BaseDriver, parent=None) -> None:
+    def __init__(self, aDriver:DataDriver, parent=None) -> None:
         Logger().info('Start init NewParamBuilder ')
         Logger().info(f"Type:{aDriver.Type} Driver:{aDriver.ID}")
 
@@ -68,8 +68,8 @@ class Sym_NewBuilder(object):
         Logger().info('End init NewParamBuilder ')
 
     @staticmethod
-    def GetParamWith(aDriver: BaseDriver):
-        def GetParamDefault(aDriver:BaseDriver):
+    def GetParamWith(aDriver: DataDriver):
+        def GetParamDefault(aDriver:DataDriver):
             if len(aDriver.Arguments) > 0: # read children
                 child_ParamDict = {}
                 for name, param in aDriver.Arguments.items():
@@ -83,11 +83,12 @@ class Sym_NewBuilder(object):
                 Attri = NodeParam(aDriver.Attributes['value'].value)
                 return Attri
 
-        def GetArrayParam(aDriver:BaseDriver):
+        def GetArrayParam(aDriver:DataDriver):
             subDriver = _GetDriver(aDriver._SubTypeId)
             return ArrayParam(GetParamDefault(subDriver))
 
         param = None
+        assert isinstance(aDriver, DataDriver)
         if aDriver.ID == Sym_ArrayDriver_GUID:
             param = GetArrayParam(aDriver)
         else:
@@ -95,7 +96,7 @@ class Sym_NewBuilder(object):
         return param
 
     @staticmethod
-    def GetDefination(aDriver:BaseDriver):
+    def GetDefination(aDriver:DataDriver):
         return Sym_NewBuilder.GetParamWith(aDriver)
 
 class Sym_ChangeBuilder(object):

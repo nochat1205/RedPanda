@@ -94,6 +94,18 @@ class qtViewer3d(qtBaseViewer):
         self._current_cursor = "arrow"
         self._available_cursors = {}
 
+        self._key_map = {
+            ord("W"): self._display.SetModeWireFrame,
+            ord("S"): self._display.SetModeShaded,
+            ord("A"): self._display.EnableAntiAliasing,
+            ord("B"): self._display.DisableAntiAliasing,
+            ord("H"): self._display.SetModeHLR,
+            ord("F"): self._display.FitAll,
+            ord("G"): self._display.SetSelectionMode,
+        }
+
+        self.InitDriver()
+
     @property
     def qApp(self):
         # reference to QApplication instance
@@ -105,19 +117,11 @@ class qtViewer3d(qtBaseViewer):
 
     def InitDriver(self):
         self._display.Create(window_handle=int(self.winId()), parent=self)
-        # background gradient
-        self._display.SetModeShaded()
+        # # background gradient
+        # self._display.SetModeShaded()
+
         self._inited = True
         # dict mapping keys to functions
-        self._key_map = {
-            ord("W"): self._display.SetModeWireFrame,
-            ord("S"): self._display.SetModeShaded,
-            ord("A"): self._display.EnableAntiAliasing,
-            ord("B"): self._display.DisableAntiAliasing,
-            ord("H"): self._display.SetModeHLR,
-            ord("F"): self._display.FitAll,
-            ord("G"): self._display.SetSelectionMode,
-        }
         self.createCursors()
 
         # me 
@@ -177,8 +181,6 @@ class qtViewer3d(qtBaseViewer):
         self.Repaint()
 
     def paintEvent(self, event):
-        if not self._inited:
-            self.InitDriver()
 
         self._display.Context.UpdateCurrentViewer()
 

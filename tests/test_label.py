@@ -6,10 +6,9 @@ from OCC.Core.TDF import (
     TDF_Data
 )
 
-from RedPanda.RDAF.RD_Label import Label
+from RedPanda.RPAF.RD_Label import Label
 
 def test_label():
     
     label = Label()
     assert label.__hash__()
-

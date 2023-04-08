@@ -10,7 +10,8 @@ from OCC.Core.gp import (
     gp_Ax1,
     gp_Quaternion,
     gp_Pnt2d,
-    gp_XYZ
+    gp_XYZ,
+    gp_Ax3
 )
 from OCC.Core.TColgp import TColgp_Array1OfPnt
 
@@ -163,6 +164,7 @@ RP_Pnt = gp_Pnt
 RP_Vec = gp_Vec
 RP_Dir = gp_Dir
 RP_Ax1 = gp_Ax1
+RP_Ax3 = gp_Ax3
 RP_Trsf = gp_Trsf
 RP_Pnt2d = gp_Pnt2d
 RP_XYZ = gp_XYZ

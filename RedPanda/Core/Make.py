@@ -242,7 +242,6 @@ def make_plane(
     face = make_face(PL, extent_x_min, extent_x_max, extent_y_min, extent_y_max)
     return face
 
-
 def make_oriented_box(v_corner, v_x, v_y, v_z):
     """
     produces an oriented box

@@ -9,6 +9,9 @@ IDcolGUID     = RP_GUID ("efd212e4-6dfd-11d4-b9c8-0060b0ee281b")
 IDcolSurfGUID = RP_GUID ("efd212e5-6dfd-11d4-b9c8-0060b0ee281b")
 IDcolCurvGUID = RP_GUID ("efd212e6-6dfd-11d4-b9c8-0060b0ee281b")
 
+Attr_Entry_GUID = RP_GUID ("22D22E64-ABCA-11d4-8F1A-0060B0EE18E8")
+
+
 Sym_RealDriver_GUID = RP_GUID ("22D22E51-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_IntDriver_GUID = RP_GUID ("22D22E57-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_IdDriver_GUID = RP_GUID ("22D22E60-ABCA-11d4-8F1A-0060B0EE18E8")
@@ -25,6 +28,8 @@ Sym_ArrayDriver_GUID = RP_GUID ("22D22E56-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_BezierDriver_GUID = RP_GUID ("22D22E61-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_TransShapeDriver_GUID = RP_GUID ("22D22E62-ABCA-11d4-8F1A-0060B0EE18E8")
 
+
+
 class GuidLookup(object):
     
     def __init__(self, key_in, key_value) -> None:
@@ -35,3 +40,5 @@ class GuidLookup(object):
     def __getitem__(self, item) -> type:
         return self.dict[item]
 
+    def Add(self, key, value)->None:
+        self.dict[key] = value

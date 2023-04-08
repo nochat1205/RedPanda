@@ -27,17 +27,18 @@ from ..Attribute import (
     TDataStd_Integer
 )
 from .BaseDriver import (
-    ShapeDriver,
     ArrayDriver
 )
 from .VarDriver import (
     RealDriver,
 )
+from .ShapeBaseDriver import BareShapeDriver
+
 from ..RD_Label import Label
 from ..DriverTable import DataDriverTable
 
 
-class PntDriver(ShapeDriver):
+class PntDriver(BareShapeDriver):
     _type = 'Point'
     _guid = Sym_PntDriver_GUID
     def __init__(self) -> None:
@@ -64,7 +65,6 @@ class PntDriver(ShapeDriver):
         builder.Generated(pnt)
 
         return 0
-
 
     @classproperty
     def ID(self):

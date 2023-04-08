@@ -1,7 +1,6 @@
 
 __all__ = ['BezierDriver']
 
-
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty
 from RedPanda.RPAF.GUID import *
@@ -21,16 +20,19 @@ from ..Attribute import (
 )
 from ..RD_Label import Label
 from .BaseDriver import (
-    ShapeDriver,
     Argument,
     Param,
-    ShapeRefDriver
+    DataEnum
 )
+from .ShapeBaseDriver import BareShapeDriver
 from .VertexDriver import (
     PntArrayDriver,
 )
 
-class BezierDriver(ShapeDriver):
+class BezierDriver(BareShapeDriver):
+    OutputType = DataEnum.Edge
+    ViewType = '2D'
+    
     def __init__(self) -> None:
         super().__init__()
         self.Attr = Param(TNaming_NamedShape.GetID())

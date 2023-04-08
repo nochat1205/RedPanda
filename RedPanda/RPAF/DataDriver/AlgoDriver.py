@@ -14,20 +14,13 @@ from ..Attribute import (
 )
 from ..RD_Label import Label
 from .BaseDriver import (
-    ShapeDriver,
     Argument,
     Param,
     ShapeRefDriver
 )
-from .VarDriver import (
-    RealDriver,
-)
-from .VertexDriver import (
-    PntDriver,
-)
+from .ShapeBaseDriver import BareShapeDriver
 
-
-class CutDriver(ShapeDriver):
+class CutDriver(BareShapeDriver):
     def __init__(self) -> None:
         super().__init__()
         Logger().debug("end init "+str(self.ID))

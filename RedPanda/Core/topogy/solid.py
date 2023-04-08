@@ -42,4 +42,4 @@ class SolidAnalyst(TopoDS_Solid, BaseObject):
         self.GlobalProperties = GlobalProperties(self)
 
     def shells(self):
-        return (ShellAnalyst(sh) for sh in Topo(self))
+        return [ShellAnalyst(sh) for sh in Topo(self).shells()]

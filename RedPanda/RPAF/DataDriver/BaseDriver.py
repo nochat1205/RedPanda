@@ -1,18 +1,19 @@
-
 from __future__ import annotations
 
 from typing import Union
 
+from OCC.Core.TPrsStd import TPrsStd_Driver
+from OCC.Core.AIS import AIS_InteractiveObject
 from OCC.Core.TDF import TDF_Tool
-
-from RedPanda.RPAF.GUID import *
 
 from RedPanda.decorator import classproperty
 from RedPanda.logger import Logger
 
+from RedPanda.RPAF.GUID import *
+from RedPanda.RPAF.RD_Label import Label
 from RedPanda.Core.data import (
     RP_GUID,
-    RP_AsciiStr
+    RP_AsciiStr,
 )
 from ..RD_Label import Label
 from ..Attribute import (
@@ -20,12 +21,31 @@ from ..Attribute import (
     TFunction_Function,
     Attr_ShapeRef,
     Attr_Guid,
+    Attr_Entry,
     TDataStd_Integer,
 )
 from ..Attribute import Lookup_Attr
 """
 to have only one instance of a driver for the whole session.
 """
+
+class DataEnum:
+    Null = 0
+    Real = 1
+    Int = 2
+    PntArray = 5
+
+
+    Shape = 10
+    Vertex = 13
+    Edge = 14
+    Wire = 15
+    Face = 16
+    Shell = 17
+    Solid = 18
+    @staticmethod
+    def IsShape(enum):
+        return 10 <= enum and enum <= 20 
 
 class TagResource(object):
     def __init__(self) -> None:
@@ -80,10 +100,11 @@ class Argument(object):
         object (_type_): _description_
     """
     def __init__(self, tag:TagResource, id:RP_GUID, 
-                 editFlag:bool=True) -> None:
+                 editFlag:bool=True, valueType:int = DataEnum.Null) -> None:
         self._tag = tag.GetNewTag()
         self._driverID = id
         self._editFlag = editFlag
+        self.valueType = valueType
 
     @property
     def Tag(self):
@@ -96,22 +117,40 @@ class Argument(object):
     def IsEdit(self):
         return self._editFlag
 
-
     def Value(self, theLabel:Label)->any:
         from ..DriverTable import DataDriverTable
         aDriver = DataDriverTable.Get().GetDriver(self.DriverID)
         aLabel = theLabel.FindChild(self.Tag)
         return aDriver.GetValue(aLabel)
 
-class DataDriver(object):
+class SocketDriver(object):
+    def __init__(self) -> None:
+        self.__socketType = ''
+
+class DataDriver(TPrsStd_Driver):
     """
         Base Execute Driver
     """
+    OutputType = DataEnum.Null
+
     def __init__(self) -> None:
+        super().__init__()
+        self.name:str = ''
+        self.id:RP_GUID = None
+
+        self.description:str = ''
+        self.long_description:str = ''
+
+        self.socket_0tag = 64
+
+        # old        
         self.tagResource = TagResource()
         self.Results: dict[str, dict] = dict()          # 结果
         self.Attributes: dict[str, RP_GUID] = dict()    # 属性
         self.Arguments: dict[str, Argument] = dict()    # 参数
+
+        # New
+        self.input_params = self.Arguments
 
     def myInit(self, theLabel:Label, theData):
         raise NotImplementedError()
@@ -126,6 +165,12 @@ class DataDriver(object):
             return False
         return True
 
+    def Update(self, L: Label, ais: AIS_InteractiveObject) -> bool:
+        """ for TPrsStd_AISPrsentaion, 
+        由于ocaf TPrsStd_AISPrsentaion的原因,只能命名为Update
+        """
+        raise NotImplementedError()
+
     def GetValue(self, theLabel:Label):
         raise NotImplementedError()
 
@@ -137,6 +182,8 @@ class DataDriver(object):
 
     def Execute(self, theLabel:Label)->int:
         return 0
+
+
 
     def GetRefMeLabel(self, theLabel)->set[Label]:
         label_set = set()
@@ -171,10 +218,11 @@ class DataDriver(object):
         """
         raise NotImplementedError('Must have Type')
 
-
 from ..DriverTable import DataDriverTable
 
 class VarDriver(DataDriver):
+
+    
     def myInit(self, theLabel: Label, theData):
         Logger().info(f'change Label:{theLabel.GetEntry()}.value, {None}, {theData}')
         attr:Param = self.Attributes['value']
@@ -192,9 +240,13 @@ class VarDriver(DataDriver):
         return self.Attributes['value'].GetValue(theLabel)
 
 class ShapeRefDriver(DataDriver):
+    OutputType = DataEnum.Shape
+
     def __init__(self) -> None:
         super().__init__()
+
         self.Attributes['ref'] = Param(Attr_ShapeRef.GetID())
+        self.Attributes['entry'] = Param(Attr_Entry.GetID())
 
     def myInit(self, theLabel: Label, text):
         anEntry = RP_AsciiStr(text)
@@ -215,6 +267,9 @@ class ShapeRefDriver(DataDriver):
         Logger().warn(f'Entry:{theLabel.GetEntry()} not found reference')
         return None
 
+    def GetValueToText(self, theLabel: Label):
+        return self.Attributes['entry'].GetValue(theLabel)
+
     @classproperty
     def ID(self):
         """函数ID
@@ -231,8 +286,11 @@ class ShapeRefDriver(DataDriver):
         return 'ShapeRef'
 
 class ArrayDriver(DataDriver):
+    OutputType = DataEnum.PntArray
     def __init__(self, ) -> None:
         super().__init__()
+        
+
         self.myAttr = Param(TDataStd_Integer.GetID())
         self.Attributes['size'] = self.myAttr
 
@@ -264,35 +322,6 @@ class ArrayDriver(DataDriver):
             if not aDriver.Change(aLabel, pnt):
                 return False
         return True
-
-
-class ShapeDriver(DataDriver):
-    def myInit(self, theLabel: Label, theData):
-        for name, argu in self.Arguments.items():
-            argu:Argument
-            aLabel = theLabel.FindChild(argu.Tag)
-            aDriver = DataDriverTable.Get().GetDriver(argu.DriverID)
-            aDriver.Init(aLabel, theData[name])
-        if self.Execute(theLabel) != 0:
-            return False
-        return True
-
-    def myChange(self, theLabel: Label, theData):
-        for name, subData in theData.items():
-            argu:Argument = self.Arguments[name]
-            aLabel = theLabel.FindChild(argu.Tag)
-            aDriver:DataDriver = aLabel.GetDriver()
-            if not aDriver.Change(aLabel, subData):
-                Logger().debug(f'Entry:{aLabel.GetEntry()} err')
-                return False
-
-        if self.Execute(theLabel) != 0:
-            return False
-
-        return True
-
-    def GetValue(self, theLabel: Label):
-        return self.Attributes['value'].GetValue(theLabel)
 
 '''
 class DataDriver(object):
