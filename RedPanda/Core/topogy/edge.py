@@ -213,7 +213,7 @@ class EdgeAnalyst(TopoDS_Edge, BaseObject):
         if self._curve is not None and not self.is_dirty:
             pass
         else:
-            self._curve = BRep_Tool().Curve(self)[0]
+            self._curve = BRep_Tool().Curve(self)
         return self._curve
 
     @property
@@ -233,8 +233,8 @@ class EdgeAnalyst(TopoDS_Edge, BaseObject):
         computes the 2d parametric spline that lies on the surface of the face
         :return: Geom2d_Curve, u, v
         """
-        crv, u, v = BRep_Tool().CurveOnSurface(self, face)
-        return crv, u, v
+        crv = BRep_Tool().CurveOnSurface(self, face)
+        return crv
 
     def _local_properties(self):
         self._lprops_curve_tool = GeomLProp_CurveTool()

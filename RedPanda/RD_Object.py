@@ -34,7 +34,11 @@ class RDObject(object):
 
 class RDObjectManager(object):
     def __init__(self) -> None:
-        self.RDObject_dict = dict()
+        self.RDObject_dict:dict[Label, RDObject] = dict()
 
-    def Add(self, theLabel:Label):
+    def Add(self, theLabel:Label)->RDObject:
         self.RDObject_dict[theLabel] = RDObject(theLabel)
+        return self.RDObject_dict[theLabel]
+
+    def __getitem__(self, key):
+        return self.RDObject_dict[key]

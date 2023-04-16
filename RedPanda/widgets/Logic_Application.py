@@ -66,22 +66,24 @@ class Logic_Application(QObject):
     def InitAIS_IC(self):
         self._myContext.EraseAll()
 
+    @pyqtSlot(str)
     def NewDocument(self, theFormat:str):
         doc = Document(RP_ExtendStr(theFormat))
         self._DocApp.AddDocument(doc)
-        TDataStd_Name.Set(doc.Main(), RP_ExtendStr("Debug"))
+        TDataStd_Name.Set(doc.Main(), str(doc))
 
         # load and read instant read
-        TPrsStd_AISViewer.New(doc.Main(), self._myViewer)
-        TPrsStd_AISViewer.Find(self._main_doc.Main(), self._myContext)
+        # TPrsStd_AISViewer.New(doc.Main(), self._myViewer)
+        # TPrsStd_AISViewer.Find(self._main_doc.Main(), self._myContext)
 
-        self._myContext.SetDisplayMode(AIS_Shaded, True)
+        # self._myContext.SetDisplayMode(AIS_Shaded, True)
 
         # Set the maximum number of available "undo" actions
         doc.SetUndoLimit(10)
 
         self._main_doc = doc
-        self.sig_DocChanged.emit(self._main_doc)
+        # self.sig_DocChanged.emit(self._main_doc)
+        return doc
 
     @pyqtSlot(Sym_NewShapeData)
     def NewShape(self, data:Sym_NewShapeData):
@@ -163,7 +165,6 @@ class Logic_Application(QObject):
         anAisPresentation = TPrsStd_AISPresentation.Set(theLabel, TNaming_NamedShape.GetID())
         anAisPresentation.Update()
 
-
     @staticmethod
     def Presentation(theLabel:Label):
         anAisPresentation = TPrsStd_AISPresentation.Set(theLabel, TNaming_NamedShape.GetID())
@@ -214,3 +215,21 @@ class Logic_Application(QObject):
         #     anIter.Next()
 
         # self._myContext.UpdateCurrentViewer()
+
+    # --- New  ---
+    from RedPanda.RPAF.GUID import RP_GUID
+    @pyqtSlot(RP_GUID)
+    def NewDataLabel(self, driverID:RP_GUID):
+        self._main_doc.NewCommand()
+        Logger().info("-- NewConmand --")        
+        Logger().info("-- Add New Shape --")
+
+        aDriver:DataDriver = DataDriverTable.Get().GetDriver(driverID)
+        mainLabel = TDF_TagSource.NewChild(self._main_doc.Main())
+        TDataStd_Name.Set(mainLabel, RP_ExtendStr('New '+aDriver.Type))
+        aDriver.Init(mainLabel)
+
+        self._main_doc.CommitCommand()
+
+        Logger().info("-- commit command --")
+        return Label

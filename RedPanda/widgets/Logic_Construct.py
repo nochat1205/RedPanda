@@ -11,21 +11,41 @@ from RedPanda.Sym_ParamBuilder import (
 from RedPanda.logger import Logger
 from RedPanda.Sym_ParamBuilder import NodeParam
 
-class ArrayTree(QtWidgets.QTreeWidgetItem):
+class BaseNode(QtWidgets.QTreeWidgetItem):
+    _IsArray:bool = False
+    _IsShapeData: bool = True
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-
-    def Load(self, data:ArrayParam):
-        arrayParam: ArrayParam = data
-        self.setText(1, str(arrayParam._size))
-        self.setFlags(self.flags() | QtCore.Qt.ItemIsEditable)
-
-        self._IsArray:bool = True
-        self._typename = 'Pnt'
-        self.sub_param = ArrayParam
+        self.IsChanged = False
 
     def IsArray(self):
         return self._IsArray
+
+    def IsShapeData(self):
+        return self._IsShapeData
+
+    def SetChanged(self):
+        self.IsChanged = True
+
+    def IsChanged(self):
+        return self.IsChanged
+
+class ArrayNode(BaseNode):
+    _IsArray:bool = True
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def Load(self, theName, theParams:ArrayParam, father=None, readOnly=False):
+        arrayParam: ArrayParam = theParams
+        
+        self.setText(0, theName)
+        
+
+        self.setText(1, str(arrayParam._size))
+        self.setFlags(self.flags() | QtCore.Qt.ItemIsEditable)
+
+        self._typename = 'Pnt'
+        self.sub_param = ArrayParam
 
 
 class Logic_Construct(QtWidgets.QTreeWidget):
@@ -75,6 +95,7 @@ class Logic_Construct(QtWidgets.QTreeWidget):
 
     def onArrayItemChange(self, item: QTreeWidgetItem, column: int):
         if column == 1:
+            return
             Logger().info(f"change item:{item.text(0)}, col:{column} to text:{item.text(column)}")
             self._setChangeFlag(item) # TODO: 分开
             if item.data(self.ArrayParamData_col, QtCore.Qt.ItemDataRole.UserRole):
@@ -96,18 +117,21 @@ class Logic_Construct(QtWidgets.QTreeWidget):
             self.tree.editItem(item, column)
 
     def _setTreeItem(self, theName, theParams:dict, father=None, readOnly=False):
-        item = QtWidgets.QTreeWidgetItem(father)
-        father = item
-        item.setText(0, theName)
-        self._setShapeDataFlag(item)
+
 
         if isinstance(theParams, NodeParam):
+            item = QtWidgets.QTreeWidgetItem(father)
+            father = item
+            item.setText(0, theName)
+
             param = theParams
             item.setText(1, param.value)
             item.setFlags(item.flags() | QtCore.Qt.ItemIsEditable)
 
         elif isinstance(theParams, ArrayParam):
             arrayParam: ArrayParam = theParams
+            item = ArrayNode(father)
+
             item.setText(1, str(arrayParam._size))
             item.setFlags(item.flags() | QtCore.Qt.ItemIsEditable)
             item.setData(self.ArrayParamData_col, 
@@ -118,12 +142,15 @@ class Logic_Construct(QtWidgets.QTreeWidget):
                          QtCore.Qt.ItemDataRole.UserRole+2, arrayParam._subParam)
 
         elif isinstance(theParams, dict):
+            item = QtWidgets.QTreeWidgetItem(father)
+            father = item
+            item.setText(0, theName)
             for name, param in theParams.items():
                 self._setTreeItem(name, param, father)
         else:
             Logger().warn(f"SetTreeItem unknow theParams type{type(theParams)}")
 
-        return father
+        return item
 
     def _setRootItem(self, name:str, param:NodeParam):
         item = QtWidgets.QTreeWidgetItem(self.tree)
@@ -148,30 +175,23 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         self.treeItems.clear()
 
     @staticmethod
-    def _isChange(item: QTreeWidgetItem):
-        return item.data(Logic_Construct.ChangeFlag_col, 
-                        QtCore.Qt.ItemDataRole.UserRole)
+    def _isChange(item: BaseNode):
+        return item.IsChanged()
 
     @staticmethod
-    def isShapeData(item: QTreeWidgetItem):
-        return item.data(Logic_Construct.ChangeFlag_col, 
-                    QtCore.Qt.ItemDataRole.UserRole+1)
+    def isShapeData(item: BaseNode):
+        return item.IsShapeData()
 
-    def _setShapeDataFlag(self, item:QTreeWidgetItem):
-        item.setData(self.ChangeFlag_col, 
-                    QtCore.Qt.ItemDataRole.UserRole+1, True)
-
-    def _setChangeFlag(self, item: QTreeWidgetItem):
+    def _setChangeFlag(self, item: BaseNode):
         if 'Shape' not in self.treeRoots:
             return
-        if not Logic_Construct.isShapeData(item):
+        if not self.isShapeData(item):
             return
 
         root = self.treeRoots['Shape']
-        while not Logic_Construct._isChange(item):
+        while not self._isChange(item):
             Logger().info(f'item:{item.text(0)} set change flag')
-            item.setData(self.ChangeFlag_col, 
-                        QtCore.Qt.ItemDataRole.UserRole, True)
+            item.SetChanged()
             if root == item:
                 break
 

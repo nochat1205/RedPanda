@@ -311,7 +311,7 @@ class qtViewer2d(qtBaseViewer):
             pln = Geom_Plane(plane_ax3)
             ais_Trihedron = AIS_PlaneTrihedron(pln)
             aWindow = self.window()
-            length = min(aWindow.width(), aWindow.height())
+            length = 10
             ais_Trihedron.SetLength(length)
             self._display.Context.Display(ais_Trihedron, False)
             self._display.DisplayMessage(gp_Pnt2d(0, length/2), f'(0, {length/2})')
@@ -322,7 +322,7 @@ class qtViewer2d(qtBaseViewer):
                 self._display.Context.Erase(self._trihedron, False)
                 self._trihedron = None
 
-    def GridEnable(self):
+    def GridEnable(self, u1=0, u2=0, v1=100, v2=100):
         from OCC.Core.Quantity import Quantity_NOC_WHITE, Quantity_Color
         from OCC.Core.Aspect import (
             Aspect_GT_Rectangular, Aspect_GDM_Lines, Aspect_GDM_Points,
@@ -337,8 +337,9 @@ class qtViewer2d(qtBaseViewer):
         aViewer.SetGridEcho(aGridAspect)
         aWindow = self.window()
         aWidth, aHeight = aWindow.width(), aWindow.height()
-        aViewer.SetRectangularGridGraphicValues(aWidth, aHeight, 0.0)
-        aViewer.SetRectangularGridValues (0, 0, 100, 100, 0)
+        aViewer.SetRectangularGridGraphicValues(u2-u1, v2-v1, 0.0)
+
+        aViewer.SetRectangularGridValues (0, 0, (u2-u1)/10, (v2-v1)/10, 0)
         aViewer.ActivateGrid(Aspect_GT_Rectangular, Aspect_GDM_Lines)
 
     def Display_Plane(self, face):
@@ -353,7 +354,14 @@ class qtViewer2d(qtBaseViewer):
         self.DisplayTrihedron()
         self._display.DisplayShape(face)
 
-    
+    def DisplaySurfaceFlay(self, surface):
+        from OCC.Core.Geom import Geom_Surface
+        from OCC.Core.gp import gp_Ax3
+        surface:Geom_Surface
+        u1, u2, v1, v2 = surface.Bounds()
+        self.GridEnable(u1, u2, v1, v2)
+        self.DisplayTrihedron()
+
     # selected object
     def GetSelectedObject(self):
         return self._display.Context.SelectedInteractive()

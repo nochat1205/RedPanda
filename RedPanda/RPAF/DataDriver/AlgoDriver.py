@@ -31,7 +31,7 @@ class CutDriver(BareShapeDriver):
             'cutShape': Argument(self.tagResource, ShapeRefDriver.ID)
         }
 
-    def Execute(self, theLabel: Label) -> int:
+    def myExecute(self, theLabel: Label) -> int:
         super().Execute(theLabel)
         dict_param = dict()
         for name, argu in self.Arguments.items():

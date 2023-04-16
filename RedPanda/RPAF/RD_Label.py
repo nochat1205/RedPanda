@@ -1,4 +1,4 @@
-
+from __future__ import annotations
 __all__ = ['Label']
 
 
@@ -22,7 +22,7 @@ from .Attribute import (
     Lookup_Attr,
 )
 from RedPanda.logger import Logger
-
+from RedPanda.RPAF.Document import Document
 
 _topAttr_id = (
     TNaming_NamedShape.GetID(),
@@ -77,13 +77,26 @@ def GetFunctionID(theLabel:TDF_Label):
         return function.GetDriverGUID()
     return None
 
-def GetAttrValue(theLabel:TDF_Label, guid:RP_GUID):
+from .Attribute import TDF_Attribute
+def GetAttribute(theLabel:TDF_Label, guid:RP_GUID)->TDF_Attribute:
     container = Lookup_Attr[guid]()
     if theLabel.FindAttribute(guid, container):
-        return container.Get()
+        return container
 
     Logger().warn(f'Entry:{theLabel.GetEntry()} get attr {guid} error')        
     return None
+
+def GetAttrValue(theLabel:TDF_Label, guid:RP_GUID):
+    container = GetAttribute(theLabel, guid)
+    if container:
+        return container.Get()
+
+    return None
+
+def label_str(theLabel:TDF_Label):
+    doc = Document.Get(theLabel)
+
+    return str(doc)+','+theLabel.GetEntry()
 
 Label = TDF_Label
 Label.__hash__ = __hash__
@@ -91,4 +104,7 @@ Label.FindAttribute = FindAttribute
 Label.GetEntry = GetEntry
 Label.GetFunctionID = GetFunctionID
 Label.GetDriver = GetDriver
+Label.GetAttribute = GetAttribute
 Label.GetAttrValue = GetAttrValue
+Label.__str__ = label_str
+Label.__repr__ = label_str

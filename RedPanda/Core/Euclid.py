@@ -160,6 +160,7 @@ gp_Pnt.__sub__ = gp_pnt_sub
 gp_Pnt.__mul__ = gp_pnt_mul
 gp_Pnt.__div__ = gp_pnt_div
 
+
 RP_Pnt = gp_Pnt
 RP_Vec = gp_Vec
 RP_Dir = gp_Dir

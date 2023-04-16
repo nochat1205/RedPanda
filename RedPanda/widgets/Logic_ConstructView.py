@@ -32,6 +32,7 @@ class Logic_ConstructView(QtWidgets.QWidget):
         self.guid = None
         self.IsNew = False
         self.Constructer:Logic_Construct = self.ui.widget
+
         # connect
         self.ui.pushButton_2.clicked.connect(self.commit)
         self.ui.pushButton.clicked.connect(self.Change)

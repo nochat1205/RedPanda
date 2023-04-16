@@ -228,6 +228,16 @@ class FaceAnalyst(TopoDS_Face, BaseObject):
             self._srf = BRep_Tool_Surface(self)
         return self._srf
 
+    def as_pln(self, tol=TOLERANCE):
+        """checks if the surface is planar within a tolerance
+        :return: bool, gp_Pln
+        """
+        is_planar_surface = GeomLib_IsPlanarSurface(self.surface, tol)
+        if is_planar_surface.IsPlanar():
+            return is_planar_surface.Plan()
+        else:
+            return None
+
     @property
     def adaptor(self):
         if self._adaptor is not None and not self.is_dirty:
@@ -259,7 +269,7 @@ class FaceAnalyst(TopoDS_Face, BaseObject):
         a = map(_round, breptools_UVBounds(self))
         b = map(_round, self.adaptor.Surface().Surface().Bounds())
         if a != b:
-            print("a,b", a, b)
+            # print("a,b", a, b)
             return True
         return False
 

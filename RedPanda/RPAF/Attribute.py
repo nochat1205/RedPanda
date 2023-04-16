@@ -2,10 +2,9 @@ from OCC.Core.TFunction import TFunction_Logbook
 from OCC.Core.TDF import (
     TDF_LabelMap,
     TDF_Label,
-    TDF_Attribute,
-
+    TDF_Attribute
 )
-from .GUID import *
+
 from OCC.Core.TDataStd import (
     TDataStd_Name,
     TDataStd_Real,
@@ -15,7 +14,6 @@ from OCC.Core.TDataStd import (
 )
 from OCC.Core.TNaming import (
     TNaming_NamedShape,
-    TNaming_Builder,
 )
 from OCC.Core.TPrsStd import (
     TPrsStd_AISPresentation,
@@ -27,7 +25,7 @@ from OCC.Core.TFunction import (
 from OCC.Core.XCAFDoc import (
     XCAFDoc_Location,
 )
-from .GUID import GuidLookup
+from .GUID import *
 
 class Attr_Assembly(TDataStd_TreeNode):
     def GetID():
@@ -58,6 +56,7 @@ class Attr_ShapeRef(TDataStd_TreeNode):
         TN_self = TDataStd_TreeNode.Set(aLabel, Attr_ShapeRef.GetID())
         TN_self.__class__ = Attr_ShapeRef
         if theRefedLabel:
+            # TODO: solve round ref
             father = Attr_ShapeRef.Set(theRefedLabel)
             father.Append(TN_self)
         return TN_self
@@ -115,7 +114,7 @@ class DFAttr_LogBook(TFunction_Logbook):
         map_Lab.remove(theLabel)
 
 
-
+from .Attr.State import Attr_State
 attr_li = [
     TDataStd_Name,
     TDataStd_Real,
@@ -132,13 +131,11 @@ attr_li = [
     Attr_Guid,
     Attr_IDcol,
     Attr_IDcolSurf,
-    Attr_IDcolCurv
+    Attr_IDcolCurv,
+    Attr_State
 ]
 
 Lookup_Attr = GuidLookup(map(lambda x:x.GetID(), attr_li), attr_li)
-
-
-
 
 # data translate
 def FromText(theType:type, text:str):

@@ -1,8 +1,11 @@
 
 __all__ = ['PntDriver']
 
+from OCC.Core.gp import gp_Pnt2d
+
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty
+
 
 from RedPanda.RPAF.GUID import *
 from RedPanda.Core.topogy import (
@@ -32,6 +35,7 @@ from .BaseDriver import (
 from .VarDriver import (
     RealDriver,
 )
+from .BaseDriver import DataDriver
 from .ShapeBaseDriver import BareShapeDriver
 
 from ..RD_Label import Label
@@ -51,7 +55,7 @@ class PntDriver(BareShapeDriver):
             'theZp': Argument(self.tagResource, RealDriver.ID),
         }
 
-    def Execute(self, theLabel: Label) -> int:
+    def myExecute(self, theLabel: Label) -> int:
         param_dict = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -66,6 +70,11 @@ class PntDriver(BareShapeDriver):
 
         return 0
 
+    def myValue(self, theLabel: Label):
+        from OCC.Core.BRep import BRep_Tool
+        vertex = super().myValue(theLabel)
+        return BRep_Tool.Pnt(vertex)
+
     @classproperty
     def ID(self):
         return PntDriver._guid #
@@ -73,6 +82,29 @@ class PntDriver(BareShapeDriver):
     @classproperty
     def Type(self):
         return PntDriver._type
+
+class Pnt2dDriver(DataDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['x'] = Argument(self.tagResource, RealDriver.ID)
+        self.Arguments['y'] = Argument(self.tagResource, RealDriver.ID)
+
+    def myValue(self, theLabel:Label):
+        param_dict = dict()
+        for name, argu in self.Arguments.items():
+            argu:Argument
+            param_dict[name] = argu.Value(theLabel)
+
+        return gp_Pnt2d(param_dict['x'], param_dict['y'])
+
+    @classproperty
+    def Type(self):
+        return 'pnt2d'
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_Pnt2dDriver_GUID
+        return Sym_Pnt2dDriver_GUID
 
 class PntArrayDriver(ArrayDriver):
     def __init__(self) -> None:
@@ -83,7 +115,7 @@ class PntArrayDriver(ArrayDriver):
         self._ArrayFirstTag = 125
         self._SubTypeId = Sym_PntDriver_GUID
 
-    def GetValue(self, theLabel: Label):
+    def myValue(self, theLabel: Label):
         aDriver = DataDriverTable.Get().GetDriver(self._SubTypeId)
     
         size = self.GetSize()
@@ -103,4 +135,3 @@ class PntArrayDriver(ArrayDriver):
     @classproperty
     def Type(self):
         return "array"
-

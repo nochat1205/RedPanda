@@ -15,6 +15,7 @@ from RedPanda.Core.data import (
     RP_GUID,
     RP_AsciiStr,
 )
+from .InArgu import 实参
 from ..RD_Label import Label
 from ..Attribute import (
     FromText,
@@ -23,8 +24,10 @@ from ..Attribute import (
     Attr_Guid,
     Attr_Entry,
     TDataStd_Integer,
+    Attr_State
 )
 from ..Attribute import Lookup_Attr
+
 """
 to have only one instance of a driver for the whole session.
 """
@@ -47,6 +50,36 @@ class DataEnum:
     def IsShape(enum):
         return 10 <= enum and enum <= 20 
 
+class DataLabelState:
+    """
+    状态标志, 表示DataLabel 数据是否可访问.
+    """
+    OK = 0
+    ParamError = 1
+    @staticmethod
+    def Init(theLabel:Label):
+        DataLabelState.SetError(theLabel)
+
+    @staticmethod
+    def _SetState(theLabel:Label, state:DataLabelState):
+        Attr_State.Set(theLabel, state)
+
+    @staticmethod
+    def SetOK(theLabel:Label):
+        Attr_State.Set(theLabel, DataLabelState.OK)
+
+    @staticmethod
+    def SetError(theLabel:Label):
+        Attr_State.Set(theLabel, DataLabelState.ParamError)
+
+    @staticmethod
+    def IsOK(theLabel:Label):
+        value = theLabel.GetAttrValue(Attr_State.GetID())
+        if value:
+            value = DataLabelState.OK
+            return True
+        return False
+
 class TagResource(object):
     def __init__(self) -> None:
         self.tag = 0
@@ -56,10 +89,7 @@ class TagResource(object):
         return self.tag
 
 class Param(object):
-    """参数对象
-
-    Args:
-        object (_type_): _description_
+    """ 属性对象声明
     """
     def __init__(self, theAttrID:RP_GUID, value:str="", editAble=True) -> None:
         assert isinstance(theAttrID, RP_GUID)
@@ -78,14 +108,11 @@ class Param(object):
     def SetValue(self, theLabel:Label, text:str):
         Lookup_Attr[self.id].Set(theLabel, FromText(self.Type, text))
 
-    def GetValue(self, theLabel:Label):
-        value = theLabel.GetAttrValue(self.id)
-        if value is None:
-            Logger().warn(f'Entry:{theLabel.GetEntry()}() get attr {self.id} None')
-            return None
+    def GetAttribute(self, theLabel:Label):
+        return theLabel.GetAttribute(self.id)
 
-        return value
-        
+    def GetValue(self, theLabel:Label):
+        return theLabel.GetAttrValue(self.id)
 
     def __str__(self) -> str:
         return f"{Lookup_Attr[self.id]}"
@@ -94,10 +121,7 @@ class Param(object):
         return self.__str__()
 
 class Argument(object):
-    """属性对象
-
-    Args:
-        object (_type_): _description_
+    """ 子label 声明
     """
     def __init__(self, tag:TagResource, id:RP_GUID, 
                  editFlag:bool=True, valueType:int = DataEnum.Null) -> None:
@@ -119,22 +143,19 @@ class Argument(object):
 
     def Value(self, theLabel:Label)->any:
         from ..DriverTable import DataDriverTable
+
         aDriver = DataDriverTable.Get().GetDriver(self.DriverID)
         aLabel = theLabel.FindChild(self.Tag)
         return aDriver.GetValue(aLabel)
 
-class SocketDriver(object):
-    def __init__(self) -> None:
-        self.__socketType = ''
 
-class DataDriver(TPrsStd_Driver):
-    """
-        Base Execute Driver
+class DataDriver(object):
+    """ base and manager
+        通过函数接口访问数据, 方便更新.
     """
     OutputType = DataEnum.Null
 
     def __init__(self) -> None:
-        super().__init__()
         self.name:str = ''
         self.id:RP_GUID = None
 
@@ -152,18 +173,55 @@ class DataDriver(TPrsStd_Driver):
         # New
         self.input_params = self.Arguments
 
-    def myInit(self, theLabel:Label, theData):
+    def myInit(self, theLabel:Label, theData: 实参)->bool:
+        ''' 运行自己的参数检查和初始化就行
+        返回初始化是否成功 <= 参数是否正确
+        '''
         raise NotImplementedError()
 
-    def myChange(self, theLabel:Label, theData):
+    def myChange(self, theLabel:Label, theData:实参):
+        # 只管更改
         raise NotImplementedError()
+
+    def myTextValue(self, theLabel:Label):
+        ''' 只复制取出值的text形式
+        '''
+        return str(self.myValue(theLabel))
+
+    def myValue(self, theLabel:Label):
+        ''' 只复制取出DataLabel 的value值
+        '''
+        raise NotImplementedError()
+
+    def myExecute(self, theLabel:Label)->int:
+        """ 仅负责获取参数和执行
+        """
+        return 0
 
     def Init(self, theLabel:Label, theData):
+        """ 执行函数 - 初始化
+        必要的初始化, 根据实话结果设置状态
+        """
         self._base_init(theLabel)
-        self.myInit(theLabel, theData)
-        if self.Execute(theLabel) != 0:
+        if not self.myInit(theLabel, theData):
+            DataLabelState.SetError(theLabel)
             return False
+
+        if not self.Execute(theLabel):
+            DataLabelState.SetError(theLabel)
+            return False
+
+        DataLabelState.SetOK(theLabel)
         return True
+
+    def GetArguLabel(self, theLabel:Label)->list[Label]:
+        label_li = list()
+        for argu in self.Arguments.values():
+            argu:Argument
+            sub = theLabel.FindChild(argu.Tag, False)
+            label_li.append(sub)
+
+        return label_li
 
     def Update(self, L: Label, ais: AIS_InteractiveObject) -> bool:
         """ for TPrsStd_AISPrsentaion, 
@@ -172,18 +230,42 @@ class DataDriver(TPrsStd_Driver):
         raise NotImplementedError()
 
     def GetValue(self, theLabel:Label):
-        raise NotImplementedError()
-
-    def GetValueToText(self, theLabel:Label):
-        return str(self.GetValue(theLabel))
+        if not DataLabelState.IsOK(theLabel):
+            return None
+        
+        return self.myValue()
+    
+    def GetTextValue(self, theLabel:Label):
+        if not DataLabelState.IsOK(theLabel):
+            return 'Label is error'
+        return self.myTextValue(self.myTextValue)
 
     def Change(self, theLabel:Label, theData):
-        return self.myChange(theLabel, theData)
+        """ 管理函数 更改
+        """
 
-    def Execute(self, theLabel:Label)->int:
-        return 0
+        if not self.myChange(theLabel, theData):
+            DataLabelState.SetError(theLabel)
+            return False
 
+        if not self.Execute(theLabel):
+            DataLabelState.SetError(theLabel)
+            return False
+        DataLabelState.SetOK(theLabel)
+        return True
 
+    def Execute(self, theLabel:Label)->bool:
+        """ 管理函数 - 执行
+        """
+        subLabel_li = self.GetArguLabel(theLabel)
+        for sub in subLabel_li:
+            if not DataLabelState.IsOK(sub):
+                return False
+
+        if self.myExecute(theLabel) != 0:
+            return False
+        
+        return True
 
     def GetRefMeLabel(self, theLabel)->set[Label]:
         label_set = set()
@@ -201,7 +283,7 @@ class DataDriver(TPrsStd_Driver):
     def _base_init(self, theLabel: Label):
         Logger().info(f'create Label:{theLabel.GetEntry()}, {None}, {self.ID}')
         TFunction_Function.Set(theLabel, self.ID)
-
+        DataLabelState.Init(theLabel)
 
     @classproperty
     def ID(self):
@@ -218,15 +300,17 @@ class DataDriver(TPrsStd_Driver):
         """
         raise NotImplementedError('Must have Type')
 
+class SocketDriver(object):
+    def __init__(self) -> None:
+        self.__socketType = ''
+
 from ..DriverTable import DataDriverTable
-
 class VarDriver(DataDriver):
-
-    
-    def myInit(self, theLabel: Label, theData):
+    def myInit(self, theLabel: Label, theData='0'):
         Logger().info(f'change Label:{theLabel.GetEntry()}.value, {None}, {theData}')
         attr:Param = self.Attributes['value']
         attr.SetValue(theLabel, theData)
+        return True
 
     def myChange(self, theLabel: Label, theData):
         attr:Param = self.Attributes['value']
@@ -236,7 +320,8 @@ class VarDriver(DataDriver):
         attr.SetValue(theLabel, theData)
         return True
 
-    def GetValue(self, theLabel: Label):
+    def myValue(self, theLabel: Label):
+
         return self.Attributes['value'].GetValue(theLabel)
 
 class ShapeRefDriver(DataDriver):
@@ -244,20 +329,35 @@ class ShapeRefDriver(DataDriver):
 
     def __init__(self) -> None:
         super().__init__()
-
         self.Attributes['ref'] = Param(Attr_ShapeRef.GetID())
-        self.Attributes['entry'] = Param(Attr_Entry.GetID())
+        # self.Attributes['value'] = Param(Attr_Entry.GetID())
 
-    def myInit(self, theLabel: Label, text):
+    def myInit(self, theLabel: Label, text='0')->bool:
+        if text == '0':
+            Attr_ShapeRef.Set(theLabel)
+            return False
+
         anEntry = RP_AsciiStr(text)
         aRefLabel = Label()
         TDF_Tool.Label(theLabel.Data(), anEntry, aRefLabel)
         Attr_ShapeRef.Set(theLabel, aRefLabel)
+        return True
 
     def myChange(self, theLabel:Label, theData):
-        return False
+        shapeRef_attr:Attr_ShapeRef = self.Attributes['ref'].GetAttribute(theLabel)
+        if shapeRef_attr:
+            shapeRef_attr.Remove()
 
-    def GetValue(self, theLabel: Label):
+        anEntry = RP_AsciiStr(theData)
+        aRefLabel = Label()
+        TDF_Tool.Label(theLabel.Data(), anEntry, aRefLabel)
+        if aRefLabel.IsNull():
+            return False
+
+        Attr_ShapeRef.Set(theLabel, aRefLabel)
+        return True
+
+    def myValue(self, theLabel: Label):
         reflabel = self.Attributes['ref'].GetValue(theLabel)
         if reflabel:
             aDriver = reflabel.GetDriver()
@@ -267,8 +367,13 @@ class ShapeRefDriver(DataDriver):
         Logger().warn(f'Entry:{theLabel.GetEntry()} not found reference')
         return None
 
-    def GetValueToText(self, theLabel: Label):
-        return self.Attributes['entry'].GetValue(theLabel)
+    def myValueToText(self, theLabel: Label):
+        reflabel = self.Attributes['ref'].GetValue(theLabel)
+        if reflabel:
+            return str(reflabel)
+
+        Logger().warn(f'Entry:{theLabel.GetEntry()} not found reference')
+        return 'Null'
 
     @classproperty
     def ID(self):
@@ -306,219 +411,37 @@ class ArrayDriver(DataDriver):
         aInt = theLabel.GetAttrValue(self.Attributes['type'].id)
         return aInt
 
-    def myInit(self, theLabel:Label, theData:dict):
-        TDataStd_Integer.Set(theLabel, len(theData))
-        aDriver = theLabel.GetDriver()
-        for ind, pnt in enumerate(theData.values()):
-            tag = ind+self._ArrayFirstTag
-            aLabel = theLabel.FindChild(tag)
-            aDriver.Init(aLabel, pnt)
+    def myInit(self, theLabel:Label, size=0):
+        TDataStd_Integer.Set(theLabel, size)
+        # aDriver = theLabel.GetDriver()
+        # for ind, pnt in enumerate(theData.values()):
+        #     tag = ind+self._ArrayFirstTag
+        #     aLabel = theLabel.FindChild(tag)
+        #     aDriver.Init(aLabel, pnt)
 
-    def myChange(self, theLabel:Label, theData:dict):
-        aDriver = DataDriverTable.Get().GetDriver(self._SubTypeId)
-        for ind, pnt in theData.items():
-            tag = int(ind)+self.StartIndex
-            aLabel = theLabel.FindChild(tag, False)
-            if not aDriver.Change(aLabel, pnt):
-                return False
+    def myChange(self, theLabel:Label, size):
+
+        # aDriver = DataDriverTable.Get().GetDriver(self._SubTypeId)
+
+        # for ind, pnt in theData.items():
+        #     tag = int(ind)+self.StartIndex
+        #     aLabel = theLabel.FindChild(tag, False)
+        #     if not aDriver.Change(aLabel, pnt):
+        #         return False
+        # return True
+        start = self.StartIndex()
+        oldsize = self.GetSize()
+        if size > oldsize:
+            for ind in range(oldsize, size):
+                sub = theLabel.FindChild(start+ind)
+        TDataStd_Integer.Set(theLabel, size)
         return True
 
-'''
-class DataDriver(object):
-    """ Shape Driver
+    def GetArguLabel(self, theLabel: Label) -> list[Label]:
+        sublabel_li = list()
+        size = self.GetSize(theLabel)
+        start = self.StartIndex()
+        for ind in range(size, size+start):
+            sublabel_li.append(theLabel.FindChild(ind))
 
-    """
-    def __init__(self) -> None:
-        # 函数定义
-        self.Results:dict[str, dict] = dict()   # 结果
-        self.Attributes:dict[str, Param] = dict()# 属性
-        self.Arguments:dict[str, Argument] = dict() # 参数列表
-        self.tagResource = TagResource()
-        return
-
-    def _base_init(self, L: Label)->bool:
-        """ 函数初始化
-        """
-        def IsInit(theLabel:Label):
-            aFunc = TFunction_Function()
-            return theLabel.FindAttribute(aFunc.GetID(), aFunc)
-
-        def _InitFunction(theLabel:Label):
-            aLogBook = TFunction_Logbook.Set(theLabel)
-            aFunction = TFunction_Function.Set(theLabel, self.ID)
-            anEntry = GetEntry(theLabel)
-            Logger().info(f'Entry:{anEntry} init with driver:{self.ID}')
-
-        if IsInit(L): 
-            return True
-
-        _InitFunction(L)
-        return False
-
-    def InitValue(self, theLabel, theData:str):
-        attr = self.Attributes['value']
-        attr.SetValue(theLabel, theData)
-
-    def Init(self, L: Label, theData:Union[dict,str]) -> bool:
-        if self._base_init(L):
-            return True
-
-        if isinstance(theData, dict): # dict 向下传播
-            Logger().info(f'{self.Type} init sub')
-            for name, argu in self.Arguments.items():
-                argu:Argument
-                aLabel = L.FindChild(argu.Tag)
-                aDriver:Sym_Driver = GetDriver(argu.DriverID)
-                if not aDriver.Init(aLabel, theData[name]):
-                    return False
-        else:
-            Logger().info(f'{self.Type} init self')
-            self.InitValue(L, theData)
-
-        aEntry = TCollection_AsciiString()
-        TDF_Tool.Entry(L, aEntry)
-        Logger().info('Entry:{aEntry} init sub success')
-        if self.Execute(L) != 0:
-            return False
-        return True
-
-    def Execute(self, theLabel:Label) -> int:
-        """ 执行函数, 根据参数.
-
-        Args:
-            theLabel (Label): _description_
-            log (TFunction_Logbook): _description_
-
-        Returns:
-            bool: _description_
-        """
-        aEntry = TCollection_AsciiString()
-        TDF_Tool.Entry(theLabel, aEntry)
-        Logger().info(f'Entry:{aEntry} type:{self.Type} Execute')
-        return 0
-
-    def MustExecute(self, theLabel:Label, log: TFunction_Logbook) -> bool:
-        """
-        # !我们调用此方法来检查对象是否已被修改为要调用。
-        # !如果修改了对象标签或参数，我们必须重新计算对象 - 调用方法 Execute。
-        """
-
-        raise Exception('abolished')
-        
-        if log.IsModified(theLabel):
-            return True
-
-        return False
-
-    def GetStoredValue(self, theLabel:Label):
-        aEntry = TCollection_AsciiString()
-        TDF_Tool.Entry(theLabel, aEntry)
-
-        atype = self.Attributes['value'].Type
-        container = atype()
-        if not theLabel.FindAttribute(atype.GetID(), container):
-            Logger().warn(f'Entry:{aEntry}{atype} get value error')
-            return None
-
-        value = container.Get()
-        if value is None:
-            Logger().warn(f'Entry:{aEntry}({atype}) get value None')
-            return None
- 
-        Logger().info(f'Entry:{aEntry} get value {str(value)} ')
-        return value
-
-    def GetValue(self, theLabel:Label):
-        storedvalue = self.GetStoredValue(theLabel)
-        return storedvalue
-
-    def GetValueToText(self, theLabel:Label):
-        return str(self.GetValue(theLabel))
-
-    def _Log_ChangeValue(self, theLabel:Label, text):
-        aEntry = TCollection_AsciiString()
-        TDF_Tool.Entry(theLabel, aEntry)
-        Logger().info(f"Label:{aEntry}({self.Type}) set value = {text}")
-
-    def ChangeValue(self, theLabel:Label, theData:str):
-        self._Log_ChangeValue(theLabel, theData)
-        attr = self.Attributes['value']
-        attr.SetValue(theLabel, theData)
-
-    def Change(self, theLabel:Label, theData:Union[dict, str]):
-        if isinstance(theData, dict): # dict 向下传播
-            for name, subData in theData.items():
-                argu:Argument = self.Arguments[name]
-                aLabel = theLabel.FindChild(argu.Tag)
-                aDriver:Sym_Driver = GetDriver(argu.DriverID)
-                if not aDriver.Change(aLabel, subData):
-                    return False
-        else:
-            Logger().info(f'{self.Type} change self')
-            self.ChangeValue(theLabel, theData)
-
-        aEntry = TCollection_AsciiString()
-        TDF_Tool.Entry(theLabel, aEntry)
-        Logger().info('Entry:{aEntry} Change sub success')
-        if self.Execute(theLabel) != 0:
-            return False
-        return True
-
-    def Validate(self, log: TFunction_Logbook) -> None:
-        """ 验证对象标签、其参数和结果。"""
-        log.SetValid(self.Label(), False)
-
-    def Update(self, theLabel:Label, log:TFunction_Logbook) -> bool:
-        raise Exception("abolished")
-        if self.MustExecute(theLabel, log):
-            self.Execute(theLabel)
-            self.BroadcastImpacted(theLabel, log)
-            return True
-
-        return False
-
-    @staticmethod
-    def BroadcastImpacted(theLabel:Label):
-        label_set:set[Label] = set()
-        aEntry = TCollection_AsciiString()
-
-        TDF_Tool.Entry(theLabel, aEntry)
-        Logger().info(f'Entry:{aEntry} broadcast updated')
-
-        if not theLabel.IsRoot():
-            father = theLabel.Father()
-            TDF_Tool.Entry(father, aEntry)
-            Logger().info(f'Entry:{aEntry} be impacted')
-            label_set.add(father)
-
-        TN = Sym_ShapeRef()
-        if theLabel.FindAttribute(Sym_ShapeRef.GetID(), TN):
-            Logger().debug('Find chidren.')
-            for node in TN:
-                TDF_Tool.Entry(node, aEntry)
-                Logger().info(f'Entry:{aEntry} be impacted')
-                label_set.add(node)
-
-        return label_set
-
-    def GetArguments(self, aLabel:Label, args:LabelList) -> None:
-        return None
-
-    def GetResults(self, aLabel:Label, args:LabelList) -> None:
-        return None
-
-    @classproperty
-    def ID(self):
-        """函数ID
-
-        Raises:
-            Exception: _description_
-        """
-        raise Exception("Must have ID")
-
-    @classproperty
-    def Type(self):
-        """ 函数名
-        """
-        raise Exception("Must have Name")
-'''
+        return sublabel_li

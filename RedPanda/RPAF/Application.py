@@ -29,6 +29,20 @@ class Application(TDocStd_Application):
         DataDriverTable.Get().AddDriver(TransShapeDriver .ID,
                                               TransShapeDriver())
 
+        from .DataDriver.VertexDriver import Pnt2dDriver
+        DataDriverTable.Get().AddDriver(Pnt2dDriver .ID,
+                                              Pnt2dDriver())
+
+        from .DataDriver.ShapeBaseDriver import Ax2dDriver
+        DataDriverTable.Get().AddDriver(Ax2dDriver .ID,
+                                              Ax2dDriver())
+
+        from .DataDriver.Geom2dDriver import EllipseDriver
+        DataDriverTable.Get().AddDriver(EllipseDriver .ID,
+                                              EllipseDriver())
+
+
+
     def AddDocument(self, doc):
         self.InitDocument(doc)
         super(TDocStd_Application, self).Open(doc)

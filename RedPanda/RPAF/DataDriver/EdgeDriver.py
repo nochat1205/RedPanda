@@ -32,7 +32,6 @@ from .VertexDriver import (
 class BezierDriver(BareShapeDriver):
     OutputType = DataEnum.Edge
     ViewType = '2D'
-    
     def __init__(self) -> None:
         super().__init__()
         self.Attr = Param(TNaming_NamedShape.GetID())
@@ -41,7 +40,7 @@ class BezierDriver(BareShapeDriver):
             'pnts': Argument(self.tagResource, PntArrayDriver.ID)
         }
 
-    def Execute(self, theLabel: Label) -> int:
+    def myExecute(self, theLabel: Label) -> int:
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -63,3 +62,9 @@ class BezierDriver(BareShapeDriver):
     @classproperty
     def ID(self):
         return Sym_BezierDriver_GUID
+
+
+class Ellipse(BareShapeDriver):
+    from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge
+    OutputType = DataEnum.Edge
+    ViewType = '2D'

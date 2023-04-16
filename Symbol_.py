@@ -359,6 +359,27 @@ def Label():
     prs = TPrsStd_AISPresentation.Set(label, TNaming_NamedShape.GetID())
     ais_box.SetOwner(prs)
 
+def curve():
+    from OCC.Core.Geom import Geom_CylindricalSurface, Geom_RectangularTrimmedSurface
+    from RedPanda.Core.topogy import FaceAnalyst
+    from RedPanda.Core.topogy import make_face
+    from RedPanda.Core.Euclid import RP_Ax3
+    from math import pi
+    cy = Geom_CylindricalSurface(RP_Ax3(), 3)
+    surface = Geom_RectangularTrimmedSurface(cy, 0, pi, 0, 20)
+
+    print(surface.Bounds())
+    # face = make_face(cy)
+    # analyster = FaceAnalyst(face)
+    # print(analyster.domain())
+def Curve_on_plane():
+    from RedPanda.Core.Make import make_plane
+    from OCC.Core.BRep import BRep_Tool
+    from OCC.Core.Geom import Geom_Plane
+    plane = make_plane()
+    plane = BRep_Tool.Surface(plane)
+    plane = Geom_Plane.DownCast(plane)
+    print(plane.Bounds())
 
 if __name__ == '__main__':
     display, start, *_ = init_display()
@@ -367,9 +388,8 @@ if __name__ == '__main__':
     viewer:V3d_Viewer = display.Viewer
     view:V3d_View = display.View
     context:AIS_InteractiveContext = display.Context
-    Label()
+    Curve_on_plane()
 
     # display.View_Iso()
-    display.FitAll()
-    start()
-
+    # display.FitAll()
+    # start()

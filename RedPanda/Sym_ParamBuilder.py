@@ -80,6 +80,7 @@ class Sym_NewBuilder(object):
                     child_ParamDict[name] = child_param
                 return child_ParamDict
             else: # read leave value
+                print(aDriver.Type)
                 Attri = NodeParam(aDriver.Attributes['value'].value)
                 return Attri
 

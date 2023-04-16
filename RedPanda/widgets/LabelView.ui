@@ -55,7 +55,7 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>91</width>
+               <width>151</width>
                <height>114</height>
               </rect>
              </property>
@@ -80,14 +80,7 @@
        </widget>
       </item>
       <item>
-       <widget class="qtViewer3d" name="RightArea" native="true">
-        <property name="sizePolicy">
-         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
-          <horstretch>0</horstretch>
-          <verstretch>0</verstretch>
-         </sizepolicy>
-        </property>
-       </widget>
+       <widget class="QWidget" name="RightArea" native="true"/>
       </item>
      </layout>
     </widget>
@@ -126,14 +119,6 @@
    </item>
   </layout>
  </widget>
- <customwidgets>
-  <customwidget>
-   <class>qtViewer3d</class>
-   <extends>QWidget</extends>
-   <header>RedPanda.widgets.Logic_Viewer</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources/>
  <connections/>
 </ui>

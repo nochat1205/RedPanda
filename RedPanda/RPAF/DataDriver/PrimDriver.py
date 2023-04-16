@@ -56,7 +56,7 @@ class BoxDriver(ShapeDriver):
         self.Arguments['h'] = Argument(self.tagResource, RealDriver.ID)
         self.Arguments['w'] = Argument(self.tagResource, RealDriver.ID)
 
-    def Execute(self, theLabel:Label)->int:
+    def myExecute(self, theLabel:Label)->int:
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -89,13 +89,12 @@ class TransShapeDriver(ShapeDriver):
         super().__init__()
         self.Arguments['shape'] = Argument(self.tagResource, ShapeRefDriver.ID)
 
-    def Execute(self, theLabel:Label)->int:
+    def myExecute(self, theLabel:Label)->int:
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
             aLabel = theLabel.FindChild(argu.Tag)
             dict_param[name] = aLabel.GetAttrValue(self.Attributes['value'].id)
-
 
         trsf:RP_Trsf = dict_param['transform']
         shape = dict_param['transform']
