@@ -49,7 +49,6 @@ class Logic_Application(QObject):
     sig_DocChanged = pyqtSignal(Document)
     sig_DocUpdate = pyqtSignal()
 
-
     def __init__(self, theDisplay, parent=None) -> None:
         super().__init__(parent)
         self._DocApp = Application() # save construct driver
@@ -60,30 +59,9 @@ class Logic_Application(QObject):
         self._myViewer:V3d_Viewer = theDisplay.Viewer
         self._myContext:AIS_InteractiveContext = theDisplay.Context
         self._myView:V3d_View = theDisplay.View
- 
-        self._list_doc = list()
 
     def InitAIS_IC(self):
         self._myContext.EraseAll()
-
-    @pyqtSlot(str)
-    def NewDocument(self, theFormat:str):
-        doc = Document(RP_ExtendStr(theFormat))
-        self._DocApp.AddDocument(doc)
-        TDataStd_Name.Set(doc.Main(), str(doc))
-
-        # load and read instant read
-        # TPrsStd_AISViewer.New(doc.Main(), self._myViewer)
-        # TPrsStd_AISViewer.Find(self._main_doc.Main(), self._myContext)
-
-        # self._myContext.SetDisplayMode(AIS_Shaded, True)
-
-        # Set the maximum number of available "undo" actions
-        doc.SetUndoLimit(10)
-
-        self._main_doc = doc
-        # self.sig_DocChanged.emit(self._main_doc)
-        return doc
 
     @pyqtSlot(Sym_NewShapeData)
     def NewShape(self, data:Sym_NewShapeData):
@@ -233,3 +211,22 @@ class Logic_Application(QObject):
 
         Logger().info("-- commit command --")
         return Label
+
+    @pyqtSlot(str)
+    def NewDocument(self, theFormat:str):
+        doc = Document(RP_ExtendStr(theFormat))
+        self._DocApp.AddDocument(doc)
+        TDataStd_Name.Set(doc.Main(), str(doc))
+
+        # load and read instant read
+        # TPrsStd_AISViewer.New(doc.Main(), self._myViewer)
+        # TPrsStd_AISViewer.Find(self._main_doc.Main(), self._myContext)
+
+        # self._myContext.SetDisplayMode(AIS_Shaded, True)
+
+        # Set the maximum number of available "undo" actions
+        doc.SetUndoLimit(10)
+
+        self._main_doc = doc
+        # self.sig_DocChanged.emit(self._main_doc)
+        return doc

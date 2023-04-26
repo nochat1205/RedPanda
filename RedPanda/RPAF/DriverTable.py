@@ -56,7 +56,7 @@ class DataDriverTable(RP_Transient, Singleton):
             _ShallowCopy(aDriver, self._myDrivers.get(guid))
             return aDriver
 
-        Logger().warn(f'Driver:{guid} not found')
+        Logger().warning(f'Driver:{guid} not found')
 
         return None
 

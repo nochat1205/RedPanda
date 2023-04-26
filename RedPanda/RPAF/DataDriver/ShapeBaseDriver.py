@@ -16,6 +16,7 @@ from ..DriverTable import DataDriverTable
 
 from .BaseDriver import (
     DataDriver,
+    CompoundDriver,
     Param,
     Argument,
     DataEnum,
@@ -23,43 +24,13 @@ from .BaseDriver import (
 from .VarDriver import (
     RealDriver,
 )
-class BareShapeDriver(DataDriver):
+
+class BareShapeDriver(CompoundDriver):
     OutputType = DataEnum.Shape
     def __init__(self) -> None:
         super().__init__()
         self.myAttr = Param(TNaming_NamedShape.GetID())
         self.Attributes['value'] = self.myAttr
-
-    def myInit(self, theLabel: Label, theData=None):
-        TPrsStd_AISPresentation.Set(theLabel, TNaming_NamedShape.GetID())
-        for name, argu in self.Arguments.items():
-            argu:Argument
-            aLabel = theLabel.FindChild(argu.Tag)
-            aDriver = DataDriverTable.Get().GetDriver(argu.DriverID)
-
-            if theData and name in theData:
-                aDriver.Init(aLabel, theData[name])
-            else: 
-                aDriver.Init(aLabel)
-
-        if self.Execute(theLabel) != 0:
-            return False
-
-        return True
-
-    def myChange(self, theLabel: Label, theData):
-        for name, subData in theData.items():
-            argu:Argument = self.Arguments[name]
-            aLabel = theLabel.FindChild(argu.Tag)
-            aDriver:DataDriver = aLabel.GetDriver()
-            if not aDriver.Change(aLabel, subData):
-                Logger().debug(f'Entry:{aLabel.GetEntry()} err')
-                return False
-
-        if not self.Execute(theLabel):
-            return False
-
-        return True
 
     def myValue(self, theLabel: Label):
         return self.Attributes['value'].GetValue(theLabel)
@@ -68,7 +39,7 @@ from .VertexDriver import (
     PntDriver
 )
 
-class TransformDriver(DataDriver):
+class TransformDriver(CompoundDriver):
     OutputType = DataEnum.Shape
 
     def __init__(self) -> None:
@@ -79,6 +50,19 @@ class TransformDriver(DataDriver):
         self.Arguments['angle'] = Argument(self.tagResource, RealDriver.ID)
         self.Arguments['rotateAxis'] = Argument(self.tagResource, PntDriver.ID)
         self.Arguments['position'] = Argument(self.tagResource, PntDriver.ID)
+
+    def myInit(self, theLabel: Label):
+        Logger().debug(f'init Children: ')
+
+        for name, argu in self.Arguments.items():
+            Logger().debug(f'init Children: {name}')
+
+            argu:Argument
+            aLabel = theLabel.FindChild(argu.Tag, True)
+            aDriver:DataDriver = DataDriverTable.Get().GetDriver(argu.DriverID)
+            aDriver.Init(aLabel)
+
+        return True
 
     def myExecute(self, theLabel:Label)->int:
         super().Execute(theLabel)
@@ -147,7 +131,7 @@ class ShapeDriver(BareShapeDriver):
         self.Arguments['transform'] = Argument(self.tagResource, TransformDriver.ID)
         # self.Socket['socket'] = Argument
 
-class Ax3Driver(BareShapeDriver):
+class Ax3Driver(CompoundDriver):
     def __init__(self) -> None:
         super().__init__()
         self.Arguments['P'] = Argument(self.tagResource(), PntDriver.ID)
@@ -194,7 +178,7 @@ class Ax3Driver(BareShapeDriver):
         return 'Ax3'
 
 from .VertexDriver import Pnt2dDriver
-class Ax2dDriver(BareShapeDriver):
+class Ax2dDriver(CompoundDriver):
     def __init__(self) -> None:
         super().__init__()
         self.Arguments['P'] = Argument(self.tagResource, Pnt2dDriver.ID)

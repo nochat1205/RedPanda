@@ -20,6 +20,7 @@ from .Logic_Viewer import qtViewer3d
 from .Logic_viewer2d import qtViewer2d
 
 class LabelView(QWidget):
+    sig_change = pyqtSignal(Label, str)
     def __init__(self, parent: typing.Optional[QWidget]=None) -> None:
         super().__init__(parent)
         self.setup_ui()
@@ -44,17 +45,22 @@ class LabelView(QWidget):
         right_layout.addWidget(self.v2d)
         self.ui.RightArea.setLayout(right_layout)
 
-
         self.commit_bt = self.ui.commit_bt
 
-        self.scrollArea = self.ui.scrollArea
-        self.scrollArea.setFrameStyle(QScrollArea.NoFrame)
+        dataArea = self.ui.DataArea
+        notDataArea = self.ui.NotDataArea
 
-        self.__content = Logic_Construct()
-        self.scrollArea.setWidget(self.__content)
+        self._content:Logic_Construct = Logic_Construct()
+        dataArea.setWidget(self._content)
+        
+        # signal and slot
+        self._content.emit(lambda label, string: self.sig_change.emit(label, string))
 
-    def Run(self, data):
-        self.__content.BuildView(data)
+    def ShowLabel(self, theLabel:Label):
+        self._content.ShowLabel(theLabel)
+
+    def UpdataLabel(self, theLabel):
+        self._content.Update(theLabel)
 
     def Test(self):
         from OCC.Core.Geom import Geom_CylindricalSurface, Geom_RectangularTrimmedSurface
@@ -87,39 +93,3 @@ class LabelView(QWidget):
 
         self.v3d._display.DisplayShape(anEdge10Surf1)
         self.v2d._display.DisplayShape(anArc1)
-
-
-# class BaseDataWidget(QWidget):
-#     def __init__(self, parent: typing.Optional['QWidget'] = None) -> None:
-#         super().__init__(parent)
-
-#     def Run(self, theLabel: Label=None):
-#         aDriver = DataDriverTable.Get().GetDriver(self.RelativeDriver())
-#         if theLabel:
-#             aDriver = theLabel.GetDriver()
-
-#         view = QListView()
-        
-
-#     def GetValue(self):
-#         raise NotImplementedError()
-
-#     @staticmethod
-#     def RelativeDriver():
-#         from RedPanda.RPAF.DataDriver import TransformDriver
-#         return TransformDriver.ID
-
-
-# class DataWidgetRegister(Singleton):
-#     def __init__(self) -> None:
-#         if isinstance:
-#             return 
-#         self.__widget_Dict = dict()
-
-#     def Registered(self, id, widget:type[BaseDataWidget]):
-#         self.__widget_Dict[id] = widget
-
-#     def __getitem__(self, key):
-#         if key not in self.widget_Dict:
-#             return BaseDataWidget
-#         return self.widget_Dict[key]

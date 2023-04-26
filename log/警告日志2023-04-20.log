@@ -1,0 +1,86 @@
+
+2023-04-20 11:54:02,248 - WARNING: Init Falied
+
+2023-04-20 11:54:23,408 - WARNING: Init Falied
+
+2023-04-20 11:55:43,872 - WARNING: Entry:0:, start init
+
+2023-04-20 13:12:57,008 - WARNING: Entry:0:1:1:2:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:12:57,010 - WARNING: Entry:0:1:1:2, type:Point, Execute Falied
+
+2023-04-20 13:12:57,114 - WARNING: Entry:0:1:1:3:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:12:57,116 - WARNING: Entry:0:1:1:3, type:Point, Execute Falied
+
+2023-04-20 13:12:57,119 - WARNING: Entry:0:1:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:12:57,121 - WARNING: Entry:0:1:1, type:Transform, Execute Falied
+
+2023-04-20 13:12:57,194 - WARNING: Entry:0:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:12:57,196 - WARNING: Entry:0:1, type:Box, Execute Falied
+
+2023-04-20 13:13:13,182 - WARNING: Entry:0:1:1:2:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:13:13,184 - WARNING: Entry:0:1:1:2, type:Point, Execute Falied
+
+2023-04-20 13:13:13,276 - WARNING: Entry:0:1:1:3:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:13:13,278 - WARNING: Entry:0:1:1:3, type:Point, Execute Falied
+
+2023-04-20 13:13:13,280 - WARNING: Entry:0:1:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:13:13,282 - WARNING: Entry:0:1:1, type:Transform, Execute Falied
+
+2023-04-20 13:13:13,362 - WARNING: Entry:0:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:13:13,364 - WARNING: Entry:0:1, type:Box, Execute Falied
+
+2023-04-20 13:14:07,815 - WARNING: Entry:0:1:1:2:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:07,817 - WARNING: Entry:0:1:1:2, type:Point, Execute Falied
+
+2023-04-20 13:14:07,917 - WARNING: Entry:0:1:1:3:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:07,921 - WARNING: Entry:0:1:1:3, type:Point, Execute Falied
+
+2023-04-20 13:14:07,925 - WARNING: Entry:0:1:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:07,928 - WARNING: Entry:0:1:1, type:Transform, Execute Falied
+
+2023-04-20 13:14:07,995 - WARNING: Entry:0:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:08,001 - WARNING: Entry:0:1, type:Box, Execute Falied
+
+2023-04-20 13:14:28,647 - WARNING: Entry:0:1:1:2:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:28,649 - WARNING: Entry:0:1:1:2, type:Point, Execute Falied
+
+2023-04-20 13:14:28,750 - WARNING: Entry:0:1:1:3:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:28,753 - WARNING: Entry:0:1:1:3, type:Point, Execute Falied
+
+2023-04-20 13:14:28,756 - WARNING: Entry:0:1:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:28,759 - WARNING: Entry:0:1:1, type:Transform, Execute Falied
+
+2023-04-20 13:14:28,827 - WARNING: Entry:0:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:14:28,830 - WARNING: Entry:0:1, type:Box, Execute Falied
+
+2023-04-20 13:15:00,414 - WARNING: Entry:0:1:1:2:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:15:00,417 - WARNING: Entry:0:1:1:2, type:Point, Execute Falied
+
+2023-04-20 13:15:00,525 - WARNING: Entry:0:1:1:3:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:15:00,527 - WARNING: Entry:0:1:1:3, type:Point, Execute Falied
+
+2023-04-20 13:15:00,531 - WARNING: Entry:0:1:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:15:00,533 - WARNING: Entry:0:1:1, type:Transform, Execute Falied
+
+2023-04-20 13:15:00,615 - WARNING: Entry:0:1:1 get attr 5b896aff-3adf-11d4-b9b7-0060b0ee281b error
+
+2023-04-20 13:15:00,617 - WARNING: Entry:0:1, type:Box, Execute Falied

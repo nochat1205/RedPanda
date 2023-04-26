@@ -37,15 +37,20 @@ def _AttrShallowCopy(dest, src):
     dest.__class__ = src.__class__ # 
     dest.__dict__ = src.__dict__
 
+from OCC.Core.TDataStd import TDataStd_Comment
+
+_inheritObject_id = (
+    TDataStd_Comment.GetID(),
+)
+
 def FindAttribute(self, GUID:RP_GUID, attribute):
     it_attr = TDF_AttributeIterator(self)
     while it_attr.More():
         # TODO: may be all object associated TopoDS should use ShallowCopy 
         if it_attr.Value().ID() == GUID:
-            if GUID in _topAttr_id:
+            if GUID in _topAttr_id or GUID in _inheritObject_id:
                 aType = Lookup_Attr[GUID]
-                _AttrShallowCopy(attribute, 
-                                        aType.DownCast(it_attr.Value() ) )
+                _AttrShallowCopy(attribute, aType.DownCast(it_attr.Value() ) )
             else:
                 attribute.Restore(it_attr.Value())
             return True 
@@ -80,10 +85,14 @@ def GetFunctionID(theLabel:TDF_Label):
 from .Attribute import TDF_Attribute
 def GetAttribute(theLabel:TDF_Label, guid:RP_GUID)->TDF_Attribute:
     container = Lookup_Attr[guid]()
+    if container is None:
+        Logger().warn(f"Lookup attr don't find {guid} ")        
+        return None
+
     if theLabel.FindAttribute(guid, container):
         return container
 
-    Logger().warn(f'Entry:{theLabel.GetEntry()} get attr {guid} error')        
+    Logger().warn(f"{theLabel.GetEntry()} don't find {guid} ")        
     return None
 
 def GetAttrValue(theLabel:TDF_Label, guid:RP_GUID):
@@ -96,7 +105,7 @@ def GetAttrValue(theLabel:TDF_Label, guid:RP_GUID):
 def label_str(theLabel:TDF_Label):
     doc = Document.Get(theLabel)
 
-    return str(doc)+','+theLabel.GetEntry()
+    return theLabel.GetEntry()
 
 Label = TDF_Label
 Label.__hash__ = __hash__

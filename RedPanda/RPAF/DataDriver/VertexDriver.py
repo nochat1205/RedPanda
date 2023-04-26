@@ -35,7 +35,7 @@ from .BaseDriver import (
 from .VarDriver import (
     RealDriver,
 )
-from .BaseDriver import DataDriver
+from .BaseDriver import DataDriver, CompoundDriver
 from .ShapeBaseDriver import BareShapeDriver
 
 from ..RD_Label import Label
@@ -83,7 +83,7 @@ class PntDriver(BareShapeDriver):
     def Type(self):
         return PntDriver._type
 
-class Pnt2dDriver(DataDriver):
+class Pnt2dDriver(CompoundDriver):
     def __init__(self) -> None:
         super().__init__()
         self.Arguments['x'] = Argument(self.tagResource, RealDriver.ID)

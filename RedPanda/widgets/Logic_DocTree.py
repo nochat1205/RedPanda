@@ -29,7 +29,7 @@ class ModelTree(QtWidgets.QTreeWidget):
         self.tree = self
         self.tree.expandAll()# 节点全部展开
         self.tree.setStyle(QtWidgets.QStyleFactory.create('windows'))#有加号
-        self.tree.setColumnCount(2) # 设置列数
+        self.tree.setColumnCount(3) # 设置列数
         self.tree.setHeaderLabels(['name', 'type', 'state'])# 设置树形控件头部的标题
 
         self.item_lookup = dict()
@@ -91,7 +91,7 @@ class ModelTree(QtWidgets.QTreeWidget):
             name = theLabel.GetLabelName()
             if len(name) <= 0:
                 return
-        
+
             aDriver:DataDriver = theLabel.GetDriver()
 
             item = QTreeWidgetItem(father)

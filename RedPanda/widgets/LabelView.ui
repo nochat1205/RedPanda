@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>400</width>
-    <height>300</height>
+    <width>900</width>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -31,18 +31,24 @@
           <verstretch>0</verstretch>
          </sizepolicy>
         </property>
+        <property name="floating">
+         <bool>false</bool>
+        </property>
         <property name="features">
          <set>QDockWidget::DockWidgetFloatable</set>
         </property>
         <property name="allowedAreas">
          <set>Qt::LeftDockWidgetArea|Qt::RightDockWidgetArea</set>
         </property>
+        <property name="windowTitle">
+         <string>Argument</string>
+        </property>
         <widget class="QWidget" name="dockWidgetContents">
          <layout class="QVBoxLayout" name="verticalLayout_2">
           <item>
-           <widget class="QScrollArea" name="scrollArea">
+           <widget class="QScrollArea" name="NotDataArea">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+             <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -55,8 +61,8 @@
               <rect>
                <x>0</x>
                <y>0</y>
-               <width>151</width>
-               <height>114</height>
+               <width>85</width>
+               <height>85</height>
               </rect>
              </property>
              <property name="sizePolicy">
@@ -69,10 +75,26 @@
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="commit_bt">
-            <property name="text">
-             <string>commit</string>
+           <widget class="QScrollArea" name="DataArea">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Expanding">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
             </property>
+            <property name="widgetResizable">
+             <bool>true</bool>
+            </property>
+            <widget class="QWidget" name="scrollAreaWidgetContents_2">
+             <property name="geometry">
+              <rect>
+               <x>0</x>
+               <y>0</y>
+               <width>85</width>
+               <height>395</height>
+              </rect>
+             </property>
+            </widget>
            </widget>
           </item>
          </layout>
@@ -80,7 +102,14 @@
        </widget>
       </item>
       <item>
-       <widget class="QWidget" name="RightArea" native="true"/>
+       <widget class="QWidget" name="RightArea" native="true">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>
@@ -95,13 +124,6 @@
      </property>
      <layout class="QHBoxLayout" name="horizontalLayout_2">
       <item>
-       <widget class="QPushButton" name="SaveShape_bt">
-        <property name="text">
-         <string>save shape</string>
-        </property>
-       </widget>
-      </item>
-      <item>
        <spacer name="horizontalSpacer">
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
@@ -113,6 +135,13 @@
          </size>
         </property>
        </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="SaveShape_bt">
+        <property name="text">
+         <string>save shape</string>
+        </property>
+       </widget>
       </item>
      </layout>
     </widget>

@@ -31,7 +31,6 @@ class RDObject(object):
     def UpdatePresentation(self):
         return
 
-
 class RDObjectManager(object):
     def __init__(self) -> None:
         self.RDObject_dict:dict[Label, RDObject] = dict()

@@ -8,6 +8,7 @@ from .widgets.Logic_MainWindow import MainWindow,Logic_Application
 from .RPAF.GUID import RP_GUID
 from .RPAF.RD_Label import Label
 from .RD_Object import RDObjectManager
+from .RPAF.Application import Application
 
 class MainApplication(QObject):
     """
@@ -21,7 +22,7 @@ class MainApplication(QObject):
 
     def __init__(self) -> None:
         self.myWin = MainWindow()
-        self.logic_app = Logic_Application(self.myWin.logic_Viewer._display)
+        self.docApp =  Application()
         self.docTree = self.myWin.DocTree()
         self.DataLabel_manager =  RDObjectManager()
 
@@ -33,7 +34,7 @@ class MainApplication(QObject):
     @pyqtSlot(RP_GUID)
     def Process_NewLabel(self, id):
         # 1. doc new
-        aLabel:Label = self.logic_app.NewDataLabel(id)
+        aLabel:Label = self.docApp.NewDataLabel(id)
         # 2
         obj = self.DataLabel_manager.Add(aLabel)
 
@@ -56,14 +57,21 @@ class MainApplication(QObject):
     def Process_SaveDocument(self):
         ...
 
-    def Process_ShowLabel(self):
-        ...
+    @pyqtSlot(Label)
+    def Process_ShowLabel(self, theLabel:Label):
+        
+        pass
+
+    def Process_ChangeLabel(self, theLabel, str):
+        # 1. update
+        label_set = self.docApp.Update(theLabel, str)
+        # 2. 
 
     def SignalAndSlot(self):
         # new Shape
         self.myWin.sig_NewDataLabel.connect(self.Process_NewLabel)
         self.myWin.sig_NewDocument.connect(self.Process_NewDocument)
-        self.docTree.sig_labelSelect.connect(self.Process_Show)
+        self.docTree.sig_labelSelect.connect(self.Process_ShowLabel)
 
     # function 
     def MakeShapeMenu(self):

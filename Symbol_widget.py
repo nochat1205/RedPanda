@@ -1,6 +1,6 @@
 
 from tests.preview_widget import WidgetPreview
-
+from RedPanda.logger import Logger
 
 
 def Text_qt2d():
@@ -27,6 +27,29 @@ def Text_LabelView():
     previewer.widget.Test()
     previewer.run()
 
+def Text_logicView():
+    from OCC.Core.TDF import TDF_Data
+    from RedPanda.widgets.Logic_Construct import Logic_Construct
+    from RedPanda.RPAF.Application import Application
+    from RedPanda.RPAF.DataDriver import BoxDriver
+    from RedPanda.RPAF.Document import Document
+    from RedPanda.Core.data import RP_ExtendStr
+
+    Logger().info('--------------- Start ------------')
+    app = Application()
+    doc = Document(RP_ExtendStr('Ocaf'))
+    label = doc.Main()
+    BoxDriver().Init(label)
+    print('run1')
+    previewer = WidgetPreview(Logic_Construct)
+    widget:Logic_Construct = previewer.widget
+    widget.ShowLabel(label)
+
+    Logger().info('--------------- end ------------')
+
+    previewer.run()
+
+
 if __name__ == '__main__':
-    Text_LabelView()
+    Text_logicView()
 

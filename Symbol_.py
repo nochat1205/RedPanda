@@ -381,6 +381,21 @@ def Curve_on_plane():
     plane = Geom_Plane.DownCast(plane)
     print(plane.Bounds())
 
+def SetConment():
+    import re
+    from OCC.Core.TCollection import TCollection_ExtendedString
+    from OCC.Core.TDataStd import TDataStd_Comment, TDataStd_Name
+    from OCC.Core.TDF import TDF_Label, TDF_Data
+
+    df = TDF_Data()
+    aLabel = df.Root()
+    msg:str = TDataStd_Comment.Set(aLabel, TCollection_ExtendedString('Lain')).DumpToString()
+    print(msg)
+    a = re.match()
+    print(a.group(1))
+    
+    
+
 if __name__ == '__main__':
     display, start, *_ = init_display()
     box = make_box(10, 10, 10)
@@ -388,7 +403,7 @@ if __name__ == '__main__':
     viewer:V3d_Viewer = display.Viewer
     view:V3d_View = display.View
     context:AIS_InteractiveContext = display.Context
-    Curve_on_plane()
+    SetConment()
 
     # display.View_Iso()
     # display.FitAll()

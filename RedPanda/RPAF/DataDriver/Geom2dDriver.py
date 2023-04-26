@@ -1,6 +1,8 @@
 from OCC.Core.Geom2d import Geom2d_Ellipse
+from OCC.Core.AIS import AIS_Shape
 from RedPanda.decorator import classproperty
 from RedPanda.Core.topogy import EdgeAnalyst
+
 
 from .BaseDriver import Argument, ShapeRefDriver
 from .ShapeBaseDriver import BareShapeDriver, Ax2dDriver
@@ -27,7 +29,6 @@ class EllipseDriver(PCurveDriver):
         self.Arguments['Minor'] = Argument(self.tagResource, RealDriver.ID)
         self.Arguments['u0'] = Argument(self.tagResource, RealDriver.ID)
         self.Arguments['u1'] = Argument(self.tagResource, RealDriver.ID)
-        
 
     def myExecute(self, theLabel: Label) -> int:
         dict_param = dict()
@@ -39,6 +40,12 @@ class EllipseDriver(PCurveDriver):
 
         return super().Execute(theLabel)
 
+    def Presentaton2d(self, theLabel)->AIS_Shape:
+        pass
+
+    def Presentaton3d(self, theLabel)->AIS_Shape:
+        pass
+
     def Type(self):
         return 'EllipseDriver'
 
@@ -46,7 +53,7 @@ class EllipseDriver(PCurveDriver):
     @classproperty
     def ID(self):
         from ..GUID import Sym_EllipseDriver_GUID
-        return   Sym_EllipseDriver_GUID#
+        return   Sym_EllipseDriver_GUID 
 
     @classproperty
     def Type(self):

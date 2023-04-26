@@ -23,7 +23,6 @@ from .ShapeBaseDriver import BareShapeDriver
 class CutDriver(BareShapeDriver):
     def __init__(self) -> None:
         super().__init__()
-        Logger().debug("end init "+str(self.ID))
         self.myAttr = Param(TNaming_NamedShape.GetID())
         self.Attributes['value'] = self.myAttr
         self.Arguments = {

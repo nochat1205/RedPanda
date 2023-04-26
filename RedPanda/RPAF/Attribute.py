@@ -10,10 +10,11 @@ from OCC.Core.TDataStd import (
     TDataStd_Real,
     TDataStd_Integer,
     TDataStd_TreeNode,
-    TDataStd_GenericExtString
+    TDataStd_Comment
 )
 from OCC.Core.TNaming import (
     TNaming_NamedShape,
+    TNaming_Builder
 )
 from OCC.Core.TPrsStd import (
     TPrsStd_AISPresentation,
@@ -27,13 +28,18 @@ from OCC.Core.XCAFDoc import (
 )
 from .GUID import *
 
+
+def Comment_Get(comment_Attr:TDataStd_Comment):
+    import re
+    pattern = re.compile(".*Comment=\|(.*)\|", re.S)
+    comment0 = pattern.match(comment_Attr.DumpToString())
+    return comment0.group(1)
+    
+TDataStd_Comment.Get = Comment_Get
+
 class Attr_Assembly(TDataStd_TreeNode):
     def GetID():
         return AssemblyGUID
-
-class Attr_Entry(TDataStd_GenericExtString):
-    def GetID():
-        return Attr_Entry_GUID
 
 class Attr_ShapeRef(TDataStd_TreeNode):
     """
@@ -82,7 +88,6 @@ class Attr_Guid(TFunction_Function):
     def GetID():
         return Sym_IdAttr_GUID
 
-
 class Attr_IDcol(TDataStd_TreeNode):
     def GetID():
         return IDcolGUID
@@ -94,6 +99,10 @@ class Attr_IDcolSurf(TDataStd_TreeNode):
 class Attr_IDcolCurv(TDataStd_TreeNode):
     def GetID():
         return IDcolCurvGUID
+
+class Attr_StateMessage(TDataStd_Comment):
+    def GetID():
+        return TDataStd_Comment.GetID()
 
 
 class DFAttr_LogBook(TFunction_Logbook):
@@ -114,7 +123,7 @@ class DFAttr_LogBook(TFunction_Logbook):
         map_Lab.remove(theLabel)
 
 
-from .Attr.State import Attr_State
+from .Attr.State import Attr_State, Attr_Exist
 attr_li = [
     TDataStd_Name,
     TDataStd_Real,
@@ -132,7 +141,9 @@ attr_li = [
     Attr_IDcol,
     Attr_IDcolSurf,
     Attr_IDcolCurv,
-    Attr_State
+    Attr_State,
+    Attr_Exist,
+    Attr_StateMessage,
 ]
 
 Lookup_Attr = GuidLookup(map(lambda x:x.GetID(), attr_li), attr_li)
