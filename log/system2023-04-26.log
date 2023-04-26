@@ -742,3 +742,80 @@
 2023-04-26 21:12:31,368 - INFO: Entry:0:1:1:4, end init
 2023-04-26 21:12:31,372 - INFO: -- commit command --
 2023-04-26 21:12:33,275 - INFO: Selected Item:New Box
+2023-04-26 21:26:56,675 - INFO: Application Start
+2023-04-26 21:31:23,022 - INFO: 0:1 not have function id
+2023-04-26 21:31:23,039 - INFO: 0:1 not have function id
+2023-04-26 21:31:23,069 - INFO: 0:1 not have function id
+2023-04-26 21:31:23,072 - INFO: 0:1 not have function id
+2023-04-26 21:31:24,435 - INFO: -- NewConmand --
+2023-04-26 21:31:24,437 - INFO: -- Add New Shape --
+2023-04-26 21:31:24,441 - INFO: create Label:0:1:1, None, Box:22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,534 - INFO: Entry:0:1:1, base init complete
+2023-04-26 21:31:24,553 - INFO: create Label:0:1:1:1, None, Transform:22d22e53-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,555 - INFO: Entry:0:1:1:1, base init complete
+2023-04-26 21:31:24,566 - INFO: create Label:0:1:1:1:1, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,569 - INFO: Entry:0:1:1:1:1, base init complete
+2023-04-26 21:31:24,572 - INFO: change Label:0:1:1:1:1.value, None, 0
+2023-04-26 21:31:24,583 - INFO: Entry:0:1:1:1:1, end init
+2023-04-26 21:31:24,589 - INFO: create Label:0:1:1:1:2, None, Point:22d22e52-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,592 - INFO: Entry:0:1:1:1:2, base init complete
+2023-04-26 21:31:24,602 - INFO: create Label:0:1:1:1:2:1, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,605 - INFO: Entry:0:1:1:1:2:1, base init complete
+2023-04-26 21:31:24,610 - INFO: change Label:0:1:1:1:2:1.value, None, 0
+2023-04-26 21:31:24,614 - INFO: Entry:0:1:1:1:2:1, end init
+2023-04-26 21:31:24,617 - INFO: create Label:0:1:1:1:2:2, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,619 - INFO: Entry:0:1:1:1:2:2, base init complete
+2023-04-26 21:31:24,622 - INFO: change Label:0:1:1:1:2:2.value, None, 0
+2023-04-26 21:31:24,625 - INFO: Entry:0:1:1:1:2:2, end init
+2023-04-26 21:31:24,632 - INFO: create Label:0:1:1:1:2:3, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,635 - INFO: Entry:0:1:1:1:2:3, base init complete
+2023-04-26 21:31:24,638 - INFO: change Label:0:1:1:1:2:3.value, None, 0
+2023-04-26 21:31:24,644 - INFO: Entry:0:1:1:1:2:3, end init
+2023-04-26 21:31:24,671 - INFO: create Label:0:1:1:1:3, None, Point:22d22e52-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,676 - INFO: Entry:0:1:1:1:3, base init complete
+2023-04-26 21:31:24,686 - INFO: create Label:0:1:1:1:3:1, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,689 - INFO: Entry:0:1:1:1:3:1, base init complete
+2023-04-26 21:31:24,693 - INFO: change Label:0:1:1:1:3:1.value, None, 0
+2023-04-26 21:31:24,701 - INFO: Entry:0:1:1:1:3:1, end init
+2023-04-26 21:31:24,706 - INFO: create Label:0:1:1:1:3:2, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,711 - INFO: Entry:0:1:1:1:3:2, base init complete
+2023-04-26 21:31:24,717 - INFO: change Label:0:1:1:1:3:2.value, None, 0
+2023-04-26 21:31:24,723 - INFO: Entry:0:1:1:1:3:2, end init
+2023-04-26 21:31:24,727 - INFO: create Label:0:1:1:1:3:3, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,736 - INFO: Entry:0:1:1:1:3:3, base init complete
+2023-04-26 21:31:24,740 - INFO: change Label:0:1:1:1:3:3.value, None, 0
+2023-04-26 21:31:24,744 - INFO: Entry:0:1:1:1:3:3, end init
+2023-04-26 21:31:24,758 - INFO: create Label:0:1:1:2, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,762 - INFO: Entry:0:1:1:2, base init complete
+2023-04-26 21:31:24,770 - INFO: change Label:0:1:1:2.value, None, 0
+2023-04-26 21:31:24,775 - INFO: Entry:0:1:1:2, end init
+2023-04-26 21:31:24,782 - INFO: create Label:0:1:1:3, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,785 - INFO: Entry:0:1:1:3, base init complete
+2023-04-26 21:31:24,788 - INFO: change Label:0:1:1:3.value, None, 0
+2023-04-26 21:31:24,791 - INFO: Entry:0:1:1:3, end init
+2023-04-26 21:31:24,794 - INFO: create Label:0:1:1:4, None, real:22d22e51-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:24,802 - INFO: Entry:0:1:1:4, base init complete
+2023-04-26 21:31:24,805 - INFO: change Label:0:1:1:4.value, None, 0
+2023-04-26 21:31:24,808 - INFO: Entry:0:1:1:4, end init
+2023-04-26 21:31:24,818 - INFO: -- commit command --
+2023-04-26 21:31:28,106 - INFO: -- NewConmand --
+2023-04-26 21:31:28,110 - INFO: -- Add New Shape --
+2023-04-26 21:31:28,116 - INFO: create Label:0:1:2, None, Cut:22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:31:28,118 - INFO: Entry:0:1:2, base init complete
+2023-04-26 21:31:28,122 - INFO: create Label:0:1:2:1, None, ShapeRef:5b896afe-3adf-11d4-b9b7-0060b0ee281b
+2023-04-26 21:31:28,124 - INFO: Entry:0:1:2:1, base init complete
+2023-04-26 21:31:28,135 - INFO: create Label:0:1:2:2, None, ShapeRef:5b896afe-3adf-11d4-b9b7-0060b0ee281b
+2023-04-26 21:31:28,138 - INFO: Entry:0:1:2:2, base init complete
+2023-04-26 21:34:31,686 - INFO: Application Start
+2023-04-26 21:34:36,553 - INFO: 0:1 not have function id
+2023-04-26 21:34:36,560 - INFO: 0:1 not have function id
+2023-04-26 21:34:36,572 - INFO: 0:1 not have function id
+2023-04-26 21:34:36,582 - INFO: 0:1 not have function id
+2023-04-26 21:34:46,823 - INFO: -- NewConmand --
+2023-04-26 21:34:46,826 - INFO: -- Add New Shape --
+2023-04-26 21:34:46,833 - INFO: create Label:0:1:1, None, Cut:22d22e55-abca-11d4-8f1a-0060b0ee18e8
+2023-04-26 21:34:46,836 - INFO: Entry:0:1:1, base init complete
+2023-04-26 21:34:46,841 - INFO: create Label:0:1:1:1, None, ShapeRef:5b896afe-3adf-11d4-b9b7-0060b0ee281b
+2023-04-26 21:34:46,845 - INFO: Entry:0:1:1:1, base init complete
+2023-04-26 21:34:46,853 - INFO: create Label:0:1:1:2, None, ShapeRef:5b896afe-3adf-11d4-b9b7-0060b0ee281b
+2023-04-26 21:34:46,855 - INFO: Entry:0:1:1:2, base init complete

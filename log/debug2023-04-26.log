@@ -250,3 +250,30 @@ init Children: position
 2023-04-26 21:12:31,274 - DEBUG: File BaseDriver.py, in BaseDriver.myInit             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\BaseDriver.py:573
 init Children: 
+2023-04-26 21:31:24,537 - DEBUG: File BaseDriver.py, in BaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\BaseDriver.py:573
+init Children: 
+2023-04-26 21:31:24,558 - DEBUG: File ShapeBaseDriver.py, in ShapeBaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\ShapeBaseDriver.py:66
+init Children: 
+2023-04-26 21:31:24,561 - DEBUG: File ShapeBaseDriver.py, in ShapeBaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\ShapeBaseDriver.py:69
+init Children: angle
+2023-04-26 21:31:24,587 - DEBUG: File ShapeBaseDriver.py, in ShapeBaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\ShapeBaseDriver.py:69
+init Children: rotateAxis
+2023-04-26 21:31:24,596 - DEBUG: File BaseDriver.py, in BaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\BaseDriver.py:573
+init Children: 
+2023-04-26 21:31:24,668 - DEBUG: File ShapeBaseDriver.py, in ShapeBaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\ShapeBaseDriver.py:69
+init Children: position
+2023-04-26 21:31:24,683 - DEBUG: File BaseDriver.py, in BaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\BaseDriver.py:573
+init Children: 
+2023-04-26 21:31:28,120 - DEBUG: File BaseDriver.py, in BaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\BaseDriver.py:573
+init Children: 
+2023-04-26 21:34:46,838 - DEBUG: File BaseDriver.py, in BaseDriver.myInit             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\BaseDriver.py:573
+init Children: 

@@ -291,7 +291,7 @@ class DataDriver(object):
         if not DataLabelState.IsOK(theLabel):
             return None
 
-        return self.myValue()
+        return self.myValue(theLabel)
     
     def GetTextValue(self, theLabel:Label):
         if not DataLabelState.IsOK(theLabel):

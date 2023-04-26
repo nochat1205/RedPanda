@@ -31,7 +31,6 @@ class CutDriver(BareShapeDriver):
         }
 
     def myExecute(self, theLabel: Label) -> int:
-        super().Execute(theLabel)
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
