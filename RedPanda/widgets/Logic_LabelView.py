@@ -3,7 +3,7 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import pyqtSignal, pyqtSlot
 from PyQt5.QtWidgets import (
     QMainWindow, QWidget, QVBoxLayout, QListView,
-    QScrollArea, QSizePolicy
+    QScrollArea, QSizePolicy, QDialog
 )
 from RedPanda.RD_Singleton import Singleton
 from RedPanda.RPAF.DataDriver import (
@@ -19,7 +19,7 @@ from .Logic_Construct import Logic_Construct
 from .Logic_Viewer import qtViewer3d
 from .Logic_viewer2d import qtViewer2d
 
-class LabelView(QWidget):
+class LabelView(QDialog):
     sig_change = pyqtSignal(Label, str)
     def __init__(self, parent: typing.Optional[QWidget]=None) -> None:
         super().__init__(parent)
@@ -45,7 +45,7 @@ class LabelView(QWidget):
         right_layout.addWidget(self.v2d)
         self.ui.RightArea.setLayout(right_layout)
 
-        self.commit_bt = self.ui.commit_bt
+        # self.commit_bt = self.ui.commit_bt
 
         dataArea = self.ui.DataArea
         notDataArea = self.ui.NotDataArea
@@ -54,13 +54,21 @@ class LabelView(QWidget):
         dataArea.setWidget(self._content)
         
         # signal and slot
-        self._content.emit(lambda label, string: self.sig_change.emit(label, string))
+        self._content.sig_change.connect(self.onChange)
 
     def ShowLabel(self, theLabel:Label):
         self._content.ShowLabel(theLabel)
 
     def UpdataLabel(self, theLabel):
         self._content.Update(theLabel)
+        aDriver = theLabel.GetDriver()
+        for ais in aDriver.Presentaion3d().values():
+            self.v3d._display.DisplayShape(ais)
+        for ais in aDriver.Presentaion2d().values():
+            self.v2d._display.DisplayShape(ais)
+
+    def onChange(self, label, str):
+         self.sig_change.emit(label, str)
 
     def Test(self):
         from OCC.Core.Geom import Geom_CylindricalSurface, Geom_RectangularTrimmedSurface

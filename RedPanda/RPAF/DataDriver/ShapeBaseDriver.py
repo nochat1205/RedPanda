@@ -2,6 +2,7 @@ from OCC.Core.TopLoc import TopLoc_Location
 from OCC.Core.TPrsStd import TPrsStd_NamedShapeDriver, TPrsStd_AISPresentation
 from OCC.Core.TNaming import TNaming_Builder
 from OCC.Core.TopoDS import TopoDS_Shape
+from OCC.Core.AIS import AIS_Shape
 
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty
@@ -34,6 +35,16 @@ class BareShapeDriver(CompoundDriver):
 
     def myValue(self, theLabel: Label):
         return self.Attributes['value'].GetValue(theLabel)
+
+    def Presentaion3d(self, theLabel):
+        ais_dict = dict()
+        shape = self.GetValue()
+        ais = AIS_Shape(shape)
+        ais_dict[(0, 'shape')] = ais        
+        return ais_dict
+
+    def Presentaion2d(self):
+        return dict()
 
 from .VertexDriver import (
     PntDriver

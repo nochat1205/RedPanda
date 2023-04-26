@@ -41,7 +41,7 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         self.tree.setSizePolicy(sizePolicy)
 
     # --- new ---    
-    @pyqtSlot()
+
     def onItemChange(self):
         if self._setingData: return 
         qobject = self.sender()

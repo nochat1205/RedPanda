@@ -199,7 +199,7 @@ class Logic_Application(QObject):
     @pyqtSlot(RP_GUID)
     def NewDataLabel(self, driverID:RP_GUID):
         self._main_doc.NewCommand()
-        Logger().info("-- NewConmand --")        
+        Logger().info("-- NewConmand --")
         Logger().info("-- Add New Shape --")
 
         aDriver:DataDriver = DataDriverTable.Get().GetDriver(driverID)

@@ -80,6 +80,7 @@ def GetFunctionID(theLabel:TDF_Label):
     function = TFunction_Function()
     if theLabel.FindAttribute(TFunction_Function.GetID(), function):
         return function.GetDriverGUID()
+    Logger().info(f'{theLabel.GetEntry()} not have function id')
     return None
 
 from .Attribute import TDF_Attribute

@@ -4,7 +4,5 @@ from RedPanda.logger import Logger
 from RedPanda.main import MainApplication
 
 if __name__ == "__main__":
-    app = MainApplication()
-
-    sys.exit(app.Run())
-
+    
+    sys.exit(MainApplication.Run(sys.argv))

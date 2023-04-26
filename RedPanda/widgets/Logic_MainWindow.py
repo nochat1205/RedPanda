@@ -40,19 +40,21 @@ class MainWindow(QMainWindow):
     sig_Construct = pyqtSignal(Sym_NewBuilder)
     sig_NewDataLabel = pyqtSignal(RP_GUID)
     sig_NewDocument = pyqtSignal(str)
-    sig_SaveNowDocument = pyqtSignal()
     sig_OpenXml = pyqtSignal()
+    sig_SaveNewDocument = pyqtSignal()
 
     def __init__(self) -> None:
         super(MainWindow, self).__init__()
+
+        self._modelMenu_dict = dict()
+        self._menu_dict = dict() # other menu
+        
+    
         self.setupUi()
 
         self.ui.retranslateUi(self)
         self.connnectAction()
-
-        self._modelMenu_dict = dict()
-        self._menu_dict = dict() # other menu
-        self._MakeShapeMenu_def()
+        self.setupMenu()
 
     def setupMenu(self):
         self._menu_dict['menubar'] = self.menuBar
@@ -60,12 +62,12 @@ class MainWindow(QMainWindow):
         self._menu_dict['open'] = self.ui.menuopen
 
 
-        self.ui.actionxml.triggered.connect(
-            lambda:self.sig_NewDocument.emit('XmlOcaf'))
+        self.ui.actionxml.triggered.connect(self.onNewDocument)
         self.add_function_to_menu('start', 'save', 
                                   lambda:self.sig_SaveNowDocument.emit())
         self.add_function_to_menu('open', 'openxml', 
                                   lambda:self.sig_OpenXml.emit())
+
 
     def setupUi(self):
         self.ui = Ui_MainWindow()
@@ -93,6 +95,7 @@ class MainWindow(QMainWindow):
         return self.logic_DocTree
 
     def connnectAction(self):
+        return 
         # start menu
         self.ui.actionstep.triggered.connect(self.openFileSTEP)
         # self.ui.actionxml.triggered.connect(lambda:self.logic_app.NewDocument("XmlOcaf"))
@@ -225,3 +228,7 @@ class MainWindow(QMainWindow):
 
             children.reverse()
             stack_label.extend(children)
+
+    def onNewDocument(self):
+        print('button print')
+        self.sig_NewDocument.emit('XmlOcaf')

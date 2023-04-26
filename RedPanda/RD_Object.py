@@ -12,7 +12,7 @@ class RDObject(object):
         object (_type_): _description_
     """
     def __init__(self, theLabel:Label):
-        self.label = theLabel.Data()
+        self.label = theLabel
 
         self.doc = Document.Get(self.label)
 

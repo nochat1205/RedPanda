@@ -118,7 +118,9 @@ class ModelTree(QtWidgets.QTreeWidget):
 
     @staticmethod
     def SetDataLabel(item:QTreeWidgetItem, theLabel:Label):
+        print(f'{theLabel.GetEntry()} TOOO set data Label')
         if theLabel.GetFunctionID():
+            print(f'{theLabel.GetEntry()} set data Label')
             item.setData(2, Qt.ItemDataRole.UserRole+1, True)
         item.setData(2, Qt.ItemDataRole.UserRole, theLabel)
 
@@ -154,23 +156,24 @@ class ModelTree(QtWidgets.QTreeWidget):
         else:
             fatheritem = self.item_lookup[fatherLabel]
 
-        item = QTreeWidget(fatheritem)
+        item = QTreeWidgetItem(fatheritem)
         self._regist_LabelItem(theLabel, item)
         self.Update(theLabel)
         return item
 
     def _regist_LabelItem(self, label, item):
         self.item_lookup[label] = item
-        self.item_lookup[item] = label
+        # self.item_lookup[item] = label
 
     def onItemDoubleClicked(self, item: QTreeWidgetItem, column: int) -> None:
         self._Selected_item.setBackground(0, self.item_defaultBackground)
         self._Selected_item = item
+
         if self.IsNamedShape(item):
             aLabel = self.GetLabel(item)
             name = aLabel.GetLabelName()
             Logger().info(f'Selected Item:{name}')
 
             self._Selected_item.setBackground(0, QBrush(Qt.GlobalColor.lightGray))
-            self.sig_select.emit(Sym_ChangeBuilder(aLabel))
+            # self.sig_select.emit(Sym_ChangeBuilder(aLabel))
             self.sig_labelSelect.emit(aLabel)
