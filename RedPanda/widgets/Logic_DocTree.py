@@ -65,16 +65,16 @@ class ModelTree(QtWidgets.QTreeWidget):
         # self.tree.addTopLevelItem(root)
 
 
-    @pyqtSlot(Document)
-    def Show(self, doc:Document):
-        self.main_doc = doc
-        self.Update()
+    # @pyqtSlot(Document)
+    # def Show(self, doc:Document):
+    #     self.main_doc = doc
+    #     self.Update()
 
-    @pyqtSlot()
-    def Update(self):
-        self.ClearItems()
-        self.Create_ModelTree(self.main_doc)
-        self.tree.expandAll()
+    # @pyqtSlot()
+    # def Update(self):
+    #     self.ClearItems()
+    #     self.Create_ModelTree(self.main_doc)
+    #     self.tree.expandAll()
 
     def ClearItems(self):
         self._Selected_item = self.root
@@ -83,7 +83,7 @@ class ModelTree(QtWidgets.QTreeWidget):
         self.items.clear()
 
 
-    def Create_ModelTree(self, doc:Document):
+    # def Create_ModelTree(self, doc:Document):
         # 设置根节点
         rootLabel = doc.Main()
 
@@ -118,9 +118,7 @@ class ModelTree(QtWidgets.QTreeWidget):
 
     @staticmethod
     def SetDataLabel(item:QTreeWidgetItem, theLabel:Label):
-        print(f'{theLabel.GetEntry()} TOOO set data Label')
         if theLabel.GetFunctionID():
-            print(f'{theLabel.GetEntry()} set data Label')
             item.setData(2, Qt.ItemDataRole.UserRole+1, True)
         item.setData(2, Qt.ItemDataRole.UserRole, theLabel)
 
@@ -137,14 +135,13 @@ class ModelTree(QtWidgets.QTreeWidget):
     def Update(self, theLabel):
         item = self.item_lookup[theLabel]
 
-        name = theLabel.GetLabelName()        
+        name = theLabel.GetLabelName()
         item.setText(0, f'{theLabel.GetEntry()} {name}')
 
         aDriver:DataDriver = theLabel.GetDriver()
         if aDriver:
             item.setText(1, f'{aDriver.Type}')
-            flag = 'OK' if DataLabelState.IsOK(theLabel) else 'Error'
-            item.setText(2, f'{flag}')
+            item.setText(2, f'{aDriver.GetStateMsg(theLabel)}')
 
         self.SetDataLabel(item, theLabel)
         item.setCheckState(0, Qt.Checked)
@@ -159,6 +156,9 @@ class ModelTree(QtWidgets.QTreeWidget):
         item = QTreeWidgetItem(fatheritem)
         self._regist_LabelItem(theLabel, item)
         self.Update(theLabel)
+
+        self.expandAll()
+
         return item
 
     def _regist_LabelItem(self, label, item):
@@ -177,3 +177,4 @@ class ModelTree(QtWidgets.QTreeWidget):
             self._Selected_item.setBackground(0, QBrush(Qt.GlobalColor.lightGray))
             # self.sig_select.emit(Sym_ChangeBuilder(aLabel))
             self.sig_labelSelect.emit(aLabel)
+

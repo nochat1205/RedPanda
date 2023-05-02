@@ -54,7 +54,6 @@ class MainWindow(QMainWindow):
 
         self.ui.retranslateUi(self)
         self.connnectAction()
-        self.setupMenu()
 
     def setupMenu(self):
         self._menu_dict['menubar'] = self.menuBar
@@ -74,8 +73,12 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)
 
         # Main Struct
-        self.logic_Viewer = self.ui.logic_View
-        self.logic_Viewer.InitDriver()
+        self.logic_Viewer3d = self.ui.logic_View
+        self.logic_Viewer3d.InitDriver()
+        
+        self.logic_Viewer2d = self.ui.logic_View2d
+        self.logic_Viewer2d.InitDriver()
+
         self._menubar = self.ui.menubar
         self._model_menu = self.ui.menu
         self._start_menu = self.ui.start
@@ -93,6 +96,15 @@ class MainWindow(QMainWindow):
 
     def DocTree(self):
         return self.logic_DocTree
+
+    def Viewer2d(self):
+        return self.logic_Viewer2d
+
+    def Viewer3d(self):
+        return self.logic_Viewer3d
+
+    def Construct(self):
+        return self.logic_ConstructView
 
     def connnectAction(self):
         return 
@@ -192,7 +204,6 @@ class MainWindow(QMainWindow):
             self.viewer._display.DisplayShape(shape, color=color)
 
         self.viewer._display.FitAll()
-        print("count: {}".format(count))
         self.treeView.Create_ModelTree(doc)
 
     def read_doc(self, doc:Document):
@@ -230,5 +241,4 @@ class MainWindow(QMainWindow):
             stack_label.extend(children)
 
     def onNewDocument(self):
-        print('button print')
         self.sig_NewDocument.emit('XmlOcaf')

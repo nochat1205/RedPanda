@@ -9,6 +9,7 @@ from .DataDriver import *
 from .GUID import RP_GUID
 from .Attribute import TDataStd_Name
 from .Document import Document
+from .RD_Label import Label
 
 
 class Application(TDocStd_Application):
@@ -16,10 +17,11 @@ class Application(TDocStd_Application):
         super(Application, self).__init__()
         self.main_doc = None
         self.doc_li = list()
-        self.RegisterDriver()
+        self._registerDriver()
         
 
-    def RegisterDriver(self):
+
+    def _registerDriver(self):
         # Instantiate a Driver and add it to the DriverTable
         DataDriverTable.Get().AddDriver(RealDriver.ID,
                                               RealDriver())
@@ -51,9 +53,12 @@ class Application(TDocStd_Application):
         DataDriverTable.Get().AddDriver(Ax2dDriver .ID,
                                               Ax2dDriver())
 
-        from .DataDriver.Geom2dDriver import EllipseDriver
-        DataDriverTable.Get().AddDriver(EllipseDriver .ID,
-                                              EllipseDriver())
+        from .DataDriver.Geom2dDriver import Ellipse2dDriver
+        DataDriverTable.Get().AddDriver(Ellipse2dDriver .ID,
+                                              Ellipse2dDriver())
+
+    def RegisterDriver(self, driver:DataDriver):
+        DataDriverTable.Get().AddDriver(driver.ID, driver)
 
     def AddDocument(self, doc):
         self.InitDocument(doc)
@@ -61,10 +66,11 @@ class Application(TDocStd_Application):
         self.doc_li.append(doc)
         self.main_doc = doc
 
-    def Update(self, theLabel, str)->set:
+    def Update(self, theLabel:Label, str)->set:
         touched_set = set()
         update_set = set()
-
+        Logger().info("-- NewConmand --")
+        self._main_doc.NewCommand()
         # change
         aDriver:DataDriver = theLabel.GetDriver()
         aDriver.Change(theLabel, str)
@@ -74,13 +80,16 @@ class Application(TDocStd_Application):
         touched_set.add(theLabel)
         while len(update_set) > 0:
             aLabel = update_set.pop()
-            aDriver = aLabel.GetDriver()
+            aDriver:DataDriver = aLabel.GetDriver()
             if aDriver:    
                 aDriver.Execute(aLabel)
 
                 label_set = aDriver.GetRefMeLabel(aLabel)
                 update_set |= label_set
                 touched_set |= label_set
+
+        self._main_doc.CommitCommand()
+        Logger().info("-- commit command --")
 
         return touched_set
 
@@ -116,3 +125,7 @@ class Application(TDocStd_Application):
         self._main_doc = doc
         # self.sig_DocChanged.emit(self._main_doc)
         return doc
+
+
+    def HaveDoc(self):
+        return self.main_doc is not None

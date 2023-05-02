@@ -2,6 +2,7 @@
 __all__ = ['PntDriver']
 
 from OCC.Core.gp import gp_Pnt2d
+from OCC.Core.BRep import BRep_Tool
 
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty
@@ -73,7 +74,7 @@ class PntDriver(BareShapeDriver):
     def myValue(self, theLabel: Label):
         from OCC.Core.BRep import BRep_Tool
         vertex = super().myValue(theLabel)
-        return BRep_Tool.Pnt(vertex)
+        return vertex
 
     @classproperty
     def ID(self):
@@ -116,15 +117,16 @@ class PntArrayDriver(ArrayDriver):
         self._SubTypeId = Sym_PntDriver_GUID
 
     def myValue(self, theLabel: Label):
+        
         aDriver = DataDriverTable.Get().GetDriver(self._SubTypeId)
     
-        size = self.GetSize()
+        size = self.GetSize(theLabel)
 
         pnt_li = list()
         for i in range(size):
             childLabel = theLabel.FindChild(i+self._ArrayFirstTag, False)
             value = aDriver.GetValue(childLabel)
-            pnt_li.append(value)
+            pnt_li.append(BRep_Tool.Pnt(value))
 
         return pnt_li
 

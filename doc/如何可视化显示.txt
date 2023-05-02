@@ -1,0 +1,6 @@
+
+对于本身和参数进行可视化.
+
+self.Presentation(theLabel, '') 记录Prensentaion
+
+

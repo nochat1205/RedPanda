@@ -22,7 +22,8 @@ from ..RD_Label import Label
 from .BaseDriver import (
     Argument,
     Param,
-    DataEnum
+    DataEnum,
+    DataLabelState
 )
 from .ShapeBaseDriver import BareShapeDriver
 from .VertexDriver import (
@@ -47,7 +48,11 @@ class BezierDriver(BareShapeDriver):
             dict_param[name] = argu.Value(theLabel)
 
         pnts = dict_param['pnts']
-        curve = points_to_bspline(pnts)
+        try:
+            curve = points_to_bspline(pnts)
+        except:
+            DataLabelState.SetError(theLabel, 'pnt_array Error', True)
+            return 1 
         shape = make_edge(curve)
 
         builder = TNaming_Builder(theLabel)

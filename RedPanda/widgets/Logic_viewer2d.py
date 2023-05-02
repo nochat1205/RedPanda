@@ -22,6 +22,9 @@ import sys
 
 # from OCC.Display import OCCViewer
 from OCC.Display.backend import get_qt_modules
+from OCC.Core.AIS import AIS_KindOfInteractive_Shape,AIS_Shape
+from RedPanda.Core.topogy.types_lut import topo_lut
+from OCC.Core.StdSelect import StdSelect_BRepOwner
 
 from PyQt5 import QtCore, QtGui, QtWidgets, QtOpenGL
 from PyQt5.QtCore import pyqtSlot
@@ -35,6 +38,9 @@ from OCC.Core.gp import gp_Pnt2d
 
 from RedPanda.logger import Logger
 from RedPanda.widgets.Ui_Viewer2d import Viewer2d
+from RedPanda.RPAF.DataDriver import BareShapeDriver
+
+from OCC.Core.gp import gp_Ax3
 
 class qtBaseViewer(QtWidgets.QWidget):
     """The base Qt Widget for an OCC viewer"""
@@ -63,7 +69,6 @@ class qtBaseViewer(QtWidgets.QWidget):
     def paintEngine(self):
         return None
 
-
 class qtViewer2d(qtBaseViewer):
     # emit signal when selection is changed
     # is a list of TopoDS_*
@@ -77,6 +82,8 @@ class qtViewer2d(qtBaseViewer):
 
     def __init__(self, *kargs):
         qtBaseViewer.__init__(self, *kargs)
+        self.ais_dict = None
+        self.aLabel = None
 
         self.setObjectName("qt_viewer_3d")
 
@@ -94,7 +101,6 @@ class qtViewer2d(qtBaseViewer):
         self._current_cursor = "arrow"
         self._available_cursors = {}
 
-        self._trihedron = None
         self._key_map = {
             ord("W"): self._display.SetModeWireFrame,
             ord("S"): self._display.SetModeShaded,
@@ -125,7 +131,7 @@ class qtViewer2d(qtBaseViewer):
         self._inited = True
         # dict mapping keys to functions
         self.createCursors()
-
+        self._display.FocusOn(gp_Ax3())
         # me 
         # self._dict_Context = {"default": self._dict_Context}
 
@@ -178,6 +184,7 @@ class qtViewer2d(qtBaseViewer):
         self._display.Context.UpdateCurrentViewer()
 
         if self._drawbox:
+            return 
             painter = QtGui.QPainter(self)
             painter.setPen(QtGui.QPen(QtGui.QColor(0, 0, 0), 2))
             rect = QtCore.QRect(*self._drawbox)
@@ -220,8 +227,14 @@ class qtViewer2d(qtBaseViewer):
 
         if event.button() == QtCore.Qt.LeftButton:
             if self._select_area:
+                from OCC.Extend.ShapeFactory import make_edge
                 [Xmin, Ymin, dx, dy] = self._drawbox
-                self.SelectArea(Xmin, Ymin, Xmin + dx, Ymin + dy)
+                # self.SelectArea(Xmin, Ymin, Xmin + dx, Ymin + dy)
+                p0 = self.GetPoint(Xmin, Ymin)
+                p1 = self.GetPoint(Xmin+dx, Ymin+dy)
+                print(f'{p0.Coord()}->{p1.Coord()}')
+                self._display.DisplayShape(make_edge(p0, p1), update=True)
+
                 self._select_area = False
             else:
                 # multiple select if shift is pressed
@@ -303,68 +316,6 @@ class qtViewer2d(qtBaseViewer):
             self._display.MoveTo(pt.x(), pt.y())
             self.cursor = "arrow"
 
-    def DisplayTrihedron(self, enable:bool=True):
-        from OCC.Core.AIS import AIS_PlaneTrihedron
-        from OCC.Core.Geom import Geom_Plane
-        if enable:
-            plane_ax3 = self._display.ViewPlane()
-            pln = Geom_Plane(plane_ax3)
-            ais_Trihedron = AIS_PlaneTrihedron(pln)
-            aWindow = self.window()
-            length = 10
-            ais_Trihedron.SetLength(length)
-            self._display.Context.Display(ais_Trihedron, False)
-            self._display.DisplayMessage(gp_Pnt2d(0, length/2), f'(0, {length/2})')
-
-            self._trihedron = ais_Trihedron
-        else:
-            if self._trihedron:
-                self._display.Context.Erase(self._trihedron, False)
-                self._trihedron = None
-
-    def GridEnable(self, u1=0, u2=0, v1=100, v2=100):
-        from OCC.Core.Quantity import Quantity_NOC_WHITE, Quantity_Color
-        from OCC.Core.Aspect import (
-            Aspect_GT_Rectangular, Aspect_GDM_Lines, Aspect_GDM_Points,
-            Aspect_TOM_RING1,
-        )
-        from OCC.Core.Graphic3d import Graphic3d_AspectMarker3d
-        self._display.Viewer.ActivateGrid(Aspect_GT_Rectangular, Aspect_GDM_Points)
-        self._display.Viewer.SetGridEcho(True)
-        aViewer = self._display.Viewer
-
-        aGridAspect = Graphic3d_AspectMarker3d(Aspect_TOM_RING1, Quantity_Color(Quantity_NOC_WHITE), 2.0)
-        aViewer.SetGridEcho(aGridAspect)
-        aWindow = self.window()
-        aWidth, aHeight = aWindow.width(), aWindow.height()
-        aViewer.SetRectangularGridGraphicValues(u2-u1, v2-v1, 0.0)
-
-        aViewer.SetRectangularGridValues (0, 0, (u2-u1)/10, (v2-v1)/10, 0)
-        aViewer.ActivateGrid(Aspect_GT_Rectangular, Aspect_GDM_Lines)
-
-    def Display_Plane(self, face):
-        from OCC.Core.BRep import BRep_Tool_Surface
-        from OCC.Core.Geom import Geom_Plane
-    
-        self.GridEnable()
-        surface = BRep_Tool_Surface(face)
-        plane:Geom_Plane = Geom_Plane.DownCast(surface)
-        pln = plane.Pln()
-        self._display.FocusOn(pln.Position())
-        self.DisplayTrihedron()
-        self._display.DisplayShape(face)
-
-    def DisplaySurfaceFlay(self, surface):
-        from OCC.Core.Geom import Geom_Surface
-        from OCC.Core.gp import gp_Ax3
-        surface:Geom_Surface
-        u1, u2, v1, v2 = surface.Bounds()
-        self.GridEnable(u1, u2, v1, v2)
-        self.DisplayTrihedron()
-
-    # selected object
-    def GetSelectedObject(self):
-        return self._display.Context.SelectedInteractive()
 
     def SelectArea(self, Xmin, Ymin, Xmax, Ymax)->list[AIS_InteractiveObject]:
         """ get interative object in the area
@@ -392,9 +343,7 @@ class qtViewer2d(qtBaseViewer):
         from RedPanda.Core.topogy.types_lut import shape_lut
         for obj in self.__selectedObject_li:
             obj:AIS_InteractiveObject
-            print('rin')
             brepOwer:StdSelect_BRepOwner = StdSelect_BRepOwner.DownCast(obj.GetOwner())
-            print(shape_lut(brepOwer.Shape().ShapeType()))
 
         return self.__selectedObject_li
 
@@ -405,9 +354,6 @@ class qtViewer2d(qtBaseViewer):
 
         aContext.Select(True)
         aContext.InitSelected()
-        from OCC.Core.AIS import AIS_KindOfInteractive_Shape,AIS_Shape
-        from RedPanda.Core.topogy.types_lut import topo_lut
-        from OCC.Core.StdSelect import StdSelect_BRepOwner
         if aContext.MoreSelected():
             if aContext.HasSelectedShape():
                 owner = aContext.SelectedOwner()
@@ -419,5 +365,173 @@ class qtViewer2d(qtBaseViewer):
             shape:TopoDS_Shape = obj.Shape()
             interactive = AIS_Shape.DownCast(obj.Selectable())
             shapep = interactive.Shape()
-            print('pa:', topo_lut[shapep.ShapeType()])
-            print('me:', topo_lut[shape.ShapeType()])
+
+    def clear(self):
+        self._display.Context.RemoveAll(False)
+        self.ais_dict = None
+        self.aLabel = None
+
+    def ShowLabel(self, theLabel):
+
+        self.clear()
+        aDriver:BareShapeDriver = theLabel.GetDriver()
+        if aDriver is None:
+            return
+
+        self.aLabel = theLabel
+        ctx = aDriver.Prs2d(theLabel)
+        self.ais_dict = ctx
+        aDriver.UpdatePrs2d(theLabel, ctx)
+        for ais in ctx.values():
+            self._display.Context.Display(ais, False)
+
+        self._display.FitAll()
+        self._display.Repaint()
+
+    def UpdateLabel(self):
+        aDriver:BareShapeDriver = self.aLabel.GetDriver()
+        if aDriver is None:
+            return
+
+        if not aDriver.UpdatePrs2d(self.aLabel, self.ais_dict):
+            return 
+
+        Logger().info('display2d')
+        for ais in self.ais_dict.values():
+            self._display.Context.Display(ais, False)
+
+        self.GridEnable(*self.ais_dict.GetBound())
+        self._display.Viewer.Update()
+
+    def GetPoint(self, x, y):
+        from OCC.Core.gp import gp_Pnt, gp_Dir, gp_Lin
+        from OCC.Core.Geom import Geom_Line
+        from OCC.Core.TopoDS import TopoDS_Shape
+        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_WIRE, TopAbs_VERTEX
+        from OCC.Core.BRep import BRep_Tool
+        from OCC.Core.BRepLib import breplib_BuildCurve3d
+        from OCC.Core.BRepExtrema import BRepExtrema_DistShapeShape
+        from OCC.Extend.ShapeFactory import make_edge, make_wire
+        from RedPanda.Core.Make import project_point_on_curve
+
+        self._display.Context.ClearSelected(False)
+        shapes:list[TopoDS_Shape] = self._display.Select(x, y)
+        
+
+        projX, projy, projz, rayx, rayy, rayz = self._display.View.ProjReferenceAxe(x, y)
+        p = gp_Pnt(projX, projy, projz)
+        if len(shapes) == 0:
+            return p
+
+        if shapes[0].ShapeType() == TopAbs_VERTEX:
+            p = BRep_Tool.Pnt(shapes[0])
+            self._display.DisplayMessage(p, f'Coord:{p.Coord()}')
+        elif shapes[0].ShapeType() == TopAbs_EDGE:
+            try:
+                # 1
+                dir = gp_Dir(rayx, rayy, rayz)
+                line = gp_Lin(p, dir)
+                edge = make_edge(line)
+                print('Run0')
+                wire = make_wire(shapes[0])
+                extrema = BRepExtrema_DistShapeShape(wire, edge)
+                print('Run1')
+                p = extrema.PointOnShape1(1)
+                self._display.DisplayMessage(p, f'Coord:{p.Coord()}')
+                
+                # 2
+                # from RedPanda.Core.topogy.edge import EdgeAnalyst
+                # analyst = EdgeAnalyst(shapes[0])
+                # print(analyst.parameter_to_point(0).Coord())
+                # param, pnt = project_point_on_curve(analyst, p)
+                
+            except Exception as error:
+                print('error:', error)
+
+        print(f'p:{p.Coord()}')
+        return p
+
+
+    def TrihedronEnable(self, length):
+        from OCC.Core.AIS import AIS_PlaneTrihedron
+        from OCC.Core.Geom import Geom_Plane
+        from OCC.Core.gp import gp_Pnt
+        from OCC.Core.Graphic3d import Graphic3d_Structure
+        from OCC.Core.Quantity import Quantity_Color,Quantity_NOC_BLACK
+        from OCC.Core.TCollection import TCollection_AsciiString
+        if 'scale_structure_li' not in self.__dict__:
+            self.scale_structure_li:list[Graphic3d_Structure] = list()
+        if '_trihedron' not in self.__dict__:
+            plane_ax3 = self._display.ViewPlane()
+            pln = Geom_Plane(plane_ax3)
+            
+            ais_trihedron = AIS_PlaneTrihedron(pln)
+            ais_trihedron.SetColor(Quantity_Color(Quantity_NOC_BLACK))
+            
+            self._trihedron:AIS_PlaneTrihedron = ais_trihedron
+
+        for scale in self.scale_structure_li:
+            scale:Graphic3d_Structure
+            scale.Erase()
+        self.scale_structure_li.clear()
+
+        # aWindow = self.window()
+        self._trihedron.SetLength(length)
+        for num in range(1, 6): # (1, 5)
+            pos = length * num / 6
+            struct = self._display.DisplayMessage(gp_Pnt(0, pos, 0), f'{pos:.2f}')
+            self.scale_structure_li.append(struct)
+
+            struct = self._display.DisplayMessage(gp_Pnt(pos, 0, 0), f'{pos:.2f}')
+            self.scale_structure_li.append(struct)
+    
+        self._display.Context.Display(self._trihedron, False)
+
+    def GridEnable(self, u1=0, u2=0, v1=100, v2=100):
+        from OCC.Core.Quantity import Quantity_NOC_WHITE, Quantity_Color
+        from OCC.Core.Aspect import (
+            Aspect_GT_Rectangular, Aspect_GDM_Lines, Aspect_GDM_Points,
+            Aspect_TOM_RING1,
+        )
+        from OCC.Core.Graphic3d import Graphic3d_AspectMarker3d
+
+        aViewer = self._display.Viewer
+
+        aGridAspect = Graphic3d_AspectMarker3d(Aspect_TOM_RING1, Quantity_Color(Quantity_NOC_WHITE), 2.0)
+        aViewer.SetGridEcho(aGridAspect)
+        aWindow = self.window()
+        # aWidth, aHeight = aWindow.width(), aWindow.height()
+        aViewer.SetRectangularGridValues ((u1+u2)/2, (v1+v2)/2, 1, 1, 0)
+        aViewer.SetRectangularGridGraphicValues((u2-u1)/2, (v2-v1)/2, 0.0)
+
+        aViewer.ActivateGrid(Aspect_GT_Rectangular, Aspect_GDM_Lines)
+        aViewer.SetGridEcho(True)
+
+    def SetUVGrid(self, u1, u2, v1, v2):
+        self.GridEnable(u1, u2, v1, v2)
+        length = max((u2-u1)/2, (v2-v1)/2)
+        self.TrihedronEnable(length)
+
+    def Display_Plane(self, face):
+        from OCC.Core.BRep import BRep_Tool_Surface
+        from OCC.Core.Geom import Geom_Plane
+    
+        self.GridEnable()
+        surface = BRep_Tool_Surface(face)
+        plane:Geom_Plane = Geom_Plane.DownCast(surface)
+        pln = plane.Pln()
+        self._display.FocusOn(pln.Position())
+        self.DisplayTrihedron()
+        self._display.DisplayShape(face)
+
+    def DisplaySurfaceFlay(self, surface):
+        from OCC.Core.Geom import Geom_Surface
+        from OCC.Core.gp import gp_Ax3
+        surface:Geom_Surface
+        u1, u2, v1, v2 = surface.Bounds()
+        self.GridEnable(u1, u2, v1, v2)
+        self.DisplayTrihedron()
+
+    # selected object
+    def GetSelectedObject(self):
+        return self._display.Context.SelectedInteractive()

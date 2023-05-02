@@ -380,6 +380,7 @@ class Viewer3d(Display3d):
     def ExportToImage(self, image_filename):
         self.View.Dump(image_filename)
 
+    # my function
     def display_graduated_trihedron(self):
         a_trihedron_data = Graphic3d_GraduatedTrihedron()
         self.View.GraduatedTrihedronDisplay(a_trihedron_data)

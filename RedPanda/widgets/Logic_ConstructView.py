@@ -9,19 +9,11 @@ from PyQt5 import QtWidgets, QtCore
 from OCC.Core.TFunction import TFunction_Driver
 from OCC.Core.Standard import Standard_GUID
 
-from RedPanda.Sym_ParamBuilder import (
-    Sym_NewBuilder,
-    Sym_ChangeBuilder,
-)
-from RedPanda.Sym_DocUpdateData import (
-    Sym_NewShapeData,
-    Sym_ChangeData
-)
-from RedPanda.widgets.Logic_Construct import Logic_Construct
+from .Logic_Construct import Logic_Construct
+from RedPanda.RPAF.RD_Label import Label
 
 class Logic_ConstructView(QtWidgets.QWidget):
-    sig_NewShape = pyqtSignal(Sym_NewShapeData)
-    sig_ChangeShape = pyqtSignal(Sym_ChangeData)
+    sig_change = pyqtSignal(Label, str)
 
     def __init__(self, parent=None):
         super(Logic_ConstructView, self).__init__(parent)
@@ -32,29 +24,10 @@ class Logic_ConstructView(QtWidgets.QWidget):
         self.guid = None
         self.IsNew = False
         self.Constructer:Logic_Construct = self.ui.widget
+        self.Constructer.sig_change.connect(lambda label, str:self.sig_change.emit(label, str))
 
-        # connect
-        self.ui.pushButton_2.clicked.connect(self.commit)
-        self.ui.pushButton.clicked.connect(self.Change)
+    def ShowLabel(self, theLabel):
+        self.Constructer.ShowLabel(theLabel)
 
-    @pyqtSlot(Sym_NewBuilder)
-    def NewConstruct(self, data:Sym_NewBuilder):
-        self.IsNew = True
-        self.Constructer.BuildView(data)
-
-    @pyqtSlot()
-    def commit(self):
-        if self.IsNew:
-            data = Sym_NewShapeData(self.Constructer)
-            self.sig_NewShape.emit(data)
-
-    @pyqtSlot(Sym_ChangeBuilder)
-    def ShowShape(self, data:Sym_ChangeBuilder):
-        self.IsNew = False
-        self.Constructer.BuildView(data)
-
-    @pyqtSlot()
-    def Change(self):
-        if not self.IsNew:
-            data = Sym_ChangeData(self.Constructer)
-            self.sig_ChangeShape.emit(data)
+    def UpdataLabel(self, theLabel):
+        self.Constructer.Update(theLabel)

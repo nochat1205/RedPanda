@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'd:\2022-1\graduate_design\codes\qt_view\software_base\widgets\Main.ui'
+# Form implementation generated from reading ui file 'd:\2022-1\graduate_design\RedPanda\RedPanda\widgets\Main.ui'
 #
 # Created by: PyQt5 UI code generator 5.15.4
 #
@@ -25,16 +25,24 @@ class Ui_MainWindow(object):
         self.verticalLayout_2 = QtWidgets.QVBoxLayout(self.centralwidget)
         self.verticalLayout_2.setObjectName("verticalLayout_2")
         self.logic_View = qtViewer3d(self.centralwidget)
-        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setVerticalStretch(1)
         sizePolicy.setHeightForWidth(self.logic_View.sizePolicy().hasHeightForWidth())
         self.logic_View.setSizePolicy(sizePolicy)
         self.logic_View.setObjectName("logic_View")
         self.verticalLayout_2.addWidget(self.logic_View)
+        self.logic_View2d = qtViewer2d(self.centralwidget)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(1)
+        sizePolicy.setHeightForWidth(self.logic_View2d.sizePolicy().hasHeightForWidth())
+        self.logic_View2d.setSizePolicy(sizePolicy)
+        self.logic_View2d.setObjectName("logic_View2d")
+        self.verticalLayout_2.addWidget(self.logic_View2d)
         MainWindow.setCentralWidget(self.centralwidget)
         self.menubar = QtWidgets.QMenuBar(MainWindow)
-        self.menubar.setGeometry(QtCore.QRect(0, 0, 839, 26))
+        self.menubar.setGeometry(QtCore.QRect(0, 0, 839, 23))
         self.menubar.setObjectName("menubar")
         self.start = QtWidgets.QMenu(self.menubar)
         self.start.setObjectName("start")
@@ -121,3 +129,4 @@ from RedPanda.widgets.Logic_ConstructView import Logic_ConstructView
 from RedPanda.widgets.Logic_DocView import Logic_DocView
 from RedPanda.widgets.Logic_ScreenData import Logic_ScreenData
 from RedPanda.widgets.Logic_Viewer import qtViewer3d
+from RedPanda.widgets.Logic_Viewer2d import qtViewer2d

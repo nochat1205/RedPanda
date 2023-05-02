@@ -42,13 +42,13 @@ class mySpinBox(QSpinBox):
             lambda:self.SigChange.emit()
         )
 
-    def UpdateValue(self, int):
+    def UpdateValue(self, text):
         self.blockSignals(True)
-        self.setValue(int(int))
+        self.setValue(int(text))
         self.blockSignals(False)
 
     def GetText(self):
-        return self.text
+        return self.text()
 
     @property
     def SigChange(self):
@@ -140,13 +140,16 @@ class AFItem(MyItem): # afItem 区分节点
         raise NotImplemented()
 
     def GetText(self):
-        return self.textContainer.GetText()
+        if self.textContainer:
+            return self.textContainer.GetText()
+        return ''
 
     def Update(self):
         raise NotImplemented()
 
     def _setState(self):
         self.setText(2, self.driver.GetStateMsg(self.label))
+
 
 class VarItem(AFItem):
     def _setui(self):
@@ -182,7 +185,7 @@ class ArrayItem(AFItem):
         spbox.setMaximum(20)
         spbox.setSingleStep(1)
 
-        tree:QTreeWidget = self.treeWidget
+        tree:QTreeWidget = self.treeWidget()
         tree.setItemWidget(self, 1, spbox)
     
         self.textContainer:mySpinBox = spbox
@@ -205,7 +208,7 @@ class ArrayItem(AFItem):
         # update self
         aLabel = self.label
         self.driver:ArrayDriver
-        nowsize = self.driver.GetSize()
+        nowsize = self.driver.GetSize(aLabel)
         self.textContainer.UpdateValue(nowsize)
 
         self._setState()
@@ -221,7 +224,7 @@ class ArrayItem(AFItem):
             for ind in range(childItemSize):
                 child:AFItem = self.child(ind)
                 if child.label not in sub_list:
-                    self.treeWidget.RemoveItem(child.label)
+                    self.treeWidget().RemoveItem(child.label)
 
 class CompuItem(AFItem):
     @property
@@ -240,4 +243,4 @@ class CompuItem(AFItem):
             AFItemFactory.GetItem(name, sub, self)
 
     def Update(self):
-        self._setState()                
+        self._setState()

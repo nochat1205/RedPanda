@@ -279,6 +279,7 @@ def make_box(*args):
     with assert_isdone(box, "failed to built a cube..."):
         return box.Shape()
 
+    return None
 
 def make_n_sided(edges, points, continuity=GeomAbs_C0):
     """

@@ -9,3 +9,4 @@ from .EdgeDriver import BezierDriver
 from .PrimDriver import BoxDriver, TransShapeDriver
 from .VertexDriver import PntArrayDriver, PntDriver
 from .VarDriver import RealDriver, IntDriver, IdDriver
+from .ShapeBaseDriver import BareShapeDriver

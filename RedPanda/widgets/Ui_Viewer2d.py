@@ -447,7 +447,7 @@ class Viewer2d(Display3d):
         self,
         point,
         text_to_write,
-        height=14.0,
+        height=12.0,
         message_color=(0.0, 0.0, 0.0),
         update=False,
     ):
@@ -462,6 +462,7 @@ class Viewer2d(Display3d):
         text_aspect = Prs3d_TextAspect()
         text_aspect.SetColor(rgb_color(*message_color))
         text_aspect.SetHeight(height)
+
         if isinstance(point, gp_Pnt2d):
             point = gp_Pnt(point.X(), point.Y(), 0)
 
@@ -682,6 +683,8 @@ class Viewer2d(Display3d):
         # callbacks
         for callback in self._select_callbacks:
             callback(self.selected_shapes, X, Y)
+        
+        return self.selected_shapes[:]
     
     def ShiftSelect(self, X, Y):
         self.Context.ShiftSelect(True)

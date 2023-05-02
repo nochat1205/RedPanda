@@ -36,6 +36,9 @@ from OCC.Core.AIS import AIS_InteractiveContext
 from RedPanda.logger import Logger
 from RedPanda.widgets.Ui_Viewer import Viewer3d
 
+from RedPanda.RPAF.DataDriver import BareShapeDriver
+
+
 class qtBaseViewer(QtWidgets.QWidget):
     """The base Qt Widget for an OCC viewer"""
 
@@ -93,6 +96,7 @@ class qtViewer3d(qtBaseViewer):
         self._key_map = {}
         self._current_cursor = "arrow"
         self._available_cursors = {}
+        self._ais_objects = set()
 
         self._key_map = {
             ord("W"): self._display.SetModeWireFrame,
@@ -118,7 +122,7 @@ class qtViewer3d(qtBaseViewer):
     def InitDriver(self):
         self._display.Create(window_handle=int(self.winId()), parent=self)
         # # background gradient
-        # self._display.SetModeShaded()
+        self._display.SetModeShaded()
 
         self._inited = True
         # dict mapping keys to functions
@@ -181,7 +185,6 @@ class qtViewer3d(qtBaseViewer):
         self.Repaint()
 
     def paintEvent(self, event):
-
         self._display.Context.UpdateCurrentViewer()
 
         if self._drawbox:
@@ -309,3 +312,39 @@ class qtViewer3d(qtBaseViewer):
             self._drawbox = False
             self._display.MoveTo(pt.x(), pt.y())
             self.cursor = "arrow"
+
+    def clear(self):
+        self._display.Context.RemoveAll(False)
+        self.ais_dict = None
+        self.aLabel = None
+
+    def ShowLabel(self, theLabel):
+
+        self.clear()
+        aDriver:BareShapeDriver = theLabel.GetDriver()
+        if aDriver is None:
+            return
+
+        self.aLabel = theLabel
+        ctx = aDriver.Prs3d(theLabel)
+        self.ais_dict = ctx
+        aDriver.UpdatePrs3d(theLabel, ctx)
+        for ais in self.ais_dict.d.values():
+            self._display.Context.Display(ais, False)
+
+        self._display.FitAll()
+        self._display.Repaint()
+
+    def UpdateLabel(self):
+        aDriver:BareShapeDriver = self.aLabel.GetDriver()
+        if aDriver is None:
+            return
+
+        if not aDriver.UpdatePrs3d(self.aLabel, self.ais_dict):
+            return 
+
+        Logger().info('display3d')
+        for ais in self.ais_dict.values():
+            self._display.Context.Display(ais, False)
+
+        self._display.Viewer.Update()

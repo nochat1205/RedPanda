@@ -30,7 +30,7 @@ from ..Attribute import (
 
 )
 from ..Attribute import Lookup_Attr
-from ..Touched import TouchedLabel # ForArray
+# from ..Touched import TouchedLabel # ForArray
 
 """
 to have only one instance of a driver for the whole session.
@@ -62,8 +62,7 @@ class DataLabelState:
     ParamError = 1
     @staticmethod
     def Init(theLabel:Label):
-        DataLabelState.SetError(theLabel)
-        
+        DataLabelState.SetOK(theLabel)
 
     @staticmethod
     def SetOK(theLabel:Label):
@@ -71,9 +70,10 @@ class DataLabelState:
         Attr_State.Set(theLabel, DataLabelState.OK)
 
     @staticmethod
-    def SetError(theLabel:Label, ErrorMsg='NotValid'):
-        Attr_StateMessage.Set(theLabel, RP_ExtendStr(ErrorMsg))
-        Attr_State.Set(theLabel, DataLabelState.ParamError)
+    def SetError(theLabel:Label, ErrorMsg='NotValid', override=False):
+        if override or DataLabelState.IsOK(theLabel):
+            Attr_StateMessage.Set(theLabel, RP_ExtendStr(ErrorMsg))
+            Attr_State.Set(theLabel, DataLabelState.ParamError)
 
     @staticmethod
     def GetMsg(theLabel:Label):
@@ -82,9 +82,9 @@ class DataLabelState:
     @staticmethod
     def IsOK(theLabel:Label):
         value = theLabel.GetAttrValue(Attr_State.GetID())
-        if value:
-            value = DataLabelState.OK
-            return True
+        if value is not None:
+            if value == DataLabelState.OK:
+                return True
         return False
 
 class Exist:
@@ -141,7 +141,11 @@ class Param(object):
         return Lookup_Attr[self.id]
 
     def SetValue(self, theLabel:Label, text:str):
-        Lookup_Attr[self.id].Set(theLabel, FromText(self.Type, text))
+        try:
+            Lookup_Attr[self.id].Set(theLabel, FromText(self.Type, text))
+        except:
+            return False
+        return True
 
     def GetAttribute(self, theLabel:Label):
         return theLabel.GetAttribute(self.id)
@@ -179,8 +183,8 @@ class Argument(object):
     def Value(self, theLabel:Label)->any:
         from ..DriverTable import DataDriverTable
 
-        aDriver = DataDriverTable.Get().GetDriver(self.DriverID)
         aLabel = theLabel.FindChild(self.Tag)
+        aDriver = aLabel.GetDriver()
         return aDriver.GetValue(aLabel)
 
 class DataDriver(object):
@@ -201,18 +205,15 @@ class DataDriver(object):
         # old        
         self.tagResource = TagResource()
         self.Results: dict[str, dict] = dict()          # 结果
-        self.Attributes: dict[str, Param] = dict()    # 属性
+        self.Attributes: dict[str, Param] = dict()      # 属性
         self.Arguments: dict[str, Argument] = dict()    # 参数
 
-        # New
-        self.input_params = self.Arguments
-
     def _base_init(self, theLabel: Label):
-        Logger().info(f'create Label:{theLabel.GetEntry()}, {None}, {self.Type}:{self.ID}')
+        Logger().info(f'BaseInit {theLabel.GetEntry()} {self.Type}')
         TFunction_Function.Set(theLabel, self.ID)
         DataLabelState.Init(theLabel)
 
-        Exist.Init(theLabel)
+        # Exist.Init(theLabel)
 
     def myInit(self, theLabel:Label)->bool:
         ''' 运行自己的参数检查和初始化就行
@@ -247,20 +248,23 @@ class DataDriver(object):
             Logger().info(f'Entry:{theLabel.GetEntry()}, had init')
             return True
 
+        Logger().info(f'Entry:{theLabel.GetEntry()}, init start')
+
         self._base_init(theLabel)
-        Logger().info(f'Entry:{theLabel.GetEntry()}, base init complete')
 
         if not self.myInit(theLabel):
             DataLabelState.SetError(theLabel, 'Init Failed')
             Logger().warning(f'Entry:{theLabel.GetEntry()}, type:{self.Type}, Init Falied')
+
             return False
 
         if not self.Execute(theLabel):
             Logger().warning(f'Entry:{theLabel.GetEntry()}, type:{self.Type}, Execute Falied')
+            DataLabelState.SetError(theLabel, 'Execute Falied')
             return False
 
         DataLabelState.SetOK(theLabel)
-        Logger().info(f'Entry:{theLabel.GetEntry()}, end init')
+        Logger().info(f'Entry:{theLabel.GetEntry()}, init end')
 
         return True
 
@@ -296,7 +300,7 @@ class DataDriver(object):
     def GetTextValue(self, theLabel:Label):
         if not DataLabelState.IsOK(theLabel):
             return 'Label is error'
-        return self.myTextValue(self.myTextValue)
+        return self.myTextValue(theLabel)
 
     def Change(self, theLabel:Label, theData):
         """ 管理函数 更改
@@ -305,7 +309,6 @@ class DataDriver(object):
             DataLabelState.SetError(theLabel, 'ChangeError')
             return False
 
-        TouchedLabel.SetTouched(theLabel)
         if not self.Execute(theLabel):
             return False
 
@@ -316,7 +319,7 @@ class DataDriver(object):
         """
         subLabel_li = self.GetArguLabel(theLabel)
         for sub in subLabel_li:
-            if not DataLabelState.IsOK(sub):
+            if sub is None or not DataLabelState.IsOK(sub):
                 DataLabelState.SetError(theLabel, 'Param Error')
                 return False
 
@@ -352,7 +355,6 @@ class DataDriver(object):
     def _isInit(self, theLabel:Label):
         return theLabel.HasAttribute()
 
-
     @classproperty
     def ID(self):
         """函数ID
@@ -382,11 +384,12 @@ class VarDriver(DataDriver):
 
     def myChange(self, theLabel: Label, theData):
         attr:Param = self.Attributes['value']
-        Logger().info(f'change var:{theLabel.GetEntry()}.value, ' +
-                      f'{attr.GetValue(theLabel)}, {theData}')
+        if theData == '':
+            theData = '0.0'
 
-        attr.SetValue(theLabel, theData)
-        return True
+        if attr.SetValue(theLabel, theData):
+            return True
+        return False
 
     def myValue(self, theLabel: Label):
         return self.Attributes['value'].GetValue(theLabel)
@@ -406,12 +409,11 @@ class ShapeRefDriver(DataDriver):
     def __init__(self) -> None:
         super().__init__()
         self.Attributes['ref'] = Param(Attr_ShapeRef.GetID())
-        # self.Attributes['value'] = Param(Attr_Entry.GetID())
 
     def myInit(self, theLabel: Label, text='0')->bool:
         if text == '0':
             Attr_ShapeRef.Set(theLabel)
-            DataLabelState.SetError(theLabel, 'Need True ref Entry')
+            DataLabelState.SetError(theLabel, 'Need True ref Entry', True)
             return False
 
         anEntry = RP_AsciiStr(text)
@@ -425,13 +427,21 @@ class ShapeRefDriver(DataDriver):
         if shapeRef_attr:
             shapeRef_attr.Remove()
 
+        # 过滤, 只允许引用Entry相对小的
+        if theData == theLabel.GetEntry():
+            return False
+
         anEntry = RP_AsciiStr(theData)
         aRefLabel = Label()
         TDF_Tool.Label(theLabel.Data(), anEntry, aRefLabel)
         if aRefLabel.IsNull():
+            DataLabelState.SetError(theLabel, 'Need True ref Entry', True)
+            Logger().warning(f'Ref {anEntry} IsError')
             return False
 
+        Logger().info(f'{theLabel.GetEntry()} ref {aRefLabel.GetEntry()} ')
         Attr_ShapeRef.Set(theLabel, aRefLabel)
+        reflabel = self.Attributes['ref'].GetValue(theLabel)
         return True
 
     def myValue(self, theLabel: Label):
@@ -450,10 +460,13 @@ class ShapeRefDriver(DataDriver):
     def myTextValue(self, theLabel: Label):
         reflabel = self.Attributes['ref'].GetValue(theLabel)
         if reflabel:
-            return str(reflabel)
-
-        Logger().warn(f'Entry:{theLabel.GetEntry()} not found reference')
+            return str(reflabel.GetEntry())
+    
+        Logger().warning(f'Entry:{theLabel.GetEntry()} not found reference')
         return 'Null'
+
+    def GetTextValue(self, theLabel:Label):
+        return self.myTextValue(theLabel)
 
     def GetArguLabel(self, theLabel: Label) -> list[Label]: # 依赖
         label_li = list()
@@ -494,7 +507,7 @@ class ArrayDriver(DataDriver):
         return self._ArrayFirstTag
 
     def GetSize(self, theLabel: Label):
-        aInt = theLabel.GetAttrValue(self.Attributes['type'].id)
+        aInt = theLabel.GetAttrValue(self.Attributes['size'].id)
         return aInt
 
     def GetChildAndName(self, theLabel:Label, ind: int):
@@ -521,21 +534,20 @@ class ArrayDriver(DataDriver):
         #         return False
         # return True
 
-        start = self.StartIndex()
-        oldsize = self.GetSize()
+        start = self.StartIndex
+        oldsize = self.GetSize(theLabel)
+        size = int(size)
         if size > oldsize:
             for ind in range(oldsize, size):
                 sub = theLabel.FindChild(start+ind, True)
                 aDriver:DataDriver = DataDriverTable.Get().GetDriver(self._SubTypeId)
                 aDriver.Init(sub)
-                TouchedLabel.SetTouched(sub)
-                Exist.SetExist(sub)
+                # Exist.SetExist(sub)
 
         elif size < oldsize:
             for ind in range(size, oldsize):
                 sub = theLabel.FindChild(start+ind, False)
-                TouchedLabel.SetTouched(sub)
-                Exist.SetDelete(sub)
+                # Exist.SetDelete(sub)
 
         TDataStd_Integer.Set(theLabel, size)
         return True
@@ -543,7 +555,7 @@ class ArrayDriver(DataDriver):
     def GetArguLabel(self, theLabel: Label) -> list[Label]:
         sublabel_li = list()
         size = self.GetSize(theLabel)
-        start = self.StartIndex()
+        start = self.StartIndex
         
         for ind in range(start, size+start):
             sublabel_li.append(theLabel.FindChild(ind))
@@ -553,7 +565,7 @@ class ArrayDriver(DataDriver):
     def GetNamedArgument(self, theLabel: Label) -> dict[str, Label]:
         sublabel_li = dict()
         size = self.GetSize(theLabel)
-        start = self.StartIndex()
+        start = self.StartIndex
         aDriver:DataDriver = DataDriverTable.Get().GetDriver(self._SubTypeId)
 
         for ind in range(0, size):
@@ -570,15 +582,15 @@ class ArrayDriver(DataDriver):
 
 class CompoundDriver(DataDriver):
     def myInit(self, theLabel: Label):
-        Logger().debug(f'init Children: ')
-
+        flag = True
         for name, argu in self.Arguments.items():
             argu:Argument
             aLabel = theLabel.FindChild(argu.Tag, True)
             aDriver:DataDriver = DataDriverTable.Get().GetDriver(argu.DriverID)
-            aDriver.Init(aLabel)
+            if not aDriver.Init(aLabel):
+                flag = False
 
-        return True
+        return flag
 
     def myChange(self, theLabel: Label, theData):
         for name, subData in theData.items():

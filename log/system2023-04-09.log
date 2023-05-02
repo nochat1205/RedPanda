@@ -1,7 +1,0 @@
-2023-04-09 15:46:05,364 - INFO: Start init NewParamBuilder 
-2023-04-09 15:46:05,366 - INFO: Type:Box Driver:22d22e50-abca-11d4-8f1a-0060b0ee18e8
-2023-04-09 15:46:05,372 - INFO: name:shape
-2023-04-09 15:46:05,374 - INFO: parent:0:1
-2023-04-09 15:46:05,377 - INFO: shape:{'transform': {'angle': 0.0, 'rotateAxis': {'theXp': 0.0, 'theYp': 0.0, 'theZp': 0.0}, 'position': {'theXp': 0.0, 'theYp': 0.0, 'theZp': 0.0}}, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-04-09 15:46:05,379 - INFO: End init NewParamBuilder 
-2023-04-09 15:46:05,422 - INFO: ParamTree:<RedPanda.widgets.Logic_Construct.Logic_Construct object at 0x00000207A12C09D0>

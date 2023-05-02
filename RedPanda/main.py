@@ -4,14 +4,18 @@ from PyQt5.QtCore import pyqtSlot, QObject
 
 
 from .logger import Logger
-from .widgets.Logic_MainWindow import MainWindow,Logic_Application
+
+from .RD_Object import RDObjectManager
 from .RPAF.GUID import RP_GUID
 from .RPAF.RD_Label import Label
-from .RD_Object import RDObjectManager
 from .RPAF.Application import Application
 from .RPAF.Document import Document
+from .RPAF.DataDriver import DataDriver
 
-from .widgets.Logic_LabelView import LabelView
+from .widgets.Logic_MainWindow import MainWindow
+from .widgets.Logic_Viewer import qtViewer3d
+from .widgets.Logic_Viewer2d import qtViewer2d
+
 
 class MainApplication():
     """
@@ -26,77 +30,138 @@ class MainApplication():
         return qapp.exec_()
 
     def __init__(self) -> None:
+        
+        self.showedLabel = None
+
         self.myWin = MainWindow()
         self.docApp =  Application()
-        self.docTree = self.myWin.DocTree()
+        self.c_docTree = self.myWin.DocTree()
+        self.c_viewer2d:qtViewer2d = self.myWin.Viewer2d()
+        self.c_viewer3d:qtViewer3d = self.myWin.Viewer3d()
+        self.c_construct = self.myWin.Construct()
+
         self.DataLabel_manager =  RDObjectManager()
 
         self.SetUpUi()
         self.SignalAndSlot()
 
+
     def SetUpUi(self):
-        self.MakeShapeMenu()
+        self.SetUpDriver()
+        
+        self.test()
+    
+    def test(self):
+        pass
+        # self.myWin.add_function_to_menu('menubar', 'drawline')
+
+
 
     def SignalAndSlot(self):
         # new Shape
         self.myWin.sig_SaveNewDocument.connect(self.Process_SaveDocument)
         self.myWin.sig_NewDocument.connect(self.Process_NewDocument)
-        self.docTree.sig_labelSelect.connect(self.Process_ShowLabel)
+        self.c_docTree.sig_labelSelect.connect(self.Process_ShowLabel)
         self.myWin.sig_NewDataLabel.connect(self.Process_NewLabel)
+        self.c_construct.sig_change.connect(self.Process_ChangeLabel)
+
+    # register function
+    def RegisterShapeDriver(self, menu_name, name,  driver:DataDriver):
+        self.docApp.RegisterDriver(driver)
+        self.myWin.add_driver_to_menu(menu_name, name, driver.ID)
+
+    def RegisterDriver(self, driver):
+        self.docApp.RegisterDriver(driver)
 
     # function 
-    def MakeShapeMenu(self):
-        from RedPanda.RPAF.DataDriver import (
+    def SetUpDriver(self):
+        from .RPAF.DataDriver import (
             BezierDriver,
             BoxDriver,
             CutDriver,
         )
+        from .RPAF.DataDriver.GeomDriver import CylSurDriver
+        from .RPAF.DataDriver.Geom2dDriver import Ellipse2dDriver
+        from .RPAF.DataDriver.ShapeBaseDriver import Ax3Driver
+        from .RPAF.DataDriver.ShapeBaseDriver import Ax2dDriver
+        from .RPAF.DataDriver.VertexDriver import Pnt2dDriver
 
-        self.myWin.add_driver_to_menu('PrimAPI', 'Box', BoxDriver.ID)
-        self.myWin.add_driver_to_menu('AlgoAPI', 'Cut', CutDriver.ID)
-        self.myWin.add_driver_to_menu('GeomAPI', 'bezier', BezierDriver.ID)
+        self.RegisterDriver(Ax3Driver())
+        self.RegisterDriver(Ax2dDriver())
+        self.RegisterDriver(Pnt2dDriver())
+
+        self.RegisterShapeDriver('PrimAPI', 'Box', BoxDriver())
+        self.RegisterShapeDriver('AlgoAPI', 'Cut', CutDriver())
+        self.RegisterShapeDriver('GeomAPI', 'bezier', BezierDriver())
+        self.RegisterShapeDriver('GeomAPI', 'Cyl', CylSurDriver())
+        self.RegisterShapeDriver('GeomAPI', 'Ellipse2d', Ellipse2dDriver())
+
 
     def Process_NewLabel(self, id:RP_GUID):
+        Logger().info(f'New Data Label {id}')
+        # 0 
+        if not self.docApp.HaveDoc():
+            self.Process_NewDocument()
+
         # 1. doc new
         aLabel:Label = self.docApp.NewDataLabel(id)
         # 2
         obj = self.DataLabel_manager.Add(aLabel)
 
         # 3. doc tree update
-        item = self.docTree.Create_TreeItem(aLabel, aLabel.Father())
+        item = self.c_docTree.Create_TreeItem(aLabel, aLabel.Father())
         obj.tree_item = item
+        Logger().info(f'New Data Label {id} end')
 
-    def Process_NewDocument(self, format:str):
-        print('New Document')
+    def Process_NewDocument(self, format:str='XmlOcaf'):
+        Logger().info('New Document')
+
         doc:Document = self.docApp.NewDocument(format)
         alabel = doc.Main()
 
         # 2 
         obj = self.DataLabel_manager.Add(alabel)
         # 3
-        item = self.docTree.Create_TreeItem(alabel)
+        item = self.c_docTree.Create_TreeItem(alabel)
         obj.tree_item = item
+
+        Logger().info('New Document End')
 
     def Process_SaveDocument(self):
         ...
 
     def Process_ShowLabel(self, theLabel:Label):
         # 1
-        labelView = LabelView()
-
-        self.DataLabel_manager[theLabel].viewer = labelView
-        labelView.ShowLabel(theLabel)
-
-        labelView.sig_change.connect(self.Process_ChangeLabel)
-        result = labelView.exec_()  
-        if result:
-            self.DataLabel_manager[theLabel].viewer = None
+        self.showedLabel = theLabel
+        self.c_construct.ShowLabel(theLabel)
+        # 2
+        self.c_viewer3d.ShowLabel(theLabel)
+        self.c_viewer2d.ShowLabel(theLabel)
 
     def Process_ChangeLabel(self, theLabel, str):
+        Logger().info(f'Start Change: {theLabel.GetEntry()}, {str}')
         # 1. update
         label_set = self.docApp.Update(theLabel, str)
-        # 2. 
+        # 2.
+        labelInDocTree = set() 
+        for aLabel in label_set:
+            aLabel:Label
+            fatherLabel :Label= aLabel.GetDataLabel()
+            labelInDocTree.add(fatherLabel)
+            if fatherLabel == self.showedLabel:
+                self.c_construct.UpdataLabel(aLabel)
 
-    def Process_exit():
+        # self.c_viewer2d.Update()
+        # self.c_viewer3d.Update()
+        # 4
+        for label in labelInDocTree:
+            self.c_docTree.Update(label)
+
+        Logger().info('update Label')
+        self.c_viewer3d.UpdateLabel()
+        self.c_viewer2d.UpdateLabel()
+
+        Logger().info(f'End Change: {theLabel.GetEntry()}, {str}')
+
+    def Process_exit(self):
         pass
-

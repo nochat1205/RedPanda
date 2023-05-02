@@ -37,7 +37,7 @@ def _AttrShallowCopy(dest, src):
     dest.__class__ = src.__class__ # 
     dest.__dict__ = src.__dict__
 
-from OCC.Core.TDataStd import TDataStd_Comment
+from OCC.Core.TDataStd import TDataStd_Comment, TDataStd_Name
 
 _inheritObject_id = (
     TDataStd_Comment.GetID(),
@@ -93,7 +93,7 @@ def GetAttribute(theLabel:TDF_Label, guid:RP_GUID)->TDF_Attribute:
     if theLabel.FindAttribute(guid, container):
         return container
 
-    Logger().warn(f"{theLabel.GetEntry()} don't find {guid} ")        
+    Logger().warning(f"{theLabel.GetEntry()} don't find {guid} ")        
     return None
 
 def GetAttrValue(theLabel:TDF_Label, guid:RP_GUID):
@@ -104,9 +104,12 @@ def GetAttrValue(theLabel:TDF_Label, guid:RP_GUID):
     return None
 
 def label_str(theLabel:TDF_Label):
-    doc = Document.Get(theLabel)
-
     return theLabel.GetEntry()
+
+def label_GetDataLabel(self:TDF_Label):
+    while self.GetLabelName() == '':
+        self = self.Father()
+    return self
 
 Label = TDF_Label
 Label.__hash__ = __hash__
@@ -116,5 +119,6 @@ Label.GetFunctionID = GetFunctionID
 Label.GetDriver = GetDriver
 Label.GetAttribute = GetAttribute
 Label.GetAttrValue = GetAttrValue
+Label.GetDataLabel = label_GetDataLabel
 Label.__str__ = label_str
 Label.__repr__ = label_str

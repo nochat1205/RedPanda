@@ -5,7 +5,7 @@ from RedPanda.logger import Logger
 
 def Text_qt2d():
     # Application()
-    from RedPanda.widgets.Logic_viewer2d import qtViewer2d
+    from RedPanda.widgets.Logic_Viewer2d import qtViewer2d
     from RedPanda.Core.Make import make_plane, make_box
     previewer = WidgetPreview(qtViewer2d)
     # previewer.widget.Run(Sym_NewBuilder(BoxDriver()))

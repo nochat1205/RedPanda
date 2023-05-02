@@ -14,7 +14,6 @@ from RedPanda.logger import Logger
 from RedPanda.RD_Singleton import Singleton
 
 
-from .DataDriver.BaseDriver import DataDriver
 from .RD_Label import Label
 from .GUID import RP_GUID
 
@@ -41,7 +40,7 @@ class DataDriverTable(RP_Transient, Singleton):
         return DataDriverTable._instance
 
     def AddDriver(self, guid:RP_GUID, 
-                  driver:DataDriver)->bool:
+                  driver)->bool:
 
         self._myDrivers[guid] = driver
         return self.HasDriver(guid)
@@ -51,6 +50,7 @@ class DataDriverTable(RP_Transient, Singleton):
         return guid in self._myDrivers.keys()
 
     def GetDriver(self, guid:RP_GUID)->bool:
+        from .DataDriver.BaseDriver import DataDriver
         aDriver = DataDriver()
         if self.HasDriver(guid):
             _ShallowCopy(aDriver, self._myDrivers.get(guid))
@@ -75,7 +75,6 @@ class DataDriverTable(RP_Transient, Singleton):
 
     def Clear(self):
         self._myDrivers.clear()
-
 
 
 # TPrsDriver Table

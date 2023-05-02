@@ -647,7 +647,7 @@ def to_adaptor_3d(curveType):
 
 
 def project_point_on_curve(crv, pnt):
-    if isinstance(crv, TopoDS_Shape):
+    if isinstance(crv, TopoDS_Edge):
         # get the curve
         crv = adapt_edge_to_curve(crv).Curve().Curve()
     else:

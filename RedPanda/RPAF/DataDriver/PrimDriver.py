@@ -36,7 +36,8 @@ from .BaseDriver import (
     Argument,
     Param,
     DataEnum,
-    ShapeRefDriver
+    ShapeRefDriver,
+    DataLabelState
 )
 from .VarDriver import (
     RealDriver,
@@ -56,18 +57,24 @@ class BoxDriver(ShapeDriver):
         self.Arguments['h'] = Argument(self.tagResource, RealDriver.ID)
         self.Arguments['w'] = Argument(self.tagResource, RealDriver.ID)
 
+        
+
     def myExecute(self, theLabel:Label)->int:
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
             dict_param[name] = argu.Value(theLabel)
-
+        Logger().debug(f'Execute {self.Type}, argu:{dict_param}s')
         trsf:RP_Trsf = dict_param['transform']
         dx = dict_param['l']
         dy = dict_param['h']
         dz = dict_param['w']
 
-        shape = make_box(dx, dy, dz)
+        try:
+            shape = make_box(dx, dy, dz)
+        except:
+            DataLabelState.SetError(theLabel, f'{dx}, {dy}, {dz} is error', True)
+            return 1
 
         shape = make_transform(shape, trsf)
 
