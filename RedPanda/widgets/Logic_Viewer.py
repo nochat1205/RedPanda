@@ -110,6 +110,14 @@ class qtViewer3d(qtBaseViewer):
 
         self.InitDriver()
 
+
+        from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
+        from OCC.Core.AIS import AIS_Shape
+        # box = BRepPrimAPI_MakeBox(10, 20, 30).Shape()
+        # self.ais = AIS_Shape(box)
+
+        # self._display.DisplayShape(box)
+
     @property
     def qApp(self):
         # reference to QApplication instance
@@ -130,14 +138,6 @@ class qtViewer3d(qtBaseViewer):
 
         # me 
         # self._dict_Context = {"default": self._dict_Context}
-
-    # @QtCore.pyqtSlot(str)
-    # def Change(self, str):
-    #     self._context
-
-    # @QtCore.pyqtSlot(str, AIS_InteractiveContext)
-    # def AddContext(self, name:str, AIS_IC:AIS_InteractiveContext):
-    #     return 
 
     def createCursors(self):
         module_pth = os.path.abspath(os.path.dirname(__file__))
@@ -176,7 +176,6 @@ class qtViewer3d(qtBaseViewer):
     def Repaint(self):
         if self._inited:
             self._display.Repaint()
-
 
     def focusInEvent(self, event):
         self.Repaint()
@@ -250,6 +249,9 @@ class qtViewer3d(qtBaseViewer):
                 [Xmin, Ymin, dx, dy] = self._drawbox
                 self._display.ZoomArea(Xmin, Ymin, Xmin + dx, Ymin + dy)
                 self._zoom_area = False
+            else:
+                pass
+                self.showContextMenu(pt)
 
         self.cursor = "arrow"
 
@@ -343,8 +345,55 @@ class qtViewer3d(qtBaseViewer):
         if not aDriver.UpdatePrs3d(self.aLabel, self.ais_dict):
             return 
 
-        Logger().info('display3d')
         for ais in self.ais_dict.values():
             self._display.Context.Display(ais, False)
 
         self._display.Viewer.Update()
+
+
+
+    def showContextMenu(self, position):
+        from PyQt5.QtWidgets import QMenu, QAction
+
+        # create a context menu
+        menu = QMenu(self)
+
+        # Create copy and paste actions for the menu
+        refAction = QAction("Ref Shape", self)
+        refAction.triggered.connect(self.GetRefSub)
+        
+        # Add the actions to the menu
+        menu.addAction(refAction)
+        
+        # Show the menu at the position of the mouse click
+        menu.exec_(self.mapToGlobal(position))
+
+    def GetRefSub(self):
+        from OCC.Core.AIS import AIS_Shape
+        from OCC.Core.StdSelect import StdSelect_BRepOwner
+        from OCC.Core.TopExp import TopExp_Explorer
+        from OCC.Core.TopoDS import TopoDS_Shape
+        print('len:', len(self._display.selected_ais_li))
+        if len(self._display.selected_ais_li) > 0:
+            owner:StdSelect_BRepOwner = StdSelect_BRepOwner.DownCast(self._display.selected_ais_li[0])
+            if owner is None:
+                print('owner is None')
+                return
+
+            subshape:TopoDS_Shape = owner.Shape()
+
+            parentAis = AIS_Shape.DownCast(owner.Selectable())
+            shape = parentAis.Shape()
+            explorer = TopExp_Explorer(shape, subshape.ShapeType())
+            i = 0
+            while explorer.More():
+                i += 1
+                if explorer.Value() == subshape:
+                    break
+                explorer.Next()
+
+            print('ind:', hash(parentAis))
+            label = self.ais_dict.GetLabel(parentAis)
+            if label:
+                print(label.GetEntry(), subshape.ShapeType(), i)
+        

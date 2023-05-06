@@ -17,6 +17,7 @@ class DisplayCtx(object):
     def __setitem__(self, key:tuple[Label, str], value):
         self.d[key] = value
         self.aisToLabel[value] = key[0]
+        print('id:', id(value), ' ', hash(value))
 
     def GetLabel(self, ais):
         return self.aisToLabel.get(ais, None)

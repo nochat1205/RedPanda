@@ -42,7 +42,9 @@ Sym_RefSubDriver_GUID = RP_GUID("22D22E76-ABCA-11d4-8F1A-0060B0EE18E8")
 
 Sym_Build3dEdgeDriver_GUID = RP_GUID("22D22E77-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_Elps2dDriver_GUID = RP_GUID("22D22E78-ABCA-11d4-8F1A-0060B0EE18E8")
-Sym_TrimmedCurve2d_GUID = RP_GUID(repr(uuid5(NAMESPACE_DNS, 'TrimmedCurve')))
+Sym_TrimmedCurve2d_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'TrimmedCurve')))
+
+
 
 class GuidLookup(object):
     def __init__(self, key_in, key_value) -> None:

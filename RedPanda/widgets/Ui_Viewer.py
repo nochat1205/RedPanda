@@ -171,6 +171,7 @@ class Viewer3d(Display3d):
         self._is_offscreen = None
 
         self.selected_shapes = []
+        self.selected_ais_li = []
         self._select_callbacks = []
         self._overlay_items = []
 
@@ -682,9 +683,11 @@ class Viewer3d(Display3d):
         self.Context.InitSelected()
 
         self.selected_shapes = []
+        self.selected_ais_li = []
         if self.Context.MoreSelected():
             if self.Context.HasSelectedShape():
                 self.selected_shapes.append(self.Context.SelectedShape())
+                self.selected_ais_li.append(self.Context.SelectedOwner())
         # callbacks
         for callback in self._select_callbacks:
             callback(self.selected_shapes, X, Y)

@@ -183,8 +183,8 @@ class Argument(object):
     def IsEdit(self):
         return self._editFlag
 
-    def Label(self, theLabel):
-        return theLabel.FindChild(self.Tag)
+    def Label(self, theLabel:Label):
+        return theLabel.FindChild(self.Tag, False)
 
     def Value(self, theLabel:Label, *args, **kwargs)->any:
         from ..DriverTable import DataDriverTable

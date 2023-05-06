@@ -1343,3 +1343,432 @@
 2023-05-06 20:51:24,175 - INFO: update Label
 2023-05-06 20:51:24,177 - INFO: display3d
 2023-05-06 20:51:24,191 - INFO: End Change: 0:1:2:18:18:18, pi
+2023-05-06 23:06:06,452 - INFO: Application Start
+2023-05-06 23:06:27,776 - INFO: New Data Label 22d22e74-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:06:27,779 - INFO: New Document
+2023-05-06 23:06:27,952 - INFO: 0:1 not have function id
+2023-05-06 23:06:27,954 - INFO: 0:1 not have function id
+2023-05-06 23:06:27,957 - INFO: New Document End
+2023-05-06 23:06:27,959 - INFO: -- NewConmand --
+2023-05-06 23:06:27,961 - INFO: -- Add New Shape --
+2023-05-06 23:06:27,967 - INFO: Entry:0:1:1, init start
+2023-05-06 23:06:27,970 - INFO: BaseInit 0:1:1 CylFace
+2023-05-06 23:06:27,972 - INFO: Entry:0:1:1:18, init start
+2023-05-06 23:06:27,974 - INFO: BaseInit 0:1:1:18 Ax3
+2023-05-06 23:06:27,976 - INFO: Entry:0:1:1:18:18, init start
+2023-05-06 23:06:27,978 - INFO: BaseInit 0:1:1:18:18 Point
+2023-05-06 23:06:27,980 - INFO: Entry:0:1:1:18:18:18, init start
+2023-05-06 23:06:27,983 - INFO: BaseInit 0:1:1:18:18:18 real
+2023-05-06 23:06:27,985 - INFO: change Label:0:1:1:18:18:18.value, None, 0
+2023-05-06 23:06:27,987 - INFO: Entry:0:1:1:18:18:18, init end
+2023-05-06 23:06:27,989 - INFO: Entry:0:1:1:18:18:19, init start
+2023-05-06 23:06:27,991 - INFO: BaseInit 0:1:1:18:18:19 real
+2023-05-06 23:06:27,993 - INFO: change Label:0:1:1:18:18:19.value, None, 0
+2023-05-06 23:06:27,995 - INFO: Entry:0:1:1:18:18:19, init end
+2023-05-06 23:06:27,997 - INFO: Entry:0:1:1:18:18:20, init start
+2023-05-06 23:06:28,001 - INFO: BaseInit 0:1:1:18:18:20 real
+2023-05-06 23:06:28,003 - INFO: change Label:0:1:1:18:18:20.value, None, 0
+2023-05-06 23:06:28,005 - INFO: Entry:0:1:1:18:18:20, init end
+2023-05-06 23:06:28,136 - INFO: Entry:0:1:1:18:18, init end
+2023-05-06 23:06:28,138 - INFO: Entry:0:1:1:18:19, init start
+2023-05-06 23:06:28,140 - INFO: BaseInit 0:1:1:18:19 Point
+2023-05-06 23:06:28,143 - INFO: Entry:0:1:1:18:19:18, init start
+2023-05-06 23:06:28,144 - INFO: BaseInit 0:1:1:18:19:18 real
+2023-05-06 23:06:28,148 - INFO: change Label:0:1:1:18:19:18.value, None, 0
+2023-05-06 23:06:28,150 - INFO: Entry:0:1:1:18:19:18, init end
+2023-05-06 23:06:28,152 - INFO: Entry:0:1:1:18:19:19, init start
+2023-05-06 23:06:28,154 - INFO: BaseInit 0:1:1:18:19:19 real
+2023-05-06 23:06:28,156 - INFO: change Label:0:1:1:18:19:19.value, None, 0
+2023-05-06 23:06:28,158 - INFO: Entry:0:1:1:18:19:19, init end
+2023-05-06 23:06:28,160 - INFO: Entry:0:1:1:18:19:20, init start
+2023-05-06 23:06:28,163 - INFO: BaseInit 0:1:1:18:19:20 real
+2023-05-06 23:06:28,165 - INFO: change Label:0:1:1:18:19:20.value, None, 0
+2023-05-06 23:06:28,168 - INFO: Entry:0:1:1:18:19:20, init end
+2023-05-06 23:06:28,171 - INFO: Entry:0:1:1:18:19, init end
+2023-05-06 23:06:28,173 - INFO: Entry:0:1:1:18:20, init start
+2023-05-06 23:06:28,175 - INFO: BaseInit 0:1:1:18:20 Point
+2023-05-06 23:06:28,177 - INFO: Entry:0:1:1:18:20:18, init start
+2023-05-06 23:06:28,180 - INFO: BaseInit 0:1:1:18:20:18 real
+2023-05-06 23:06:28,183 - INFO: change Label:0:1:1:18:20:18.value, None, 0
+2023-05-06 23:06:28,185 - INFO: Entry:0:1:1:18:20:18, init end
+2023-05-06 23:06:28,187 - INFO: Entry:0:1:1:18:20:19, init start
+2023-05-06 23:06:28,190 - INFO: BaseInit 0:1:1:18:20:19 real
+2023-05-06 23:06:28,192 - INFO: change Label:0:1:1:18:20:19.value, None, 0
+2023-05-06 23:06:28,194 - INFO: Entry:0:1:1:18:20:19, init end
+2023-05-06 23:06:28,197 - INFO: Entry:0:1:1:18:20:20, init start
+2023-05-06 23:06:28,199 - INFO: BaseInit 0:1:1:18:20:20 real
+2023-05-06 23:06:28,202 - INFO: change Label:0:1:1:18:20:20.value, None, 0
+2023-05-06 23:06:28,204 - INFO: Entry:0:1:1:18:20:20, init end
+2023-05-06 23:06:28,206 - INFO: Entry:0:1:1:18:20, init end
+2023-05-06 23:06:28,317 - INFO: Entry:0:1:1:18, init end
+2023-05-06 23:06:28,320 - INFO: Entry:0:1:1:19, init start
+2023-05-06 23:06:28,322 - INFO: BaseInit 0:1:1:19 real
+2023-05-06 23:06:28,324 - INFO: change Label:0:1:1:19.value, None, 0
+2023-05-06 23:06:28,325 - INFO: Entry:0:1:1:19, init end
+2023-05-06 23:06:28,328 - INFO: Entry:0:1:1:20, init start
+2023-05-06 23:06:28,329 - INFO: BaseInit 0:1:1:20 real
+2023-05-06 23:06:28,333 - INFO: change Label:0:1:1:20.value, None, 0
+2023-05-06 23:06:28,336 - INFO: Entry:0:1:1:20, init end
+2023-05-06 23:06:28,420 - INFO: -- commit command --
+2023-05-06 23:06:28,441 - INFO: New Data Label 22d22e74-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:06:29,291 - INFO: Selected Item:New CylFace
+2023-05-06 23:06:32,505 - INFO: Start Change: 0:1:1:19, 3
+2023-05-06 23:06:32,507 - INFO: -- NewConmand --
+2023-05-06 23:06:32,510 - INFO: 0:1 not have function id
+2023-05-06 23:06:32,513 - INFO: -- commit command --
+2023-05-06 23:06:32,517 - INFO: 0:1 not have function id
+2023-05-06 23:06:32,519 - INFO: 0:1 not have function id
+2023-05-06 23:06:32,521 - INFO: update Label
+2023-05-06 23:06:32,523 - INFO: End Change: 0:1:1:19, 3
+2023-05-06 23:06:33,557 - INFO: Start Change: 0:1:1:20, 4
+2023-05-06 23:06:33,559 - INFO: -- NewConmand --
+2023-05-06 23:06:33,686 - INFO: 0:1 not have function id
+2023-05-06 23:06:33,688 - INFO: -- commit command --
+2023-05-06 23:06:33,691 - INFO: 0:1 not have function id
+2023-05-06 23:06:33,693 - INFO: 0:1 not have function id
+2023-05-06 23:06:33,695 - INFO: update Label
+2023-05-06 23:06:33,712 - INFO: display3d
+2023-05-06 23:06:33,877 - INFO: End Change: 0:1:1:20, 4
+2023-05-06 23:06:39,922 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:06:39,925 - INFO: -- NewConmand --
+2023-05-06 23:06:39,926 - INFO: -- Add New Shape --
+2023-05-06 23:06:39,928 - INFO: Entry:0:1:2, init start
+2023-05-06 23:06:39,932 - INFO: BaseInit 0:1:2 BuildEdge3d
+2023-05-06 23:06:39,935 - INFO: Entry:0:1:2:18, init start
+2023-05-06 23:06:39,938 - INFO: BaseInit 0:1:2:18 ShapeRef
+2023-05-06 23:06:39,955 - INFO: Entry:0:1:2:19, init start
+2023-05-06 23:06:39,957 - INFO: BaseInit 0:1:2:19 ShapeRef
+2023-05-06 23:06:39,963 - INFO: -- commit command --
+2023-05-06 23:06:39,967 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:06:41,271 - INFO: Selected Item:New BuildEdge3d
+2023-05-06 23:08:07,787 - INFO: Application Start
+2023-05-06 23:08:16,458 - INFO: New Data Label 22d22e74-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:08:16,461 - INFO: New Document
+2023-05-06 23:08:16,465 - INFO: 0:1 not have function id
+2023-05-06 23:08:16,467 - INFO: 0:1 not have function id
+2023-05-06 23:08:16,471 - INFO: New Document End
+2023-05-06 23:08:16,472 - INFO: -- NewConmand --
+2023-05-06 23:08:16,474 - INFO: -- Add New Shape --
+2023-05-06 23:08:16,476 - INFO: Entry:0:1:1, init start
+2023-05-06 23:08:16,478 - INFO: BaseInit 0:1:1 CylFace
+2023-05-06 23:08:16,481 - INFO: Entry:0:1:1:18, init start
+2023-05-06 23:08:16,484 - INFO: BaseInit 0:1:1:18 Ax3
+2023-05-06 23:08:16,486 - INFO: Entry:0:1:1:18:18, init start
+2023-05-06 23:08:16,488 - INFO: BaseInit 0:1:1:18:18 Point
+2023-05-06 23:08:16,490 - INFO: Entry:0:1:1:18:18:18, init start
+2023-05-06 23:08:16,492 - INFO: BaseInit 0:1:1:18:18:18 real
+2023-05-06 23:08:16,494 - INFO: change Label:0:1:1:18:18:18.value, None, 0
+2023-05-06 23:08:16,498 - INFO: Entry:0:1:1:18:18:18, init end
+2023-05-06 23:08:16,501 - INFO: Entry:0:1:1:18:18:19, init start
+2023-05-06 23:08:16,504 - INFO: BaseInit 0:1:1:18:18:19 real
+2023-05-06 23:08:16,506 - INFO: change Label:0:1:1:18:18:19.value, None, 0
+2023-05-06 23:08:16,508 - INFO: Entry:0:1:1:18:18:19, init end
+2023-05-06 23:08:16,510 - INFO: Entry:0:1:1:18:18:20, init start
+2023-05-06 23:08:16,513 - INFO: BaseInit 0:1:1:18:18:20 real
+2023-05-06 23:08:16,516 - INFO: change Label:0:1:1:18:18:20.value, None, 0
+2023-05-06 23:08:16,518 - INFO: Entry:0:1:1:18:18:20, init end
+2023-05-06 23:08:16,522 - INFO: Entry:0:1:1:18:18, init end
+2023-05-06 23:08:16,524 - INFO: Entry:0:1:1:18:19, init start
+2023-05-06 23:08:16,526 - INFO: BaseInit 0:1:1:18:19 Point
+2023-05-06 23:08:16,528 - INFO: Entry:0:1:1:18:19:18, init start
+2023-05-06 23:08:16,533 - INFO: BaseInit 0:1:1:18:19:18 real
+2023-05-06 23:08:16,536 - INFO: change Label:0:1:1:18:19:18.value, None, 0
+2023-05-06 23:08:16,539 - INFO: Entry:0:1:1:18:19:18, init end
+2023-05-06 23:08:16,541 - INFO: Entry:0:1:1:18:19:19, init start
+2023-05-06 23:08:16,543 - INFO: BaseInit 0:1:1:18:19:19 real
+2023-05-06 23:08:16,546 - INFO: change Label:0:1:1:18:19:19.value, None, 0
+2023-05-06 23:08:16,550 - INFO: Entry:0:1:1:18:19:19, init end
+2023-05-06 23:08:16,553 - INFO: Entry:0:1:1:18:19:20, init start
+2023-05-06 23:08:16,555 - INFO: BaseInit 0:1:1:18:19:20 real
+2023-05-06 23:08:16,557 - INFO: change Label:0:1:1:18:19:20.value, None, 0
+2023-05-06 23:08:16,560 - INFO: Entry:0:1:1:18:19:20, init end
+2023-05-06 23:08:16,564 - INFO: Entry:0:1:1:18:19, init end
+2023-05-06 23:08:16,567 - INFO: Entry:0:1:1:18:20, init start
+2023-05-06 23:08:16,569 - INFO: BaseInit 0:1:1:18:20 Point
+2023-05-06 23:08:16,571 - INFO: Entry:0:1:1:18:20:18, init start
+2023-05-06 23:08:16,573 - INFO: BaseInit 0:1:1:18:20:18 real
+2023-05-06 23:08:16,575 - INFO: change Label:0:1:1:18:20:18.value, None, 0
+2023-05-06 23:08:16,577 - INFO: Entry:0:1:1:18:20:18, init end
+2023-05-06 23:08:16,582 - INFO: Entry:0:1:1:18:20:19, init start
+2023-05-06 23:08:16,586 - INFO: BaseInit 0:1:1:18:20:19 real
+2023-05-06 23:08:16,589 - INFO: change Label:0:1:1:18:20:19.value, None, 0
+2023-05-06 23:08:16,591 - INFO: Entry:0:1:1:18:20:19, init end
+2023-05-06 23:08:16,593 - INFO: Entry:0:1:1:18:20:20, init start
+2023-05-06 23:08:16,595 - INFO: BaseInit 0:1:1:18:20:20 real
+2023-05-06 23:08:16,598 - INFO: change Label:0:1:1:18:20:20.value, None, 0
+2023-05-06 23:08:16,667 - INFO: Entry:0:1:1:18:20:20, init end
+2023-05-06 23:08:16,669 - INFO: Entry:0:1:1:18:20, init end
+2023-05-06 23:08:16,672 - INFO: Entry:0:1:1:18, init end
+2023-05-06 23:08:16,674 - INFO: Entry:0:1:1:19, init start
+2023-05-06 23:08:16,676 - INFO: BaseInit 0:1:1:19 real
+2023-05-06 23:08:16,678 - INFO: change Label:0:1:1:19.value, None, 0
+2023-05-06 23:08:16,681 - INFO: Entry:0:1:1:19, init end
+2023-05-06 23:08:16,683 - INFO: Entry:0:1:1:20, init start
+2023-05-06 23:08:16,685 - INFO: BaseInit 0:1:1:20 real
+2023-05-06 23:08:16,687 - INFO: change Label:0:1:1:20.value, None, 0
+2023-05-06 23:08:16,688 - INFO: Entry:0:1:1:20, init end
+2023-05-06 23:08:16,694 - INFO: -- commit command --
+2023-05-06 23:08:16,701 - INFO: New Data Label 22d22e74-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:08:17,565 - INFO: Selected Item:New CylFace
+2023-05-06 23:08:20,222 - INFO: Start Change: 0:1:1:19, 3
+2023-05-06 23:08:20,224 - INFO: -- NewConmand --
+2023-05-06 23:08:20,227 - INFO: 0:1 not have function id
+2023-05-06 23:08:20,229 - INFO: -- commit command --
+2023-05-06 23:08:20,233 - INFO: 0:1 not have function id
+2023-05-06 23:08:20,235 - INFO: 0:1 not have function id
+2023-05-06 23:08:20,237 - INFO: update Label
+2023-05-06 23:08:20,239 - INFO: End Change: 0:1:1:19, 3
+2023-05-06 23:08:21,786 - INFO: Start Change: 0:1:1:20, 4
+2023-05-06 23:08:21,789 - INFO: -- NewConmand --
+2023-05-06 23:08:21,792 - INFO: 0:1 not have function id
+2023-05-06 23:08:21,794 - INFO: -- commit command --
+2023-05-06 23:08:21,800 - INFO: 0:1 not have function id
+2023-05-06 23:08:21,803 - INFO: 0:1 not have function id
+2023-05-06 23:08:21,806 - INFO: update Label
+2023-05-06 23:08:21,810 - INFO: display3d
+2023-05-06 23:08:21,820 - INFO: End Change: 0:1:1:20, 4
+2023-05-06 23:08:32,558 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:08:32,561 - INFO: -- NewConmand --
+2023-05-06 23:08:32,564 - INFO: -- Add New Shape --
+2023-05-06 23:08:32,566 - INFO: Entry:0:1:2, init start
+2023-05-06 23:08:32,569 - INFO: BaseInit 0:1:2 Ellipse2d
+2023-05-06 23:08:32,572 - INFO: Entry:0:1:2:18, init start
+2023-05-06 23:08:32,573 - INFO: BaseInit 0:1:2:18 Ax2d
+2023-05-06 23:08:32,575 - INFO: Entry:0:1:2:18:18, init start
+2023-05-06 23:08:32,577 - INFO: BaseInit 0:1:2:18:18 pnt2d
+2023-05-06 23:08:32,580 - INFO: Entry:0:1:2:18:18:18, init start
+2023-05-06 23:08:32,582 - INFO: BaseInit 0:1:2:18:18:18 real
+2023-05-06 23:08:32,585 - INFO: change Label:0:1:2:18:18:18.value, None, 0
+2023-05-06 23:08:32,588 - INFO: Entry:0:1:2:18:18:18, init end
+2023-05-06 23:08:32,591 - INFO: Entry:0:1:2:18:18:19, init start
+2023-05-06 23:08:32,594 - INFO: BaseInit 0:1:2:18:18:19 real
+2023-05-06 23:08:32,599 - INFO: change Label:0:1:2:18:18:19.value, None, 0
+2023-05-06 23:08:32,601 - INFO: Entry:0:1:2:18:18:19, init end
+2023-05-06 23:08:32,603 - INFO: Entry:0:1:2:18:18, init end
+2023-05-06 23:08:32,605 - INFO: Entry:0:1:2:18:19, init start
+2023-05-06 23:08:32,607 - INFO: BaseInit 0:1:2:18:19 pnt2d
+2023-05-06 23:08:32,609 - INFO: Entry:0:1:2:18:19:18, init start
+2023-05-06 23:08:32,611 - INFO: BaseInit 0:1:2:18:19:18 real
+2023-05-06 23:08:32,614 - INFO: change Label:0:1:2:18:19:18.value, None, 0
+2023-05-06 23:08:32,616 - INFO: Entry:0:1:2:18:19:18, init end
+2023-05-06 23:08:32,618 - INFO: Entry:0:1:2:18:19:19, init start
+2023-05-06 23:08:32,620 - INFO: BaseInit 0:1:2:18:19:19 real
+2023-05-06 23:08:32,622 - INFO: change Label:0:1:2:18:19:19.value, None, 0
+2023-05-06 23:08:32,624 - INFO: Entry:0:1:2:18:19:19, init end
+2023-05-06 23:08:32,626 - INFO: Entry:0:1:2:18:19, init end
+2023-05-06 23:08:32,716 - INFO: Entry:0:1:2:19, init start
+2023-05-06 23:08:32,719 - INFO: BaseInit 0:1:2:19 real
+2023-05-06 23:08:32,721 - INFO: change Label:0:1:2:19.value, None, 0
+2023-05-06 23:08:32,723 - INFO: Entry:0:1:2:19, init end
+2023-05-06 23:08:32,725 - INFO: Entry:0:1:2:20, init start
+2023-05-06 23:08:32,727 - INFO: BaseInit 0:1:2:20 real
+2023-05-06 23:08:32,729 - INFO: change Label:0:1:2:20.value, None, 0
+2023-05-06 23:08:32,732 - INFO: Entry:0:1:2:20, init end
+2023-05-06 23:08:32,736 - INFO: -- commit command --
+2023-05-06 23:08:32,739 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:08:33,412 - INFO: Selected Item:New Ellipse2d
+2023-05-06 23:08:38,220 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:08:38,222 - INFO: -- NewConmand --
+2023-05-06 23:08:38,224 - INFO: -- Add New Shape --
+2023-05-06 23:08:38,225 - INFO: Entry:0:1:3, init start
+2023-05-06 23:08:38,227 - INFO: BaseInit 0:1:3 BuildEdge3d
+2023-05-06 23:08:38,231 - INFO: Entry:0:1:3:18, init start
+2023-05-06 23:08:38,234 - INFO: BaseInit 0:1:3:18 ShapeRef
+2023-05-06 23:08:38,238 - INFO: Entry:0:1:3:19, init start
+2023-05-06 23:08:38,240 - INFO: BaseInit 0:1:3:19 ShapeRef
+2023-05-06 23:08:38,247 - INFO: -- commit command --
+2023-05-06 23:08:38,250 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:08:39,227 - INFO: Selected Item:New Ellipse2d
+2023-05-06 23:08:40,365 - INFO: Selected Item:New BuildEdge3d
+2023-05-06 23:10:04,431 - INFO: Application Start
+2023-05-06 23:10:09,372 - INFO: New Data Label 22d22e74-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:10:09,374 - INFO: New Document
+2023-05-06 23:10:09,377 - INFO: 0:1 not have function id
+2023-05-06 23:10:09,380 - INFO: 0:1 not have function id
+2023-05-06 23:10:09,384 - INFO: New Document End
+2023-05-06 23:10:09,386 - INFO: -- NewConmand --
+2023-05-06 23:10:09,388 - INFO: -- Add New Shape --
+2023-05-06 23:10:09,389 - INFO: Entry:0:1:1, init start
+2023-05-06 23:10:09,391 - INFO: BaseInit 0:1:1 CylFace
+2023-05-06 23:10:09,393 - INFO: Entry:0:1:1:18, init start
+2023-05-06 23:10:09,396 - INFO: BaseInit 0:1:1:18 Ax3
+2023-05-06 23:10:09,402 - INFO: Entry:0:1:1:18:18, init start
+2023-05-06 23:10:09,404 - INFO: BaseInit 0:1:1:18:18 Point
+2023-05-06 23:10:09,408 - INFO: Entry:0:1:1:18:18:18, init start
+2023-05-06 23:10:09,409 - INFO: BaseInit 0:1:1:18:18:18 real
+2023-05-06 23:10:09,411 - INFO: change Label:0:1:1:18:18:18.value, None, 0
+2023-05-06 23:10:09,415 - INFO: Entry:0:1:1:18:18:18, init end
+2023-05-06 23:10:09,419 - INFO: Entry:0:1:1:18:18:19, init start
+2023-05-06 23:10:09,423 - INFO: BaseInit 0:1:1:18:18:19 real
+2023-05-06 23:10:09,425 - INFO: change Label:0:1:1:18:18:19.value, None, 0
+2023-05-06 23:10:09,427 - INFO: Entry:0:1:1:18:18:19, init end
+2023-05-06 23:10:09,429 - INFO: Entry:0:1:1:18:18:20, init start
+2023-05-06 23:10:09,433 - INFO: BaseInit 0:1:1:18:18:20 real
+2023-05-06 23:10:09,435 - INFO: change Label:0:1:1:18:18:20.value, None, 0
+2023-05-06 23:10:09,437 - INFO: Entry:0:1:1:18:18:20, init end
+2023-05-06 23:10:09,439 - INFO: Entry:0:1:1:18:18, init end
+2023-05-06 23:10:09,441 - INFO: Entry:0:1:1:18:19, init start
+2023-05-06 23:10:09,443 - INFO: BaseInit 0:1:1:18:19 Point
+2023-05-06 23:10:09,447 - INFO: Entry:0:1:1:18:19:18, init start
+2023-05-06 23:10:09,449 - INFO: BaseInit 0:1:1:18:19:18 real
+2023-05-06 23:10:09,451 - INFO: change Label:0:1:1:18:19:18.value, None, 0
+2023-05-06 23:10:09,453 - INFO: Entry:0:1:1:18:19:18, init end
+2023-05-06 23:10:09,455 - INFO: Entry:0:1:1:18:19:19, init start
+2023-05-06 23:10:09,457 - INFO: BaseInit 0:1:1:18:19:19 real
+2023-05-06 23:10:09,459 - INFO: change Label:0:1:1:18:19:19.value, None, 0
+2023-05-06 23:10:09,461 - INFO: Entry:0:1:1:18:19:19, init end
+2023-05-06 23:10:09,465 - INFO: Entry:0:1:1:18:19:20, init start
+2023-05-06 23:10:09,467 - INFO: BaseInit 0:1:1:18:19:20 real
+2023-05-06 23:10:09,469 - INFO: change Label:0:1:1:18:19:20.value, None, 0
+2023-05-06 23:10:09,471 - INFO: Entry:0:1:1:18:19:20, init end
+2023-05-06 23:10:09,473 - INFO: Entry:0:1:1:18:19, init end
+2023-05-06 23:10:09,475 - INFO: Entry:0:1:1:18:20, init start
+2023-05-06 23:10:09,477 - INFO: BaseInit 0:1:1:18:20 Point
+2023-05-06 23:10:09,481 - INFO: Entry:0:1:1:18:20:18, init start
+2023-05-06 23:10:09,485 - INFO: BaseInit 0:1:1:18:20:18 real
+2023-05-06 23:10:09,487 - INFO: change Label:0:1:1:18:20:18.value, None, 0
+2023-05-06 23:10:09,489 - INFO: Entry:0:1:1:18:20:18, init end
+2023-05-06 23:10:09,491 - INFO: Entry:0:1:1:18:20:19, init start
+2023-05-06 23:10:09,493 - INFO: BaseInit 0:1:1:18:20:19 real
+2023-05-06 23:10:09,495 - INFO: change Label:0:1:1:18:20:19.value, None, 0
+2023-05-06 23:10:09,498 - INFO: Entry:0:1:1:18:20:19, init end
+2023-05-06 23:10:09,500 - INFO: Entry:0:1:1:18:20:20, init start
+2023-05-06 23:10:09,502 - INFO: BaseInit 0:1:1:18:20:20 real
+2023-05-06 23:10:09,504 - INFO: change Label:0:1:1:18:20:20.value, None, 0
+2023-05-06 23:10:09,506 - INFO: Entry:0:1:1:18:20:20, init end
+2023-05-06 23:10:09,509 - INFO: Entry:0:1:1:18:20, init end
+2023-05-06 23:10:09,513 - INFO: Entry:0:1:1:18, init end
+2023-05-06 23:10:09,516 - INFO: Entry:0:1:1:19, init start
+2023-05-06 23:10:09,518 - INFO: BaseInit 0:1:1:19 real
+2023-05-06 23:10:09,520 - INFO: change Label:0:1:1:19.value, None, 0
+2023-05-06 23:10:09,522 - INFO: Entry:0:1:1:19, init end
+2023-05-06 23:10:09,524 - INFO: Entry:0:1:1:20, init start
+2023-05-06 23:10:09,526 - INFO: BaseInit 0:1:1:20 real
+2023-05-06 23:10:09,528 - INFO: change Label:0:1:1:20.value, None, 0
+2023-05-06 23:10:09,532 - INFO: Entry:0:1:1:20, init end
+2023-05-06 23:10:09,537 - INFO: -- commit command --
+2023-05-06 23:10:09,541 - INFO: New Data Label 22d22e74-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:10:12,077 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:10:12,080 - INFO: -- NewConmand --
+2023-05-06 23:10:12,083 - INFO: -- Add New Shape --
+2023-05-06 23:10:12,085 - INFO: Entry:0:1:2, init start
+2023-05-06 23:10:12,087 - INFO: BaseInit 0:1:2 Ellipse2d
+2023-05-06 23:10:12,089 - INFO: Entry:0:1:2:18, init start
+2023-05-06 23:10:12,091 - INFO: BaseInit 0:1:2:18 Ax2d
+2023-05-06 23:10:12,093 - INFO: Entry:0:1:2:18:18, init start
+2023-05-06 23:10:12,095 - INFO: BaseInit 0:1:2:18:18 pnt2d
+2023-05-06 23:10:12,097 - INFO: Entry:0:1:2:18:18:18, init start
+2023-05-06 23:10:12,100 - INFO: BaseInit 0:1:2:18:18:18 real
+2023-05-06 23:10:12,102 - INFO: change Label:0:1:2:18:18:18.value, None, 0
+2023-05-06 23:10:12,104 - INFO: Entry:0:1:2:18:18:18, init end
+2023-05-06 23:10:12,106 - INFO: Entry:0:1:2:18:18:19, init start
+2023-05-06 23:10:12,108 - INFO: BaseInit 0:1:2:18:18:19 real
+2023-05-06 23:10:12,110 - INFO: change Label:0:1:2:18:18:19.value, None, 0
+2023-05-06 23:10:12,112 - INFO: Entry:0:1:2:18:18:19, init end
+2023-05-06 23:10:12,114 - INFO: Entry:0:1:2:18:18, init end
+2023-05-06 23:10:12,117 - INFO: Entry:0:1:2:18:19, init start
+2023-05-06 23:10:12,119 - INFO: BaseInit 0:1:2:18:19 pnt2d
+2023-05-06 23:10:12,121 - INFO: Entry:0:1:2:18:19:18, init start
+2023-05-06 23:10:12,123 - INFO: BaseInit 0:1:2:18:19:18 real
+2023-05-06 23:10:12,125 - INFO: change Label:0:1:2:18:19:18.value, None, 0
+2023-05-06 23:10:12,127 - INFO: Entry:0:1:2:18:19:18, init end
+2023-05-06 23:10:12,130 - INFO: Entry:0:1:2:18:19:19, init start
+2023-05-06 23:10:12,132 - INFO: BaseInit 0:1:2:18:19:19 real
+2023-05-06 23:10:12,135 - INFO: change Label:0:1:2:18:19:19.value, None, 0
+2023-05-06 23:10:12,137 - INFO: Entry:0:1:2:18:19:19, init end
+2023-05-06 23:10:12,138 - INFO: Entry:0:1:2:18:19, init end
+2023-05-06 23:10:12,143 - INFO: Entry:0:1:2:19, init start
+2023-05-06 23:10:12,146 - INFO: BaseInit 0:1:2:19 real
+2023-05-06 23:10:12,152 - INFO: change Label:0:1:2:19.value, None, 0
+2023-05-06 23:10:12,155 - INFO: Entry:0:1:2:19, init end
+2023-05-06 23:10:12,156 - INFO: Entry:0:1:2:20, init start
+2023-05-06 23:10:12,158 - INFO: BaseInit 0:1:2:20 real
+2023-05-06 23:10:12,160 - INFO: change Label:0:1:2:20.value, None, 0
+2023-05-06 23:10:12,164 - INFO: Entry:0:1:2:20, init end
+2023-05-06 23:10:12,169 - INFO: -- commit command --
+2023-05-06 23:10:12,171 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:10:15,772 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-06 23:10:15,774 - INFO: -- NewConmand --
+2023-05-06 23:10:15,776 - INFO: -- Add New Shape --
+2023-05-06 23:10:15,778 - INFO: Entry:0:1:3, init start
+2023-05-06 23:10:15,783 - INFO: BaseInit 0:1:3 BuildEdge3d
+2023-05-06 23:10:15,785 - INFO: Entry:0:1:3:18, init start
+2023-05-06 23:10:15,787 - INFO: BaseInit 0:1:3:18 ShapeRef
+2023-05-06 23:10:15,791 - INFO: Entry:0:1:3:19, init start
+2023-05-06 23:10:15,793 - INFO: BaseInit 0:1:3:19 ShapeRef
+2023-05-06 23:10:15,800 - INFO: -- commit command --
+2023-05-06 23:10:15,805 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-06 23:10:16,753 - INFO: Selected Item:New BuildEdge3d
+2023-05-06 23:10:36,967 - INFO: Start Change: 0:1:3:18, 0:1:1
+2023-05-06 23:10:36,969 - INFO: -- NewConmand --
+2023-05-06 23:10:37,099 - INFO: 0:1:3:18 ref 0:1:1 
+2023-05-06 23:10:37,103 - INFO: 0:1 not have function id
+2023-05-06 23:10:37,105 - INFO: -- commit command --
+2023-05-06 23:10:37,142 - INFO: 0:1 not have function id
+2023-05-06 23:10:37,144 - INFO: 0:1 not have function id
+2023-05-06 23:10:37,148 - INFO: update Label
+2023-05-06 23:10:37,152 - INFO: End Change: 0:1:3:18, 0:1:1
+2023-05-06 23:10:37,191 - INFO: Start Change: 0:1:3:19, Null
+2023-05-06 23:10:37,193 - INFO: -- NewConmand --
+2023-05-06 23:10:37,201 - INFO: 0:1 not have function id
+2023-05-06 23:10:37,203 - INFO: -- commit command --
+2023-05-06 23:10:37,209 - INFO: 0:1 not have function id
+2023-05-06 23:10:37,211 - INFO: 0:1 not have function id
+2023-05-06 23:10:37,215 - INFO: update Label
+2023-05-06 23:10:37,217 - INFO: End Change: 0:1:3:19, Null
+2023-05-06 23:10:46,637 - INFO: Start Change: 0:1:3:19, 0:1:2
+2023-05-06 23:10:46,639 - INFO: -- NewConmand --
+2023-05-06 23:10:46,641 - INFO: 0:1:3:19 ref 0:1:2 
+2023-05-06 23:10:46,643 - INFO: 0:1 not have function id
+2023-05-06 23:10:46,648 - INFO: -- commit command --
+2023-05-06 23:10:46,659 - INFO: 0:1 not have function id
+2023-05-06 23:10:46,662 - INFO: 0:1 not have function id
+2023-05-06 23:10:46,666 - INFO: update Label
+2023-05-06 23:10:46,669 - INFO: End Change: 0:1:3:19, 0:1:2
+2023-05-06 23:10:49,553 - INFO: Start Change: 0:1:1:19, 3
+2023-05-06 23:10:49,555 - INFO: -- NewConmand --
+2023-05-06 23:10:49,581 - INFO: 0:1 not have function id
+2023-05-06 23:10:49,584 - INFO: 0:1 not have function id
+2023-05-06 23:10:49,586 - INFO: -- commit command --
+2023-05-06 23:10:49,590 - INFO: 0:1 not have function id
+2023-05-06 23:10:49,591 - INFO: 0:1 not have function id
+2023-05-06 23:10:49,594 - INFO: update Label
+2023-05-06 23:10:49,597 - INFO: End Change: 0:1:1:19, 3
+2023-05-06 23:10:50,643 - INFO: Start Change: 0:1:1:20, 4
+2023-05-06 23:10:50,647 - INFO: -- NewConmand --
+2023-05-06 23:10:50,655 - INFO: 0:1 not have function id
+2023-05-06 23:10:50,657 - INFO: 0:1 not have function id
+2023-05-06 23:10:50,659 - INFO: -- commit command --
+2023-05-06 23:10:50,662 - INFO: 0:1 not have function id
+2023-05-06 23:10:50,665 - INFO: 0:1 not have function id
+2023-05-06 23:10:50,667 - INFO: update Label
+2023-05-06 23:10:50,669 - INFO: End Change: 0:1:1:20, 4
+2023-05-06 23:10:54,416 - INFO: Start Change: 0:1:2:19, 3
+2023-05-06 23:10:54,419 - INFO: -- NewConmand --
+2023-05-06 23:10:54,421 - INFO: 0:1 not have function id
+2023-05-06 23:10:54,423 - INFO: 0:1 not have function id
+2023-05-06 23:10:54,425 - INFO: -- commit command --
+2023-05-06 23:10:54,428 - INFO: 0:1 not have function id
+2023-05-06 23:10:54,432 - INFO: 0:1 not have function id
+2023-05-06 23:10:54,435 - INFO: update Label
+2023-05-06 23:10:54,437 - INFO: End Change: 0:1:2:19, 3
+2023-05-06 23:10:55,969 - INFO: Start Change: 0:1:2:20, 1
+2023-05-06 23:10:55,971 - INFO: -- NewConmand --
+2023-05-06 23:10:55,973 - INFO: 0:1 not have function id
+2023-05-06 23:10:55,977 - INFO: 0:1 not have function id
+2023-05-06 23:10:55,979 - INFO: -- commit command --
+2023-05-06 23:10:55,982 - INFO: 0:1 not have function id
+2023-05-06 23:10:55,985 - INFO: 0:1 not have function id
+2023-05-06 23:10:55,987 - INFO: update Label
+2023-05-06 23:10:55,989 - INFO: End Change: 0:1:2:20, 1
+2023-05-06 23:11:01,247 - INFO: Start Change: 0:1:2:18:19:18, 2
+2023-05-06 23:11:01,250 - INFO: -- NewConmand --
+2023-05-06 23:11:01,439 - INFO: 0:1 not have function id
+2023-05-06 23:11:01,576 - INFO: 0:1 not have function id
+2023-05-06 23:11:01,580 - INFO: -- commit command --
+2023-05-06 23:11:01,584 - INFO: 0:1 not have function id
+2023-05-06 23:11:01,587 - INFO: 0:1 not have function id
+2023-05-06 23:11:01,590 - INFO: update Label
+2023-05-06 23:11:01,594 - INFO: display3d
+2023-05-06 23:11:02,473 - INFO: End Change: 0:1:2:18:19:18, 2
+2023-05-06 23:12:07,258 - INFO: key: code 16777248 not mapped to any function

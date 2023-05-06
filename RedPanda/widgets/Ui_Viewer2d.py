@@ -680,10 +680,6 @@ class Viewer2d(Display3d):
             if self.Context.HasSelectedShape():
                 ais = AIS_Shape.DownCast(self.Context.SelectedInteractive())
                 self.selected_ais_li.append(ais )
-            self.Context.NextSelected()
-
-        # highlight newly selected unhighlight those no longer selected
-        self.Context.UpdateSelected(True)
 
         return self.selected_ais_li[:]
     
