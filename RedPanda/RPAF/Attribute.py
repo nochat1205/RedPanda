@@ -151,8 +151,9 @@ Lookup_Attr = GuidLookup(map(lambda x:x.GetID(), attr_li), attr_li)
 # data translate
 def FromText(theType:type, text:str):
     if theType == TDataStd_Real:
-        return float(text)
+        from math import pi
+        return eval(text)
     elif theType == TDataStd_Integer:
         return int(text)
-    
+
     return text

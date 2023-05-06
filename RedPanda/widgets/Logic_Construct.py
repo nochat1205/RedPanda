@@ -66,6 +66,8 @@ class Logic_Construct(QtWidgets.QTreeWidget):
 
     def RemoveItem(self, theLabel):
         item:QTreeWidgetItem = self.treeItem[theLabel]
+        for ind in range(item.childCount()):
+            self.RemoveItem(item.child(ind).label)
 
         parentItem = item.parent()
         parentItem.takeChild(parentItem.indexOfChild(item))

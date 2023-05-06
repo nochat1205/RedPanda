@@ -104,7 +104,7 @@ class AFItemFactory:
             return ArrayItem(name, aLabel, parent)
 
         elif isinstance(aDriver, ShapeRefDriver):
-            return VarItem(name, aLabel, parent)
+            return RefItem(name, aLabel, parent)
 
         elif isinstance(aDriver, VarDriver):
             return VarItem(name, aLabel, parent)
@@ -171,6 +171,62 @@ class VarItem(AFItem):
     def Update(self):
         self.textContainer.UpdateValue (self.driver.GetTextValue(self.label))
         self._setState()
+
+class RefItem(AFItem):
+        
+    def _setui(self):
+        # data 
+        line = myLine()
+        line.UpdateValue(self.driver.GetTextValue(self.label))
+        tree:QTreeWidget = self.treeWidget()
+        tree.setItemWidget(self, 1, line)
+        self.textContainer:myLine = line
+
+        # state
+        self._setState()
+
+        # setchild
+        self._c_setChild()
+
+    def _setChild(self):
+        self.driver:ShapeRefDriver
+        refLabel = self.refLabel
+        if refLabel:
+            adriver = refLabel.GetDriver()
+            dt = adriver.GetNamedArgument(refLabel)
+            for name, sub in dt.items():
+                AFItemFactory.GetItem(name, sub, self)
+
+    def _c_setChild(self):
+        if 'refLabel' not in self.__dict__:
+            self.refLabel = None
+
+        refLabel = self.driver.GetRefLabel(self.label)
+        if self.refLabel != refLabel:
+            for ind in range(self.childCount()):
+                self.treeWidget().RemoveItem(self.child(ind).label)
+
+            self.refLabel = refLabel
+            self._setChild()
+        else:
+            pass
+
+    def Update(self):
+        # update self
+        aLabel = self.label
+        self.driver:ShapeRefDriver
+        entry = self.driver.GetTextValue(aLabel)
+        self.textContainer.UpdateValue(entry)
+        
+        self._setState()
+
+        self._c_setChild()
+
+    @property
+    def SigChange(self):
+        return self.textContainer.SigChange
+
+
 
 class ArrayItem(AFItem):
     @property

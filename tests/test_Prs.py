@@ -19,11 +19,14 @@ def test_Arrow(display:Viewer3d):
     # display.DisplayShape(box)
 
     aStruc = Graphic3d_Structure(display._struc_mgr)
-    # Prs3d_Arrow.DrawShaded(gp_Ax1(), 0.2, 5, 0.5, 1, 2)
-    Prs3d_Arrow.DrawSegments(gp_Pnt(), gp_Dir(), )
-    Prs3d_Arrow.Draw(aStruc.CurrentGroup(), gp_Pnt(), gp_Dir(), radians(30), 1)
+    aTris = Prs3d_Arrow.DrawShaded(gp_Ax1(), 1.0, 15, 3, 4, 10)
+    # Prs3d_Arrow.DrawSegments(gp_Pnt(), gp_Dir(), )
+    # Prs3d_Arrow.Draw(aStruc.CurrentGroup(), gp_Pnt(), gp_Dir(), radians(30), 1)
+    group = aStruc.NewGroup()
+    group.AddPrimitiveArray(aTris)
 
     aStruc.Display()
+    # aStruc.Erase()
     return aStruc
 
 def test_BndBox(display:Viewer3d):
@@ -75,14 +78,14 @@ def test_shadedShape(display:Viewer3d):
 
 # dsg
 def test_Symbol(display:Viewer3d):
+    # notwarp
     from OCC.Core.DsgPrs import DsgPrs_SymbPresentation
     aStruc = Graphic3d_Structure(display._struc_mgr)
 
 if __name__ == '__main__':
     display, start_display, *_ = init_display()
-    
-    test_shadedShape(display)
+
+    test_Arrow(display)
 
     display.FitAll()
     start_display()
-

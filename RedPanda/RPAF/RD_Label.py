@@ -111,6 +111,17 @@ def label_GetDataLabel(self:TDF_Label):
         self = self.Father()
     return self
 
+def label_argument(theLabel:TDF_Label, key:str):
+    from .DataDriver.BaseDriver import DataDriver
+    aDriver:DataDriver = theLabel.GetDriver()
+    aLabel = aDriver.Arguments[key].Label()
+    return aLabel
+
+def label_changeValue(theLabel:TDF_Label, value):
+    from .DataDriver.BaseDriver import DataDriver
+    aDriver:DataDriver = theLabel.GetDriver()
+    aDriver.Change(theLabel, value)
+
 Label = TDF_Label
 Label.__hash__ = __hash__
 Label.FindAttribute = FindAttribute
@@ -120,5 +131,8 @@ Label.GetDriver = GetDriver
 Label.GetAttribute = GetAttribute
 Label.GetAttrValue = GetAttrValue
 Label.GetDataLabel = label_GetDataLabel
+Label.Argument = label_argument
+Label.ChangeValue = label_changeValue
+
 Label.__str__ = label_str
 Label.__repr__ = label_str

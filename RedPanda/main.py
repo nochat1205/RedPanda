@@ -32,7 +32,6 @@ class MainApplication():
     def __init__(self) -> None:
         
         self.showedLabel = None
-
         self.myWin = MainWindow()
         self.docApp =  Application()
         self.c_docTree = self.myWin.DocTree()
@@ -44,7 +43,6 @@ class MainApplication():
 
         self.SetUpUi()
         self.SignalAndSlot()
-
 
     def SetUpUi(self):
         self.SetUpDriver()
@@ -81,21 +79,29 @@ class MainApplication():
             CutDriver,
         )
         from .RPAF.DataDriver.GeomDriver import CylSurDriver
-        from .RPAF.DataDriver.Geom2dDriver import Ellipse2dDriver
+        from .RPAF.DataDriver.Geom2dDriver import (
+            Ellipse2dDriver, Elps2dDriver, Build3dDriver,
+            
+        )
         from .RPAF.DataDriver.ShapeBaseDriver import Ax3Driver
         from .RPAF.DataDriver.ShapeBaseDriver import Ax2dDriver
         from .RPAF.DataDriver.VertexDriver import Pnt2dDriver
+        from .RPAF.DataDriver.ShapeDriver import RefSubDriver
+
 
         self.RegisterDriver(Ax3Driver())
         self.RegisterDriver(Ax2dDriver())
         self.RegisterDriver(Pnt2dDriver())
-
+        self.RegisterDriver(RefSubDriver())
+        
         self.RegisterShapeDriver('PrimAPI', 'Box', BoxDriver())
         self.RegisterShapeDriver('AlgoAPI', 'Cut', CutDriver())
         self.RegisterShapeDriver('GeomAPI', 'bezier', BezierDriver())
         self.RegisterShapeDriver('GeomAPI', 'Cyl', CylSurDriver())
         self.RegisterShapeDriver('GeomAPI', 'Ellipse2d', Ellipse2dDriver())
-
+        # self.RegisterShapeDriver('Topo', 'RefSub', RefSubDriver())
+        self.RegisterShapeDriver('Topo', 'Build3d', Build3dDriver())
+        self.RegisterShapeDriver('Geom2dAPI', 'Ellipse', Elps2dDriver())
 
     def Process_NewLabel(self, id:RP_GUID):
         Logger().info(f'New Data Label {id}')

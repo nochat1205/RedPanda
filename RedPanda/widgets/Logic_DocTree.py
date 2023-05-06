@@ -12,9 +12,6 @@ from PyQt5.QtWidgets import (
 from OCC.Core.TDF import (
     TDF_ChildIterator
 )
-from RedPanda.Sym_ParamBuilder import (
-    Sym_ChangeBuilder
-)
 from RedPanda.logger import Logger
 from RedPanda.RPAF.Document import Document
 from RedPanda.RPAF.RD_Label import Label
@@ -22,7 +19,6 @@ from RedPanda.RPAF.DataDriver import DataDriver
 from RedPanda.RPAF.DataDriver.BaseDriver import DataLabelState
 
 class ModelTree(QtWidgets.QTreeWidget):
-    sig_select = pyqtSignal(Sym_ChangeBuilder)
     sig_labelSelect = pyqtSignal(Label)
     def __init__(self, *args):
         super(ModelTree, self).__init__(*args)
@@ -83,7 +79,7 @@ class ModelTree(QtWidgets.QTreeWidget):
         self.items.clear()
 
 
-    # def Create_ModelTree(self, doc:Document):
+    def Create_ModelTree(self, doc:Document):
         # 设置根节点
         rootLabel = doc.Main()
 

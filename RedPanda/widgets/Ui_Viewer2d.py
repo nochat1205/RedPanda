@@ -153,8 +153,6 @@ modes = itertools.cycle(
     [TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX, TopAbs_SHELL, TopAbs_SOLID]
 )
 
-
-
 class Viewer2d(Display3d):
     def __init__(self):
         super().__init__()
@@ -660,6 +658,8 @@ class Viewer2d(Display3d):
         return self.Context.SelectedShape()
 
     def SelectArea(self, Xmin, Ymin, Xmax, Ymax):
+        return
+
         self.Context.Select(Xmin, Ymin, Xmax, Ymax, self.View, True)
         self.Context.InitSelected()
         # reinit the selected_shapes list
@@ -675,16 +675,17 @@ class Viewer2d(Display3d):
     def Select(self, X, Y):
         self.Context.Select(True)
         self.Context.InitSelected()
-
-        self.selected_shapes = []
+        self.selected_ais_li = []
         if self.Context.MoreSelected():
             if self.Context.HasSelectedShape():
-                self.selected_shapes.append(self.Context.SelectedShape())
-        # callbacks
-        for callback in self._select_callbacks:
-            callback(self.selected_shapes, X, Y)
-        
-        return self.selected_shapes[:]
+                ais = AIS_Shape.DownCast(self.Context.SelectedInteractive())
+                self.selected_ais_li.append(ais )
+            self.Context.NextSelected()
+
+        # highlight newly selected unhighlight those no longer selected
+        self.Context.UpdateSelected(True)
+
+        return self.selected_ais_li[:]
     
     def ShiftSelect(self, X, Y):
         self.Context.ShiftSelect(True)
@@ -712,16 +713,18 @@ class Viewer2d(Display3d):
 
     def FocusOn(self, thePlane:gp_Ax3):
         self.SetViewPlane(thePlane)
-        self.View.SetFront()
+        # self.View.SetFront()
 
-        # center:gp_Ax3 = thePlane.Position()
-        # dir = center.Direction()
-        # up = center.YDirection()
-        # pos = center.Location()
+        center:gp_Ax3 = thePlane
+        dir = center.Direction()
+        up = center.YDirection()
+        pos = center.Location()
 
-        # self.camera.SetCenter(pos)
-        # self.camera.SetDirection(dir.Reversed())
-        # self.camera.SetZRange(-1500.0, 1500.0)
+        self.camera.SetCenter(pos)
+        self.camera.SetDirection(dir.Reversed())
+        self.camera.SetZRange(-1500.0, 1500.0)
+        self.camera.SetUp(up)
+
         # self.camera.SetUp(up)
 
 

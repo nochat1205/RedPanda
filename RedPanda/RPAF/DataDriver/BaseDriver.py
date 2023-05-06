@@ -5,6 +5,9 @@ from typing import Union
 from OCC.Core.TPrsStd import TPrsStd_Driver
 from OCC.Core.AIS import AIS_InteractiveObject
 from OCC.Core.TDF import TDF_Tool
+from OCC.Core.TNaming import TNaming_NamedShape, TNaming_Builder
+
+from RedPanda.RPAF.DataDriver.InArgu import 实参
 
 from RedPanda.decorator import classproperty
 from RedPanda.logger import Logger
@@ -117,7 +120,7 @@ class Exist:
 
 class TagResource(object):
     def __init__(self) -> None:
-        self.tag = 0
+        self.tag = 17
 
     def GetNewTag(self):
         self.tag += 1
@@ -180,12 +183,15 @@ class Argument(object):
     def IsEdit(self):
         return self._editFlag
 
-    def Value(self, theLabel:Label)->any:
+    def Label(self, theLabel):
+        return theLabel.FindChild(self.Tag)
+
+    def Value(self, theLabel:Label, *args, **kwargs)->any:
         from ..DriverTable import DataDriverTable
 
         aLabel = theLabel.FindChild(self.Tag)
         aDriver = aLabel.GetDriver()
-        return aDriver.GetValue(aLabel)
+        return aDriver.GetValue(aLabel, *args, **kwargs)
 
 class DataDriver(object):
     """ base and manager
@@ -284,12 +290,6 @@ class DataDriver(object):
             sub = theLabel.FindChild(argu.Tag, False)
             label_li[name] = sub
         return label_li
-
-    def Update(self, L: Label, ais: AIS_InteractiveObject) -> bool:
-        """ for TPrsStd_AISPrsentaion, 
-        由于ocaf TPrsStd_AISPrsentaion的原因,只能命名为Update
-        """
-        raise NotImplementedError()
 
     def GetValue(self, theLabel:Label):
         if not DataLabelState.IsOK(theLabel):
@@ -457,6 +457,14 @@ class ShapeRefDriver(DataDriver):
     def IsDirectChanged(self, theLabel:Label):
         return True
 
+    def GetRefLabel(self, theLabel:Label):
+        reflabel = self.Attributes['ref'].GetValue(theLabel)
+        if reflabel:
+            return reflabel
+
+        Logger().warning(f'Entry:{theLabel.GetEntry()} not found reference')
+        return None
+
     def myTextValue(self, theLabel: Label):
         reflabel = self.Attributes['ref'].GetValue(theLabel)
         if reflabel:
@@ -471,7 +479,8 @@ class ShapeRefDriver(DataDriver):
     def GetArguLabel(self, theLabel: Label) -> list[Label]: # 依赖
         label_li = list()
         reflabel = self.Attributes['ref'].GetValue(theLabel)
-        label_li.append(reflabel)
+        if reflabel:
+            label_li.append(reflabel)
 
         return label_li
 
@@ -601,3 +610,42 @@ class CompoundDriver(DataDriver):
                 return False
 
         return True
+
+# class ConstantDriver(DataDriver):
+#     def __init__(self) -> None:
+#         self.Attributes['value'] = Param(TNaming_NamedShape.GetID())
+
+#     def myInit(self, theLabel, theData):
+#         builder = TNaming_Builder(theLabel)
+#         if theData[0] == 'Generated':
+#             builder.Generated(theData[2])
+#         elif theData[0] == 'Modify':
+#             builder.Modify(theData[1], theData[2])
+#         elif theData[0] == 'Delete':
+#             builder.Delete(theData[1])
+#         else:
+#             raise Exception('unKnow Data')
+
+#         return True
+
+#     def myChange(self, theLabel: Label, theData: tuple):
+
+#         return True
+
+#     def  myValue(self, theLabel: Label):
+#         return super().myValue(theLabel)
+
+#     @classproperty
+#     def ID(self):
+#         """函数ID
+
+#         Raises:
+#             Exception: _description_
+#         """
+#         return ShapeRefGUID
+
+#     @classproperty
+#     def Type(self):
+#         """ 函数名
+#         """
+#         return 'ShapeRef'

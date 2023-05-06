@@ -64,7 +64,7 @@ class Logger(logging.Logger):
         main_handler.setFormatter(formatter)
         self.main_handler = main_handler
         self.addHandler(main_handler)
-        
+
         bug_filter = logging.Filter()
         bug_filter.filter = lambda record: record.levelno < logging.INFO
         debug_handler.addFilter(bug_filter)

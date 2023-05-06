@@ -99,7 +99,6 @@ def test_plane():
     line_aspect.SetWidth(4)
     #
     drawer.SetWireAspect(line_aspect)
-    #
 
 
     face = make_plane()
@@ -324,10 +323,11 @@ def DisplayDimension():
     from OCC.Core.PrsDim import PrsDim_LengthDimension
     from OCC.Core.Prs3d import Prs3d_DimensionAspect
     from OCC.Core.Geom import Geom_Plane
-    from RedPanda.Core.topogy import SolidAnalyst, FaceAnalyst
     from OCC.Core.BRep import BRep_Tool
     from OCC.Core.TCollection import TCollection_AsciiString
 
+    from RedPanda.Core.topogy import SolidAnalyst, FaceAnalyst
+    
     analyst = SolidAnalyst(box)
     shellAnalyst = analyst.shells()[0]
     face = shellAnalyst.Faces()[1]
@@ -340,7 +340,6 @@ def DisplayDimension():
     the_aspect = Prs3d_DimensionAspect()
     the_aspect.SetCommonColor(Quantity_Color(Quantity_NOC_BLACK))
     prs.SetDimensionAspect(the_aspect) # 设置样式
-
 
     prs.SetCustomValue (10.2)
     prs.SetFlyout(0)
@@ -368,10 +367,10 @@ def curve():
     cy = Geom_CylindricalSurface(RP_Ax3(), 3)
     surface = Geom_RectangularTrimmedSurface(cy, 0, pi, 0, 20)
 
-    print(surface.Bounds())
     # face = make_face(cy)
     # analyster = FaceAnalyst(face)
     # print(analyster.domain())
+
 def Curve_on_plane():
     from RedPanda.Core.Make import make_plane
     from OCC.Core.BRep import BRep_Tool
@@ -393,7 +392,6 @@ def SetConment():
     print(msg)
     a = re.match()
     print(a.group(1))
-    
 
     def test_builder(self):
         from OCC.Core.Geom import Geom_CylindricalSurface, Geom_RectangularTrimmedSurface
@@ -423,10 +421,24 @@ def SetConment():
         self.v3d._display.DisplayShape(surface)
         self.v2d.DisplaySurfaceFlay(surface)
 
-
         self.v3d._display.DisplayShape(anEdge10Surf1)
         self.v2d._display.DisplayShape(anArc1)
-    
+
+def test_pickle():
+    import pickle
+    from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
+    from OCC.Core.TopoDS import TopoDS_Shape
+    builder = BRepPrimAPI_MakeBox(10, 10, 10)
+    a = builder.Shape()
+
+    with open('a.pickle', 'wb+') as f:
+        pickle.dump(a, f)
+
+    with open('a.pickle', 'rb+') as f:
+        a = pickle.load(f)
+
+    display.DisplayShape(a)
+
 
 if __name__ == '__main__':
     display, start, *_ = init_display()
@@ -435,8 +447,9 @@ if __name__ == '__main__':
     viewer:V3d_Viewer = display.Viewer
     view:V3d_View = display.View
     context:AIS_InteractiveContext = display.Context
-    SetConment()
+    test_pickle()
 
     # display.View_Iso()
-    # display.FitAll()
-    # start()
+    display.FitAll()
+    start()
+

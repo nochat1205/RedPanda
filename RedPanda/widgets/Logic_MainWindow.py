@@ -9,7 +9,7 @@ from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QFileDialog
 from PyQt5.QtCore import pyqtSlot, pyqtSignal
 
-from RedPanda.ModelFileRead import read_step_file_with_names_colors, OpenFile
+from RedPanda.utils.ModelFileRead import read_step_file_with_names_colors, OpenFile
 
 
 from OCC.Core.TColStd import (
@@ -29,7 +29,6 @@ from RedPanda.widgets.Ui_Main import Ui_MainWindow
 from RedPanda.widgets.Logic_DocTree import ModelTree
 from RedPanda.widgets.Logic_Application import Logic_Application
 from RedPanda.logger import Logger
-from RedPanda.Sym_ParamBuilder import Sym_NewBuilder
 
 
 class MainWindow(QMainWindow):
@@ -37,7 +36,6 @@ class MainWindow(QMainWindow):
     包含: LabelView. toolbar
 
     '''
-    sig_Construct = pyqtSignal(Sym_NewBuilder)
     sig_NewDataLabel = pyqtSignal(RP_GUID)
     sig_NewDocument = pyqtSignal(str)
     sig_OpenXml = pyqtSignal()
@@ -48,8 +46,7 @@ class MainWindow(QMainWindow):
 
         self._modelMenu_dict = dict()
         self._menu_dict = dict() # other menu
-        
-    
+
         self.setupUi()
 
         self.ui.retranslateUi(self)
@@ -59,7 +56,6 @@ class MainWindow(QMainWindow):
         self._menu_dict['menubar'] = self.menuBar
         self._menu_dict['start'] = self._start_menu
         self._menu_dict['open'] = self.ui.menuopen
-
 
         self.ui.actionxml.triggered.connect(self.onNewDocument)
         self.add_function_to_menu('start', 'save', 
@@ -162,13 +158,8 @@ class MainWindow(QMainWindow):
     def add_driver_to_menu(self, menu_name: str, action_name:str, driverId):
         if menu_name not in self._modelMenu_dict:
             self.add_model_menu(menu_name)
-        self.add_function_to_modelmenu(menu_name, action_name, lambda:self.ShapeConstruct(driverId))
+        self.add_function_to_modelmenu(menu_name, action_name, lambda:self.sig_NewDataLabel.emit(driverId))
 
-    def ShapeConstruct(self, id:RP_GUID):
-        from RedPanda.RPAF.DriverTable import DataDriverTable
-        from RedPanda.Sym_ParamBuilder import Sym_NewBuilder
-
-        self.sig_NewDataLabel.emit(id)
 
     @pyqtSlot()
     def openFileSTEP(self):

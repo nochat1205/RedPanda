@@ -8,21 +8,21 @@ class DisplayCtx(object):
     
     def __init__(self, aLabel:Label) -> None:
         self.d = dict()
-
-        self.u0 = 0
-        self.u1 = 1
-
-        self.v0 = 0
-        self.v1 = 1
+        self.aisToLabel = dict()
+        self.bounds = (0, 1, 0, 1)
 
     def __getitem__(self, key):
         return self.d[key]
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key:tuple[Label, str], value):
         self.d[key] = value
+        self.aisToLabel[value] = key[0]
+
+    def GetLabel(self, ais):
+        return self.aisToLabel.get(ais, None)
 
     def values(self):
         return self.d.values()
 
     def GetBound(self):
-        return (self.u0, self.u1, self.v0, self.v1)
+        return self.bounds

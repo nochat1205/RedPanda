@@ -35,6 +35,19 @@ from .VarDriver import (
     RealDriver,
 )
 
+class ShapeHistory:
+    from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeShape
+    @staticmethod
+    def Generate(theLabel, builder:BRepBuilderAPI_MakeShape):
+        from OCC.Core.TNaming import TNaming_Builder
+        builder = TNaming_Builder(theLabel)
+        builder.Build()
+        if builder.IsDone():
+            shape = builder.Shape()
+            
+            
+
+
 class BareShapeDriver(CompoundDriver):
     OutputType = DataEnum.Shape
     def __init__(self) -> None:
@@ -43,7 +56,6 @@ class BareShapeDriver(CompoundDriver):
 
         self.Attributes['value'] = Param(TNaming_NamedShape.GetID())
 
-
     def myValue(self, theLabel: Label):
         return self.Attributes['value'].GetValue(theLabel)
 
@@ -51,7 +63,7 @@ class BareShapeDriver(CompoundDriver):
         
         ais_dict = DisplayCtx(theLabel)
         ais = AIS_Shape(TopoDS_Shape())
-        ais_dict[('self', 'shape')] = ais
+        ais_dict[(theLabel, 'shape')] = ais
 
         return ais_dict
 
@@ -59,7 +71,7 @@ class BareShapeDriver(CompoundDriver):
         if not DataLabelState.IsOK(theLabel):
             return False
 
-        ais:AIS_Shape = ais_dict[('self', 'shape')]
+        ais:AIS_Shape = ais_dict[(theLabel, 'shape')]
         ais.SetShape(self.Attributes['value'].GetValue(theLabel))
         
         ais.UpdateSelection()
@@ -254,3 +266,5 @@ class Ax2dDriver(CompoundDriver):
     def ID(self):
         from ..GUID import Sym_Ax2dDriver_GUID
         return Sym_Ax2dDriver_GUID
+
+

@@ -2,9 +2,10 @@ import os,sys
 sys.path.append(os.getcwd()) 
 
 from tests.preview_widget import WidgetPreview
+from OCC.Core.gp import gp_Pnt, gp_Ax2, gp_Elips, gp_Dir
+
 
 def test_projector():
-    from OCC.Core.gp import gp_Pnt, gp_Ax2, gp_Elips, gp_Dir
     from OCC.Core.GeomAPI import GeomAPI_ProjectPointOnCurve
     from OCC.Core.Geom import Geom_Ellipse
 
@@ -24,42 +25,40 @@ def test_projector():
     else:
         print("No projection found.")
 
+def _make_edge2d():
+    from OCC.Core.gp import gp_Ax2d, gp_Ax3
+    from OCC.Core.Geom2d import Geom2d_Ellipse
+    from OCC.Extend.ShapeFactory import BRepBuilderAPI_MakeEdge2d
+    from OCC.Core.BRep import BRep_Tool
+    from OCC.Core.BRepLib import breplib_BuildCurve3d
+    from RedPanda.Core.topogy.edge import EdgeAnalyst
+
+    from math import pi
+    major = 3
+    minor = 1
+
+    epse = Geom2d_Ellipse(gp_Ax2d(), major, minor)
+    print(epse.Value(0).Coord(), epse.Value(pi).Coord())
+    edge = BRepBuilderAPI_MakeEdge2d(epse).Edge()
+    breplib_BuildCurve3d(edge) # TODO: need, edge2d have problem
+
+    curve, u, v =  EdgeAnalyst(edge).curve # curve and first and last parameter
+    print(curve.Value(u).Coord(), curve.Value(v/2).Coord())
+    print(gp_Ax3().Location().Coord())
+    return edge
+
 
 def test_grid():
     from RedPanda.widgets.Logic_Viewer2d import qtViewer2d
 
     preview = WidgetPreview(qtViewer2d)
     view2d:qtViewer2d = preview.widget
-    
-    def _make_edge2d():
-        from OCC.Core.gp import gp_Ax2d, gp_Ax3
-        from OCC.Core.Geom2d import Geom2d_Ellipse
-        from OCC.Extend.ShapeFactory import BRepBuilderAPI_MakeEdge2d
-        from OCC.Core.BRep import BRep_Tool
-        from OCC.Core.BRepLib import breplib_BuildCurve3d
-        from RedPanda.Core.topogy.edge import EdgeAnalyst
-
-        from math import pi
-        major = 3
-        minor = 1
-
-        epse = Geom2d_Ellipse(gp_Ax2d(), major, minor)
-        print(epse.Value(0).Coord(), epse.Value(pi).Coord())
-        edge = BRepBuilderAPI_MakeEdge2d(epse).Edge()
-        breplib_BuildCurve3d(edge) # TODO: need, edge2d have problem
-
-        curve, u, v =  EdgeAnalyst(edge).curve # curve and first and last parameter
-        print(curve.Value(u).Coord(), curve.Value(v/2).Coord())
-        print(gp_Ax3().Location().Coord())
-        return edge
-
-    from OCC.Core.gp import gp_Pnt
 
     edge = _make_edge2d()
     view2d._display.DisplayShape(edge)
     view2d.SetUVGrid(-3, 3, -1, 1)
     view2d._display.DisplayShape(gp_Pnt())
-    
+
     preview.run()
 
     return

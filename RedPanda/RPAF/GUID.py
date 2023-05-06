@@ -1,3 +1,4 @@
+from uuid import uuid5, NAMESPACE_DNS
 from RedPanda.Core.data import RP_GUID
 
 AssemblyGUID  = RP_GUID ("5b896b00-3adf-11d4-b9b7-0060b0ee281b")
@@ -37,9 +38,13 @@ Sym_Ax3dDriver_GUID = RP_GUID("22D22E72-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_EllipseDriver_GUID = RP_GUID("22D22E73-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_CurSrvDriver_GUID = RP_GUID("22D22E74-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_Ax3Driver_GUID = RP_GUID("22D22E75-ABCA-11d4-8F1A-0060B0EE18E8")
+Sym_RefSubDriver_GUID = RP_GUID("22D22E76-ABCA-11d4-8F1A-0060B0EE18E8")
+
+Sym_Build3dEdgeDriver_GUID = RP_GUID("22D22E77-ABCA-11d4-8F1A-0060B0EE18E8")
+Sym_Elps2dDriver_GUID = RP_GUID("22D22E78-ABCA-11d4-8F1A-0060B0EE18E8")
+Sym_TrimmedCurve2d_GUID = RP_GUID(repr(uuid5(NAMESPACE_DNS, 'TrimmedCurve')))
 
 class GuidLookup(object):
-    
     def __init__(self, key_in, key_value) -> None:
         self.dict = {}
         for key, value in zip(key_in, key_value):
