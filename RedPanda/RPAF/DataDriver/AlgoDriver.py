@@ -16,7 +16,8 @@ from ..RD_Label import Label
 from .BaseDriver import (
     Argument,
     Param,
-    ShapeRefDriver
+    ShapeRefDriver,
+    DataLabelState
 )
 from .ShapeBaseDriver import BareShapeDriver
 
@@ -34,14 +35,16 @@ class CutDriver(BareShapeDriver):
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
-            value = argu.Value(theLabel)
-            dict_param[name] = value
+            dict_param[name] = argu.Value(theLabel)
 
         shape0 = dict_param['beCutShape']
         shape1 = dict_param['cutShape']
-
-        shape = boolean_cut(shape0, shape1)
-
+        try:
+            shape = boolean_cut(shape0, shape1)
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+        
         builder = TNaming_Builder(theLabel)
         builder.Generated(shape)
 

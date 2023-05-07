@@ -24,7 +24,7 @@ import sys
 from OCC.Display.backend import get_qt_modules
 
 from PyQt5 import QtCore, QtGui, QtWidgets, QtOpenGL
-from PyQt5.QtCore import pyqtSlot
+from PyQt5.QtCore import pyqtSlot, pyqtSignal
 # QtCore, QtGui, QtWidgets, QtOpenGL = get_qt_modules()
 
 # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
@@ -37,7 +37,7 @@ from RedPanda.logger import Logger
 from RedPanda.widgets.Ui_Viewer import Viewer3d
 
 from RedPanda.RPAF.DataDriver import BareShapeDriver
-
+from RedPanda.RPAF.GUID import RP_GUID
 
 class qtBaseViewer(QtWidgets.QWidget):
     """The base Qt Widget for an OCC viewer"""
@@ -77,6 +77,8 @@ class qtViewer3d(qtBaseViewer):
     elif hasattr(QtCore, "Signal"):  # PySide2
         sig_topods_selected = QtCore.Signal(list)
         HAVE_PYQT_SIGNAL = True
+    
+    sig_new_shape = pyqtSignal(RP_GUID, dict)
 
     def __init__(self, *kargs):
         qtBaseViewer.__init__(self, *kargs)
@@ -111,12 +113,6 @@ class qtViewer3d(qtBaseViewer):
         self.InitDriver()
 
 
-        from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeBox
-        from OCC.Core.AIS import AIS_Shape
-        # box = BRepPrimAPI_MakeBox(10, 20, 30).Shape()
-        # self.ais = AIS_Shape(box)
-
-        # self._display.DisplayShape(box)
 
     @property
     def qApp(self):
@@ -370,6 +366,7 @@ class qtViewer3d(qtBaseViewer):
 
     def GetRefSub(self):
         from OCC.Core.AIS import AIS_Shape
+        from OCC.Core.XCAFPrs import XCAFPrs_AISObject
         from OCC.Core.StdSelect import StdSelect_BRepOwner
         from OCC.Core.TopExp import TopExp_Explorer
         from OCC.Core.TopoDS import TopoDS_Shape
@@ -382,7 +379,7 @@ class qtViewer3d(qtBaseViewer):
 
             subshape:TopoDS_Shape = owner.Shape()
 
-            parentAis = AIS_Shape.DownCast(owner.Selectable())
+            parentAis = XCAFPrs_AISObject.DownCast(owner.Selectable())
             shape = parentAis.Shape()
             explorer = TopExp_Explorer(shape, subshape.ShapeType())
             i = 0
@@ -392,8 +389,8 @@ class qtViewer3d(qtBaseViewer):
                     break
                 explorer.Next()
 
-            print('ind:', hash(parentAis))
             label = self.ais_dict.GetLabel(parentAis)
             if label:
-                print(label.GetEntry(), subshape.ShapeType(), i)
-        
+                from RedPanda.RPAF.DataDriver.ShapeDriver import RefSubDriver
+                data = {'Shape': label.GetEntry(), 'TopoType':subshape.ShapeType(), 'Index':i}
+                self.sig_new_shape.emit(RefSubDriver.ID, data)

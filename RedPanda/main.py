@@ -62,6 +62,7 @@ class MainApplication():
         self.c_docTree.sig_labelSelect.connect(self.Process_ShowLabel)
         self.myWin.sig_NewDataLabel.connect(self.Process_NewLabel)
         self.c_construct.sig_change.connect(self.Process_ChangeLabel)
+        self.c_viewer3d.sig_new_shape.connect(self.Process_NewLabel)
 
     # register function
     def RegisterShapeDriver(self, menu_name, name,  driver:DataDriver):
@@ -78,6 +79,7 @@ class MainApplication():
             BoxDriver,
             CutDriver,
         )
+        from .RPAF.DataDriver.VarDriver import IntDriver
         from .RPAF.DataDriver.GeomDriver import CylSurDriver
         from .RPAF.DataDriver.Geom2dDriver import (
             Ellipse2dDriver, Elps2dDriver, Build3dDriver,
@@ -93,6 +95,7 @@ class MainApplication():
         self.RegisterDriver(Ax2dDriver())
         self.RegisterDriver(Pnt2dDriver())
         self.RegisterDriver(RefSubDriver())
+        self.RegisterDriver(IntDriver())
         
         self.RegisterShapeDriver('PrimAPI', 'Box', BoxDriver())
         self.RegisterShapeDriver('AlgoAPI', 'Cut', CutDriver())
@@ -103,14 +106,14 @@ class MainApplication():
         self.RegisterShapeDriver('Topo', 'Build3d', Build3dDriver())
         self.RegisterShapeDriver('Geom2dAPI', 'Ellipse', Elps2dDriver())
 
-    def Process_NewLabel(self, id:RP_GUID):
+    def Process_NewLabel(self, id:RP_GUID, data=None):
         Logger().info(f'New Data Label {id}')
         # 0 
         if not self.docApp.HaveDoc():
             self.Process_NewDocument()
 
         # 1. doc new
-        aLabel:Label = self.docApp.NewDataLabel(id)
+        aLabel:Label = self.docApp.NewDataLabel(id, data)
         # 2
         obj = self.DataLabel_manager.Add(aLabel)
 

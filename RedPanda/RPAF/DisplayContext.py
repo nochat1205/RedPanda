@@ -1,6 +1,6 @@
 
 from OCC.Core.AIS import AIS_Shape
-
+from OCC.Core.XCAFPrs import XCAFPrs_AISObject
 
 from .RD_Label import Label
 
@@ -16,11 +16,15 @@ class DisplayCtx(object):
 
     def __setitem__(self, key:tuple[Label, str], value):
         self.d[key] = value
-        self.aisToLabel[value] = key[0]
-        print('id:', id(value), ' ', hash(value))
+        # self.aisToLabel[value] = key[0]
 
-    def GetLabel(self, ais):
-        return self.aisToLabel.get(ais, None)
+    def GetLabel(self, ais:XCAFPrs_AISObject):
+        from RedPanda.RPAF.DataDriver import ShapeRefDriver
+        aLabel = ais.GetLabel()
+        aDriver = aLabel.GetDriver()
+        if aDriver and aDriver.ID == ShapeRefDriver.ID:
+            return aDriver.GetRefLabel(aLabel)
+        return aLabel
 
     def values(self):
         return self.d.values()

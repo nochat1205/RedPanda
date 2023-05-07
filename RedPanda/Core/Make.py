@@ -422,15 +422,15 @@ def boolean_cut(shapeToCutFrom, cuttingShape):
             6: "- Unknown operation is not allowed",
             7: "- Can not allocate memory for the Builder",
         }
-        Logger().warn("Error status:", _error[cut.ErrorStatus()])
+        Logger().warning("Error status:", _error[cut.ErrorStatus()])
         cut.RefineEdges()
         cut.FuseEdges()
         shp = cut.Shape()
         cut.Destroy()
         return shp
-    except:
-        print("Failed to boolean cut")
-        return shapeToCutFrom
+    except Exception as error:
+        raise error
+        
 
 
 def boolean_fuse(shapeToCutFrom, joiningShape):

@@ -45,15 +45,15 @@ class RefSubDriver(BareShapeDriver):
 
         sub = None
         try:
-            explorer = TopExp_Explorer(dict_param['Shape'], self.Arguments['TopoType'])
+            explorer = TopExp_Explorer(dict_param['Shape'], dict_param['TopoType'])
             i = 0
             while explorer.More():
                 i += 1
-                if i == self.Arguments['Index']:
+                if i == dict_param['Index']:
                     sub = explorer.Value()
                     break
                 explorer.Next()
-        except:
+        except Exception as Error:
             DataLabelState.SetError(theLabel, 'Explorer Error', True)
             return 1
 
@@ -61,6 +61,8 @@ class RefSubDriver(BareShapeDriver):
             DataLabelState.SetError(theLabel, 'Sub Error', True)
             return 1
 
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(sub)
         return 0
 
     @classproperty

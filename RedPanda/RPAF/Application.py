@@ -93,14 +93,14 @@ class Application(TDocStd_Application):
 
         return touched_set
 
-    def NewDataLabel(self, driverID:RP_GUID):
+    def NewDataLabel(self, driverID:RP_GUID, data=None):
         self._main_doc.NewCommand()
         Logger().info("-- NewConmand --")        
         Logger().info("-- Add New Shape --")
 
         aDriver:DataDriver = DataDriverTable.Get().GetDriver(driverID)
         mainLabel = TDF_TagSource.NewChild(self._main_doc.Main())
-        aDriver.Init(mainLabel)
+        aDriver.Init(mainLabel, data)
         TDataStd_Name.Set(mainLabel, RP_ExtendStr('New '+aDriver.Type))
 
         self._main_doc.CommitCommand()

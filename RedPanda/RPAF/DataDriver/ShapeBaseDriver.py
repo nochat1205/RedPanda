@@ -7,7 +7,7 @@ from OCC.Core.TNaming import TNaming_Builder
 from OCC.Core.TopoDS import TopoDS_Shape
 from OCC.Core.AIS import AIS_Shape, AIS_InteractiveObject
 from OCC.Core.gp import gp_Ax2d, gp_Dir2d, gp_Pnt2d
-
+from OCC.Core.XCAFPrs import XCAFPrs_AISObject
 
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty
@@ -62,7 +62,7 @@ class BareShapeDriver(CompoundDriver):
     def Prs3d(self, theLabel):
         
         ais_dict = DisplayCtx(theLabel)
-        ais = AIS_Shape(TopoDS_Shape())
+        ais = XCAFPrs_AISObject(theLabel)
         ais_dict[(theLabel, 'shape')] = ais
 
         return ais_dict

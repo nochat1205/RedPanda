@@ -219,9 +219,8 @@ class DataDriver(object):
         TFunction_Function.Set(theLabel, self.ID)
         DataLabelState.Init(theLabel)
 
-        # Exist.Init(theLabel)
 
-    def myInit(self, theLabel:Label)->bool:
+    def myInit(self, theLabel:Label, data=None)->bool:
         ''' 运行自己的参数检查和初始化就行
         返回初始化是否成功 <= 参数是否正确
         '''
@@ -246,19 +245,19 @@ class DataDriver(object):
         """
         return 0
 
-    def Init(self, theLabel:Label):
+    def Init(self, theLabel:Label, data=None):
         """ 执行函数 - 初始化
         必要的初始化, 根据实话结果设置状态
         """
-        if self._isInit(theLabel):
-            Logger().info(f'Entry:{theLabel.GetEntry()}, had init')
-            return True
+        # if self._isInit(theLabel):
+        #     Logger().info(f'Entry:{theLabel.GetEntry()}, had init')
+        #     return True
 
         Logger().info(f'Entry:{theLabel.GetEntry()}, init start')
 
         self._base_init(theLabel)
 
-        if not self.myInit(theLabel):
+        if not self.myInit(theLabel, data):
             DataLabelState.SetError(theLabel, 'Init Failed')
             Logger().warning(f'Entry:{theLabel.GetEntry()}, type:{self.Type}, Init Falied')
 
@@ -376,7 +375,9 @@ class SocketDriver(object):
 
 from ..DriverTable import DataDriverTable
 class VarDriver(DataDriver):
-    def myInit(self, theLabel: Label, theData='0'):
+    def myInit(self, theLabel: Label, theData=None):
+        if theData is None:
+            theData = '0'
         Logger().info(f'change Label:{theLabel.GetEntry()}.value, {None}, {theData}')
         attr:Param = self.Attributes['value']
         attr.SetValue(theLabel, theData)
@@ -410,12 +411,13 @@ class ShapeRefDriver(DataDriver):
         super().__init__()
         self.Attributes['ref'] = Param(Attr_ShapeRef.GetID())
 
-    def myInit(self, theLabel: Label, text='0')->bool:
-        if text == '0':
+    def myInit(self, theLabel: Label, text=None)->bool:
+        if text is None:
             Attr_ShapeRef.Set(theLabel)
             DataLabelState.SetError(theLabel, 'Need True ref Entry', True)
             return False
 
+        print(text)
         anEntry = RP_AsciiStr(text)
         aRefLabel = Label()
         TDF_Tool.Label(theLabel.Data(), anEntry, aRefLabel)
@@ -525,7 +527,9 @@ class ArrayDriver(DataDriver):
 
         return name, theLabel.FindChild(ind+self.StartIndex, False)
 
-    def myInit(self, theLabel:Label, size=0):
+    def myInit(self, theLabel:Label, size=None):
+        if size is None:
+            size = 0
         TDataStd_Integer.Set(theLabel, size)
         # aDriver = theLabel.GetDriver()
         # for ind, pnt in enumerate(theData.values()):
@@ -590,13 +594,16 @@ class ArrayDriver(DataDriver):
         return True
 
 class CompoundDriver(DataDriver):
-    def myInit(self, theLabel: Label):
+    def myInit(self, theLabel: Label, data=None):
         flag = True
         for name, argu in self.Arguments.items():
             argu:Argument
             aLabel = theLabel.FindChild(argu.Tag, True)
             aDriver:DataDriver = DataDriverTable.Get().GetDriver(argu.DriverID)
-            if not aDriver.Init(aLabel):
+            subData = None
+            if data:
+                subData = data[name]
+            if not aDriver.Init(aLabel, subData):
                 flag = False
 
         return flag

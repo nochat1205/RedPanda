@@ -129,7 +129,6 @@ def test_RubberBand():
     from OCC.Core.AIS import AIS_RubberBand
     context.Display(AIS_RubberBand(), False)
 
-
 def Test_mesh():
     from OCC.Core.MeshVS import MeshVS_Mesh
     context.Display(MeshVS_Mesh(), False)

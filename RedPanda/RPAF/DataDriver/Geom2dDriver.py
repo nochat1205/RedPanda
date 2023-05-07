@@ -10,6 +10,7 @@ from OCC.Core.TopLoc import TopLoc_Location
 from OCC.Core.AIS import AIS_Shaded
 from OCC.Core.PrsDim import PrsDim_DiameterDimension
 from OCC.Core.BRepLib import breplib_BuildCurve3d
+from OCC.Core.XCAFPrs import XCAFPrs_AISObject
 
 
 from RedPanda.RPAF.RD_Label import Label
@@ -70,7 +71,7 @@ class Ellipse2dDriver(PCurveDriver):
 
     def Prs2d(self, theLabel: Label):
         ais_dict = DisplayCtx(theLabel)
-        ais = AIS_Shape(TopoDS_Shape())
+        ais = XCAFPrs_AISObject(theLabel)
         ais_dict[(theLabel, 'shape')] = ais
 
         return ais_dict
@@ -89,6 +90,7 @@ class Ellipse2dDriver(PCurveDriver):
 
         edge = make_edge2d(geom2d)
         breplib_BuildCurve3d(edge)
+
         ais = ais_dict[(theLabel, 'shape')]
         ais.SetShape(edge)
         ais.UpdateSelection()
@@ -100,12 +102,13 @@ class Ellipse2dDriver(PCurveDriver):
 
         ais_dict = DisplayCtx(theLabel)
 
-        ais = AIS_Shape(TopoDS_Shape())
+        ais = XCAFPrs_AISObject(theLabel)
         ais_dict[(theLabel, 'shape')] = ais
         ais.SetDisplayMode(AIS_Shaded)
 
-        ais = AIS_Shape(TopoDS_Shape())
-        ais_dict[(theLabel.Argument('surface'), 'shape')] = ais
+        aLabel = theLabel.Argument('surface')
+        ais = XCAFPrs_AISObject(aLabel)
+        ais_dict[(aLabel, 'shape')] = ais
 
         return ais_dict
 
@@ -170,8 +173,10 @@ class Build3dDriver(PCurveDriver):
 
     def Prs2d(self, theLabel:Label):
         ais_dict = DisplayCtx(theLabel)
+        aLabel = theLabel.Argument('edge2d')
         ais = AIS_Shape(TopoDS_Shape())
-        ais_dict[(theLabel.Argument('edge2d'), 'shape')] = ais
+        ais_dict[(aLabel, 'shape')] = ais
+        print('prs2d:', aLabel.GetEntry())
 
         return ais_dict
 
@@ -185,9 +190,10 @@ class Build3dDriver(PCurveDriver):
         ais_dict.bounds = surface.Bounds()
         
         # 2
+        aLabel = theLabel.Argument('edge2d')
         edge2d = self.Arguments['edge2d'].Value(theLabel)
         breplib_BuildCurve3d(edge2d)
-        ais:AIS_Shape = ais_dict[(theLabel.Argument('edge2d'), 'shape')]
+        ais = ais_dict[(aLabel, 'shape')]
         ais.SetShape(edge2d)
         ais.UpdateSelection()
         ais.SetToUpdate()
@@ -198,30 +204,33 @@ class Build3dDriver(PCurveDriver):
 
         ais_dict = DisplayCtx(theLabel)
 
-        ais = AIS_Shape(TopoDS_Shape())
+        
+        ais = XCAFPrs_AISObject(theLabel)
         ais_dict[(theLabel, 'shape')] = ais
+
+
+        aLabel = theLabel.Argument('surface')
+        ais = AIS_Shape(TopoDS_Shape())
+        ais_dict[(aLabel, 'shape')] = ais
         ais.SetDisplayMode(AIS_Shaded)
 
 
-        ais = AIS_Shape(TopoDS_Shape())
-        aLabel = theLabel.Argument('surface')
-        ais_dict[(aLabel, 'shape')] = ais
-
         return ais_dict
 
-    def UpdatePrs3d(self, theLabel, ais_dict):
+    def UpdatePrs3d(self, theLabel:Label, ais_dict):
         if not DataLabelState.IsOK(theLabel):
             return False
-
+        # 1
         ais = ais_dict[(theLabel, 'shape')]
         ais.SetShape(self.Attributes['value'].GetValue(theLabel))
         ais.SetDisplayMode(AIS_Shaded)
         ais.UpdateSelection()
         ais.SetToUpdate()
-
+        
+        # 2
         aLabel = theLabel.Argument('surface')
-        ais = ais_dict[(aLabel, 'shape')]
         shape = self.Arguments['surface'].Value(theLabel)
+        ais = ais_dict[(aLabel, 'shape')]
         ais .SetShape(shape)
         ais.UpdateSelection()
         ais.SetToUpdate()
