@@ -35,11 +35,8 @@ class BezierDriver(BareShapeDriver):
     ViewType = '2D'
     def __init__(self) -> None:
         super().__init__()
-        self.Attr = Param(TNaming_NamedShape.GetID())
-        self.Attributes['value'] = self.Attr
-        self.Arguments = {
-            'pnts': Argument(self.tagResource, PntArrayDriver.ID)
-        }
+        self.Arguments['pnts'] = Argument(self.tagResource, PntArrayDriver.ID)
+
 
     def myExecute(self, theLabel: Label) -> int:
         dict_param = dict()

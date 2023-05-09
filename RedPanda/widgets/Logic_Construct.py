@@ -98,7 +98,8 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         self.tree.expandAll()
 
     def Update(self, theLabel:Label):
-        self.treeItem[theLabel] .Update()
+        if theLabel in self.treeItem:
+            self.treeItem[theLabel] .Update()
 
 
 

@@ -171,21 +171,18 @@ class Viewer2d(Display3d):
 
         self.selected_shapes = []
         self._select_callbacks = []
-        # self._overlay_items = []
+        self._overlay_items = []
 
         self._window_handle = None
         self.camera = None
 
-        # self.privilegedPlane:gp_Ax3 = self.Viewer.PrivilegedPlane()
-
-    def ViewPlane(self):
-        return self.Viewer.PrivilegedPlane()
-
-    def SetViewPlane(self, thePlane:gp_Ax3):
-        return self.Viewer.SetPrivilegedPlane(thePlane)
-
     def get_parent(self):
         return self._parent
+
+    def register_overlay_item(self, overlay_item):
+        self._overlay_items.append(overlay_item)
+        self.View.MustBeResized()
+        self.View.Redraw()
 
     def register_select_callback(self, callback):
         """Adds a callback that will be called each time a shape s selected"""
@@ -658,8 +655,6 @@ class Viewer2d(Display3d):
         return self.Context.SelectedShape()
 
     def SelectArea(self, Xmin, Ymin, Xmax, Ymax):
-        return
-
         self.Context.Select(Xmin, Ymin, Xmax, Ymax, self.View, True)
         self.Context.InitSelected()
         # reinit the selected_shapes list
@@ -707,6 +702,13 @@ class Viewer2d(Display3d):
     def ZoomArea(self, X1, Y1, X2, Y2):
         self.View.WindowFit(X1, Y1, X2, Y2)
 
+    def Zoom(self, X, Y):
+        self.View.Zoom(X, Y)
+
+    def StartRotation(self, X, Y):
+        self.View.StartRotation(X, Y)
+
+    # me
     def FocusOn(self, thePlane:gp_Ax3):
         self.SetViewPlane(thePlane)
         # self.View.SetFront()
@@ -721,8 +723,8 @@ class Viewer2d(Display3d):
         self.camera.SetZRange(-1500.0, 1500.0)
         self.camera.SetUp(up)
 
-        # self.camera.SetUp(up)
+    def ViewPlane(self):
+        return self.Viewer.PrivilegedPlane()
 
-
-    def Zoom(self, X, Y):
-        self.View.Zoom(X, Y)
+    def SetViewPlane(self, thePlane:gp_Ax3):
+        return self.Viewer.SetPrivilegedPlane(thePlane)

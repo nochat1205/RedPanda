@@ -5,7 +5,7 @@ from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeFace
 from OCC.Core.TopLoc import TopLoc_Location
 from OCC.Core.TNaming import TNaming_Builder
 from OCC.Core.TopoDS import TopoDS_Shape
-from OCC.Core.AIS import AIS_Shape, AIS_InteractiveObject
+from OCC.Core.AIS import AIS_ColoredShape, AIS_InteractiveObject
 from OCC.Core.gp import gp_Ax2d, gp_Dir2d, gp_Pnt2d
 from OCC.Core.XCAFPrs import XCAFPrs_AISObject
 
@@ -59,7 +59,7 @@ class BareShapeDriver(CompoundDriver):
     def myValue(self, theLabel: Label):
         return self.Attributes['value'].GetValue(theLabel)
 
-    def Prs3d(self, theLabel):
+    def Prs3d(self, theLabel)->DisplayCtx:
         
         ais_dict = DisplayCtx(theLabel)
         ais = XCAFPrs_AISObject(theLabel)
@@ -71,11 +71,12 @@ class BareShapeDriver(CompoundDriver):
         if not DataLabelState.IsOK(theLabel):
             return False
 
-        ais:AIS_Shape = ais_dict[(theLabel, 'shape')]
-        ais.SetShape(self.Attributes['value'].GetValue(theLabel))
-        
-        ais.UpdateSelection()
-        ais.SetToUpdate()
+        ais:AIS_ColoredShape = ais_dict[(theLabel, 'shape')]
+        shape = self.Attributes['value'].GetValue(theLabel)
+        if shape:
+            ais.SetShape(shape)        
+            ais.UpdateSelection()
+            ais.SetToUpdate()
 
         return True
 

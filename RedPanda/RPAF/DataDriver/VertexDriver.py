@@ -113,7 +113,6 @@ class PntArrayDriver(ArrayDriver):
         self.myAttr = Param(TDataStd_Integer.GetID())
         self.Attributes['size'] = self.myAttr
 
-        self._ArrayFirstTag = 125
         self._SubTypeId = Sym_PntDriver_GUID
 
     def myValue(self, theLabel: Label):
@@ -136,4 +135,4 @@ class PntArrayDriver(ArrayDriver):
 
     @classproperty
     def Type(self):
-        return "array"
+        return "PntArr"

@@ -6,7 +6,7 @@ __all__ = [
 ]
 
 from OCC.Core.TopLoc import TopLoc_Location
-from OCC.Core.AIS import AIS_Shape, AIS_InteractiveContext
+from OCC.Core.AIS import AIS_ColoredShape, AIS_InteractiveContext
 
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty

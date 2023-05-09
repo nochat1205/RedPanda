@@ -1,7 +1,7 @@
 from OCC.Core.Geom2d import Geom2d_Ellipse
 from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge
 from OCC.Core.Geom import Geom_Plane
-from OCC.Core.AIS import AIS_Shape
+from OCC.Core.AIS import AIS_ColoredShape
 from OCC.Core.TNaming import TNaming_Builder
 from OCC.Core.BRep import BRep_Tool
 from OCC.Extend.ShapeFactory import make_edge2d, make_edge
@@ -11,7 +11,7 @@ from OCC.Core.AIS import AIS_Shaded
 from OCC.Core.PrsDim import PrsDim_DiameterDimension
 from OCC.Core.BRepLib import breplib_BuildCurve3d
 from OCC.Core.XCAFPrs import XCAFPrs_AISObject
-
+from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_RED
 
 from RedPanda.RPAF.RD_Label import Label
 
@@ -174,7 +174,7 @@ class Build3dDriver(PCurveDriver):
     def Prs2d(self, theLabel:Label):
         ais_dict = DisplayCtx(theLabel)
         aLabel = theLabel.Argument('edge2d')
-        ais = AIS_Shape(TopoDS_Shape())
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(aLabel, 'shape')] = ais
         print('prs2d:', aLabel.GetEntry())
 
@@ -210,7 +210,7 @@ class Build3dDriver(PCurveDriver):
 
 
         aLabel = theLabel.Argument('surface')
-        ais = AIS_Shape(TopoDS_Shape())
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(aLabel, 'shape')] = ais
         ais.SetDisplayMode(AIS_Shaded)
 
@@ -222,11 +222,12 @@ class Build3dDriver(PCurveDriver):
             return False
         # 1
         ais = ais_dict[(theLabel, 'shape')]
-        ais.SetShape(self.Attributes['value'].GetValue(theLabel))
-        ais.SetDisplayMode(AIS_Shaded)
-        ais.UpdateSelection()
-        ais.SetToUpdate()
-        
+        shape = self.Attributes['value'].GetValue(theLabel)
+        if shape:
+            ais.SetShape(shape)
+            ais.UpdateSelection()
+            ais.SetToUpdate()
+
         # 2
         aLabel = theLabel.Argument('surface')
         shape = self.Arguments['surface'].Value(theLabel)
@@ -246,14 +247,118 @@ class Build3dDriver(PCurveDriver):
         from ..GUID import Sym_Build3dEdgeDriver_GUID
         return Sym_Build3dEdgeDriver_GUID
 
+from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge2d
+from .VertexDriver import Pnt2dDriver
 class BareShape2dDriver(BareShapeDriver):
-    pass
+
+    def Prs3d(self, theLabel)->DisplayCtx:
+        
+
+        ais_dict = DisplayCtx(theLabel)
+        return ais_dict
+
+    def UpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
+        return False
+
+
+    def Prs2d(self, theLabel:Label):
+        ais_dict = DisplayCtx(theLabel)
+        ais = XCAFPrs_AISObject(theLabel)
+        ais.SetColor(Quantity_Color(Quantity_NOC_RED))
+        ais_dict[(theLabel, 'shape')] = ais
+
+        self.UpdatePrs2d(theLabel, ais_dict)
+
+        return ais_dict
+    
+    def UpdatePrs2d(self, theLabel:Label, ais_dict):
+        if not DataLabelState.IsOK(theLabel):
+            return False
+
+        ais:AIS_ColoredShape = ais_dict[(theLabel, 'shape')]
+        shape = self.Attributes['value'].GetValue(theLabel)
+        breplib_BuildCurve3d(shape)
+        if shape:
+            ais.SetShape(shape)
+            ais.SetColor(Quantity_Color(Quantity_NOC_RED))
+            ais.SetToUpdate()
+
+        return True
 
 class Shape2dDriver(BareShape2dDriver):
     def __init__(self) -> None:
         super().__init__()
         self.Arguments['Ax'] = Argument(self.tagResource, Ax2dDriver.ID)
 
+class Segment2dDriver(BareShape2dDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['p1'] = Argument(self.tagResource, Pnt2dDriver.ID)
+        self.Arguments['p2'] = Argument(self.tagResource, Pnt2dDriver.ID)
+
+    def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.GCE2d import GCE2d_MakeSegment
+
+        dict_param = dict()
+        for name, argu in self.Arguments.items():
+            argu:Argument
+            dict_param[name] = argu.Value(theLabel)
+
+        try:
+            seg = GCE2d_MakeSegment(dict_param['p1'], dict_param['p2']).Value()
+            edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(edge)
+        return 0
+
+    @classproperty
+    def Type(self):
+        return 'Seg2d'
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_Seg2dDriver_GUID
+        return Sym_Seg2dDriver_GUID
+
+class ArcCircleDriver(BareShape2dDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['p1'] = Argument(self.tagResource, Pnt2dDriver.ID)
+        self.Arguments['p2'] = Argument(self.tagResource, Pnt2dDriver.ID)
+        self.Arguments['p3'] = Argument(self.tagResource, Pnt2dDriver.ID)
+    
+    def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.GCE2d import GCE2d_MakeArcOfCircle
+
+        dict_param = dict()
+        for name, argu in self.Arguments.items():
+            argu:Argument
+            dict_param[name] = argu.Value(theLabel)
+
+        try:
+            seg = GCE2d_MakeArcOfCircle(
+                dict_param['p1'], dict_param['p2'], dict_param['p3']).Value()
+            edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(edge)
+        return 0
+
+    @classproperty
+    def Type(self):
+        return 'ArcCircle'
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_ArcCir2dDriver_GUID
+        return Sym_ArcCir2dDriver_GUID
 
 class Elps2dDriver(Shape2dDriver):
     def __init__(self) -> None:

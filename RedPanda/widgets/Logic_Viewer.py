@@ -25,6 +25,7 @@ from OCC.Display.backend import get_qt_modules
 
 from PyQt5 import QtCore, QtGui, QtWidgets, QtOpenGL
 from PyQt5.QtCore import pyqtSlot, pyqtSignal
+from PyQt5.QtGui import QMouseEvent
 # QtCore, QtGui, QtWidgets, QtOpenGL = get_qt_modules()
 
 # logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
@@ -32,10 +33,8 @@ from PyQt5.QtCore import pyqtSlot, pyqtSignal
 
 from OCC.Core.AIS import AIS_InteractiveContext
 
-
 from RedPanda.logger import Logger
 from RedPanda.widgets.Ui_Viewer import Viewer3d
-
 from RedPanda.RPAF.DataDriver import BareShapeDriver
 from RedPanda.RPAF.GUID import RP_GUID
 
@@ -70,14 +69,9 @@ class qtBaseViewer(QtWidgets.QWidget):
 class qtViewer3d(qtBaseViewer):
     # emit signal when selection is changed
     # is a list of TopoDS_*
-    HAVE_PYQT_SIGNAL = False
-    if hasattr(QtCore, "pyqtSignal"):  # PyQt
-        sig_topods_selected = QtCore.pyqtSignal(list)
-        HAVE_PYQT_SIGNAL = True
-    elif hasattr(QtCore, "Signal"):  # PySide2
-        sig_topods_selected = QtCore.Signal(list)
-        HAVE_PYQT_SIGNAL = True
-    
+    HAVE_PYQT_SIGNAL = True
+    sig_topods_selected = QtCore.pyqtSignal(list)
+
     sig_new_shape = pyqtSignal(RP_GUID, dict)
 
     def __init__(self, *kargs):
@@ -111,8 +105,6 @@ class qtViewer3d(qtBaseViewer):
         }
 
         self.InitDriver()
-
-
 
     @property
     def qApp(self):
@@ -203,7 +195,6 @@ class qtViewer3d(qtBaseViewer):
     @cursor.setter
     def cursor(self, value):
         if not self._current_cursor == value:
-
             self._current_cursor = value
             cursor = self._available_cursors.get(value)
 
@@ -212,14 +203,14 @@ class qtViewer3d(qtBaseViewer):
             else:
                 self.qApp.restoreOverrideCursor()
 
-    def mousePressEvent(self, event):
+    def mousePressEvent(self, event:QMouseEvent):
         self.setFocus()
         ev = event.pos()
         self.dragStartPosX = ev.x()
         self.dragStartPosY = ev.y()
         self._display.StartRotation(self.dragStartPosX, self.dragStartPosY)
 
-    def mouseReleaseEvent(self, event):
+    def mouseReleaseEvent(self, event:QMouseEvent):
         pt = event.pos()
         modifiers = event.modifiers()
 
@@ -246,7 +237,6 @@ class qtViewer3d(qtBaseViewer):
                 self._display.ZoomArea(Xmin, Ymin, Xmin + dx, Ymin + dy)
                 self._zoom_area = False
             else:
-                pass
                 self.showContextMenu(pt)
 
         self.cursor = "arrow"
@@ -311,43 +301,55 @@ class qtViewer3d(qtBaseViewer):
             self._display.MoveTo(pt.x(), pt.y())
             self.cursor = "arrow"
 
+    # --- --- presentation --- ---
     def clear(self):
         self._display.Context.RemoveAll(False)
-        self.ais_dict = None
-        self.aLabel = None
+        self.ctx_dict.clear()
+
 
     def ShowLabel(self, theLabel):
+        if 'ctx_dict' not in self.__dict__:
+            self.ctx_dict = dict()
 
-        self.clear()
+        if theLabel in self.ctx_dict:
+            return 
+
         aDriver:BareShapeDriver = theLabel.GetDriver()
-        if aDriver is None:
+        if aDriver is None or not isinstance(aDriver, BareShapeDriver):
             return
+        
+        # TODO:
+        self.clear()
 
-        self.aLabel = theLabel
         ctx = aDriver.Prs3d(theLabel)
-        self.ais_dict = ctx
-        aDriver.UpdatePrs3d(theLabel, ctx)
-        for ais in self.ais_dict.d.values():
+        self.ctx_dict[theLabel] = ctx
+
+        for ais in ctx.values():
             self._display.Context.Display(ais, False)
+
+        aDriver.UpdatePrs3d(theLabel, ctx)
 
         self._display.FitAll()
         self._display.Repaint()
 
-    def UpdateLabel(self):
-        aDriver:BareShapeDriver = self.aLabel.GetDriver()
+    def UpdateLabel(self, theLabel):
+        aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None:
             return
 
-        if not aDriver.UpdatePrs3d(self.aLabel, self.ais_dict):
-            return 
+        if theLabel not in self.ctx_dict:
+            return
 
-        for ais in self.ais_dict.values():
+        if not aDriver.UpdatePrs3d(theLabel, self.ctx_dict[theLabel]):
+            return
+
+        for ais in self.ctx_dict[theLabel].values():
             self._display.Context.Display(ais, False)
 
         self._display.Viewer.Update()
+        self._display.Repaint()
 
-
-
+    # menu
     def showContextMenu(self, position):
         from PyQt5.QtWidgets import QMenu, QAction
 
@@ -364,13 +366,14 @@ class qtViewer3d(qtBaseViewer):
         # Show the menu at the position of the mouse click
         menu.exec_(self.mapToGlobal(position))
 
+    #  menu function
     def GetRefSub(self):
         from OCC.Core.AIS import AIS_Shape
         from OCC.Core.XCAFPrs import XCAFPrs_AISObject
         from OCC.Core.StdSelect import StdSelect_BRepOwner
         from OCC.Core.TopExp import TopExp_Explorer
         from OCC.Core.TopoDS import TopoDS_Shape
-        print('len:', len(self._display.selected_ais_li))
+        # need selected_ais_li
         if len(self._display.selected_ais_li) > 0:
             owner:StdSelect_BRepOwner = StdSelect_BRepOwner.DownCast(self._display.selected_ais_li[0])
             if owner is None:
@@ -380,6 +383,9 @@ class qtViewer3d(qtBaseViewer):
             subshape:TopoDS_Shape = owner.Shape()
 
             parentAis = XCAFPrs_AISObject.DownCast(owner.Selectable())
+            if parentAis is None:
+                return 
+
             shape = parentAis.Shape()
             explorer = TopExp_Explorer(shape, subshape.ShapeType())
             i = 0
@@ -389,7 +395,7 @@ class qtViewer3d(qtBaseViewer):
                     break
                 explorer.Next()
 
-            label = self.ais_dict.GetLabel(parentAis)
+            label = parentAis.GetLabel()
             if label:
                 from RedPanda.RPAF.DataDriver.ShapeDriver import RefSubDriver
                 data = {'Shape': label.GetEntry(), 'TopoType':subshape.ShapeType(), 'Index':i}

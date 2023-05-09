@@ -20,6 +20,7 @@ from RedPanda.RPAF.DataDriver.BaseDriver import DataLabelState
 
 class ModelTree(QtWidgets.QTreeWidget):
     sig_labelSelect = pyqtSignal(Label)
+    sig_labelCheck = pyqtSignal(Label, bool)
     def __init__(self, *args):
         super(ModelTree, self).__init__(*args)
         self.tree = self
@@ -51,6 +52,8 @@ class ModelTree(QtWidgets.QTreeWidget):
         self.tree.setColumnWidth(0, 150)
 
         self.itemDoubleClicked.connect(self.onItemDoubleClicked)
+        self.itemChanged.connect(self.OnItemChange)
+        # self.itemC
 
         # todo 优化2 设置根节点的背景颜色
         #brush_red = QBrush(Qt.red)
@@ -101,7 +104,7 @@ class ModelTree(QtWidgets.QTreeWidget):
                 item.setText(2, f'{flag}')
             self.SetDataLabel(item, theLabel)
 
-            item.setCheckState(0, Qt.Checked)
+            item.setCheckState(0, Qt.Unchecked)
 
             it_child = TDF_ChildIterator(theLabel)
             while it_child.More():
@@ -129,6 +132,7 @@ class ModelTree(QtWidgets.QTreeWidget):
     # -- new -- 
     @pyqtSlot(Label)
     def Update(self, theLabel):
+        self.running = True
         item = self.item_lookup[theLabel]
 
         name = theLabel.GetLabelName()
@@ -140,10 +144,12 @@ class ModelTree(QtWidgets.QTreeWidget):
             item.setText(2, f'{aDriver.GetStateMsg(theLabel)}')
 
         self.SetDataLabel(item, theLabel)
-        item.setCheckState(0, Qt.Checked)
+        item.setCheckState(0, Qt.Unchecked)
+        self.running = False
 
     @pyqtSlot(Label, Label)
     def Create_TreeItem(self, theLabel:Label, fatherLabel=None):
+        self.running = True
         if fatherLabel is None:
             fatheritem = self.root
         else:
@@ -154,7 +160,7 @@ class ModelTree(QtWidgets.QTreeWidget):
         self.Update(theLabel)
 
         self.expandAll()
-
+        self.running = False
         return item
 
     def _regist_LabelItem(self, label, item):
@@ -171,6 +177,18 @@ class ModelTree(QtWidgets.QTreeWidget):
             Logger().info(f'Selected Item:{name}')
 
             self._Selected_item.setBackground(0, QBrush(Qt.GlobalColor.lightGray))
-            # self.sig_select.emit(Sym_ChangeBuilder(aLabel))
             self.sig_labelSelect.emit(aLabel)
 
+    def OnItemChange(self, item:QTreeWidgetItem, col):
+        if self.running:
+            return 
+
+        if col == 0:
+            aLabel = self.GetLabel(item)
+            if aLabel is None:
+                return 
+
+            if item.checkState(col) == Qt.Checked:
+                self.sig_labelCheck.emit(aLabel, True)
+            elif item.checkState(col) == Qt.Unchecked:
+                self.sig_labelCheck.emit(aLabel, False)

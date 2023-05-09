@@ -506,8 +506,7 @@ class ArrayDriver(DataDriver):
     def __init__(self, ) -> None:
         super().__init__()
 
-        self.myAttr = Param(TDataStd_Integer.GetID())
-        self.Attributes['size'] = self.myAttr
+        self.Attributes['size'] = Param(TDataStd_Integer.GetID())
 
         self._ArrayFirstTag = 125
         self._SubTypeId = Sym_PntDriver_GUID
@@ -529,24 +528,12 @@ class ArrayDriver(DataDriver):
 
     def myInit(self, theLabel:Label, size=None):
         if size is None:
-            size = 0
-        TDataStd_Integer.Set(theLabel, size)
-        # aDriver = theLabel.GetDriver()
-        # for ind, pnt in enumerate(theData.values()):
-        #     tag = ind+self._ArrayFirstTag
-        #     aLabel = theLabel.FindChild(tag)
-        #     aDriver.Init(aLabel, pnt)
+            size = '0'
+
+        self.Attributes['size'].SetValue(theLabel, size)
+        return True
 
     def myChange(self, theLabel:Label, size):
-        # aDriver = DataDriverTable.Get().GetDriver(self._SubTypeId)
-
-        # for ind, pnt in theData.items():
-        #     tag = int(ind)+self.StartIndex
-        #     aLabel = theLabel.FindChild(tag, False)
-        #     if not aDriver.Change(aLabel, pnt):
-        #         return False
-        # return True
-
         start = self.StartIndex
         oldsize = self.GetSize(theLabel)
         size = int(size)

@@ -241,6 +241,9 @@ class ArrayItem(AFItem):
         spbox.setMaximum(20)
         spbox.setSingleStep(1)
 
+        nowsize = self.driver.GetSize(self.label)
+        spbox.UpdateValue(nowsize)
+
         tree:QTreeWidget = self.treeWidget()
         tree.setItemWidget(self, 1, spbox)
     

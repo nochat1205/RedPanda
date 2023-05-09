@@ -652,6 +652,7 @@ def project_point_on_curve(crv, pnt):
         crv = adapt_edge_to_curve(crv).Curve().Curve()
     else:
         raise NotImplementedError("expected a TopoDS_Edge...")
+    print('run', type(crv))
     rrr = GeomAPI_ProjectPointOnCurve(pnt, crv)
     return rrr.LowerDistanceParameter(), rrr.NearestPoint()
 

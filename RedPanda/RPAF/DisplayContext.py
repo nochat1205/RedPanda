@@ -1,5 +1,5 @@
 
-from OCC.Core.AIS import AIS_Shape
+from OCC.Core.AIS import AIS_ColoredShape
 from OCC.Core.XCAFPrs import XCAFPrs_AISObject
 
 from .RD_Label import Label
@@ -9,7 +9,7 @@ class DisplayCtx(object):
     def __init__(self, aLabel:Label) -> None:
         self.d = dict()
         self.aisToLabel = dict()
-        self.bounds = (0, 1, 0, 1)
+        self.bounds = (0, 10, 0, 10)
 
     def __getitem__(self, key):
         return self.d[key]

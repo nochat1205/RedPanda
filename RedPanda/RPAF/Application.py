@@ -1,5 +1,7 @@
 from OCC.Core.TDocStd import TDocStd_Application
 from OCC.Core.TDF import TDF_TagSource
+from OCC.Core.XmlDrivers import xmldrivers_DefineFormat
+
 
 from RedPanda.logger import Logger
 from RedPanda.Core.data import RP_ExtendStr
@@ -16,10 +18,11 @@ class Application(TDocStd_Application):
     def __init__(self) -> None:
         super(Application, self).__init__()
         self.main_doc = None
+
         self.doc_li = list()
         self._registerDriver()
-        
 
+        xmldrivers_DefineFormat(self)        
 
     def _registerDriver(self):
         # Instantiate a Driver and add it to the DriverTable
@@ -129,3 +132,6 @@ class Application(TDocStd_Application):
 
     def HaveDoc(self):
         return self.main_doc is not None
+
+    def SaveDoc(self):
+        self.SaveAs(self.main_doc, RP_ExtendStr(self.main_doc.File()))

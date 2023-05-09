@@ -39,7 +39,7 @@ class MainWindow(QMainWindow):
     sig_NewDataLabel = pyqtSignal(RP_GUID)
     sig_NewDocument = pyqtSignal(str)
     sig_OpenXml = pyqtSignal()
-    sig_SaveNewDocument = pyqtSignal()
+    sig_SaveDocument = pyqtSignal()
 
     def __init__(self) -> None:
         super(MainWindow, self).__init__()
@@ -59,10 +59,9 @@ class MainWindow(QMainWindow):
 
         self.ui.actionxml.triggered.connect(self.onNewDocument)
         self.add_function_to_menu('start', 'save', 
-                                  lambda:self.sig_SaveNowDocument.emit())
+                                  lambda:self.sig_SaveDocument.emit())
         self.add_function_to_menu('open', 'openxml', 
                                   lambda:self.sig_OpenXml.emit())
-
 
     def setupUi(self):
         self.ui = Ui_MainWindow()

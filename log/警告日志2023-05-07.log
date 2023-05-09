@@ -242,3 +242,27 @@
 2023-05-07 04:21:58,766 - WARNING: Entry:0:1:7:19 not found reference
 
 2023-05-07 04:21:58,768 - WARNING: Entry:0:1:7:19 not found reference
+
+2023-05-07 14:56:52,132 - WARNING: Entry:0:1:1, type:Box, Execute Falied
+
+2023-05-07 14:57:18,100 - WARNING: Entry:0:1:3:18, type:Ax2d, Execute Falied
+
+2023-05-07 14:57:18,123 - WARNING: Entry:0:1:3, type:Ellipse2d, Init Falied
+
+2023-05-07 14:57:33,284 - WARNING: Entry:0:1:4:18, type:ShapeRef, Init Falied
+
+2023-05-07 14:57:33,291 - WARNING: Entry:0:1:4:19, type:ShapeRef, Init Falied
+
+2023-05-07 14:57:33,293 - WARNING: Entry:0:1:4, type:BuildEdge3d, Init Falied
+
+2023-05-07 14:57:34,397 - WARNING: Entry:0:1:4:18 not found reference
+
+2023-05-07 14:57:34,400 - WARNING: Entry:0:1:4:18 not found reference
+
+2023-05-07 14:57:34,403 - WARNING: Entry:0:1:4:19 not found reference
+
+2023-05-07 14:57:34,406 - WARNING: Entry:0:1:4:19 not found reference
+
+2023-05-07 20:19:04,827 - WARNING: Entry:0:1:1, type:CylFace, Execute Falied
+
+2023-05-07 21:00:04,696 - WARNING: Entry:0:1:1, type:Box, Execute Falied

@@ -32,6 +32,7 @@ class CutDriver(BareShapeDriver):
         }
 
     def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.BRepAlgoAPI import BRepAlgoAPI_Cut
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -40,11 +41,11 @@ class CutDriver(BareShapeDriver):
         shape0 = dict_param['beCutShape']
         shape1 = dict_param['cutShape']
         try:
-            shape = boolean_cut(shape0, shape1)
+            shape = BRepAlgoAPI_Cut(shape0, shape1).Shape()
         except Exception as error:
             DataLabelState.SetError(theLabel, str(error), True)
             return 1
-        
+
         builder = TNaming_Builder(theLabel)
         builder.Generated(shape)
 

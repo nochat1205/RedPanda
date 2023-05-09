@@ -43,8 +43,11 @@ Sym_RefSubDriver_GUID = RP_GUID("22D22E76-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_Build3dEdgeDriver_GUID = RP_GUID("22D22E77-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_Elps2dDriver_GUID = RP_GUID("22D22E78-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_TrimmedCurve2d_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'TrimmedCurve')))
-
-
+Sym_Seg2dDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Seg2d')))
+Sym_ArcCir2dDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'ArcCir2d')))
+Sym_EdgeArrDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'EdgeArray')))
+Sym_WireDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Wire')))
+Sym_MirAx2Driver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'MirAx2')))
 
 class GuidLookup(object):
     def __init__(self, key_in, key_value) -> None:

@@ -38,7 +38,6 @@ from RedPanda.logger import Logger
 from RedPanda.widgets.Ui_Viewer2d import Viewer2d
 from RedPanda.RPAF.DataDriver import BareShapeDriver
 
-
 class qtBaseViewer(QtWidgets.QWidget):
     """The base Qt Widget for an OCC viewer"""
 
@@ -79,11 +78,12 @@ class qtViewer2d(qtBaseViewer):
 
     def __init__(self, *kargs):
         qtBaseViewer.__init__(self, *kargs)
-        self.ais_dict = None
+        self.disp_ctx = None
         self.aLabel = None
 
         self.setObjectName("qt_viewer_3d")
 
+        self.operatorManager = None
         self._drawbox = False
         self._zoom_area = False
         self._select_area = False
@@ -110,6 +110,7 @@ class qtViewer2d(qtBaseViewer):
 
 
         self.InitDriver()
+        self.InitOperatorManager()
 
     @property
     def qApp(self):
@@ -181,232 +182,74 @@ class qtViewer2d(qtBaseViewer):
         self._display.Context.UpdateCurrentViewer()
 
         if self._drawbox:
-            return 
             painter = QtGui.QPainter(self)
             painter.setPen(QtGui.QPen(QtGui.QColor(0, 0, 0), 2))
             rect = QtCore.QRect(*self._drawbox)
             painter.drawRect(rect)
 
-    def wheelEvent(self, event):
-        delta = event.angleDelta().y()
-        if delta > 0:
-            zoom_factor = 2.0
-        else:
-            zoom_factor = 0.5
-        self._display.ZoomFactor(zoom_factor)
 
-    @property
-    def cursor(self):
-        return self._current_cursor
+    # @property
+    # def cursor(self):
+    #     return self._current_cursor
 
-    @cursor.setter
-    def cursor(self, value):
-        if not self._current_cursor == value:
+    # @cursor.setter
+    # def cursor(self, value):
+    #     if not self._current_cursor == value:
 
-            self._current_cursor = value
-            cursor = self._available_cursors.get(value)
+    #         self._current_cursor = value
+    #         cursor = self._available_cursors.get(value)
 
-            if cursor:
-                self.qApp.setOverrideCursor(cursor)
-            else:
-                self.qApp.restoreOverrideCursor()
+    #         if cursor:
+    #             self.qApp.setOverrideCursor(cursor)
+    #         else:
+    #             self.qApp.restoreOverrideCursor()
 
-    def mousePressEvent(self, event):
-        self.setFocus()
-        ev = event.pos()
-        self.dragStartPosX = ev.x()
-        self.dragStartPosY = ev.y()
-        # self._display.StartRotation(self.dragStartPosX, self.dragStartPosY)
-
-    def mouseReleaseEvent(self, event):
-        pt = event.pos()
-        modifiers = event.modifiers()
-
-        if event.button() == QtCore.Qt.LeftButton:
-            if self._select_area:
-                from OCC.Extend.ShapeFactory import make_edge
-                [Xmin, Ymin, dx, dy] = self._drawbox
-                self._display.SelectArea(Xmin, Ymin, Xmin + dx, Ymin + dy)
-                # p0 = self.GetPoint(Xmin, Ymin)
-                # p1 = self.GetPoint(Xmin+dx, Ymin+dy)
-                # self._display.DisplayShape(make_edge(p0, p1), update=True)
-
-                self._select_area = False
-            else:
-                # multiple select if shift is pressed
-                if modifiers == QtCore.Qt.ShiftModifier:
-                    self._display.ShiftSelect(pt.x(), pt.y())
-                else:
-                    # single select otherwise
-                    self._display.Select(pt.x(), pt.y())
-
-                    if (self._display.selected_shapes is not None) and self.HAVE_PYQT_SIGNAL:
-
-                        self.sig_topods_selected.emit(self._display.selected_shapes)
-
-        elif event.button() == QtCore.Qt.RightButton:
-            if self._zoom_area:
-                [Xmin, Ymin, dx, dy] = self._drawbox
-                self._display.ZoomArea(Xmin, Ymin, Xmin + dx, Ymin + dy)
-                self._zoom_area = False
-
-        self.cursor = "arrow"
-
-    def DrawBox(self, event):
-        tolerance = 2
-        pt = event.pos()
-        dx = pt.x() - self.dragStartPosX
-        dy = pt.y() - self.dragStartPosY
-        if abs(dx) <= tolerance and abs(dy) <= tolerance:
-            return
-        self._drawbox = [self.dragStartPosX, self.dragStartPosY, dx, dy]
-
-    def mouseMoveEvent(self, evt):
-        pt = evt.pos()
-        buttons = int(evt.buttons())
-        modifiers = evt.modifiers()
-        # ROTATE
-        if buttons == QtCore.Qt.LeftButton and not modifiers == QtCore.Qt.ShiftModifier:
-            self.cursor = "rotate"
-            # self._display.Rotation(pt.x(), pt.y())
-            self._drawbox = False
-        # DYNAMIC ZOOM
-        elif (
-            buttons == QtCore.Qt.RightButton
-            and not modifiers == QtCore.Qt.ShiftModifier
-        ):
-            self.cursor = "zoom"
-            self._display.Repaint()
-            self._display.DynamicZoom(
-                abs(self.dragStartPosX),
-                abs(self.dragStartPosY),
-                abs(pt.x()),
-                abs(pt.y()),
-            )
-            self.dragStartPosX = pt.x()
-            self.dragStartPosY = pt.y()
-            self._drawbox = False
-        # PAN
-        elif buttons == QtCore.Qt.MidButton:
-            dx = pt.x() - self.dragStartPosX
-            dy = pt.y() - self.dragStartPosY
-            self.dragStartPosX = pt.x()
-            self.dragStartPosY = pt.y()
-            self.cursor = "pan"
-            self._display.Pan(dx, -dy)
-            self._drawbox = False
-        # DRAW BOX
-        # ZOOM WINDOW
-        elif buttons == QtCore.Qt.RightButton and modifiers == QtCore.Qt.ShiftModifier:
-            self._zoom_area = True
-            self.cursor = "zoom-area"
-            self.DrawBox(evt)
-            self.update()
-        # SELECT AREA
-        elif buttons == QtCore.Qt.LeftButton and modifiers == QtCore.Qt.ShiftModifier:
-            self._select_area = True
-            self.DrawBox(evt)
-            self.update()
-        else:
-            self._drawbox = False
-            self._display.MoveTo(pt.x(), pt.y())
-            self.cursor = "arrow"
-
-
-    # desprete
-    def SelectArea(self, Xmin, Ymin, Xmax, Ymax)->list[AIS_InteractiveObject]:
-        return 
-        from OCC.Core.StdSelect import StdSelect_BRepOwner
-        from RedPanda.Core.topogy.types_lut import shape_lut
-
-        """ get interative object in the area
-        Args:
-            Xmin (int): 
-            Ymin (int): _description_
-            Xmax (int): _description_
-            Ymax (int): _description_
-
-        Returns:
-            list[AIS_InteractiveObject]: ineractive object in the area
-        """
-
-        self.__selectedObject_li = list()
-        aContext = self._display.Context
-        aContext.Select(Xmin, Ymin, Xmax, Ymax, self.View, True)
-
-        aContext.InitSelected()
-        while aContext.MoreSelected():
-            if aContext.HasSelectedShape():
-                self.__selectedObject_li.append(aContext.SelectedInteractive())
-            aContext.NextSelected()
-        print(f'Arealen:{len(self.__selectedObject_li)}')
-
-        for obj in self.__selectedObject_li:
-            obj:AIS_InteractiveObject
-            brepOwer:StdSelect_BRepOwner = StdSelect_BRepOwner.DownCast(obj.GetOwner())
-
-        return self.__selectedObject_li
-
-    def Select(self, X, Y):
-        '''
-        despre
-        '''
-        return 
-        from OCC.Core.TopoDS import TopoDS_Shape
-
-        self.selected_shapes = []
-
-        aContext = self._display.Context
-
-        aContext.Select(True)
-        aContext.InitSelected()
-        if aContext.MoreSelected():
-            if aContext.HasSelectedShape():
-                owner = aContext.SelectedOwner()
-                self.selected_shapes.append(StdSelect_BRepOwner.DownCast(owner))
-
-        # for obj in self.selected_shapes:
-        #     obj:StdSelect_BRepOwner
-        #     shape:TopoDS_Shape = obj.Shape()
-        #     interactive = AIS_Shape.DownCast(obj.Selectable())
-        #     shapeparent = interactive.Shape()
-
-    # Prsentation
+    #  -- -- -- Prsentation -- -- --
     def clear(self):
         self._display.Context.RemoveAll(False)
-        self.ais_dict = None
-        self.aLabel = None
+        self.ctx_dict.clear()
 
     def ShowLabel(self, theLabel):
+        if 'ctx_dict' not in self.__dict__:
+            self.ctx_dict = dict()
 
-        self.clear()
+        if theLabel in self.ctx_dict:
+            return 
+
         aDriver:BareShapeDriver = theLabel.GetDriver()
-        if aDriver is None:
+        if aDriver is None or not isinstance(aDriver, BareShapeDriver):
             return
 
-        self.aLabel = theLabel
+        # TODO:
+        self.clear()
+
         ctx = aDriver.Prs2d(theLabel)
-        self.ais_dict = ctx
-        aDriver.UpdatePrs2d(theLabel, ctx)
+        self.ctx_dict[theLabel] = ctx
+
         for ais in ctx.values():
             self._display.Context.Display(ais, False)
+
+        aDriver.UpdatePrs2d(theLabel, ctx)
 
         self._display.FitAll()
         self._display.Repaint()
 
-    def UpdateLabel(self):
-        aDriver:BareShapeDriver = self.aLabel.GetDriver()
+    def UpdateLabel(self, theLabel):
+        aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None:
             return
 
-        if not aDriver.UpdatePrs2d(self.aLabel, self.ais_dict):
+        if theLabel not in self.ctx_dict:
             return 
 
-        for ais in self.ais_dict.values():
+        if not aDriver.UpdatePrs2d(theLabel, self.ctx_dict[theLabel]):
+            return
+
+        for ais in self.ctx_dict[theLabel].values():
             self._display.Context.Display(ais, False)
 
-        self.SetUVGrid(*self.ais_dict.GetBound())
-
+        self.SetUVGrid(*self.ctx_dict[theLabel].GetBound())
+        self._display.Viewer.Update()
         self._display.Repaint()
 
     def TrihedronEnable(self, length):
@@ -480,51 +323,35 @@ class qtViewer2d(qtBaseViewer):
 
     def SetUVGrid(self, u1, u2, v1, v2):
         self.GridEnable(u1, u2, v1, v2)
-        length = max((u2-u1)/2, (v2-v1)/2)
+        length = max((u2-u1), (v2-v1))
         self.TrihedronEnable(length)
 
     # selected object
     def GetSelectedObject(self):
         return self._display.Context.SelectedInteractive()
 
-    def GetPoint(self, x, y):
-        from OCC.Core.gp import gp_Pnt, gp_Dir, gp_Lin
-        from OCC.Core.Geom import Geom_Line
-        from OCC.Core.TopoDS import TopoDS_Shape
-        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_WIRE, TopAbs_VERTEX
-        from OCC.Core.BRep import BRep_Tool
-        from OCC.Core.BRepLib import breplib_BuildCurve3d
-        from OCC.Core.BRepExtrema import BRepExtrema_DistShapeShape
-        from OCC.Extend.ShapeFactory import make_edge, make_wire
-        from RedPanda.Core.Make import project_point_on_curve
+    def InitOperatorManager(self):
+        from RedPanda.draw.Operator import MouseControl, ViewerOperator, WheelOperator
 
-        # self._display.Context.ClearSelected(True)
-        shapes:list[TopoDS_Shape] = self._display.Select(x, y)
+        self.operatorManager:MouseControl = MouseControl()
+        self.operatorManager.RegisterWheelOperaor(WheelOperator(self, self._display))
 
-        projX, projy, projz, rayx, rayy, rayz = self._display.View.ProjReferenceAxe(x, y)
-        p = gp_Pnt(projX, projy, projz)
-        if len(shapes) == 0:
-            return p
+        operator = ViewerOperator(self, self._display)
+        self.operatorManager.Register(operator)
+        self.operatorManager.Activate(operator.name)
 
-        if shapes[0].ShapeType() == TopAbs_VERTEX:
-            p = BRep_Tool.Pnt(shapes[0])
-            # self._display.DisplayMessage(p, f'Coord:{p.Coord()}')
-        elif shapes[0].ShapeType() == TopAbs_EDGE:
-            try:
-                # 1
-                dir = gp_Dir(rayx, rayy, rayz)
-                line = gp_Lin(p, dir)
-                edge = make_edge(line)
-                wire = make_wire(shapes[0])
-                extrema = BRepExtrema_DistShapeShape(wire, edge)
-                p = extrema.PointOnShape1(1)
+    def wheelEvent(self, event):
+        self.operatorManager.wheelEvent(event, self.disp_ctx)
 
-                # 2
-                # from RedPanda.Core.topogy.edge import EdgeAnalyst
-                # analyst = EdgeAnalyst(shapes[0])
-                # print(analyst.parameter_to_point(0).Coord())
-                # param, pnt = project_point_on_curve(analyst, p)
-            except Exception as error:
-                Logger().warning(f'error:{error}')
+    def mousePressEvent(self, event):
+        self.operatorManager.mousePressEvent(event, self.disp_ctx)
 
-        return p
+    def mouseReleaseEvent(self, event):
+        self.operatorManager.mouseReleaseEvent(event, self.disp_ctx)
+
+    def mouseMoveEvent(self, evt):
+        self.operatorManager.mouseMoveEvent(evt, self.disp_ctx)
+
+    def ActiveOperator(self, name:str):
+        self.operatorManager.Activate(name)
+

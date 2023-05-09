@@ -153,7 +153,6 @@ modes = itertools.cycle(
     [TopAbs_FACE, TopAbs_EDGE, TopAbs_VERTEX, TopAbs_SHELL, TopAbs_SOLID]
 )
 
-
 class Viewer3d(Display3d):
     def __init__(self):
         Display3d.__init__(self)
@@ -381,7 +380,6 @@ class Viewer3d(Display3d):
     def ExportToImage(self, image_filename):
         self.View.Dump(image_filename)
 
-    # my function
     def display_graduated_trihedron(self):
         a_trihedron_data = Graphic3d_GraduatedTrihedron()
         self.View.GraduatedTrihedronDisplay(a_trihedron_data)
@@ -678,20 +676,6 @@ class Viewer3d(Display3d):
         for callback in self._select_callbacks:
             callback(self.selected_shapes, Xmin, Ymin, Xmax, Ymax)
 
-    def Select(self, X, Y):
-        self.Context.Select(True)
-        self.Context.InitSelected()
-
-        self.selected_shapes = []
-        self.selected_ais_li = []
-        if self.Context.MoreSelected():
-            if self.Context.HasSelectedShape():
-                self.selected_shapes.append(self.Context.SelectedShape())
-                self.selected_ais_li.append(self.Context.SelectedOwner())
-        # callbacks
-        for callback in self._select_callbacks:
-            callback(self.selected_shapes, X, Y)
-
     def ShiftSelect(self, X, Y):
         self.Context.ShiftSelect(True)
         self.Context.InitSelected()
@@ -724,4 +708,20 @@ class Viewer3d(Display3d):
 
     def StartRotation(self, X, Y):
         self.View.StartRotation(X, Y)
+
+    # me
+    def Select(self, X, Y):
+        self.Context.Select(True)
+        self.Context.InitSelected()
+
+        self.selected_shapes = []
+        self.selected_ais_li = []
+        if self.Context.MoreSelected():
+            if self.Context.HasSelectedShape():
+                self.selected_shapes.append(self.Context.SelectedShape())
+                self.selected_ais_li.append(self.Context.SelectedOwner())
+        # callbacks
+        for callback in self._select_callbacks:
+            callback(self.selected_shapes, X, Y)
+
 

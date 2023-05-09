@@ -213,8 +213,8 @@ class EdgeAnalyst(TopoDS_Edge, BaseObject):
         if self._curve is not None and not self.is_dirty:
             pass
         else:
-            self._curve = BRep_Tool().Curve(self)
-        return self._curve
+            self._curve, self.u0, self.u1 = BRep_Tool().Curve(self)
+        return self._curve, self.u0, self.u1
 
     @property
     def adaptor(self):
