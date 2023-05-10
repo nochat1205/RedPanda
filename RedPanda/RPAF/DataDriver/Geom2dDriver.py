@@ -149,6 +149,7 @@ class Build3dDriver(PCurveDriver):
         self.Arguments['edge2d'] = Argument(self.tagResource, ShapeRefDriver.ID)
     
     def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.Geom2d import Geom2d_TrimmedCurve
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -159,7 +160,7 @@ class Build3dDriver(PCurveDriver):
             edge2d = dict_param['edge2d']
             breplib_BuildCurve3d(edge2d)
             curve, u, v = BRep_Tool.CurveOnPlane(edge2d, Geom_Plane(RP_Ax3()), TopLoc_Location())
-            
+            curve = Geom2d_TrimmedCurve(curve, u, v)
             edge = BRepBuilderAPI_MakeEdge(curve, surface).Edge()
         except Exception as error:
             DataLabelState.SetError(theLabel, str(error), True)
@@ -277,6 +278,7 @@ class BareShape2dDriver(BareShapeDriver):
             ais.SetShape(shape)
             ais.SetColor(Quantity_Color(Quantity_NOC_RED))
             ais.SetToUpdate()
+            ais.UpdateSelection()
 
         return True
 

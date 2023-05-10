@@ -26,7 +26,7 @@ class MainApplication():
         Logger().info("Application Start")
         qapp = QApplication(argv)
         
-        memory_limit = 4* 1024*1024*1024 # 4g
+        memory_limit =  512*1024*1024 # 512M
         
         timer = QTimer()
         MainApplication.timer = timer
@@ -96,6 +96,7 @@ class MainApplication():
         self.c_viewer3d.sig_new_shape.connect(self.Process_NewLabel)
         self.c_viewer2d.sig_new_shape.connect(self.Process_NewLabel)
         self.c_viewer2d.sig_point.connect(self.Process_ShowPoint)
+        
 
     # register function
     def RegisterShapeDriver(self, menu_name, name,  driver:DataDriver):
@@ -111,8 +112,8 @@ class MainApplication():
             BezierDriver,
             BoxDriver,
             CutDriver,
-            
         )
+        from .RPAF.DataDriver.AlgoDriver import FuseDriver
         from .RPAF.DataDriver.PrimDriver import TransShapeDriver
         from .RPAF.DataDriver.VarDriver import IntDriver
         from .RPAF.DataDriver.GeomDriver import CylSurDriver
@@ -130,8 +131,12 @@ class MainApplication():
         )
         from .RPAF.DataDriver.FilletDriver import FilletAllDriver
         from .RPAF.DataDriver.ArrayDriver import EdgeArrayDriver
-        from .RPAF.DataDriver.WireDriver import WireDriver
-
+        from .RPAF.DataDriver.TopoDriver import (
+            WireDriver, CompoudDriver
+        )
+        from .RPAF.DataDriver.OffsetDriver import (
+            ThickSoldDriver, ThruSecDriver
+        )
 
         self.RegisterDriver(Ax3Driver())
         self.RegisterDriver(Ax2dDriver())
@@ -144,6 +149,7 @@ class MainApplication():
 
         self.RegisterShapeDriver('PrimAPI', 'Box', BoxDriver())
         self.RegisterShapeDriver('AlgoAPI', 'Cut', CutDriver())
+        self.RegisterShapeDriver('AlgoAPI', 'Fuse', FuseDriver())
         self.RegisterShapeDriver('GeomAPI', 'bezier', BezierDriver())
         self.RegisterShapeDriver('GeomAPI', 'Cyl', CylSurDriver())
         self.RegisterShapeDriver('GeomAPI', 'Ellipse2d', Ellipse2dDriver())
@@ -159,6 +165,9 @@ class MainApplication():
         self.RegisterShapeDriver('Topo', 'Prism', PrismDriver())
         self.RegisterShapeDriver('Fillet', 'FilletAll', FilletAllDriver())
         self.RegisterShapeDriver('Topo', 'Transform', TransShapeDriver())
+        self.RegisterShapeDriver('Topo', 'Compu', CompoudDriver())
+        self.RegisterShapeDriver('Offset', 'Thick', ThickSoldDriver())
+        self.RegisterShapeDriver('Offset', 'ThruSec', ThruSecDriver())
 
 
     def Process_NewLabel(self, id:RP_GUID, data=None):
@@ -219,9 +228,10 @@ class MainApplication():
         for label in labelInDocTree:
             self.c_docTree.Update(label)
 
-            Logger().info('update Label')
+            Logger().info('update3d Label')
             self.c_viewer3d.UpdateLabel(label)
-            self.c_viewer2d.UpdateLabel(label)
+            # Logger().info('update2d Label')
+            # self.c_viewer2d.UpdateLabel(label)
 
         Logger().info(f'End Change: {theLabel.GetEntry()}, {str}')
 
@@ -264,7 +274,6 @@ class MainApplication():
         self.c_docTree.Create_TreeItem(doc.Main())
 
     def Process_SaveDocument(self):
-        return 
         Logger().info('Save Document start')
         doc = self.docApp._main_doc
         if doc.File() is None:

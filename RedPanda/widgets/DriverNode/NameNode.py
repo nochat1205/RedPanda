@@ -217,7 +217,9 @@ class RefItem(AFItem):
         refLabel = self.driver.GetRefLabel(self.label)
         if self.refLabel != refLabel:
             for ind in range(self.childCount()):
-                self.treeWidget().RemoveItem(self.child(ind).label)
+                item = self.child(ind)
+                if item:
+                    self.treeWidget().RemoveItem(item.label)
 
             self.refLabel = refLabel
             self._setChild()

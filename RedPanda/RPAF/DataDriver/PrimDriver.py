@@ -59,7 +59,6 @@ class BoxDriver(ShapeDriver):
         for name, argu in self.Arguments.items():
             argu:Argument
             dict_param[name] = argu.Value(theLabel)
-        Logger().debug(f'Execute {self.Type}, argu:{dict_param}')
         trsf:RP_Trsf = dict_param['transform']
         dx = dict_param['l']
         dy = dict_param['h']

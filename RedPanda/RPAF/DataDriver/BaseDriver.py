@@ -596,6 +596,10 @@ class CompoundDriver(DataDriver):
         return flag
 
     def myChange(self, theLabel: Label, theData):
+        if not isinstance(theData, dict):
+            Logger().info(f'Entry:{theLabel.GetEntry()}, change failed with data:{theData}')
+            return False
+
         for name, subData in theData.items():
             argu:Argument = self.Arguments[name]
             aLabel = theLabel.FindChild(argu.Tag)

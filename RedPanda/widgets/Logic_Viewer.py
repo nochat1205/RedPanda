@@ -334,10 +334,11 @@ class qtViewer3d(qtBaseViewer):
 
     def UpdateLabel(self, theLabel):
         aDriver:BareShapeDriver = theLabel.GetDriver()
+        
         if aDriver is None:
             return
 
-
+        Logger().info(f'Type:{ theLabel.GetDriver().Type}')
         if not aDriver.UpdatePrs3d(theLabel, self.ctx):
             return
 

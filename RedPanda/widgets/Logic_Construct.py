@@ -82,13 +82,16 @@ class Logic_Construct(QtWidgets.QTreeWidget):
     def _clear(self):
         self.label = None
         for item in self.treeItem.values():
-            parent = item.parent()
-            if parent is not None:
-                parent.removeChild(item)
-            else:
-                self.tree.invisibleRootItem().removeChild(item)
+            try: # TODO
+                parent = item.parent()
+                if parent is not None:
+                    parent.removeChild(item)
+                else:
+                    self.tree.invisibleRootItem().removeChild(item)
 
-            del item
+                del item
+            except:
+                pass
 
         self.treeItem.clear()
 

@@ -172,9 +172,13 @@ class FaceDriver(BareShapeDriver):
         self.Arguments['Wire'] = Argument(self.tagResource, ShapeRefDriver.ID)
 
     def myExecute(self, theLabel: Label) -> int:
-        from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeFace
+        from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeFace, BRepBuilderAPI_MakeWire
+        from OCC.Core.TopAbs import TopAbs_EDGE
+        
         wire = self.Arguments['Wire'].Value(theLabel)
         try:
+            if wire.SHapeType() == TopAbs_EDGE:
+                wire = BRepBuilderAPI_MakeWire(wire).Wire()
             face = BRepBuilderAPI_MakeFace(wire).Face()
         except Exception as error:
             DataLabelState.SetError(theLabel, str(error), True)

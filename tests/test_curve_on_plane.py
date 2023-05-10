@@ -103,12 +103,46 @@ def GetPoint(shapes, x, y, _display):
             print(f'error:{error}')
 
     return p
+def test_segment_plane():
+    from RedPanda.Core.data import RP_TOLERANCE
+    from RedPanda.Core.Euclid import RP_Pnt, RP_Pnt2d
+    from OCC.Core.GCE2d import GCE2d_MakeSegment
+    from OCC.Core.Geom import Geom_CylindricalSurface
+    from OCC.Core.gp import gp_DZ, gp_Pnt2d
+    from OCC.Core.BRep import BRep_Tool
+    from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge, BRepBuilderAPI_MakeFace, BRepBuilderAPI_MakeEdge2d
+    from OCC.Core.Geom2d import Geom2d_TrimmedCurve
+
+    neckLocation = RP_Pnt(0, 0, 5)
+    neckAx2_Ax3 = gp_Ax3(neckLocation, gp_DZ())
+
+    aCy11 = Geom_CylindricalSurface(neckAx2_Ax3, 5)
+    face = BRepBuilderAPI_MakeFace(aCy11, RP_TOLERANCE).Face()
+    aCy11 = BRep_Tool.Surface(face)
+
+    seg = GCE2d_MakeSegment(gp_Pnt2d(0, 0), 
+                            gp_Pnt2d(3.14, 1)).Value()
+
+    print('seg:', seg.Value(0).X(), seg.Value(0).Y())
+
+    edge2d = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+    breplib_BuildCurve3d(edge2d)
+    
+    curve, u, v = BRep_Tool.CurveOnPlane(edge2d, Geom_Plane(gp_Ax3()), TopLoc_Location())
+    print(u, v, curve.Value(u).X(), curve.Value(u).Y(), curve.Value(v))
+    print(curve.Value(v).X(), curve.Value(v).Y())
+    curve = Geom2d_TrimmedCurve(curve, u, v)
+    edge = BRepBuilderAPI_MakeEdge(curve, aCy11).Edge()
+
+    display.DisplayShape(edge)
+
 
 if __name__ == '__main__':
     display, start, *_ = init_display()
     display.Viewer.SetPrivilegedPlane(gp_Ax3())
-    edge = BRepBuilderAPI_MakeEdge(gp_Circ(gp_XOY(), 5)).Edge()
-    display.DisplayShape(edge)
+    
+    test_segment_plane()
+    
     display.FitAll()
     display.register_select_callback(lambda shape, x, y:GetPoint(shape, x, y, display))
 

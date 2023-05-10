@@ -31,8 +31,6 @@ class EdgeArrayDriver(ArrayDriver):
 
         return edge_li
 
-
-
     @classproperty
     def ID(self):
         from ..GUID import Sym_EdgeArrDriver_GUID

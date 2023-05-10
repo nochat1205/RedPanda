@@ -1,4 +1,5 @@
 from OCC.Core.TNaming import TNaming_Builder
+from OCC.Core.TopoDS import TopoDS_Shape
 
 from RedPanda.decorator import classproperty
 
@@ -36,7 +37,7 @@ class WireDriver(BareShapeDriver):
                 builder.Add(edge)
             wire = builder.Wire()
         except Exception as error:
-            DataLabelState.SetError(theLabel, 'wire array Error', True)
+            DataLabelState.SetError(theLabel, str(error), True)
             return 1 
 
         builder = TNaming_Builder(theLabel)
@@ -51,3 +52,45 @@ class WireDriver(BareShapeDriver):
     def ID(self):
         from ..GUID import Sym_WireDriver_GUID
         return Sym_WireDriver_GUID
+
+from .TopoDriver import EdgeArrayDriver
+class CompoudDriver(BareShapeDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['Wires'] = Argument(self.tagResource, EdgeArrayDriver.ID)
+
+    def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.BRepBuilderAPI import TopoDS_Compound
+        from OCC.Core.BRep import BRep_Builder
+
+        from RedPanda.Core.data import RP_TOLERANCE
+    
+
+        edges:list[TopoDS_Shape] = self.Arguments['wires'].Value(theLabel)
+        try:
+            builder = BRep_Builder()
+
+            comp = TopoDS_Compound()
+            builder.MakeCompound(comp)
+            for shape in edges:
+                builder.Add(comp, shape)
+
+            shape = comp
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(shape)
+
+        return 0
+
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_ThruSecDriver_GUID
+        return  Sym_ThruSecDriver_GUID #
+
+    @classproperty
+    def Type(self):
+        return "ThruSec"

@@ -208,14 +208,10 @@ class qtViewer2d(qtBaseViewer):
     #  -- -- -- Prsentation -- -- --
     def clear(self):
         self._display.Context.RemoveAll(False)
-        self.ctx_dict.clear()
 
     def ShowLabel(self, theLabel):
-        if 'ctx_dict' not in self.__dict__:
-            self.ctx_dict = dict()
-
-        if theLabel in self.ctx_dict:
-            return 
+        if 'ctx' not in self.__dict__:
+            self.ctx = None
 
         aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None or not isinstance(aDriver, BareShapeDriver):
@@ -225,7 +221,7 @@ class qtViewer2d(qtBaseViewer):
         self.clear()
 
         ctx = aDriver.Prs2d(theLabel)
-        self.ctx_dict[theLabel] = ctx
+        self.ctx = ctx
 
         for ais in ctx.values():
             self._display.Context.Display(ais, False)
@@ -240,16 +236,13 @@ class qtViewer2d(qtBaseViewer):
         if aDriver is None:
             return
 
-        if theLabel not in self.ctx_dict:
-            return 
-
-        if not aDriver.UpdatePrs2d(theLabel, self.ctx_dict[theLabel]):
+        if not aDriver.UpdatePrs2d(theLabel, self.ctx):
             return
 
-        for ais in self.ctx_dict[theLabel].values():
-            self._display.Context.Display(ais, False)
+        # for ais in self.ctx.values():
+        #     self._display.Context.Display(ais, False)
 
-        self.SetUVGrid(*self.ctx_dict[theLabel].GetBound())
+        self.SetUVGrid(*self.ctx.GetBound())
         self._display.Viewer.Update()
         self._display.Repaint()
 
@@ -380,7 +373,7 @@ class qtViewer2d(qtBaseViewer):
             p = BRep_Tool.Pnt(shapes[0])
             shape = shapes[0]
         elif shapes[0].ShapeType() == TopAbs_EDGE:
-            shape = shape[0]
+            shape = shapes[0]
             try:
                 curve, u0, u1 = EdgeAnalyst(shapes[0]).curve
                 builder = GeomAPI_ProjectPointOnCurve(p, curve)

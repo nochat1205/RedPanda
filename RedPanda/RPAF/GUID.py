@@ -52,6 +52,9 @@ Sym_PrismDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Prism')))
 Sym_FilAllDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'FilAll')))
 Sym_RefSubDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'RefSub')))
 Sym_ConstShapebDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'ConstShape')))
+Sym_ThickDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Thick')))
+Sym_ThruSecDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'ThruSec')))
+Sym_FuseDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Fuse')))
 
 
 class GuidLookup(object):
