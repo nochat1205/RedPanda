@@ -79,6 +79,7 @@ class RefSubDriver(BareShapeDriver):
     def Type(self):
         return "RefSub"
 
+from OCC.Core.Geom import Geom_Plane
 
 class MirrorDriver(BareShapeDriver):
     def __init__(self) -> None:
@@ -93,11 +94,9 @@ class MirrorDriver(BareShapeDriver):
         from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_Transform        
         from RedPanda.Core.Make import mirror_axe2
 
-        
         shape = self.Arguments['Shape'].Value(theLabel)
 
         try:
-            
             ax2 = self.ax2(theLabel)
             shape = mirror_axe2(shape, ax2)
         except Exception as error:
@@ -115,20 +114,24 @@ class MirrorDriver(BareShapeDriver):
         vt = self.Arguments['Dir'].Value(theLabel)
         dir = VertexAnalyst(vt).as_dir
         ax2 = gp_Ax2(pnt, dir)
+        return ax2
 
     def Prs3d(self, theLabel) -> DisplayCtx:
         ctx = super().Prs3d(theLabel)
-        from OCC.Core.Geom import Geom_Plane
-
-        aLabel = theLabel.Argument['Shape']
+        from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_BLUE3
+        # 2
+        aLabel = theLabel.Argument('Shape')
         ais  = AIS_ColoredShape(TopoDS_Shape())
         ais.SetDisplayMode(AIS_Shaded)
+        ais.SetColor(Quantity_Color(Quantity_NOC_BLUE3))
         ctx[(aLabel, 'shape')] = ais
 
 
         plane = Geom_Plane(gp_Ax3())
         ais = AIS_Plane(plane)
         ctx[(theLabel, 'plane')] = ais
+
+        self.UpdatePrs3d(theLabel, ctx)
 
         return ctx
 
@@ -138,15 +141,19 @@ class MirrorDriver(BareShapeDriver):
         if not DataLabelState.IsOK(theLabel):
             return False
 
+        # 1
+
         # 2
-        aLabel = theLabel.Argument['Shape']
-        ais:AIS_ColoredShape = ctx[(aLabel, 'shape')]
-        ais.SetShape(aLabel.GetAttrValue(TNaming_NamedShape.GetID()))
+        aLabel = theLabel.Argument('Shape')
+        shape = aLabel.GetAttrValue(TNaming_NamedShape.GetID())
+        if shape:
+            ctx.SetShape((aLabel, 'shape'), shape)
 
         # 3
-        place = Geom_Axis2Placement(self.ax2(theLabel))
+        place = Geom_Plane(gp_Ax3(self.ax2(theLabel)))
         ais:AIS_Plane = ctx[(theLabel, 'plane')]
-        ais.SetAxis2Placement(place, AIS_TOPL_XYPlane)
+        if ais:
+            ais.SetComponent(place)
 
         return True
 
@@ -158,3 +165,61 @@ class MirrorDriver(BareShapeDriver):
     def ID(self):
         from ..GUID import Sym_MirAx2Driver_GUID
         return Sym_MirAx2Driver_GUID
+
+class FaceDriver(BareShapeDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['Wire'] = Argument(self.tagResource, ShapeRefDriver.ID)
+
+    def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeFace
+        wire = self.Arguments['Wire'].Value(theLabel)
+        try:
+            face = BRepBuilderAPI_MakeFace(wire).Face()
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(face)
+        return 0
+
+    @classproperty
+    def Type(self):
+        return 'Face'
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_FaceDriver_GUID
+        return Sym_FaceDriver_GUID
+
+class PrismDriver(BareShapeDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['Face'] = Argument(self.tagResource, ShapeRefDriver.ID)
+        self.Arguments['Vec'] = Argument(self.tagResource, PntDriver.ID)
+
+    def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakePrism
+        from RedPanda.Core.topogy import VertexAnalyst
+        face = self.Arguments['Face'].Value(theLabel)
+        pnt = self.Arguments['Vec'].Value(theLabel)
+        try:
+            vec = VertexAnalyst(pnt).as_vec
+            face = BRepPrimAPI_MakePrism(face, vec).Shape()
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(face)
+        return 0
+
+    @classproperty
+    def Type(self):
+        return 'Prism'
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_PrismDriver_GUID
+        return Sym_PrismDriver_GUID

@@ -98,11 +98,14 @@ class TransShapeDriver(ShapeDriver):
             argu:Argument
             aLabel = theLabel.FindChild(argu.Tag)
             dict_param[name] = aLabel.GetAttrValue(self.Attributes['value'].id)
+        try:
+            trsf:RP_Trsf = dict_param['transform']
+            shape = dict_param['transform']
 
-        trsf:RP_Trsf = dict_param['transform']
-        shape = dict_param['transform']
+            shape = BRepBuilderAPI_Transform(shape, trsf).Shape()
 
-        shape = BRepBuilderAPI_Transform(shape, trsf).Shape()
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
 
         builder = TNaming_Builder(theLabel)
         builder.Generated(shape)

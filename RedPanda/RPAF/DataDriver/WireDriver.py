@@ -22,6 +22,7 @@ class WireDriver(BareShapeDriver):
 
     def myExecute(self, theLabel: Label) -> int:
         from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeWire
+        from OCC.Core.BRepLib import breplib_BuildCurve3d
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -31,12 +32,13 @@ class WireDriver(BareShapeDriver):
         try:
             builder = BRepBuilderAPI_MakeWire()
             for edge in edges:
+                breplib_BuildCurve3d(edge)
                 builder.Add(edge)
             wire = builder.Wire()
         except Exception as error:
-            DataLabelState.SetError(theLabel, 'pnt_array Error', True)
+            DataLabelState.SetError(theLabel, 'wire array Error', True)
             return 1 
-        
+
         builder = TNaming_Builder(theLabel)
         builder.Generated(wire)
         return 0

@@ -17,7 +17,7 @@ from .RD_Label import Label
 class Application(TDocStd_Application):
     def __init__(self) -> None:
         super(Application, self).__init__()
-        self.main_doc = None
+        self._main_doc = None
 
         self.doc_li = list()
         self._registerDriver()
@@ -66,8 +66,7 @@ class Application(TDocStd_Application):
     def AddDocument(self, doc):
         self.InitDocument(doc)
         super(TDocStd_Application, self).Open(doc)
-        self.doc_li.append(doc)
-        self.main_doc = doc
+
 
     def Update(self, theLabel:Label, str)->set:
         touched_set = set()
@@ -116,22 +115,168 @@ class Application(TDocStd_Application):
         self.AddDocument(doc)
         TDataStd_Name.Set(doc.Main(), RP_ExtendStr(str(doc)))
 
-        # load and read instant read
-        # TPrsStd_AISViewer.New(doc.Main(), self._myViewer)
-        # TPrsStd_AISViewer.Find(self._main_doc.Main(), self._myContext)
-
-        # self._myContext.SetDisplayMode(AIS_Shaded, True)
-
         # Set the maximum number of available "undo" actions
         doc.SetUndoLimit(10)
 
+        self.doc_li.append(doc)
         self._main_doc = doc
-        # self.sig_DocChanged.emit(self._main_doc)
+
         return doc
 
 
     def HaveDoc(self):
-        return self.main_doc is not None
+        return self._main_doc is not None
 
     def SaveDoc(self):
-        self.SaveAs(self.main_doc, RP_ExtendStr(self.main_doc.File()))
+        url = self._main_doc.File()
+        self.SaveAs(self._main_doc, RP_ExtendStr(url))
+        # with open(url.replace('xml', 'bin'), 'wb+') as f:
+        #     pickle.dump(self._main_doc, f)
+
+    def OpenDoc(self, path):
+        return 
+        doc = self.NewDocument(RP_ExtendStr('XmlOcaf'))
+        doc.SetFile(path)
+        
+        try:
+            self.Rebuild(path, doc)
+        except Exception as error:
+            Logger().error(str(error))
+
+        # from OCC.Core.Message import Message_ProgressRange
+        # doc = Document(RP_ExtendStr('XmlOcaf'))
+        # self.Open(RP_ExtendStr (path), doc)
+
+        return doc
+
+    def Rebuild(self, path, doc:Document):
+        from RedPanda.RPAF.DriverTable import DataDriverTable
+        from RedPanda.Core.data import RP_ExtendStr
+        from RedPanda.RPAF.GUID import RP_GUID
+        from RedPanda.RPAF.RD_Label import Label
+        from RedPanda.RPAF.Attribute import Lookup_Attr, FromText
+        import xml.etree.ElementTree as ET
+        
+        tree = ET.parse(path)
+        root = tree.getroot()
+        xmlns = r"{http://www.opencascade.org/OCAF/XML}"
+
+        labeltag = xmlns+'label'
+        nametag = xmlns+'TDataStd_Name'
+        functiontag = xmlns+'TFunction_Function'
+        shapetag = xmlns+'TNaming_NamedShape'
+        statetag = xmlns+'TDataStd_Integer'
+        realtag = xmlns+'TDataStd_Real'
+        def todeep3(root):
+            node = root
+            # name 
+            for _ in range(2):
+                for child in node:
+                    if child.tag == labeltag:
+                        node = child
+                        break
+
+  
+            return node
+
+        def setDataLabel(node, theLabel:Label):
+            from .Attribute import (
+                TFunction_Function, Attr_State_guid, Attr_State,
+                TDataStd_Comment, TDataStd_Real
+            )
+            from .DataDriver.BaseDriver import DataLabelState
+            for child in node:
+                print(child.tag)
+                if child.tag in (shapetag,):
+                    continue
+                elif child.tag == functiontag:
+                    id = RP_GUID( child.attrib['guid'])
+                    TFunction_Function.Set(theLabel, id)
+                elif (
+                        child.tag == statetag 
+                    and 'intattguid' in child.attrib
+                    and RP_GUID(child.attrib['intattguid']) == Attr_State_guid
+                ):
+                    Attr_State.Set(theLabel, DataLabelState.ParamError)
+                elif child.tag == nametag:
+                    name = child.text
+                    TDataStd_Name.Set(theLabel, RP_ExtendStr(name))
+                elif child.tag == realtag:
+                    TDataStd_Real.Set(theLabel, float(child.text))
+                    print(float(child.text))
+
+                elif child.tag == labeltag:
+                    tag = int(child.attrib['tag'])
+                    aLabel = theLabel.FindChild(tag, True)
+                    setDataLabel(child, aLabel)
+                else:
+                    attr = child.attrib
+                    value = child.text
+                    idName = ['guid', 'nameguid', 'intattguid']
+                    attr_id = None
+                    for iname in idName: 
+                        if iname in attr:
+                            attr_id = RP_GUID( attr[iname])
+                            break # for
+
+                    if attr_id is None:
+                        Logger().error(f'no none xml node {child.tag} {child.attrib}')
+                        continue
+                    
+                    if attr_id == TDataStd_Comment.GetID():
+                        TDataStd_Comment.Set(theLabel, RP_ExtendStr(value))
+                        continue
+
+                    cls = Lookup_Attr[attr_id]
+                    if cls is None:
+                        continue
+
+                    cls.Set(theLabel, attr_id, FromText(cls.GetID(), value))
+
+        # def setSubLabel(fnode, flabel):
+        #     value_d = dict()
+        #     attr_d = dict()
+        #     for child in fnode:
+        #         if child.tag in (shapetag, functiontag):
+        #             continue
+        #         elif child.tag == labeltag:
+        #             tag = int(child.attrib['tag'])
+        #             aLabel = flabel.FindChild(tag, True)
+        #             # aDriver.Init(aLabel)
+
+        #             for key in value_d.keys():
+        #                 idName = ['guid', 'nameguid', 'intattguid']
+        #                 for iname in idName:
+        #                     if iname in attr_d[key]:
+        #                         attr_id = attr_d[key][iname]
+        #                         break # for
+
+        #                 cls = Lookup_Attr[RP_GUID(attr_id)]
+        #                 if cls is None:
+        #                     print(attr_id, key, value_d[key], attr_d[key])
+        #                     continue
+        #                 text = value_d[key]
+        #                 cls.Set(aLabel, FromText(cls.GetID(), text))
+
+        #             attr_d.clear()
+        #             value_d.clear()
+        #             setSubLabel(child, aLabel)
+        #         else:
+        #             value_d[child.tag] = child.text
+        #             attr_d[child.tag] = child.attrib
+
+        # 遍历整个XML文件
+        def traverse(element, prefix='|--'):
+            # 处理当前元素
+            if element.tag == nametag:
+                return
+            print(prefix, element.tag, element.attrib, element.text)
+
+            # 处理当前元素的所有子元素
+            for child in element:
+                traverse(child, '  '+prefix)
+
+        mainLabel = doc.Main()
+        node = todeep3(root)
+        # traverse(node)
+        setDataLabel(node, mainLabel)

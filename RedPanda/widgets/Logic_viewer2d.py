@@ -33,6 +33,7 @@ from PyQt5.QtCore import pyqtSlot
 from OCC.Core.AIS import AIS_InteractiveContext, AIS_InteractiveObject
 from OCC.Core.gp import gp_Pnt2d, gp_Ax3, gp_Pnt
 from OCC.Core.Graphic3d import Graphic3d_Structure
+from OCC.Core.TopoDS import TopoDS_Shape
 
 from RedPanda.logger import Logger
 from RedPanda.widgets.Ui_Viewer2d import Viewer2d
@@ -65,16 +66,14 @@ class qtBaseViewer(QtWidgets.QWidget):
     def paintEngine(self):
         return None
 
+from RedPanda.RPAF.GUID import RP_GUID
 class qtViewer2d(qtBaseViewer):
     # emit signal when selection is changed
     # is a list of TopoDS_*
-    HAVE_PYQT_SIGNAL = False
-    if hasattr(QtCore, "pyqtSignal"):  # PyQt
-        sig_topods_selected = QtCore.pyqtSignal(list)
-        HAVE_PYQT_SIGNAL = True
-    elif hasattr(QtCore, "Signal"):  # PySide2
-        sig_topods_selected = QtCore.Signal(list)
-        HAVE_PYQT_SIGNAL = True
+    sig_new_shape = QtCore.pyqtSignal(RP_GUID, dict)
+
+    sig_topods_selected = QtCore.pyqtSignal(list)
+    sig_point = QtCore.pyqtSignal((gp_Pnt, TopoDS_Shape, list))
 
     def __init__(self, *kargs):
         qtBaseViewer.__init__(self, *kargs)
@@ -130,6 +129,8 @@ class qtViewer2d(qtBaseViewer):
         # dict mapping keys to functions
         self.createCursors()
         self._display.FocusOn(gp_Ax3())
+
+        self.SetUVGrid(-10, 10, -10, 10)
         # me 
         # self._dict_Context = {"default": self._dict_Context}
 
@@ -331,7 +332,7 @@ class qtViewer2d(qtBaseViewer):
         return self._display.Context.SelectedInteractive()
 
     def InitOperatorManager(self):
-        from RedPanda.draw.Operator import MouseControl, ViewerOperator, WheelOperator
+        from RedPanda.draw.Operator import MouseControl, ViewerOperator, WheelOperator, LineOperator
 
         self.operatorManager:MouseControl = MouseControl()
         self.operatorManager.RegisterWheelOperaor(WheelOperator(self, self._display))
@@ -340,18 +341,90 @@ class qtViewer2d(qtBaseViewer):
         self.operatorManager.Register(operator)
         self.operatorManager.Activate(operator.name)
 
+        line = LineOperator(self, self._display)
+        self.operatorManager.Register(line)
+
     def wheelEvent(self, event):
         self.operatorManager.wheelEvent(event, self.disp_ctx)
 
     def mousePressEvent(self, event):
+        self.setFocus()
         self.operatorManager.mousePressEvent(event, self.disp_ctx)
-
-    def mouseReleaseEvent(self, event):
-        self.operatorManager.mouseReleaseEvent(event, self.disp_ctx)
 
     def mouseMoveEvent(self, evt):
         self.operatorManager.mouseMoveEvent(evt, self.disp_ctx)
 
+    def mouseReleaseEvent(self, event):
+        self.operatorManager.mouseReleaseEvent(event, self.disp_ctx)
+
+
     def ActiveOperator(self, name:str):
         self.operatorManager.Activate(name)
 
+    def HoverPoint(self, x, y):
+        from OCC.Core.BRep import BRep_Tool
+        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_WIRE, TopAbs_VERTEX
+        from OCC.Core.GeomAPI import GeomAPI_ProjectPointOnCurve
+
+        from RedPanda.Core.topogy.edge import EdgeAnalyst
+
+        projX, projy, projz, rayx, rayy, rayz = self._display.View.ProjReferenceAxe(x, y)   
+        p = gp_Pnt(projX, projy, projz)
+        shapes = self._display.selected_shapes[:]
+
+        shape = TopoDS_Shape()
+        param = [0.0 for _ in range(3)]
+        if len(shapes) == 0:
+            pass
+        elif shapes[0].ShapeType() == TopAbs_VERTEX:
+            p = BRep_Tool.Pnt(shapes[0])
+            shape = shapes[0]
+        elif shapes[0].ShapeType() == TopAbs_EDGE:
+            shape = shape[0]
+            try:
+                curve, u0, u1 = EdgeAnalyst(shapes[0]).curve
+                builder = GeomAPI_ProjectPointOnCurve(p, curve)
+                # print(u0, u1)
+                # print(builder.LowerDistanceParameter(), builder.NearestPoint(), builder.LowerDistance())
+                p = builder.NearestPoint()
+                param[0] = builder.LowerDistanceParameter()
+            except Exception as error:
+                Logger().warning(f'hover point error:{error}')
+
+        p2d = gp_Pnt(p.X(), p.Y(), 0)
+        self.sig_point.emit(p2d, shape, param)
+
+    def GetPoint(self, x, y):
+        from OCC.Core.BRep import BRep_Tool
+        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_WIRE, TopAbs_VERTEX
+
+        from OCC.Core.gp import gp_Pnt, gp_Dir, gp_Lin
+        from OCC.Core.BRep import BRep_Tool
+        from OCC.Core.GeomAPI import GeomAPI_ProjectPointOnCurve
+
+        from RedPanda.Core.topogy.edge import EdgeAnalyst
+
+        self._display.Select(x, y)
+        shapes = self._display.selected_shapes[:]
+        # self._display.Context.ClearSelected(True)
+        # viewer
+        # TODO: may be anything effection which isn't considering
+        projX, projy, projz, rayx, rayy, rayz = self._display.View.ProjReferenceAxe(x, y)   
+        p = gp_Pnt(projX, projy, projz)
+
+        if len(shapes) == 0:
+            pass
+        elif shapes[0].ShapeType() == TopAbs_VERTEX:
+            p = BRep_Tool.Pnt(shapes[0])
+        elif shapes[0].ShapeType() == TopAbs_EDGE:
+            try:
+                curve, u0, u1 = EdgeAnalyst(shapes[0]).curve
+                builder = GeomAPI_ProjectPointOnCurve(p, curve)
+                # print(u0, u1)
+                # print(builder.LowerDistanceParameter(), builder.NearestPoint(), builder.LowerDistance())
+                p = builder.NearestPoint()
+            except Exception as error:
+                Logger().warning(f'get point :{error}')
+
+        p2d = gp_Pnt2d(p.X(), p.Y())
+        return p2d

@@ -38,7 +38,6 @@ Sym_Ax3dDriver_GUID = RP_GUID("22D22E72-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_EllipseDriver_GUID = RP_GUID("22D22E73-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_CurSrvDriver_GUID = RP_GUID("22D22E74-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_Ax3Driver_GUID = RP_GUID("22D22E75-ABCA-11d4-8F1A-0060B0EE18E8")
-Sym_RefSubDriver_GUID = RP_GUID("22D22E76-ABCA-11d4-8F1A-0060B0EE18E8")
 
 Sym_Build3dEdgeDriver_GUID = RP_GUID("22D22E77-ABCA-11d4-8F1A-0060B0EE18E8")
 Sym_Elps2dDriver_GUID = RP_GUID("22D22E78-ABCA-11d4-8F1A-0060B0EE18E8")
@@ -48,6 +47,12 @@ Sym_ArcCir2dDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'ArcCir2d')))
 Sym_EdgeArrDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'EdgeArray')))
 Sym_WireDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Wire')))
 Sym_MirAx2Driver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'MirAx2')))
+Sym_FaceDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Face')))
+Sym_PrismDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Prism')))
+Sym_FilAllDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'FilAll')))
+Sym_RefSubDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'RefSub')))
+Sym_ConstShapebDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'ConstShape')))
+
 
 class GuidLookup(object):
     def __init__(self, key_in, key_value) -> None:
@@ -56,7 +61,7 @@ class GuidLookup(object):
             self.dict[key] = value
 
     def __getitem__(self, item) -> type:
-        return self.dict[item]
+        return self.dict.get(item, None)
 
     def Add(self, key, value)->None:
         self.dict[key] = value

@@ -40,6 +40,10 @@ class MainWindow(QMainWindow):
     sig_NewDocument = pyqtSignal(str)
     sig_OpenXml = pyqtSignal()
     sig_SaveDocument = pyqtSignal()
+    sig_ActivateOperator = pyqtSignal(str)
+    sig_OpenRPXml = pyqtSignal()
+    sig_OpenPickleShape = pyqtSignal()
+    sig_saveShape = pyqtSignal()
 
     def __init__(self) -> None:
         super(MainWindow, self).__init__()
@@ -62,6 +66,18 @@ class MainWindow(QMainWindow):
                                   lambda:self.sig_SaveDocument.emit())
         self.add_function_to_menu('open', 'openxml', 
                                   lambda:self.sig_OpenXml.emit())
+        self.add_function_to_menu('open', 'Open rp xml',
+                                  lambda: self.sig_OpenRPXml.emit())
+        self.add_function_to_menu('open', 'Open pickle shape',
+                                  lambda: self.sig_OpenPickleShape.emit())
+        self.add_function_to_menu('open', 'save pickle shape',
+                                  lambda: self.sig_saveShape.emit())
+
+
+        self.add_menu('operator')
+        self.add_function_to_menu('operator', 'viewer', lambda:self.sig_ActivateOperator.emit('viewer'))
+        self.add_function_to_menu('operator', 'line', lambda:self.sig_ActivateOperator.emit('line'))
+
 
     def setupUi(self):
         self.ui = Ui_MainWindow()

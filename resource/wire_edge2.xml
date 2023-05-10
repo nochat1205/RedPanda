@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document format="XmlOcaf" xmlns="http://www.opencascade.org/OCAF/XML" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.opencascade.org/OCAF/XML">
+ <info date="2023-05-10" schemav="0" DocVersion="12" objnb="75">
+  <iitem>Copyright: Open Cascade, 2001-2002</iitem>
+  <iitem>REFERENCE_COUNTER: 0</iitem>
+  <iitem>MODIFICATION_COUNTER: 1</iitem>
+ </info>
+ <comments/>
+ <label tag="0">
+  <label tag="1">
+   <TDataStd_Name id="1" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">UnSaved</TDataStd_Name>
+   <TDF_TagSource id="2">3</TDF_TagSource>
+   <label tag="1">
+    <TFunction_Function id="3" guid="2c63738d-f47a-5147-878c-3af8e2429312" failure="0"/>
+    <TDataStd_Comment id="4" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+    <TDataStd_Integer id="5" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+    <TDataStd_Name id="6" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">New Seg2d</TDataStd_Name>
+    <TDataStd_TreeNode id="7" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b" children="8 "/>
+    <TNaming_NamedShape id="9" evolution="primitive">
+     <olds/>
+     <news>
+      <shape tshape="+3" index="1"/>
+     </news>
+    </TNaming_NamedShape>
+    <label tag="18">
+     <TFunction_Function id="10" guid="22d22e70-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Comment id="11" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+     <TDataStd_Integer id="12" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+     <label tag="18">
+      <TFunction_Function id="13" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="14" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="15" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="16">2</TDataStd_Real>
+     </label>
+     <label tag="19">
+      <TFunction_Function id="17" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="18" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="19" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="20">0</TDataStd_Real>
+     </label>
+    </label>
+    <label tag="19">
+     <TFunction_Function id="21" guid="22d22e70-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Comment id="22" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+     <TDataStd_Integer id="23" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+     <label tag="18">
+      <TFunction_Function id="24" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="25" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="26" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="27">0</TDataStd_Real>
+     </label>
+     <label tag="19">
+      <TFunction_Function id="28" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="29" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="30" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="31">0</TDataStd_Real>
+     </label>
+    </label>
+   </label>
+   <label tag="2">
+    <TFunction_Function id="32" guid="2c63738d-f47a-5147-878c-3af8e2429312" failure="0"/>
+    <TDataStd_Comment id="33" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+    <TDataStd_Integer id="34" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+    <TDataStd_Name id="35" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">New Seg2d</TDataStd_Name>
+    <TDataStd_TreeNode id="36" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b" children="37 "/>
+    <TNaming_NamedShape id="38" evolution="primitive" version="1">
+     <olds/>
+     <news>
+      <shape tshape="+6" index="1"/>
+     </news>
+    </TNaming_NamedShape>
+    <label tag="18">
+     <TFunction_Function id="39" guid="22d22e70-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Comment id="40" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+     <TDataStd_Integer id="41" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+     <label tag="18">
+      <TFunction_Function id="42" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="43" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="44" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="45">1</TDataStd_Real>
+     </label>
+     <label tag="19">
+      <TFunction_Function id="46" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="47" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="48" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="49">1</TDataStd_Real>
+     </label>
+    </label>
+    <label tag="19">
+     <TFunction_Function id="50" guid="22d22e70-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+     <TDataStd_Comment id="51" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+     <TDataStd_Integer id="52" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+     <label tag="18">
+      <TFunction_Function id="53" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="54" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="55" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="56">0</TDataStd_Real>
+     </label>
+     <label tag="19">
+      <TFunction_Function id="57" guid="22d22e51-abca-11d4-8f1a-0060b0ee18e8" failure="0"/>
+      <TDataStd_Comment id="58" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="59" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_Real id="60">0</TDataStd_Real>
+     </label>
+    </label>
+   </label>
+   <label tag="3">
+    <TFunction_Function id="61" guid="afc9e4f9-ac91-5745-9500-0e842ecbf961" failure="0"/>
+    <TDataStd_Comment id="62" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+    <TDataStd_Integer id="63" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+    <TDataStd_Name id="64" nameguid="2a96b608-ec8b-11d0-bee7-080009dc3333">New Wire</TDataStd_Name>
+    <TNaming_NamedShape id="65" evolution="primitive" version="1">
+     <olds/>
+     <news>
+      <shape tshape="+8" index="1"/>
+     </news>
+    </TNaming_NamedShape>
+    <label tag="18">
+     <TFunction_Function id="66" guid="333928ae-4ce1-59b2-a3f6-72434eb3dd56" failure="0"/>
+     <TDataStd_Comment id="67" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+     <TDataStd_Integer id="68" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+     <TDataStd_Integer id="69">2</TDataStd_Integer>
+     <label tag="125">
+      <TFunction_Function id="70" guid="5b896afe-3adf-11d4-b9b7-0060b0ee281b" failure="0"/>
+      <TDataStd_Comment id="71" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="72" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_TreeNode id="8" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b"/>
+     </label>
+     <label tag="126">
+      <TFunction_Function id="73" guid="5b896afe-3adf-11d4-b9b7-0060b0ee281b" failure="0"/>
+      <TDataStd_Comment id="74" nameguid="2a96b616-ec8b-11d0-bee7-080009dc3333">Valid</TDataStd_Comment>
+      <TDataStd_Integer id="75" intattguid="5b896aff-3adf-11d4-b9b7-0060b0ee281b">0</TDataStd_Integer>
+      <TDataStd_TreeNode id="37" treeid="5b896afe-3adf-11d4-b9b7-0060b0ee281b"/>
+     </label>
+    </label>
+   </label>
+  </label>
+ </label>
+ <shapes>
+CASCADE Topology V3, (c) Open Cascade
+Locations 0
+Curve2ds 2
+1 2 0 -1 0 
+1 1 1 -0.70710678118654746 -0.70710678118654746 
+Curves 0
+Polygon3D 0
+PolygonOnTriangulations 0
+Surfaces 1
+1 0 0 0 0 0 1 1 0 -0 -0 1 0 
+Triangulations 0
+
+TShapes 8
+Ve
+1e-07
+2 0 0
+0 0
+
+0101101
+*
+Ve
+1e-07
+0 0 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+2  1 1 0 0 2
+0
+
+0101000
++8 0 -7 0 *
+Ve
+1e-07
+1 1 0
+0 0
+
+0101101
+*
+Ve
+1e-07
+0 0 0
+0 0
+
+0101101
+*
+Ed
+ 1e-07 1 1 0
+2  2 1 0 0 1.4142135623731
+0
+
+1101000
++5 0 -4 0 *
+Ed
+ 1e-07 1 1 0
+2  2 1 0 0 1.4142135623731
+0
+
+0101000
++5 0 -7 0 *
+Wi
+
+0101000
++6 0 -2 0 *
+
+</shapes>
+</document>

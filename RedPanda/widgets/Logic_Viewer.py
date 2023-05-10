@@ -102,6 +102,10 @@ class qtViewer3d(qtBaseViewer):
             ord("H"): self._display.SetModeHLR,
             ord("F"): self._display.FitAll,
             ord("G"): self._display.SetSelectionMode,
+            ord('X'): self._display.View_Left,
+            ord('Y'): self._display.View_Top,
+            ord('Z'): self._display.View_Front
+            
         }
 
         self.InitDriver()
@@ -304,15 +308,11 @@ class qtViewer3d(qtBaseViewer):
     # --- --- presentation --- ---
     def clear(self):
         self._display.Context.RemoveAll(False)
-        self.ctx_dict.clear()
-
 
     def ShowLabel(self, theLabel):
-        if 'ctx_dict' not in self.__dict__:
-            self.ctx_dict = dict()
-
-        if theLabel in self.ctx_dict:
-            return 
+        from RedPanda.RPAF.DisplayContext import DisplayCtx
+        # if 'ctx' not in self.__dict__:
+        #     self.ctx_dict = dict()
 
         aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None or not isinstance(aDriver, BareShapeDriver):
@@ -321,8 +321,8 @@ class qtViewer3d(qtBaseViewer):
         # TODO:
         self.clear()
 
-        ctx = aDriver.Prs3d(theLabel)
-        self.ctx_dict[theLabel] = ctx
+        ctx:DisplayCtx = aDriver.Prs3d(theLabel)
+        self.ctx = ctx
 
         for ais in ctx.values():
             self._display.Context.Display(ais, False)
@@ -337,13 +337,11 @@ class qtViewer3d(qtBaseViewer):
         if aDriver is None:
             return
 
-        if theLabel not in self.ctx_dict:
+
+        if not aDriver.UpdatePrs3d(theLabel, self.ctx):
             return
 
-        if not aDriver.UpdatePrs3d(theLabel, self.ctx_dict[theLabel]):
-            return
-
-        for ais in self.ctx_dict[theLabel].values():
+        for ais in self.ctx.values():
             self._display.Context.Display(ais, False)
 
         self._display.Viewer.Update()
@@ -368,8 +366,7 @@ class qtViewer3d(qtBaseViewer):
 
     #  menu function
     def GetRefSub(self):
-        from OCC.Core.AIS import AIS_Shape
-        from OCC.Core.XCAFPrs import XCAFPrs_AISObject
+        from OCC.Core.AIS import AIS_Shape, AIS_ColoredShape
         from OCC.Core.StdSelect import StdSelect_BRepOwner
         from OCC.Core.TopExp import TopExp_Explorer
         from OCC.Core.TopoDS import TopoDS_Shape
@@ -382,7 +379,7 @@ class qtViewer3d(qtBaseViewer):
 
             subshape:TopoDS_Shape = owner.Shape()
 
-            parentAis = XCAFPrs_AISObject.DownCast(owner.Selectable())
+            parentAis = AIS_ColoredShape.DownCast(owner.Selectable())
             if parentAis is None:
                 return 
 
@@ -395,7 +392,8 @@ class qtViewer3d(qtBaseViewer):
                     break
                 explorer.Next()
 
-            label = parentAis.GetLabel()
+            print('Get')
+            label = self.ctx.GetLabel(parentAis)
             if label:
                 from RedPanda.RPAF.DataDriver.ShapeDriver import RefSubDriver
                 data = {'Shape': label.GetEntry(), 'TopoType':subshape.ShapeType(), 'Index':i}

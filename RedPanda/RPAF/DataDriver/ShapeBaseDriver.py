@@ -7,7 +7,6 @@ from OCC.Core.TNaming import TNaming_Builder
 from OCC.Core.TopoDS import TopoDS_Shape
 from OCC.Core.AIS import AIS_ColoredShape, AIS_InteractiveObject
 from OCC.Core.gp import gp_Ax2d, gp_Dir2d, gp_Pnt2d
-from OCC.Core.XCAFPrs import XCAFPrs_AISObject
 
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty
@@ -60,23 +59,20 @@ class BareShapeDriver(CompoundDriver):
         return self.Attributes['value'].GetValue(theLabel)
 
     def Prs3d(self, theLabel)->DisplayCtx:
-        
         ais_dict = DisplayCtx(theLabel)
-        ais = XCAFPrs_AISObject(theLabel)
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(theLabel, 'shape')] = ais
 
+        self.UpdatePrs3d(theLabel, ais_dict)
         return ais_dict
 
     def UpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
         if not DataLabelState.IsOK(theLabel):
             return False
 
-        ais:AIS_ColoredShape = ais_dict[(theLabel, 'shape')]
         shape = self.Attributes['value'].GetValue(theLabel)
         if shape:
-            ais.SetShape(shape)        
-            ais.UpdateSelection()
-            ais.SetToUpdate()
+            ais_dict.SetShape((theLabel, 'shape'), shape)
 
         return True
 
@@ -96,14 +92,43 @@ class TransformDriver(CompoundDriver):
 
     def __init__(self) -> None:
         super().__init__()
-        self.myAttr = Param(XCAFDoc_Location.GetID()) # 存储形式
-        self.Attributes['value'] = self.myAttr
+        # self.myAttr = Param(XCAFDoc_Location.GetID()) # 存储形式
+        # self.Attributes['value'] = self.myAttr
 
         self.Arguments['angle'] = Argument(self.tagResource, RealDriver.ID)
         self.Arguments['rotateAxis'] = Argument(self.tagResource, PntDriver.ID)
         self.Arguments['position'] = Argument(self.tagResource, PntDriver.ID)
 
     def myExecute(self, theLabel:Label)->int:
+        dict_param = dict()
+        for name, argu in self.Arguments.items():
+            argu:Argument
+            dict_param[name] = argu.Value(theLabel)
+
+        try:
+            pnt:VertexAnalyst = VertexAnalyst(dict_param['rotateAxis'])
+            if pnt.as_pnt == RP_Pnt():
+                pnt.x = 1.0
+
+            dir = pnt.as_dir
+            ax1 = RP_Ax1(RP_Pnt(), dir)
+
+            angle = dict_param['angle']
+            position = VertexAnalyst(dict_param['position']).as_vec
+
+            TrsfRotation = RP_Trsf()
+            TrsfRotation.SetRotation(ax1, angle)
+            TrsfTrans = RP_Trsf()
+            TrsfTrans.SetTranslation(position)
+            TRSF:RP_Trsf =  TrsfTrans * TrsfRotation
+
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+
+        return 0
+
+    def myValue(self, theLabel:Label)->RP_Trsf: # TODO: 用location 存在问题, 无法正确传出???
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -125,18 +150,7 @@ class TransformDriver(CompoundDriver):
         TrsfTrans.SetTranslation(position)
         TRSF:RP_Trsf =  TrsfTrans * TrsfRotation
 
-
-        loc = TopLoc_Location(TRSF)
-        XCAFDoc_Location.Set(theLabel, loc)
-
-        return 0
-
-    def myValue(self, theLabel:Label)->RP_Trsf: # TODO: 用location 存在问题, 无法正确传出???
-        storedValue:TopLoc_Location = self.Attributes['value'].GetValue(theLabel)
-        if storedValue: 
-            return storedValue.Transformation()
-
-        return None
+        return TRSF
 
     def myChange(self, theLabel: Label, theData):
         for name, subData in theData.items():
@@ -267,5 +281,34 @@ class Ax2dDriver(CompoundDriver):
     def ID(self):
         from ..GUID import Sym_Ax2dDriver_GUID
         return Sym_Ax2dDriver_GUID
+
+
+
+class ConstShapeDriver(BareShapeDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Attributes['value'] = Param(TNaming_NamedShape.GetID())
+
+    def myInit(self, theLabel, theData:TopoDS_Shape):
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(theData)
+        return True
+
+    def myChange(self, theLabel: Label, theData: tuple):
+        return True
+
+    def  myValue(self, theLabel: Label):
+        return self.Attributes['value'].GetValue(theLabel)
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_ConstShapebDriver_GUID
+        return Sym_ConstShapebDriver_GUID
+
+    @classproperty
+    def Type(self):
+        """ 函数名
+        """
+        return 'ConstShape'
 
 

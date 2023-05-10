@@ -30,6 +30,10 @@ class myLine(QLineEdit):
     def GetText(self):
         return self.text()
 
+
+    def SetText(self, value):
+        self.setText(value)
+
     @property
     def SigChange(self):
         return self.sig_change
@@ -49,6 +53,9 @@ class mySpinBox(QSpinBox):
 
     def GetText(self):
         return self.text()
+
+    def SetText(self, value):
+        self.setValue(int(value))
 
     @property
     def SigChange(self):
@@ -94,6 +101,7 @@ class NameItem(MyItem):
 
     def GetText(self):
         return self.textContainer.text()
+
 
 # data label item
 class AFItemFactory:
@@ -143,6 +151,11 @@ class AFItem(MyItem): # afItem 区分节点
         if self.textContainer:
             return self.textContainer.GetText()
         return ''
+
+    def SetText(self, value):
+        if self.textContainer:
+            self.textContainer.SetText(value)
+            self.textContainer.editingFinished.emit()
 
     def Update(self):
         raise NotImplemented()

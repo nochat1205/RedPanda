@@ -45,11 +45,13 @@ class CutDriver(BareShapeDriver):
         except Exception as error:
             DataLabelState.SetError(theLabel, str(error), True)
             return 1
+        if shape:
+            builder = TNaming_Builder(theLabel)
+            builder.Generated(shape)
 
-        builder = TNaming_Builder(theLabel)
-        builder.Generated(shape)
+            return 0
 
-        return 0
+        return 1
 
     @classproperty
     def ID(self):

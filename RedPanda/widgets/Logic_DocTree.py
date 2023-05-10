@@ -159,6 +159,14 @@ class ModelTree(QtWidgets.QTreeWidget):
         self._regist_LabelItem(theLabel, item)
         self.Update(theLabel)
 
+        if fatherLabel is None:
+            from OCC.Core.TDF import TDF_ChildIterator
+            it = TDF_ChildIterator(theLabel)
+            while it.More():
+                self.Create_TreeItem(it.Value(), theLabel)
+                print('label:', it.Value().GetEntry())
+                it.Next()
+
         self.expandAll()
         self.running = False
         return item

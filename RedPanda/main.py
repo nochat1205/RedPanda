@@ -61,8 +61,9 @@ class MainApplication():
         self.c_viewer2d:qtViewer2d = self.myWin.Viewer2d()
         self.c_viewer3d:qtViewer3d = self.myWin.Viewer3d()
         self.c_construct = self.myWin.Construct()
+        self.c_data = self.myWin.ui.logic_ViewData
 
-        self.DataLabel_manager =  RDObjectManager()
+        # self.DataLabel_manager =  RDObjectManager()
 
         self.SetUpUi()
         self.SignalAndSlot()
@@ -83,13 +84,18 @@ class MainApplication():
         self.myWin.sig_NewDocument.connect(self.Process_NewDocument)
         self.myWin.sig_SaveDocument.connect(self.Process_SaveDocument)
         self.myWin.sig_NewDataLabel.connect(self.Process_NewLabel)
+        self.myWin.sig_ActivateOperator.connect(self.Process_ActivateOpera)
+        self.myWin.sig_OpenRPXml.connect(self.Process_OpenDocument)
+        self.myWin.sig_saveShape.connect(self.Process_SaveShape)
+        self.myWin.sig_OpenPickleShape.connect(self.Process_LoadShape)
 
         self.c_docTree.sig_labelSelect.connect(self.Process_ShowLabel)
         self.c_docTree.sig_labelCheck.connect(self.Process_Check)
 
         self.c_construct.sig_change.connect(self.Process_ChangeLabel)
         self.c_viewer3d.sig_new_shape.connect(self.Process_NewLabel)
-        
+        self.c_viewer2d.sig_new_shape.connect(self.Process_NewLabel)
+        self.c_viewer2d.sig_point.connect(self.Process_ShowPoint)
 
     # register function
     def RegisterShapeDriver(self, menu_name, name,  driver:DataDriver):
@@ -105,19 +111,27 @@ class MainApplication():
             BezierDriver,
             BoxDriver,
             CutDriver,
+            
         )
+        from .RPAF.DataDriver.PrimDriver import TransShapeDriver
         from .RPAF.DataDriver.VarDriver import IntDriver
         from .RPAF.DataDriver.GeomDriver import CylSurDriver
         from .RPAF.DataDriver.Geom2dDriver import (
             Ellipse2dDriver, Elps2dDriver, Build3dDriver,
-            Segment2dDriver, ArcCircleDriver
+            Segment2dDriver, ArcCircleDriver, TrimmedCurveDriver
         )
-        from .RPAF.DataDriver.ShapeBaseDriver import Ax3Driver
-        from .RPAF.DataDriver.ShapeBaseDriver import Ax2dDriver
+        from .RPAF.DataDriver.ShapeBaseDriver import (
+            Ax3Driver, Ax2dDriver, ConstShapeDriver
+        )
         from .RPAF.DataDriver.VertexDriver import Pnt2dDriver
-        from .RPAF.DataDriver.ShapeDriver import RefSubDriver, MirrorDriver
+        from .RPAF.DataDriver.ShapeDriver import (
+            RefSubDriver, MirrorDriver, PrismDriver,
+            FaceDriver, 
+        )
+        from .RPAF.DataDriver.FilletDriver import FilletAllDriver
         from .RPAF.DataDriver.ArrayDriver import EdgeArrayDriver
         from .RPAF.DataDriver.WireDriver import WireDriver
+
 
         self.RegisterDriver(Ax3Driver())
         self.RegisterDriver(Ax2dDriver())
@@ -125,6 +139,8 @@ class MainApplication():
         self.RegisterDriver(RefSubDriver())
         self.RegisterDriver(IntDriver())
         self.RegisterDriver(EdgeArrayDriver())
+        self.RegisterDriver(ConstShapeDriver())
+        
 
         self.RegisterShapeDriver('PrimAPI', 'Box', BoxDriver())
         self.RegisterShapeDriver('AlgoAPI', 'Cut', CutDriver())
@@ -136,8 +152,14 @@ class MainApplication():
         self.RegisterShapeDriver('Geom2dAPI', 'Ellipse', Elps2dDriver())
         self.RegisterShapeDriver('Geom2dAPI', 'Seg2d', Segment2dDriver())
         self.RegisterShapeDriver('Geom2dAPI', 'ArcCirc2d', ArcCircleDriver())
+        self.RegisterShapeDriver('Geom2dAPI', 'Trimmed', TrimmedCurveDriver())
         self.RegisterShapeDriver('Topo', 'Wire', WireDriver())
         self.RegisterShapeDriver('Topo', 'Mirror', MirrorDriver())
+        self.RegisterShapeDriver('Topo', 'Face', FaceDriver())
+        self.RegisterShapeDriver('Topo', 'Prism', PrismDriver())
+        self.RegisterShapeDriver('Fillet', 'FilletAll', FilletAllDriver())
+        self.RegisterShapeDriver('Topo', 'Transform', TransShapeDriver())
+
 
     def Process_NewLabel(self, id:RP_GUID, data=None):
         Logger().info(f'New Data Label {id}')
@@ -148,11 +170,11 @@ class MainApplication():
         # 1. doc new
         aLabel:Label = self.docApp.NewDataLabel(id, data)
         # 2
-        obj = self.DataLabel_manager.Add(aLabel)
+        # obj = self.DataLabel_manager.Add(aLabel)
 
         # 3. doc tree update
         item = self.c_docTree.Create_TreeItem(aLabel, aLabel.Father())
-        obj.tree_item = item
+        # obj.tree_item = item
         Logger().info(f'New Data Label {id} end')
 
     def Process_NewDocument(self, format:str='XmlOcaf'):
@@ -162,24 +184,14 @@ class MainApplication():
         alabel = doc.Main()
 
         # 2 
-        obj = self.DataLabel_manager.Add(alabel)
+        # obj = self.DataLabel_manager.Add(alabel)
         # 3
         item = self.c_docTree.Create_TreeItem(alabel)
-        obj.tree_item = item
+        # obj.tree_item = item
 
         Logger().info('New Document End')
 
-    def Process_SaveDocument(self):
-        Logger().info('Save Document start')
-        doc = self.docApp.main_doc
-        if doc.File() is None:
-            url, tp = QFileDialog.getSaveFileName(self.myWin, '保存文件', './resource',
-                                       'STP files(*.xml);;(*.rpxml))')
 
-            doc.SetFile(url)
-        self.docApp.SaveDoc()
-
-        Logger().info('Save Document end')
 
     def Process_ShowLabel(self, theLabel:Label):
         # 1
@@ -228,10 +240,80 @@ class MainApplication():
                 ctx = aDriver.Prs2d(theLabel)
                 if (theLabel, 'shape') in ctx.d:
                     ais = ctx[(theLabel, 'shape')]
-                    
                     if ais:
                         self.check_li[theLabel] = ais
                         self.c_viewer2d._display.Context.Display(ais, True)
+
+    def Process_ActivateOpera(self, name):
+        self.c_viewer2d.ActiveOperator(name)
+
+    def Process_OpenDocument(self):
+        return 
+        from OCC.Core.TDF import TDF_ChildIterator
+        path = QFileDialog.getOpenFileName(self.myWin, '打开文件', './resource',
+                                'STP files(*.xml);;(*.rpxml))')
+
+        doc:Document = self.docApp.OpenDoc(path[0])
+        # print(doc.Main().GetEntry())
+        # print(path[0])
+        # aLabel = doc.Main()
+        # for ind in range(1, 10):
+        #     l = aLabel.FindChild(ind, False)
+        #     if not l.IsNull():
+        #         print(l.GetEntry())
+        self.c_docTree.Create_TreeItem(doc.Main())
+
+    def Process_SaveDocument(self):
+        return 
+        Logger().info('Save Document start')
+        doc = self.docApp._main_doc
+        if doc.File() is None:
+            url, tp = QFileDialog.getSaveFileName(self.myWin, '保存文件', './resource',
+                                       'STP files(*.xml);;(*.rpxml))')
+
+            doc.SetFile(url)
+        self.docApp.SaveDoc()
+
+        Logger().info('Save Document end')
+
+    def Process_ShowPoint(self, *tup):
+        pnt, shape, param = tup
+        self.c_data.show(pnt)
+
+    def Process_LoadShape(self):
+        import pickle
+        from .RPAF.DataDriver.ShapeBaseDriver import ConstShapeDriver
+        Logger().info('Start load Shape')
+        path, *_ = QFileDialog.getOpenFileName(self.myWin, '打开文件', './resource',
+                                'pickle files(*.rppickle)')
+        
+        with open(path, 'rb') as f:
+            shape = pickle.load(f)
+            self.Process_NewLabel(ConstShapeDriver.ID, shape)
+        Logger().info('End load Shape')
+
+    def Process_SaveShape(self):
+        import pickle
+        from .RPAF.DataDriver.ShapeBaseDriver import BareShapeDriver
+        Logger().info('Save Shape start')
+        if (self.showedLabel_set) == 0:
+            return 
+        aLabel, *_ = self.showedLabel_set
+        aDriver = aLabel.GetDriver()
+        if not isinstance(aDriver, BareShapeDriver):
+            return 
+
+        shape = aDriver.GetValue(aLabel)
+        if shape is None:
+            return 
+
+        url, tp = QFileDialog.getSaveFileName(self.myWin, '保存文件', './resource',
+                                    'pickle files(*.rppickle))')
+        with open(url, 'wb+') as f:
+            pickle.dump(shape, f)
+
+        Logger().info('Save Shape end')
+
 
     def Process_exit(self):
         pass

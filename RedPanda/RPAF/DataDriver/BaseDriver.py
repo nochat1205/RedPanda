@@ -378,7 +378,7 @@ class VarDriver(DataDriver):
     def myInit(self, theLabel: Label, theData=None):
         if theData is None:
             theData = '0'
-        Logger().info(f'change Label:{theLabel.GetEntry()}.value, {None}, {theData}')
+        Logger().info(f'Init Label:{theLabel.GetEntry()}.value, {None}, {theData}')
         attr:Param = self.Attributes['value']
         attr.SetValue(theLabel, theData)
         return True
@@ -417,7 +417,6 @@ class ShapeRefDriver(DataDriver):
             DataLabelState.SetError(theLabel, 'Need True ref Entry', True)
             return False
 
-        print(text)
         anEntry = RP_AsciiStr(text)
         aRefLabel = Label()
         TDF_Tool.Label(theLabel.Data(), anEntry, aRefLabel)
@@ -425,10 +424,7 @@ class ShapeRefDriver(DataDriver):
         return True
 
     def myChange(self, theLabel:Label, theData):
-        shapeRef_attr:Attr_ShapeRef = self.Attributes['ref'].GetAttribute(theLabel)
-        if shapeRef_attr:
-            shapeRef_attr.Remove()
-
+        
         # 过滤, 只允许引用Entry相对小的
         if theData == theLabel.GetEntry():
             return False
@@ -436,10 +432,14 @@ class ShapeRefDriver(DataDriver):
         anEntry = RP_AsciiStr(theData)
         aRefLabel = Label()
         TDF_Tool.Label(theLabel.Data(), anEntry, aRefLabel)
-        if aRefLabel.IsNull():
+        if aRefLabel.IsNull() or aRefLabel.IsRoot() or aRefLabel == theLabel:
             DataLabelState.SetError(theLabel, 'Need True ref Entry', True)
             Logger().warning(f'Ref {anEntry} IsError')
             return False
+
+        shapeRef_attr:Attr_ShapeRef = self.Attributes['ref'].GetAttribute(theLabel)
+        if shapeRef_attr:
+            shapeRef_attr.Remove()
 
         Logger().info(f'{theLabel.GetEntry()} ref {aRefLabel.GetEntry()} ')
         Attr_ShapeRef.Set(theLabel, aRefLabel)
@@ -581,7 +581,7 @@ class ArrayDriver(DataDriver):
         return True
 
 class CompoundDriver(DataDriver):
-    def myInit(self, theLabel: Label, data=None):
+    def myInit(self, theLabel: Label, data:dict=None):
         flag = True
         for name, argu in self.Arguments.items():
             argu:Argument
@@ -589,7 +589,7 @@ class CompoundDriver(DataDriver):
             aDriver:DataDriver = DataDriverTable.Get().GetDriver(argu.DriverID)
             subData = None
             if data:
-                subData = data[name]
+                subData = data.get(name, None)
             if not aDriver.Init(aLabel, subData):
                 flag = False
 
@@ -604,42 +604,3 @@ class CompoundDriver(DataDriver):
                 return False
 
         return True
-
-# class ConstantDriver(DataDriver):
-#     def __init__(self) -> None:
-#         self.Attributes['value'] = Param(TNaming_NamedShape.GetID())
-
-#     def myInit(self, theLabel, theData):
-#         builder = TNaming_Builder(theLabel)
-#         if theData[0] == 'Generated':
-#             builder.Generated(theData[2])
-#         elif theData[0] == 'Modify':
-#             builder.Modify(theData[1], theData[2])
-#         elif theData[0] == 'Delete':
-#             builder.Delete(theData[1])
-#         else:
-#             raise Exception('unKnow Data')
-
-#         return True
-
-#     def myChange(self, theLabel: Label, theData: tuple):
-
-#         return True
-
-#     def  myValue(self, theLabel: Label):
-#         return super().myValue(theLabel)
-
-#     @classproperty
-#     def ID(self):
-#         """函数ID
-
-#         Raises:
-#             Exception: _description_
-#         """
-#         return ShapeRefGUID
-
-#     @classproperty
-#     def Type(self):
-#         """ 函数名
-#         """
-#         return 'ShapeRef'

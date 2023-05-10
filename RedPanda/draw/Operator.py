@@ -21,6 +21,7 @@ class WheelOperator(object):
         self.parent = parent
         self._display = display
 
+
     def wheelEvent(self, event):
         delta = event.angleDelta().y()
         if delta > 0:
@@ -49,12 +50,16 @@ class WheelOperator(object):
 
 
 class Operator(object):
-    def __init__(self, widget:QWidget, display:Viewer2d) -> None:
-        self.widget = widget
+    
+    def __init__(self, widget, display:Viewer2d) -> None:
+        from ..widgets.Logic_Viewer2d import qtViewer2d
+        self.widget:qtViewer2d = widget
         self._display = display
+        self._drawbox = [0, 0, 10, 10]
 
     @staticmethod
     def draw_rect_in_widget(widget:QWidget, rect):
+        return
         if rect is None or widget is None:
             return 
         # Create a QPainter object to draw on the widget
@@ -75,6 +80,7 @@ class Operator(object):
 
     @staticmethod
     def draw_line_in_widget(widget:QWidget, rect):
+        return
         # Create a QPainter object to draw on the widget
         painter = QPainter(widget)
         
@@ -88,49 +94,6 @@ class Operator(object):
         # Clean up the painter object
         painter.end()
 
-    def GetPoint(self, x, y):
-        from OCC.Core.gp import gp_Pnt, gp_Dir, gp_Lin
-        from OCC.Core.Geom import Geom_Line
-        from OCC.Core.TopoDS import TopoDS_Shape
-        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_WIRE, TopAbs_VERTEX
-        from OCC.Core.BRep import BRep_Tool
-        from OCC.Core.BRepLib import breplib_BuildCurve3d
-        from OCC.Core.BRepExtrema import BRepExtrema_DistShapeShape
-        from OCC.Extend.ShapeFactory import make_edge, make_wire
-        from RedPanda.Core.Make import project_point_on_curve
-
-        # self._display.Context.ClearSelected(True)
-        shapes:list[TopoDS_Shape] = self._display.Select(x, y)
-
-        projX, projy, projz, rayx, rayy, rayz = self._display.View.ProjReferenceAxe(x, y)
-        p = gp_Pnt(projX, projy, projz)
-        if len(shapes) == 0:
-            return p
-
-        if shapes[0].ShapeType() == TopAbs_VERTEX:
-            p = BRep_Tool.Pnt(shapes[0])
-            # self._display.DisplayMessage(p, f'Coord:{p.Coord()}')
-        elif shapes[0].ShapeType() == TopAbs_EDGE:
-            try:
-                # 1
-                dir = gp_Dir(rayx, rayy, rayz)
-                line = gp_Lin(p, dir)
-                edge = make_edge(line)
-                wire = make_wire(shapes[0])
-                extrema = BRepExtrema_DistShapeShape(wire, edge)
-                p = extrema.PointOnShape1(1)
-
-                # 2
-                # from RedPanda.Core.topogy.edge import EdgeAnalyst
-                # analyst = EdgeAnalyst(shapes[0])
-                # print(analyst.parameter_to_point(0).Coord())
-                # param, pnt = project_point_on_curve(analyst, p)
-            except Exception as error:
-                Logger().warning(f'error:{error}')
-
-        return p
-
-
     def drawbox(self, event):
         tolerance = 2
         pt = event.pos()
@@ -142,7 +105,6 @@ class Operator(object):
         self._drawbox = [self.dragStartPosX, self.dragStartPosY, dx, dy]
 
     def mousePressEvent(self, event, ctx:DisplayCtx):
-        self.widget.setFocus()
         ev = event.pos()
         self.dragStartPosX = ev.x()
         self.dragStartPosY = ev.y()
@@ -153,11 +115,15 @@ class Operator(object):
     def mouseReleaseEvent(self, event, displayCtx:DisplayCtx):
         pass
 
+    def quit(self):
+        pass
+
+
 class ViewerOperator(Operator):
     def __init__(self, widget: QWidget, display: Viewer2d) -> None:
         super().__init__(widget, display)
         
-        self.name = 'Viewer'
+        self.name = 'viewer'
 
         self._zoom_area = False
         self._select_area = False
@@ -190,7 +156,7 @@ class ViewerOperator(Operator):
             )
         else:
             self._display.MoveTo(pt.x(), pt.y())
-            self.cursor = 'arrow'
+            self.widget.cursor = 'arrow'
 
     def mouseReleaseEvent(self, evt, displayCtx: DisplayCtx):
         pt = evt.pos()
@@ -207,31 +173,164 @@ class ViewerOperator(Operator):
             self._display.ShiftSelect(pt.x(), pt.y())
         elif evt.button() == Qt.LeftButton:
             self._display.Select(pt.x(), pt.y())
+            self.widget.HoverPoint(pt.x(), pt.y())
         # elif evt.button() == Qt.RightButton:
         #     self.widget.showContextMenu(pt)
         else:
             return 
 
+from OCC.Core.gp import gp_Pnt2d
+from OCC.Core.AIS import AIS_ColoredShape
+from OCC.Core.TopoDS import TopoDS_Shape
+from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_ORANGE
+from OCC.Core.GCE2d import GCE2d_MakeSegment
+from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge2d
+from OCC.Core.BRepLib import breplib_BuildCurve3d
+from RedPanda.RPAF.DataDriver.Geom2dDriver import Segment2dDriver
 class LineOperator(Operator):
     def __init__(self, *args) -> None:
         super().__init__(*args)
         self.name = 'line'
+        self.line_li = list()
+        self.ais = None
+        self.draw = False
 
-    def mouseMoveEvent(self, evt: QMouseEvent, display: Viewer2d, displayCtx: DisplayCtx):
+    def mousePressEvent(self, event, ctx: DisplayCtx):
+        super().mousePressEvent(event, ctx)
+        self.ais = AIS_ColoredShape(TopoDS_Shape())
+        self.ais.SetColor(Quantity_Color(Quantity_NOC_ORANGE))
+        self.line_li.append(self.ais)
+        self.draw = [0, 0, 10, 10]
+
+    def mouseMoveEvent(self, evt: QMouseEvent, displayCtx: DisplayCtx):
         pt = evt.pos()
         buttons = int(evt.buttons())
-        modifiers = evt.modifiers()
-
+        mod = evt.modifiers()
         if buttons == Qt.LeftButton:
-            self.drawBox(evt)
+            self.drawbox(evt)
+            self.draw = True
+            x, y, dx, dy = self._drawbox
+            if mod == Qt.ShiftModifier:
+                if abs(dx) > abs(dy):
+                    dy = 0
+                elif abs(dx) < abs(dy):
+                    dx = 0
+
+            p2d1 = self.widget.GetPoint(x, y)
+            p2d2 = self.widget.GetPoint(x+dx, y+dy)
+            try:
+                seg = GCE2d_MakeSegment(p2d1, p2d2).Value()
+                edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+                breplib_BuildCurve3d(edge)
+            
+                self.ais.SetShape(edge)
+                self.ais.SetToUpdate(-1)
+                self._display.Context.Display(self.ais, True)
+                self._display.View.Update()
+            except:
+                pass
 
     def mouseReleaseEvent(self, event:QMouseEvent, displayCtx: DisplayCtx):
         mod = event.modifiers()
-        if self._select_area:
-            [Xmin, Ymin, dx, dy] = self._drawbox
-            self._display.SelectArea(Xmin, Ymin, Xmin + dx, Ymin + dy)
-        elif mod == Qt.ShiftModifier:
-            pass
+
+        if event.button() == Qt.LeftButton and self.draw:
+            x, y, dx, dy = self._drawbox
+            if mod == Qt.ShiftModifier:
+                if abs(dx) > abs(dy):
+                    dy = 0
+                elif abs(dx) < abs(dy):
+                    dx = 0
+            p2d1 = self.widget.GetPoint(x, y)
+            p2d2 = self.widget.GetPoint(x+dx, y+dy)
+            
+            print(x, y, dx, dy)
+            print(p2d1.X(), p2d1.Y(), p2d2.X(), p2d2.Y())
+
+            param = {'p1': {'x':str(p2d1.X()), 
+                            'y':str(p2d1.Y())}, 
+                     'p2':{'x':p2d2.X().__str__(), 
+                           'y':p2d2.Y().__str__()}}
+            self.widget.sig_new_shape.emit(Segment2dDriver.ID, param)
+            self._drawbox = [0, 0, 10, 10]
+            self.draw = False
+
+    def quit(self):
+        for ais in self.line_li:
+            self._display.Context.Remove(ais, True)
+        self.line_li.clear()
+
+class CircOperator(Operator):
+    def __init__(self, *args) -> None:
+        super().__init__(*args)
+        self.name = 'line'
+        self.line_li = list()
+        self.ais = None
+        self.draw = False
+
+    def mousePressEvent(self, event, ctx: DisplayCtx):
+        super().mousePressEvent(event, ctx)
+        self.ais = AIS_ColoredShape(TopoDS_Shape())
+        self.ais.SetColor(Quantity_Color(Quantity_NOC_ORANGE))
+        self.line_li.append(self.ais)
+        self.draw = [0, 0, 10, 10]
+
+    def mouseMoveEvent(self, evt: QMouseEvent, displayCtx: DisplayCtx):
+        pt = evt.pos()
+        buttons = int(evt.buttons())
+        mod = evt.modifiers()
+        if buttons == Qt.LeftButton:
+            self.drawbox(evt)
+            self.draw = True
+            x, y, dx, dy = self._drawbox
+            if mod == Qt.ShiftModifier:
+                if abs(dx) > abs(dy):
+                    dy = 0
+                elif abs(dx) < abs(dy):
+                    dx = 0
+
+            p2d1 = self.widget.GetPoint(x, y) # TODO:have Problem
+            p2d2 = self.widget.GetPoint(x+dx, y+dy)
+            try:
+                seg = GCE2d_MakeSegment(p2d1, p2d2).Value()
+                edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+                breplib_BuildCurve3d(edge)
+            
+                self.ais.SetShape(edge)
+                self.ais.SetToUpdate(-1)
+                self._display.Context.Display(self.ais, True)
+                self._display.View.Update()
+            except:
+                pass
+
+    def mouseReleaseEvent(self, event:QMouseEvent, displayCtx: DisplayCtx):
+        mod = event.modifiers()
+
+        if event.button() == Qt.LeftButton and self.draw:
+            x, y, dx, dy = self._drawbox
+            if mod == Qt.ShiftModifier:
+                if abs(dx) > abs(dy):
+                    dy = 0
+                elif abs(dx) < abs(dy):
+                    dx = 0
+            p2d1 = self.widget.GetPoint(x, y)
+            p2d2 = self.widget.GetPoint(x+dx, y+dy)
+            
+            print(x, y, dx, dy)
+            print(p2d1.X(), p2d1.Y(), p2d2.X(), p2d2.Y())
+
+            param = {'p1': {'x':str(p2d1.X()), 
+                            'y':str(p2d1.Y())}, 
+                     'p2':{'x':p2d2.X().__str__(), 
+                           'y':p2d2.Y().__str__()}}
+            self.widget.sig_new_shape.emit(Segment2dDriver.ID, param)
+            self._drawbox = [0, 0, 10, 10]
+            self.draw = False
+
+    def quit(self):
+        for ais in self.line_li:
+            self._display.Context.Remove(ais, True)
+        self.line_li.clear()
+
 
 
 class MouseControl(object):
@@ -252,8 +351,11 @@ class MouseControl(object):
 
     def Activate(self, name):
         if name in self.operator_d:
-            self.runing_operator = self.operator_d[name]
-            Logger().info(f'change to opertor to {name}')
+            if self.runing_operator != self.operator_d[name]:
+                if self.runing_operator:
+                    self.runing_operator.quit()
+                self.runing_operator = self.operator_d[name]
+                Logger().info(f'change to opertor to {name}')
 
     def wheelEvent(self, event, ctx):
         self.wheel_operator.wheelEvent(event)

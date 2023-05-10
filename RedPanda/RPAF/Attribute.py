@@ -148,6 +148,8 @@ attr_li = [
 
 Lookup_Attr = GuidLookup(map(lambda x:x.GetID(), attr_li), attr_li)
 
+
+
 # data translate
 def FromText(theType:type, text:str):
     if theType == TDataStd_Real:

@@ -1,16 +1,14 @@
 from OCC.Core.Geom2d import Geom2d_Ellipse
 from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge
 from OCC.Core.Geom import Geom_Plane
-from OCC.Core.AIS import AIS_ColoredShape
 from OCC.Core.TNaming import TNaming_Builder
 from OCC.Core.BRep import BRep_Tool
 from OCC.Extend.ShapeFactory import make_edge2d, make_edge
 from OCC.Core.TopoDS import TopoDS_Shape
 from OCC.Core.TopLoc import TopLoc_Location
-from OCC.Core.AIS import AIS_Shaded
+from OCC.Core.AIS import AIS_Shaded, AIS_ColoredShape
 from OCC.Core.PrsDim import PrsDim_DiameterDimension
 from OCC.Core.BRepLib import breplib_BuildCurve3d
-from OCC.Core.XCAFPrs import XCAFPrs_AISObject
 from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_RED
 
 from RedPanda.RPAF.RD_Label import Label
@@ -71,8 +69,10 @@ class Ellipse2dDriver(PCurveDriver):
 
     def Prs2d(self, theLabel: Label):
         ais_dict = DisplayCtx(theLabel)
-        ais = XCAFPrs_AISObject(theLabel)
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(theLabel, 'shape')] = ais
+
+        self.UpdatePrs2d(theLabel, ais_dict)
 
         return ais_dict
 
@@ -102,13 +102,15 @@ class Ellipse2dDriver(PCurveDriver):
 
         ais_dict = DisplayCtx(theLabel)
 
-        ais = XCAFPrs_AISObject(theLabel)
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(theLabel, 'shape')] = ais
         ais.SetDisplayMode(AIS_Shaded)
 
         aLabel = theLabel.Argument('surface')
-        ais = XCAFPrs_AISObject(aLabel)
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(aLabel, 'shape')] = ais
+
+        self.UpdatePrs3d(theLabel, ais_dict)
 
         return ais_dict
 
@@ -116,18 +118,15 @@ class Ellipse2dDriver(PCurveDriver):
         if not DataLabelState.IsOK(theLabel):
             return False
 
-        ais = ais_dict[(theLabel, 'shape')]
-        ais.SetShape(self.Attributes['value'].GetValue(theLabel))
-        ais.SetDisplayMode(AIS_Shaded)
+        ais_dict.SetShape((theLabel, 'shape'), 
+                          self.Attributes['value'].GetValue(theLabel))
+        # ais = ais_dict[(theLabel, 'shape')]
 
-        ais.UpdateSelection()
-        ais.SetToUpdate()
+        # ais.UpdateSelection()
+        # ais.SetToUpdate()
 
-        ais = ais_dict[(theLabel.Argument('surface'), 'shape')]
         shape = self.Arguments['surface'].Value(theLabel)
-        ais .SetShape(shape)
-        ais.UpdateSelection()
-        ais.SetToUpdate()
+        ais_dict.SetShape((theLabel.Argument('surface'), 'shape'), shape)
 
         return True
 
@@ -176,7 +175,9 @@ class Build3dDriver(PCurveDriver):
         aLabel = theLabel.Argument('edge2d')
         ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(aLabel, 'shape')] = ais
-        print('prs2d:', aLabel.GetEntry())
+
+        self.UpdatePrs2d(theLabel, ais_dict)
+
 
         return ais_dict
 
@@ -205,7 +206,7 @@ class Build3dDriver(PCurveDriver):
         ais_dict = DisplayCtx(theLabel)
 
         
-        ais = XCAFPrs_AISObject(theLabel)
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais_dict[(theLabel, 'shape')] = ais
 
 
@@ -214,6 +215,7 @@ class Build3dDriver(PCurveDriver):
         ais_dict[(aLabel, 'shape')] = ais
         ais.SetDisplayMode(AIS_Shaded)
 
+        self.UpdatePrs3d(theLabel, ais_dict)
 
         return ais_dict
 
@@ -221,20 +223,13 @@ class Build3dDriver(PCurveDriver):
         if not DataLabelState.IsOK(theLabel):
             return False
         # 1
-        ais = ais_dict[(theLabel, 'shape')]
         shape = self.Attributes['value'].GetValue(theLabel)
         if shape:
-            ais.SetShape(shape)
-            ais.UpdateSelection()
-            ais.SetToUpdate()
-
+            ais_dict.SetShape((theLabel, 'shape'), shape)
         # 2
         aLabel = theLabel.Argument('surface')
         shape = self.Arguments['surface'].Value(theLabel)
-        ais = ais_dict[(aLabel, 'shape')]
-        ais .SetShape(shape)
-        ais.UpdateSelection()
-        ais.SetToUpdate()
+        ais_dict.SetShape((aLabel, 'shape'), shape)
 
         return True
 
@@ -263,7 +258,7 @@ class BareShape2dDriver(BareShapeDriver):
 
     def Prs2d(self, theLabel:Label):
         ais_dict = DisplayCtx(theLabel)
-        ais = XCAFPrs_AISObject(theLabel)
+        ais = AIS_ColoredShape(TopoDS_Shape())
         ais.SetColor(Quantity_Color(Quantity_NOC_RED))
         ais_dict[(theLabel, 'shape')] = ais
 
@@ -395,7 +390,7 @@ class Elps2dDriver(Shape2dDriver):
         from ..GUID import Sym_Elps2dDriver_GUID
         return Sym_Elps2dDriver_GUID
 
-class TrimmedCurveDriver(Shape2dDriver):
+class TrimmedCurveDriver(BareShape2dDriver):
     def __init__(self) -> None:
         super().__init__()
         self.Arguments['edge2d'] = Argument(self.tagResource, ShapeRefDriver.ID)

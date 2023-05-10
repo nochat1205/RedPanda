@@ -26,7 +26,7 @@ def _ShallowCopy(dest, src):
     # __module__
 
 # Driver Table
-class DataDriverTable(RP_Transient, Singleton):
+class DataDriverTable(Singleton):
     _myDrivers:dict = dict()
     # _myThreadDrivers = TFunction_HArray1OfDataMapOfGUIDDriver()
     def __init__(self, *args) -> None:

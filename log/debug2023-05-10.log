@@ -1,606 +1,624 @@
-2023-05-07 01:27:13,970 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:39:54,944 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:27:17,761 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:39:59,393 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:40:00,256 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 4.0, 'w': 0.0}
+2023-05-10 02:40:01,295 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 4.0, 'w': 4.0}
+2023-05-10 02:45:15,434 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:45:19,137 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:27:19,861 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:45:19,956 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 01:27:21,614 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:45:20,940 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 01:28:36,783 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:47:03,771 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:28:39,949 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:47:06,551 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:47:07,410 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 5.0, 'w': 0.0}
+2023-05-10 02:47:08,679 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 5.0, 'w': 6.0}
+2023-05-10 02:48:11,294 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:48:14,333 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 3.0, 'w': 0.0}
+2023-05-10 02:48:15,173 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 0.0}
+2023-05-10 02:48:16,208 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 5.0}
+2023-05-10 02:48:53,326 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:48:56,090 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:48:56,894 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:28:41,440 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:48:57,730 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
+2023-05-10 02:48:58,655 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
+2023-05-10 02:50:08,952 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:50:13,082 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:50:13,886 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 6.0, 'w': 0.0}
+2023-05-10 02:50:14,712 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 6.0, 'w': 7.0}
+2023-05-10 02:53:25,104 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:53:28,190 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:53:29,021 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 0.0}
+2023-05-10 02:53:29,983 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 6.0}
+2023-05-10 02:54:12,645 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:54:15,036 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:54:15,870 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:54:16,770 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 0.0}
+2023-05-10 02:54:18,066 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 6.0}
+2023-05-10 02:55:21,622 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:55:25,055 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:55:25,897 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
+2023-05-10 02:55:27,016 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
+2023-05-10 02:55:31,420 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 6.0, 'h': 4.0, 'w': 5.0}
+2023-05-10 02:55:32,907 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 6.0, 'h': 9.0, 'w': 5.0}
+2023-05-10 02:57:35,143 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:57:38,723 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:57:39,220 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:57:40,292 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 7.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:57:41,188 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 7.0, 'h': 7.0, 'w': 0.0}
+2023-05-10 02:57:42,358 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 7.0, 'h': 7.0, 'w': 7.0}
+2023-05-10 02:59:13,776 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:59:18,662 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:59:19,510 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 3.0, 'w': 0.0}
-2023-05-07 01:28:43,193 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:59:21,860 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 3.0, 'w': 3.0}
-2023-05-07 01:29:35,060 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:59:28,022 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:29:38,334 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 02:59:30,894 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:29:39,523 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 1.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 02:59:31,720 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 01:29:40,726 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 1.0, 'h': 1.0, 'w': 0.0}
+2023-05-10 02:59:32,883 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 01:31:53,239 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 1.0, 'h': 1.0, 'w': 1.0}
+2023-05-10 03:00:07,457 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:31:55,886 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 1.0, 'w': 1.0}
+2023-05-10 03:00:08,535 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:31:56,865 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 5.0, 'w': 1.0}
+2023-05-10 03:00:11,002 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 01:31:57,819 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 01:31:58,946 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 02:50:09,781 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 02:50:13,289 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 02:50:14,349 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 02:50:15,640 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 02:51:35,690 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 02:51:39,232 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 3.0, 'w': 0.0}
-2023-05-07 02:51:40,348 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 0.0}
-2023-05-07 02:51:41,995 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 3.0}
-2023-05-07 02:53:38,396 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 02:53:41,158 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 02:53:42,177 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 02:53:43,470 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:21:58,219 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:22:01,822 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:22:02,841 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:22:03,925 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 3.0}
-2023-05-07 03:38:24,551 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:38:28,526 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:38:29,966 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:38:31,100 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:39:24,173 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:39:27,195 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:39:28,055 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:39:29,319 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:41:23,042 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:41:25,895 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:41:26,796 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:41:28,386 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:46:00,294 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:46:03,184 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:46:04,082 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:46:05,083 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:46:06,319 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:48:06,399 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:48:09,631 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 3.0, 'w': 0.0}
-2023-05-07 03:48:10,643 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 0.0}
-2023-05-07 03:48:11,705 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 3.0}
-2023-05-07 03:49:17,955 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:49:21,786 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:49:22,821 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:49:24,757 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:52:12,185 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:52:16,371 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:52:17,320 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:52:18,778 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:54:15,307 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:54:18,540 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:54:19,386 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:54:20,544 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:54:46,482 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:54:49,195 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:54:52,466 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 4.0}
-2023-05-07 03:57:30,829 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:57:33,842 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:57:34,718 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:57:35,984 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:58:34,406 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:58:37,975 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 03:58:38,973 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 03:58:40,272 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 03:59:01,364 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 5.0, 'w': 5.0}
+2023-05-10 03:00:28,702 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 5.0, 'w': 5.0}
-2023-05-07 03:59:04,470 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 5.0, 'w': 5.0}
-2023-05-07 03:59:07,259 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 6.0, 'h': 5.0, 'w': 5.0}
-2023-05-07 03:59:09,594 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 5.0}
-2023-05-07 03:59:11,991 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 4.0}
-2023-05-07 03:59:59,108 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 12:06:55,811 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 04:03:25,478 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 12:07:35,860 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 04:03:36,653 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 12:08:44,004 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:18:29,512 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:18:33,795 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 04:03:38,131 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 12:18:44,041 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
+ 1.000, 0.000, 0.000, 4.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 04:03:40,040 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:18:44,938 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 04:03:58,596 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 1.000, 0.000, 0.000, 4.000
+ 0.000, 1.000, 0.000, 5.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:18:46,199 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 2.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 04:04:02,667 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 1.000, 0.000, 0.000, 4.000
+ 0.000, 1.000, 0.000, 5.000
+ 0.000, 0.000, 1.000, 3.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:18:47,045 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 2.0, 'h': 3.0, 'w': 5.0}
-2023-05-07 04:21:49,612 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 1.000, 0.000, 0.000, 4.000
+ 0.000, 1.000, 0.000, 5.000
+ 0.000, 0.000, 1.000, 3.000 >, 'l': 3.0, 'h': 6.0, 'w': 0.0}
+2023-05-10 12:18:48,152 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 04:21:54,109 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 2.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 04:21:55,081 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 2.0, 'h': 3.0, 'w': 0.0}
-2023-05-07 04:21:56,096 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 2.0, 'h': 3.0, 'w': 2.0}
-2023-05-07 14:56:52,011 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 1.000, 0.000, 0.000, 4.000
+ 0.000, 1.000, 0.000, 5.000
+ 0.000, 0.000, 1.000, 3.000 >, 'l': 3.0, 'h': 6.0, 'w': 7.0}
+2023-05-10 12:18:56,476 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 14:56:56,033 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 12:22:00,628 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:22:05,176 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:22:05,980 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 0.0}
+2023-05-10 12:22:07,002 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 6.0}
+2023-05-10 12:22:14,472 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:22:24,195 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:22:29,800 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 0.0}
+2023-05-10 12:22:31,999 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 6.0}
+2023-05-10 12:22:35,382 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 5.0, 'w': 2.0}
+2023-05-10 12:28:07,919 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:28:11,876 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 14:56:57,019 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 14:56:58,330 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
-2023-05-07 21:00:04,572 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
-	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
-Execute Box, argu:{'transform': < gp_Trsf:
- 1.000, 0.000, 0.000, 0.000
- 0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 21:00:08,324 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 12:28:17,639 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
  0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
-2023-05-07 21:00:09,165 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+2023-05-10 12:30:09,220 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 0.0}
-2023-05-07 21:00:10,126 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:30:11,417 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
 	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
 Execute Box, argu:{'transform': < gp_Trsf:
  1.000, 0.000, 0.000, 0.000
  0.000, 1.000, 0.000, 0.000
- 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 4.0, 'w': 5.0}
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:30:12,660 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:31:13,272 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 12:31:15,884 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 3.0, 'w': 0.0}
+2023-05-10 12:31:17,295 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 0.0}
+2023-05-10 12:31:20,296 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 3.0}
+2023-05-10 13:19:14,144 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 13:19:16,632 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 3.0, 'w': 0.0}
+2023-05-10 13:19:17,444 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 0.0}
+2023-05-10 13:19:18,333 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 3.0, 'w': 5.0}
+2023-05-10 13:20:38,429 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 13:20:41,393 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 13:20:42,881 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 6.0, 'w': 0.0}
+2023-05-10 13:20:43,914 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 5.0, 'h': 6.0, 'w': 7.0}
+2023-05-10 13:21:40,383 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 13:21:43,210 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 13:21:43,914 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 0.0, 'w': 4.0}
+2023-05-10 13:21:44,838 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 3.0, 'h': 5.0, 'w': 4.0}
+2023-05-10 13:22:52,102 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 0.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 13:22:55,323 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 0.0, 'w': 0.0}
+2023-05-10 13:22:56,222 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 6.0, 'w': 0.0}
+2023-05-10 13:22:57,274 - DEBUG: File PrimDriver.py, in PrimDriver.myExecute             
+	File D:\2022-1\graduate_design\RedPanda\RedPanda\RPAF\DataDriver\PrimDriver.py:62
+Execute Box, argu:{'transform': < gp_Trsf:
+ 1.000, 0.000, 0.000, 0.000
+ 0.000, 1.000, 0.000, 0.000
+ 0.000, 0.000, 1.000, 0.000 >, 'l': 4.0, 'h': 6.0, 'w': 5.0}

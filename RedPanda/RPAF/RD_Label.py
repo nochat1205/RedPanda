@@ -93,7 +93,7 @@ def GetAttribute(theLabel:TDF_Label, guid:RP_GUID)->TDF_Attribute:
     if theLabel.FindAttribute(guid, container):
         return container
 
-    Logger().warning(f"{theLabel.GetEntry()} don't find {guid} ")        
+    Logger().warning(f"{theLabel.GetEntry()} don't find  Attr {guid} ")        
     return None
 
 def GetAttrValue(theLabel:TDF_Label, guid:RP_GUID):

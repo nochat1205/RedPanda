@@ -3,6 +3,7 @@ __all__ = ['PntDriver']
 
 from OCC.Core.gp import gp_Pnt2d
 from OCC.Core.BRep import BRep_Tool
+from RedPanda.RPAF.RD_Label import Label
 
 from RedPanda.logger import Logger
 from RedPanda.decorator import classproperty
@@ -90,12 +91,14 @@ class Pnt2dDriver(CompoundDriver):
         self.Arguments['x'] = Argument(self.tagResource, RealDriver.ID)
         self.Arguments['y'] = Argument(self.tagResource, RealDriver.ID)
 
+    def Init(self, theLabel: Label, data=None):
+        return super().Init(theLabel, data)
+
     def myValue(self, theLabel:Label):
         param_dict = dict()
         for name, argu in self.Arguments.items():
             argu:Argument
             param_dict[name] = argu.Value(theLabel)
-
         return gp_Pnt2d(param_dict['x'], param_dict['y'])
 
     @classproperty

@@ -668,12 +668,14 @@ class Viewer2d(Display3d):
             callback(self.selected_shapes, Xmin, Ymin, Xmax, Ymax)
 
     def Select(self, X, Y):
+        self.MoveTo(X, Y)
         self.Context.Select(True)
         self.Context.InitSelected()
         self.selected_ais_li = []
         if self.Context.MoreSelected():
             if self.Context.HasSelectedShape():
                 ais = AIS_Shape.DownCast(self.Context.SelectedInteractive())
+                self.selected_shapes.append(self.Context.SelectedShape())
                 self.selected_ais_li.append(ais )
 
         return self.selected_ais_li[:]
