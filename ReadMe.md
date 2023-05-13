@@ -49,3 +49,11 @@ python main.py
 
 https://github.com/nochat1205/RedPanda
 
+
+#### 戒律
+
+1. myExecute 务必对参数进行检查, 防止会执行生成 0零向量curve等可能不被兼容的元素, 
+
+AIS_Shape似乎无法解析零向量curve,从而导致程序甚至, 电脑宕机.
+
+

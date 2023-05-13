@@ -85,7 +85,7 @@ class ThruSecDriver(BareShapeDriver):
         from RedPanda.Core.data import RP_TOLERANCE
     
 
-        edges:list[TopoDS_Shape] = self.Arguments['wires'].Value(theLabel)
+        edges:list[TopoDS_Shape] = self.Arguments['Wires'].Value(theLabel)
         try:
             builder = BRepOffsetAPI_ThruSections()
             for shape in edges:

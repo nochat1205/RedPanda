@@ -142,23 +142,23 @@ gp_Pnt.__setstate__ = gp_Pnt_set_state
 gp_Vec.__getstate__ = gp_Pnt_get_state
 gp_Vec.__setstate__ = gp_Pnt_set_state
 # equality, not identity comparison
-gp_Pnt.__eq__ = gp_Pnt_equal
 # print gp_Pnt() should return something informative...
 gp_Vec.__repr__ = gp_vec_print
 gp_Vec.__str__ = gp_vec_print
-gp_Pnt.__repr__ = gp_pnt_print
-gp_Pnt.__str__ = gp_pnt_print
 gp_Ax1.__repr__ = gp_ax1_print
 gp_Ax1.__str__ = gp_ax1_print
 gp_Trsf.__repr__ = gp_trsf_print
 gp_Trsf.__str__ = gp_trsf_print
 gp_Quaternion.__repr__ = gp_quat_print
 gp_Quaternion.__str__ = gp_quat_print
-gp_Pnt.__eq__ = point_equal
+
 gp_Pnt.__add__ = gp_pnt_add
 gp_Pnt.__sub__ = gp_pnt_sub
 gp_Pnt.__mul__ = gp_pnt_mul
 gp_Pnt.__div__ = gp_pnt_div
+gp_Pnt.__repr__ = gp_pnt_print
+gp_Pnt.__str__ = gp_pnt_print
+gp_Pnt.__eq__ = gp_Pnt_equal
 
 
 RP_Pnt = gp_Pnt

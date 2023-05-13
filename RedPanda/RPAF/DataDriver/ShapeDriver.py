@@ -177,7 +177,7 @@ class FaceDriver(BareShapeDriver):
         
         wire = self.Arguments['Wire'].Value(theLabel)
         try:
-            if wire.SHapeType() == TopAbs_EDGE:
+            if wire.ShapeType() == TopAbs_EDGE:
                 wire = BRepBuilderAPI_MakeWire(wire).Wire()
             face = BRepBuilderAPI_MakeFace(wire).Face()
         except Exception as error:

@@ -219,7 +219,6 @@ class DataDriver(object):
         TFunction_Function.Set(theLabel, self.ID)
         DataLabelState.Init(theLabel)
 
-
     def myInit(self, theLabel:Label, data=None)->bool:
         ''' 运行自己的参数检查和初始化就行
         返回初始化是否成功 <= 参数是否正确

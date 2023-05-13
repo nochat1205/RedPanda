@@ -18,6 +18,12 @@ display, start, *_ = init_display()
 def test_Axis():
     # line = make_line(RP_Pnt(0, 0, 0), RP_Pnt(0, 2, 0))
     line = GC_MakeLine(RP_Pnt(0, 0, 0), RP_Pnt(0, 1, 1)).Value()
-    display.DisplayShape(AIS_Axis(line) )
+    display.Context.Display (AIS_Axis(line), True)
     start()
 
+if __name__ == '__main__':
+
+    display, start, *_ = init_display()
+    test_Axis()
+    
+    

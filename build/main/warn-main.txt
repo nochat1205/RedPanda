@@ -1,0 +1,45 @@
+
+This file lists modules PyInstaller was not able to find. This does not
+necessarily mean this module is required for running your program. Python and
+Python 3rd-party packages include a lot of conditional or optional modules. For
+example the module 'ntpath' only exists on Windows, whereas the module
+'posixpath' only exists on Posix systems.
+
+Types if import:
+* top-level: imported at the top-level - look at these first
+* conditional: imported within an if-statement
+* delayed: imported within a function
+* optional: imported within a try-except-statement
+
+IMPORTANT: Do NOT post this list to the issue-tracker. Use it as a basis for
+            tracking down the missing module yourself. Thanks!
+
+missing module named pyimod02_importers - imported by D:\AEnvs\conda\envs\pyoccenv\Lib\site-packages\PyInstaller\hooks\rthooks\pyi_rth_pkgutil.py (top-level)
+missing module named pep517 - imported by importlib.metadata (delayed)
+missing module named 'org.python' - imported by copy (optional), xml.sax (delayed, conditional)
+missing module named grp - imported by subprocess (optional), shutil (optional), tarfile (optional), pathlib (delayed, optional)
+missing module named pwd - imported by posixpath (delayed, conditional), subprocess (optional), shutil (optional), tarfile (optional), pathlib (delayed, conditional, optional), netrc (delayed, conditional), getpass (delayed), psutil (optional)
+missing module named org - imported by pickle (optional)
+missing module named posix - imported by os (conditional, optional), shutil (conditional), importlib._bootstrap_external (conditional)
+missing module named resource.prlimit - imported by resource (optional), psutil._pslinux (optional)
+excluded module named _frozen_importlib - imported by importlib (optional), importlib.abc (optional), zipimport (top-level)
+missing module named _frozen_importlib_external - imported by importlib._bootstrap (delayed), importlib (optional), importlib.abc (optional), zipimport (top-level)
+missing module named _posixsubprocess - imported by subprocess (optional)
+missing module named _scproxy - imported by urllib.request (conditional)
+missing module named termios - imported by getpass (optional), psutil._compat (delayed, optional)
+missing module named StringIO - imported by six (conditional)
+missing module named __builtin__ - imported by OCC.Core.TDF (optional), OCC.Core.Standard (optional), OCC.Core.NCollection (optional), OCC.Core.TCollection (optional), OCC.Core.TColStd (optional), OCC.Core.TFunction (optional), OCC.Core.TDataStd (optional), OCC.Core.TNaming (optional), OCC.Core.TopTools (optional), OCC.Core.TopoDS (optional), OCC.Core.Message (optional), OCC.Core.OSD (optional), OCC.Core.TopAbs (optional), OCC.Core.TopLoc (optional), OCC.Core.gp (optional), OCC.Core.BRepTools (optional), OCC.Core.Bnd (optional), OCC.Core.TColgp (optional), OCC.Core.BVH (optional), OCC.Core.Geom (optional), OCC.Core.GeomAbs (optional), OCC.Core.Geom2d (optional), OCC.Core.BRep (optional), OCC.Core.Poly (optional), OCC.Core.TShort (optional), OCC.Core.TPrsStd (optional), OCC.Core.Quantity (optional), OCC.Core.AIS (optional), OCC.Core.SelectMgr (optional), OCC.Core.Graphic3d (optional), OCC.Core.Aspect (optional), OCC.Core.Image (optional), OCC.Core.Media (optional), OCC.Core.Select3D (optional), OCC.Core.SelectBasics (optional), OCC.Core.PrsMgr (optional), OCC.Core.Prs3d (optional), OCC.Core.V3d (optional), OCC.Core.StdSelect (optional), OCC.Core.TDataXtd (optional), OCC.Core.XCAFDoc (optional), OCC.Core.TDocStd (optional), OCC.Core.CDF (optional), OCC.Core.CDM (optional), OCC.Core.Resource (optional), OCC.Core.PCDM (optional), OCC.Core.Storage (optional), OCC.Core.XCAFDimTolObjects (optional), OCC.Core.XCAFNoteObjects (optional), OCC.Core.XCAFView (optional), OCC.Core.BRepBuilderAPI (optional), OCC.Core.BRepBndLib (optional), OCC.Core.BRepAdaptor (optional), OCC.Core.Adaptor3d (optional), OCC.Core.Adaptor2d (optional), OCC.Core.math (optional), OCC.Core.GeomAdaptor (optional), OCC.Core.Geom2dAdaptor (optional), OCC.Core.GeomAPI (optional), OCC.Core.Extrema (optional), OCC.Core.Approx (optional), OCC.Core.AppCont (optional), OCC.Core.AppParCurves (optional), OCC.Core.GProp (optional), OCC.Core.BRepGProp (optional), OCC.Core.BRepCheck (optional), OCC.Core.TopExp (optional), OCC.Core.BRepClass3d (optional), OCC.Core.IntCurveSurface (optional), OCC.Core.Intf (optional), OCC.Core.IntSurf (optional), OCC.Core.IntCurvesFace (optional), OCC.Core.IntAna (optional), OCC.Core.ShapeFix (optional), OCC.Core.ShapeBuild (optional), OCC.Core.ShapeExtend (optional), OCC.Core.TColGeom (optional), OCC.Core.ShapeAnalysis (optional), OCC.Core.IntRes2d (optional), OCC.Core.ShapeConstruct (optional), OCC.Core.ShapeUpgrade (optional), OCC.Core.TColGeom2d (optional), OCC.Core.GCPnts (optional), OCC.Core.BRepExtrema (optional), OCC.Core.ProjLib (optional), OCC.Core.BRepOffset (optional), OCC.Core.ChFiDS (optional), OCC.Core.Law (optional), OCC.Core.BRepAlgo (optional), OCC.Core.GeomConvert (optional), OCC.Core.Convert (optional), OCC.Core.GeomLProp (optional), OCC.Core.BRepPrimAPI (optional), OCC.Core.BRepPrim (optional), OCC.Core.BRepSweep (optional), OCC.Core.Sweep (optional), OCC.Core.BRepOffsetAPI (optional), OCC.Core.Draft (optional), OCC.Core.BRepFill (optional), OCC.Core.MAT (optional), OCC.Core.GeomPlate (optional), OCC.Core.AdvApp2Var (optional), OCC.Core.AdvApprox (optional), OCC.Core.PLib (optional), OCC.Core.Plate (optional), OCC.Core.GeomFill (optional), OCC.Core.AppBlend (optional), OCC.Core.BRepMAT2d (optional), OCC.Core.Bisector (optional), OCC.Core.BRepLProp (optional), OCC.Core.GeomLib (optional), OCC.Core.BRepIntCurveSurface (optional), OCC.Core.BRepTopAdaptor (optional), OCC.Core.GeomProjLib (optional), OCC.Core.BRepAlgoAPI (optional), OCC.Core.BOPAlgo (optional), OCC.Core.IntTools (optional), OCC.Core.Geom2dHatch (optional), OCC.Core.HatchGen (optional), OCC.Core.Geom2dInt (optional), OCC.Core.IntCurve (optional), OCC.Core.IntPatch (optional), OCC.Core.GeomInt (optional), OCC.Core.IntImp (optional), OCC.Core.ApproxInt (optional), OCC.Core.BOPDS (optional), OCC.Core.BOPTools (optional), OCC.Core.XmlDrivers (optional), OCC.Core.XmlMDF (optional), OCC.Core.XmlObjMgt (optional), OCC.Core.LDOM (optional), OCC.Core.XmlLDrivers (optional), OCC.Core.BRepMesh (optional), OCC.Core.IMeshTools (optional), OCC.Core.IMeshData (optional), OCC.Core.HLRBRep (optional), OCC.Core.HLRAlgo (optional), OCC.Core.HLRTopoBRep (optional), OCC.Core.Contap (optional), OCC.Core.PrsDim (optional), OCC.Core.DsgPrs (optional), OCC.Core.BRepLib (optional), OCC.Core.GCE2d (optional), OCC.Core.gce (optional), OCC.Core.STEPCAFControl (optional), OCC.Core.StepShape (optional), OCC.Core.StepGeom (optional), OCC.Core.StepData (optional), OCC.Core.Interface (optional), OCC.Core.MoniTool (optional), OCC.Core.StepRepr (optional), OCC.Core.StepBasic (optional), OCC.Core.STEPControl (optional), OCC.Core.Transfer (optional), OCC.Core.XSControl (optional), OCC.Core.IFSelect (optional), OCC.Core.StepDimTol (optional), OCC.Core.StepVisual (optional), OCC.Core.STEPConstruct (optional), OCC.Core.StepAP203 (optional), OCC.Core.Visualization (optional), OCC.Core.BRepFilletAPI (optional), OCC.Core.ChFi2d (optional), OCC.Core.TopOpeBRepBuild (optional), OCC.Core.TopOpeBRepDS (optional), OCC.Core.TopOpeBRepTool (optional), OCC.Core.ChFi3d (optional), OCC.Core.BRepBlend (optional), OCC.Core.BlendFunc (optional), OCC.Core.Blend (optional)
+missing module named psutil._psutil_aix - imported by psutil (top-level), psutil._psaix (top-level)
+missing module named psutil._psutil_sunos - imported by psutil (top-level), psutil._pssunos (top-level)
+missing module named 'java.lang' - imported by platform (delayed, optional), xml.sax._exceptions (conditional)
+missing module named psutil._psutil_bsd - imported by psutil (top-level), psutil._psbsd (top-level)
+missing module named psutil._psutil_linux - imported by psutil (top-level), psutil._pslinux (top-level)
+missing module named psutil._psutil_osx - imported by psutil (conditional), psutil._psposix (conditional), psutil._psosx (top-level)
+missing module named fcntl - imported by psutil._compat (delayed, optional)
+missing module named dummy_threading - imported by psutil._compat (optional)
+missing module named vms_lib - imported by platform (delayed, optional)
+missing module named java - imported by platform (delayed)
+missing module named _winreg - imported by platform (delayed, optional)
+missing module named _curses - imported by curses (top-level), curses.has_key (top-level)
+missing module named wx - imported by OCC.Display.backend (delayed, optional)
+missing module named PySide2 - imported by OCC.Display.backend (delayed, optional)

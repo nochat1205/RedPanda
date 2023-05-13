@@ -200,8 +200,6 @@ class MainApplication():
 
         Logger().info('New Document End')
 
-
-
     def Process_ShowLabel(self, theLabel:Label):
         # 1
         self.showedLabel_set.clear()
@@ -230,7 +228,7 @@ class MainApplication():
 
             Logger().info('update3d Label')
             self.c_viewer3d.UpdateLabel(label)
-            # Logger().info('update2d Label')
+            Logger().info('update2d Label')
             # self.c_viewer2d.UpdateLabel(label)
 
         Logger().info(f'End Change: {theLabel.GetEntry()}, {str}')

@@ -153,6 +153,8 @@ class TransformDriver(CompoundDriver):
         return TRSF
 
     def myChange(self, theLabel: Label, theData):
+        if not isinstance(theData, dict):
+            return False
         for name, subData in theData.items():
             argu:Argument = self.Arguments[name]
             aLabel = theLabel.FindChild(argu.Tag)

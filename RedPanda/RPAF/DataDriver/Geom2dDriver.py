@@ -93,8 +93,7 @@ class Ellipse2dDriver(PCurveDriver):
 
         ais = ais_dict[(theLabel, 'shape')]
         ais.SetShape(edge)
-        ais.UpdateSelection()
-        ais.SetToUpdate()
+    
 
         return True
 
@@ -120,10 +119,7 @@ class Ellipse2dDriver(PCurveDriver):
 
         ais_dict.SetShape((theLabel, 'shape'), 
                           self.Attributes['value'].GetValue(theLabel))
-        # ais = ais_dict[(theLabel, 'shape')]
 
-        # ais.UpdateSelection()
-        # ais.SetToUpdate()
 
         shape = self.Arguments['surface'].Value(theLabel)
         ais_dict.SetShape((theLabel.Argument('surface'), 'shape'), shape)
@@ -427,5 +423,4 @@ class TrimmedCurveDriver(BareShape2dDriver):
     def ID(self):
         from ..GUID import Sym_TrimmedCurve2d_GUID
         return Sym_TrimmedCurve2d_GUID
-
 

@@ -154,7 +154,13 @@ Lookup_Attr = GuidLookup(map(lambda x:x.GetID(), attr_li), attr_li)
 def FromText(theType:type, text:str):
     if theType == TDataStd_Real:
         from math import pi
-        return eval(text)
+        try:
+            num = eval(text)
+            if isinstance(num, int) or isinstance(num, float):
+                return num
+        except:
+            pass
+        return 0.0
     elif theType == TDataStd_Integer:
         return int(text)
 

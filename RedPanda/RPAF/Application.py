@@ -233,37 +233,6 @@ class Application(TDocStd_Application):
 
                     cls.Set(theLabel, attr_id, FromText(cls.GetID(), value))
 
-        # def setSubLabel(fnode, flabel):
-        #     value_d = dict()
-        #     attr_d = dict()
-        #     for child in fnode:
-        #         if child.tag in (shapetag, functiontag):
-        #             continue
-        #         elif child.tag == labeltag:
-        #             tag = int(child.attrib['tag'])
-        #             aLabel = flabel.FindChild(tag, True)
-        #             # aDriver.Init(aLabel)
-
-        #             for key in value_d.keys():
-        #                 idName = ['guid', 'nameguid', 'intattguid']
-        #                 for iname in idName:
-        #                     if iname in attr_d[key]:
-        #                         attr_id = attr_d[key][iname]
-        #                         break # for
-
-        #                 cls = Lookup_Attr[RP_GUID(attr_id)]
-        #                 if cls is None:
-        #                     print(attr_id, key, value_d[key], attr_d[key])
-        #                     continue
-        #                 text = value_d[key]
-        #                 cls.Set(aLabel, FromText(cls.GetID(), text))
-
-        #             attr_d.clear()
-        #             value_d.clear()
-        #             setSubLabel(child, aLabel)
-        #         else:
-        #             value_d[child.tag] = child.text
-        #             attr_d[child.tag] = child.attrib
 
         # 遍历整个XML文件
         def traverse(element, prefix='|--'):

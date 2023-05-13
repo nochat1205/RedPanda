@@ -30,17 +30,24 @@ class DisplayCtx(object):
         return None
 
     def SetShape(self, key, shape):
+        from OCC.Core.TopAbs import TopAbs_EDGE
+        from OCC.Core.BRepLib import breplib_BuildCurve3d
+        if shape.ShapeType() == TopAbs_EDGE:
+            breplib_BuildCurve3d(shape)
+
         if key in self.d:
+            # ref sub
             if key[1] == 'shape':
                 old = self.d[key].Shape()
                 if old in self.shapeToLabel_d:
                     self.shapeToLabel_d.pop(old)
                 self.shapeToLabel_d[shape] = key[0]
 
+            context = self.d[key].GetContext()
+            if context:
+                context.Remove(self.d[key], False)
+
             self.d[key].SetShape(shape)
-            ais:AIS_ColoredShape = self.d[key]
-            ais.SetToUpdate()
-            ais.UpdateSelection()
 
     def values(self):
         return self.d.values()

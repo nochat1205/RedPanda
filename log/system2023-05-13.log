@@ -1,0 +1,159 @@
+2023-05-13 08:27:00,415 - INFO: Application Start
+2023-05-13 08:27:02,359 - INFO: change to opertor to viewer
+2023-05-13 08:27:37,874 - INFO: change to opertor to line
+2023-05-13 08:27:39,258 - INFO: key: code 16777248 not mapped to any function
+2023-05-13 08:27:41,273 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-13 08:27:41,273 - INFO: New Document
+2023-05-13 08:27:41,461 - INFO: New Document End
+2023-05-13 08:27:41,461 - INFO: -- NewConmand --
+2023-05-13 08:27:41,461 - INFO: -- Add New Shape --
+2023-05-13 08:27:41,476 - INFO: Entry:0:1:1, init start
+2023-05-13 08:27:41,476 - INFO: BaseInit 0:1:1 Seg2d
+2023-05-13 08:27:41,476 - INFO: Entry:0:1:1:18, init start
+2023-05-13 08:27:41,476 - INFO: BaseInit 0:1:1:18 pnt2d
+2023-05-13 08:27:41,476 - INFO: Entry:0:1:1:18:18, init start
+2023-05-13 08:27:41,476 - INFO: BaseInit 0:1:1:18:18 real
+2023-05-13 08:27:41,476 - INFO: Init Label:0:1:1:18:18.value, None, 21.11663179916318
+2023-05-13 08:27:41,476 - INFO: Entry:0:1:1:18:18, init end
+2023-05-13 08:27:41,492 - INFO: Entry:0:1:1:18:19, init start
+2023-05-13 08:27:41,492 - INFO: BaseInit 0:1:1:18:19 real
+2023-05-13 08:27:41,492 - INFO: Init Label:0:1:1:18:19.value, None, 9.675732217573223
+2023-05-13 08:27:41,492 - INFO: Entry:0:1:1:18:19, init end
+2023-05-13 08:27:41,492 - INFO: Entry:0:1:1:18, init end
+2023-05-13 08:27:41,492 - INFO: Entry:0:1:1:19, init start
+2023-05-13 08:27:41,492 - INFO: BaseInit 0:1:1:19 pnt2d
+2023-05-13 08:27:41,492 - INFO: Entry:0:1:1:19:18, init start
+2023-05-13 08:27:41,508 - INFO: BaseInit 0:1:1:19:18 real
+2023-05-13 08:27:41,508 - INFO: Init Label:0:1:1:19:18.value, None, 21.11663179916318
+2023-05-13 08:27:41,508 - INFO: Entry:0:1:1:19:18, init end
+2023-05-13 08:27:41,508 - INFO: Entry:0:1:1:19:19, init start
+2023-05-13 08:27:41,508 - INFO: BaseInit 0:1:1:19:19 real
+2023-05-13 08:27:41,508 - INFO: Init Label:0:1:1:19:19.value, None, -8.825836820083683
+2023-05-13 08:27:41,508 - INFO: Entry:0:1:1:19:19, init end
+2023-05-13 08:27:41,508 - INFO: Entry:0:1:1:19, init end
+2023-05-13 08:27:41,523 - INFO: Entry:0:1:1, init end
+2023-05-13 08:27:41,539 - INFO: -- commit command --
+2023-05-13 08:27:41,555 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-05-13 08:27:42,882 - INFO: key: code 16777248 not mapped to any function
+2023-05-13 08:27:44,335 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-13 08:27:44,335 - INFO: -- NewConmand --
+2023-05-13 08:27:44,335 - INFO: -- Add New Shape --
+2023-05-13 08:27:44,335 - INFO: Entry:0:1:2, init start
+2023-05-13 08:27:44,351 - INFO: BaseInit 0:1:2 Seg2d
+2023-05-13 08:27:44,351 - INFO: Entry:0:1:2:18, init start
+2023-05-13 08:27:44,351 - INFO: BaseInit 0:1:2:18 pnt2d
+2023-05-13 08:27:44,351 - INFO: Entry:0:1:2:18:18, init start
+2023-05-13 08:27:44,351 - INFO: BaseInit 0:1:2:18:18 real
+2023-05-13 08:27:44,351 - INFO: Init Label:0:1:2:18:18.value, None, 21.11663179916318
+2023-05-13 08:27:44,351 - INFO: Entry:0:1:2:18:18, init end
+2023-05-13 08:27:44,351 - INFO: Entry:0:1:2:18:19, init start
+2023-05-13 08:27:44,366 - INFO: BaseInit 0:1:2:18:19 real
+2023-05-13 08:27:44,366 - INFO: Init Label:0:1:2:18:19.value, None, 8.956589958158997
+2023-05-13 08:27:44,366 - INFO: Entry:0:1:2:18:19, init end
+2023-05-13 08:27:44,366 - INFO: Entry:0:1:2:18, init end
+2023-05-13 08:27:44,366 - INFO: Entry:0:1:2:19, init start
+2023-05-13 08:27:44,366 - INFO: BaseInit 0:1:2:19 pnt2d
+2023-05-13 08:27:44,366 - INFO: Entry:0:1:2:19:18, init start
+2023-05-13 08:27:44,366 - INFO: BaseInit 0:1:2:19:18 real
+2023-05-13 08:27:44,382 - INFO: Init Label:0:1:2:19:18.value, None, 21.11663179916318
+2023-05-13 08:27:44,382 - INFO: Entry:0:1:2:19:18, init end
+2023-05-13 08:27:44,382 - INFO: Entry:0:1:2:19:19, init start
+2023-05-13 08:27:44,382 - INFO: BaseInit 0:1:2:19:19 real
+2023-05-13 08:27:44,382 - INFO: Init Label:0:1:2:19:19.value, None, -8.433577405857744
+2023-05-13 08:27:44,382 - INFO: Entry:0:1:2:19:19, init end
+2023-05-13 08:27:44,382 - INFO: Entry:0:1:2:19, init end
+2023-05-13 08:27:44,398 - INFO: Entry:0:1:2, init end
+2023-05-13 08:27:44,398 - INFO: -- commit command --
+2023-05-13 08:27:44,398 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-05-13 08:27:47,366 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-13 08:27:47,366 - INFO: -- NewConmand --
+2023-05-13 08:27:47,366 - INFO: -- Add New Shape --
+2023-05-13 08:27:47,381 - INFO: Entry:0:1:3, init start
+2023-05-13 08:27:47,381 - INFO: BaseInit 0:1:3 Seg2d
+2023-05-13 08:27:47,381 - INFO: Entry:0:1:3:18, init start
+2023-05-13 08:27:47,381 - INFO: BaseInit 0:1:3:18 pnt2d
+2023-05-13 08:27:47,381 - INFO: Entry:0:1:3:18:18, init start
+2023-05-13 08:27:47,381 - INFO: BaseInit 0:1:3:18:18 real
+2023-05-13 08:27:47,381 - INFO: Init Label:0:1:3:18:18.value, None, 21.11663179916318
+2023-05-13 08:27:47,381 - INFO: Entry:0:1:3:18:18, init end
+2023-05-13 08:27:47,397 - INFO: Entry:0:1:3:18:19, init start
+2023-05-13 08:27:47,397 - INFO: BaseInit 0:1:3:18:19 real
+2023-05-13 08:27:47,397 - INFO: Init Label:0:1:3:18:19.value, None, 9.08734309623431
+2023-05-13 08:27:47,397 - INFO: Entry:0:1:3:18:19, init end
+2023-05-13 08:27:47,397 - INFO: Entry:0:1:3:18, init end
+2023-05-13 08:27:47,397 - INFO: Entry:0:1:3:19, init start
+2023-05-13 08:27:47,397 - INFO: BaseInit 0:1:3:19 pnt2d
+2023-05-13 08:27:47,397 - INFO: Entry:0:1:3:19:18, init start
+2023-05-13 08:27:47,413 - INFO: BaseInit 0:1:3:19:18 real
+2023-05-13 08:27:47,413 - INFO: Init Label:0:1:3:19:18.value, None, 21.11663179916318
+2023-05-13 08:27:47,413 - INFO: Entry:0:1:3:19:18, init end
+2023-05-13 08:27:47,413 - INFO: Entry:0:1:3:19:19, init start
+2023-05-13 08:27:47,413 - INFO: BaseInit 0:1:3:19:19 real
+2023-05-13 08:27:47,413 - INFO: Init Label:0:1:3:19:19.value, None, -9.47960251046025
+2023-05-13 08:27:47,413 - INFO: Entry:0:1:3:19:19, init end
+2023-05-13 08:27:47,428 - INFO: Entry:0:1:3:19, init end
+2023-05-13 08:27:47,428 - INFO: Entry:0:1:3, init end
+2023-05-13 08:27:47,428 - INFO: -- commit command --
+2023-05-13 08:27:47,428 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-05-13 08:27:48,428 - INFO: key: code 16777248 not mapped to any function
+2023-05-13 08:27:49,412 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-13 08:27:49,412 - INFO: -- NewConmand --
+2023-05-13 08:27:49,428 - INFO: -- Add New Shape --
+2023-05-13 08:27:49,428 - INFO: Entry:0:1:4, init start
+2023-05-13 08:27:49,428 - INFO: BaseInit 0:1:4 Seg2d
+2023-05-13 08:27:49,428 - INFO: Entry:0:1:4:18, init start
+2023-05-13 08:27:49,428 - INFO: BaseInit 0:1:4:18 pnt2d
+2023-05-13 08:27:49,428 - INFO: Entry:0:1:4:18:18, init start
+2023-05-13 08:27:49,428 - INFO: BaseInit 0:1:4:18:18 real
+2023-05-13 08:27:49,443 - INFO: Init Label:0:1:4:18:18.value, None, 21.11663179916318
+2023-05-13 08:27:49,443 - INFO: Entry:0:1:4:18:18, init end
+2023-05-13 08:27:49,443 - INFO: Entry:0:1:4:18:19, init start
+2023-05-13 08:27:49,443 - INFO: BaseInit 0:1:4:18:19 real
+2023-05-13 08:27:49,443 - INFO: Init Label:0:1:4:18:19.value, None, 9.283472803347282
+2023-05-13 08:27:49,443 - INFO: Entry:0:1:4:18:19, init end
+2023-05-13 08:27:49,443 - INFO: Entry:0:1:4:18, init end
+2023-05-13 08:27:49,443 - INFO: Entry:0:1:4:19, init start
+2023-05-13 08:27:49,443 - INFO: BaseInit 0:1:4:19 pnt2d
+2023-05-13 08:27:49,459 - INFO: Entry:0:1:4:19:18, init start
+2023-05-13 08:27:49,459 - INFO: BaseInit 0:1:4:19:18 real
+2023-05-13 08:27:49,459 - INFO: Init Label:0:1:4:19:18.value, None, 21.11663179916318
+2023-05-13 08:27:49,459 - INFO: Entry:0:1:4:19:18, init end
+2023-05-13 08:27:49,459 - INFO: Entry:0:1:4:19:19, init start
+2023-05-13 08:27:49,459 - INFO: BaseInit 0:1:4:19:19 real
+2023-05-13 08:27:49,459 - INFO: Init Label:0:1:4:19:19.value, None, -9.87186192468619
+2023-05-13 08:27:49,459 - INFO: Entry:0:1:4:19:19, init end
+2023-05-13 08:27:49,475 - INFO: Entry:0:1:4:19, init end
+2023-05-13 08:27:49,475 - INFO: Entry:0:1:4, init end
+2023-05-13 08:27:49,475 - INFO: -- commit command --
+2023-05-13 08:27:49,475 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-05-13 08:27:50,913 - INFO: key: code 16777248 not mapped to any function
+2023-05-13 08:27:51,960 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-13 08:27:51,976 - INFO: -- NewConmand --
+2023-05-13 08:27:51,976 - INFO: -- Add New Shape --
+2023-05-13 08:27:51,976 - INFO: Entry:0:1:5, init start
+2023-05-13 08:27:51,976 - INFO: BaseInit 0:1:5 Seg2d
+2023-05-13 08:27:51,976 - INFO: Entry:0:1:5:18, init start
+2023-05-13 08:27:51,976 - INFO: BaseInit 0:1:5:18 pnt2d
+2023-05-13 08:27:51,976 - INFO: Entry:0:1:5:18:18, init start
+2023-05-13 08:27:51,976 - INFO: BaseInit 0:1:5:18:18 real
+2023-05-13 08:27:51,991 - INFO: Init Label:0:1:5:18:18.value, None, 21.11663179916318
+2023-05-13 08:27:51,991 - INFO: Entry:0:1:5:18:18, init end
+2023-05-13 08:27:51,991 - INFO: Entry:0:1:5:18:19, init start
+2023-05-13 08:27:51,991 - INFO: BaseInit 0:1:5:18:19 real
+2023-05-13 08:27:51,991 - INFO: Init Label:0:1:5:18:19.value, None, 12.356171548117157
+2023-05-13 08:27:51,991 - INFO: Entry:0:1:5:18:19, init end
+2023-05-13 08:27:51,991 - INFO: Entry:0:1:5:18, init end
+2023-05-13 08:27:51,991 - INFO: Entry:0:1:5:19, init start
+2023-05-13 08:27:52,007 - INFO: BaseInit 0:1:5:19 pnt2d
+2023-05-13 08:27:52,007 - INFO: Entry:0:1:5:19:18, init start
+2023-05-13 08:27:52,007 - INFO: BaseInit 0:1:5:19:18 real
+2023-05-13 08:27:52,007 - INFO: Init Label:0:1:5:19:18.value, None, 21.11663179916318
+2023-05-13 08:27:52,007 - INFO: Entry:0:1:5:19:18, init end
+2023-05-13 08:27:52,007 - INFO: Entry:0:1:5:19:19, init start
+2023-05-13 08:27:52,007 - INFO: BaseInit 0:1:5:19:19 real
+2023-05-13 08:27:52,023 - INFO: Init Label:0:1:5:19:19.value, None, -15.559623430962343
+2023-05-13 08:27:52,023 - INFO: Entry:0:1:5:19:19, init end
+2023-05-13 08:27:52,023 - INFO: Entry:0:1:5:19, init end
+2023-05-13 08:27:52,023 - INFO: Entry:0:1:5, init end
+2023-05-13 08:27:52,023 - INFO: -- commit command --
+2023-05-13 08:27:52,023 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end

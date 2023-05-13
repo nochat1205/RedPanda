@@ -11,6 +11,7 @@ from OCC.Core.Geom import Geom_Plane
 from OCC.Core.Geom2d import Geom2d_Circle
 from OCC.Core.BRep import BRep_Tool
 from OCC.Core.BRepLib import breplib_BuildCurve3d
+from OCC.Display.qtDisplay import qtViewer3d
 from OCC.Core.BRepBuilderAPI import (
     BRepBuilderAPI_MakeEdge,
     BRepBuilderAPI_MakeEdge2d
@@ -103,6 +104,7 @@ def GetPoint(shapes, x, y, _display):
             print(f'error:{error}')
 
     return p
+
 def test_segment_plane():
     from RedPanda.Core.data import RP_TOLERANCE
     from RedPanda.Core.Euclid import RP_Pnt, RP_Pnt2d
@@ -141,7 +143,7 @@ if __name__ == '__main__':
     display, start, *_ = init_display()
     display.Viewer.SetPrivilegedPlane(gp_Ax3())
     
-    test_segment_plane()
+    test_curve_on_plane()
     
     display.FitAll()
     display.register_select_callback(lambda shape, x, y:GetPoint(shape, x, y, display))

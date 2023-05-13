@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="CDZbm4uTaMZAimFO4HyF" name="第 1 页">
-        <mxGraphModel dx="915" dy="668" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+        <mxGraphModel dx="1366" dy="704" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -8,37 +8,28 @@
                     <mxGeometry x="170" y="80" width="159" height="60" as="geometry"/>
                 </mxCell>
                 <mxCell id="87" value="Show Label&lt;br&gt;Update Label" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="390" y="790" width="100" height="40" as="geometry"/>
+                    <mxGeometry x="390" y="680" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="86" value="Create Docuement&lt;br&gt;Save Document&lt;br&gt;Create Label&lt;br&gt;Update Label text&lt;br&gt;sig touchedLabel list" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="180" y="900" width="150" height="80" as="geometry"/>
+                    <mxGeometry x="155" y="710" width="150" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="85" value="Sig Change Label text" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="550" y="610" width="150" height="40" as="geometry"/>
+                    <mxGeometry x="541" y="475" width="150" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="84" value="Show Label&lt;br&gt;Update Label" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="420" y="530" width="100" height="40" as="geometry"/>
+                    <mxGeometry x="420" y="420" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="83" value="Show Label&lt;br&gt;Update Label" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="390" y="690" width="100" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="82" value="Show Label Attr&lt;br&gt;Update Label" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="400" y="390" width="100" height="40" as="geometry"/>
+                    <mxGeometry x="390" y="580" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="80" value="Show Label&lt;br&gt;Update Label" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="230" y="420" width="100" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="79" value="Sig Change Label attr text" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
-                    <mxGeometry x="560" y="390" width="170" height="40" as="geometry"/>
+                    <mxGeometry x="205" y="500" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="78" value="Sig Select Label" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
                     <mxGeometry x="541" y="210" width="100" height="40" as="geometry"/>
                 </mxCell>
                 <mxCell id="77" value="Show Label&lt;br&gt;Update Label" style="shape=partialRectangle;html=1;top=1;align=left;dashed=1;" parent="1" vertex="1">
                     <mxGeometry x="400" y="280" width="100" height="40" as="geometry"/>
-                </mxCell>
-                <mxCell id="42" style="edgeStyle=none;html=1;" parent="1" source="2" target="41" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="2" value="MainApplication" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
                     <mxGeometry x="35" y="140" width="70" height="80" as="geometry"/>
@@ -95,85 +86,68 @@
                         <mxPoint x="400" y="350" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="32" style="edgeStyle=none;html=1;entryX=0.86;entryY=0.904;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="31" target="2" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="31" value="LabelView" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="290" y="360" width="70" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="35" style="edgeStyle=none;html=1;" parent="1" source="33" target="31" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="33" value="Attr Tree" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="465" y="320" width="70" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="36" style="edgeStyle=none;html=1;" parent="1" source="34" target="31" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
-                </mxCell>
-                <mxCell id="34" value="ConstructTree" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="466" y="460" width="70" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="39" style="edgeStyle=none;html=1;" parent="1" source="59" target="33" edge="1">
+                <mxCell id="36" style="edgeStyle=none;html=1;" parent="1" source="34" target="2" edge="1">
                     <mxGeometry relative="1" as="geometry">
-                        <mxPoint x="620" y="360" as="sourcePoint"/>
+                        <mxPoint x="356.3404848390069" y="417.8070936585268" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="41" value="RDObject_manager" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="30" y="290" width="80" height="80" as="geometry"/>
+                <mxCell id="34" value="ConstructTree" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
+                    <mxGeometry x="466" y="350" width="70" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="47" style="edgeStyle=none;html=1;" parent="1" source="45" target="31" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="47" style="edgeStyle=none;html=1;" parent="1" source="45" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="345.34333678016833" y="432.54933884826914" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="45" value="V3d" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="465" y="640" width="70" height="80" as="geometry"/>
+                    <mxGeometry x="465" y="530" width="70" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="48" style="edgeStyle=none;html=1;" parent="1" source="46" target="31" edge="1">
-                    <mxGeometry relative="1" as="geometry"/>
+                <mxCell id="48" style="edgeStyle=none;html=1;" parent="1" source="46" target="2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="341.30112514914185" y="435.39672889527947" as="targetPoint"/>
+                    </mxGeometry>
                 </mxCell>
                 <mxCell id="46" value="V2d" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="465" y="740" width="70" height="80" as="geometry"/>
+                    <mxGeometry x="465" y="630" width="70" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="57" style="edgeStyle=none;html=1;" parent="1" source="56" target="2" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="56" value="DocApp" style="ellipse;shape=umlControl;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="286" y="840" width="70" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="59" value="Attr Item" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="320" width="100" height="80" as="geometry"/>
+                    <mxGeometry x="295" y="740" width="70" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="64" style="edgeStyle=none;html=1;" parent="1" source="62" target="34" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="62" value="TreeItem" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="540" width="100" height="80" as="geometry"/>
+                    <mxGeometry x="600" y="410" width="100" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="65" style="edgeStyle=none;html=1;" parent="1" source="63" target="45" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="63" value="V3d" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="595" y="660" width="100" height="80" as="geometry"/>
+                    <mxGeometry x="600" y="550" width="100" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="67" style="edgeStyle=none;html=1;" parent="1" source="66" target="46" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="66" value="V2d" style="shape=umlBoundary;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="600" y="740" width="100" height="80" as="geometry"/>
+                    <mxGeometry x="600" y="630" width="100" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="69" style="edgeStyle=none;html=1;" parent="1" source="68" target="56" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="68" value="Document" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="461" y="840" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="470" y="740" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="72" style="edgeStyle=none;html=1;" parent="1" source="71" target="34" edge="1">
                     <mxGeometry relative="1" as="geometry"/>
                 </mxCell>
                 <mxCell id="71" value="tlabel&amp;amp;treeitem" style="ellipse;shape=umlEntity;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="620" y="430" width="80" height="80" as="geometry"/>
+                    <mxGeometry x="620" y="320" width="80" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="89" value="A &amp;lt;---- B: B为A的组件" style="shape=note2;boundedLbl=1;whiteSpace=wrap;html=1;size=25;verticalAlign=top;align=center;" parent="1" vertex="1">
-                    <mxGeometry x="400" y="990" width="310" height="90" as="geometry"/>
+                    <mxGeometry x="580" y="65" width="310" height="90" as="geometry"/>
                 </mxCell>
                 <mxCell id="90" value="图例说明" style="resizeWidth=1;part=1;strokeColor=none;fillColor=none;align=left;spacingLeft=5;" parent="89" vertex="1">
                     <mxGeometry width="310" height="25" relative="1" as="geometry"/>
@@ -183,15 +157,6 @@
                 </mxCell>
                 <mxCell id="94" value="sig 上传数据, 其余为被调用接口" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;" parent="89" vertex="1">
                     <mxGeometry x="96.875" y="56.25" width="193.75" height="29.25" as="geometry"/>
-                </mxCell>
-                <mxCell id="100" value="&lt;h1 style=&quot;background: 0px 0px; border: 0px; font-size: 28px; margin: 0px 0px 10px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 0); font-family: &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;background: 0px 0px; border: 0px; font-size: 28px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; font-family: &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;, &amp;quot;Android Emoji&amp;quot;, EmojiSymbols, &amp;quot;EmojiOne Mozilla&amp;quot;, &amp;quot;Twemoji Mozilla&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji Compat&amp;quot;, emoji, noto-emojipedia-fallback; font-weight: 400;&quot; class=&quot;emoji&quot;&gt;❌&lt;/span&gt;&lt;/h1&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="200" y="430" width="70" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="101" value="&lt;h1 style=&quot;background: 0px 0px; border: 0px; font-size: 28px; margin: 0px 0px 10px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 0); font-family: &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;background: 0px 0px; border: 0px; font-size: 28px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; font-family: &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;, &amp;quot;Android Emoji&amp;quot;, EmojiSymbols, &amp;quot;EmojiOne Mozilla&amp;quot;, &amp;quot;Twemoji Mozilla&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji Compat&amp;quot;, emoji, noto-emojipedia-fallback; font-weight: 400;&quot; class=&quot;emoji&quot;&gt;❌&lt;/span&gt;&lt;/h1&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="350" y="690" width="70" height="70" as="geometry"/>
-                </mxCell>
-                <mxCell id="102" value="&lt;h1 style=&quot;background: 0px 0px; border: 0px; font-size: 28px; margin: 0px 0px 10px; outline: 0px; padding: 0px; vertical-align: baseline; color: rgb(0, 0, 0); font-family: &amp;quot;Helvetica Neue&amp;quot;, Helvetica, Arial, sans-serif; font-style: normal; font-variant-ligatures: normal; font-variant-caps: normal; letter-spacing: normal; orphans: 2; text-align: start; text-indent: 0px; text-transform: none; widows: 2; word-spacing: 0px; -webkit-text-stroke-width: 0px; text-decoration-thickness: initial; text-decoration-style: initial; text-decoration-color: initial;&quot;&gt;&lt;span style=&quot;background: 0px 0px; border: 0px; font-size: 28px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; font-family: &amp;quot;Apple Color Emoji&amp;quot;, &amp;quot;Segoe UI Emoji&amp;quot;, &amp;quot;Noto Color Emoji&amp;quot;, &amp;quot;Android Emoji&amp;quot;, EmojiSymbols, &amp;quot;EmojiOne Mozilla&amp;quot;, &amp;quot;Twemoji Mozilla&amp;quot;, &amp;quot;Segoe UI Symbol&amp;quot;, &amp;quot;Noto Color Emoji Compat&amp;quot;, emoji, noto-emojipedia-fallback; font-weight: 400;&quot; class=&quot;emoji&quot;&gt;❌&lt;/span&gt;&lt;/h1&gt;" style="text;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-                    <mxGeometry x="350" y="790" width="70" height="70" as="geometry"/>
                 </mxCell>
             </root>
         </mxGraphModel>

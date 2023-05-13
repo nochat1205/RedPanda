@@ -9,7 +9,7 @@ from PyQt5.QtCore import pyqtSignal,pyqtSlot
 
 from RedPanda.RPAF.RD_Label import Label
 from .DriverNode.NameNode import AFItem
-    
+
 class Logic_Construct(QtWidgets.QTreeWidget):
     sig_change = pyqtSignal(Label, str)
     def __init__(self, parent=None):

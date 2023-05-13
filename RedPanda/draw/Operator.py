@@ -194,9 +194,6 @@ class LineOperator(Operator):
 
     def mousePressEvent(self, event, ctx: DisplayCtx):
         super().mousePressEvent(event, ctx)
-        self.ais = AIS_ColoredShape(TopoDS_Shape())
-        self.ais.SetColor(Quantity_Color(Quantity_NOC_ORANGE))
-        self.line_li.append(self.ais)
 
     def mouseMoveEvent(self, evt: QMouseEvent, displayCtx: DisplayCtx):
         pt = evt.pos()
@@ -213,18 +210,22 @@ class LineOperator(Operator):
                     dy = 0
                 elif abs(dx) < abs(dy):
                     dx = 0
-
-            p2d1 = self.widget.GetPoint(x, y)
-            p2d2 = self.widget.GetPoint(x+dx, y+dy)
             try:
+                p2d1 = self.widget.GetPoint(x, y)
+                p2d2 = self.widget.GetPoint(x+dx, y+dy)
                 seg = GCE2d_MakeSegment(p2d1, p2d2).Value()
                 edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
                 breplib_BuildCurve3d(edge)
 
-                self.ais.SetShape(edge)
-                self.ais.SetToUpdate(-1)
-                self._display.Context.Display(self.ais, True)
-                self._display.View.Update()
+                if self.ais is None:
+                    self.ais = AIS_ColoredShape(edge)
+                    self._display.Context.Display(self.ais, False)
+                else:
+                    self.ais.SetShape(edge)
+
+                self._display.Context.Redisplay(self.ais, True, False) # TODO:
+                self._display.Repaint()
+                self._display.Context.UpdateCurrentViewer()
             except:
                 pass
 
@@ -250,9 +251,13 @@ class LineOperator(Operator):
                            'y':p2d2.Y().__str__()}}
             self.widget.sig_new_shape.emit(Segment2dDriver.ID, param)
 
+        self.line_li.append(self.ais)
+        self.ais = None
+
     def quit(self):
         for ais in self.line_li:
-            self._display.Context.Remove(ais, True)
+            self._display.Context.Remove(ais, False)
+        self._display.View.SetImmediateUpdate(True)
         self.line_li.clear()
 
 

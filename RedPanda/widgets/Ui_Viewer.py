@@ -201,7 +201,7 @@ class Viewer3d(Display3d):
         self.Context.MoveTo(X, Y, self.View, True)
 
     def FitAll(self):
-        self.View.ZFitAll()
+        # self.View.ZFitAll()
         self.View.FitAll()
 
     def Create(

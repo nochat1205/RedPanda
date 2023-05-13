@@ -311,9 +311,6 @@ class qtViewer3d(qtBaseViewer):
 
     def ShowLabel(self, theLabel):
         from RedPanda.RPAF.DisplayContext import DisplayCtx
-        # if 'ctx' not in self.__dict__:
-        #     self.ctx_dict = dict()
-
         aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None or not isinstance(aDriver, BareShapeDriver):
             return
@@ -327,24 +324,27 @@ class qtViewer3d(qtBaseViewer):
         for ais in ctx.values():
             self._display.Context.Display(ais, False)
 
-        aDriver.UpdatePrs3d(theLabel, ctx)
-
         self._display.FitAll()
         self._display.Repaint()
 
     def UpdateLabel(self, theLabel):
+        from OCC.Core.AIS import AIS_ColoredShape
         aDriver:BareShapeDriver = theLabel.GetDriver()
-        
+
         if aDriver is None:
             return
 
-        Logger().info(f'Type:{ theLabel.GetDriver().Type}')
+        self._display.Context.RemoveAll(False) #TODO:
         if not aDriver.UpdatePrs3d(theLabel, self.ctx):
             return
 
         for ais in self.ctx.values():
+            ais:AIS_ColoredShape
+            if ais in None:
+                continue
             self._display.Context.Display(ais, False)
 
+        self._display.camera.SetZRange(-1500, 1500)
         self._display.Viewer.Update()
         self._display.Repaint()
 
