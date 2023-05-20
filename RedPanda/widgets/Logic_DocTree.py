@@ -40,40 +40,19 @@ class ModelTree(QtWidgets.QTreeWidget):
         self._Selected_item = self.root
         self.item_defaultBackground = self.root.background(0)    
         self.root.setText(0, 'RedPanda')
-        # self.root.setIcon(0, QIcon('sync.ico'))
 
-        # tool_root = QTreeWidgetItem(self.root)
-        # tool_root.setText(0, '辅助工具')
-        # # wcs_root.setIcon(0, QIcon('sync.ico'))
-        # tool_root.setCheckState(0, Qt.Checked)
-        # self.tree.setEditTriggers(QAbstractItemView.NoEditTriggers)
 
         # 设置树形控件的列的宽度
         self.tree.setColumnWidth(0, 150)
 
         self.itemDoubleClicked.connect(self.onItemDoubleClicked)
         self.itemChanged.connect(self.OnItemChange)
-        # self.itemC
 
         # todo 优化2 设置根节点的背景颜色
         #brush_red = QBrush(Qt.red)
         #root.setBackground(0, brush_red)
         #brush_blue = QBrush(Qt.blue)
         #root.setBackground(1, brush_blue)
-        # 加载根节点的所有属性与子控件
-        # self.tree.addTopLevelItem(root)
-
-
-    # @pyqtSlot(Document)
-    # def Show(self, doc:Document):
-    #     self.main_doc = doc
-    #     self.Update()
-
-    # @pyqtSlot()
-    # def Update(self):
-    #     self.ClearItems()
-    #     self.Create_ModelTree(self.main_doc)
-    #     self.tree.expandAll()
 
     def ClearItems(self):
         self._Selected_item = self.root

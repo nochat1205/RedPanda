@@ -76,7 +76,7 @@ class Ellipse2dDriver(PCurveDriver):
 
         return ais_dict
 
-    def UpdatePrs2d(self, theLabel: Label, ais_dict:DisplayCtx):
+    def myUpdatePrs2d(self, theLabel: Label, ais_dict:DisplayCtx):
         if not DataLabelState.IsOK(theLabel):
             return False
         
@@ -113,7 +113,7 @@ class Ellipse2dDriver(PCurveDriver):
 
         return ais_dict
 
-    def UpdatePrs3d(self, theLabel, ais_dict):
+    def myUpdatePrs3d(self, theLabel, ais_dict):
         if not DataLabelState.IsOK(theLabel):
             return False
 
@@ -178,7 +178,7 @@ class Build3dDriver(PCurveDriver):
 
         return ais_dict
 
-    def UpdatePrs2d(self, theLabel: Label, ais_dict:DisplayCtx):
+    def myUpdatePrs2d(self, theLabel: Label, ais_dict:DisplayCtx):
         if not DataLabelState.IsOK(theLabel):
             return False
 
@@ -216,7 +216,7 @@ class Build3dDriver(PCurveDriver):
 
         return ais_dict
 
-    def UpdatePrs3d(self, theLabel:Label, ais_dict):
+    def myUpdatePrs3d(self, theLabel:Label, ais_dict):
         if not DataLabelState.IsOK(theLabel):
             return False
         # 1
@@ -249,7 +249,7 @@ class BareShape2dDriver(BareShapeDriver):
         ais_dict = DisplayCtx(theLabel)
         return ais_dict
 
-    def UpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
+    def myUpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
         return False
 
 
@@ -263,7 +263,7 @@ class BareShape2dDriver(BareShapeDriver):
 
         return ais_dict
     
-    def UpdatePrs2d(self, theLabel:Label, ais_dict):
+    def myUpdatePrs2d(self, theLabel:Label, ais_dict):
         if not DataLabelState.IsOK(theLabel):
             return False
 
@@ -333,9 +333,13 @@ class ArcCircleDriver(BareShape2dDriver):
             dict_param[name] = argu.Value(theLabel)
 
         try:
-            seg = GCE2d_MakeArcOfCircle(
-                dict_param['p1'], dict_param['p2'], dict_param['p3']).Value()
-            edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+            builder  = GCE2d_MakeArcOfCircle(
+                dict_param['p1'], dict_param['p2'], dict_param['p3'])
+            if builder.IsDone():
+                seg = builder.Value()
+                edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+            else:
+                raise Exception('param error')
         except Exception as error:
             DataLabelState.SetError(theLabel, str(error), True)
             return 1

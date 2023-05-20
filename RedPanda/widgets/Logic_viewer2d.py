@@ -189,21 +189,21 @@ class qtViewer2d(qtBaseViewer):
             painter.drawRect(rect)
 
 
-    # @property
-    # def cursor(self):
-    #     return self._current_cursor
+    @property
+    def cursor(self):
+        return self._current_cursor
 
-    # @cursor.setter
-    # def cursor(self, value):
-    #     if not self._current_cursor == value:
+    @cursor.setter
+    def cursor(self, value):
+        if not self._current_cursor == value:
 
-    #         self._current_cursor = value
-    #         cursor = self._available_cursors.get(value)
+            self._current_cursor = value
+            cursor = self._available_cursors.get(value)
 
-    #         if cursor:
-    #             self.qApp.setOverrideCursor(cursor)
-    #         else:
-    #             self.qApp.restoreOverrideCursor()
+            if cursor:
+                self.qApp.setOverrideCursor(cursor)
+            else:
+                self.qApp.restoreOverrideCursor()
 
     #  -- -- -- Prsentation -- -- --
     def clear(self):
@@ -232,6 +232,7 @@ class qtViewer2d(qtBaseViewer):
         self._display.Repaint()
 
     def UpdateLabel(self, theLabel):
+        from OCC.Core.AIS import AIS_ColoredShape
         aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None:
             return
@@ -239,8 +240,12 @@ class qtViewer2d(qtBaseViewer):
         if not aDriver.UpdatePrs2d(theLabel, self.ctx):
             return
 
-        # for ais in self.ctx.values():
-        #     self._display.Context.Display(ais, False)
+
+        for ais in self.ctx.values():
+            ais:AIS_ColoredShape
+            if ais is None:
+                continue
+            self._display.Context.Display(ais, False)
 
         self.SetUVGrid(*self.ctx.GetBound())
         self._display.Viewer.Update()

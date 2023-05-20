@@ -203,7 +203,7 @@ class LineOperator(Operator):
             self.drawbox(evt)
             if self._drawbox is None:
                 return
-            
+
             x, y, dx, dy = self._drawbox
             if mod == Qt.ShiftModifier:
                 if abs(dx) > abs(dy):
@@ -216,6 +216,8 @@ class LineOperator(Operator):
                 seg = GCE2d_MakeSegment(p2d1, p2d2).Value()
                 edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
                 breplib_BuildCurve3d(edge)
+
+        
 
                 if self.ais is None:
                     self.ais = AIS_ColoredShape(edge)

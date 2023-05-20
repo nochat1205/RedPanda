@@ -12,8 +12,6 @@ from PyQt5.QtCore import (
     QSignalMapper
 )
 
-
-
 # 数值显示组件
 class myLine(QLineEdit):
     sig_change = pyqtSignal()
@@ -81,27 +79,6 @@ class MyItem(QTreeWidgetItem):
 
     def SigChange(self):
         raise NotImplemented()
-
-# properties item
-class NameItem(MyItem):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-        self.setui()
-
-    def setui(self):
-        line = myLine()
-        self.textContainer:myLine = line
-        self.textContainer.setText(self.label.GetLabelName())
-
-        tree:QTreeWidget = self.treeWidget()
-        tree.setItemWidget(self, 1, line)
-
-    def onLainUpdate(self): # 程序更新不触发事件
-        self.textContainer.setText(self.label.GetLabelName())
-
-    def GetText(self):
-        return self.textContainer.text()
-
 
 # data label item
 class AFItemFactory:

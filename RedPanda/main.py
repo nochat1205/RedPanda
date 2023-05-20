@@ -5,7 +5,6 @@ from PyQt5.QtCore import pyqtSlot, QObject, QTimer
 
 from .logger import Logger
 
-from .RD_Object import RDObjectManager
 from .RPAF.GUID import RP_GUID
 from .RPAF.RD_Label import Label
 from .RPAF.Application import Application
@@ -36,7 +35,7 @@ class MainApplication():
         timer.start(1000) # 1 seconds
 
         app = MainApplication()
-        app.myWin.show()
+        app.Show()
 
         return qapp.exec_()
 
@@ -50,63 +49,54 @@ class MainApplication():
             print('Memory usage exceeded. Terminating')
             MainApplication.timer.stop()
             QApplication.quit()
-        
 
     def __init__(self) -> None:
-        
         self.showedLabel_set = set()
-        self.myWin = MainWindow()
+        self.ui_myWin = MainWindow()
         self.docApp =  Application()
-        self.c_docTree = self.myWin.DocTree()
-        self.c_viewer2d:qtViewer2d = self.myWin.Viewer2d()
-        self.c_viewer3d:qtViewer3d = self.myWin.Viewer3d()
-        self.c_construct = self.myWin.Construct()
-        self.c_data = self.myWin.ui.logic_ViewData
-
-        # self.DataLabel_manager =  RDObjectManager()
+        self.c_docTree = self.ui_myWin.DocTree()
+        self.c_viewer2d:qtViewer2d = self.ui_myWin.Viewer2d()
+        self.c_viewer3d:qtViewer3d = self.ui_myWin.Viewer3d()
+        self.c_construct = self.ui_myWin.Construct()
+        self.c_data = self.ui_myWin.ui.logic_ViewData
 
         self.SetUpUi()
         self.SignalAndSlot()
 
+    def Show(self):
+        self.ui_myWin.show()
+
     def SetUpUi(self):
         self.SetUpDriver()
-        
-        self.test()
-    
-    def test(self):
-        pass
-        # self.myWin.add_function_to_menu('menubar', 'drawline')
-
-
 
     def SignalAndSlot(self):
         # new Shape
-        self.myWin.sig_NewDocument.connect(self.Process_NewDocument)
-        self.myWin.sig_SaveDocument.connect(self.Process_SaveDocument)
-        self.myWin.sig_NewDataLabel.connect(self.Process_NewLabel)
-        self.myWin.sig_ActivateOperator.connect(self.Process_ActivateOpera)
-        self.myWin.sig_OpenRPXml.connect(self.Process_OpenDocument)
-        self.myWin.sig_saveShape.connect(self.Process_SaveShape)
-        self.myWin.sig_OpenPickleShape.connect(self.Process_LoadShape)
+        self.ui_myWin.sig_NewDocument.connect(      self.Process_NewDocument)
+        self.ui_myWin.sig_SaveDocument.connect(     self.Process_SaveDocument)
+        self.ui_myWin.sig_NewDataLabel.connect(     self.Process_NewLabel)
+        self.ui_myWin.sig_ActivateOperator.connect( self.Process_ActivateOpera)
+        self.ui_myWin.sig_OpenRPXml.connect(        self.Process_OpenDocument)
+        self.ui_myWin.sig_saveShape.connect(        self.Process_SaveShape)
+        self.ui_myWin.sig_OpenPickleShape.connect(  self.Process_LoadShape)
 
-        self.c_docTree.sig_labelSelect.connect(self.Process_ShowLabel)
-        self.c_docTree.sig_labelCheck.connect(self.Process_Check)
+        self.c_docTree.sig_labelSelect.connect(     self.Process_ShowLabel)
+        self.c_docTree.sig_labelCheck.connect(      self.Process_Check)
 
-        self.c_construct.sig_change.connect(self.Process_ChangeLabel)
-        self.c_viewer3d.sig_new_shape.connect(self.Process_NewLabel)
-        self.c_viewer2d.sig_new_shape.connect(self.Process_NewLabel)
-        self.c_viewer2d.sig_point.connect(self.Process_ShowPoint)
-        
+        self.c_construct.sig_change.connect(        self.Process_ChangeLabel)
+        self.c_viewer3d.sig_new_shape.connect(      self.Process_NewLabel)
+        self.c_viewer2d.sig_new_shape.connect(      self.Process_NewLabel)
+        self.c_viewer2d.sig_point.connect(          self.Process_ShowPoint)
+
 
     # register function
     def RegisterShapeDriver(self, menu_name, name,  driver:DataDriver):
         self.docApp.RegisterDriver(driver)
-        self.myWin.add_driver_to_menu(menu_name, name, driver.ID)
+        self.ui_myWin.add_driver_to_menu(menu_name, name, driver.ID)
 
     def RegisterDriver(self, driver):
         self.docApp.RegisterDriver(driver)
 
-    # function 
+    # function
     def SetUpDriver(self):
         from .RPAF.DataDriver import (
             BezierDriver,
@@ -178,12 +168,10 @@ class MainApplication():
 
         # 1. doc new
         aLabel:Label = self.docApp.NewDataLabel(id, data)
-        # 2
-        # obj = self.DataLabel_manager.Add(aLabel)
 
-        # 3. doc tree update
+        # 2. doc tree update
         item = self.c_docTree.Create_TreeItem(aLabel, aLabel.Father())
-        # obj.tree_item = item
+
         Logger().info(f'New Data Label {id} end')
 
     def Process_NewDocument(self, format:str='XmlOcaf'):
@@ -192,24 +180,24 @@ class MainApplication():
         doc:Document = self.docApp.NewDocument(format)
         alabel = doc.Main()
 
-        # 2 
-        # obj = self.DataLabel_manager.Add(alabel)
-        # 3
+        # 2 tree item
         item = self.c_docTree.Create_TreeItem(alabel)
-        # obj.tree_item = item
-
         Logger().info('New Document End')
 
-    def Process_ShowLabel(self, theLabel:Label):
+    def Process_ShowLabel(self, theLabel:Label):        
+        Logger().info('Process Show Label Start')
+
         # 1
         self.showedLabel_set.clear()
         self.showedLabel_set.add(theLabel)
         self.c_construct.ShowLabel(theLabel)
         # 2
         self.c_viewer3d.ShowLabel(theLabel)
-        self.c_viewer2d.ShowLabel(theLabel)
+        self.c_viewer2d.ShowLabel(theLabel)       
+        Logger().info('Process Show Label End')
 
     def Process_ChangeLabel(self, theLabel, str):
+        Logger().info('Process Change Label Start')
         Logger().info(f'Start Change: {theLabel.GetEntry()}, {str}')
         # 1. update
         label_set = self.docApp.Update(theLabel, str)
@@ -222,16 +210,16 @@ class MainApplication():
             if fatherLabel in self.showedLabel_set:
                 self.c_construct.UpdataLabel(aLabel)
 
-        # 4
+        # 4 update Tree
         for label in labelInDocTree:
             self.c_docTree.Update(label)
 
-            Logger().info('update3d Label')
             self.c_viewer3d.UpdateLabel(label)
-            Logger().info('update2d Label')
+            # build3d arcOfCircle2d 自由参数会存在问题. 会卡死程序.  或许是没检查GC_xxx.IsDone
             # self.c_viewer2d.UpdateLabel(label)
 
         Logger().info(f'End Change: {theLabel.GetEntry()}, {str}')
+        Logger().info('Process Change Label End')
 
     def Process_Check(self, theLabel, setChecked):
         from .RPAF.DataDriver.ShapeDriver import BareShapeDriver
@@ -246,8 +234,9 @@ class MainApplication():
             aDriver = theLabel.GetDriver()            
             if aDriver and isinstance(aDriver, BareShapeDriver):
                 ctx = aDriver.Prs2d(theLabel)
-                if (theLabel, 'shape') in ctx.d:
-                    ais = ctx[(theLabel, 'shape')]
+                key = (theLabel, 'shape')
+                if key in ctx.d:
+                    ais = ctx[key]
                     if ais:
                         self.check_li[theLabel] = ais
                         self.c_viewer2d._display.Context.Display(ais, True)
@@ -258,7 +247,7 @@ class MainApplication():
     def Process_OpenDocument(self):
         return 
         from OCC.Core.TDF import TDF_ChildIterator
-        path = QFileDialog.getOpenFileName(self.myWin, '打开文件', './resource',
+        path = QFileDialog.getOpenFileName(self.ui_myWin, '打开文件', './resource',
                                 'STP files(*.xml);;(*.rpxml))')
 
         doc:Document = self.docApp.OpenDoc(path[0])
@@ -272,39 +261,44 @@ class MainApplication():
         self.c_docTree.Create_TreeItem(doc.Main())
 
     def Process_SaveDocument(self):
-        Logger().info('Save Document start')
+        Logger().info('Process Save Document start')
         doc = self.docApp._main_doc
         if doc.File() is None:
-            url, tp = QFileDialog.getSaveFileName(self.myWin, '保存文件', './resource',
+            url, tp = QFileDialog.getSaveFileName(self.ui_myWin, '保存文件', './resource',
                                        'STP files(*.xml);;(*.rpxml))')
 
             doc.SetFile(url)
         self.docApp.SaveDoc()
 
-        Logger().info('Save Document end')
+        Logger().info('Process Save Document end')
 
     def Process_ShowPoint(self, *tup):
+        Logger().info('Process Show Point Start')
         pnt, shape, param = tup
         self.c_data.show(pnt)
+        Logger().info('Process Show Point End')
 
     def Process_LoadShape(self):
         import pickle
         from .RPAF.DataDriver.ShapeBaseDriver import ConstShapeDriver
-        Logger().info('Start load Shape')
-        path, *_ = QFileDialog.getOpenFileName(self.myWin, '打开文件', './resource',
+
+        Logger().info('Process Load Shape Start')
+        path, *_ = QFileDialog.getOpenFileName(self.ui_myWin, '打开文件', './resource',
                                 'pickle files(*.rppickle)')
         
         with open(path, 'rb') as f:
             shape = pickle.load(f)
             self.Process_NewLabel(ConstShapeDriver.ID, shape)
-        Logger().info('End load Shape')
+        Logger().info('Process Load Shape End')
 
     def Process_SaveShape(self):
         import pickle
         from .RPAF.DataDriver.ShapeBaseDriver import BareShapeDriver
-        Logger().info('Save Shape start')
+
+        Logger().info('Process Save Shape Start')
         if (self.showedLabel_set) == 0:
-            return 
+            return
+
         aLabel, *_ = self.showedLabel_set
         aDriver = aLabel.GetDriver()
         if not isinstance(aDriver, BareShapeDriver):
@@ -314,13 +308,12 @@ class MainApplication():
         if shape is None:
             return 
 
-        url, tp = QFileDialog.getSaveFileName(self.myWin, '保存文件', './resource',
+        url, tp = QFileDialog.getSaveFileName(self.ui_myWin, '保存文件', './resource',
                                     'pickle files(*.rppickle))')
         with open(url, 'wb+') as f:
             pickle.dump(shape, f)
 
-        Logger().info('Save Shape end')
-
+        Logger().info('Process Save Shape End')
 
     def Process_exit(self):
         pass

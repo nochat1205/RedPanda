@@ -27,8 +27,6 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         self.tree.setHeaderLabels(['name', 'data', 'state'])
 
         self.tree.setEditTriggers(QAbstractItemView.NoEditTriggers)
-        # self.tree.itemDoubleClicked.connect(self.onClickItem)
-        # self.tree.itemChanged.connect(self.onArrayItemChange)
 
         sizePolicy = QSizePolicy(QSizePolicy.Expanding,
                                    QSizePolicy.Expanding)
@@ -58,7 +56,7 @@ class Logic_Construct(QtWidgets.QTreeWidget):
         item:AFItem = self.tree.itemAt(qobject.pos())
 
         self.sig_change.emit(item.label, item.GetText())
-        
+
         self.mtx = False
 
     def Rigister(self, theLabel, item: AFItem): # for child item

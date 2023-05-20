@@ -1,0 +1,46 @@
+
+2023-05-21 00:15:57,620 - WARNING: Entry:0:1:1, type:Box, Execute Falied
+
+2023-05-21 00:16:37,969 - WARNING: Entry:0:1:4:18, type:Ax2d, Execute Falied
+
+2023-05-21 00:16:38,000 - WARNING: Entry:0:1:4, type:Ellipse2d, Init Falied
+
+2023-05-21 00:16:53,540 - WARNING: Entry:0:1:5:18, type:ShapeRef, Init Falied
+
+2023-05-21 00:16:53,546 - WARNING: Entry:0:1:5:19, type:ShapeRef, Init Falied
+
+2023-05-21 00:16:53,548 - WARNING: Entry:0:1:5, type:BuildEdge3d, Init Falied
+
+2023-05-21 00:16:54,438 - WARNING: Entry:0:1:5:18 not found reference
+
+2023-05-21 00:16:54,441 - WARNING: Entry:0:1:5:18 not found reference
+
+2023-05-21 00:16:54,444 - WARNING: Entry:0:1:5:19 not found reference
+
+2023-05-21 00:16:54,446 - WARNING: Entry:0:1:5:19 not found reference
+
+2023-05-21 00:19:19,840 - WARNING: Entry:0:1:1:18, type:Ax2d, Execute Falied
+
+2023-05-21 00:19:19,891 - WARNING: Entry:0:1:1, type:Ellipse2d, Init Falied
+
+2023-05-21 00:20:07,344 - WARNING: Entry:0:1:4:18, type:Ax2d, Execute Falied
+
+2023-05-21 00:20:07,365 - WARNING: Entry:0:1:4, type:Ellipse2d, Init Falied
+
+2023-05-21 00:20:12,322 - WARNING: Entry:0:1:5, type:ArcCircle, Execute Falied
+
+2023-05-21 00:20:18,268 - WARNING: Entry:0:1:6:18, type:ShapeRef, Init Falied
+
+2023-05-21 00:20:18,282 - WARNING: Entry:0:1:6:19, type:ShapeRef, Init Falied
+
+2023-05-21 00:20:18,285 - WARNING: Entry:0:1:6, type:BuildEdge3d, Init Falied
+
+2023-05-21 00:20:19,336 - WARNING: Entry:0:1:6:18 not found reference
+
+2023-05-21 00:20:19,339 - WARNING: Entry:0:1:6:18 not found reference
+
+2023-05-21 00:20:19,341 - WARNING: Entry:0:1:6:19 not found reference
+
+2023-05-21 00:20:19,344 - WARNING: Entry:0:1:6:19 not found reference
+
+2023-05-21 00:25:08,787 - WARNING: Entry:0:1:1, type:ArcCircle, Execute Falied

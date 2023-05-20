@@ -340,11 +340,10 @@ class qtViewer3d(qtBaseViewer):
 
         for ais in self.ctx.values():
             ais:AIS_ColoredShape
-            if ais in None:
+            if ais is None:
                 continue
             self._display.Context.Display(ais, False)
 
-        self._display.camera.SetZRange(-1500, 1500)
         self._display.Viewer.Update()
         self._display.Repaint()
 
@@ -393,7 +392,6 @@ class qtViewer3d(qtBaseViewer):
                     break
                 explorer.Next()
 
-            print('Get')
             label = self.ctx.GetLabel(parentAis)
             if label:
                 from RedPanda.RPAF.DataDriver.ShapeDriver import RefSubDriver

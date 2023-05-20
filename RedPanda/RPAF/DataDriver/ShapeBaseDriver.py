@@ -34,19 +34,6 @@ from .VarDriver import (
     RealDriver,
 )
 
-class ShapeHistory:
-    from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeShape
-    @staticmethod
-    def Generate(theLabel, builder:BRepBuilderAPI_MakeShape):
-        from OCC.Core.TNaming import TNaming_Builder
-        builder = TNaming_Builder(theLabel)
-        builder.Build()
-        if builder.IsDone():
-            shape = builder.Shape()
-            
-            
-
-
 class BareShapeDriver(CompoundDriver):
     OutputType = DataEnum.Shape
     def __init__(self) -> None:
@@ -67,9 +54,35 @@ class BareShapeDriver(CompoundDriver):
         return ais_dict
 
     def UpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
+        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_FACE
+        from OCC.Core.BRepLib import breplib_BuildCurve3d
+        from OCC.Core.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_Surface
+
+        import math
+
         if not DataLabelState.IsOK(theLabel):
             return False
 
+        shape:TopoDS_Shape = theLabel.GetAttrValue(TNaming_NamedShape.GetID())
+        if shape.ShapeType() == TopAbs_EDGE:
+            breplib_BuildCurve3d(shape)
+            adap = BRepAdaptor_Curve(shape)
+            if math.isnan(adap.FirstParameter()) or math.isnan(adap.LastParameter()):
+                return False
+        elif shape.ShapeType() == TopAbs_FACE:
+            adap = BRepAdaptor_Surface(shape)
+            if (
+                math.isnan(adap.FirstUParameter())
+            or  math.isnan(adap.FirstVParameter())
+            or math.isnan(adap.LastUParameter())
+            or math.isnan(adap.LastVParameter())
+            ):
+                return False
+
+        self.myUpdatePrs3d(theLabel, ais_dict)
+        return True
+
+    def myUpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
         shape = self.Attributes['value'].GetValue(theLabel)
         if shape:
             ais_dict.SetShape((theLabel, 'shape'), shape)
@@ -79,9 +92,39 @@ class BareShapeDriver(CompoundDriver):
     def Prs2d(self, theLabel:Label):
         ais_dict = DisplayCtx(theLabel)
         return ais_dict
-    
-    def UpdatePrs2d(self, theLabel:Label, ais_dict):
+
+    def UpdatePrs2d(self, theLabel:Label, ais_dict:DisplayCtx):
+        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_FACE
+        from OCC.Core.BRepLib import breplib_BuildCurve3d
+        from OCC.Core.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_Surface
+        import math
+
+        if not DataLabelState.IsOK(theLabel):
+            return False
+
+        shape:TopoDS_Shape = theLabel.GetAttrValue(TNaming_NamedShape.GetID())
+        if shape.ShapeType() == TopAbs_EDGE:
+            breplib_BuildCurve3d(shape)
+            adap = BRepAdaptor_Curve(shape)
+            if math.isnan(adap.FirstParameter()) or math.isnan(adap.LastParameter()):
+                return False
+        elif shape.ShapeType() == TopAbs_FACE:
+            adap = BRepAdaptor_Surface(shape)
+            if (
+                math.isnan(adap.FirstUParameter())
+            or  math.isnan(adap.FirstVParameter())
+            or math.isnan(adap.LastUParameter())
+            or math.isnan(adap.LastVParameter())
+            ):
+                return False
+
+
+        self.myUpdatePrs2d(theLabel, ais_dict)
+        return True
+
+    def myUpdatePrs2d(self, theLabel:Label, ais_dict):
         return False
+
 
 from .VertexDriver import (
     PntDriver
@@ -128,7 +171,7 @@ class TransformDriver(CompoundDriver):
 
         return 0
 
-    def myValue(self, theLabel:Label)->RP_Trsf: # TODO: 用location 存在问题, 无法正确传出???
+    def myValue(self, theLabel:Label)->RP_Trsf: # TODO: 用location 存在问题, 无法正确传出
         dict_param = dict()
         for name, argu in self.Arguments.items():
             argu:Argument

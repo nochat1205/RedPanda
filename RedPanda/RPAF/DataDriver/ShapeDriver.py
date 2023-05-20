@@ -135,8 +135,8 @@ class MirrorDriver(BareShapeDriver):
 
         return ctx
 
-    def UpdatePrs3d(self, theLabel:Label, ctx: DisplayCtx):
-        super().UpdatePrs3d(theLabel, ctx)
+    def myUpdatePrs3d(self, theLabel:Label, ctx: DisplayCtx):
+        super().myUpdatePrs3d(theLabel, ctx)
 
         if not DataLabelState.IsOK(theLabel):
             return False

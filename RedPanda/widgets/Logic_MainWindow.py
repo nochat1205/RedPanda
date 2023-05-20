@@ -54,7 +54,6 @@ class MainWindow(QMainWindow):
         self.setupUi()
 
         self.ui.retranslateUi(self)
-        self.connnectAction()
 
     def setupMenu(self):
         self._menu_dict['menubar'] = self.menuBar
@@ -78,7 +77,6 @@ class MainWindow(QMainWindow):
         self.add_function_to_menu('operator', 'viewer', lambda:self.sig_ActivateOperator.emit('viewer'))
         self.add_function_to_menu('operator', 'line', lambda:self.sig_ActivateOperator.emit('line'))
 
-
     def setupUi(self):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
@@ -86,7 +84,7 @@ class MainWindow(QMainWindow):
         # Main Struct
         self.logic_Viewer3d = self.ui.logic_View
         self.logic_Viewer3d.InitDriver()
-        
+
         self.logic_Viewer2d = self.ui.logic_View2d
         self.logic_Viewer2d.InitDriver()
 
@@ -116,25 +114,6 @@ class MainWindow(QMainWindow):
 
     def Construct(self):
         return self.logic_ConstructView
-
-    def connnectAction(self):
-        return 
-        # start menu
-        self.ui.actionstep.triggered.connect(self.openFileSTEP)
-        # self.ui.actionxml.triggered.connect(lambda:self.logic_app.NewDocument("XmlOcaf"))
-
-        # self sig
-        self.sig_Construct.connect(self.logic_ConstructView.NewConstruct)
-
-        # construct sig
-        self.logic_ConstructView.sig_NewShape.connect(self.logic_app.NewShape)
-        self.logic_ConstructView.sig_ChangeShape.connect(self.logic_app.ChangeDoc)
-
-        self.logic_app.sig_DocChanged.connect(self.logic_DocTree.Show)
-        self.logic_app.sig_DocChanged.connect(self.logic_Viewer.Repaint)
-
-        self.logic_app.sig_DocUpdate.connect(self.logic_DocTree.Update)
-        self.logic_DocTree.sig_select.connect(self.logic_ConstructView.ShowShape) 
 
     def add_menu(self, menu_name:str):
         _menu = self._menubar.addMenu("&" + menu_name)
@@ -175,45 +154,9 @@ class MainWindow(QMainWindow):
             self.add_model_menu(menu_name)
         self.add_function_to_modelmenu(menu_name, action_name, lambda:self.sig_NewDataLabel.emit(driverId))
 
-
-    @pyqtSlot()
-    def openFileSTEP(self):
-        self.choose_document = QFileDialog.getOpenFileName(self, '打开文件', './resource',
-                                                              " STP files(*.stp , *.step);;(*.iges);;(*.stl)")  # 选择转换的文价夹
-
-        filepath = self.choose_document[0]
-        end_with = str(filepath).lower()
-        if end_with.endswith(".step") or end_with.endswith("stp"):
-            self.read_file(filepath)
-
-    def read_file(self, file):
-        doc = OpenFile(file)
-        self.dict_shape = read_step_file_with_names_colors(doc)
-        # progressShow = QProgressBar(self)
-        iter = self.dict_shape.items()
-
-        from OCC.Core.Quantity import Quantity_Color, Quantity_TOC_RGB
-        from OCC.Core.TopoDS import TopoDS_Solid
-        count = 0
-        for shape, dict in iter:
-            color = dict["color"]
-
-            if  not isinstance(shape, TopoDS_Solid):#排除非solid
-                continue
-
-            color = Quantity_Color(color.Red(),
-                                    color.Green(),
-                                    color.Blue(),
-                                    Quantity_TOC_RGB)
-
-            count += 1
-            self.viewer._display.DisplayShape(shape, color=color)
-
-        self.viewer._display.FitAll()
-        self.treeView.Create_ModelTree(doc)
-
     def read_doc(self, doc:Document):
         # read doc
+        return
         rootLabel = doc.Main()
         level = 0
         stack_label = list()

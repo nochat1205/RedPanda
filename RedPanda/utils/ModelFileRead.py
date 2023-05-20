@@ -43,7 +43,6 @@ from OCC.Core.XmlDrivers import (
 )
 from OCC.Core.TDF import TDF_Data
 
-
 from RedPanda.logger import Logger
 
 default_color_id = 125
