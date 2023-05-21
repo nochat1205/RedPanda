@@ -210,8 +210,6 @@ class qtViewer2d(qtBaseViewer):
         self._display.Context.RemoveAll(False)
 
     def ShowLabel(self, theLabel):
-        if 'ctx' not in self.__dict__:
-            self.ctx = None
 
         aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None or not isinstance(aDriver, BareShapeDriver):
@@ -226,8 +224,6 @@ class qtViewer2d(qtBaseViewer):
         for ais in ctx.values():
             self._display.Context.Display(ais, False)
 
-        aDriver.UpdatePrs2d(theLabel, ctx)
-
         self._display.FitAll()
         self._display.Repaint()
 
@@ -237,17 +233,20 @@ class qtViewer2d(qtBaseViewer):
         if aDriver is None:
             return
 
+        Logger().info(f'Update Label:{theLabel.GetDriver().Type}, {theLabel.GetDriver().ID}')
         if not aDriver.UpdatePrs2d(theLabel, self.ctx):
             return
 
-
+        Logger().info('Start Disp 2d')
         for ais in self.ctx.values():
             ais:AIS_ColoredShape
             if ais is None:
                 continue
             self._display.Context.Display(ais, False)
-
+        Logger().info('End Disp 2d')
+        Logger().info(f'bound:{self.ctx.GetBound()}')
         self.SetUVGrid(*self.ctx.GetBound())
+
         self._display.Viewer.Update()
         self._display.Repaint()
 

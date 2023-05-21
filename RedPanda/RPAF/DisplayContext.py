@@ -8,11 +8,24 @@ class DisplayCtx(object):
         self.label = aLabel
         self.d = dict()
         self.aisToLabel = dict()
-        self.bounds = (-10, 10, -10, 10)
+        self._bounds = (-10, 10, -10, 10)
         self.shapeToLabel_d:dict[TopoDS_Shape, Label] = dict()
 
+    @property
+    def bounds(self):
+        return self._bounds
+
+    @bounds.setter
+    def bounds(self, value):
+        from OCC.Core.Precision import precision_IsInfinite
+        for i in value:
+            if precision_IsInfinite(i):
+                return
+        self._bounds = value
+        
+
     def __getitem__(self, key):
-        return self.d.get(key, None)
+        return self.d[key]
 
     def __setitem__(self, key:tuple[Label, str], value):
         self.d[key] = value

@@ -55,7 +55,8 @@ Sym_ConstShapebDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'ConstShape')))
 Sym_ThickDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Thick')))
 Sym_ThruSecDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'ThruSec')))
 Sym_FuseDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Fuse')))
-
+Sym_CompoudDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'Compoud')))
+Sym_NurbsConvtDriver_GUID = RP_GUID(str(uuid5(NAMESPACE_DNS, 'NurbsConvt')))
 
 class GuidLookup(object):
     def __init__(self, key_in, key_value) -> None:

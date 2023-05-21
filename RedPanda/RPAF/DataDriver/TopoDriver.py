@@ -88,9 +88,42 @@ class CompoudDriver(BareShapeDriver):
 
     @classproperty
     def ID(self):
-        from ..GUID import Sym_ThruSecDriver_GUID
-        return  Sym_ThruSecDriver_GUID #
+        from ..GUID import Sym_CompoudDriver_GUID
+        return  Sym_CompoudDriver_GUID #
 
     @classproperty
     def Type(self):
-        return "ThruSec"
+        return "Compoud"
+
+from .BaseDriver import ShapeRefDriver
+class NurbsConvtDriver(BareShapeDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['shape'] = Argument(self.tagResource, ShapeRefDriver.ID)
+
+    def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_NurbsConvert
+
+        shape = self.Arguments['shape'].Value(theLabel)
+        try:
+            builder = BRepBuilderAPI_NurbsConvert(shape)
+            shape = builder.Shape()
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(shape)
+
+        return 0
+
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_NurbsConvtDriver_GUID
+        return  Sym_NurbsConvtDriver_GUID #
+
+    @classproperty
+    def Type(self):
+        return "Nurbs"
+

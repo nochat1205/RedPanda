@@ -11,6 +11,7 @@ from OCC.Core.PrsDim import PrsDim_DiameterDimension
 from OCC.Core.BRepLib import breplib_BuildCurve3d
 from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_RED
 
+from RedPanda.logger import Logger
 from RedPanda.RPAF.RD_Label import Label
 
 from RedPanda.decorator import classproperty
@@ -175,26 +176,23 @@ class Build3dDriver(PCurveDriver):
 
         self.UpdatePrs2d(theLabel, ais_dict)
 
-
         return ais_dict
 
     def myUpdatePrs2d(self, theLabel: Label, ais_dict:DisplayCtx):
-        if not DataLabelState.IsOK(theLabel):
-            return False
-
         # 1
         face = self.Arguments['surface'].Value(theLabel)
         surface = BRep_Tool.Surface(face)
         ais_dict.bounds = surface.Bounds()
-        
+
         # 2
         aLabel = theLabel.Argument('edge2d')
         edge2d = self.Arguments['edge2d'].Value(theLabel)
         breplib_BuildCurve3d(edge2d)
         ais = ais_dict[(aLabel, 'shape')]
-        ais.SetShape(edge2d)
-        ais.UpdateSelection()
-        ais.SetToUpdate()
+        if ais:
+            ais.SetShape(edge2d)
+            ais.UpdateSelection()
+            ais.SetToUpdate()
 
         return True
 
@@ -254,23 +252,26 @@ class BareShape2dDriver(BareShapeDriver):
 
 
     def Prs2d(self, theLabel:Label):
+        if 'keyPrs2d_1' not in self.__dict__:
+            self.keyPrs2d_1 = (theLabel, 'shape')
+
         ais_dict = DisplayCtx(theLabel)
         ais = AIS_ColoredShape(TopoDS_Shape())
         ais.SetColor(Quantity_Color(Quantity_NOC_RED))
-        ais_dict[(theLabel, 'shape')] = ais
+        ais_dict[self.keyPrs2d_1] = ais
 
         self.UpdatePrs2d(theLabel, ais_dict)
 
         return ais_dict
     
-    def myUpdatePrs2d(self, theLabel:Label, ais_dict):
+    def myUpdatePrs2d(self, theLabel:Label, ais_dict:DisplayCtx):
         if not DataLabelState.IsOK(theLabel):
             return False
-
-        ais:AIS_ColoredShape = ais_dict[(theLabel, 'shape')]
+        Logger().debug(f"ID:{self.ID}")
+        ais:AIS_ColoredShape = ais_dict[self.keyPrs2d_1]
         shape = self.Attributes['value'].GetValue(theLabel)
         breplib_BuildCurve3d(shape)
-        if shape:
+        if ais and shape:
             ais.SetShape(shape)
             ais.SetColor(Quantity_Color(Quantity_NOC_RED))
             ais.SetToUpdate()

@@ -122,7 +122,8 @@ class MainApplication():
         from .RPAF.DataDriver.FilletDriver import FilletAllDriver
         from .RPAF.DataDriver.ArrayDriver import EdgeArrayDriver
         from .RPAF.DataDriver.TopoDriver import (
-            WireDriver, CompoudDriver
+            WireDriver, CompoudDriver, NurbsConvtDriver,
+            
         )
         from .RPAF.DataDriver.OffsetDriver import (
             ThickSoldDriver, ThruSecDriver
@@ -144,7 +145,6 @@ class MainApplication():
         self.RegisterShapeDriver('GeomAPI', 'Cyl', CylSurDriver())
         self.RegisterShapeDriver('GeomAPI', 'Ellipse2d', Ellipse2dDriver())
         # self.RegisterShapeDriver('Topo', 'RefSub', RefSubDriver())
-        self.RegisterShapeDriver('Topo', 'Build3d', Build3dDriver())
         self.RegisterShapeDriver('Geom2dAPI', 'Ellipse', Elps2dDriver())
         self.RegisterShapeDriver('Geom2dAPI', 'Seg2d', Segment2dDriver())
         self.RegisterShapeDriver('Geom2dAPI', 'ArcCirc2d', ArcCircleDriver())
@@ -153,12 +153,13 @@ class MainApplication():
         self.RegisterShapeDriver('Topo', 'Mirror', MirrorDriver())
         self.RegisterShapeDriver('Topo', 'Face', FaceDriver())
         self.RegisterShapeDriver('Topo', 'Prism', PrismDriver())
-        self.RegisterShapeDriver('Fillet', 'FilletAll', FilletAllDriver())
+        self.RegisterShapeDriver('Topo', 'Build3d', Build3dDriver())
         self.RegisterShapeDriver('Topo', 'Transform', TransShapeDriver())
         self.RegisterShapeDriver('Topo', 'Compu', CompoudDriver())
+        self.RegisterShapeDriver('Topo', 'NurbConvert', NurbsConvtDriver())
+        self.RegisterShapeDriver('Fillet', 'FilletAll', FilletAllDriver())
         self.RegisterShapeDriver('Offset', 'Thick', ThickSoldDriver())
         self.RegisterShapeDriver('Offset', 'ThruSec', ThruSecDriver())
-
 
     def Process_NewLabel(self, id:RP_GUID, data=None):
         Logger().info(f'New Data Label {id}')
@@ -198,7 +199,8 @@ class MainApplication():
 
     def Process_ChangeLabel(self, theLabel, str):
         Logger().info('Process Change Label Start')
-        Logger().info(f'Start Change: {theLabel.GetEntry()}, {str}')
+        Logger().info(
+            f'Start Change: {theLabel.GetEntry()}({theLabel.GetDriver().Type}), {str}')
         # 1. update
         label_set = self.docApp.Update(theLabel, str)
         # 2.
@@ -210,13 +212,15 @@ class MainApplication():
             if fatherLabel in self.showedLabel_set:
                 self.c_construct.UpdataLabel(aLabel)
 
-        # 4 update Tree
+        # 3 update Tree
         for label in labelInDocTree:
             self.c_docTree.Update(label)
 
+            Logger().info(f'update Label Prs3d, {theLabel.GetDriver().Type}')
             self.c_viewer3d.UpdateLabel(label)
             # build3d arcOfCircle2d 自由参数会存在问题. 会卡死程序.  或许是没检查GC_xxx.IsDone
-            # self.c_viewer2d.UpdateLabel(label)
+            Logger().info('update Label Prs2d')
+            self.c_viewer2d.UpdateLabel(label)
 
         Logger().info(f'End Change: {theLabel.GetEntry()}, {str}')
         Logger().info('Process Change Label End')

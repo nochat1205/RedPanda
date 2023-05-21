@@ -95,15 +95,18 @@ def test_aisp_line():
     start()
 
 def test_PerformCurve():
+    from OCC.Core.gp import gp_Pnt2d
     from OCC.Core.GCPnts import GCPnts_TangentialDeflection
     from OCC.Core.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_Curve2d
     from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge
     from OCC.Core.BRep import BRep_Tool
     from OCC.Core.GC import GC_MakeArcOfCircle
+    from OCC.Core.GCE2d import GCE2d_MakeArcOfCircle
 
     curve = test_bezier0()
 
     p = gp_Pnt()
+
     curve = GC_MakeArcOfCircle(p, p, p).Value()
     edge = BRepBuilderAPI_MakeEdge(curve).Edge()
     adaptor = BRepAdaptor_Curve(edge)
@@ -117,6 +120,28 @@ def test_PerformCurve():
     # assert adaptor.FirstParameter() == float('nan')
     # assert adaptor.LastParameter() == float('nan')
 
+def test_arcOfCircle2d():
+    from OCC.Core.gp import gp_Pnt2d
+    from OCC.Core.GCE2d import GCE2d_MakeArcOfCircle
+
+    p_li = [
+        gp_Pnt2d(0, 0),
+        gp_Pnt2d(0, 2),
+        gp_Pnt2d(0, 1),
+    ]
+
+    try:
+        builder = GCE2d_MakeArcOfCircle(*p_li)
+        if not builder.IsDone():
+            print('not done')
+            return 
+        curve = builder.Value()
+    except Exception as error:
+        print(str(error), '\n->Error')
+    
+    print(curve.FirstParameter(), curve.LastParameter())
+    
+    
 
 if __name__ == '__main__':
-    test_PerformCurve()
+    test_arcOfCircle2d()

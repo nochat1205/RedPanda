@@ -1,9 +1,6 @@
-import os,sys
-from typing import Optional
+
 
 from OCC.Core.V3d import Prs3d_Drawer
-sys.path.append(os.getcwd()) 
-
 from OCC.Core.AIS import AIS_InteractiveObject
 from OCC.Core.PrsMgr import Prs3d_Drawer, PrsMgr_PresentationManager
 from OCC.Core.Prs3d import Prs3d_Presentation, Prs3d_PresentationShadow

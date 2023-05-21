@@ -1,3 +1,8 @@
+#### effect
+
+![image-20230521164113042](MarkDownImages/image-20230521164113042.png)
+
+
 
 ####  要求
 
@@ -38,6 +43,7 @@ python main.py
 
    doubleclick  document 框的树形节点
 
+4. 保存为pickle, 读取pickle
 
 
 
@@ -52,8 +58,5 @@ https://github.com/nochat1205/RedPanda
 
 #### 戒律
 
-1. myExecute 务必对参数进行检查, 防止会执行生成 0零向量curve等可能不被兼容的元素, 
-
-AIS_Shape似乎无法解析零向量curve,从而导致程序甚至, 电脑宕机.
-
-
+1. DisplayShape(selector.activate) 似乎无法解析curve parameter (nan, nan)
+2. Geom_Surface.bounds 可能为(infinite, infinite, infinite, infinite), `BRepBuilderAPI_NurbsConvert`可以解决问题

@@ -118,7 +118,6 @@ class BareShapeDriver(CompoundDriver):
             ):
                 return False
 
-
         self.myUpdatePrs2d(theLabel, ais_dict)
         return True
 
