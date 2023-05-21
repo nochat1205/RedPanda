@@ -1084,3 +1084,868 @@
 2023-05-21 15:39:33,571 - INFO: Process Change Label End
 2023-05-21 15:39:35,280 - INFO: Process Show Point Start
 2023-05-21 15:39:35,283 - INFO: Process Show Point End
+2023-05-21 16:50:45,856 - INFO: Application Start
+2023-05-21 16:50:46,567 - INFO: change to opertor to viewer
+2023-05-21 16:50:58,005 - INFO: Process Save Document start
+2023-05-21 16:51:43,940 - INFO: Application Start
+2023-05-21 16:51:44,335 - INFO: change to opertor to viewer
+2023-05-21 16:51:49,441 - INFO: Process Load Shape Start
+2023-05-21 16:52:01,886 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58
+2023-05-21 16:52:01,889 - INFO: New Document
+2023-05-21 16:52:01,972 - INFO: New Document End
+2023-05-21 16:52:01,976 - INFO: -- NewConmand --
+2023-05-21 16:52:01,980 - INFO: -- Add New Shape --
+2023-05-21 16:52:01,983 - INFO: Entry:0:1:1, init start
+2023-05-21 16:52:01,985 - INFO: BaseInit 0:1:1 ConstShape
+2023-05-21 16:52:01,989 - INFO: Entry:0:1:1, init end
+2023-05-21 16:52:01,992 - INFO: -- commit command --
+2023-05-21 16:52:01,997 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58 end
+2023-05-21 16:52:02,000 - INFO: Process Load Shape End
+2023-05-21 16:52:04,640 - INFO: Selected Item:New ConstShape
+2023-05-21 16:52:04,669 - INFO: Process Show Label Start
+2023-05-21 16:52:04,726 - INFO: Process Show Label End
+2023-05-21 16:52:08,842 - INFO: New Data Label 4949cc5d-4f36-5965-9e94-687b4d29fb9f
+2023-05-21 16:52:08,844 - INFO: -- NewConmand --
+2023-05-21 16:52:08,846 - INFO: -- Add New Shape --
+2023-05-21 16:52:08,848 - INFO: Entry:0:1:2, init start
+2023-05-21 16:52:08,850 - INFO: BaseInit 0:1:2 RefSub
+2023-05-21 16:52:08,853 - INFO: Entry:0:1:2:18, init start
+2023-05-21 16:52:08,855 - INFO: BaseInit 0:1:2:18 ShapeRef
+2023-05-21 16:52:08,870 - INFO: Entry:0:1:2:18, init end
+2023-05-21 16:52:08,873 - INFO: Entry:0:1:2:19, init start
+2023-05-21 16:52:08,875 - INFO: BaseInit 0:1:2:19 Int
+2023-05-21 16:52:08,877 - INFO: Init Label:0:1:2:19.value, None, 4
+2023-05-21 16:52:08,878 - INFO: Entry:0:1:2:19, init end
+2023-05-21 16:52:08,881 - INFO: Entry:0:1:2:20, init start
+2023-05-21 16:52:08,883 - INFO: BaseInit 0:1:2:20 Int
+2023-05-21 16:52:08,885 - INFO: Init Label:0:1:2:20.value, None, 6
+2023-05-21 16:52:08,887 - INFO: Entry:0:1:2:20, init end
+2023-05-21 16:52:08,890 - INFO: Entry:0:1:2, init end
+2023-05-21 16:52:08,892 - INFO: -- commit command --
+2023-05-21 16:52:08,895 - INFO: New Data Label 4949cc5d-4f36-5965-9e94-687b4d29fb9f end
+2023-05-21 16:52:09,730 - INFO: Selected Item:New RefSub
+2023-05-21 16:52:09,733 - INFO: Process Show Label Start
+2023-05-21 16:52:09,874 - INFO: Process Show Label End
+2023-05-21 16:52:13,630 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912
+2023-05-21 16:52:13,632 - INFO: -- NewConmand --
+2023-05-21 16:52:13,635 - INFO: -- Add New Shape --
+2023-05-21 16:52:13,639 - INFO: Entry:0:1:3, init start
+2023-05-21 16:52:13,641 - INFO: BaseInit 0:1:3 Nurbs
+2023-05-21 16:52:13,643 - INFO: Entry:0:1:3:18, init start
+2023-05-21 16:52:13,645 - INFO: BaseInit 0:1:3:18 ShapeRef
+2023-05-21 16:52:13,748 - INFO: -- commit command --
+2023-05-21 16:52:13,751 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912 end
+2023-05-21 16:52:14,723 - INFO: Selected Item:New Nurbs
+2023-05-21 16:52:14,725 - INFO: Process Show Label Start
+2023-05-21 16:52:14,737 - INFO: Process Show Label End
+2023-05-21 16:52:19,983 - INFO: Process Change Label Start
+2023-05-21 16:52:19,985 - INFO: Start Change: 0:1:3:18(ShapeRef), 0:1:2
+2023-05-21 16:52:19,987 - INFO: -- NewConmand --
+2023-05-21 16:52:19,989 - INFO: 0:1:3:18 ref 0:1:2 
+2023-05-21 16:52:20,045 - INFO: -- commit command --
+2023-05-21 16:52:20,052 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:52:20,066 - INFO: update Label Prs2d
+2023-05-21 16:52:20,070 - INFO: Update Label:Nurbs, 6f139761-53d4-57b5-a678-f852d0558912
+2023-05-21 16:52:20,073 - INFO: Start Disp 2d
+2023-05-21 16:52:20,076 - INFO: End Disp 2d
+2023-05-21 16:52:20,078 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:52:20,117 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:52:20,119 - INFO: update Label Prs2d
+2023-05-21 16:52:20,121 - INFO: End Change: 0:1:3:18, 0:1:2
+2023-05-21 16:52:20,123 - INFO: Process Change Label End
+2023-05-21 16:52:29,216 - INFO: New Data Label 16dc087d-91cd-595d-8d58-41c4542242e1
+2023-05-21 16:52:29,220 - INFO: -- NewConmand --
+2023-05-21 16:52:29,222 - INFO: -- Add New Shape --
+2023-05-21 16:52:29,224 - INFO: Entry:0:1:4, init start
+2023-05-21 16:52:29,226 - INFO: BaseInit 0:1:4 ArcCircle
+2023-05-21 16:52:29,231 - INFO: Entry:0:1:4:18, init start
+2023-05-21 16:52:29,234 - INFO: BaseInit 0:1:4:18 pnt2d
+2023-05-21 16:52:29,236 - INFO: Entry:0:1:4:18:18, init start
+2023-05-21 16:52:29,238 - INFO: BaseInit 0:1:4:18:18 real
+2023-05-21 16:52:29,240 - INFO: Init Label:0:1:4:18:18.value, None, 0
+2023-05-21 16:52:29,242 - INFO: Entry:0:1:4:18:18, init end
+2023-05-21 16:52:29,244 - INFO: Entry:0:1:4:18:19, init start
+2023-05-21 16:52:29,246 - INFO: BaseInit 0:1:4:18:19 real
+2023-05-21 16:52:29,248 - INFO: Init Label:0:1:4:18:19.value, None, 0
+2023-05-21 16:52:29,250 - INFO: Entry:0:1:4:18:19, init end
+2023-05-21 16:52:29,253 - INFO: Entry:0:1:4:18, init end
+2023-05-21 16:52:29,255 - INFO: Entry:0:1:4:19, init start
+2023-05-21 16:52:29,257 - INFO: BaseInit 0:1:4:19 pnt2d
+2023-05-21 16:52:29,259 - INFO: Entry:0:1:4:19:18, init start
+2023-05-21 16:52:29,261 - INFO: BaseInit 0:1:4:19:18 real
+2023-05-21 16:52:29,263 - INFO: Init Label:0:1:4:19:18.value, None, 0
+2023-05-21 16:52:29,266 - INFO: Entry:0:1:4:19:18, init end
+2023-05-21 16:52:29,268 - INFO: Entry:0:1:4:19:19, init start
+2023-05-21 16:52:29,270 - INFO: BaseInit 0:1:4:19:19 real
+2023-05-21 16:52:29,272 - INFO: Init Label:0:1:4:19:19.value, None, 0
+2023-05-21 16:52:29,274 - INFO: Entry:0:1:4:19:19, init end
+2023-05-21 16:52:29,276 - INFO: Entry:0:1:4:19, init end
+2023-05-21 16:52:29,278 - INFO: Entry:0:1:4:20, init start
+2023-05-21 16:52:29,280 - INFO: BaseInit 0:1:4:20 pnt2d
+2023-05-21 16:52:29,282 - INFO: Entry:0:1:4:20:18, init start
+2023-05-21 16:52:29,284 - INFO: BaseInit 0:1:4:20:18 real
+2023-05-21 16:52:29,286 - INFO: Init Label:0:1:4:20:18.value, None, 0
+2023-05-21 16:52:29,289 - INFO: Entry:0:1:4:20:18, init end
+2023-05-21 16:52:29,291 - INFO: Entry:0:1:4:20:19, init start
+2023-05-21 16:52:29,294 - INFO: BaseInit 0:1:4:20:19 real
+2023-05-21 16:52:29,297 - INFO: Init Label:0:1:4:20:19.value, None, 0
+2023-05-21 16:52:29,301 - INFO: Entry:0:1:4:20:19, init end
+2023-05-21 16:52:29,304 - INFO: Entry:0:1:4:20, init end
+2023-05-21 16:52:29,311 - INFO: -- commit command --
+2023-05-21 16:52:29,315 - INFO: New Data Label 16dc087d-91cd-595d-8d58-41c4542242e1 end
+2023-05-21 16:52:30,137 - INFO: Selected Item:New ArcCircle
+2023-05-21 16:52:30,139 - INFO: Process Show Label Start
+2023-05-21 16:52:30,152 - INFO: Process Show Label End
+2023-05-21 16:52:33,306 - INFO: Process Change Label Start
+2023-05-21 16:52:33,309 - INFO: Start Change: 0:1:4:18:18(real), 1
+2023-05-21 16:52:33,311 - INFO: -- NewConmand --
+2023-05-21 16:52:33,314 - INFO: -- commit command --
+2023-05-21 16:52:33,318 - INFO: update Label Prs3d, real
+2023-05-21 16:52:33,320 - INFO: update Label Prs2d
+2023-05-21 16:52:33,322 - INFO: Update Label:ArcCircle, 16dc087d-91cd-595d-8d58-41c4542242e1
+2023-05-21 16:52:33,324 - INFO: update Label Prs3d, real
+2023-05-21 16:52:33,326 - INFO: update Label Prs2d
+2023-05-21 16:52:33,328 - INFO: End Change: 0:1:4:18:18, 1
+2023-05-21 16:52:33,330 - INFO: Process Change Label End
+2023-05-21 16:52:33,939 - INFO: Process Show Point Start
+2023-05-21 16:52:33,943 - INFO: Process Show Point End
+2023-05-21 16:52:37,889 - INFO: Process Change Label Start
+2023-05-21 16:52:37,892 - INFO: Start Change: 0:1:4:20:18(real), 2
+2023-05-21 16:52:37,894 - INFO: -- NewConmand --
+2023-05-21 16:52:37,897 - INFO: -- commit command --
+2023-05-21 16:52:37,900 - INFO: update Label Prs3d, real
+2023-05-21 16:52:37,902 - INFO: update Label Prs2d
+2023-05-21 16:52:37,904 - INFO: Update Label:ArcCircle, 16dc087d-91cd-595d-8d58-41c4542242e1
+2023-05-21 16:52:37,906 - INFO: update Label Prs3d, real
+2023-05-21 16:52:37,908 - INFO: update Label Prs2d
+2023-05-21 16:52:37,910 - INFO: End Change: 0:1:4:20:18, 2
+2023-05-21 16:52:37,912 - INFO: Process Change Label End
+2023-05-21 16:52:38,789 - INFO: Process Change Label Start
+2023-05-21 16:52:38,792 - INFO: Start Change: 0:1:4:20:19(real), 2
+2023-05-21 16:52:38,794 - INFO: -- NewConmand --
+2023-05-21 16:52:38,797 - INFO: -- commit command --
+2023-05-21 16:52:38,800 - INFO: update Label Prs3d, real
+2023-05-21 16:52:38,808 - INFO: update Label Prs2d
+2023-05-21 16:52:38,811 - INFO: Update Label:ArcCircle, 16dc087d-91cd-595d-8d58-41c4542242e1
+2023-05-21 16:52:38,916 - INFO: Start Disp 2d
+2023-05-21 16:52:38,919 - INFO: End Disp 2d
+2023-05-21 16:52:38,920 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:52:38,959 - INFO: update Label Prs3d, real
+2023-05-21 16:52:38,961 - INFO: update Label Prs2d
+2023-05-21 16:52:38,963 - INFO: End Change: 0:1:4:20:19, 2
+2023-05-21 16:52:38,965 - INFO: Process Change Label End
+2023-05-21 16:52:39,496 - INFO: Process Show Point Start
+2023-05-21 16:52:39,498 - INFO: Process Show Point End
+2023-05-21 16:52:41,161 - INFO: Process Show Point Start
+2023-05-21 16:52:41,163 - INFO: Process Show Point End
+2023-05-21 16:52:51,269 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 16:52:51,274 - INFO: -- NewConmand --
+2023-05-21 16:52:51,276 - INFO: -- Add New Shape --
+2023-05-21 16:52:51,278 - INFO: Entry:0:1:5, init start
+2023-05-21 16:52:51,280 - INFO: BaseInit 0:1:5 BuildEdge3d
+2023-05-21 16:52:51,282 - INFO: Entry:0:1:5:18, init start
+2023-05-21 16:52:51,284 - INFO: BaseInit 0:1:5:18 ShapeRef
+2023-05-21 16:52:51,288 - INFO: Entry:0:1:5:19, init start
+2023-05-21 16:52:51,290 - INFO: BaseInit 0:1:5:19 ShapeRef
+2023-05-21 16:52:51,298 - INFO: -- commit command --
+2023-05-21 16:52:51,302 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-21 16:52:52,128 - INFO: Selected Item:New BuildEdge3d
+2023-05-21 16:52:52,130 - INFO: Process Show Label Start
+2023-05-21 16:52:52,147 - INFO: Process Show Label End
+2023-05-21 16:52:58,843 - INFO: Process Change Label Start
+2023-05-21 16:52:58,846 - INFO: Start Change: 0:1:5:18(ShapeRef), 0:1:3
+2023-05-21 16:52:58,848 - INFO: -- NewConmand --
+2023-05-21 16:52:58,851 - INFO: 0:1:5:18 ref 0:1:3 
+2023-05-21 16:52:58,853 - INFO: -- commit command --
+2023-05-21 16:52:58,862 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:52:58,865 - INFO: update Label Prs2d
+2023-05-21 16:52:58,867 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 16:52:58,870 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:52:58,872 - INFO: update Label Prs2d
+2023-05-21 16:52:58,874 - INFO: End Change: 0:1:5:18, 0:1:3
+2023-05-21 16:52:58,877 - INFO: Process Change Label End
+2023-05-21 16:53:05,568 - INFO: Process Change Label Start
+2023-05-21 16:53:05,570 - INFO: Start Change: 0:1:5:19(ShapeRef), 0:1:4
+2023-05-21 16:53:05,572 - INFO: -- NewConmand --
+2023-05-21 16:53:05,574 - INFO: 0:1:5:19 ref 0:1:4 
+2023-05-21 16:53:05,680 - INFO: -- commit command --
+2023-05-21 16:53:05,688 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:53:05,896 - INFO: update Label Prs2d
+2023-05-21 16:53:05,898 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 16:53:05,936 - INFO: Start Disp 2d
+2023-05-21 16:53:05,940 - INFO: End Disp 2d
+2023-05-21 16:53:05,943 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 16:53:05,982 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:53:05,985 - INFO: update Label Prs2d
+2023-05-21 16:53:05,988 - INFO: End Change: 0:1:5:19, 0:1:4
+2023-05-21 16:53:05,990 - INFO: Process Change Label End
+2023-05-21 16:53:17,903 - INFO: Process Change Label Start
+2023-05-21 16:53:17,905 - INFO: Start Change: 0:1:4:19:18(real), 0.0
+2023-05-21 16:53:17,907 - INFO: -- NewConmand --
+2023-05-21 16:53:17,920 - INFO: -- commit command --
+2023-05-21 16:53:17,924 - INFO: update Label Prs3d, real
+2023-05-21 16:53:17,941 - INFO: update Label Prs2d
+2023-05-21 16:53:17,943 - INFO: Update Label:ArcCircle, 16dc087d-91cd-595d-8d58-41c4542242e1
+2023-05-21 16:53:38,712 - INFO: Application Start
+2023-05-21 16:53:39,139 - INFO: change to opertor to viewer
+2023-05-21 16:54:23,870 - INFO: Process Load Shape Start
+2023-05-21 16:54:30,750 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58
+2023-05-21 16:54:30,752 - INFO: New Document
+2023-05-21 16:54:30,757 - INFO: New Document End
+2023-05-21 16:54:30,760 - INFO: -- NewConmand --
+2023-05-21 16:54:30,762 - INFO: -- Add New Shape --
+2023-05-21 16:54:30,765 - INFO: Entry:0:1:1, init start
+2023-05-21 16:54:30,767 - INFO: BaseInit 0:1:1 ConstShape
+2023-05-21 16:54:30,769 - INFO: Entry:0:1:1, init end
+2023-05-21 16:54:30,771 - INFO: -- commit command --
+2023-05-21 16:54:30,777 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58 end
+2023-05-21 16:54:30,780 - INFO: Process Load Shape End
+2023-05-21 16:54:32,481 - INFO: Selected Item:New ConstShape
+2023-05-21 16:54:32,484 - INFO: Process Show Label Start
+2023-05-21 16:54:32,528 - INFO: Process Show Label End
+2023-05-21 16:54:42,541 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912
+2023-05-21 16:54:42,543 - INFO: -- NewConmand --
+2023-05-21 16:54:42,545 - INFO: -- Add New Shape --
+2023-05-21 16:54:42,547 - INFO: Entry:0:1:2, init start
+2023-05-21 16:54:42,549 - INFO: BaseInit 0:1:2 Nurbs
+2023-05-21 16:54:42,552 - INFO: Entry:0:1:2:18, init start
+2023-05-21 16:54:42,556 - INFO: BaseInit 0:1:2:18 ShapeRef
+2023-05-21 16:54:42,562 - INFO: -- commit command --
+2023-05-21 16:54:42,565 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912 end
+2023-05-21 16:54:43,505 - INFO: Selected Item:New Nurbs
+2023-05-21 16:54:43,508 - INFO: Process Show Label Start
+2023-05-21 16:54:43,524 - INFO: Process Show Label End
+2023-05-21 16:54:48,871 - INFO: Process Change Label Start
+2023-05-21 16:54:48,874 - INFO: Start Change: 0:1:2:18(ShapeRef), 0:1:1
+2023-05-21 16:54:48,876 - INFO: -- NewConmand --
+2023-05-21 16:54:48,878 - INFO: 0:1:2:18 ref 0:1:1 
+2023-05-21 16:54:48,882 - INFO: -- commit command --
+2023-05-21 16:54:48,885 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:54:48,900 - INFO: update Label Prs2d
+2023-05-21 16:54:48,902 - INFO: Update Label:Nurbs, 6f139761-53d4-57b5-a678-f852d0558912
+2023-05-21 16:54:48,904 - INFO: Start Disp 2d
+2023-05-21 16:54:48,906 - INFO: End Disp 2d
+2023-05-21 16:54:48,908 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:54:48,935 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:54:48,937 - INFO: update Label Prs2d
+2023-05-21 16:54:48,939 - INFO: End Change: 0:1:2:18, 0:1:1
+2023-05-21 16:54:48,940 - INFO: Process Change Label End
+2023-05-21 16:55:01,080 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:55:01,083 - INFO: -- NewConmand --
+2023-05-21 16:55:01,085 - INFO: -- Add New Shape --
+2023-05-21 16:55:01,087 - INFO: Entry:0:1:3, init start
+2023-05-21 16:55:01,089 - INFO: BaseInit 0:1:3 Seg2d
+2023-05-21 16:55:01,091 - INFO: Entry:0:1:3:18, init start
+2023-05-21 16:55:01,094 - INFO: BaseInit 0:1:3:18 pnt2d
+2023-05-21 16:55:01,097 - INFO: Entry:0:1:3:18:18, init start
+2023-05-21 16:55:01,099 - INFO: BaseInit 0:1:3:18:18 real
+2023-05-21 16:55:01,101 - INFO: Init Label:0:1:3:18:18.value, None, 0
+2023-05-21 16:55:01,103 - INFO: Entry:0:1:3:18:18, init end
+2023-05-21 16:55:01,105 - INFO: Entry:0:1:3:18:19, init start
+2023-05-21 16:55:01,107 - INFO: BaseInit 0:1:3:18:19 real
+2023-05-21 16:55:01,109 - INFO: Init Label:0:1:3:18:19.value, None, 0
+2023-05-21 16:55:01,112 - INFO: Entry:0:1:3:18:19, init end
+2023-05-21 16:55:01,114 - INFO: Entry:0:1:3:18, init end
+2023-05-21 16:55:01,116 - INFO: Entry:0:1:3:19, init start
+2023-05-21 16:55:01,117 - INFO: BaseInit 0:1:3:19 pnt2d
+2023-05-21 16:55:01,120 - INFO: Entry:0:1:3:19:18, init start
+2023-05-21 16:55:01,122 - INFO: BaseInit 0:1:3:19:18 real
+2023-05-21 16:55:01,124 - INFO: Init Label:0:1:3:19:18.value, None, 0
+2023-05-21 16:55:01,126 - INFO: Entry:0:1:3:19:18, init end
+2023-05-21 16:55:01,128 - INFO: Entry:0:1:3:19:19, init start
+2023-05-21 16:55:01,130 - INFO: BaseInit 0:1:3:19:19 real
+2023-05-21 16:55:01,132 - INFO: Init Label:0:1:3:19:19.value, None, 0
+2023-05-21 16:55:01,134 - INFO: Entry:0:1:3:19:19, init end
+2023-05-21 16:55:01,136 - INFO: Entry:0:1:3:19, init end
+2023-05-21 16:55:01,182 - INFO: -- commit command --
+2023-05-21 16:55:01,186 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-05-21 16:55:02,082 - INFO: Selected Item:New Seg2d
+2023-05-21 16:55:02,084 - INFO: Process Show Label Start
+2023-05-21 16:55:02,098 - INFO: Process Show Label End
+2023-05-21 16:55:04,268 - INFO: Process Change Label Start
+2023-05-21 16:55:04,270 - INFO: Start Change: 0:1:3:18:18(real), 1
+2023-05-21 16:55:04,272 - INFO: -- NewConmand --
+2023-05-21 16:55:04,284 - INFO: -- commit command --
+2023-05-21 16:55:04,287 - INFO: update Label Prs3d, real
+2023-05-21 16:55:04,289 - INFO: update Label Prs2d
+2023-05-21 16:55:04,292 - INFO: update Label Prs3d, real
+2023-05-21 16:55:04,310 - INFO: update Label Prs2d
+2023-05-21 16:55:04,312 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:55:04,316 - INFO: Start Disp 2d
+2023-05-21 16:55:04,319 - INFO: End Disp 2d
+2023-05-21 16:55:04,320 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:55:04,343 - INFO: End Change: 0:1:3:18:18, 1
+2023-05-21 16:55:04,345 - INFO: Process Change Label End
+2023-05-21 16:55:06,233 - INFO: Process Change Label Start
+2023-05-21 16:55:06,235 - INFO: Start Change: 0:1:3:18:19(real), 0.0
+2023-05-21 16:55:06,237 - INFO: -- NewConmand --
+2023-05-21 16:55:06,241 - INFO: -- commit command --
+2023-05-21 16:55:06,244 - INFO: update Label Prs3d, real
+2023-05-21 16:55:06,247 - INFO: update Label Prs2d
+2023-05-21 16:55:06,249 - INFO: update Label Prs3d, real
+2023-05-21 16:55:06,261 - INFO: update Label Prs2d
+2023-05-21 16:55:06,263 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:55:06,267 - INFO: Start Disp 2d
+2023-05-21 16:55:06,269 - INFO: End Disp 2d
+2023-05-21 16:55:06,271 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:55:06,293 - INFO: End Change: 0:1:3:18:19, 0.0
+2023-05-21 16:55:06,295 - INFO: Process Change Label End
+2023-05-21 16:55:08,431 - INFO: Process Change Label Start
+2023-05-21 16:55:08,433 - INFO: Start Change: 0:1:3:19:18(real), 0.0
+2023-05-21 16:55:08,435 - INFO: -- NewConmand --
+2023-05-21 16:55:08,439 - INFO: -- commit command --
+2023-05-21 16:55:08,441 - INFO: update Label Prs3d, real
+2023-05-21 16:55:08,457 - INFO: update Label Prs2d
+2023-05-21 16:55:08,459 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:55:08,463 - INFO: Start Disp 2d
+2023-05-21 16:55:08,466 - INFO: End Disp 2d
+2023-05-21 16:55:08,468 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:55:08,492 - INFO: update Label Prs3d, real
+2023-05-21 16:55:08,494 - INFO: update Label Prs2d
+2023-05-21 16:55:08,496 - INFO: End Change: 0:1:3:19:18, 0.0
+2023-05-21 16:55:08,498 - INFO: Process Change Label End
+2023-05-21 16:55:10,208 - INFO: Process Change Label Start
+2023-05-21 16:55:10,210 - INFO: Start Change: 0:1:3:18:18(real), 0
+2023-05-21 16:55:10,212 - INFO: -- NewConmand --
+2023-05-21 16:55:10,215 - INFO: -- commit command --
+2023-05-21 16:55:10,218 - INFO: update Label Prs3d, real
+2023-05-21 16:55:10,220 - INFO: update Label Prs2d
+2023-05-21 16:55:10,223 - INFO: update Label Prs3d, real
+2023-05-21 16:55:10,225 - INFO: update Label Prs2d
+2023-05-21 16:55:10,227 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:55:10,230 - INFO: End Change: 0:1:3:18:18, 0
+2023-05-21 16:55:10,231 - INFO: Process Change Label End
+2023-05-21 16:55:11,948 - INFO: Process Change Label Start
+2023-05-21 16:55:11,950 - INFO: Start Change: 0:1:3:19:18(real), 1
+2023-05-21 16:55:11,952 - INFO: -- NewConmand --
+2023-05-21 16:55:11,955 - INFO: -- commit command --
+2023-05-21 16:55:11,958 - INFO: update Label Prs3d, real
+2023-05-21 16:55:11,972 - INFO: update Label Prs2d
+2023-05-21 16:55:11,975 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:55:11,980 - INFO: Start Disp 2d
+2023-05-21 16:55:11,982 - INFO: End Disp 2d
+2023-05-21 16:55:11,984 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:55:12,007 - INFO: update Label Prs3d, real
+2023-05-21 16:55:12,009 - INFO: update Label Prs2d
+2023-05-21 16:55:12,011 - INFO: End Change: 0:1:3:19:18, 1
+2023-05-21 16:55:12,013 - INFO: Process Change Label End
+2023-05-21 16:55:13,297 - INFO: Process Change Label Start
+2023-05-21 16:55:13,299 - INFO: Start Change: 0:1:3:19:19(real), 1
+2023-05-21 16:55:13,302 - INFO: -- NewConmand --
+2023-05-21 16:55:13,306 - INFO: -- commit command --
+2023-05-21 16:55:13,311 - INFO: update Label Prs3d, real
+2023-05-21 16:55:13,350 - INFO: update Label Prs2d
+2023-05-21 16:55:13,353 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:55:13,377 - INFO: Start Disp 2d
+2023-05-21 16:55:13,379 - INFO: End Disp 2d
+2023-05-21 16:55:13,381 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 16:55:13,406 - INFO: update Label Prs3d, real
+2023-05-21 16:55:13,408 - INFO: update Label Prs2d
+2023-05-21 16:55:13,410 - INFO: End Change: 0:1:3:19:19, 1
+2023-05-21 16:55:13,413 - INFO: Process Change Label End
+2023-05-21 16:55:14,773 - INFO: Process Show Point Start
+2023-05-21 16:55:14,777 - INFO: Process Show Point End
+2023-05-21 16:55:24,203 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 16:55:24,205 - INFO: -- NewConmand --
+2023-05-21 16:55:24,207 - INFO: -- Add New Shape --
+2023-05-21 16:55:24,209 - INFO: Entry:0:1:4, init start
+2023-05-21 16:55:24,211 - INFO: BaseInit 0:1:4 BuildEdge3d
+2023-05-21 16:55:24,214 - INFO: Entry:0:1:4:18, init start
+2023-05-21 16:55:24,217 - INFO: BaseInit 0:1:4:18 ShapeRef
+2023-05-21 16:55:24,222 - INFO: Entry:0:1:4:19, init start
+2023-05-21 16:55:24,223 - INFO: BaseInit 0:1:4:19 ShapeRef
+2023-05-21 16:55:24,231 - INFO: -- commit command --
+2023-05-21 16:55:24,235 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-21 16:55:24,914 - INFO: Selected Item:New BuildEdge3d
+2023-05-21 16:55:24,917 - INFO: Process Show Label Start
+2023-05-21 16:55:24,938 - INFO: Process Show Label End
+2023-05-21 16:55:31,570 - INFO: Process Change Label Start
+2023-05-21 16:55:31,573 - INFO: Start Change: 0:1:4:18(ShapeRef), 0:1:2
+2023-05-21 16:55:31,574 - INFO: -- NewConmand --
+2023-05-21 16:55:31,577 - INFO: 0:1:4:18 ref 0:1:2 
+2023-05-21 16:55:31,579 - INFO: -- commit command --
+2023-05-21 16:55:31,583 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:55:31,585 - INFO: update Label Prs2d
+2023-05-21 16:55:31,587 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 16:55:31,589 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:55:31,591 - INFO: update Label Prs2d
+2023-05-21 16:55:31,593 - INFO: End Change: 0:1:4:18, 0:1:2
+2023-05-21 16:55:31,595 - INFO: Process Change Label End
+2023-05-21 16:55:40,707 - INFO: Process Change Label Start
+2023-05-21 16:55:40,710 - INFO: Start Change: 0:1:4:19(ShapeRef), 0:1:3
+2023-05-21 16:55:40,712 - INFO: -- NewConmand --
+2023-05-21 16:55:40,714 - INFO: 0:1:4:19 ref 0:1:3 
+2023-05-21 16:55:40,717 - INFO: -- commit command --
+2023-05-21 16:55:40,724 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:55:40,744 - INFO: update Label Prs2d
+2023-05-21 16:55:40,746 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 16:55:40,750 - INFO: Start Disp 2d
+2023-05-21 16:55:40,752 - INFO: End Disp 2d
+2023-05-21 16:55:40,754 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 16:55:40,793 - INFO: update Label Prs3d, ShapeRef
+2023-05-21 16:55:40,796 - INFO: update Label Prs2d
+2023-05-21 16:55:40,800 - INFO: End Change: 0:1:4:19, 0:1:3
+2023-05-21 16:55:40,802 - INFO: Process Change Label End
+2023-05-21 16:55:48,790 - INFO: Process Change Label Start
+2023-05-21 16:55:48,792 - INFO: Start Change: 0:1:3:19:18(real), 3
+2023-05-21 16:55:48,794 - INFO: -- NewConmand --
+2023-05-21 16:55:48,798 - INFO: -- commit command --
+2023-05-21 16:55:48,800 - INFO: update Label Prs3d, real
+2023-05-21 16:55:48,822 - INFO: update Label Prs2d
+2023-05-21 16:55:48,824 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 16:55:48,827 - INFO: Start Disp 2d
+2023-05-21 16:55:48,829 - INFO: End Disp 2d
+2023-05-21 16:55:48,831 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 16:55:48,857 - INFO: update Label Prs3d, real
+2023-05-21 16:55:48,874 - INFO: update Label Prs2d
+2023-05-21 16:55:48,877 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 16:58:16,404 - INFO: Application Start
+2023-05-21 16:58:16,824 - INFO: change to opertor to viewer
+2023-05-21 16:58:20,427 - INFO: Process Load Shape Start
+2023-05-21 16:58:29,334 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58
+2023-05-21 16:58:29,337 - INFO: New Document
+2023-05-21 16:58:29,341 - INFO: New Document End
+2023-05-21 16:58:29,343 - INFO: -- NewConmand --
+2023-05-21 16:58:29,345 - INFO: -- Add New Shape --
+2023-05-21 16:58:29,348 - INFO: Entry:0:1:1, init start
+2023-05-21 16:58:29,352 - INFO: BaseInit 0:1:1 ConstShape
+2023-05-21 16:58:29,355 - INFO: Entry:0:1:1, init end
+2023-05-21 16:58:29,357 - INFO: -- commit command --
+2023-05-21 16:58:29,360 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58 end
+2023-05-21 16:58:29,363 - INFO: Process Load Shape End
+2023-05-21 16:58:32,691 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912
+2023-05-21 16:58:32,693 - INFO: -- NewConmand --
+2023-05-21 16:58:32,695 - INFO: -- Add New Shape --
+2023-05-21 16:58:32,699 - INFO: Entry:0:1:2, init start
+2023-05-21 16:58:32,703 - INFO: BaseInit 0:1:2 Nurbs
+2023-05-21 16:58:32,704 - INFO: Entry:0:1:2:18, init start
+2023-05-21 16:58:32,706 - INFO: BaseInit 0:1:2:18 ShapeRef
+2023-05-21 16:58:32,712 - INFO: -- commit command --
+2023-05-21 16:58:32,715 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912 end
+2023-05-21 16:58:33,430 - INFO: Selected Item:New Nurbs
+2023-05-21 16:58:33,433 - INFO: Process Show Label Start
+2023-05-21 16:58:33,443 - INFO: Process Show Label End
+2023-05-21 16:58:38,351 - INFO: Process Change Label Start
+2023-05-21 16:58:38,353 - INFO: Start Change: 0:1:2:18(ShapeRef), 0:1:1
+2023-05-21 16:58:38,355 - INFO: -- NewConmand --
+2023-05-21 16:58:38,357 - INFO: 0:1:2:18 ref 0:1:1 
+2023-05-21 16:58:38,362 - INFO: -- commit command --
+2023-05-21 17:01:23,469 - INFO: Application Start
+2023-05-21 17:01:23,852 - INFO: change to opertor to viewer
+2023-05-21 17:01:31,302 - INFO: Process Load Shape Start
+2023-05-21 17:01:37,018 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58
+2023-05-21 17:01:37,021 - INFO: New Document
+2023-05-21 17:01:37,025 - INFO: New Document End
+2023-05-21 17:01:37,028 - INFO: -- NewConmand --
+2023-05-21 17:01:37,033 - INFO: -- Add New Shape --
+2023-05-21 17:01:37,036 - INFO: Entry:0:1:1, init start
+2023-05-21 17:01:37,038 - INFO: BaseInit 0:1:1 ConstShape
+2023-05-21 17:01:37,041 - INFO: Entry:0:1:1, init end
+2023-05-21 17:01:37,043 - INFO: -- commit command --
+2023-05-21 17:01:37,050 - INFO: New Data Label 625a6f0e-04bd-566c-9858-b63cae4f1e58 end
+2023-05-21 17:01:37,052 - INFO: Process Load Shape End
+2023-05-21 17:01:40,780 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912
+2023-05-21 17:01:40,783 - INFO: -- NewConmand --
+2023-05-21 17:01:40,785 - INFO: -- Add New Shape --
+2023-05-21 17:01:40,787 - INFO: Entry:0:1:2, init start
+2023-05-21 17:01:40,789 - INFO: BaseInit 0:1:2 Nurbs
+2023-05-21 17:01:40,791 - INFO: Entry:0:1:2:18, init start
+2023-05-21 17:01:40,794 - INFO: BaseInit 0:1:2:18 ShapeRef
+2023-05-21 17:01:40,803 - INFO: -- commit command --
+2023-05-21 17:01:40,805 - INFO: New Data Label 6f139761-53d4-57b5-a678-f852d0558912 end
+2023-05-21 17:01:41,648 - INFO: Selected Item:New Nurbs
+2023-05-21 17:01:41,650 - INFO: Process Show Label Start
+2023-05-21 17:01:41,662 - INFO: Process Show Label End
+2023-05-21 17:01:46,512 - INFO: Process Change Label Start
+2023-05-21 17:01:46,514 - INFO: Start Change: 0:1:2:18(ShapeRef), 0:1:1
+2023-05-21 17:01:46,516 - INFO: -- NewConmand --
+2023-05-21 17:01:46,518 - INFO: 0:1:2:18 ref 0:1:1 
+2023-05-21 17:01:46,523 - INFO: -- commit command --
+2023-05-21 17:01:46,561 - INFO: Update Label:Nurbs, 6f139761-53d4-57b5-a678-f852d0558912
+2023-05-21 17:01:46,563 - INFO: Start Disp 2d
+2023-05-21 17:01:46,565 - INFO: End Disp 2d
+2023-05-21 17:01:46,567 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 17:01:46,594 - INFO: End Change: 0:1:2:18, 0:1:1
+2023-05-21 17:01:46,597 - INFO: Process Change Label End
+2023-05-21 17:01:51,550 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-05-21 17:01:51,552 - INFO: -- NewConmand --
+2023-05-21 17:01:51,554 - INFO: -- Add New Shape --
+2023-05-21 17:01:51,558 - INFO: Entry:0:1:3, init start
+2023-05-21 17:01:51,562 - INFO: BaseInit 0:1:3 Seg2d
+2023-05-21 17:01:51,564 - INFO: Entry:0:1:3:18, init start
+2023-05-21 17:01:51,566 - INFO: BaseInit 0:1:3:18 pnt2d
+2023-05-21 17:01:51,568 - INFO: Entry:0:1:3:18:18, init start
+2023-05-21 17:01:51,570 - INFO: BaseInit 0:1:3:18:18 real
+2023-05-21 17:01:51,572 - INFO: Init Label:0:1:3:18:18.value, None, 0
+2023-05-21 17:01:51,574 - INFO: Entry:0:1:3:18:18, init end
+2023-05-21 17:01:51,576 - INFO: Entry:0:1:3:18:19, init start
+2023-05-21 17:01:51,578 - INFO: BaseInit 0:1:3:18:19 real
+2023-05-21 17:01:51,580 - INFO: Init Label:0:1:3:18:19.value, None, 0
+2023-05-21 17:01:51,582 - INFO: Entry:0:1:3:18:19, init end
+2023-05-21 17:01:51,584 - INFO: Entry:0:1:3:18, init end
+2023-05-21 17:01:51,586 - INFO: Entry:0:1:3:19, init start
+2023-05-21 17:01:51,588 - INFO: BaseInit 0:1:3:19 pnt2d
+2023-05-21 17:01:51,591 - INFO: Entry:0:1:3:19:18, init start
+2023-05-21 17:01:51,593 - INFO: BaseInit 0:1:3:19:18 real
+2023-05-21 17:01:51,595 - INFO: Init Label:0:1:3:19:18.value, None, 0
+2023-05-21 17:01:51,597 - INFO: Entry:0:1:3:19:18, init end
+2023-05-21 17:01:51,599 - INFO: Entry:0:1:3:19:19, init start
+2023-05-21 17:01:51,601 - INFO: BaseInit 0:1:3:19:19 real
+2023-05-21 17:01:51,603 - INFO: Init Label:0:1:3:19:19.value, None, 0
+2023-05-21 17:01:51,605 - INFO: Entry:0:1:3:19:19, init end
+2023-05-21 17:01:51,607 - INFO: Entry:0:1:3:19, init end
+2023-05-21 17:01:51,612 - INFO: -- commit command --
+2023-05-21 17:01:51,615 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-05-21 17:01:56,347 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:01:56,349 - INFO: -- NewConmand --
+2023-05-21 17:01:56,351 - INFO: -- Add New Shape --
+2023-05-21 17:01:56,354 - INFO: Entry:0:1:4, init start
+2023-05-21 17:01:56,358 - INFO: BaseInit 0:1:4 BuildEdge3d
+2023-05-21 17:01:56,360 - INFO: Entry:0:1:4:18, init start
+2023-05-21 17:01:56,362 - INFO: BaseInit 0:1:4:18 ShapeRef
+2023-05-21 17:01:56,366 - INFO: Entry:0:1:4:19, init start
+2023-05-21 17:01:56,368 - INFO: BaseInit 0:1:4:19 ShapeRef
+2023-05-21 17:01:56,375 - INFO: -- commit command --
+2023-05-21 17:01:56,377 - INFO: New Data Label 22d22e77-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-21 17:01:57,058 - INFO: Selected Item:New BuildEdge3d
+2023-05-21 17:01:57,060 - INFO: Process Show Label Start
+2023-05-21 17:01:57,077 - INFO: Process Show Label End
+2023-05-21 17:02:04,029 - INFO: Process Change Label Start
+2023-05-21 17:02:04,032 - INFO: Start Change: 0:1:4:18(ShapeRef), 0:1:2
+2023-05-21 17:02:04,034 - INFO: -- NewConmand --
+2023-05-21 17:02:04,036 - INFO: 0:1:4:18 ref 0:1:2 
+2023-05-21 17:02:04,039 - INFO: -- commit command --
+2023-05-21 17:02:04,044 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:04,046 - INFO: End Change: 0:1:4:18, 0:1:2
+2023-05-21 17:02:04,048 - INFO: Process Change Label End
+2023-05-21 17:02:09,455 - INFO: Process Change Label Start
+2023-05-21 17:02:09,457 - INFO: Start Change: 0:1:4:19(ShapeRef), 0:1:3
+2023-05-21 17:02:09,459 - INFO: -- NewConmand --
+2023-05-21 17:02:09,461 - INFO: 0:1:4:19 ref 0:1:3 
+2023-05-21 17:02:09,464 - INFO: -- commit command --
+2023-05-21 17:02:09,471 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:09,473 - INFO: End Change: 0:1:4:19, 0:1:3
+2023-05-21 17:02:09,475 - INFO: Process Change Label End
+2023-05-21 17:02:12,440 - INFO: Process Change Label Start
+2023-05-21 17:02:12,442 - INFO: Start Change: 0:1:3:18:18(real), 2
+2023-05-21 17:02:12,444 - INFO: -- NewConmand --
+2023-05-21 17:02:12,448 - INFO: -- commit command --
+2023-05-21 17:02:12,598 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:12,603 - INFO: Start Disp 2d
+2023-05-21 17:02:12,605 - INFO: End Disp 2d
+2023-05-21 17:02:12,607 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:02:12,631 - INFO: End Change: 0:1:3:18:18, 2
+2023-05-21 17:02:12,633 - INFO: Process Change Label End
+2023-05-21 17:02:14,326 - INFO: Process Change Label Start
+2023-05-21 17:02:14,328 - INFO: Start Change: 0:1:3:18:19(real), 2
+2023-05-21 17:02:14,330 - INFO: -- NewConmand --
+2023-05-21 17:02:14,334 - INFO: -- commit command --
+2023-05-21 17:02:14,347 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:14,349 - INFO: Start Disp 2d
+2023-05-21 17:02:14,351 - INFO: End Disp 2d
+2023-05-21 17:02:14,353 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:02:14,364 - INFO: End Change: 0:1:3:18:19, 2
+2023-05-21 17:02:14,366 - INFO: Process Change Label End
+2023-05-21 17:02:21,138 - INFO: Process Change Label Start
+2023-05-21 17:02:21,141 - INFO: Start Change: 0:1:3:18:18(real), 3
+2023-05-21 17:02:21,143 - INFO: -- NewConmand --
+2023-05-21 17:02:21,147 - INFO: -- commit command --
+2023-05-21 17:02:21,161 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:21,164 - INFO: Start Disp 2d
+2023-05-21 17:02:21,166 - INFO: End Disp 2d
+2023-05-21 17:02:21,167 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:02:21,178 - INFO: End Change: 0:1:3:18:18, 3
+2023-05-21 17:02:21,180 - INFO: Process Change Label End
+2023-05-21 17:02:22,887 - INFO: Process Change Label Start
+2023-05-21 17:02:22,890 - INFO: Start Change: 0:1:3:18:19(real), 3
+2023-05-21 17:02:22,892 - INFO: -- NewConmand --
+2023-05-21 17:02:22,896 - INFO: -- commit command --
+2023-05-21 17:02:22,910 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:22,913 - INFO: Start Disp 2d
+2023-05-21 17:02:22,915 - INFO: End Disp 2d
+2023-05-21 17:02:22,917 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:02:22,927 - INFO: End Change: 0:1:3:18:19, 3
+2023-05-21 17:02:22,928 - INFO: Process Change Label End
+2023-05-21 17:02:34,266 - INFO: Process Change Label Start
+2023-05-21 17:02:34,269 - INFO: Start Change: 0:1:3:19:18(real), 3
+2023-05-21 17:02:34,273 - INFO: -- NewConmand --
+2023-05-21 17:02:34,278 - INFO: -- commit command --
+2023-05-21 17:02:34,289 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:34,292 - INFO: Start Disp 2d
+2023-05-21 17:02:34,294 - INFO: End Disp 2d
+2023-05-21 17:02:34,296 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:02:34,306 - INFO: End Change: 0:1:3:19:18, 3
+2023-05-21 17:02:34,308 - INFO: Process Change Label End
+2023-05-21 17:02:34,310 - INFO: Process Change Label Start
+2023-05-21 17:02:34,312 - INFO: Start Change: 0:1:3:19:19(real), 3
+2023-05-21 17:02:34,314 - INFO: -- NewConmand --
+2023-05-21 17:02:34,317 - INFO: -- commit command --
+2023-05-21 17:02:34,322 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:34,324 - INFO: End Change: 0:1:3:19:19, 3
+2023-05-21 17:02:34,326 - INFO: Process Change Label End
+2023-05-21 17:02:42,153 - INFO: Process Change Label Start
+2023-05-21 17:02:42,155 - INFO: Start Change: 0:1:3:19:18(real), -3
+2023-05-21 17:02:42,157 - INFO: -- NewConmand --
+2023-05-21 17:02:42,161 - INFO: -- commit command --
+2023-05-21 17:02:42,185 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:42,187 - INFO: Start Disp 2d
+2023-05-21 17:02:42,190 - INFO: End Disp 2d
+2023-05-21 17:02:42,192 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:02:42,201 - INFO: End Change: 0:1:3:19:18, -3
+2023-05-21 17:02:42,203 - INFO: Process Change Label End
+2023-05-21 17:02:58,023 - INFO: Process Change Label Start
+2023-05-21 17:02:58,025 - INFO: Start Change: 0:1:3:19:18(real), -4
+2023-05-21 17:02:58,027 - INFO: -- NewConmand --
+2023-05-21 17:02:58,031 - INFO: -- commit command --
+2023-05-21 17:02:58,044 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:02:58,047 - INFO: Start Disp 2d
+2023-05-21 17:02:58,050 - INFO: End Disp 2d
+2023-05-21 17:02:58,052 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:02:58,078 - INFO: End Change: 0:1:3:19:18, -4
+2023-05-21 17:02:58,080 - INFO: Process Change Label End
+2023-05-21 17:03:02,623 - INFO: Process Change Label Start
+2023-05-21 17:03:02,625 - INFO: Start Change: 0:1:3:19:18(real), -3
+2023-05-21 17:03:02,627 - INFO: -- NewConmand --
+2023-05-21 17:03:02,631 - INFO: -- commit command --
+2023-05-21 17:03:02,642 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:02,645 - INFO: Start Disp 2d
+2023-05-21 17:03:02,647 - INFO: End Disp 2d
+2023-05-21 17:03:02,649 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:02,658 - INFO: End Change: 0:1:3:19:18, -3
+2023-05-21 17:03:02,660 - INFO: Process Change Label End
+2023-05-21 17:03:07,629 - INFO: Process Change Label Start
+2023-05-21 17:03:07,631 - INFO: Start Change: 0:1:3:19:19(real), 5
+2023-05-21 17:03:07,633 - INFO: -- NewConmand --
+2023-05-21 17:03:07,637 - INFO: -- commit command --
+2023-05-21 17:03:07,657 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:07,660 - INFO: Start Disp 2d
+2023-05-21 17:03:07,662 - INFO: End Disp 2d
+2023-05-21 17:03:07,664 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:07,673 - INFO: End Change: 0:1:3:19:19, 5
+2023-05-21 17:03:07,675 - INFO: Process Change Label End
+2023-05-21 17:03:14,403 - INFO: Process Change Label Start
+2023-05-21 17:03:14,405 - INFO: Start Change: 0:1:3:19:19(real), 6
+2023-05-21 17:03:14,407 - INFO: -- NewConmand --
+2023-05-21 17:03:14,412 - INFO: -- commit command --
+2023-05-21 17:03:14,436 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:14,440 - INFO: Start Disp 2d
+2023-05-21 17:03:14,442 - INFO: End Disp 2d
+2023-05-21 17:03:14,445 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:14,470 - INFO: End Change: 0:1:3:19:19, 6
+2023-05-21 17:03:14,472 - INFO: Process Change Label End
+2023-05-21 17:03:19,709 - INFO: Process Change Label Start
+2023-05-21 17:03:19,711 - INFO: Start Change: 0:1:3:18:19(real), 6
+2023-05-21 17:03:19,714 - INFO: -- NewConmand --
+2023-05-21 17:03:19,718 - INFO: -- commit command --
+2023-05-21 17:03:19,734 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:19,736 - INFO: Start Disp 2d
+2023-05-21 17:03:19,739 - INFO: End Disp 2d
+2023-05-21 17:03:19,740 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:19,750 - INFO: End Change: 0:1:3:18:19, 6
+2023-05-21 17:03:19,752 - INFO: Process Change Label End
+2023-05-21 17:03:24,668 - INFO: Process Change Label Start
+2023-05-21 17:03:24,670 - INFO: Start Change: 0:1:3:18:18(real), 2
+2023-05-21 17:03:24,672 - INFO: -- NewConmand --
+2023-05-21 17:03:24,676 - INFO: -- commit command --
+2023-05-21 17:03:24,699 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:24,702 - INFO: Start Disp 2d
+2023-05-21 17:03:24,704 - INFO: End Disp 2d
+2023-05-21 17:03:24,706 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:24,715 - INFO: End Change: 0:1:3:18:18, 2
+2023-05-21 17:03:24,717 - INFO: Process Change Label End
+2023-05-21 17:03:29,261 - INFO: Process Change Label Start
+2023-05-21 17:03:29,264 - INFO: Start Change: 0:1:3:18:18(real), 6
+2023-05-21 17:03:29,266 - INFO: -- NewConmand --
+2023-05-21 17:03:29,270 - INFO: -- commit command --
+2023-05-21 17:03:29,280 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:29,282 - INFO: Start Disp 2d
+2023-05-21 17:03:29,284 - INFO: End Disp 2d
+2023-05-21 17:03:29,286 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:29,297 - INFO: End Change: 0:1:3:18:18, 6
+2023-05-21 17:03:29,299 - INFO: Process Change Label End
+2023-05-21 17:03:36,275 - INFO: Process Change Label Start
+2023-05-21 17:03:36,278 - INFO: Start Change: 0:1:3:19:18(real), -6
+2023-05-21 17:03:36,280 - INFO: -- NewConmand --
+2023-05-21 17:03:36,284 - INFO: -- commit command --
+2023-05-21 17:03:36,295 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:36,297 - INFO: Start Disp 2d
+2023-05-21 17:03:36,300 - INFO: End Disp 2d
+2023-05-21 17:03:36,302 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:36,311 - INFO: End Change: 0:1:3:19:18, -6
+2023-05-21 17:03:36,313 - INFO: Process Change Label End
+2023-05-21 17:03:43,907 - INFO: Process Change Label Start
+2023-05-21 17:03:43,909 - INFO: Start Change: 0:1:3:19:19(real), 7
+2023-05-21 17:03:43,911 - INFO: -- NewConmand --
+2023-05-21 17:03:43,915 - INFO: -- commit command --
+2023-05-21 17:03:43,923 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:03:43,926 - INFO: Start Disp 2d
+2023-05-21 17:03:43,929 - INFO: End Disp 2d
+2023-05-21 17:03:43,931 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:03:43,941 - INFO: End Change: 0:1:3:19:19, 7
+2023-05-21 17:03:43,943 - INFO: Process Change Label End
+2023-05-21 17:04:12,464 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:12,467 - INFO: -- NewConmand --
+2023-05-21 17:04:12,469 - INFO: -- Add New Shape --
+2023-05-21 17:04:12,471 - INFO: Entry:0:1:5, init start
+2023-05-21 17:04:12,473 - INFO: BaseInit 0:1:5 Ellipse2d
+2023-05-21 17:04:12,475 - INFO: Entry:0:1:5:18, init start
+2023-05-21 17:04:12,479 - INFO: BaseInit 0:1:5:18 Ax2d
+2023-05-21 17:04:12,482 - INFO: Entry:0:1:5:18:18, init start
+2023-05-21 17:04:12,483 - INFO: BaseInit 0:1:5:18:18 pnt2d
+2023-05-21 17:04:12,486 - INFO: Entry:0:1:5:18:18:18, init start
+2023-05-21 17:04:12,487 - INFO: BaseInit 0:1:5:18:18:18 real
+2023-05-21 17:04:12,490 - INFO: Init Label:0:1:5:18:18:18.value, None, 0
+2023-05-21 17:04:12,492 - INFO: Entry:0:1:5:18:18:18, init end
+2023-05-21 17:04:12,494 - INFO: Entry:0:1:5:18:18:19, init start
+2023-05-21 17:04:12,496 - INFO: BaseInit 0:1:5:18:18:19 real
+2023-05-21 17:04:12,498 - INFO: Init Label:0:1:5:18:18:19.value, None, 0
+2023-05-21 17:04:12,500 - INFO: Entry:0:1:5:18:18:19, init end
+2023-05-21 17:04:12,502 - INFO: Entry:0:1:5:18:18, init end
+2023-05-21 17:04:12,504 - INFO: Entry:0:1:5:18:19, init start
+2023-05-21 17:04:12,506 - INFO: BaseInit 0:1:5:18:19 pnt2d
+2023-05-21 17:04:12,508 - INFO: Entry:0:1:5:18:19:18, init start
+2023-05-21 17:04:12,510 - INFO: BaseInit 0:1:5:18:19:18 real
+2023-05-21 17:04:12,512 - INFO: Init Label:0:1:5:18:19:18.value, None, 0
+2023-05-21 17:04:12,514 - INFO: Entry:0:1:5:18:19:18, init end
+2023-05-21 17:04:12,516 - INFO: Entry:0:1:5:18:19:19, init start
+2023-05-21 17:04:12,518 - INFO: BaseInit 0:1:5:18:19:19 real
+2023-05-21 17:04:12,521 - INFO: Init Label:0:1:5:18:19:19.value, None, 0
+2023-05-21 17:04:12,523 - INFO: Entry:0:1:5:18:19:19, init end
+2023-05-21 17:04:12,525 - INFO: Entry:0:1:5:18:19, init end
+2023-05-21 17:04:12,667 - INFO: Entry:0:1:5:19, init start
+2023-05-21 17:04:12,669 - INFO: BaseInit 0:1:5:19 real
+2023-05-21 17:04:12,671 - INFO: Init Label:0:1:5:19.value, None, 0
+2023-05-21 17:04:12,674 - INFO: Entry:0:1:5:19, init end
+2023-05-21 17:04:12,677 - INFO: Entry:0:1:5:20, init start
+2023-05-21 17:04:12,679 - INFO: BaseInit 0:1:5:20 real
+2023-05-21 17:04:12,681 - INFO: Init Label:0:1:5:20.value, None, 0
+2023-05-21 17:04:12,683 - INFO: Entry:0:1:5:20, init end
+2023-05-21 17:04:12,688 - INFO: -- commit command --
+2023-05-21 17:04:12,691 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8 end
+2023-05-21 17:04:13,527 - INFO: Selected Item:New Ellipse2d
+2023-05-21 17:04:13,530 - INFO: Process Show Label Start
+2023-05-21 17:04:13,542 - INFO: Process Show Label End
+2023-05-21 17:04:17,644 - INFO: Process Change Label Start
+2023-05-21 17:04:17,646 - INFO: Start Change: 0:1:5:19(real), 3
+2023-05-21 17:04:17,648 - INFO: -- NewConmand --
+2023-05-21 17:04:17,651 - INFO: -- commit command --
+2023-05-21 17:04:17,654 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:17,656 - INFO: End Change: 0:1:5:19, 3
+2023-05-21 17:04:17,658 - INFO: Process Change Label End
+2023-05-21 17:04:19,232 - INFO: Process Change Label Start
+2023-05-21 17:04:19,234 - INFO: Start Change: 0:1:5:20(real), 3
+2023-05-21 17:04:19,236 - INFO: -- NewConmand --
+2023-05-21 17:04:19,239 - INFO: -- commit command --
+2023-05-21 17:04:19,242 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:19,244 - INFO: End Change: 0:1:5:20, 3
+2023-05-21 17:04:19,246 - INFO: Process Change Label End
+2023-05-21 17:04:21,310 - INFO: Process Change Label Start
+2023-05-21 17:04:21,313 - INFO: Start Change: 0:1:5:18:19:18(real), 1
+2023-05-21 17:04:21,315 - INFO: -- NewConmand --
+2023-05-21 17:04:21,416 - INFO: -- commit command --
+2023-05-21 17:04:21,439 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:21,443 - INFO: Start Disp 2d
+2023-05-21 17:04:21,446 - INFO: End Disp 2d
+2023-05-21 17:04:21,447 - INFO: bound:(-10, 10, -10, 10)
+2023-05-21 17:04:21,473 - INFO: End Change: 0:1:5:18:19:18, 1
+2023-05-21 17:04:21,475 - INFO: Process Change Label End
+2023-05-21 17:04:23,136 - INFO: Selected Item:New BuildEdge3d
+2023-05-21 17:04:23,139 - INFO: Process Show Label Start
+2023-05-21 17:04:23,158 - INFO: Process Show Label End
+2023-05-21 17:04:31,125 - INFO: Process Change Label Start
+2023-05-21 17:04:31,127 - INFO: Start Change: 0:1:4:19(ShapeRef), 0:1:5
+2023-05-21 17:04:31,129 - INFO: -- NewConmand --
+2023-05-21 17:04:31,131 - INFO: 0:1:4:19 ref 0:1:5 
+2023-05-21 17:04:31,134 - INFO: -- commit command --
+2023-05-21 17:04:31,152 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:31,155 - INFO: Start Disp 2d
+2023-05-21 17:04:31,156 - INFO: End Disp 2d
+2023-05-21 17:04:31,158 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:31,186 - INFO: End Change: 0:1:4:19, 0:1:5
+2023-05-21 17:04:31,187 - INFO: Process Change Label End
+2023-05-21 17:04:36,173 - INFO: Selected Item:New Ellipse2d
+2023-05-21 17:04:36,176 - INFO: Process Show Label Start
+2023-05-21 17:04:36,191 - INFO: Process Show Label End
+2023-05-21 17:04:37,201 - INFO: Selected Item:New BuildEdge3d
+2023-05-21 17:04:37,203 - INFO: Process Show Label Start
+2023-05-21 17:04:37,237 - INFO: Process Show Label End
+2023-05-21 17:04:41,812 - INFO: Process Change Label Start
+2023-05-21 17:04:41,814 - INFO: Start Change: 0:1:5:19(real), 4
+2023-05-21 17:04:41,816 - INFO: -- NewConmand --
+2023-05-21 17:04:41,913 - INFO: -- commit command --
+2023-05-21 17:04:41,930 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:41,933 - INFO: Start Disp 2d
+2023-05-21 17:04:41,936 - INFO: End Disp 2d
+2023-05-21 17:04:41,938 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:41,963 - INFO: End Change: 0:1:5:19, 4
+2023-05-21 17:04:41,965 - INFO: Process Change Label End
+2023-05-21 17:04:43,939 - INFO: Process Change Label Start
+2023-05-21 17:04:43,942 - INFO: Start Change: 0:1:5:20(real), 4
+2023-05-21 17:04:43,944 - INFO: -- NewConmand --
+2023-05-21 17:04:43,948 - INFO: -- commit command --
+2023-05-21 17:04:43,963 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:43,967 - INFO: Start Disp 2d
+2023-05-21 17:04:43,971 - INFO: End Disp 2d
+2023-05-21 17:04:43,973 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:43,996 - INFO: End Change: 0:1:5:20, 4
+2023-05-21 17:04:43,998 - INFO: Process Change Label End
+2023-05-21 17:04:48,754 - INFO: Process Change Label Start
+2023-05-21 17:04:48,757 - INFO: Start Change: 0:1:5:19(real), 5
+2023-05-21 17:04:48,759 - INFO: -- NewConmand --
+2023-05-21 17:04:48,763 - INFO: -- commit command --
+2023-05-21 17:04:48,777 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:48,780 - INFO: Start Disp 2d
+2023-05-21 17:04:48,782 - INFO: End Disp 2d
+2023-05-21 17:04:48,784 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:48,794 - INFO: End Change: 0:1:5:19, 5
+2023-05-21 17:04:48,796 - INFO: Process Change Label End
+2023-05-21 17:04:50,529 - INFO: Process Change Label Start
+2023-05-21 17:04:50,531 - INFO: Start Change: 0:1:5:20(real), 5
+2023-05-21 17:04:50,533 - INFO: -- NewConmand --
+2023-05-21 17:04:50,537 - INFO: -- commit command --
+2023-05-21 17:04:50,560 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:50,562 - INFO: Start Disp 2d
+2023-05-21 17:04:50,565 - INFO: End Disp 2d
+2023-05-21 17:04:50,567 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:50,576 - INFO: End Change: 0:1:5:20, 5
+2023-05-21 17:04:50,578 - INFO: Process Change Label End
+2023-05-21 17:04:53,945 - INFO: Process Change Label Start
+2023-05-21 17:04:53,948 - INFO: Start Change: 0:1:5:19(real), 6
+2023-05-21 17:04:53,950 - INFO: -- NewConmand --
+2023-05-21 17:04:53,953 - INFO: -- commit command --
+2023-05-21 17:04:53,975 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:53,978 - INFO: Start Disp 2d
+2023-05-21 17:04:53,980 - INFO: End Disp 2d
+2023-05-21 17:04:53,982 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:53,992 - INFO: End Change: 0:1:5:19, 6
+2023-05-21 17:04:53,994 - INFO: Process Change Label End
+2023-05-21 17:04:55,453 - INFO: Process Change Label Start
+2023-05-21 17:04:55,455 - INFO: Start Change: 0:1:5:20(real), 6
+2023-05-21 17:04:55,457 - INFO: -- NewConmand --
+2023-05-21 17:04:55,461 - INFO: -- commit command --
+2023-05-21 17:04:55,474 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:55,477 - INFO: Start Disp 2d
+2023-05-21 17:04:55,479 - INFO: End Disp 2d
+2023-05-21 17:04:55,481 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:55,491 - INFO: End Change: 0:1:5:20, 6
+2023-05-21 17:04:55,493 - INFO: Process Change Label End
+2023-05-21 17:04:58,516 - INFO: Process Change Label Start
+2023-05-21 17:04:58,521 - INFO: Start Change: 0:1:5:19(real), 7
+2023-05-21 17:04:58,525 - INFO: -- NewConmand --
+2023-05-21 17:04:58,530 - INFO: -- commit command --
+2023-05-21 17:04:58,539 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:04:58,541 - INFO: Start Disp 2d
+2023-05-21 17:04:58,544 - INFO: End Disp 2d
+2023-05-21 17:04:58,545 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:04:58,556 - INFO: End Change: 0:1:5:19, 7
+2023-05-21 17:04:58,558 - INFO: Process Change Label End
+2023-05-21 17:04:59,974 - INFO: Process Change Label Start
+2023-05-21 17:04:59,977 - INFO: Start Change: 0:1:5:20(real), 7
+2023-05-21 17:04:59,979 - INFO: -- NewConmand --
+2023-05-21 17:04:59,982 - INFO: -- commit command --
+2023-05-21 17:05:00,006 - INFO: Update Label:BuildEdge3d, 22d22e77-abca-11d4-8f1a-0060b0ee18e8
+2023-05-21 17:05:00,009 - INFO: Start Disp 2d
+2023-05-21 17:05:00,011 - INFO: End Disp 2d
+2023-05-21 17:05:00,012 - INFO: bound:(-10.0, 10.0, -7.0000000000000036, 6.9999999999999964)
+2023-05-21 17:05:00,022 - INFO: End Change: 0:1:5:20, 7
+2023-05-21 17:05:00,024 - INFO: Process Change Label End

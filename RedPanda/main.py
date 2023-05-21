@@ -51,7 +51,7 @@ class MainApplication():
             QApplication.quit()
 
     def __init__(self) -> None:
-        self.showedLabel_set = set()
+        self.s_showedLabel = None
         self.ui_myWin = MainWindow()
         self.docApp =  Application()
         self.c_docTree = self.ui_myWin.DocTree()
@@ -136,7 +136,6 @@ class MainApplication():
         self.RegisterDriver(IntDriver())
         self.RegisterDriver(EdgeArrayDriver())
         self.RegisterDriver(ConstShapeDriver())
-        
 
         self.RegisterShapeDriver('PrimAPI', 'Box', BoxDriver())
         self.RegisterShapeDriver('AlgoAPI', 'Cut', CutDriver())
@@ -189,8 +188,7 @@ class MainApplication():
         Logger().info('Process Show Label Start')
 
         # 1
-        self.showedLabel_set.clear()
-        self.showedLabel_set.add(theLabel)
+        self.s_showedLabel = theLabel
         self.c_construct.ShowLabel(theLabel)
         # 2
         self.c_viewer3d.ShowLabel(theLabel)
@@ -209,18 +207,15 @@ class MainApplication():
             aLabel:Label
             fatherLabel :Label= aLabel.GetDataLabel()
             labelInDocTree.add(fatherLabel)
-            if fatherLabel in self.showedLabel_set:
+            if fatherLabel == self.s_showedLabel:
                 self.c_construct.UpdataLabel(aLabel)
 
         # 3 update Tree
         for label in labelInDocTree:
             self.c_docTree.Update(label)
 
-            Logger().info(f'update Label Prs3d, {theLabel.GetDriver().Type}')
-            self.c_viewer3d.UpdateLabel(label)
-            # build3d arcOfCircle2d 自由参数会存在问题. 会卡死程序.  或许是没检查GC_xxx.IsDone
-            Logger().info('update Label Prs2d')
-            self.c_viewer2d.UpdateLabel(label)
+        self.c_viewer3d.UpdateLabel(self.s_showedLabel)
+        self.c_viewer2d.UpdateLabel(self.s_showedLabel)
 
         Logger().info(f'End Change: {theLabel.GetEntry()}, {str}')
         Logger().info('Process Change Label End')
@@ -267,11 +262,14 @@ class MainApplication():
     def Process_SaveDocument(self):
         Logger().info('Process Save Document start')
         doc = self.docApp._main_doc
+        if doc is None:
+            return 
         if doc.File() is None:
             url, tp = QFileDialog.getSaveFileName(self.ui_myWin, '保存文件', './resource',
                                        'STP files(*.xml);;(*.rpxml))')
 
             doc.SetFile(url)
+
         self.docApp.SaveDoc()
 
         Logger().info('Process Save Document end')
@@ -300,10 +298,10 @@ class MainApplication():
         from .RPAF.DataDriver.ShapeBaseDriver import BareShapeDriver
 
         Logger().info('Process Save Shape Start')
-        if (self.showedLabel_set) == 0:
+        if self.s_showedLabel is None:
             return
 
-        aLabel, *_ = self.showedLabel_set
+        aLabel = self.s_showedLabel
         aDriver = aLabel.GetDriver()
         if not isinstance(aDriver, BareShapeDriver):
             return 
