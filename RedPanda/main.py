@@ -59,7 +59,7 @@ class MainApplication():
         self.c_viewer3d:qtViewer3d = self.ui_myWin.Viewer3d()
         self.c_construct = self.ui_myWin.Construct()
         self.c_data = self.ui_myWin.ui.logic_ViewData
-
+        
         self.SetUpUi()
         self.SignalAndSlot()
 
