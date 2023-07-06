@@ -10,7 +10,16 @@ from PyQt5.QtGui import QPainter, QBrush, QPen
 from RedPanda.logger import Logger
 
 from RedPanda.RPAF.DisplayContext import DisplayCtx
+from RedPanda.Core.Euclid import RP_Pnt2d
 from RedPanda.widgets.Ui_Viewer2d import Viewer2d
+
+
+class PixelPoint(RP_Pnt2d):
+    def X(self) -> float:
+        return int(super().X())
+
+    def Y(self) -> float:
+        return int(super().Y())
 
 class WheelOperator(object):
     def __init__(self, parent:QWidget, display) -> None:
@@ -48,65 +57,27 @@ class WheelOperator(object):
         pass
 
 class Operator(object):
-    
     def __init__(self, widget, display:Viewer2d) -> None:
         from ..widgets.Logic_Viewer2d import qtViewer2d
         self.widget:qtViewer2d = widget
         self._display = display
-        self._drawbox = None
 
-    @staticmethod
-    def draw_rect_in_widget(widget:QWidget, rect):
-        return
-        if rect is None or widget is None:
-            return 
-        # Create a QPainter object to draw on the widget
-        painter = QPainter(widget)
+        self.dragStartP = None
+        self.dragEndP = None
 
-        # Set the pen and brush to use for drawing
-        pen = QPen(Qt.black, 2, Qt.SolidLine)
-        brush = QBrush(Qt.red, Qt.SolidPattern)
-        painter.setPen(pen)
-        painter.setBrush(brush)
-        
-        # Draw the rectangle
-        painter.drawRect(QRect(*rect))
-
-        # Clean up the painter object
-        painter.end()
-        widget.update()
-
-    @staticmethod
-    def draw_line_in_widget(widget:QWidget, rect):
-        return
-        # Create a QPainter object to draw on the widget
-        painter = QPainter(widget)
-        
-        # Set the pen to use for drawing
-        pen = QPen(Qt.black, 2, Qt.SolidLine)
-        painter.setPen(pen)
-        
-        # Draw the line
-        painter.drawLine(rect[0], rect[1], rect[0]+rect[2], rect[1]+rect[3])
-
-        # Clean up the painter object
-        painter.end()
-
-    def drawbox(self, event):
+    def update_dragLine(self, event):
         tolerance = 2
         pt = event.pos()
-        dx = pt.x() - self.dragStartPosX
-        dy = pt.y() - self.dragStartPosY
-        if abs(dx) <= tolerance and abs(dy) <= tolerance:
-            return None
-
-        self._drawbox = [self.dragStartPosX, self.dragStartPosY, dx, dy]
+        pt = PixelPoint(pt.x(), pt.y())
+        distp = pt-self.dragStartP
+        if distp < tolerance:
+            return 
+        self.dragEndP = pt
 
     def mousePressEvent(self, event, ctx:DisplayCtx):
         ev = event.pos()
-        self.dragStartPosX = ev.x()
-        self.dragStartPosY = ev.y()
-        self._drawbox = None
+        self.dragStartP = PixelPoint(ev.x(), ev.y())
+        self.dragEndP = None
 
     def mouseMoveEvent(self, evt:QMouseEvent, displayCtx:DisplayCtx):
         pass
@@ -128,9 +99,11 @@ class ViewerOperator(Operator):
         self._select_area = False
 
     def mouseMoveEvent(self, evt, displayCtx: DisplayCtx):
+        return
         mod = evt.modifiers()
         buttons = int(evt.buttons())
         pt = evt.pos()
+
         # 启动状态, 记录信息
         if buttons == Qt.RightButton and mod == Qt.ShiftModifier:
             self._zoom_area = True
@@ -157,6 +130,7 @@ class ViewerOperator(Operator):
             self.widget.cursor = 'arrow'
 
     def mouseReleaseEvent(self, evt, displayCtx: DisplayCtx):
+        return
         pt = evt.pos()
         mod = evt.modifiers()
         if self._select_area and self._drawbox:
@@ -177,13 +151,14 @@ class ViewerOperator(Operator):
         else:
             return 
 
-from OCC.Core.gp import gp_Pnt2d
 from OCC.Core.AIS import AIS_ColoredShape
 from OCC.Core.TopoDS import TopoDS_Shape
 from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_ORANGE
 from OCC.Core.GCE2d import GCE2d_MakeSegment
-from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge2d
+from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge2d, BRepBuilderAPI_MakeEdge
 from OCC.Core.BRepLib import breplib_BuildCurve3d
+from OCC.Core.gp import gp_Pln
+from OCC.Core.Geom import Geom_Plane
 from RedPanda.RPAF.DataDriver.Geom2dDriver import Segment2dDriver
 class LineOperator(Operator):
     def __init__(self, *args) -> None:
@@ -191,58 +166,66 @@ class LineOperator(Operator):
         self.name = 'line'
         self.line_li = list()
         self.ais = None
+        print('Init')
 
     def mousePressEvent(self, event, ctx: DisplayCtx):
         super().mousePressEvent(event, ctx)
 
     def mouseMoveEvent(self, evt: QMouseEvent, displayCtx: DisplayCtx):
-        pt = evt.pos()
         buttons = int(evt.buttons())
         mod = evt.modifiers()
         if buttons == Qt.LeftButton:
-            self.drawbox(evt)
-            if self._drawbox is None:
+            self.update_dragLine(evt)
+            if self.dragEndP is None:
                 return
 
-            x, y, dx, dy = self._drawbox
+            x0, y0 = self.dragStartP.X(), self.dragStartP.Y()
+            x1, y1 = self.dragEndP.X(), self.dragEndP.Y()
+            dx, dy = x1 - x0, y1-y0
             if mod == Qt.ShiftModifier:
                 if abs(dx) > abs(dy):
-                    dy = 0
+                    y1 = y0
                 elif abs(dx) < abs(dy):
-                    dx = 0
+                    x1 = x0
             try:
-                p2d1 = self.widget.GetPoint(x, y)
-                p2d2 = self.widget.GetPoint(x+dx, y+dy)
-                seg = GCE2d_MakeSegment(p2d1, p2d2).Value()
-                edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
-                breplib_BuildCurve3d(edge)
+                sp = self.widget.GetPoint(x0, y0)
+                ep = self.widget.GetPoint(x1, y1)
+                seg = GCE2d_MakeSegment(sp, ep).Value()
+                # edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+                pln_ax3 = self._display.ViewPlane()
+                pln = Geom_Plane(pln_ax3)
+                edge = BRepBuilderAPI_MakeEdge(seg, pln).Shape()
+                # breplib_BuildCurve3d(edge) # 问题出在这.
+                print(f"({x0}, {y0}) -> ({x1}, {y1})")
 
-        
-
-                if self.ais is None:
-                    self.ais = AIS_ColoredShape(edge)
-                    self._display.Context.Display(self.ais, False)
-                else:
-                    self.ais.SetShape(edge)
-
-                self._display.Context.Redisplay(self.ais, True, False) # TODO:
-                self._display.Repaint()
-                self._display.Context.UpdateCurrentViewer()
-            except:
-                pass
+                if self.ais:
+                    self._display.Context.Erase(self.ais, False)
+                    # self.ais.ErasePresentations(True)
+    
+                self.ais = AIS_ColoredShape(edge)
+                self._display.Context.Display(self.ais, True)
+                # self._display.Repaint()
+                # self._display.Context.UpdateCurrentViewer()
+            except Exception as err:
+                print(err)
 
     def mouseReleaseEvent(self, event:QMouseEvent, displayCtx: DisplayCtx):
         mod = event.modifiers()
+        
+        self.update_dragLine(event)
 
-        if event.button() == Qt.LeftButton and self._drawbox:
-            x, y, dx, dy = self._drawbox
+        if event.button() == Qt.LeftButton and self.dragEndP:
+            x0, y0 = self.dragStartP.X(), self.dragStartP.Y()
+            x1, y1 = self.dragEndP.X(), self.dragEndP.Y()
+            dx, dy = x1 - x0, y1-y0
             if mod == Qt.ShiftModifier:
                 if abs(dx) > abs(dy):
-                    dy = 0
+                    y1 = y0
                 elif abs(dx) < abs(dy):
-                    dx = 0
-            p2d1 = self.widget.GetPoint(x, y)
-            p2d2 = self.widget.GetPoint(x+dx, y+dy)
+                    x1 = x0
+    
+            p2d1 = self.widget.GetPoint(x0, y0)
+            p2d2 = self.widget.GetPoint(x1, y1)
 
             # print(x, y, dx, dy)
             # print(p2d1.X(), p2d1.Y(), p2d2.X(), p2d2.Y())

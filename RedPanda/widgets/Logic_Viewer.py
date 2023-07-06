@@ -213,7 +213,7 @@ class qtViewer3d(qtBaseViewer):
         self.dragStartPosX = ev.x()
         self.dragStartPosY = ev.y()
         self._display.StartRotation(self.dragStartPosX, self.dragStartPosY)
-
+        self._display.View.StartZoomAtPoint(self.dragStartPosX, self.dragStartPosY)
     def mouseReleaseEvent(self, event:QMouseEvent):
         pt = event.pos()
         modifiers = event.modifiers()
@@ -270,14 +270,19 @@ class qtViewer3d(qtBaseViewer):
         ):
             self.cursor = "zoom"
             self._display.Repaint()
-            self._display.DynamicZoom(
+
+            # pan
+            dx = pt.x() - self.dragStartPosX
+            dy = pt.y() - self.dragStartPosY
+
+            self._display.View.ZoomAtPoint(
                 abs(self.dragStartPosX),
                 abs(self.dragStartPosY),
                 abs(pt.x()),
                 abs(pt.y()),
             )
-            self.dragStartPosX = pt.x()
-            self.dragStartPosY = pt.y()
+            # self.dragStartPosX = pt.x()
+            # self.dragStartPosY = pt.y()
             self._drawbox = False
         # PAN
         elif buttons == QtCore.Qt.MidButton:

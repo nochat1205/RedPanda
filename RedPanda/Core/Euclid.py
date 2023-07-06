@@ -129,6 +129,12 @@ def gp_pnt_mul(self, other):
 def gp_pnt_div(self, other):
     return _apply(self, other, operator.div)
 
+def gp_Pnt2d_ne(self:gp_Pnt2d, v:int):
+    return self.Distance(gp_Pnt2d(0.0, 0.0)) < v
+
+def gp_Pnt2d_sub(self:gp_Pnt2d, other:gp_Pnt2d):
+    return gp_Pnt2d(self.X()-other.X(), self.Y()-other.Y())
+
 # easier conversion between data types
 gp_Vec.as_pnt = vector_to_point
 gp_Pnt.as_vec = point_to_vector
@@ -160,6 +166,8 @@ gp_Pnt.__repr__ = gp_pnt_print
 gp_Pnt.__str__ = gp_pnt_print
 gp_Pnt.__eq__ = gp_Pnt_equal
 
+gp_Pnt2d.__lt__ = gp_Pnt2d_ne
+gp_Pnt2d.__sub__ = gp_Pnt2d_sub
 
 RP_Pnt = gp_Pnt
 RP_Vec = gp_Vec
