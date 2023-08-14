@@ -103,8 +103,8 @@ class MainApplication():
             BoxDriver,
             CutDriver,
         )
-        from .RPAF.DataDriver.AlgoDriver import FuseDriver
-        from .RPAF.DataDriver.PrimDriver import TransShapeDriver
+        from .RPAF.DataDriver.AlgoDriver import FuseDriver, PipeDriver
+        from .RPAF.DataDriver.PrimDriver import TransShapeDriver, ConeDriver
         from .RPAF.DataDriver.VarDriver import IntDriver
         from .RPAF.DataDriver.GeomDriver import CylSurDriver
         from .RPAF.DataDriver.Geom2dDriver import (
@@ -117,7 +117,7 @@ class MainApplication():
         from .RPAF.DataDriver.VertexDriver import Pnt2dDriver
         from .RPAF.DataDriver.ShapeDriver import (
             RefSubDriver, MirrorDriver, PrismDriver,
-            FaceDriver, 
+            FaceDriver
         )
         from .RPAF.DataDriver.FilletDriver import FilletAllDriver
         from .RPAF.DataDriver.ArrayDriver import EdgeArrayDriver
@@ -138,6 +138,7 @@ class MainApplication():
         self.RegisterDriver(ConstShapeDriver())
 
         self.RegisterShapeDriver('PrimAPI', 'Box', BoxDriver())
+        self.RegisterShapeDriver('PrimAPI', 'Cone', ConeDriver())
         self.RegisterShapeDriver('AlgoAPI', 'Cut', CutDriver())
         self.RegisterShapeDriver('AlgoAPI', 'Fuse', FuseDriver())
         self.RegisterShapeDriver('GeomAPI', 'bezier', BezierDriver())
@@ -159,6 +160,7 @@ class MainApplication():
         self.RegisterShapeDriver('Fillet', 'FilletAll', FilletAllDriver())
         self.RegisterShapeDriver('Offset', 'Thick', ThickSoldDriver())
         self.RegisterShapeDriver('Offset', 'ThruSec', ThruSecDriver())
+        self.RegisterShapeDriver('Offset', 'Pipe', PipeDriver())
 
     def Process_NewLabel(self, id:RP_GUID, data=None):
         Logger().info(f'New Data Label {id}')

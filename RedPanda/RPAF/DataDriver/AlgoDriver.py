@@ -98,4 +98,40 @@ class FuseDriver(BareShapeDriver):
         from ..GUID import Sym_FuseDriver_GUID
         return Sym_FuseDriver_GUID
 
+class PipeDriver(BareShapeDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Attributes['value'] = Param(TNaming_NamedShape.GetID())
+        self.Arguments['Spine'] = Argument(self.tagResource, ShapeRefDriver.ID)
+        self.Arguments['Profile'] = Argument(self.tagResource, ShapeRefDriver.ID)
 
+    def myExecute(self, theLabel: Label) -> int:
+        from OCC.Core.BRepOffsetAPI import BRepOffsetAPI_MakePipe
+        dict_param = dict()
+        for name, argu in self.Arguments.items():
+            argu:Argument
+            dict_param[name] = argu.Value(theLabel)
+
+        shape0 = dict_param['Spine']
+        shape1 = dict_param['Profile']
+        try:
+            shape = BRepOffsetAPI_MakePipe(shape0, shape1).Shape()
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+            return 1
+        if  shape is None:
+            return 1
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(shape)
+
+        return 0
+
+    @classproperty
+    def Type(self):
+        return 'Pipe'
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_PipeDriver_GUID
+        return Sym_PipeDriver_GUID

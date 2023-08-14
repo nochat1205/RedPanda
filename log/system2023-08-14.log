@@ -1,0 +1,750 @@
+2023-08-14 20:46:57,289 - INFO: Application Start
+2023-08-14 20:46:59,277 - INFO: change to opertor to viewer
+2023-08-14 20:47:17,770 - INFO: New Data Label 22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:47:17,772 - INFO: New Document
+2023-08-14 20:47:17,926 - INFO: New Document End
+2023-08-14 20:47:17,928 - INFO: -- NewConmand --
+2023-08-14 20:47:17,930 - INFO: -- Add New Shape --
+2023-08-14 20:47:17,932 - INFO: Entry:0:1:1, init start
+2023-08-14 20:47:17,934 - INFO: BaseInit 0:1:1 Box
+2023-08-14 20:47:17,951 - INFO: Entry:0:1:1:18, init start
+2023-08-14 20:47:17,953 - INFO: BaseInit 0:1:1:18 Transform
+2023-08-14 20:47:17,955 - INFO: Entry:0:1:1:18:18, init start
+2023-08-14 20:47:17,956 - INFO: BaseInit 0:1:1:18:18 real
+2023-08-14 20:47:17,958 - INFO: Init Label:0:1:1:18:18.value, None, 0
+2023-08-14 20:47:17,960 - INFO: Entry:0:1:1:18:18, init end
+2023-08-14 20:47:17,962 - INFO: Entry:0:1:1:18:19, init start
+2023-08-14 20:47:17,963 - INFO: BaseInit 0:1:1:18:19 Point
+2023-08-14 20:47:17,965 - INFO: Entry:0:1:1:18:19:18, init start
+2023-08-14 20:47:17,966 - INFO: BaseInit 0:1:1:18:19:18 real
+2023-08-14 20:47:17,968 - INFO: Init Label:0:1:1:18:19:18.value, None, 0
+2023-08-14 20:47:17,970 - INFO: Entry:0:1:1:18:19:18, init end
+2023-08-14 20:47:17,971 - INFO: Entry:0:1:1:18:19:19, init start
+2023-08-14 20:47:17,973 - INFO: BaseInit 0:1:1:18:19:19 real
+2023-08-14 20:47:17,974 - INFO: Init Label:0:1:1:18:19:19.value, None, 0
+2023-08-14 20:47:17,976 - INFO: Entry:0:1:1:18:19:19, init end
+2023-08-14 20:47:17,977 - INFO: Entry:0:1:1:18:19:20, init start
+2023-08-14 20:47:17,979 - INFO: BaseInit 0:1:1:18:19:20 real
+2023-08-14 20:47:17,980 - INFO: Init Label:0:1:1:18:19:20.value, None, 0
+2023-08-14 20:47:17,982 - INFO: Entry:0:1:1:18:19:20, init end
+2023-08-14 20:47:18,020 - INFO: Entry:0:1:1:18:19, init end
+2023-08-14 20:47:18,022 - INFO: Entry:0:1:1:18:20, init start
+2023-08-14 20:47:18,023 - INFO: BaseInit 0:1:1:18:20 Point
+2023-08-14 20:47:18,025 - INFO: Entry:0:1:1:18:20:18, init start
+2023-08-14 20:47:18,027 - INFO: BaseInit 0:1:1:18:20:18 real
+2023-08-14 20:47:18,028 - INFO: Init Label:0:1:1:18:20:18.value, None, 0
+2023-08-14 20:47:18,030 - INFO: Entry:0:1:1:18:20:18, init end
+2023-08-14 20:47:18,031 - INFO: Entry:0:1:1:18:20:19, init start
+2023-08-14 20:47:18,033 - INFO: BaseInit 0:1:1:18:20:19 real
+2023-08-14 20:47:18,035 - INFO: Init Label:0:1:1:18:20:19.value, None, 0
+2023-08-14 20:47:18,036 - INFO: Entry:0:1:1:18:20:19, init end
+2023-08-14 20:47:18,038 - INFO: Entry:0:1:1:18:20:20, init start
+2023-08-14 20:47:18,039 - INFO: BaseInit 0:1:1:18:20:20 real
+2023-08-14 20:47:18,041 - INFO: Init Label:0:1:1:18:20:20.value, None, 0
+2023-08-14 20:47:18,042 - INFO: Entry:0:1:1:18:20:20, init end
+2023-08-14 20:47:18,044 - INFO: Entry:0:1:1:18:20, init end
+2023-08-14 20:47:18,074 - INFO: Entry:0:1:1:18, init end
+2023-08-14 20:47:18,076 - INFO: Entry:0:1:1:19, init start
+2023-08-14 20:47:18,078 - INFO: BaseInit 0:1:1:19 real
+2023-08-14 20:47:18,079 - INFO: Init Label:0:1:1:19.value, None, 0
+2023-08-14 20:47:18,081 - INFO: Entry:0:1:1:19, init end
+2023-08-14 20:47:18,083 - INFO: Entry:0:1:1:20, init start
+2023-08-14 20:47:18,085 - INFO: BaseInit 0:1:1:20 real
+2023-08-14 20:47:18,086 - INFO: Init Label:0:1:1:20.value, None, 0
+2023-08-14 20:47:18,088 - INFO: Entry:0:1:1:20, init end
+2023-08-14 20:47:18,090 - INFO: Entry:0:1:1:21, init start
+2023-08-14 20:47:18,091 - INFO: BaseInit 0:1:1:21 real
+2023-08-14 20:47:18,093 - INFO: Init Label:0:1:1:21.value, None, 0
+2023-08-14 20:47:18,094 - INFO: Entry:0:1:1:21, init end
+2023-08-14 20:47:18,142 - INFO: -- commit command --
+2023-08-14 20:47:18,146 - INFO: New Data Label 22d22e50-abca-11d4-8f1a-0060b0ee18e8 end
+2023-08-14 20:47:19,591 - INFO: Selected Item:New Box
+2023-08-14 20:47:19,601 - INFO: Process Show Label Start
+2023-08-14 20:47:19,650 - INFO: Process Show Label End
+2023-08-14 20:47:23,620 - INFO: Process Change Label Start
+2023-08-14 20:47:23,622 - INFO: Start Change: 0:1:1:18:19:18(real), 0.0
+2023-08-14 20:47:23,624 - INFO: -- NewConmand --
+2023-08-14 20:47:23,643 - INFO: -- commit command --
+2023-08-14 20:47:23,644 - INFO: Update Label:Box, 22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:47:23,646 - INFO: End Change: 0:1:1:18:19:18, 0.0
+2023-08-14 20:47:23,648 - INFO: Process Change Label End
+2023-08-14 20:47:24,414 - INFO: Process Change Label Start
+2023-08-14 20:47:24,416 - INFO: Start Change: 0:1:1:19(real), 5
+2023-08-14 20:47:24,417 - INFO: -- NewConmand --
+2023-08-14 20:47:24,420 - INFO: -- commit command --
+2023-08-14 20:47:24,423 - INFO: Update Label:Box, 22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:47:24,423 - INFO: End Change: 0:1:1:19, 5
+2023-08-14 20:47:24,426 - INFO: Process Change Label End
+2023-08-14 20:47:25,253 - INFO: Process Change Label Start
+2023-08-14 20:47:25,255 - INFO: Start Change: 0:1:1:20(real), 6
+2023-08-14 20:47:25,256 - INFO: -- NewConmand --
+2023-08-14 20:47:25,259 - INFO: -- commit command --
+2023-08-14 20:47:25,262 - INFO: Update Label:Box, 22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:47:25,263 - INFO: End Change: 0:1:1:20, 6
+2023-08-14 20:47:25,265 - INFO: Process Change Label End
+2023-08-14 20:47:26,397 - INFO: Process Change Label Start
+2023-08-14 20:47:26,399 - INFO: Start Change: 0:1:1:21(real), 7
+2023-08-14 20:47:26,401 - INFO: -- NewConmand --
+2023-08-14 20:47:26,448 - INFO: -- commit command --
+2023-08-14 20:47:26,781 - INFO: Update Label:Box, 22d22e50-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:47:26,783 - INFO: Start Disp 2d
+2023-08-14 20:47:26,784 - INFO: End Disp 2d
+2023-08-14 20:47:26,786 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:47:26,815 - INFO: End Change: 0:1:1:21, 7
+2023-08-14 20:47:26,816 - INFO: Process Change Label End
+2023-08-14 20:47:33,913 - INFO: New Data Label a6b5f8bd-0424-52f5-b5e1-c2204252f688
+2023-08-14 20:47:33,915 - INFO: -- NewConmand --
+2023-08-14 20:47:33,916 - INFO: -- Add New Shape --
+2023-08-14 20:47:33,918 - INFO: Entry:0:1:2, init start
+2023-08-14 20:47:33,919 - INFO: BaseInit 0:1:2 FilletAll
+2023-08-14 20:47:33,921 - INFO: Entry:0:1:2:18, init start
+2023-08-14 20:47:33,923 - INFO: BaseInit 0:1:2:18 ShapeRef
+2023-08-14 20:47:33,927 - INFO: Entry:0:1:2:19, init start
+2023-08-14 20:47:33,929 - INFO: BaseInit 0:1:2:19 real
+2023-08-14 20:47:33,931 - INFO: Init Label:0:1:2:19.value, None, 0
+2023-08-14 20:47:33,932 - INFO: Entry:0:1:2:19, init end
+2023-08-14 20:47:33,935 - INFO: -- commit command --
+2023-08-14 20:47:33,937 - INFO: New Data Label a6b5f8bd-0424-52f5-b5e1-c2204252f688 end
+2023-08-14 20:47:34,941 - INFO: Selected Item:New FilletAll
+2023-08-14 20:47:34,943 - INFO: Process Show Label Start
+2023-08-14 20:47:35,054 - INFO: Process Show Label End
+2023-08-14 20:47:38,532 - INFO: Process Change Label Start
+2023-08-14 20:47:38,534 - INFO: Start Change: 0:1:2:18(ShapeRef), Null
+2023-08-14 20:47:38,535 - INFO: -- NewConmand --
+2023-08-14 20:47:39,519 - INFO: -- commit command --
+2023-08-14 20:47:39,527 - INFO: Update Label:FilletAll, a6b5f8bd-0424-52f5-b5e1-c2204252f688
+2023-08-14 20:47:39,529 - INFO: End Change: 0:1:2:18, Null
+2023-08-14 20:47:39,530 - INFO: Process Change Label End
+2023-08-14 20:47:53,701 - INFO: Process Change Label Start
+2023-08-14 20:47:53,703 - INFO: Start Change: 0:1:2:18(ShapeRef), 0:1:1
+2023-08-14 20:47:53,705 - INFO: -- NewConmand --
+2023-08-14 20:47:53,706 - INFO: 0:1:2:18 ref 0:1:1 
+2023-08-14 20:47:53,993 - INFO: -- commit command --
+2023-08-14 20:47:54,020 - INFO: Update Label:FilletAll, a6b5f8bd-0424-52f5-b5e1-c2204252f688
+2023-08-14 20:47:54,022 - INFO: End Change: 0:1:2:18, 0:1:1
+2023-08-14 20:47:54,023 - INFO: Process Change Label End
+2023-08-14 20:47:55,166 - INFO: Process Change Label Start
+2023-08-14 20:47:55,168 - INFO: Start Change: 0:1:2:18(ShapeRef), 0:1:1
+2023-08-14 20:47:55,169 - INFO: -- NewConmand --
+2023-08-14 20:47:55,171 - INFO: 0:1:2:18 ref 0:1:1 
+2023-08-14 20:47:55,183 - INFO: -- commit command --
+2023-08-14 20:47:55,185 - INFO: Update Label:FilletAll, a6b5f8bd-0424-52f5-b5e1-c2204252f688
+2023-08-14 20:47:55,187 - INFO: End Change: 0:1:2:18, 0:1:1
+2023-08-14 20:47:55,189 - INFO: Process Change Label End
+2023-08-14 20:48:00,398 - INFO: Process Change Label Start
+2023-08-14 20:48:00,400 - INFO: Start Change: 0:1:2:19(real), 0.2
+2023-08-14 20:48:00,402 - INFO: -- NewConmand --
+2023-08-14 20:48:00,673 - INFO: -- commit command --
+2023-08-14 20:48:00,716 - INFO: Update Label:FilletAll, a6b5f8bd-0424-52f5-b5e1-c2204252f688
+2023-08-14 20:48:00,718 - INFO: Start Disp 2d
+2023-08-14 20:48:00,719 - INFO: End Disp 2d
+2023-08-14 20:48:00,721 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:48:00,749 - INFO: End Change: 0:1:2:19, 0.2
+2023-08-14 20:48:00,751 - INFO: Process Change Label End
+2023-08-14 20:48:04,405 - INFO: Selected Item:New Box
+2023-08-14 20:48:04,407 - INFO: Process Show Label Start
+2023-08-14 20:48:04,435 - INFO: Process Show Label End
+2023-08-14 20:48:06,698 - INFO: Selected Item:New FilletAll
+2023-08-14 20:48:06,700 - INFO: Process Show Label Start
+2023-08-14 20:48:06,733 - INFO: Process Show Label End
+2023-08-14 20:48:10,580 - INFO: Process Change Label Start
+2023-08-14 20:48:10,583 - INFO: Start Change: 0:1:1:20(real), 3
+2023-08-14 20:48:10,584 - INFO: -- NewConmand --
+2023-08-14 20:48:10,609 - INFO: -- commit command --
+2023-08-14 20:48:10,645 - INFO: Update Label:FilletAll, a6b5f8bd-0424-52f5-b5e1-c2204252f688
+2023-08-14 20:48:10,647 - INFO: Start Disp 2d
+2023-08-14 20:48:10,648 - INFO: End Disp 2d
+2023-08-14 20:48:10,650 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:48:10,679 - INFO: End Change: 0:1:1:20, 3
+2023-08-14 20:48:10,680 - INFO: Process Change Label End
+2023-08-14 20:48:17,403 - INFO: New Data Label 4949cc5d-4f36-5965-9e94-687b4d29fb9f
+2023-08-14 20:48:17,405 - INFO: -- NewConmand --
+2023-08-14 20:48:17,406 - INFO: -- Add New Shape --
+2023-08-14 20:48:17,408 - INFO: Entry:0:1:3, init start
+2023-08-14 20:48:17,410 - INFO: BaseInit 0:1:3 RefSub
+2023-08-14 20:48:17,411 - INFO: Entry:0:1:3:18, init start
+2023-08-14 20:48:17,413 - INFO: BaseInit 0:1:3:18 ShapeRef
+2023-08-14 20:48:17,414 - INFO: Entry:0:1:3:18, init end
+2023-08-14 20:48:17,416 - INFO: Entry:0:1:3:19, init start
+2023-08-14 20:48:17,417 - INFO: BaseInit 0:1:3:19 Int
+2023-08-14 20:48:17,419 - INFO: Init Label:0:1:3:19.value, None, 4
+2023-08-14 20:48:17,421 - INFO: Entry:0:1:3:19, init end
+2023-08-14 20:48:17,423 - INFO: Entry:0:1:3:20, init start
+2023-08-14 20:48:17,424 - INFO: BaseInit 0:1:3:20 Int
+2023-08-14 20:48:17,426 - INFO: Init Label:0:1:3:20.value, None, 11
+2023-08-14 20:48:17,427 - INFO: Entry:0:1:3:20, init end
+2023-08-14 20:48:17,429 - INFO: Entry:0:1:3, init end
+2023-08-14 20:48:17,431 - INFO: -- commit command --
+2023-08-14 20:48:17,433 - INFO: New Data Label 4949cc5d-4f36-5965-9e94-687b4d29fb9f end
+2023-08-14 20:48:18,810 - INFO: Selected Item:New RefSub
+2023-08-14 20:48:18,812 - INFO: Process Show Label Start
+2023-08-14 20:48:18,931 - INFO: Process Show Label End
+2023-08-14 20:48:23,912 - INFO: change to opertor to line
+2023-08-14 20:48:30,305 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-08-14 20:48:30,306 - INFO: -- NewConmand --
+2023-08-14 20:48:30,308 - INFO: -- Add New Shape --
+2023-08-14 20:48:30,309 - INFO: Entry:0:1:4, init start
+2023-08-14 20:48:30,311 - INFO: BaseInit 0:1:4 Seg2d
+2023-08-14 20:48:30,313 - INFO: Entry:0:1:4:18, init start
+2023-08-14 20:48:30,314 - INFO: BaseInit 0:1:4:18 pnt2d
+2023-08-14 20:48:30,317 - INFO: Entry:0:1:4:18:18, init start
+2023-08-14 20:48:30,320 - INFO: BaseInit 0:1:4:18:18 real
+2023-08-14 20:48:30,322 - INFO: Init Label:0:1:4:18:18.value, None, -7.975941422594141
+2023-08-14 20:48:30,324 - INFO: Entry:0:1:4:18:18, init end
+2023-08-14 20:48:30,325 - INFO: Entry:0:1:4:18:19, init start
+2023-08-14 20:48:30,327 - INFO: BaseInit 0:1:4:18:19 real
+2023-08-14 20:48:30,328 - INFO: Init Label:0:1:4:18:19.value, None, 7.256799163179915
+2023-08-14 20:48:30,330 - INFO: Entry:0:1:4:18:19, init end
+2023-08-14 20:48:30,332 - INFO: Entry:0:1:4:18, init end
+2023-08-14 20:48:30,333 - INFO: Entry:0:1:4:19, init start
+2023-08-14 20:48:30,335 - INFO: BaseInit 0:1:4:19 pnt2d
+2023-08-14 20:48:30,336 - INFO: Entry:0:1:4:19:18, init start
+2023-08-14 20:48:30,338 - INFO: BaseInit 0:1:4:19:18 real
+2023-08-14 20:48:30,339 - INFO: Init Label:0:1:4:19:18.value, None, -0.06537656903765493
+2023-08-14 20:48:30,341 - INFO: Entry:0:1:4:19:18, init end
+2023-08-14 20:48:30,343 - INFO: Entry:0:1:4:19:19, init start
+2023-08-14 20:48:30,344 - INFO: BaseInit 0:1:4:19:19 real
+2023-08-14 20:48:30,346 - INFO: Init Label:0:1:4:19:19.value, None, -7.6490585774058575
+2023-08-14 20:48:30,348 - INFO: Entry:0:1:4:19:19, init end
+2023-08-14 20:48:30,349 - INFO: Entry:0:1:4:19, init end
+2023-08-14 20:48:30,352 - INFO: Entry:0:1:4, init end
+2023-08-14 20:48:30,354 - INFO: -- commit command --
+2023-08-14 20:48:30,356 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-08-14 20:48:36,306 - INFO: key: code 16777248 not mapped to any function
+2023-08-14 20:48:42,299 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312
+2023-08-14 20:48:42,300 - INFO: -- NewConmand --
+2023-08-14 20:48:42,302 - INFO: -- Add New Shape --
+2023-08-14 20:48:42,303 - INFO: Entry:0:1:5, init start
+2023-08-14 20:48:42,305 - INFO: BaseInit 0:1:5 Seg2d
+2023-08-14 20:48:42,307 - INFO: Entry:0:1:5:18, init start
+2023-08-14 20:48:42,308 - INFO: BaseInit 0:1:5:18 pnt2d
+2023-08-14 20:48:42,310 - INFO: Entry:0:1:5:18:18, init start
+2023-08-14 20:48:42,312 - INFO: BaseInit 0:1:5:18:18 real
+2023-08-14 20:48:42,314 - INFO: Init Label:0:1:5:18:18.value, None, -3.4322698744769866
+2023-08-14 20:48:42,315 - INFO: Entry:0:1:5:18:18, init end
+2023-08-14 20:48:42,317 - INFO: Entry:0:1:5:18:19, init start
+2023-08-14 20:48:42,318 - INFO: BaseInit 0:1:5:18:19 real
+2023-08-14 20:48:42,320 - INFO: Init Label:0:1:5:18:19.value, None, -1.372907949790795
+2023-08-14 20:48:42,322 - INFO: Entry:0:1:5:18:19, init end
+2023-08-14 20:48:42,323 - INFO: Entry:0:1:5:18, init end
+2023-08-14 20:48:42,325 - INFO: Entry:0:1:5:19, init start
+2023-08-14 20:48:42,327 - INFO: BaseInit 0:1:5:19 pnt2d
+2023-08-14 20:48:42,328 - INFO: Entry:0:1:5:19:18, init start
+2023-08-14 20:48:42,330 - INFO: BaseInit 0:1:5:19:18 real
+2023-08-14 20:48:42,331 - INFO: Init Label:0:1:5:19:18.value, None, 10.13336820083682
+2023-08-14 20:48:42,333 - INFO: Entry:0:1:5:19:18, init end
+2023-08-14 20:48:42,335 - INFO: Entry:0:1:5:19:19, init start
+2023-08-14 20:48:42,336 - INFO: BaseInit 0:1:5:19:19 real
+2023-08-14 20:48:42,338 - INFO: Init Label:0:1:5:19:19.value, None, 1.3729079497907941
+2023-08-14 20:48:42,339 - INFO: Entry:0:1:5:19:19, init end
+2023-08-14 20:48:42,341 - INFO: Entry:0:1:5:19, init end
+2023-08-14 20:48:42,344 - INFO: Entry:0:1:5, init end
+2023-08-14 20:48:42,346 - INFO: -- commit command --
+2023-08-14 20:48:42,348 - INFO: New Data Label 2c63738d-f47a-5147-878c-3af8e2429312 end
+2023-08-14 20:49:14,408 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:49:14,410 - INFO: -- NewConmand --
+2023-08-14 20:49:14,412 - INFO: -- Add New Shape --
+2023-08-14 20:49:14,414 - INFO: Entry:0:1:6, init start
+2023-08-14 20:49:14,416 - INFO: BaseInit 0:1:6 Ellipse2d
+2023-08-14 20:49:14,418 - INFO: Entry:0:1:6:18, init start
+2023-08-14 20:49:14,419 - INFO: BaseInit 0:1:6:18 Ax2d
+2023-08-14 20:49:14,421 - INFO: Entry:0:1:6:18:18, init start
+2023-08-14 20:49:14,423 - INFO: BaseInit 0:1:6:18:18 pnt2d
+2023-08-14 20:49:14,424 - INFO: Entry:0:1:6:18:18:18, init start
+2023-08-14 20:49:14,426 - INFO: BaseInit 0:1:6:18:18:18 real
+2023-08-14 20:49:14,426 - INFO: Init Label:0:1:6:18:18:18.value, None, 0
+2023-08-14 20:49:14,429 - INFO: Entry:0:1:6:18:18:18, init end
+2023-08-14 20:49:14,431 - INFO: Entry:0:1:6:18:18:19, init start
+2023-08-14 20:49:14,431 - INFO: BaseInit 0:1:6:18:18:19 real
+2023-08-14 20:49:14,434 - INFO: Init Label:0:1:6:18:18:19.value, None, 0
+2023-08-14 20:49:14,436 - INFO: Entry:0:1:6:18:18:19, init end
+2023-08-14 20:49:14,436 - INFO: Entry:0:1:6:18:18, init end
+2023-08-14 20:49:14,438 - INFO: Entry:0:1:6:18:19, init start
+2023-08-14 20:49:14,440 - INFO: BaseInit 0:1:6:18:19 pnt2d
+2023-08-14 20:49:14,441 - INFO: Entry:0:1:6:18:19:18, init start
+2023-08-14 20:49:14,443 - INFO: BaseInit 0:1:6:18:19:18 real
+2023-08-14 20:49:14,445 - INFO: Init Label:0:1:6:18:19:18.value, None, 0
+2023-08-14 20:49:14,446 - INFO: Entry:0:1:6:18:19:18, init end
+2023-08-14 20:49:14,448 - INFO: Entry:0:1:6:18:19:19, init start
+2023-08-14 20:49:14,450 - INFO: BaseInit 0:1:6:18:19:19 real
+2023-08-14 20:49:14,451 - INFO: Init Label:0:1:6:18:19:19.value, None, 0
+2023-08-14 20:49:14,453 - INFO: Entry:0:1:6:18:19:19, init end
+2023-08-14 20:49:14,454 - INFO: Entry:0:1:6:18:19, init end
+2023-08-14 20:49:14,555 - INFO: Entry:0:1:6:19, init start
+2023-08-14 20:49:14,556 - INFO: BaseInit 0:1:6:19 real
+2023-08-14 20:49:14,558 - INFO: Init Label:0:1:6:19.value, None, 0
+2023-08-14 20:49:14,559 - INFO: Entry:0:1:6:19, init end
+2023-08-14 20:49:14,561 - INFO: Entry:0:1:6:20, init start
+2023-08-14 20:49:14,562 - INFO: BaseInit 0:1:6:20 real
+2023-08-14 20:49:14,564 - INFO: Init Label:0:1:6:20.value, None, 0
+2023-08-14 20:49:14,566 - INFO: Entry:0:1:6:20, init end
+2023-08-14 20:49:14,569 - INFO: -- commit command --
+2023-08-14 20:49:14,572 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8 end
+2023-08-14 20:49:15,795 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:49:15,797 - INFO: Process Show Label Start
+2023-08-14 20:49:15,815 - INFO: Process Show Label End
+2023-08-14 20:49:19,765 - INFO: Process Change Label Start
+2023-08-14 20:49:19,767 - INFO: Start Change: 0:1:6:19(real), 3
+2023-08-14 20:49:19,769 - INFO: -- NewConmand --
+2023-08-14 20:49:19,771 - INFO: -- commit command --
+2023-08-14 20:49:19,773 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:49:19,775 - INFO: End Change: 0:1:6:19, 3
+2023-08-14 20:49:19,776 - INFO: Process Change Label End
+2023-08-14 20:49:20,822 - INFO: Process Change Label Start
+2023-08-14 20:49:20,824 - INFO: Start Change: 0:1:6:20(real), 2
+2023-08-14 20:49:20,825 - INFO: -- NewConmand --
+2023-08-14 20:49:20,827 - INFO: -- commit command --
+2023-08-14 20:49:20,830 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:49:20,832 - INFO: End Change: 0:1:6:20, 2
+2023-08-14 20:49:20,833 - INFO: Process Change Label End
+2023-08-14 20:49:30,974 - INFO: Process Change Label Start
+2023-08-14 20:49:30,976 - INFO: Start Change: 0:1:6:18:19:18(real), 1
+2023-08-14 20:49:30,977 - INFO: -- NewConmand --
+2023-08-14 20:49:30,981 - INFO: -- commit command --
+2023-08-14 20:49:30,992 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:49:30,996 - INFO: Start Disp 2d
+2023-08-14 20:49:30,998 - INFO: End Disp 2d
+2023-08-14 20:49:30,998 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:49:31,026 - INFO: End Change: 0:1:6:18:19:18, 1
+2023-08-14 20:49:31,027 - INFO: Process Change Label End
+2023-08-14 20:49:33,867 - INFO: Selected Item:New Seg2d
+2023-08-14 20:49:33,869 - INFO: Process Show Label Start
+2023-08-14 20:49:33,873 - INFO: Process Change Label Start
+2023-08-14 20:49:33,875 - INFO: Start Change: 0:1:6:18:19:19(real), 0.0
+2023-08-14 20:49:33,876 - INFO: -- NewConmand --
+2023-08-14 20:49:33,879 - INFO: -- commit command --
+2023-08-14 20:49:33,891 - INFO: Update Label:Seg2d, 2c63738d-f47a-5147-878c-3af8e2429312
+2023-08-14 20:52:09,336 - INFO: Application Start
+2023-08-14 20:52:09,671 - INFO: change to opertor to viewer
+2023-08-14 20:52:24,530 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:52:24,531 - INFO: New Document
+2023-08-14 20:52:24,535 - INFO: New Document End
+2023-08-14 20:52:24,536 - INFO: -- NewConmand --
+2023-08-14 20:52:24,538 - INFO: -- Add New Shape --
+2023-08-14 20:52:24,540 - INFO: Entry:0:1:1, init start
+2023-08-14 20:52:24,541 - INFO: BaseInit 0:1:1 Ellipse2d
+2023-08-14 20:52:24,543 - INFO: Entry:0:1:1:18, init start
+2023-08-14 20:52:24,545 - INFO: BaseInit 0:1:1:18 Ax2d
+2023-08-14 20:52:24,546 - INFO: Entry:0:1:1:18:18, init start
+2023-08-14 20:52:24,548 - INFO: BaseInit 0:1:1:18:18 pnt2d
+2023-08-14 20:52:24,550 - INFO: Entry:0:1:1:18:18:18, init start
+2023-08-14 20:52:24,551 - INFO: BaseInit 0:1:1:18:18:18 real
+2023-08-14 20:52:24,553 - INFO: Init Label:0:1:1:18:18:18.value, None, 0
+2023-08-14 20:52:24,554 - INFO: Entry:0:1:1:18:18:18, init end
+2023-08-14 20:52:24,556 - INFO: Entry:0:1:1:18:18:19, init start
+2023-08-14 20:52:24,558 - INFO: BaseInit 0:1:1:18:18:19 real
+2023-08-14 20:52:24,559 - INFO: Init Label:0:1:1:18:18:19.value, None, 0
+2023-08-14 20:52:24,561 - INFO: Entry:0:1:1:18:18:19, init end
+2023-08-14 20:52:24,563 - INFO: Entry:0:1:1:18:18, init end
+2023-08-14 20:52:24,565 - INFO: Entry:0:1:1:18:19, init start
+2023-08-14 20:52:24,566 - INFO: BaseInit 0:1:1:18:19 pnt2d
+2023-08-14 20:52:24,568 - INFO: Entry:0:1:1:18:19:18, init start
+2023-08-14 20:52:24,569 - INFO: BaseInit 0:1:1:18:19:18 real
+2023-08-14 20:52:24,571 - INFO: Init Label:0:1:1:18:19:18.value, None, 0
+2023-08-14 20:52:24,573 - INFO: Entry:0:1:1:18:19:18, init end
+2023-08-14 20:52:24,574 - INFO: Entry:0:1:1:18:19:19, init start
+2023-08-14 20:52:24,576 - INFO: BaseInit 0:1:1:18:19:19 real
+2023-08-14 20:52:24,577 - INFO: Init Label:0:1:1:18:19:19.value, None, 0
+2023-08-14 20:52:24,579 - INFO: Entry:0:1:1:18:19:19, init end
+2023-08-14 20:52:24,581 - INFO: Entry:0:1:1:18:19, init end
+2023-08-14 20:52:24,585 - INFO: Entry:0:1:1:19, init start
+2023-08-14 20:52:24,586 - INFO: BaseInit 0:1:1:19 real
+2023-08-14 20:52:24,588 - INFO: Init Label:0:1:1:19.value, None, 0
+2023-08-14 20:52:24,590 - INFO: Entry:0:1:1:19, init end
+2023-08-14 20:52:24,591 - INFO: Entry:0:1:1:20, init start
+2023-08-14 20:52:24,593 - INFO: BaseInit 0:1:1:20 real
+2023-08-14 20:52:24,595 - INFO: Init Label:0:1:1:20.value, None, 0
+2023-08-14 20:52:24,596 - INFO: Entry:0:1:1:20, init end
+2023-08-14 20:52:24,600 - INFO: -- commit command --
+2023-08-14 20:52:24,603 - INFO: New Data Label 22d22e78-abca-11d4-8f1a-0060b0ee18e8 end
+2023-08-14 20:52:27,163 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:52:27,165 - INFO: Process Show Label Start
+2023-08-14 20:52:27,181 - INFO: Process Show Label End
+2023-08-14 20:52:29,260 - INFO: Process Change Label Start
+2023-08-14 20:52:29,262 - INFO: Start Change: 0:1:1:19(real), 3
+2023-08-14 20:52:29,263 - INFO: -- NewConmand --
+2023-08-14 20:52:29,265 - INFO: -- commit command --
+2023-08-14 20:52:29,268 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:52:29,270 - INFO: End Change: 0:1:1:19, 3
+2023-08-14 20:52:29,272 - INFO: Process Change Label End
+2023-08-14 20:52:30,646 - INFO: Process Change Label Start
+2023-08-14 20:52:30,648 - INFO: Start Change: 0:1:1:20(real), 2
+2023-08-14 20:52:30,650 - INFO: -- NewConmand --
+2023-08-14 20:52:30,652 - INFO: -- commit command --
+2023-08-14 20:52:30,654 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:52:30,656 - INFO: End Change: 0:1:1:20, 2
+2023-08-14 20:52:30,657 - INFO: Process Change Label End
+2023-08-14 20:52:31,509 - INFO: Process Change Label Start
+2023-08-14 20:52:31,511 - INFO: Start Change: 0:1:1:18:19:18(real), 1
+2023-08-14 20:52:31,513 - INFO: -- NewConmand --
+2023-08-14 20:52:31,516 - INFO: -- commit command --
+2023-08-14 20:52:31,529 - INFO: Update Label:Ellipse2d, 22d22e78-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:52:31,532 - INFO: Start Disp 2d
+2023-08-14 20:52:31,534 - INFO: End Disp 2d
+2023-08-14 20:52:31,536 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:52:31,561 - INFO: End Change: 0:1:1:18:19:18, 1
+2023-08-14 20:52:31,563 - INFO: Process Change Label End
+2023-08-14 20:52:32,510 - INFO: Process Show Point Start
+2023-08-14 20:52:32,514 - INFO: Process Show Point End
+2023-08-14 20:52:33,117 - INFO: Process Show Point Start
+2023-08-14 20:52:33,120 - INFO: Process Show Point End
+2023-08-14 20:52:34,565 - INFO: Process Show Point Start
+2023-08-14 20:52:34,567 - INFO: Process Show Point End
+2023-08-14 20:52:41,917 - INFO: New Data Label d747d16f-c0ed-5fdb-994f-08948183fbb1
+2023-08-14 20:52:41,919 - INFO: -- NewConmand --
+2023-08-14 20:52:41,921 - INFO: -- Add New Shape --
+2023-08-14 20:52:41,923 - INFO: Entry:0:1:2, init start
+2023-08-14 20:52:41,925 - INFO: BaseInit 0:1:2 Face
+2023-08-14 20:52:41,926 - INFO: Entry:0:1:2:18, init start
+2023-08-14 20:52:41,928 - INFO: BaseInit 0:1:2:18 ShapeRef
+2023-08-14 20:52:41,933 - INFO: -- commit command --
+2023-08-14 20:52:41,935 - INFO: New Data Label d747d16f-c0ed-5fdb-994f-08948183fbb1 end
+2023-08-14 20:52:42,907 - INFO: Selected Item:New Face
+2023-08-14 20:52:42,909 - INFO: Process Show Label Start
+2023-08-14 20:52:42,926 - INFO: Process Show Label End
+2023-08-14 20:52:43,507 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:52:43,509 - INFO: Process Show Label Start
+2023-08-14 20:52:43,553 - INFO: Process Show Label End
+2023-08-14 20:52:47,834 - INFO: Selected Item:New Face
+2023-08-14 20:52:47,836 - INFO: Process Show Label Start
+2023-08-14 20:52:47,851 - INFO: Process Show Label End
+2023-08-14 20:52:56,261 - INFO: Process Change Label Start
+2023-08-14 20:52:56,263 - INFO: Start Change: 0:1:2:18(ShapeRef), 0:1:1
+2023-08-14 20:52:56,265 - INFO: -- NewConmand --
+2023-08-14 20:52:56,267 - INFO: 0:1:2:18 ref 0:1:1 
+2023-08-14 20:52:56,271 - INFO: -- commit command --
+2023-08-14 20:52:56,316 - INFO: Update Label:Face, d747d16f-c0ed-5fdb-994f-08948183fbb1
+2023-08-14 20:52:56,318 - INFO: Start Disp 2d
+2023-08-14 20:52:56,320 - INFO: End Disp 2d
+2023-08-14 20:52:56,321 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:52:56,349 - INFO: End Change: 0:1:2:18, 0:1:1
+2023-08-14 20:52:56,351 - INFO: Process Change Label End
+2023-08-14 20:52:59,059 - INFO: Selected Item:New Face
+2023-08-14 20:52:59,061 - INFO: Process Show Label Start
+2023-08-14 20:52:59,084 - INFO: Process Show Label End
+2023-08-14 20:53:11,609 - INFO: New Data Label 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:53:11,611 - INFO: -- NewConmand --
+2023-08-14 20:53:11,613 - INFO: -- Add New Shape --
+2023-08-14 20:53:11,614 - INFO: Entry:0:1:3, init start
+2023-08-14 20:53:11,616 - INFO: BaseInit 0:1:3 Pipe
+2023-08-14 20:53:11,618 - INFO: Entry:0:1:3:18, init start
+2023-08-14 20:53:11,619 - INFO: BaseInit 0:1:3:18 ShapeRef
+2023-08-14 20:53:11,623 - INFO: Entry:0:1:3:19, init start
+2023-08-14 20:53:11,625 - INFO: BaseInit 0:1:3:19 ShapeRef
+2023-08-14 20:53:11,630 - INFO: -- commit command --
+2023-08-14 20:53:11,632 - INFO: New Data Label 12354e24-af19-5492-ac30-fb0a1abf2363 end
+2023-08-14 20:53:12,490 - INFO: Selected Item:New Pipe
+2023-08-14 20:53:12,492 - INFO: Process Show Label Start
+2023-08-14 20:53:12,510 - INFO: Process Show Label End
+2023-08-14 20:53:13,907 - INFO: Selected Item:New Face
+2023-08-14 20:53:13,909 - INFO: Process Show Label Start
+2023-08-14 20:53:13,929 - INFO: Process Show Label End
+2023-08-14 20:53:14,746 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:53:14,748 - INFO: Process Show Label Start
+2023-08-14 20:53:14,764 - INFO: Process Show Label End
+2023-08-14 20:53:15,450 - INFO: Selected Item:New Face
+2023-08-14 20:53:15,452 - INFO: Process Show Label Start
+2023-08-14 20:53:15,478 - INFO: Process Show Label End
+2023-08-14 20:53:16,099 - INFO: Selected Item:New Pipe
+2023-08-14 20:53:16,101 - INFO: Process Show Label Start
+2023-08-14 20:53:16,118 - INFO: Process Show Label End
+2023-08-14 20:53:16,707 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:53:16,709 - INFO: Process Show Label Start
+2023-08-14 20:53:16,725 - INFO: Process Show Label End
+2023-08-14 20:53:17,458 - INFO: Selected Item:New Face
+2023-08-14 20:53:17,460 - INFO: Process Show Label Start
+2023-08-14 20:53:17,493 - INFO: Process Show Label End
+2023-08-14 20:53:32,157 - INFO: New Data Label 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:32,160 - INFO: -- NewConmand --
+2023-08-14 20:53:32,161 - INFO: -- Add New Shape --
+2023-08-14 20:53:32,163 - INFO: Entry:0:1:4, init start
+2023-08-14 20:53:32,165 - INFO: BaseInit 0:1:4 bspline
+2023-08-14 20:53:32,167 - INFO: Entry:0:1:4:18, init start
+2023-08-14 20:53:32,169 - INFO: BaseInit 0:1:4:18 PntArr
+2023-08-14 20:53:32,172 - INFO: Entry:0:1:4:18, init end
+2023-08-14 20:53:32,176 - INFO: -- commit command --
+2023-08-14 20:53:32,179 - INFO: New Data Label 22d22e61-abca-11d4-8f1a-0060b0ee18e8 end
+2023-08-14 20:53:33,515 - INFO: Selected Item:New bspline
+2023-08-14 20:53:33,517 - INFO: Process Show Label Start
+2023-08-14 20:53:33,571 - INFO: Process Show Label End
+2023-08-14 20:53:36,842 - INFO: Process Change Label Start
+2023-08-14 20:53:36,844 - INFO: Start Change: 0:1:4:18(PntArr), 3
+2023-08-14 20:53:36,846 - INFO: -- NewConmand --
+2023-08-14 20:53:36,848 - INFO: Entry:0:1:4:18:125, init start
+2023-08-14 20:53:36,850 - INFO: BaseInit 0:1:4:18:125 Point
+2023-08-14 20:53:36,851 - INFO: Entry:0:1:4:18:125:18, init start
+2023-08-14 20:53:36,853 - INFO: BaseInit 0:1:4:18:125:18 real
+2023-08-14 20:53:36,854 - INFO: Init Label:0:1:4:18:125:18.value, None, 0
+2023-08-14 20:53:36,856 - INFO: Entry:0:1:4:18:125:18, init end
+2023-08-14 20:53:36,857 - INFO: Entry:0:1:4:18:125:19, init start
+2023-08-14 20:53:36,859 - INFO: BaseInit 0:1:4:18:125:19 real
+2023-08-14 20:53:36,861 - INFO: Init Label:0:1:4:18:125:19.value, None, 0
+2023-08-14 20:53:36,862 - INFO: Entry:0:1:4:18:125:19, init end
+2023-08-14 20:53:36,864 - INFO: Entry:0:1:4:18:125:20, init start
+2023-08-14 20:53:36,866 - INFO: BaseInit 0:1:4:18:125:20 real
+2023-08-14 20:53:36,867 - INFO: Init Label:0:1:4:18:125:20.value, None, 0
+2023-08-14 20:53:36,869 - INFO: Entry:0:1:4:18:125:20, init end
+2023-08-14 20:53:36,871 - INFO: Entry:0:1:4:18:125, init end
+2023-08-14 20:53:36,873 - INFO: Entry:0:1:4:18:126, init start
+2023-08-14 20:53:36,874 - INFO: BaseInit 0:1:4:18:126 Point
+2023-08-14 20:53:36,876 - INFO: Entry:0:1:4:18:126:18, init start
+2023-08-14 20:53:36,877 - INFO: BaseInit 0:1:4:18:126:18 real
+2023-08-14 20:53:36,879 - INFO: Init Label:0:1:4:18:126:18.value, None, 0
+2023-08-14 20:53:36,881 - INFO: Entry:0:1:4:18:126:18, init end
+2023-08-14 20:53:36,882 - INFO: Entry:0:1:4:18:126:19, init start
+2023-08-14 20:53:36,884 - INFO: BaseInit 0:1:4:18:126:19 real
+2023-08-14 20:53:36,885 - INFO: Init Label:0:1:4:18:126:19.value, None, 0
+2023-08-14 20:53:36,887 - INFO: Entry:0:1:4:18:126:19, init end
+2023-08-14 20:53:36,888 - INFO: Entry:0:1:4:18:126:20, init start
+2023-08-14 20:53:36,890 - INFO: BaseInit 0:1:4:18:126:20 real
+2023-08-14 20:53:36,892 - INFO: Init Label:0:1:4:18:126:20.value, None, 0
+2023-08-14 20:53:36,894 - INFO: Entry:0:1:4:18:126:20, init end
+2023-08-14 20:53:36,896 - INFO: Entry:0:1:4:18:126, init end
+2023-08-14 20:53:36,897 - INFO: Entry:0:1:4:18:127, init start
+2023-08-14 20:53:36,899 - INFO: BaseInit 0:1:4:18:127 Point
+2023-08-14 20:53:36,901 - INFO: Entry:0:1:4:18:127:18, init start
+2023-08-14 20:53:36,902 - INFO: BaseInit 0:1:4:18:127:18 real
+2023-08-14 20:53:36,904 - INFO: Init Label:0:1:4:18:127:18.value, None, 0
+2023-08-14 20:53:36,905 - INFO: Entry:0:1:4:18:127:18, init end
+2023-08-14 20:53:36,907 - INFO: Entry:0:1:4:18:127:19, init start
+2023-08-14 20:53:36,908 - INFO: BaseInit 0:1:4:18:127:19 real
+2023-08-14 20:53:36,910 - INFO: Init Label:0:1:4:18:127:19.value, None, 0
+2023-08-14 20:53:36,912 - INFO: Entry:0:1:4:18:127:19, init end
+2023-08-14 20:53:36,914 - INFO: Entry:0:1:4:18:127:20, init start
+2023-08-14 20:53:36,915 - INFO: BaseInit 0:1:4:18:127:20 real
+2023-08-14 20:53:36,917 - INFO: Init Label:0:1:4:18:127:20.value, None, 0
+2023-08-14 20:53:36,919 - INFO: Entry:0:1:4:18:127:20, init end
+2023-08-14 20:53:36,921 - INFO: Entry:0:1:4:18:127, init end
+2023-08-14 20:53:36,923 - INFO: -- commit command --
+2023-08-14 20:53:36,934 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:36,936 - INFO: End Change: 0:1:4:18, 3
+2023-08-14 20:53:36,938 - INFO: Process Change Label End
+2023-08-14 20:53:47,998 - INFO: Process Change Label Start
+2023-08-14 20:53:47,999 - INFO: Start Change: 0:1:4:18:125:18(real), 0
+2023-08-14 20:53:48,001 - INFO: -- NewConmand --
+2023-08-14 20:53:48,004 - INFO: -- commit command --
+2023-08-14 20:53:48,007 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:48,009 - INFO: End Change: 0:1:4:18:125:18, 0
+2023-08-14 20:53:48,010 - INFO: Process Change Label End
+2023-08-14 20:53:49,837 - INFO: Process Change Label Start
+2023-08-14 20:53:49,839 - INFO: Start Change: 0:1:4:18:126:18(real), 1
+2023-08-14 20:53:49,841 - INFO: -- NewConmand --
+2023-08-14 20:53:49,975 - INFO: -- commit command --
+2023-08-14 20:53:49,991 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:49,993 - INFO: Start Disp 2d
+2023-08-14 20:53:49,994 - INFO: End Disp 2d
+2023-08-14 20:53:49,996 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:53:50,025 - INFO: End Change: 0:1:4:18:126:18, 1
+2023-08-14 20:53:50,027 - INFO: Process Change Label End
+2023-08-14 20:53:50,837 - INFO: Process Change Label Start
+2023-08-14 20:53:50,839 - INFO: Start Change: 0:1:4:18:126:19(real), 1
+2023-08-14 20:53:50,841 - INFO: -- NewConmand --
+2023-08-14 20:53:50,844 - INFO: -- commit command --
+2023-08-14 20:53:50,858 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:50,859 - INFO: Start Disp 2d
+2023-08-14 20:53:50,861 - INFO: End Disp 2d
+2023-08-14 20:53:50,863 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:53:50,879 - INFO: End Change: 0:1:4:18:126:19, 1
+2023-08-14 20:53:50,880 - INFO: Process Change Label End
+2023-08-14 20:53:51,982 - INFO: Process Change Label Start
+2023-08-14 20:53:51,984 - INFO: Start Change: 0:1:4:18:126:20(real), 1
+2023-08-14 20:53:51,985 - INFO: -- NewConmand --
+2023-08-14 20:53:51,989 - INFO: -- commit command --
+2023-08-14 20:53:52,006 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:52,008 - INFO: Start Disp 2d
+2023-08-14 20:53:52,010 - INFO: End Disp 2d
+2023-08-14 20:53:52,011 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:53:52,024 - INFO: End Change: 0:1:4:18:126:20, 1
+2023-08-14 20:53:52,026 - INFO: Process Change Label End
+2023-08-14 20:53:54,980 - INFO: Process Change Label Start
+2023-08-14 20:53:54,982 - INFO: Start Change: 0:1:4:18:127:18(real), 1
+2023-08-14 20:53:54,984 - INFO: -- NewConmand --
+2023-08-14 20:53:54,987 - INFO: -- commit command --
+2023-08-14 20:53:55,006 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:55,008 - INFO: Start Disp 2d
+2023-08-14 20:53:55,009 - INFO: End Disp 2d
+2023-08-14 20:53:55,011 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:53:55,023 - INFO: End Change: 0:1:4:18:127:18, 1
+2023-08-14 20:53:55,025 - INFO: Process Change Label End
+2023-08-14 20:53:56,613 - INFO: Process Change Label Start
+2023-08-14 20:53:56,615 - INFO: Start Change: 0:1:4:18:127:19(real), 2
+2023-08-14 20:53:56,616 - INFO: -- NewConmand --
+2023-08-14 20:53:56,620 - INFO: -- commit command --
+2023-08-14 20:53:56,638 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:56,639 - INFO: Start Disp 2d
+2023-08-14 20:53:56,641 - INFO: End Disp 2d
+2023-08-14 20:53:56,642 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:53:56,655 - INFO: End Change: 0:1:4:18:127:19, 2
+2023-08-14 20:53:56,657 - INFO: Process Change Label End
+2023-08-14 20:53:57,510 - INFO: Process Change Label Start
+2023-08-14 20:53:57,512 - INFO: Start Change: 0:1:4:18:127:20(real), 2
+2023-08-14 20:53:57,514 - INFO: -- NewConmand --
+2023-08-14 20:53:57,516 - INFO: -- commit command --
+2023-08-14 20:53:57,538 - INFO: Update Label:bspline, 22d22e61-abca-11d4-8f1a-0060b0ee18e8
+2023-08-14 20:53:57,540 - INFO: Start Disp 2d
+2023-08-14 20:53:57,541 - INFO: End Disp 2d
+2023-08-14 20:53:57,543 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:53:57,556 - INFO: End Change: 0:1:4:18:127:20, 2
+2023-08-14 20:53:57,558 - INFO: Process Change Label End
+2023-08-14 20:54:01,091 - INFO: Selected Item:New Pipe
+2023-08-14 20:54:01,093 - INFO: Process Show Label Start
+2023-08-14 20:54:01,110 - INFO: Process Show Label End
+2023-08-14 20:54:10,693 - INFO: Process Change Label Start
+2023-08-14 20:54:10,696 - INFO: Start Change: 0:1:3:18(ShapeRef), 0:1:2
+2023-08-14 20:54:10,697 - INFO: -- NewConmand --
+2023-08-14 20:54:10,699 - INFO: 0:1:3:18 ref 0:1:2 
+2023-08-14 20:54:10,701 - INFO: -- commit command --
+2023-08-14 20:54:10,709 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:54:10,711 - INFO: End Change: 0:1:3:18, 0:1:2
+2023-08-14 20:54:10,713 - INFO: Process Change Label End
+2023-08-14 20:54:20,430 - INFO: Process Change Label Start
+2023-08-14 20:54:20,432 - INFO: Start Change: 0:1:3:19(ShapeRef), 0:1:4
+2023-08-14 20:54:20,434 - INFO: -- NewConmand --
+2023-08-14 20:54:20,435 - INFO: 0:1:3:19 ref 0:1:4 
+2023-08-14 20:54:20,539 - INFO: -- commit command --
+2023-08-14 20:54:20,554 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:54:20,555 - INFO: End Change: 0:1:3:19, 0:1:4
+2023-08-14 20:54:20,557 - INFO: Process Change Label End
+2023-08-14 20:54:34,149 - INFO: Process Change Label Start
+2023-08-14 20:54:34,151 - INFO: Start Change: 0:1:3:18(ShapeRef), 0:1:4
+2023-08-14 20:54:34,153 - INFO: -- NewConmand --
+2023-08-14 20:54:34,155 - INFO: 0:1:3:18 ref 0:1:4 
+2023-08-14 20:54:34,157 - INFO: -- commit command --
+2023-08-14 20:54:34,171 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:54:34,173 - INFO: End Change: 0:1:3:18, 0:1:4
+2023-08-14 20:54:34,174 - INFO: Process Change Label End
+2023-08-14 20:54:37,279 - INFO: Process Change Label Start
+2023-08-14 20:54:37,281 - INFO: Start Change: 0:1:3:19(ShapeRef), 0:1:2
+2023-08-14 20:54:37,282 - INFO: -- NewConmand --
+2023-08-14 20:54:37,284 - INFO: 0:1:3:19 ref 0:1:2 
+2023-08-14 20:54:37,287 - INFO: -- commit command --
+2023-08-14 20:54:37,296 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:54:37,298 - INFO: End Change: 0:1:3:19, 0:1:2
+2023-08-14 20:54:37,299 - INFO: Process Change Label End
+2023-08-14 20:54:40,418 - INFO: Selected Item:New bspline
+2023-08-14 20:54:40,420 - INFO: Process Show Label Start
+2023-08-14 20:54:40,452 - INFO: Process Show Label End
+2023-08-14 20:54:41,227 - INFO: Selected Item:New Pipe
+2023-08-14 20:54:41,229 - INFO: Process Show Label Start
+2023-08-14 20:54:41,252 - INFO: Process Show Label End
+2023-08-14 20:55:04,482 - INFO: Process Change Label Start
+2023-08-14 20:55:04,484 - INFO: Start Change: 0:1:4:18:126:20(real), 1.0
+2023-08-14 20:55:04,485 - INFO: -- NewConmand --
+2023-08-14 20:55:04,490 - INFO: -- commit command --
+2023-08-14 20:55:04,494 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:55:04,497 - INFO: End Change: 0:1:4:18:126:20, 1.0
+2023-08-14 20:55:04,498 - INFO: Process Change Label End
+2023-08-14 20:55:05,807 - INFO: Process Change Label Start
+2023-08-14 20:55:05,809 - INFO: Start Change: 0:1:4:18:127:18(real), 1.0
+2023-08-14 20:55:05,810 - INFO: -- NewConmand --
+2023-08-14 20:55:05,814 - INFO: -- commit command --
+2023-08-14 20:55:05,817 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:55:05,818 - INFO: End Change: 0:1:4:18:127:18, 1.0
+2023-08-14 20:55:05,820 - INFO: Process Change Label End
+2023-08-14 20:55:06,106 - INFO: Selected Item:New Face
+2023-08-14 20:55:06,108 - INFO: Process Show Label Start
+2023-08-14 20:55:06,113 - INFO: Process Change Label Start
+2023-08-14 20:55:06,115 - INFO: Start Change: 0:1:4:18:127:19(real), 2.0
+2023-08-14 20:55:06,116 - INFO: -- NewConmand --
+2023-08-14 20:55:06,120 - INFO: -- commit command --
+2023-08-14 20:55:06,140 - INFO: Update Label:Face, d747d16f-c0ed-5fdb-994f-08948183fbb1
+2023-08-14 20:55:06,141 - INFO: Start Disp 2d
+2023-08-14 20:55:06,143 - INFO: End Disp 2d
+2023-08-14 20:55:06,144 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:55:06,173 - INFO: End Change: 0:1:4:18:127:19, 2.0
+2023-08-14 20:55:06,174 - INFO: Process Change Label End
+2023-08-14 20:55:06,177 - INFO: Process Change Label Start
+2023-08-14 20:55:06,179 - INFO: Start Change: 0:1:4:18:127:20(real), 2.0
+2023-08-14 20:55:06,181 - INFO: -- NewConmand --
+2023-08-14 20:55:06,184 - INFO: -- commit command --
+2023-08-14 20:55:06,191 - INFO: Update Label:Face, d747d16f-c0ed-5fdb-994f-08948183fbb1
+2023-08-14 20:55:06,192 - INFO: Start Disp 2d
+2023-08-14 20:55:06,194 - INFO: End Disp 2d
+2023-08-14 20:55:06,196 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:55:06,206 - INFO: End Change: 0:1:4:18:127:20, 2.0
+2023-08-14 20:55:06,208 - INFO: Process Change Label End
+2023-08-14 20:55:06,212 - INFO: Process Change Label Start
+2023-08-14 20:55:06,214 - INFO: Start Change: 0:1:3:19(ShapeRef), 0:1:2
+2023-08-14 20:55:06,215 - INFO: -- NewConmand --
+2023-08-14 20:55:06,217 - INFO: 0:1:3:19 ref 0:1:2 
+2023-08-14 20:55:06,219 - INFO: -- commit command --
+2023-08-14 20:55:06,239 - INFO: Update Label:Face, d747d16f-c0ed-5fdb-994f-08948183fbb1
+2023-08-14 20:55:06,241 - INFO: Start Disp 2d
+2023-08-14 20:55:06,243 - INFO: End Disp 2d
+2023-08-14 20:55:06,244 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:55:06,256 - INFO: End Change: 0:1:3:19, 0:1:2
+2023-08-14 20:55:06,257 - INFO: Process Change Label End
+2023-08-14 20:55:06,292 - INFO: Process Show Label End
+2023-08-14 20:55:06,978 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:55:06,980 - INFO: Process Show Label Start
+2023-08-14 20:55:06,993 - INFO: Process Show Label End
+2023-08-14 20:55:08,074 - INFO: Selected Item:New Face
+2023-08-14 20:55:08,076 - INFO: Process Show Label Start
+2023-08-14 20:55:08,091 - INFO: Process Show Label End
+2023-08-14 20:55:08,762 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:55:08,764 - INFO: Process Show Label Start
+2023-08-14 20:55:08,779 - INFO: Process Show Label End
+2023-08-14 20:55:09,859 - INFO: Selected Item:New Face
+2023-08-14 20:55:09,861 - INFO: Process Show Label Start
+2023-08-14 20:55:09,890 - INFO: Process Show Label End
+2023-08-14 20:55:11,362 - INFO: Selected Item:New Ellipse2d
+2023-08-14 20:55:11,364 - INFO: Process Show Label Start
+2023-08-14 20:55:11,378 - INFO: Process Show Label End
+2023-08-14 20:55:18,558 - INFO: New Data Label afc9e4f9-ac91-5745-9500-0e842ecbf961
+2023-08-14 20:55:18,560 - INFO: -- NewConmand --
+2023-08-14 20:55:18,562 - INFO: -- Add New Shape --
+2023-08-14 20:55:18,563 - INFO: Entry:0:1:5, init start
+2023-08-14 20:55:18,565 - INFO: BaseInit 0:1:5 Wire
+2023-08-14 20:55:18,567 - INFO: Entry:0:1:5:18, init start
+2023-08-14 20:55:18,568 - INFO: BaseInit 0:1:5:18 EdgeArray
+2023-08-14 20:55:18,571 - INFO: Entry:0:1:5:18, init end
+2023-08-14 20:55:18,687 - INFO: -- commit command --
+2023-08-14 20:55:18,689 - INFO: New Data Label afc9e4f9-ac91-5745-9500-0e842ecbf961 end
+2023-08-14 20:55:19,547 - INFO: Selected Item:New Wire
+2023-08-14 20:55:19,549 - INFO: Process Show Label Start
+2023-08-14 20:55:19,556 - INFO: Process Show Label End
+2023-08-14 20:55:24,422 - INFO: Process Change Label Start
+2023-08-14 20:55:24,424 - INFO: Start Change: 0:1:5:18(EdgeArray), 1
+2023-08-14 20:55:24,426 - INFO: -- NewConmand --
+2023-08-14 20:55:24,427 - INFO: Entry:0:1:5:18:125, init start
+2023-08-14 20:55:24,429 - INFO: BaseInit 0:1:5:18:125 ShapeRef
+2023-08-14 20:55:24,433 - INFO: -- commit command --
+2023-08-14 20:55:24,440 - INFO: Update Label:Wire, afc9e4f9-ac91-5745-9500-0e842ecbf961
+2023-08-14 20:55:24,441 - INFO: End Change: 0:1:5:18, 1
+2023-08-14 20:55:24,443 - INFO: Process Change Label End
+2023-08-14 20:55:29,190 - INFO: Process Change Label Start
+2023-08-14 20:55:29,192 - INFO: Start Change: 0:1:5:18:125(ShapeRef), 0:1:1
+2023-08-14 20:55:29,194 - INFO: -- NewConmand --
+2023-08-14 20:55:29,196 - INFO: 0:1:5:18:125 ref 0:1:1 
+2023-08-14 20:55:29,292 - INFO: -- commit command --
+2023-08-14 20:55:29,313 - INFO: Update Label:Wire, afc9e4f9-ac91-5745-9500-0e842ecbf961
+2023-08-14 20:55:29,315 - INFO: Start Disp 2d
+2023-08-14 20:55:29,316 - INFO: End Disp 2d
+2023-08-14 20:55:29,318 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:55:29,346 - INFO: End Change: 0:1:5:18:125, 0:1:1
+2023-08-14 20:55:29,348 - INFO: Process Change Label End
+2023-08-14 20:55:31,506 - INFO: Selected Item:New bspline
+2023-08-14 20:55:31,508 - INFO: Process Show Label Start
+2023-08-14 20:55:31,531 - INFO: Process Show Label End
+2023-08-14 20:55:33,730 - INFO: Selected Item:New Pipe
+2023-08-14 20:55:33,732 - INFO: Process Show Label Start
+2023-08-14 20:55:33,755 - INFO: Process Show Label End
+2023-08-14 20:56:03,967 - INFO: Process Change Label Start
+2023-08-14 20:56:03,969 - INFO: Start Change: 0:1:3:19(ShapeRef), 0:1:4
+2023-08-14 20:56:03,969 - INFO: -- NewConmand --
+2023-08-14 20:56:03,972 - INFO: 0:1:3:19 ref 0:1:4 
+2023-08-14 20:56:03,975 - INFO: -- commit command --
+2023-08-14 20:56:03,990 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:56:03,991 - INFO: End Change: 0:1:3:19, 0:1:4
+2023-08-14 20:56:03,993 - INFO: Process Change Label End
+2023-08-14 20:56:09,375 - INFO: Process Change Label Start
+2023-08-14 20:56:09,377 - INFO: Start Change: 0:1:3:18(ShapeRef), 0:1:5
+2023-08-14 20:56:09,379 - INFO: -- NewConmand --
+2023-08-14 20:56:09,380 - INFO: 0:1:3:18 ref 0:1:5 
+2023-08-14 20:56:09,693 - INFO: -- commit command --
+2023-08-14 20:56:09,778 - INFO: Update Label:Pipe, 12354e24-af19-5492-ac30-fb0a1abf2363
+2023-08-14 20:56:09,780 - INFO: Start Disp 2d
+2023-08-14 20:56:09,781 - INFO: End Disp 2d
+2023-08-14 20:56:09,783 - INFO: bound:(-10, 10, -10, 10)
+2023-08-14 20:56:09,811 - INFO: End Change: 0:1:3:18, 0:1:5
+2023-08-14 20:56:09,813 - INFO: Process Change Label End

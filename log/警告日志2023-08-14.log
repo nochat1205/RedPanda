@@ -1,0 +1,264 @@
+
+2023-08-14 20:47:18,140 - WARNING: Entry:0:1:1, type:Box, Execute Falied
+
+2023-08-14 20:47:33,925 - WARNING: Entry:0:1:2:18, type:ShapeRef, Init Falied
+
+2023-08-14 20:47:33,934 - WARNING: Entry:0:1:2, type:FilletAll, Init Falied
+
+2023-08-14 20:47:35,041 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:47:35,044 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:47:38,637 - WARNING: Ref Null IsError
+
+2023-08-14 20:47:39,517 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:47:39,521 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:47:39,523 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:48:28,670 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:28,720 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:28,770 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:28,804 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:28,837 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:28,870 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:28,920 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:28,970 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,005 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,037 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,070 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,103 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,153 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,203 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,254 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,304 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:29,403 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:30,286 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:30,303 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:37,720 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:37,805 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:37,850 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:37,900 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:37,932 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:37,966 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:37,999 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,035 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,067 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,100 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,132 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,166 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,216 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,266 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,299 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,333 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,366 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,399 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,432 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,483 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,533 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,584 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,632 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,682 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,765 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,816 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,865 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,916 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:38,965 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,016 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,065 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,115 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,165 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,215 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,265 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,432 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,482 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,531 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,581 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,615 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,648 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:39,732 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,082 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,115 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,148 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,182 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,214 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,248 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,282 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,409 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,431 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,498 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,651 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,698 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,748 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,781 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,815 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,848 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,881 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,915 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:40,965 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,015 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,064 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,098 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,131 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,164 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,198 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,231 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,264 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,298 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:41,330 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:42,264 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:48:42,297 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:49:14,553 - WARNING: Entry:0:1:6:18, type:Ax2d, Execute Falied
+
+2023-08-14 20:49:14,568 - WARNING: Entry:0:1:6, type:Ellipse2d, Init Falied
+
+2023-08-14 20:49:22,833 - WARNING: get point :not enough values to unpack (expected 3, got 2)
+
+2023-08-14 20:52:24,583 - WARNING: Entry:0:1:1:18, type:Ax2d, Execute Falied
+
+2023-08-14 20:52:24,598 - WARNING: Entry:0:1:1, type:Ellipse2d, Init Falied
+
+2023-08-14 20:52:41,930 - WARNING: Entry:0:1:2:18, type:ShapeRef, Init Falied
+
+2023-08-14 20:52:41,931 - WARNING: Entry:0:1:2, type:Face, Init Falied
+
+2023-08-14 20:52:42,913 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:52:42,916 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:52:47,839 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:52:47,841 - WARNING: Entry:0:1:2:18 not found reference
+
+2023-08-14 20:53:11,621 - WARNING: Entry:0:1:3:18, type:ShapeRef, Init Falied
+
+2023-08-14 20:53:11,627 - WARNING: Entry:0:1:3:19, type:ShapeRef, Init Falied
+
+2023-08-14 20:53:11,628 - WARNING: Entry:0:1:3, type:Pipe, Init Falied
+
+2023-08-14 20:53:12,495 - WARNING: Entry:0:1:3:18 not found reference
+
+2023-08-14 20:53:12,497 - WARNING: Entry:0:1:3:18 not found reference
+
+2023-08-14 20:53:12,499 - WARNING: Entry:0:1:3:19 not found reference
+
+2023-08-14 20:53:12,501 - WARNING: Entry:0:1:3:19 not found reference
+
+2023-08-14 20:53:16,103 - WARNING: Entry:0:1:3:18 not found reference
+
+2023-08-14 20:53:16,105 - WARNING: Entry:0:1:3:18 not found reference
+
+2023-08-14 20:53:16,107 - WARNING: Entry:0:1:3:19 not found reference
+
+2023-08-14 20:53:16,109 - WARNING: Entry:0:1:3:19 not found reference
+
+2023-08-14 20:53:32,174 - WARNING: Entry:0:1:4, type:bspline, Execute Falied
+
+2023-08-14 20:54:01,095 - WARNING: Entry:0:1:3:18 not found reference
+
+2023-08-14 20:54:01,097 - WARNING: Entry:0:1:3:18 not found reference
+
+2023-08-14 20:54:01,100 - WARNING: Entry:0:1:3:19 not found reference
+
+2023-08-14 20:54:01,102 - WARNING: Entry:0:1:3:19 not found reference
+
+2023-08-14 20:55:18,685 - WARNING: Entry:0:1:5, type:Wire, Execute Falied
+
+2023-08-14 20:55:24,431 - WARNING: Entry:0:1:5:18:125, type:ShapeRef, Init Falied
+
+2023-08-14 20:55:24,436 - WARNING: Entry:0:1:5:18:125 not found reference
+
+2023-08-14 20:55:24,438 - WARNING: Entry:0:1:5:18:125 not found reference

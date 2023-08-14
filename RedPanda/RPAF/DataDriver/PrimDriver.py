@@ -118,3 +118,43 @@ class TransShapeDriver(ShapeDriver):
     @classproperty
     def Type(self):
         return "TransShape"
+
+class ConeDriver(ShapeDriver):
+    def __init__(self) -> None:
+        super().__init__()
+        self.Arguments['c0'] = Argument(self.tagResource, ShapeRefDriver.ID)
+        self.Arguments['c1'] = Argument(self.tagResource, ShapeRefDriver.ID)
+        self.Arguments['H'] = Argument(self.tagResource, ShapeRefDriver.ID)
+
+    
+    def myExecute(self, theLabel:Label)->int:
+        from OCC.Core.BRepPrimAPI import BRepPrimAPI_MakeCone
+        dict_param = dict()
+        for name, argu in self.Arguments.items():
+            argu:Argument
+            aLabel = theLabel.FindChild(argu.Tag)
+            dict_param[name] = aLabel.GetAttrValue(self.Attributes['value'].id)
+        try:
+            c0 = dict_param['c0']
+            c1 = dict_param['c1']
+            h = dict_param['H']
+
+            shape = BRepPrimAPI_MakeCone(c0, c1, h).Shape()
+
+        except Exception as error:
+            DataLabelState.SetError(theLabel, str(error), True)
+
+        builder = TNaming_Builder(theLabel)
+        builder.Generated(shape)
+
+        return 0
+
+    @classproperty
+    def ID(self):
+        from ..GUID import Sym_ConeDriver_GUID
+        return  Sym_ConeDriver_GUID #
+
+    @classproperty
+    def Type(self):
+        return "Cone"
+

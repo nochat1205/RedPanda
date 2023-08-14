@@ -258,7 +258,7 @@ class BareShape2dDriver(BareShapeDriver):
         ais_dict = DisplayCtx(theLabel)
         ais = AIS_ColoredShape(TopoDS_Shape())
         ais.SetColor(Quantity_Color(Quantity_NOC_RED))
-        ais_dict[self.keyPrs2d_1] = ais
+        ais_dict[(theLabel, 'shape')] = ais
 
         self.UpdatePrs2d(theLabel, ais_dict)
 
@@ -268,7 +268,7 @@ class BareShape2dDriver(BareShapeDriver):
         if not DataLabelState.IsOK(theLabel):
             return False
         Logger().debug(f"ID:{self.ID}")
-        ais:AIS_ColoredShape = ais_dict[self.keyPrs2d_1]
+        ais:AIS_ColoredShape = ais_dict[(theLabel, 'shape')]
         shape = self.Attributes['value'].GetValue(theLabel)
         breplib_BuildCurve3d(shape)
         if ais and shape:

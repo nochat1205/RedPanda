@@ -194,7 +194,6 @@ class qtViewer2d(qtBaseViewer):
 
     # api show label
     def ShowLabel(self, theLabel):
-
         aDriver:BareShapeDriver = theLabel.GetDriver()
         if aDriver is None or not isinstance(aDriver, BareShapeDriver):
             return

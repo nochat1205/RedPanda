@@ -99,7 +99,6 @@ class ViewerOperator(Operator):
         self._select_area = False
 
     def mouseMoveEvent(self, evt, displayCtx: DisplayCtx):
-        return
         mod = evt.modifiers()
         buttons = int(evt.buttons())
         pt = evt.pos()
@@ -130,7 +129,6 @@ class ViewerOperator(Operator):
             self.widget.cursor = 'arrow'
 
     def mouseReleaseEvent(self, evt, displayCtx: DisplayCtx):
-        return
         pt = evt.pos()
         mod = evt.modifiers()
         if self._select_area and self._drawbox:
@@ -166,10 +164,11 @@ class LineOperator(Operator):
         self.name = 'line'
         self.line_li = list()
         self.ais = None
-        print('Init')
 
     def mousePressEvent(self, event, ctx: DisplayCtx):
         super().mousePressEvent(event, ctx)
+        x0, y0 = self.dragStartP.X(), self.dragStartP.Y()
+        self.sp = self.widget.GetPoint(x0, y0)
 
     def mouseMoveEvent(self, evt: QMouseEvent, displayCtx: DisplayCtx):
         buttons = int(evt.buttons())
@@ -188,7 +187,7 @@ class LineOperator(Operator):
                 elif abs(dx) < abs(dy):
                     x1 = x0
             try:
-                sp = self.widget.GetPoint(x0, y0)
+                sp = self.sp
                 ep = self.widget.GetPoint(x1, y1)
                 seg = GCE2d_MakeSegment(sp, ep).Value()
                 # edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
@@ -196,7 +195,7 @@ class LineOperator(Operator):
                 pln = Geom_Plane(pln_ax3)
                 edge = BRepBuilderAPI_MakeEdge(seg, pln).Shape()
                 # breplib_BuildCurve3d(edge) # 问题出在这.
-                print(f"({x0}, {y0}) -> ({x1}, {y1})")
+                # print(f"({x0}, {y0}) -> ({x1}, {y1})")
 
                 if self.ais:
                     self._display.Context.Erase(self.ais, False)
@@ -204,8 +203,6 @@ class LineOperator(Operator):
     
                 self.ais = AIS_ColoredShape(edge)
                 self._display.Context.Display(self.ais, True)
-                # self._display.Repaint()
-                # self._display.Context.UpdateCurrentViewer()
             except Exception as err:
                 print(err)
 
@@ -246,7 +243,87 @@ class LineOperator(Operator):
         self.line_li.clear()
 
 
+from OCC.Core.GCE2d import GCE2d_MakeCircle
+class CircleOperator(Operator):
+    def __init__(self, *args) -> None:
+        super().__init__(*args)
+        self.name = 'circle'
+        self.line_li = list()
+        self.ais = None
 
+    def mousePressEvent(self, event, ctx: DisplayCtx):
+        super().mousePressEvent(event, ctx)
+        x0, y0 = self.dragStartP.X(), self.dragStartP.Y()
+        self.sp = self.widget.GetPoint(x0, y0)
+
+    def mouseMoveEvent(self, evt: QMouseEvent, displayCtx: DisplayCtx):
+        buttons = int(evt.buttons())
+        mod = evt.modifiers()
+        if buttons == Qt.LeftButton:
+            self.update_dragLine(evt)
+            if self.dragEndP is None:
+                return
+
+            x0, y0 = self.dragStartP.X(), self.dragStartP.Y()
+            x1, y1 = self.dragEndP.X(), self.dragEndP.Y()
+            dx, dy = x1-x0, y1-y0
+
+            try:
+                sp = self.sp
+                ep = self.widget.GetPoint(x1, y1)
+                
+                seg = GCE2d_MakeSegment(sp, ep).Value()
+                # edge = BRepBuilderAPI_MakeEdge2d(seg).Edge()
+                pln_ax3 = self._display.ViewPlane()
+                pln = Geom_Plane(pln_ax3)
+                edge = BRepBuilderAPI_MakeEdge(seg, pln).Shape()
+                # breplib_BuildCurve3d(edge) # 问题出在这. 这行函数会多余的影响
+                # print(f"({x0}, {y0}) -> ({x1}, {y1})")
+
+                if self.ais:
+                    self._display.Context.Erase(self.ais, False)
+                    # self.ais.ErasePresentations(True)
+    
+                self.ais = AIS_ColoredShape(edge)
+                self._display.Context.Display(self.ais, True)
+            except Exception as err:
+                print(err)
+
+    def mouseReleaseEvent(self, event:QMouseEvent, displayCtx: DisplayCtx):
+        mod = event.modifiers()
+        
+        self.update_dragLine(event)
+
+        if event.button() == Qt.LeftButton and self.dragEndP:
+            x0, y0 = self.dragStartP.X(), self.dragStartP.Y()
+            x1, y1 = self.dragEndP.X(), self.dragEndP.Y()
+            dx, dy = x1 - x0, y1-y0
+            if mod == Qt.ShiftModifier:
+                if abs(dx) > abs(dy):
+                    y1 = y0
+                elif abs(dx) < abs(dy):
+                    x1 = x0
+    
+            p2d1 = self.widget.GetPoint(x0, y0)
+            p2d2 = self.widget.GetPoint(x1, y1)
+
+            # print(x, y, dx, dy)
+            # print(p2d1.X(), p2d1.Y(), p2d2.X(), p2d2.Y())
+
+            param = {'p1': {'x':str(p2d1.X()), 
+                            'y':str(p2d1.Y())}, 
+                     'p2':{'x':p2d2.X().__str__(), 
+                           'y':p2d2.Y().__str__()}}
+            self.widget.sig_new_shape.emit(Segment2dDriver.ID, param)
+
+        self.line_li.append(self.ais)
+        self.ais = None
+
+    def quit(self):
+        for ais in self.line_li:
+            self._display.Context.Remove(ais, False)
+        self._display.View.SetImmediateUpdate(True)
+        self.line_li.clear()
 
 class MouseControl(object):
     def __init__(self) -> None:
