@@ -1,14 +1,15 @@
-# log
-# resource
+# file
+log
+resource
 
-# # Ignore compiled Python bytecode files
-# RedPanda/**/__pycache__
+# Ignore compiled Python bytecode files
+RedPanda/**/__pycache__
 
-# # Ignore system-specific files
-# *.pyc
-# *.pyo
-# *.pyd
+# Ignore system-specific files
+*.pyc
+*.pyo
+*.pyd
 
-# # Ignore IDE and editor files
-# .idea/
-# .vscode/
+# Ignore IDE and editor files
+.idea/
+.vscode/
