@@ -87,7 +87,6 @@ class MainApplication():
         self.c_viewer2d.sig_new_shape.connect(      self.Process_NewLabel)
         self.c_viewer2d.sig_point.connect(          self.Process_ShowPoint)
 
-
     # register function
     def RegisterShapeDriver(self, menu_name, name,  driver:DataDriver):
         self.docApp.RegisterDriver(driver)
@@ -246,7 +245,6 @@ class MainApplication():
         self.c_viewer2d.ActiveOperator(name)
 
     def Process_OpenDocument(self):
-        return 
         from OCC.Core.TDF import TDF_ChildIterator
         path = QFileDialog.getOpenFileName(self.ui_myWin, '打开文件', './resource',
                                 'STP files(*.xml);;(*.rpxml))')

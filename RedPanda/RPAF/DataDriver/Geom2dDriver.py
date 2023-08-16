@@ -243,13 +243,11 @@ class BareShape2dDriver(BareShapeDriver):
 
     def Prs3d(self, theLabel)->DisplayCtx:
         
-
         ais_dict = DisplayCtx(theLabel)
         return ais_dict
 
     def myUpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
         return False
-
 
     def Prs2d(self, theLabel:Label):
         if 'keyPrs2d_1' not in self.__dict__:

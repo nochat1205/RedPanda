@@ -67,7 +67,6 @@ class Application(TDocStd_Application):
         self.InitDocument(doc)
         super(TDocStd_Application, self).Open(doc)
 
-
     def Update(self, theLabel:Label, str)->set:
         touched_set = set()
         update_set = set()
@@ -123,7 +122,6 @@ class Application(TDocStd_Application):
 
         return doc
 
-
     def HaveDoc(self):
         return self._main_doc is not None
 
@@ -134,10 +132,24 @@ class Application(TDocStd_Application):
         #     pickle.dump(self._main_doc, f)
 
     def OpenDoc(self, path):
-        return 
+        from OCC.Core.CDF import CDF_FWOSDriver, CDF_Application
+        from OCC.Core.TCollection import TCollection_ExtendedString
+        from OCC.Core.TDocStd import TDocStd_Document
+        import os
+        # driver = CDF_FWOSDriver()
+        # mdata = driver.MetaData(
+        #     TCollection_ExtendedString(os.path.dirname(path)),
+        #     TCollection_ExtendedString(os.path.basename(path)))
+        doc = self.Retrieve(
+            TCollection_ExtendedString(os.path.dirname(path)),
+            TCollection_ExtendedString(os.path.basename(path))
+        )
+        self._main_doc = TDocStd_Document.DownCast(doc)
+        # print(type(doc))
+        return self._main_doc
         doc = self.NewDocument(RP_ExtendStr('XmlOcaf'))
         doc.SetFile(path)
-        
+
         try:
             self.Rebuild(path, doc)
         except Exception as error:
@@ -232,7 +244,6 @@ class Application(TDocStd_Application):
                         continue
 
                     cls.Set(theLabel, attr_id, FromText(cls.GetID(), value))
-
 
         # 遍历整个XML文件
         def traverse(element, prefix='|--'):
