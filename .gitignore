@@ -1,4 +1,14 @@
-.vscode
-log
-RedPanda/**/__pycache__
-resource
+# log
+# resource
+
+# # Ignore compiled Python bytecode files
+# RedPanda/**/__pycache__
+
+# # Ignore system-specific files
+# *.pyc
+# *.pyo
+# *.pyd
+
+# # Ignore IDE and editor files
+# .idea/
+# .vscode/
