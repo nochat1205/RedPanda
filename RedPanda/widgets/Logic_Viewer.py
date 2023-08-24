@@ -66,6 +66,8 @@ class qtBaseViewer(QtWidgets.QWidget):
         return None
 
 
+from OCC.Core.TopoDS import TopoDS_Shape
+from RedPanda.Core.Euclid import RP_Pnt, RP_Vec, RP_Dir
 class qtViewer3d(qtBaseViewer):
     # emit signal when selection is changed
     # is a list of TopoDS_*
@@ -73,6 +75,7 @@ class qtViewer3d(qtBaseViewer):
     sig_topods_selected = QtCore.pyqtSignal(list)
 
     sig_new_shape = pyqtSignal(RP_GUID, dict)
+    sig_point = QtCore.pyqtSignal((RP_Pnt, TopoDS_Shape, list))
 
     def __init__(self, *kargs):
         qtBaseViewer.__init__(self, *kargs)
@@ -232,8 +235,9 @@ class qtViewer3d(qtBaseViewer):
                     self._display.Select(pt.x(), pt.y())
 
                     if (self._display.selected_shapes is not None) and self.HAVE_PYQT_SIGNAL:
-
                         self.sig_topods_selected.emit(self._display.selected_shapes)
+                    
+                    self.HoverPoint( pt.x(), pt.y() )
 
         elif event.button() == QtCore.Qt.RightButton:
             if self._zoom_area:
@@ -244,6 +248,61 @@ class qtViewer3d(qtBaseViewer):
                 self.showContextMenu(pt)
 
         self.cursor = "arrow"
+
+
+    def HoverPoint(self, x, y):
+        from OCC.Core.gp import gp_Lin
+        from OCC.Core.BRep import BRep_Tool
+        from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_WIRE, TopAbs_VERTEX, TopAbs_FACE
+        from OCC.Core.GeomAPI import (
+            GeomAPI_ExtremaCurveCurve,
+            GeomAPI_ExtremaCurveSurface,
+            GeomAPI_IntCS,
+            GeomAPI_ProjectPointOnSurf
+        )
+        from OCC.Core.GC import GC_MakeLine
+        from OCC.Core.Geom import Geom_Line
+        from RedPanda.Core.topogy.edge import EdgeAnalyst
+        from RedPanda.Core.topogy.face import FaceAnalyst
+
+        projX, projy, projz, rayx, rayy, rayz = self._display.View.ProjReferenceAxe(x, y)   
+
+        p = RP_Pnt(projX, projy, projz)
+
+        g_line = GC_MakeLine(p, RP_Dir(rayx, rayy, rayz)
+                             ).Value()
+        shapes = self._display.selected_shapes[:]
+
+        shape = TopoDS_Shape()
+        param = [0.0 for _ in range(3)]
+        if len(shapes) == 0:
+            pass
+        elif shapes[0].ShapeType() == TopAbs_VERTEX:
+            p = BRep_Tool.Pnt(shapes[0])
+            shape = shapes[0]
+        elif shapes[0].ShapeType() == TopAbs_EDGE:
+            shape = shapes[0]
+            try:
+                curve, u0, u1 = EdgeAnalyst(shapes[0]).curve
+                builder = GeomAPI_ExtremaCurveCurve(g_line, curve)
+                # print(u0, u1)
+                # print(builder.LowerDistanceParameter(), builder.NearestPoint(), builder.LowerDistance())
+                _, p = builder.NearestPoints()
+                _, param[0] = builder.LowerDistanceParameters()
+            except Exception as error:
+                Logger().warning(f'hover point error:{error}')
+        elif shapes[0].ShapeType() == TopAbs_FACE:
+            shape = shapes[0]
+            try:
+                surface = FaceAnalyst(shapes[0]).surface
+                builder = GeomAPI_IntCS(g_line, surface)
+                if builder.NbPoints() > 0:
+                    p = builder.Point(1)
+                    param[0], param[1] = builder.Parameters(1)
+            except Exception as error:
+                Logger().warning(f'hover point error:{error}')
+
+        self.sig_point.emit(p, shape, param)
 
     def DrawBox(self, event):
         tolerance = 2
@@ -374,7 +433,6 @@ class qtViewer3d(qtBaseViewer):
         from OCC.Core.AIS import AIS_Shape, AIS_ColoredShape
         from OCC.Core.StdSelect import StdSelect_BRepOwner
         from OCC.Core.TopExp import TopExp_Explorer
-        from OCC.Core.TopoDS import TopoDS_Shape
         # need selected_ais_li
         if len(self._display.selected_ais_li) > 0:
             owner:StdSelect_BRepOwner = StdSelect_BRepOwner.DownCast(self._display.selected_ais_li[0])

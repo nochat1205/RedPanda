@@ -86,6 +86,7 @@ class MainApplication():
         self.c_viewer3d.sig_new_shape.connect(      self.Process_NewLabel)
         self.c_viewer2d.sig_new_shape.connect(      self.Process_NewLabel)
         self.c_viewer2d.sig_point.connect(          self.Process_ShowPoint)
+        self.c_viewer3d.sig_point.connect(          self.Process_ShowPoint)
 
     # register function
     def RegisterShapeDriver(self, menu_name, name,  driver:DataDriver):
