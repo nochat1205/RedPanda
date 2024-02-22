@@ -62,7 +62,7 @@ __all__ = [ 'assert_isdone', # assert brep api is done
 import random
 
 from OCC.Core.Bnd import Bnd_Box
-from OCC.Core.BRepBndLib import brepbndlib_Add
+from OCC.Core.BRepBndLib import brepbndlib
 from OCC.Core.TColgp import (
     TColgp_HArray1OfPnt,
     TColgp_Array1OfPnt2d,
@@ -86,9 +86,7 @@ from OCC.Core.Quantity import Quantity_Color, Quantity_TOC_RGB
 from OCC.Core.GProp import GProp_GProps
 from OCC.Core.GeomAbs import GeomAbs_C1, GeomAbs_C2, GeomAbs_C3
 from OCC.Core.BRepGProp import (
-    brepgprop_LinearProperties,
-    brepgprop_SurfaceProperties,
-    brepgprop_VolumeProperties,
+    brepgprop,
 )
 from OCC.Core.GeomAdaptor import GeomAdaptor_Curve
 from OCC.Core.Geom import Geom_Curve
@@ -145,7 +143,7 @@ def get_boundingbox(shape, tol=TOLERANCE):
     """
     bbox = Bnd_Box()
     bbox.SetGap(tol)
-    brepbndlib_Add(shape, bbox)
+    brepbndlib.Add(shape, bbox)
     xmin, ymin, zmin, xmax, ymax, zmax = bbox.Get()
     return xmin, ymin, zmin, xmax, ymax, zmax
 
@@ -356,10 +354,10 @@ def random_color():
 
 
 def common_vertex(edg1, edg2):
-    from OCC.Core.TopExp import topexp_CommonVertex
+    from OCC.Core.TopExp import topexp
 
     vert = TopoDS_Vertex()
-    if topexp_CommonVertex(edg1, edg2, vert):
+    if topexp.CommonVertex(edg1, edg2, vert):
         return vert
     else:
         return None
@@ -398,7 +396,7 @@ def point_in_boundingbox(solid, pnt, tolerance=1e-5):
     """
     bbox = Bnd_Box()
     bbox.SetGap(tolerance)
-    brepbndlib_Add(solid, bbox)
+    brepbndlib.Add(solid, bbox)
     return not bbox.IsOut(pnt)
 
 # TODO:
@@ -550,19 +548,19 @@ class GpropsFromShape(object):
     def volume(self):
         """returns the volume of a solid"""
         prop = GProp_GProps()
-        brepgprop_VolumeProperties(self.shape, prop, self.tolerance)
+        brepgprop.VolumeProperties(self.shape, prop, self.tolerance)
         return prop
 
     def surface(self):
         """returns the area of a surface"""
         prop = GProp_GProps()
-        brepgprop_SurfaceProperties(self.shape, prop, self.tolerance)
+        brepgprop.SurfaceProperties(self.shape, prop, self.tolerance)
         return prop
 
     def linear(self):
         """returns the length of a wire or edge"""
         prop = GProp_GProps()
-        brepgprop_LinearProperties(self.shape, prop)
+        brepgprop.LinearProperties(self.shape, prop)
         return prop
 
 
@@ -663,10 +661,10 @@ def project_point_on_plane(plane, point):
     @param plane: Geom_Plane
     @param point: RP_Pnt
     """
-    from OCC.Core.ProjLib import projlib_Project
+    from OCC.Core.ProjLib import projlib
 
     pl = plane.Pln()
-    aa, bb = projlib_Project(pl, point).Coord()
+    aa, bb = projlib.Project(pl, point).Coord()
     point = plane.Value(aa, bb)
     return point
 

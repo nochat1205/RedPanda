@@ -10,7 +10,7 @@ from OCC.Core.TDocStd import (
 from OCC.Core.TDF import (
     TDF_LabelSequence,
     TDF_Label,
-    TDF_Tool_TagList
+    TDF_Tool
 )
 
 from OCC.Core.TopoDS import TopoDS_Solid
@@ -25,10 +25,7 @@ from OCC.Core.TCollection import (
 )
 
 from OCC.Core.XCAFDoc import (
-    XCAFDoc_DocumentTool_ShapeTool,
-    XCAFDoc_DocumentTool_ColorTool,
-    XCAFDoc_DocumentTool_LayerTool,
-    XCAFDoc_DocumentTool_MaterialTool
+    XCAFDoc_DocumentTool
 )
 
 from OCC.Core.STEPCAFControl import STEPCAFControl_Reader
@@ -39,7 +36,7 @@ from OCC.Core.IFSelect import (
 )
 from OCC.Core.Quantity import Quantity_Color, Quantity_TOC_RGB
 from OCC.Core.XmlDrivers import (
-    xmldrivers_DefineFormat
+    xmldrivers
 )
 from OCC.Core.TDF import TDF_Data
 
@@ -63,7 +60,7 @@ def OpenFile(filename):
 
     app = TDocStd_Application()
     # create an handle to a document
-    xmldrivers_DefineFormat(app)
+    xmldrivers.DefineFormat(app)
 
     doc = TDocStd_Document(String("XmlOcaf"))
     app.AddDocument(doc)
@@ -90,10 +87,10 @@ def read_step_file_with_names_colors(doc:TDocStd_Document):
     dict_display_shape = dict()
 
     # Get shape
-    shape_tool = XCAFDoc_DocumentTool_ShapeTool(doc.Main())
-    color_tool = XCAFDoc_DocumentTool_ColorTool(doc.Main())
-    l_layers = XCAFDoc_DocumentTool_LayerTool(doc.Main())
-    l_materials = XCAFDoc_DocumentTool_MaterialTool(doc.Main())
+    shape_tool = XCAFDoc_DocumentTool.ShapeTool(doc.Main())
+    color_tool = XCAFDoc_DocumentTool.ColorTool(doc.Main())
+    l_layers = XCAFDoc_DocumentTool.LayerTool(doc.Main())
+    l_materials = XCAFDoc_DocumentTool.MaterialTool(doc.Main())
 
     DumpToString = shape_tool.DumpToString()
     # num = 0
@@ -108,7 +105,7 @@ def read_step_file_with_names_colors(doc:TDocStd_Document):
         shape_tool.GetSubShapes(label, shapeSequence)
         shape_tool.GetComponents(label, componentSequence)
 
-        def _referenceLabel_read(shape_tool: XCAFDoc_DocumentTool_ShapeTool, label:TDF_Label):
+        def _referenceLabel_read(shape_tool: XCAFDoc_DocumentTool.ShapeTool, label:TDF_Label):
             label_reference = TDF_Label()
             shape_tool.GetReferredShape(label, label_reference)
             location = shape_tool.GetLocation(label)
@@ -157,7 +154,7 @@ def read_step_file_with_names_colors(doc:TDocStd_Document):
 
             # shape_disp = BRepBuilderAPI_Transform(shape, location.Transformation()).Shape()
             # tagList = TColStd_ListOfInteger()
-            # TDF_Tool_TagList(label, tagList)
+            # TDF_Tool.TagList(label, tagList)
             # dict_display_shape[shape_disp] = {"color": color,
             #                                   "tagList": tagList}
             shapeSequence.Append(label)
@@ -168,7 +165,7 @@ def read_step_file_with_names_colors(doc:TDocStd_Document):
                 shape_disp = BRepBuilderAPI_Transform(shape, location.Transformation()).Shape()
                 if shape_disp not in dict_display_shape:
                     tagList = TColStd_ListOfInteger()
-                    TDF_Tool_TagList(label, tagList)
+                    TDF_Tool.TagList(label, tagList)
                     color = _setColor(label, shape)
                     otherShape = TopoDS_Shape()
                     # if  isinstance(shape, TopoDS_Solid): # 排除非solid

@@ -30,7 +30,7 @@ from OCC.Core.GeomLib import geomlib
 from OCC.Core.GCPnts import GCPnts_AbscissaPoint
 from OCC.Core.GeomAPI import GeomAPI_ProjectPointOnCurve
 from OCC.Core.ShapeAnalysis import ShapeAnalysis_Edge
-from OCC.Core.BRep import BRep_Tool, BRep_Tool_Continuity
+from OCC.Core.BRep import BRep_Tool, BRep_Tool
 from OCC.Core.BRepIntCurveSurface import BRepIntCurveSurface_Inter
 
 # high-level
@@ -406,7 +406,7 @@ class EdgeAnalyst(TopoDS_Edge, BaseObject):
         return fix_continuity(self, continuity)
 
     def continuity_from_faces(self, f1, f2):
-        return BRep_Tool_Continuity(self, f1, f2)
+        return BRep_Tool.Continuity(self, f1, f2)
 
     # ===========================================================================
     #    Curve.

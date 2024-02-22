@@ -36,7 +36,7 @@ from OCC.Core.TopAbs import (
     TopAbs_COMPOUND,
     TopAbs_COMPSOLID,
 )
-from OCC.Core.TopExp import TopExp_Explorer, topexp_MapShapesAndAncestors
+from OCC.Core.TopExp import TopExp_Explorer, topexp
 from OCC.Core.TopTools import (
     TopTools_ListOfShape,
     TopTools_ListIteratorOfListOfShape,
@@ -52,8 +52,6 @@ from OCC.Core.TopoDS import (
     TopoDS_Solid,
     TopoDS_Compound,
     TopoDS_CompSolid,
-    topods_Edge,
-    topods_Vertex,
     TopoDS_Iterator,
 )
 
@@ -76,7 +74,7 @@ class WireExplorer(object):
     def _loop_topo(self, edges=True):
         if self.done:
             self._reinitialize()
-        topologyType = topods_Edge if edges else topods_Vertex
+        topologyType = topods.Edge if edges else topods.Vertex
         seq = []
         hashes = []  # list that stores hashes to avoid redundancy
         occ_seq = TopTools_ListOfShape()
@@ -334,7 +332,7 @@ class Topo(object):
         """
         topo_set = set()
         _map = TopTools_IndexedDataMapOfShapeListOfShape()
-        topexp_MapShapesAndAncestors(self.myShape, topoTypeA, topoTypeB, _map)
+        topexp.MapShapesAndAncestors(self.myShape, topoTypeA, topoTypeB, _map)
         results = _map.FindFromKey(topologicalEntity)
         if results.Size() == 0:
             yield None
@@ -370,9 +368,10 @@ class Topo(object):
         @param topoTypeB:
         @param topologicalEntity:
         """
+        from OCC.Core.TopExp import topexp
         topo_set = set()
         _map = TopTools_IndexedDataMapOfShapeListOfShape()
-        topexp_MapShapesAndAncestors(self.myShape, topoTypeA, topoTypeB, _map)
+        topexp.MapShapesAndAncestors(self.myShape, topoTypeA, topoTypeB, _map)
         results = _map.FindFromKey(topologicalEntity)
         if results.Size() == 0:
             return None
@@ -516,7 +515,7 @@ def dumpTopology(shape, level=0):
     brt = BRep_Tool()
     s = shape.ShapeType()
     if s == TopAbs_VERTEX:
-        pnt = brt.Pnt(topods_Vertex(shape))
+        pnt = brt.Pnt(topods.Vertex(shape))
         print(
             ".." * level
             + "<Vertex %i: %s %s %s>" % (hash(shape), pnt.X(), pnt.Y(), pnt.Z())
