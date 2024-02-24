@@ -81,7 +81,7 @@ https://github.com/nochat1205/RedPanda
 
 当我们首次启动RedPanda时, 软件界面时这样的:
 
-![image-20240220233323486](\MarkDownImages\image-20240220233323486.png)
+![image-20240220233323486](/MarkDownImages/image-20240220233323486.png)
 
 其中中间的两个黑色窗格, 分别是3d视图(上)和2d视图(下);
 
