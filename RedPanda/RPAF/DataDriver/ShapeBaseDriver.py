@@ -55,7 +55,7 @@ class BareShapeDriver(CompoundDriver):
 
     def UpdatePrs3d(self, theLabel, ais_dict:DisplayCtx):
         from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_FACE
-        from OCC.Core.BRepLib import breplib_BuildCurve3d
+        from OCC.Core.BRepLib import breplib
         from OCC.Core.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_Surface
 
         import math
@@ -65,7 +65,7 @@ class BareShapeDriver(CompoundDriver):
 
         shape:TopoDS_Shape = theLabel.GetAttrValue(TNaming_NamedShape.GetID())
         if shape.ShapeType() == TopAbs_EDGE:
-            breplib_BuildCurve3d(shape)
+            breplib.BuildCurve3d(shape)
             adap = BRepAdaptor_Curve(shape)
             if math.isnan(adap.FirstParameter()) or math.isnan(adap.LastParameter()):
                 return False
@@ -95,7 +95,7 @@ class BareShapeDriver(CompoundDriver):
 
     def UpdatePrs2d(self, theLabel:Label, ais_dict:DisplayCtx):
         from OCC.Core.TopAbs import TopAbs_EDGE, TopAbs_FACE
-        from OCC.Core.BRepLib import breplib_BuildCurve3d
+        from OCC.Core.BRepLib import breplib
         from OCC.Core.BRepAdaptor import BRepAdaptor_Curve, BRepAdaptor_Surface
         import math
 
@@ -104,7 +104,7 @@ class BareShapeDriver(CompoundDriver):
 
         shape:TopoDS_Shape = theLabel.GetAttrValue(TNaming_NamedShape.GetID())
         if shape.ShapeType() == TopAbs_EDGE:
-            breplib_BuildCurve3d(shape)
+            breplib.BuildCurve3d(shape)
             adap = BRepAdaptor_Curve(shape)
             if math.isnan(adap.FirstParameter()) or math.isnan(adap.LastParameter()):
                 return False

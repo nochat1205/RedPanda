@@ -1,6 +1,6 @@
 from OCC.Core.TDocStd import TDocStd_Application
 from OCC.Core.TDF import TDF_TagSource
-from OCC.Core.XmlDrivers import xmldrivers_DefineFormat
+from OCC.Core.XmlDrivers import xmldrivers
 
 
 from RedPanda.logger import Logger
@@ -22,7 +22,7 @@ class Application(TDocStd_Application):
         self.doc_li = list()
         self._registerDriver()
 
-        xmldrivers_DefineFormat(self)        
+        xmldrivers.DefineFormat(self)        
 
     def _registerDriver(self):
         # Instantiate a Driver and add it to the DriverTable

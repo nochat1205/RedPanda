@@ -17,9 +17,9 @@ class DisplayCtx(object):
 
     @bounds.setter
     def bounds(self, value):
-        from OCC.Core.Precision import precision_IsInfinite
+        from OCC.Core.Precision import precision
         for i in value:
-            if precision_IsInfinite(i):
+            if precision.IsInfinite(i):
                 return
         self._bounds = value
         
@@ -44,9 +44,9 @@ class DisplayCtx(object):
 
     def SetShape(self, key, shape):
         from OCC.Core.TopAbs import TopAbs_EDGE
-        from OCC.Core.BRepLib import breplib_BuildCurve3d
+        from OCC.Core.BRepLib import breplib
         if shape.ShapeType() == TopAbs_EDGE:
-            breplib_BuildCurve3d(shape)
+            breplib.BuildCurve3d(shape)
 
         if key in self.d:
             # ref sub

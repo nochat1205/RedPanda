@@ -1,6 +1,6 @@
 __all__ = ['DataDriverTable', 'TPrsStd_DriverTable']
 from OCC.Core.TDF import (
-    tdf_ProgIDFromGUID,
+    tdf,
 )
 from OCC.Core.TFunction import TFunction_Logbook
 from OCC.Core.TPrsStd import TPrsStd_DriverTable
@@ -65,7 +65,7 @@ class DataDriverTable(Singleton):
         for guid, driver in self._myDrivers.items():
             str_data += guid.ShallowDumpToString() + '\t'
             es = RP_ExtendStr()
-            if tdf_ProgIDFromGUID(guid, es):
+            if tdf.ProgIDFromGUID(guid, es):
                 str_data += es
             str_data += '\n'
         return str_data

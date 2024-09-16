@@ -154,7 +154,7 @@ from OCC.Core.TopoDS import TopoDS_Shape
 from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_ORANGE
 from OCC.Core.GCE2d import GCE2d_MakeSegment
 from OCC.Core.BRepBuilderAPI import BRepBuilderAPI_MakeEdge2d, BRepBuilderAPI_MakeEdge
-from OCC.Core.BRepLib import breplib_BuildCurve3d
+from OCC.Core.BRepLib import breplib
 from OCC.Core.gp import gp_Pln
 from OCC.Core.Geom import Geom_Plane
 from RedPanda.RPAF.DataDriver.Geom2dDriver import Segment2dDriver
@@ -194,7 +194,7 @@ class LineOperator(Operator):
                 pln_ax3 = self._display.ViewPlane()
                 pln = Geom_Plane(pln_ax3)
                 edge = BRepBuilderAPI_MakeEdge(seg, pln).Shape()
-                # breplib_BuildCurve3d(edge) # 问题出在这.
+                # breplib.BuildCurve3d(edge) # 问题出在这.
                 # print(f"({x0}, {y0}) -> ({x1}, {y1})")
 
                 if self.ais:
@@ -277,7 +277,7 @@ class CircleOperator(Operator):
                 pln_ax3 = self._display.ViewPlane()
                 pln = Geom_Plane(pln_ax3)
                 edge = BRepBuilderAPI_MakeEdge(seg, pln).Shape()
-                # breplib_BuildCurve3d(edge) # 问题出在这. 这行函数会多余的影响
+                # breplib.BuildCurve3d(edge) # 问题出在这. 这行函数会多余的影响
                 # print(f"({x0}, {y0}) -> ({x1}, {y1})")
 
                 if self.ais:

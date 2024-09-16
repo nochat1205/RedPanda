@@ -249,16 +249,16 @@ class MainApplication():
         from OCC.Core.TDF import TDF_ChildIterator
         path = QFileDialog.getOpenFileName(self.ui_myWin, '打开文件', './resource',
                                 'STP files(*.xml);;(*.rpxml))')
-
-        doc:Document = self.docApp.OpenDoc(path[0])
-        # print(doc.Main().GetEntry())
-        # print(path[0])
-        # aLabel = doc.Main()
-        # for ind in range(1, 10):
-        #     l = aLabel.FindChild(ind, False)
-        #     if not l.IsNull():
-        #         print(l.GetEntry())
-        self.c_docTree.Create_TreeItem(doc.Main())
+        if path[0]:
+            doc:Document = self.docApp.OpenDoc(path[0])
+            # print(doc.Main().GetEntry())
+            # print(path[0])
+            # aLabel = doc.Main()
+            # for ind in range(1, 10):
+            #     l = aLabel.FindChild(ind, False)
+            #     if not l.IsNull():
+            #         print(l.GetEntry())
+            self.c_docTree.Create_TreeItem(doc.Main())
 
     def Process_SaveDocument(self):
         Logger().info('Process Save Document start')

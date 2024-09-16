@@ -15,7 +15,7 @@
 ##You should have received a copy of the GNU Lesser General Public License
 ##along with pythonOCC.  If not, see <http://www.gnu.org/licenses/>
 __all__ = ['FaceAnalyst']
-from OCC.Core.BRep import BRep_Tool_Surface, BRep_Tool
+from OCC.Core.BRep import BRep_Tool, BRep_Tool
 from OCC.Core.BRepTopAdaptor import BRepTopAdaptor_FClass2d
 from OCC.Core.Geom import Geom_Curve
 from OCC.Core.GeomAPI import GeomAPI_ProjectPointOnSurf
@@ -24,7 +24,7 @@ from OCC.Core.TopAbs import TopAbs_IN
 from OCC.Core.TopExp import topexp
 from OCC.Core.TopoDS import TopoDS_Vertex, TopoDS_Face, TopoDS_Edge
 from OCC.Core.GeomLProp import GeomLProp_SLProps
-from OCC.Core.BRepTools import breptools_UVBounds
+from OCC.Core.BRepTools import breptools
 from OCC.Core.BRepAdaptor import BRepAdaptor_Surface
 from OCC.Core.ShapeAnalysis import ShapeAnalysis_Surface
 from OCC.Core.GeomProjLib import geomprojlib
@@ -202,7 +202,7 @@ class FaceAnalyst(TopoDS_Face, BaseObject):
         """the u,v domain of the curve
         :return: UMin, UMax, VMin, VMax
         """
-        return breptools_UVBounds(self)
+        return breptools.UVBounds(self)
 
     def mid_point(self):
         """
@@ -225,7 +225,7 @@ class FaceAnalyst(TopoDS_Face, BaseObject):
     @property
     def surface(self):
         if self._srf is None or self.is_dirty:
-            self._srf = BRep_Tool_Surface(self)
+            self._srf = BRep_Tool.Surface(self)
         return self._srf
 
     def as_pln(self, tol=TOLERANCE):
@@ -266,7 +266,7 @@ class FaceAnalyst(TopoDS_Face, BaseObject):
         and implies that the surface is trimmed
         """
         _round = lambda x: round(x, 3)
-        a = map(_round, breptools_UVBounds(self))
+        a = map(_round, breptools.UVBounds(self))
         b = map(_round, self.adaptor.Surface().Surface().Bounds())
         if a != b:
             # print("a,b", a, b)

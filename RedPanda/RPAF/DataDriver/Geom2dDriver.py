@@ -8,7 +8,7 @@ from OCC.Core.TopoDS import TopoDS_Shape
 from OCC.Core.TopLoc import TopLoc_Location
 from OCC.Core.AIS import AIS_Shaded, AIS_ColoredShape
 from OCC.Core.PrsDim import PrsDim_DiameterDimension
-from OCC.Core.BRepLib import breplib_BuildCurve3d
+from OCC.Core.BRepLib import breplib
 from OCC.Core.Quantity import Quantity_Color, Quantity_NOC_RED
 
 from RedPanda.logger import Logger
@@ -90,7 +90,7 @@ class Ellipse2dDriver(PCurveDriver):
         geom2d = self.myValue2d(theLabel)
 
         edge = make_edge2d(geom2d)
-        breplib_BuildCurve3d(edge)
+        breplib.BuildCurve3d(edge)
 
         ais = ais_dict[(theLabel, 'shape')]
         ais.SetShape(edge)
@@ -155,7 +155,7 @@ class Build3dDriver(PCurveDriver):
         try:
             surface = BRep_Tool.Surface(dict_param['surface'])
             edge2d = dict_param['edge2d']
-            breplib_BuildCurve3d(edge2d)
+            breplib.BuildCurve3d(edge2d)
             curve, u, v = BRep_Tool.CurveOnPlane(edge2d, Geom_Plane(RP_Ax3()), TopLoc_Location())
             curve = Geom2d_TrimmedCurve(curve, u, v)
             edge = BRepBuilderAPI_MakeEdge(curve, surface).Edge()
@@ -187,7 +187,7 @@ class Build3dDriver(PCurveDriver):
         # 2
         aLabel = theLabel.Argument('edge2d')
         edge2d = self.Arguments['edge2d'].Value(theLabel)
-        breplib_BuildCurve3d(edge2d)
+        breplib.BuildCurve3d(edge2d)
         ais = ais_dict[(aLabel, 'shape')]
         if ais:
             ais.SetShape(edge2d)
@@ -268,7 +268,7 @@ class BareShape2dDriver(BareShapeDriver):
         Logger().debug(f"ID:{self.ID}")
         ais:AIS_ColoredShape = ais_dict[(theLabel, 'shape')]
         shape = self.Attributes['value'].GetValue(theLabel)
-        breplib_BuildCurve3d(shape)
+        breplib.BuildCurve3d(shape)
         if ais and shape:
             ais.SetShape(shape)
             ais.SetColor(Quantity_Color(Quantity_NOC_RED))
@@ -406,7 +406,7 @@ class TrimmedCurveDriver(BareShape2dDriver):
 
         try:
             edge2d = dict_param['edge2d']
-            breplib_BuildCurve3d(edge2d)
+            breplib.BuildCurve3d(edge2d)
             curve, u, v = BRep_Tool.CurveOnPlane(edge2d, Geom_Plane(RP_Ax3()), TopLoc_Location())
             edge = make_edge2d(curve, dict_param['u1'], dict_param['u2'])
         except Exception as error:

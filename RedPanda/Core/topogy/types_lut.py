@@ -31,7 +31,7 @@ __all__ = ['ShapeToTopology',
 from OCC.Core.BRepCheck import *
 from OCC.Core.GeomAbs import *
 from OCC.Core.TopoDS import topods, TopoDS_Shape
-from OCC.Core.BRep import BRep_Tool_Surface
+from OCC.Core.BRep import BRep_Tool
 from OCC.Core.TopAbs import *
 from OCC.Core.Geom import Geom_CylindricalSurface, Geom_Plane
 
@@ -276,7 +276,7 @@ def what_is_face(face):
     if not face.ShapeType() == TopAbs_FACE:
         print("%s is not a TopAbs_FACE. Conversion impossible")
         return None
-    hs = BRep_Tool_Surface(face)
+    hs = BRep_Tool.Surface(face)
     obj = hs.GetObject()
     result = []
     # Run the test for each class
@@ -288,7 +288,7 @@ def what_is_face(face):
 
 def face_is_plane(face):
     """Returns True if the TopoDS_Shape is a plane, False otherwise"""
-    hs = BRep_Tool_Surface(face)
+    hs = BRep_Tool.Surface(face)
     downcast_result = Geom_Plane().DownCast(hs)
     # the handle is null if downcast failed or is not possible,
     # that is to say the face is not a plane
@@ -300,7 +300,7 @@ def face_is_plane(face):
 
 def shape_is_cylinder(face):
     """Returns True is the TopoDS_Shape is a cylinder, False otherwise"""
-    hs = BRep_Tool_Surface(face)
+    hs = BRep_Tool.Surface(face)
     downcast_result = Geom_CylindricalSurface().DownCast(hs)
     if downcast_result.IsNull():
         return False

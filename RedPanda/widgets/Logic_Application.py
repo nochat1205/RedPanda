@@ -18,7 +18,7 @@ from OCC.Core.AIS import (
     AIS_Shaded, AIS_WireFrame
 )
 from OCC.Core.XmlDrivers import (
-    xmldrivers_DefineFormat
+    xmldrivers
 )
 
 from RedPanda.logger import Logger
@@ -49,7 +49,7 @@ class Logic_Application(QObject):
         super().__init__(parent)
         self._DocApp = Application() # save construct driver
 
-        xmldrivers_DefineFormat(self._DocApp)        
+        xmldrivers.DefineFormat(self._DocApp)        
         self._main_doc = Document(RP_ExtendStr("Standard"))
 
         self._myViewer:V3d_Viewer = theDisplay.Viewer

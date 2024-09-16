@@ -423,9 +423,9 @@ class ShapeRefDriver(DataDriver):
         return True
 
     def myChange(self, theLabel:Label, theData):
-        
         # 过滤, 只允许引用Entry相对小的
-        if theData == theLabel.GetEntry():
+        if  theLabel.GetEntry().StartsWith(RP_AsciiStr(theData)):
+            print("[warn] ref self")
             return False
 
         anEntry = RP_AsciiStr(theData)
